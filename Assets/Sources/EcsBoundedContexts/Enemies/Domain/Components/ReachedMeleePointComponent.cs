@@ -1,0 +1,11 @@
+using System;
+using Sources.EcsBoundedContexts.Core.Domain;
+
+namespace Sources.EcsBoundedContexts.Enemies.Domain.Components
+{
+    [Serializable] 
+    [Component(group: ComponentGroup.Enemy)]
+    public struct ReachedMeleePointComponent
+    {
+    }
+}

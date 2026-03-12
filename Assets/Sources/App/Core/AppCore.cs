@@ -1,0 +1,56 @@
+﻿using System;
+using Sources.Frameworks.DeepFramework.DeepCores.Domain.Constants;
+using Sources.Frameworks.GameServices.Scenes.Domain.Implementation;
+using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using Sources.EcsBoundedContexts.Common.Domain.Constants;
+
+namespace Sources.App.Core
+{
+    [DefaultExecutionOrder(ExeOrder.AppCore)]
+    public class AppCore : MonoBehaviour
+    {
+        private ISceneService _sceneService;
+
+        private void Awake() =>
+            DontDestroyOnLoad(this);
+
+        private async void Start()
+        {
+            try
+            {
+#if UNITY_EDITOR
+                await _sceneService.ChangeSceneAsync(
+                    SceneManager.GetActiveScene().name,
+                    new ScenePayload(SceneManager.GetActiveScene().name, false, false));                
+#else
+                await _sceneService.ChangeSceneAsync(
+                    IdsConst.MainMenu,
+                    new ScenePayload(IdsConst.MainMenu, false, false));
+#endif
+            }
+            catch(ArgumentNullException)
+            {
+            }
+            catch (OperationCanceledException)
+            {
+            }
+        }
+
+        private void Update() =>
+            _sceneService.Update(Time.deltaTime);
+
+        private void LateUpdate() =>
+            _sceneService.UpdateLate(Time.deltaTime);
+
+        private void FixedUpdate() =>
+            _sceneService.UpdateFixed(Time.fixedDeltaTime);
+
+        private void OnDestroy() =>
+            _sceneService?.Disable();
+
+        public void Construct(ISceneService sceneService) =>
+            _sceneService = sceneService ?? throw new ArgumentNullException(nameof(sceneService));
+    }
+}

@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
+using Sources.App.Core;
+using Sources.App.Factories;
+using Sources.Frameworks.DeepFramework.DeepCores.Domain.Constants;
 using UnityEngine;
 
-public class Bootstrapper : MonoBehaviour
+namespace Sources.App.Bootstrap
 {
-    // Start is called before the first frame update
-    void Start()
+    [DefaultExecutionOrder(ExeOrder.Bootstrap)]
+    public class Bootstrapper : MonoBehaviour
     {
-        
-    }
+        private AppCore _appCore;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Awake()
+        {
+            _appCore = FindObjectOfType<AppCore>() ?? new AppCoreFactory().Create();
+        }
     }
 }

@@ -1,0 +1,16 @@
+{
+    "name": "DeepCore",
+    "rootNamespace": "",
+    "references": [
+        "GUID:2d88376cdf32454781e0eee26f9e4289"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
