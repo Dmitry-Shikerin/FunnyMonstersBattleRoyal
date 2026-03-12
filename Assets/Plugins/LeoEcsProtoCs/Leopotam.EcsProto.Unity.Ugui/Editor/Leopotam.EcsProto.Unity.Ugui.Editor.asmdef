@@ -1,0 +1,21 @@
+{
+    "name": "Leopotam.EcsProto.Unity.Ugui.Editor",
+    "rootNamespace": "Leopotam.EcsProto.Unity.Ugui.Editor",
+    "references": [
+        "Leopotam.EcsProto.Unity.Ugui",
+        "Leopotam.EcsProto",
+        "Leopotam.EcsProto.QoL",
+        "Leopotam.EcsProto.Unity"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

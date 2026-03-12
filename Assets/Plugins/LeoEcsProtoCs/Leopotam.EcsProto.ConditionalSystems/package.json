@@ -1,0 +1,16 @@
+{
+    "name": "com.leopotam.ecsproto.conditionalsystems",
+    "author": "Leopotam",
+    "displayName": "LeoECS Proto Conditional Systems",
+    "description": "LeoECS Proto Conditional Systems - Группировка систем в блоки с условным выполнением.",
+    "unity": "2021.3",
+    "version": "2024.6.19",
+    "keywords": [
+        "leoecs",
+        "proto",
+        "conditional",
+        "systems",
+        "performance"
+    ],
+    "dependencies": {}
+}

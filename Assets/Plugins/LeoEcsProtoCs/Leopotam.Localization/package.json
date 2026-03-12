@@ -1,0 +1,13 @@
+{
+    "name": "com.leopotam.localization",
+    "author": "Leopotam",
+    "displayName": "Localization",
+    "description": "Localization - Поддержка локализации из CSV данных.",
+    "unity": "2021.3",
+    "version": "2023.11.24",
+    "keywords": [
+        "localization",
+        "csv"
+    ],
+    "dependencies": {}
+}

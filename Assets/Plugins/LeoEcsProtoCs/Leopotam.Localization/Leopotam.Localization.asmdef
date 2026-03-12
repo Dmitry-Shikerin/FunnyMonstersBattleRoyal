@@ -1,0 +1,16 @@
+{
+    "name": "Leopotam.Localization",
+    "rootNamespace": "Leopotam.Localization",
+    "references": [
+        "Leopotam.Serialization.Csv"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

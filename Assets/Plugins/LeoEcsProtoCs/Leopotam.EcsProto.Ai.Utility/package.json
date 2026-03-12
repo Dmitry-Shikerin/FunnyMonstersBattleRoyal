@@ -1,0 +1,16 @@
+{
+    "name": "com.leopotam.ecsproto.ai.utility",
+    "author": "Leopotam",
+    "displayName": "LeoECS Proto UtilityAI",
+    "description": "LeoECS Proto UtilityAI - реализация UtilityAI для LeoECS Proto.",
+    "unity": "2021.3",
+    "version": "2024.8.9",
+    "keywords": [
+        "leoecs",
+        "proto",
+        "ai",
+        "utility",
+        "performance"
+    ],
+    "dependencies": {}
+}

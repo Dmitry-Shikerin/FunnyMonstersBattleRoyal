@@ -1,0 +1,14 @@
+{
+    "name": "Leopotam.Scripting",
+    "rootNamespace": "Leopotam.Scripting",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

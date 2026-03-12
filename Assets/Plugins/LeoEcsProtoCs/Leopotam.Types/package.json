@@ -1,0 +1,13 @@
+{
+    "name": "com.leopotam.types",
+    "author": "Leopotam",
+    "displayName": "Math Types",
+    "description": "Набор типов для отвязки математики от движка.",
+    "unity": "2021.3",
+    "version": "2023.11.24",
+    "keywords": [
+        "performance",
+        "math"
+    ],
+    "dependencies": {}
+}

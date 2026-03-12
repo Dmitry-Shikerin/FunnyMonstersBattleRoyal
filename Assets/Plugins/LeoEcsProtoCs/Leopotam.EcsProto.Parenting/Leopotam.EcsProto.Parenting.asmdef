@@ -1,0 +1,17 @@
+{
+    "name": "Leopotam.EcsProto.Parenting",
+    "rootNamespace": "Leopotam.EcsProto.Parenting",
+    "references": [
+        "Leopotam.EcsProto",
+        "Leopotam.EcsProto.QoL"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

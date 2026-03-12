@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleBinary</title>
+    <script defer src="index.js"></script>
+    <style>
+        html {
+            font-family: monospace;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body onload="onInit()">
+    <div class="container">
+        <h2 id="title">SimpleBinary</h2>
+        <div>
+            <h4>Конфигурация генератора</h4>
+            <textarea id="config" rows="6" cols="80" autocomplete="on" autocorrect="off" spellcheck="false" wrap="off"></textarea>
+        </div>
+        <div>
+            <h4>Схема для генерации</h4>
+            <textarea id="schema" rows="16" cols="80" autocomplete="on" autocorrect="off" spellcheck="false" wrap="off"></textarea>
+        </div>
+        <div>
+            <button onclick="onGenClick()">Генерировать</button>
+        </div>
+        <div>
+            <h4>Результат</h4>
+            <textarea id="output" rows="3" cols="80" readonly wrap="off"></textarea>
+        </div>
+    </div>
+</body>
+<script>
+    function onInit() {
+        document.title = defaultTitle()
+        document.getElementById('title').innerText = defaultTitle()
+        document.getElementById('config').value = defaultConfig()
+        document.getElementById('schema').value =
+            '[packet1]\n' +
+            'id=u32\n' +
+            'items=u32[]\n' +
+            'status=@status\n' +
+            'position=point\n' +
+            '[@status]\n' +
+            'alive=\n' +
+            'dead=\n' +
+            '[point]\n' +
+            'x=f32\n' +
+            'y=f32\n' +
+            'z=f32'
+    }
+    function onGenClick() {
+        const cfgFile = document.getElementById('config').value
+        const schemaFile = document.getElementById('schema').value
+        const iniCfg = new IniFile(cfgFile)
+        const iniSchema = new IniFile(schemaFile)
+        const outFile = outFileOrDefault(iniCfg)
+        try {
+            const code = generate(iniCfg, iniSchema)
+            if (!code) { throw new Error('Ничего не сгенерировано') }
+            document.getElementById('output').value = 'УСПЕШНО'
+            download(code, outFile)
+        } catch (ex) {
+            document.getElementById('output').value = `ОШИБКА:\n${ex.message}`
+        }
+    }
+    function download(content, fileName) {
+        const a = document.createElement('a')
+        a.href = `data:text/plain;charset=utf-8,${encodeURIComponent(content)}`
+        a.download = fileName
+        a.click()
+    }
+</script>
+
+</html>

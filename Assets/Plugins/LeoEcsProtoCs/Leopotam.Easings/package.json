@@ -1,0 +1,13 @@
+{
+    "name": "com.leopotam.easings",
+    "author": "Leopotam",
+    "displayName": "Easings",
+    "description": "Easings - набор функций сглаживания.",
+    "unity": "2021.3",
+    "version": "2024.1.26",
+    "keywords": [
+        "easings",
+        "performance"
+    ],
+    "dependencies": {}
+}

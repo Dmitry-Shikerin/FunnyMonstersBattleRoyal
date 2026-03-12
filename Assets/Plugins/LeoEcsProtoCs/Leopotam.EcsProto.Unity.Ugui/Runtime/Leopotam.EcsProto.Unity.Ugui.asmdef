@@ -1,0 +1,19 @@
+{
+    "name": "Leopotam.EcsProto.Unity.Ugui",
+    "rootNamespace": "Leopotam.EcsProto.Unity.Ugui",
+    "references": [
+        "Leopotam.EcsProto",
+        "Leopotam.EcsProto.QoL",
+        "Leopotam.EcsProto.Unity",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

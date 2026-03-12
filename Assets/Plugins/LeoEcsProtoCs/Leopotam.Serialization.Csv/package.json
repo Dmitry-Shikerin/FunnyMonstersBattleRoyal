@@ -1,0 +1,14 @@
+{
+    "name": "com.leopotam.serialization.csv",
+    "author": "Leopotam",
+    "displayName": "CSV Serialization",
+    "description": "CSV Serialization - Поддержка работы с CSV.",
+    "unity": "2021.3",
+    "version": "2023.11.24",
+    "keywords": [
+        "serialization",
+        "csv",
+        "performance"
+    ],
+    "dependencies": {}
+}

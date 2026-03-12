@@ -1,0 +1,14 @@
+{
+    "name": "Leopotam.EcsProto.Ai.Utility.Unity",
+    "rootNamespace": "Leopotam.EcsProto.Ai.Utility.Unity",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

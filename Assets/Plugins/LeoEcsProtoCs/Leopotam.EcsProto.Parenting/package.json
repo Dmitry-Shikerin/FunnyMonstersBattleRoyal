@@ -1,0 +1,15 @@
+{
+    "name": "com.leopotam.ecsproto.parenting",
+    "author": "Leopotam",
+    "displayName": "LeoECS Proto Parenting",
+    "description": "LeoECS Proto Parenting - Взаимоотношение родитель-ребенок для сущностей.",
+    "unity": "2021.3",
+    "version": "2024.7.28",
+    "keywords": [
+        "leoecs",
+        "proto",
+        "parenting",
+        "performance"
+    ],
+    "dependencies": {}
+}

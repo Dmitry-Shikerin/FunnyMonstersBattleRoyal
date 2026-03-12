@@ -1,0 +1,17 @@
+{
+    "name": "com.leopotam.ecsproto.unity",
+    "author": "Leopotam",
+    "displayName": "LeoECS Proto Unity",
+    "description": "LeoECS Proto Unity - набор расширений для LeoECS Proto, выполняющих интеграцию в Unity.",
+    "unity": "2021.3",
+    "version": "2024.8.11",
+    "keywords": [
+        "leoecs",
+        "proto",
+        "ecs",
+        "performance",
+        "unity",
+        "integration"
+    ],
+    "dependencies": {}
+}
