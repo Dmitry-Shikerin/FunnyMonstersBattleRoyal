@@ -17,8 +17,8 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
         [SerializeField] private string _label = Label;
         
         [SerializeField] private UiToggle _toggle;
-        // [SerializeField] private DOTweenTimeline _enableTimeline;
-        // [SerializeField] private DOTweenTimeline _disableTimeline;
+        [SerializeField] private DOTweenTimeline _enableTimeline;
+        [SerializeField] private DOTweenTimeline _disableTimeline;
         [SerializeField] private EnableState _startState;
 
         private void Awake() => 

@@ -1,4 +1,3 @@
-using Dott;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using MyDependencies.Sources.Attributes;
