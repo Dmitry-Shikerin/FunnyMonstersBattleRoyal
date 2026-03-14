@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dae6d934f3e4f9e8a480fa0a600acc1, type: 3}
+  m_Name: CharacterMeleeConfig
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _enable: 0
+  _id: 
+  _parent: {fileID: 0}
+  <AttackAnimation>k__BackingField:
+    _FadeDuration: 0.25
+    _Speed: 1
+    _Events:
+      _NormalizedTimes:
+      - 0.5
+      - NaN
+      _Callbacks: []
+      _Names:
+      - {fileID: 11400000, guid: 16d3add917072c74fb6136ced752756c, type: 2}
+    _Clip: {fileID: 7400000, guid: 71f8e453b8b96c3419627abb230fc9ff, type: 3}
+    _NormalizedStartTime: NaN
+  <IdleAnimation>k__BackingField:
+    _FadeDuration: 0.25
+    _Speed: 1
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 83c4b1c10a8c50f4fab4d5a33d21aba3, type: 3}
+    _NormalizedStartTime: NaN
+  <FindRange>k__BackingField: 3
+  <MassAttackRange>k__BackingField: 3
+  <RotationSpeed>k__BackingField: 5
+  <ChangeRotationSpeedDelta>k__BackingField: 5
+  <Health>k__BackingField: 50
+  references:
+    version: 2
+    RefIds: []

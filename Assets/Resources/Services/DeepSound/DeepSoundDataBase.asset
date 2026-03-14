@@ -1,0 +1,1422 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8314448287293343955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b85cde3401421f93547d6d54aa2a41, type: 3}
+  m_Name: Music_SoundDataBase
+  m_EditorClassIdentifier: 
+  _label: <size=30><b><color=#FFA500><i>Sound Data Base</i></color></b></size>
+  Name: 1
+  OutputAudioMixerGroup: {fileID: 0}
+  _dataBase:
+    _keys: 0100000007000000
+    _values:
+    - ParentDatabaseName: 0
+      SoundName: 1
+      IgnoreListenerPause: 0
+      _soundGroupDataEnum: 1
+      Volume: {x: 0, y: 0}
+      Pitch: {x: 0, y: 0}
+      SpatialBlend: 0
+      Loop: 1
+      Mode: 1
+      ResetSequenceAfterInactiveTime: 0
+      SequenceResetTime: 0
+      IsPlaying: 0
+      LastPlayedAudioData:
+        Parent:
+          ParentDatabaseName: 0
+          SoundName: 0
+          IgnoreListenerPause: 0
+          _soundGroupDataEnum: 0
+          Volume: {x: 0, y: 0}
+          Pitch: {x: 0, y: 0}
+          SpatialBlend: 0
+          Loop: 0
+          Mode: 0
+          ResetSequenceAfterInactiveTime: 0
+          SequenceResetTime: 0
+          IsPlaying: 0
+          LastPlayedAudioData:
+            Parent:
+              ParentDatabaseName: 0
+              SoundName: 0
+              IgnoreListenerPause: 0
+              _soundGroupDataEnum: 0
+              Volume: {x: 0, y: 0}
+              Pitch: {x: 0, y: 0}
+              SpatialBlend: 0
+              Loop: 0
+              Mode: 0
+              ResetSequenceAfterInactiveTime: 0
+              SequenceResetTime: 0
+              IsPlaying: 0
+              LastPlayedAudioData:
+                Parent:
+                  ParentDatabaseName: 0
+                  SoundName: 0
+                  IgnoreListenerPause: 0
+                  _soundGroupDataEnum: 0
+                  Volume: {x: 0, y: 0}
+                  Pitch: {x: 0, y: 0}
+                  SpatialBlend: 0
+                  Loop: 0
+                  Mode: 0
+                  ResetSequenceAfterInactiveTime: 0
+                  SequenceResetTime: 0
+                  IsPlaying: 0
+                  LastPlayedAudioData:
+                    Parent:
+                      ParentDatabaseName: 0
+                      SoundName: 0
+                      IgnoreListenerPause: 0
+                      _soundGroupDataEnum: 0
+                      Volume: {x: 0, y: 0}
+                      Pitch: {x: 0, y: 0}
+                      SpatialBlend: 0
+                      Loop: 0
+                      Mode: 0
+                      ResetSequenceAfterInactiveTime: 0
+                      SequenceResetTime: 0
+                      IsPlaying: 0
+                      LastPlayedAudioData:
+                        Weight: 1
+                        IsPlaying: 0
+                        _curentValue: 0
+                        _value: 0
+                        _maxValue: 0
+                      Sounds: []
+                    AudioClip: {fileID: 0}
+                    Weight: 1
+                    IsPlaying: 0
+                    _curentValue: 0
+                    _value: 0
+                    _maxValue: 0
+                  Sounds: []
+                AudioClip: {fileID: 0}
+                Weight: 1
+                IsPlaying: 0
+                _curentValue: 0
+                _value: 0
+                _maxValue: 0
+              Sounds: []
+            AudioClip: {fileID: 0}
+            Weight: 1
+            IsPlaying: 0
+            _curentValue: 0
+            _value: 0
+            _maxValue: 0
+          Sounds: []
+        AudioClip: {fileID: 8300000, guid: 1df6d9a77fa892241bf41bb97d991eb6, type: 3}
+        Weight: 1
+        IsPlaying: 0
+        _curentValue: 0
+        _value: 0
+        _maxValue: 255.05959
+      Sounds:
+      - Parent:
+          ParentDatabaseName: 0
+          SoundName: 0
+          IgnoreListenerPause: 0
+          _soundGroupDataEnum: 0
+          Volume: {x: 0, y: 0}
+          Pitch: {x: 0, y: 0}
+          SpatialBlend: 0
+          Loop: 0
+          Mode: 0
+          ResetSequenceAfterInactiveTime: 0
+          SequenceResetTime: 0
+          IsPlaying: 0
+          LastPlayedAudioData:
+            Parent:
+              ParentDatabaseName: 0
+              SoundName: 0
+              IgnoreListenerPause: 0
+              _soundGroupDataEnum: 0
+              Volume: {x: 0, y: 0}
+              Pitch: {x: 0, y: 0}
+              SpatialBlend: 0
+              Loop: 0
+              Mode: 0
+              ResetSequenceAfterInactiveTime: 0
+              SequenceResetTime: 0
+              IsPlaying: 0
+              LastPlayedAudioData:
+                Parent:
+                  ParentDatabaseName: 0
+                  SoundName: 0
+                  IgnoreListenerPause: 0
+                  _soundGroupDataEnum: 0
+                  Volume: {x: 0, y: 0}
+                  Pitch: {x: 0, y: 0}
+                  SpatialBlend: 0
+                  Loop: 0
+                  Mode: 0
+                  ResetSequenceAfterInactiveTime: 0
+                  SequenceResetTime: 0
+                  IsPlaying: 0
+                  LastPlayedAudioData:
+                    Parent:
+                      ParentDatabaseName: 0
+                      SoundName: 0
+                      IgnoreListenerPause: 0
+                      _soundGroupDataEnum: 0
+                      Volume: {x: 0, y: 0}
+                      Pitch: {x: 0, y: 0}
+                      SpatialBlend: 0
+                      Loop: 0
+                      Mode: 0
+                      ResetSequenceAfterInactiveTime: 0
+                      SequenceResetTime: 0
+                      IsPlaying: 0
+                      LastPlayedAudioData:
+                        Weight: 1
+                        IsPlaying: 0
+                        _curentValue: 0
+                        _value: 0
+                        _maxValue: 0
+                      Sounds: []
+                    AudioClip: {fileID: 0}
+                    Weight: 1
+                    IsPlaying: 0
+                    _curentValue: 0
+                    _value: 0
+                    _maxValue: 0
+                  Sounds: []
+                AudioClip: {fileID: 0}
+                Weight: 1
+                IsPlaying: 0
+                _curentValue: 0
+                _value: 0
+                _maxValue: 0
+              Sounds: []
+            AudioClip: {fileID: 0}
+            Weight: 1
+            IsPlaying: 0
+            _curentValue: 0
+            _value: 0
+            _maxValue: 0
+          Sounds: []
+        AudioClip: {fileID: 8300000, guid: 1df6d9a77fa892241bf41bb97d991eb6, type: 3}
+        Weight: 1
+        IsPlaying: 0
+        _curentValue: 0
+        _value: 0
+        _maxValue: 255.05959
+    - ParentDatabaseName: 1
+      SoundName: 7
+      IgnoreListenerPause: 0
+      _soundGroupDataEnum: 0
+      Volume: {x: 0, y: 0}
+      Pitch: {x: 0, y: 0}
+      SpatialBlend: 0
+      Loop: 1
+      Mode: 0
+      ResetSequenceAfterInactiveTime: 0
+      SequenceResetTime: 0
+      IsPlaying: 0
+      LastPlayedAudioData:
+        Parent:
+          ParentDatabaseName: 0
+          SoundName: 0
+          IgnoreListenerPause: 0
+          _soundGroupDataEnum: 0
+          Volume: {x: 0, y: 0}
+          Pitch: {x: 0, y: 0}
+          SpatialBlend: 0
+          Loop: 0
+          Mode: 0
+          ResetSequenceAfterInactiveTime: 0
+          SequenceResetTime: 0
+          IsPlaying: 0
+          LastPlayedAudioData:
+            Parent:
+              ParentDatabaseName: 0
+              SoundName: 0
+              IgnoreListenerPause: 0
+              _soundGroupDataEnum: 0
+              Volume: {x: 0, y: 0}
+              Pitch: {x: 0, y: 0}
+              SpatialBlend: 0
+              Loop: 0
+              Mode: 0
+              ResetSequenceAfterInactiveTime: 0
+              SequenceResetTime: 0
+              IsPlaying: 0
+              LastPlayedAudioData:
+                Parent:
+                  ParentDatabaseName: 0
+                  SoundName: 0
+                  IgnoreListenerPause: 0
+                  _soundGroupDataEnum: 0
+                  Volume: {x: 0, y: 0}
+                  Pitch: {x: 0, y: 0}
+                  SpatialBlend: 0
+                  Loop: 0
+                  Mode: 0
+                  ResetSequenceAfterInactiveTime: 0
+                  SequenceResetTime: 0
+                  IsPlaying: 0
+                  LastPlayedAudioData:
+                    Parent:
+                      ParentDatabaseName: 0
+                      SoundName: 0
+                      IgnoreListenerPause: 0
+                      _soundGroupDataEnum: 0
+                      Volume: {x: 0, y: 0}
+                      Pitch: {x: 0, y: 0}
+                      SpatialBlend: 0
+                      Loop: 0
+                      Mode: 0
+                      ResetSequenceAfterInactiveTime: 0
+                      SequenceResetTime: 0
+                      IsPlaying: 0
+                      LastPlayedAudioData:
+                        Weight: 1
+                        IsPlaying: 0
+                        _curentValue: 0
+                        _value: 0
+                        _maxValue: 0
+                      Sounds: []
+                    AudioClip: {fileID: 0}
+                    Weight: 1
+                    IsPlaying: 0
+                    _curentValue: 0
+                    _value: 0
+                    _maxValue: 0
+                  Sounds: []
+                AudioClip: {fileID: 0}
+                Weight: 1
+                IsPlaying: 0
+                _curentValue: 0
+                _value: 0
+                _maxValue: 0
+              Sounds: []
+            AudioClip: {fileID: 0}
+            Weight: 1
+            IsPlaying: 0
+            _curentValue: 0
+            _value: 0
+            _maxValue: 0
+          Sounds: []
+        AudioClip: {fileID: 8300000, guid: 5aead1efc8bf7174b9473953d97207bd, type: 3}
+        Weight: 1
+        IsPlaying: 0
+        _curentValue: 0
+        _value: 0
+        _maxValue: 257.20575
+      Sounds:
+      - Parent:
+          ParentDatabaseName: 0
+          SoundName: 0
+          IgnoreListenerPause: 0
+          _soundGroupDataEnum: 0
+          Volume: {x: 0, y: 0}
+          Pitch: {x: 0, y: 0}
+          SpatialBlend: 0
+          Loop: 0
+          Mode: 0
+          ResetSequenceAfterInactiveTime: 0
+          SequenceResetTime: 0
+          IsPlaying: 0
+          LastPlayedAudioData:
+            Parent:
+              ParentDatabaseName: 0
+              SoundName: 0
+              IgnoreListenerPause: 0
+              _soundGroupDataEnum: 0
+              Volume: {x: 0, y: 0}
+              Pitch: {x: 0, y: 0}
+              SpatialBlend: 0
+              Loop: 0
+              Mode: 0
+              ResetSequenceAfterInactiveTime: 0
+              SequenceResetTime: 0
+              IsPlaying: 0
+              LastPlayedAudioData:
+                Parent:
+                  ParentDatabaseName: 0
+                  SoundName: 0
+                  IgnoreListenerPause: 0
+                  _soundGroupDataEnum: 0
+                  Volume: {x: 0, y: 0}
+                  Pitch: {x: 0, y: 0}
+                  SpatialBlend: 0
+                  Loop: 0
+                  Mode: 0
+                  ResetSequenceAfterInactiveTime: 0
+                  SequenceResetTime: 0
+                  IsPlaying: 0
+                  LastPlayedAudioData:
+                    Parent:
+                      ParentDatabaseName: 0
+                      SoundName: 0
+                      IgnoreListenerPause: 0
+                      _soundGroupDataEnum: 0
+                      Volume: {x: 0, y: 0}
+                      Pitch: {x: 0, y: 0}
+                      SpatialBlend: 0
+                      Loop: 0
+                      Mode: 0
+                      ResetSequenceAfterInactiveTime: 0
+                      SequenceResetTime: 0
+                      IsPlaying: 0
+                      LastPlayedAudioData:
+                        Weight: 1
+                        IsPlaying: 0
+                        _curentValue: 0
+                        _value: 0
+                        _maxValue: 0
+                      Sounds: []
+                    AudioClip: {fileID: 0}
+                    Weight: 1
+                    IsPlaying: 0
+                    _curentValue: 0
+                    _value: 0
+                    _maxValue: 0
+                  Sounds: []
+                AudioClip: {fileID: 0}
+                Weight: 1
+                IsPlaying: 0
+                _curentValue: 0
+                _value: 0
+                _maxValue: 0
+              Sounds: []
+            AudioClip: {fileID: 0}
+            Weight: 1
+            IsPlaying: 0
+            _curentValue: 0
+            _value: 0
+            _maxValue: 0
+          Sounds: []
+        AudioClip: {fileID: 8300000, guid: 5aead1efc8bf7174b9473953d97207bd, type: 3}
+        Weight: 1
+        IsPlaying: 0
+        _curentValue: 0
+        _value: 0
+        _maxValue: 257.20575
+  Parent: {fileID: 11400000}
+--- !u!114 &-932620378824459972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b85cde3401421f93547d6d54aa2a41, type: 3}
+  m_Name: UiSounds_SoundDataBase
+  m_EditorClassIdentifier: 
+  _label: <size=30><b><color=#FFA500><i>Sound Data Base</i></color></b></size>
+  Name: 3
+  OutputAudioMixerGroup: {fileID: 0}
+  _dataBase:
+    _keys: 02000000040000000500000006000000
+    _values:
+    - ParentDatabaseName: 3
+      SoundName: 2
+      IgnoreListenerPause: 0
+      _soundGroupDataEnum: 0
+      Volume: {x: 0, y: 0}
+      Pitch: {x: 0, y: 0}
+      SpatialBlend: 0
+      Loop: 0
+      Mode: 1
+      ResetSequenceAfterInactiveTime: 0
+      SequenceResetTime: 0
+      IsPlaying: 0
+      LastPlayedAudioData:
+        Parent:
+          ParentDatabaseName: 0
+          SoundName: 0
+          IgnoreListenerPause: 0
+          _soundGroupDataEnum: 0
+          Volume: {x: 0, y: 0}
+          Pitch: {x: 0, y: 0}
+          SpatialBlend: 0
+          Loop: 0
+          Mode: 0
+          ResetSequenceAfterInactiveTime: 0
+          SequenceResetTime: 0
+          IsPlaying: 0
+          LastPlayedAudioData:
+            Parent:
+              ParentDatabaseName: 0
+              SoundName: 0
+              IgnoreListenerPause: 0
+              _soundGroupDataEnum: 0
+              Volume: {x: 0, y: 0}
+              Pitch: {x: 0, y: 0}
+              SpatialBlend: 0
+              Loop: 0
+              Mode: 0
+              ResetSequenceAfterInactiveTime: 0
+              SequenceResetTime: 0
+              IsPlaying: 0
+              LastPlayedAudioData:
+                Parent:
+                  ParentDatabaseName: 0
+                  SoundName: 0
+                  IgnoreListenerPause: 0
+                  _soundGroupDataEnum: 0
+                  Volume: {x: 0, y: 0}
+                  Pitch: {x: 0, y: 0}
+                  SpatialBlend: 0
+                  Loop: 0
+                  Mode: 0
+                  ResetSequenceAfterInactiveTime: 0
+                  SequenceResetTime: 0
+                  IsPlaying: 0
+                  LastPlayedAudioData:
+                    Parent:
+                      ParentDatabaseName: 0
+                      SoundName: 0
+                      IgnoreListenerPause: 0
+                      _soundGroupDataEnum: 0
+                      Volume: {x: 0, y: 0}
+                      Pitch: {x: 0, y: 0}
+                      SpatialBlend: 0
+                      Loop: 0
+                      Mode: 0
+                      ResetSequenceAfterInactiveTime: 0
+                      SequenceResetTime: 0
+                      IsPlaying: 0
+                      LastPlayedAudioData:
+                        Weight: 1
+                        IsPlaying: 0
+                        _curentValue: 0
+                        _value: 0
+                        _maxValue: 0
+                      Sounds: []
+                    AudioClip: {fileID: 0}
+                    Weight: 1
+                    IsPlaying: 0
+                    _curentValue: 0
+                    _value: 0
+                    _maxValue: 0
+                  Sounds: []
+                AudioClip: {fileID: 0}
+                Weight: 1
+                IsPlaying: 0
+                _curentValue: 0
+                _value: 0
+                _maxValue: 0
+              Sounds: []
+            AudioClip: {fileID: 0}
+            Weight: 1
+            IsPlaying: 0
+            _curentValue: 0
+            _value: 0
+            _maxValue: 0
+          Sounds: []
+        AudioClip: {fileID: 8300000, guid: c7287049598782241abf6c7c5192f9a9, type: 3}
+        Weight: 1
+        IsPlaying: 0
+        _curentValue: 0
+        _value: 0
+        _maxValue: 0.25
+      Sounds:
+      - Parent:
+          ParentDatabaseName: 0
+          SoundName: 0
+          IgnoreListenerPause: 0
+          _soundGroupDataEnum: 0
+          Volume: {x: 0, y: 0}
+          Pitch: {x: 0, y: 0}
+          SpatialBlend: 0
+          Loop: 0
+          Mode: 0
+          ResetSequenceAfterInactiveTime: 0
+          SequenceResetTime: 0
+          IsPlaying: 0
+          LastPlayedAudioData:
+            Parent:
+              ParentDatabaseName: 0
+              SoundName: 0
+              IgnoreListenerPause: 0
+              _soundGroupDataEnum: 0
+              Volume: {x: 0, y: 0}
+              Pitch: {x: 0, y: 0}
+              SpatialBlend: 0
+              Loop: 0
+              Mode: 0
+              ResetSequenceAfterInactiveTime: 0
+              SequenceResetTime: 0
+              IsPlaying: 0
+              LastPlayedAudioData:
+                Parent:
+                  ParentDatabaseName: 0
+                  SoundName: 0
+                  IgnoreListenerPause: 0
+                  _soundGroupDataEnum: 0
+                  Volume: {x: 0, y: 0}
+                  Pitch: {x: 0, y: 0}
+                  SpatialBlend: 0
+                  Loop: 0
+                  Mode: 0
+                  ResetSequenceAfterInactiveTime: 0
+                  SequenceResetTime: 0
+                  IsPlaying: 0
+                  LastPlayedAudioData:
+                    Parent:
+                      ParentDatabaseName: 0
+                      SoundName: 0
+                      IgnoreListenerPause: 0
+                      _soundGroupDataEnum: 0
+                      Volume: {x: 0, y: 0}
+                      Pitch: {x: 0, y: 0}
+                      SpatialBlend: 0
+                      Loop: 0
+                      Mode: 0
+                      ResetSequenceAfterInactiveTime: 0
+                      SequenceResetTime: 0
+                      IsPlaying: 0
+                      LastPlayedAudioData:
+                        Weight: 1
+                        IsPlaying: 0
+                        _curentValue: 0
+                        _value: 0
+                        _maxValue: 0
+                      Sounds: []
+                    AudioClip: {fileID: 0}
+                    Weight: 1
+                    IsPlaying: 0
+                    _curentValue: 0
+                    _value: 0
+                    _maxValue: 0
+                  Sounds: []
+                AudioClip: {fileID: 0}
+                Weight: 1
+                IsPlaying: 0
+                _curentValue: 0
+                _value: 0
+                _maxValue: 0
+              Sounds: []
+            AudioClip: {fileID: 0}
+            Weight: 1
+            IsPlaying: 0
+            _curentValue: 0
+            _value: 0
+            _maxValue: 0
+          Sounds: []
+        AudioClip: {fileID: 8300000, guid: c7287049598782241abf6c7c5192f9a9, type: 3}
+        Weight: 1
+        IsPlaying: 0
+        _curentValue: 0
+        _value: 0
+        _maxValue: 0.25
+    - ParentDatabaseName: 3
+      SoundName: 4
+      IgnoreListenerPause: 0
+      _soundGroupDataEnum: 0
+      Volume: {x: 0, y: 0}
+      Pitch: {x: 0, y: 0}
+      SpatialBlend: 0
+      Loop: 0
+      Mode: 0
+      ResetSequenceAfterInactiveTime: 0
+      SequenceResetTime: 0
+      IsPlaying: 0
+      LastPlayedAudioData:
+        Parent:
+          ParentDatabaseName: 0
+          SoundName: 0
+          IgnoreListenerPause: 0
+          _soundGroupDataEnum: 0
+          Volume: {x: 0, y: 0}
+          Pitch: {x: 0, y: 0}
+          SpatialBlend: 0
+          Loop: 0
+          Mode: 0
+          ResetSequenceAfterInactiveTime: 0
+          SequenceResetTime: 0
+          IsPlaying: 0
+          LastPlayedAudioData:
+            Parent:
+              ParentDatabaseName: 0
+              SoundName: 0
+              IgnoreListenerPause: 0
+              _soundGroupDataEnum: 0
+              Volume: {x: 0, y: 0}
+              Pitch: {x: 0, y: 0}
+              SpatialBlend: 0
+              Loop: 0
+              Mode: 0
+              ResetSequenceAfterInactiveTime: 0
+              SequenceResetTime: 0
+              IsPlaying: 0
+              LastPlayedAudioData:
+                Parent:
+                  ParentDatabaseName: 0
+                  SoundName: 0
+                  IgnoreListenerPause: 0
+                  _soundGroupDataEnum: 0
+                  Volume: {x: 0, y: 0}
+                  Pitch: {x: 0, y: 0}
+                  SpatialBlend: 0
+                  Loop: 0
+                  Mode: 0
+                  ResetSequenceAfterInactiveTime: 0
+                  SequenceResetTime: 0
+                  IsPlaying: 0
+                  LastPlayedAudioData:
+                    Parent:
+                      ParentDatabaseName: 0
+                      SoundName: 0
+                      IgnoreListenerPause: 0
+                      _soundGroupDataEnum: 0
+                      Volume: {x: 0, y: 0}
+                      Pitch: {x: 0, y: 0}
+                      SpatialBlend: 0
+                      Loop: 0
+                      Mode: 0
+                      ResetSequenceAfterInactiveTime: 0
+                      SequenceResetTime: 0
+                      IsPlaying: 0
+                      LastPlayedAudioData:
+                        Weight: 1
+                        IsPlaying: 0
+                        _curentValue: 0
+                        _value: 0
+                        _maxValue: 0
+                      Sounds: []
+                    AudioClip: {fileID: 0}
+                    Weight: 1
+                    IsPlaying: 0
+                    _curentValue: 0
+                    _value: 0
+                    _maxValue: 0
+                  Sounds: []
+                AudioClip: {fileID: 0}
+                Weight: 1
+                IsPlaying: 0
+                _curentValue: 0
+                _value: 0
+                _maxValue: 0
+              Sounds: []
+            AudioClip: {fileID: 0}
+            Weight: 1
+            IsPlaying: 0
+            _curentValue: 0
+            _value: 0
+            _maxValue: 0
+          Sounds: []
+        AudioClip: {fileID: 8300000, guid: 98fb728d242dfff4c997553d4fc54716, type: 3}
+        Weight: 1
+        IsPlaying: 0
+        _curentValue: 0
+        _value: 0
+        _maxValue: 0.6373469
+      Sounds:
+      - Parent:
+          ParentDatabaseName: 0
+          SoundName: 0
+          IgnoreListenerPause: 0
+          _soundGroupDataEnum: 0
+          Volume: {x: 0, y: 0}
+          Pitch: {x: 0, y: 0}
+          SpatialBlend: 0
+          Loop: 0
+          Mode: 0
+          ResetSequenceAfterInactiveTime: 0
+          SequenceResetTime: 0
+          IsPlaying: 0
+          LastPlayedAudioData:
+            Parent:
+              ParentDatabaseName: 0
+              SoundName: 0
+              IgnoreListenerPause: 0
+              _soundGroupDataEnum: 0
+              Volume: {x: 0, y: 0}
+              Pitch: {x: 0, y: 0}
+              SpatialBlend: 0
+              Loop: 0
+              Mode: 0
+              ResetSequenceAfterInactiveTime: 0
+              SequenceResetTime: 0
+              IsPlaying: 0
+              LastPlayedAudioData:
+                Parent:
+                  ParentDatabaseName: 0
+                  SoundName: 0
+                  IgnoreListenerPause: 0
+                  _soundGroupDataEnum: 0
+                  Volume: {x: 0, y: 0}
+                  Pitch: {x: 0, y: 0}
+                  SpatialBlend: 0
+                  Loop: 0
+                  Mode: 0
+                  ResetSequenceAfterInactiveTime: 0
+                  SequenceResetTime: 0
+                  IsPlaying: 0
+                  LastPlayedAudioData:
+                    Parent:
+                      ParentDatabaseName: 0
+                      SoundName: 0
+                      IgnoreListenerPause: 0
+                      _soundGroupDataEnum: 0
+                      Volume: {x: 0, y: 0}
+                      Pitch: {x: 0, y: 0}
+                      SpatialBlend: 0
+                      Loop: 0
+                      Mode: 0
+                      ResetSequenceAfterInactiveTime: 0
+                      SequenceResetTime: 0
+                      IsPlaying: 0
+                      LastPlayedAudioData:
+                        Weight: 1
+                        IsPlaying: 0
+                        _curentValue: 0
+                        _value: 0
+                        _maxValue: 0
+                      Sounds: []
+                    AudioClip: {fileID: 0}
+                    Weight: 1
+                    IsPlaying: 0
+                    _curentValue: 0
+                    _value: 0
+                    _maxValue: 0
+                  Sounds: []
+                AudioClip: {fileID: 0}
+                Weight: 1
+                IsPlaying: 0
+                _curentValue: 0
+                _value: 0
+                _maxValue: 0
+              Sounds: []
+            AudioClip: {fileID: 0}
+            Weight: 1
+            IsPlaying: 0
+            _curentValue: 0
+            _value: 0
+            _maxValue: 0
+          Sounds: []
+        AudioClip: {fileID: 8300000, guid: 98fb728d242dfff4c997553d4fc54716, type: 3}
+        Weight: 1
+        IsPlaying: 0
+        _curentValue: 0
+        _value: 0
+        _maxValue: 0.6373469
+    - ParentDatabaseName: 3
+      SoundName: 5
+      IgnoreListenerPause: 0
+      _soundGroupDataEnum: 0
+      Volume: {x: 0, y: 0}
+      Pitch: {x: 0, y: 0}
+      SpatialBlend: 0
+      Loop: 0
+      Mode: 0
+      ResetSequenceAfterInactiveTime: 0
+      SequenceResetTime: 0
+      IsPlaying: 0
+      LastPlayedAudioData:
+        Parent:
+          ParentDatabaseName: 0
+          SoundName: 0
+          IgnoreListenerPause: 0
+          _soundGroupDataEnum: 0
+          Volume: {x: 0, y: 0}
+          Pitch: {x: 0, y: 0}
+          SpatialBlend: 0
+          Loop: 0
+          Mode: 0
+          ResetSequenceAfterInactiveTime: 0
+          SequenceResetTime: 0
+          IsPlaying: 0
+          LastPlayedAudioData:
+            Parent:
+              ParentDatabaseName: 0
+              SoundName: 0
+              IgnoreListenerPause: 0
+              _soundGroupDataEnum: 0
+              Volume: {x: 0, y: 0}
+              Pitch: {x: 0, y: 0}
+              SpatialBlend: 0
+              Loop: 0
+              Mode: 0
+              ResetSequenceAfterInactiveTime: 0
+              SequenceResetTime: 0
+              IsPlaying: 0
+              LastPlayedAudioData:
+                Parent:
+                  ParentDatabaseName: 0
+                  SoundName: 0
+                  IgnoreListenerPause: 0
+                  _soundGroupDataEnum: 0
+                  Volume: {x: 0, y: 0}
+                  Pitch: {x: 0, y: 0}
+                  SpatialBlend: 0
+                  Loop: 0
+                  Mode: 0
+                  ResetSequenceAfterInactiveTime: 0
+                  SequenceResetTime: 0
+                  IsPlaying: 0
+                  LastPlayedAudioData:
+                    Parent:
+                      ParentDatabaseName: 0
+                      SoundName: 0
+                      IgnoreListenerPause: 0
+                      _soundGroupDataEnum: 0
+                      Volume: {x: 0, y: 0}
+                      Pitch: {x: 0, y: 0}
+                      SpatialBlend: 0
+                      Loop: 0
+                      Mode: 0
+                      ResetSequenceAfterInactiveTime: 0
+                      SequenceResetTime: 0
+                      IsPlaying: 0
+                      LastPlayedAudioData:
+                        Weight: 1
+                        IsPlaying: 0
+                        _curentValue: 0
+                        _value: 0
+                        _maxValue: 0
+                      Sounds: []
+                    AudioClip: {fileID: 0}
+                    Weight: 1
+                    IsPlaying: 0
+                    _curentValue: 0
+                    _value: 0
+                    _maxValue: 0
+                  Sounds: []
+                AudioClip: {fileID: 0}
+                Weight: 1
+                IsPlaying: 0
+                _curentValue: 0
+                _value: 0
+                _maxValue: 0
+              Sounds: []
+            AudioClip: {fileID: 0}
+            Weight: 1
+            IsPlaying: 0
+            _curentValue: 0
+            _value: 0
+            _maxValue: 0
+          Sounds: []
+        AudioClip: {fileID: 8300000, guid: a6de323cc6eb9164c8cff5b1fe7daab9, type: 3}
+        Weight: 1
+        IsPlaying: 0
+        _curentValue: 0
+        _value: 0
+        _maxValue: 0.31251702
+      Sounds:
+      - Parent:
+          ParentDatabaseName: 0
+          SoundName: 0
+          IgnoreListenerPause: 0
+          _soundGroupDataEnum: 0
+          Volume: {x: 0, y: 0}
+          Pitch: {x: 0, y: 0}
+          SpatialBlend: 0
+          Loop: 0
+          Mode: 0
+          ResetSequenceAfterInactiveTime: 0
+          SequenceResetTime: 0
+          IsPlaying: 0
+          LastPlayedAudioData:
+            Parent:
+              ParentDatabaseName: 0
+              SoundName: 0
+              IgnoreListenerPause: 0
+              _soundGroupDataEnum: 0
+              Volume: {x: 0, y: 0}
+              Pitch: {x: 0, y: 0}
+              SpatialBlend: 0
+              Loop: 0
+              Mode: 0
+              ResetSequenceAfterInactiveTime: 0
+              SequenceResetTime: 0
+              IsPlaying: 0
+              LastPlayedAudioData:
+                Parent:
+                  ParentDatabaseName: 0
+                  SoundName: 0
+                  IgnoreListenerPause: 0
+                  _soundGroupDataEnum: 0
+                  Volume: {x: 0, y: 0}
+                  Pitch: {x: 0, y: 0}
+                  SpatialBlend: 0
+                  Loop: 0
+                  Mode: 0
+                  ResetSequenceAfterInactiveTime: 0
+                  SequenceResetTime: 0
+                  IsPlaying: 0
+                  LastPlayedAudioData:
+                    Parent:
+                      ParentDatabaseName: 0
+                      SoundName: 0
+                      IgnoreListenerPause: 0
+                      _soundGroupDataEnum: 0
+                      Volume: {x: 0, y: 0}
+                      Pitch: {x: 0, y: 0}
+                      SpatialBlend: 0
+                      Loop: 0
+                      Mode: 0
+                      ResetSequenceAfterInactiveTime: 0
+                      SequenceResetTime: 0
+                      IsPlaying: 0
+                      LastPlayedAudioData:
+                        Weight: 1
+                        IsPlaying: 0
+                        _curentValue: 0
+                        _value: 0
+                        _maxValue: 0
+                      Sounds: []
+                    AudioClip: {fileID: 0}
+                    Weight: 1
+                    IsPlaying: 0
+                    _curentValue: 0
+                    _value: 0
+                    _maxValue: 0
+                  Sounds: []
+                AudioClip: {fileID: 0}
+                Weight: 1
+                IsPlaying: 0
+                _curentValue: 0
+                _value: 0
+                _maxValue: 0
+              Sounds: []
+            AudioClip: {fileID: 0}
+            Weight: 1
+            IsPlaying: 0
+            _curentValue: 0
+            _value: 0
+            _maxValue: 0
+          Sounds: []
+        AudioClip: {fileID: 8300000, guid: a6de323cc6eb9164c8cff5b1fe7daab9, type: 3}
+        Weight: 1
+        IsPlaying: 0
+        _curentValue: 0
+        _value: 0
+        _maxValue: 0.31251702
+    - ParentDatabaseName: 3
+      SoundName: 6
+      IgnoreListenerPause: 0
+      _soundGroupDataEnum: 0
+      Volume: {x: 0, y: 0}
+      Pitch: {x: 0, y: 0}
+      SpatialBlend: 0
+      Loop: 0
+      Mode: 0
+      ResetSequenceAfterInactiveTime: 0
+      SequenceResetTime: 0
+      IsPlaying: 0
+      LastPlayedAudioData:
+        Parent:
+          ParentDatabaseName: 0
+          SoundName: 0
+          IgnoreListenerPause: 0
+          _soundGroupDataEnum: 0
+          Volume: {x: 0, y: 0}
+          Pitch: {x: 0, y: 0}
+          SpatialBlend: 0
+          Loop: 0
+          Mode: 0
+          ResetSequenceAfterInactiveTime: 0
+          SequenceResetTime: 0
+          IsPlaying: 0
+          LastPlayedAudioData:
+            Parent:
+              ParentDatabaseName: 0
+              SoundName: 0
+              IgnoreListenerPause: 0
+              _soundGroupDataEnum: 0
+              Volume: {x: 0, y: 0}
+              Pitch: {x: 0, y: 0}
+              SpatialBlend: 0
+              Loop: 0
+              Mode: 0
+              ResetSequenceAfterInactiveTime: 0
+              SequenceResetTime: 0
+              IsPlaying: 0
+              LastPlayedAudioData:
+                Parent:
+                  ParentDatabaseName: 0
+                  SoundName: 0
+                  IgnoreListenerPause: 0
+                  _soundGroupDataEnum: 0
+                  Volume: {x: 0, y: 0}
+                  Pitch: {x: 0, y: 0}
+                  SpatialBlend: 0
+                  Loop: 0
+                  Mode: 0
+                  ResetSequenceAfterInactiveTime: 0
+                  SequenceResetTime: 0
+                  IsPlaying: 0
+                  LastPlayedAudioData:
+                    Parent:
+                      ParentDatabaseName: 0
+                      SoundName: 0
+                      IgnoreListenerPause: 0
+                      _soundGroupDataEnum: 0
+                      Volume: {x: 0, y: 0}
+                      Pitch: {x: 0, y: 0}
+                      SpatialBlend: 0
+                      Loop: 0
+                      Mode: 0
+                      ResetSequenceAfterInactiveTime: 0
+                      SequenceResetTime: 0
+                      IsPlaying: 0
+                      LastPlayedAudioData:
+                        Weight: 1
+                        IsPlaying: 0
+                        _curentValue: 0
+                        _value: 0
+                        _maxValue: 0
+                      Sounds: []
+                    AudioClip: {fileID: 0}
+                    Weight: 1
+                    IsPlaying: 0
+                    _curentValue: 0
+                    _value: 0
+                    _maxValue: 0
+                  Sounds: []
+                AudioClip: {fileID: 0}
+                Weight: 1
+                IsPlaying: 0
+                _curentValue: 0
+                _value: 0
+                _maxValue: 0
+              Sounds: []
+            AudioClip: {fileID: 0}
+            Weight: 1
+            IsPlaying: 0
+            _curentValue: 0
+            _value: 0
+            _maxValue: 0
+          Sounds: []
+        AudioClip: {fileID: 8300000, guid: 3283e2706c86cfd42bb13373a1bd8e76, type: 3}
+        Weight: 1
+        IsPlaying: 0
+        _curentValue: 0
+        _value: 0
+        _maxValue: 7
+      Sounds:
+      - Parent:
+          ParentDatabaseName: 0
+          SoundName: 0
+          IgnoreListenerPause: 0
+          _soundGroupDataEnum: 0
+          Volume: {x: 0, y: 0}
+          Pitch: {x: 0, y: 0}
+          SpatialBlend: 0
+          Loop: 0
+          Mode: 0
+          ResetSequenceAfterInactiveTime: 0
+          SequenceResetTime: 0
+          IsPlaying: 0
+          LastPlayedAudioData:
+            Parent:
+              ParentDatabaseName: 0
+              SoundName: 0
+              IgnoreListenerPause: 0
+              _soundGroupDataEnum: 0
+              Volume: {x: 0, y: 0}
+              Pitch: {x: 0, y: 0}
+              SpatialBlend: 0
+              Loop: 0
+              Mode: 0
+              ResetSequenceAfterInactiveTime: 0
+              SequenceResetTime: 0
+              IsPlaying: 0
+              LastPlayedAudioData:
+                Parent:
+                  ParentDatabaseName: 0
+                  SoundName: 0
+                  IgnoreListenerPause: 0
+                  _soundGroupDataEnum: 0
+                  Volume: {x: 0, y: 0}
+                  Pitch: {x: 0, y: 0}
+                  SpatialBlend: 0
+                  Loop: 0
+                  Mode: 0
+                  ResetSequenceAfterInactiveTime: 0
+                  SequenceResetTime: 0
+                  IsPlaying: 0
+                  LastPlayedAudioData:
+                    Parent:
+                      ParentDatabaseName: 0
+                      SoundName: 0
+                      IgnoreListenerPause: 0
+                      _soundGroupDataEnum: 0
+                      Volume: {x: 0, y: 0}
+                      Pitch: {x: 0, y: 0}
+                      SpatialBlend: 0
+                      Loop: 0
+                      Mode: 0
+                      ResetSequenceAfterInactiveTime: 0
+                      SequenceResetTime: 0
+                      IsPlaying: 0
+                      LastPlayedAudioData:
+                        Weight: 1
+                        IsPlaying: 0
+                        _curentValue: 0
+                        _value: 0
+                        _maxValue: 0
+                      Sounds: []
+                    AudioClip: {fileID: 0}
+                    Weight: 1
+                    IsPlaying: 0
+                    _curentValue: 0
+                    _value: 0
+                    _maxValue: 0
+                  Sounds: []
+                AudioClip: {fileID: 0}
+                Weight: 1
+                IsPlaying: 0
+                _curentValue: 0
+                _value: 0
+                _maxValue: 0
+              Sounds: []
+            AudioClip: {fileID: 0}
+            Weight: 1
+            IsPlaying: 0
+            _curentValue: 0
+            _value: 0
+            _maxValue: 0
+          Sounds: []
+        AudioClip: {fileID: 8300000, guid: 3283e2706c86cfd42bb13373a1bd8e76, type: 3}
+        Weight: 1
+        IsPlaying: 0
+        _curentValue: 0
+        _value: 0
+        _maxValue: 7
+  Parent: {fileID: 11400000}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d45fb514dc4102abfef5fba19dfca3, type: 3}
+  m_Name: DeepSoundDataBase
+  m_EditorClassIdentifier: 
+  _dataBases:
+    _keys: 010000000200000003000000
+    _values:
+    - {fileID: -8314448287293343955}
+    - {fileID: 5675663317665407911}
+    - {fileID: -932620378824459972}
+  _name: 3
+--- !u!114 &5675663317665407911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b85cde3401421f93547d6d54aa2a41, type: 3}
+  m_Name: Sounds_SoundDataBase
+  m_EditorClassIdentifier: 
+  _label: <size=30><b><color=#FFA500><i>Sound Data Base</i></color></b></size>
+  Name: 2
+  OutputAudioMixerGroup: {fileID: 0}
+  _dataBase:
+    _keys: 03000000
+    _values:
+    - ParentDatabaseName: 2
+      SoundName: 3
+      IgnoreListenerPause: 0
+      _soundGroupDataEnum: 0
+      Volume: {x: 0, y: 0}
+      Pitch: {x: 0, y: 0}
+      SpatialBlend: 0
+      Loop: 1
+      Mode: 1
+      ResetSequenceAfterInactiveTime: 0
+      SequenceResetTime: 0
+      IsPlaying: 0
+      LastPlayedAudioData:
+        Parent:
+          ParentDatabaseName: 0
+          SoundName: 0
+          IgnoreListenerPause: 0
+          _soundGroupDataEnum: 0
+          Volume: {x: 0, y: 0}
+          Pitch: {x: 0, y: 0}
+          SpatialBlend: 0
+          Loop: 0
+          Mode: 0
+          ResetSequenceAfterInactiveTime: 0
+          SequenceResetTime: 0
+          IsPlaying: 0
+          LastPlayedAudioData:
+            Parent:
+              ParentDatabaseName: 0
+              SoundName: 0
+              IgnoreListenerPause: 0
+              _soundGroupDataEnum: 0
+              Volume: {x: 0, y: 0}
+              Pitch: {x: 0, y: 0}
+              SpatialBlend: 0
+              Loop: 0
+              Mode: 0
+              ResetSequenceAfterInactiveTime: 0
+              SequenceResetTime: 0
+              IsPlaying: 0
+              LastPlayedAudioData:
+                Parent:
+                  ParentDatabaseName: 0
+                  SoundName: 0
+                  IgnoreListenerPause: 0
+                  _soundGroupDataEnum: 0
+                  Volume: {x: 0, y: 0}
+                  Pitch: {x: 0, y: 0}
+                  SpatialBlend: 0
+                  Loop: 0
+                  Mode: 0
+                  ResetSequenceAfterInactiveTime: 0
+                  SequenceResetTime: 0
+                  IsPlaying: 0
+                  LastPlayedAudioData:
+                    Parent:
+                      ParentDatabaseName: 0
+                      SoundName: 0
+                      IgnoreListenerPause: 0
+                      _soundGroupDataEnum: 0
+                      Volume: {x: 0, y: 0}
+                      Pitch: {x: 0, y: 0}
+                      SpatialBlend: 0
+                      Loop: 0
+                      Mode: 0
+                      ResetSequenceAfterInactiveTime: 0
+                      SequenceResetTime: 0
+                      IsPlaying: 0
+                      LastPlayedAudioData:
+                        Weight: 1
+                        IsPlaying: 0
+                        _curentValue: 0
+                        _value: 0
+                        _maxValue: 0
+                      Sounds: []
+                    AudioClip: {fileID: 0}
+                    Weight: 1
+                    IsPlaying: 0
+                    _curentValue: 0
+                    _value: 0
+                    _maxValue: 0
+                  Sounds: []
+                AudioClip: {fileID: 0}
+                Weight: 1
+                IsPlaying: 0
+                _curentValue: 0
+                _value: 0
+                _maxValue: 0
+              Sounds: []
+            AudioClip: {fileID: 0}
+            Weight: 1
+            IsPlaying: 0
+            _curentValue: 0
+            _value: 0
+            _maxValue: 0
+          Sounds: []
+        AudioClip: {fileID: 8300000, guid: 0b974369ceac9714986654ea93a1ef44, type: 3}
+        Weight: 1
+        IsPlaying: 0
+        _curentValue: 0
+        _value: 0
+        _maxValue: 10.6
+      Sounds:
+      - Parent:
+          ParentDatabaseName: 0
+          SoundName: 0
+          IgnoreListenerPause: 0
+          _soundGroupDataEnum: 0
+          Volume: {x: 0, y: 0}
+          Pitch: {x: 0, y: 0}
+          SpatialBlend: 0
+          Loop: 0
+          Mode: 0
+          ResetSequenceAfterInactiveTime: 0
+          SequenceResetTime: 0
+          IsPlaying: 0
+          LastPlayedAudioData:
+            Parent:
+              ParentDatabaseName: 0
+              SoundName: 0
+              IgnoreListenerPause: 0
+              _soundGroupDataEnum: 0
+              Volume: {x: 0, y: 0}
+              Pitch: {x: 0, y: 0}
+              SpatialBlend: 0
+              Loop: 0
+              Mode: 0
+              ResetSequenceAfterInactiveTime: 0
+              SequenceResetTime: 0
+              IsPlaying: 0
+              LastPlayedAudioData:
+                Parent:
+                  ParentDatabaseName: 0
+                  SoundName: 0
+                  IgnoreListenerPause: 0
+                  _soundGroupDataEnum: 0
+                  Volume: {x: 0, y: 0}
+                  Pitch: {x: 0, y: 0}
+                  SpatialBlend: 0
+                  Loop: 0
+                  Mode: 0
+                  ResetSequenceAfterInactiveTime: 0
+                  SequenceResetTime: 0
+                  IsPlaying: 0
+                  LastPlayedAudioData:
+                    Parent:
+                      ParentDatabaseName: 0
+                      SoundName: 0
+                      IgnoreListenerPause: 0
+                      _soundGroupDataEnum: 0
+                      Volume: {x: 0, y: 0}
+                      Pitch: {x: 0, y: 0}
+                      SpatialBlend: 0
+                      Loop: 0
+                      Mode: 0
+                      ResetSequenceAfterInactiveTime: 0
+                      SequenceResetTime: 0
+                      IsPlaying: 0
+                      LastPlayedAudioData:
+                        Weight: 1
+                        IsPlaying: 0
+                        _curentValue: 0
+                        _value: 0
+                        _maxValue: 0
+                      Sounds: []
+                    AudioClip: {fileID: 0}
+                    Weight: 1
+                    IsPlaying: 0
+                    _curentValue: 0
+                    _value: 0
+                    _maxValue: 0
+                  Sounds: []
+                AudioClip: {fileID: 0}
+                Weight: 1
+                IsPlaying: 0
+                _curentValue: 0
+                _value: 0
+                _maxValue: 0
+              Sounds: []
+            AudioClip: {fileID: 0}
+            Weight: 1
+            IsPlaying: 0
+            _curentValue: 0
+            _value: 0
+            _maxValue: 0
+          Sounds: []
+        AudioClip: {fileID: 8300000, guid: 0b974369ceac9714986654ea93a1ef44, type: 3}
+        Weight: 1
+        IsPlaying: 0
+        _curentValue: 0
+        _value: 0
+        _maxValue: 10.6
+  Parent: {fileID: 11400000}

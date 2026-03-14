@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8459024943568459588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace43b02e8b64ff8a6ee05e2e5c9bfc5, type: 3}
+  m_Name: Level_7
+  m_EditorClassIdentifier: 
+  enableState: 0
+  _id: 7
+  _parent: {fileID: 11400000}
+  _moneyPerUpgrade: 28
+  _currentAmount: 18
+--- !u!114 &-8427985119627282571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace43b02e8b64ff8a6ee05e2e5c9bfc5, type: 3}
+  m_Name: Level_8
+  m_EditorClassIdentifier: 
+  enableState: 0
+  _id: 8
+  _parent: {fileID: 11400000}
+  _moneyPerUpgrade: 32
+  _currentAmount: 16
+--- !u!114 &-8002683511663359002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace43b02e8b64ff8a6ee05e2e5c9bfc5, type: 3}
+  m_Name: Level_2
+  m_EditorClassIdentifier: 
+  enableState: 0
+  _id: 2
+  _parent: {fileID: 11400000}
+  _moneyPerUpgrade: 12
+  _currentAmount: 28
+--- !u!114 &-6593325635281052912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace43b02e8b64ff8a6ee05e2e5c9bfc5, type: 3}
+  m_Name: Level_1
+  m_EditorClassIdentifier: 
+  enableState: 0
+  _id: 1
+  _parent: {fileID: 11400000}
+  _moneyPerUpgrade: 10
+  _currentAmount: 30
+--- !u!114 &-1928981919258349800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace43b02e8b64ff8a6ee05e2e5c9bfc5, type: 3}
+  m_Name: Level_5
+  m_EditorClassIdentifier: 
+  enableState: 0
+  _id: 5
+  _parent: {fileID: 11400000}
+  _moneyPerUpgrade: 22
+  _currentAmount: 22
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd3b03e2abe4b81b7ae39e7f0d99d0d, type: 3}
+  m_Name: NukeAbility_UpgradeConfig
+  m_EditorClassIdentifier: 
+  enableState: 0
+  _parent: {fileID: 11400000, guid: 7a1d9e10b11f9ef4484931c5e5f8eac1, type: 2}
+  _upgradeId: NukeUpgrade
+  _upgradeLevels:
+  - {fileID: -6593325635281052912}
+  - {fileID: -8002683511663359002}
+  - {fileID: 1605978113405107693}
+  - {fileID: 3532113614285812238}
+  - {fileID: -1928981919258349800}
+  - {fileID: 6747011904357664325}
+  - {fileID: -8459024943568459588}
+  - {fileID: -8427985119627282571}
+--- !u!114 &1605978113405107693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace43b02e8b64ff8a6ee05e2e5c9bfc5, type: 3}
+  m_Name: Level_3
+  m_EditorClassIdentifier: 
+  enableState: 0
+  _id: 3
+  _parent: {fileID: 11400000}
+  _moneyPerUpgrade: 14
+  _currentAmount: 26
+--- !u!114 &3532113614285812238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace43b02e8b64ff8a6ee05e2e5c9bfc5, type: 3}
+  m_Name: Level_4
+  m_EditorClassIdentifier: 
+  enableState: 0
+  _id: 4
+  _parent: {fileID: 11400000}
+  _moneyPerUpgrade: 18
+  _currentAmount: 24
+--- !u!114 &6747011904357664325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace43b02e8b64ff8a6ee05e2e5c9bfc5, type: 3}
+  m_Name: Level_6
+  m_EditorClassIdentifier: 
+  enableState: 0
+  _id: 6
+  _parent: {fileID: 11400000}
+  _moneyPerUpgrade: 25
+  _currentAmount: 20

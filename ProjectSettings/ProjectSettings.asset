@@ -756,25 +756,25 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   webWasm2023: 0
   scriptingDefineSymbols:
-    Android: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg
+    Android: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;EnvirData_yg;Authorization_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2
     EmbeddedLinux: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN
     GameCoreScarlett: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN
     GameCoreXboxOne: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN
     Kepler: DOTWEEN
-    LinuxHeadlessSimulation: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg
-    Nintendo Switch: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg
-    PS4: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg
-    PS5: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg
+    LinuxHeadlessSimulation: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;EnvirData_yg;Authorization_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2
+    Nintendo Switch: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;EnvirData_yg;Authorization_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2
+    PS4: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;EnvirData_yg;Authorization_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2
+    PS5: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;EnvirData_yg;Authorization_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2
     QNX: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN
     ReservedCFE: DOTWEEN
     Stadia: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER
-    Standalone: NODECANVAS;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;ODIN_VALIDATOR;ODIN_VALIDATOR_3_1;PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg
+    Standalone: NODECANVAS;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;ODIN_VALIDATOR;ODIN_VALIDATOR_3_1;PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;EnvirData_yg;Authorization_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2
     VisionOS: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN
-    WebGL: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg
-    Windows Store Apps: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg
-    XboxOne: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg
-    iPhone: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg
-    tvOS: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg
+    WebGL: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;EnvirData_yg;Authorization_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2
+    Windows Store Apps: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;EnvirData_yg;Authorization_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2
+    XboxOne: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;EnvirData_yg;Authorization_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2
+    iPhone: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;EnvirData_yg;Authorization_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2
+    tvOS: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;EnvirData_yg;Authorization_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

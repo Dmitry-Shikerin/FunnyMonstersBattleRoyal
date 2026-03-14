@@ -1,0 +1,181 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6443727763871793310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd27638a099480b960ae84beadf1641, type: 3}
+  m_Name: MaxUpgradeAchievement_AchievementConfig
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 21300000, guid: 1cced0cf12448e941b06983abb08633c, type: 3}
+  Id: MaxUpgradeAchievement
+  TitleId: MaxUpgradeAchievementTitle
+  DescriptionId: MaxUpgradeAchievementDescription
+  <Parent>k__BackingField: {fileID: 11400000}
+--- !u!114 &-5259214908327514592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd27638a099480b960ae84beadf1641, type: 3}
+  m_Name: FirstHealthBoosterUsageAchievement_AchievementConfig
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 21300000, guid: 77e0a9fd396d38f4ca51ea805814fb96, type: 3}
+  Id: FirstHealthBoosterUsageAchievement
+  TitleId: FirstHealthBoosterTitle
+  DescriptionId: FirstHealthBoosterDescription
+  <Parent>k__BackingField: {fileID: 11400000}
+--- !u!114 &-2636934900728648217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd27638a099480b960ae84beadf1641, type: 3}
+  m_Name: FirstUpgradeAchievement_AchievementConfig
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 21300000, guid: 792981c0fd188134298b3026e1d753f4, type: 3}
+  Id: FirstUpgradeAchievement
+  TitleId: FirstUpgradeTitle
+  DescriptionId: FirstUpgradeDescription
+  <Parent>k__BackingField: {fileID: 11400000}
+--- !u!114 &-2040669159365068795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd27638a099480b960ae84beadf1641, type: 3}
+  m_Name: FirstEnemyKillAchievement_AchievementConfig
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 21300000, guid: 0356273a93872f64094372c0fd751c4e, type: 3}
+  Id: FirstEnemyKillAchievement
+  TitleId: FirstEnemyKillTitle
+  DescriptionId: FirstEnemyKillDescription
+  <Parent>k__BackingField: {fileID: 11400000}
+--- !u!114 &-739643554893237154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd27638a099480b960ae84beadf1641, type: 3}
+  m_Name: ScullsDiggerAchievement_AchievementConfig
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 21300000, guid: a77b58d30300f2c46adc6f28ec0e4109, type: 3}
+  Id: ScullsDiggerAchievement
+  TitleId: ScullsDiggerTitle
+  DescriptionId: ScullsDiggerDescription
+  <Parent>k__BackingField: {fileID: 11400000}
+--- !u!114 &-653176603169122404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd27638a099480b960ae84beadf1641, type: 3}
+  m_Name: FiftyWaveCompletedAchievement_AchievementConfig
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 21300000, guid: ffb702000316eee4bb1402a1bc0f7d86, type: 3}
+  Id: FiftyWaveCompletedAchievement
+  TitleId: FiftyWavesAchievementTitle
+  DescriptionId: FiftyWavesAchievementDescription
+  <Parent>k__BackingField: {fileID: 11400000}
+--- !u!114 &-111300002184026821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd27638a099480b960ae84beadf1641, type: 3}
+  m_Name: CompleteGameWithOneHealthAchievementCommand_AchievementConfig
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 21300000, guid: 5f240b39ed234dd448a42bdcc6e04829, type: 3}
+  Id: CompleteGameWithOneHealthAchievement
+  TitleId: GameCompletedWithOneHealthTitle
+  DescriptionId: GameCompletedWithOneHealthDescription
+  <Parent>k__BackingField: {fileID: 11400000}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eeb7465a1d74c2299d0f9fc5059971f, type: 3}
+  m_Name: AchievementConfigCollector
+  m_EditorClassIdentifier: 
+  <Configs>k__BackingField:
+  - {fileID: -2040669159365068795}
+  - {fileID: -2636934900728648217}
+  - {fileID: 8117248046270597191}
+  - {fileID: -739643554893237154}
+  - {fileID: -6443727763871793310}
+  - {fileID: -653176603169122404}
+  - {fileID: 6231492818377076757}
+  - {fileID: -111300002184026821}
+  - {fileID: -5259214908327514592}
+  _configId: FirstHealthBoosterUsageAchievement
+  _titleId: FirstHealthBoosterTitle
+  _descriptionId: FirstHealthBoosterDescription
+  _sprite: {fileID: 21300000, guid: 77e0a9fd396d38f4ca51ea805814fb96, type: 3}
+--- !u!114 &6231492818377076757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd27638a099480b960ae84beadf1641, type: 3}
+  m_Name: AllAbilitiesUsedAchievementCommand_AchievementConfig
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 21300000, guid: 9278211c247e0a04380a9fb3a05dde8a, type: 3}
+  Id: AllAbilitiesUsedAchievement
+  TitleId: AllAbilitiesUsedTitle
+  DescriptionId: AllAbilitiesUsedDescription
+  <Parent>k__BackingField: {fileID: 11400000}
+--- !u!114 &8117248046270597191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd27638a099480b960ae84beadf1641, type: 3}
+  m_Name: FirstWaveCompletedAchievement_AchievementConfig
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 21300000, guid: 7fabb650ab174ee42b39b420f93c024b, type: 3}
+  Id: FirstWaveCompletedAchievement
+  TitleId: FirstWaveCompletedTitle
+  DescriptionId: FirstWaveCompletedDescription
+  <Parent>k__BackingField: {fileID: 11400000}

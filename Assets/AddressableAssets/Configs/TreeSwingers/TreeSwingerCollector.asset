@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6001361594393993537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea57dfca67264224bf072dd51ab3bf11, type: 3}
+  m_Name: Grass_TreeSwingerConfig
+  m_EditorClassIdentifier: 
+  <SwingSpeedX>k__BackingField: 0.58
+  <SwingSpeedRandomnessX>k__BackingField: 0.168
+  <SwingSpeedY>k__BackingField: 0.52
+  <SwingSpeedRandomnessY>k__BackingField: 0.32
+  <SwingMaxAngleX>k__BackingField: 7.16
+  <SwingMaxAngleRandomnessX>k__BackingField: 1.05
+  <SwingMaxAngleY>k__BackingField: 73
+  <SwingMaxAngleRandomnessY>k__BackingField: 3.95
+  <Direction>k__BackingField: 25.1
+  <DirectionRandomness>k__BackingField: 21.7
+  <EnableYAxisSwinging>k__BackingField: 0
+  Parent: {fileID: 11400000}
+  Id: Grass
+--- !u!114 &-3432343095623893515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea57dfca67264224bf072dd51ab3bf11, type: 3}
+  m_Name: Tree_TreeSwingerConfig
+  m_EditorClassIdentifier: 
+  <SwingSpeedX>k__BackingField: 0.39
+  <SwingSpeedRandomnessX>k__BackingField: 0.14
+  <SwingSpeedY>k__BackingField: 0.36
+  <SwingSpeedRandomnessY>k__BackingField: 0.101
+  <SwingMaxAngleX>k__BackingField: 4.6
+  <SwingMaxAngleRandomnessX>k__BackingField: 1.05
+  <SwingMaxAngleY>k__BackingField: 38
+  <SwingMaxAngleRandomnessY>k__BackingField: 3.95
+  <Direction>k__BackingField: 25.1
+  <DirectionRandomness>k__BackingField: 21.7
+  <EnableYAxisSwinging>k__BackingField: 0
+  Parent: {fileID: 11400000}
+  Id: Tree
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8117468481dd4c909a7a7a45daca38bc, type: 3}
+  m_Name: TreeSwingerCollector
+  m_EditorClassIdentifier: 
+  <Configs>k__BackingField:
+  - {fileID: -6001361594393993537}
+  - {fileID: -3432343095623893515}
+  - {fileID: 5412743168267944296}
+  - {fileID: 996797144644976050}
+  _configId: Flowers
+--- !u!114 &996797144644976050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea57dfca67264224bf072dd51ab3bf11, type: 3}
+  m_Name: Flowers_TreeSwingerConfig
+  m_EditorClassIdentifier: 
+  <SwingSpeedX>k__BackingField: 0.69
+  <SwingSpeedRandomnessX>k__BackingField: 0.292
+  <SwingSpeedY>k__BackingField: 1.08
+  <SwingSpeedRandomnessY>k__BackingField: 0.32
+  <SwingMaxAngleX>k__BackingField: 7.16
+  <SwingMaxAngleRandomnessX>k__BackingField: 1.05
+  <SwingMaxAngleY>k__BackingField: 73
+  <SwingMaxAngleRandomnessY>k__BackingField: 1.74
+  <Direction>k__BackingField: 134.6
+  <DirectionRandomness>k__BackingField: 180
+  <EnableYAxisSwinging>k__BackingField: 0
+  Parent: {fileID: 11400000}
+  Id: Flowers
+--- !u!114 &5412743168267944296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea57dfca67264224bf072dd51ab3bf11, type: 3}
+  m_Name: Bush_TreeSwingerConfig
+  m_EditorClassIdentifier: 
+  <SwingSpeedX>k__BackingField: 0.22
+  <SwingSpeedRandomnessX>k__BackingField: 0.101
+  <SwingSpeedY>k__BackingField: 0.42
+  <SwingSpeedRandomnessY>k__BackingField: 0.23
+  <SwingMaxAngleX>k__BackingField: 7.16
+  <SwingMaxAngleRandomnessX>k__BackingField: 1.05
+  <SwingMaxAngleY>k__BackingField: 73
+  <SwingMaxAngleRandomnessY>k__BackingField: 3.95
+  <Direction>k__BackingField: 25.1
+  <DirectionRandomness>k__BackingField: 21.7
+  <EnableYAxisSwinging>k__BackingField: 0
+  Parent: {fileID: 11400000}
+  Id: Bush

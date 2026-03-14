@@ -1,0 +1,218 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7924958520075783339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e7beb0affb4ecd9f8da08d16140fec, type: 3}
+  m_Name: Ultra_ShadowManagerConfig
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _enable: 0
+  _id: Ultra
+  _parent: {fileID: 11400000}
+  m_MaxActiveShadows: 10
+  m_DefaultMaxShadowDistance: 25
+  m_ReduceInactiveLightRange: 0
+  m_DefaultRangeReductionCoeff: 1
+  m_ReduceInactiveLightIntensity: 0
+  m_DefaultIntensityReductionCoeff: 1
+  m_ReduceShadowResolutionOfLeastPriority: 0
+  m_ReduceResolutionOfLast: 0
+--- !u!114 &-6324394252668920665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e7beb0affb4ecd9f8da08d16140fec, type: 3}
+  m_Name: Medium_ShadowManagerConfig
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _enable: 0
+  _id: Medium
+  _parent: {fileID: 11400000}
+  m_MaxActiveShadows: 10
+  m_DefaultMaxShadowDistance: 25
+  m_ReduceInactiveLightRange: 1
+  m_DefaultRangeReductionCoeff: 1
+  m_ReduceInactiveLightIntensity: 1
+  m_DefaultIntensityReductionCoeff: 1
+  m_ReduceShadowResolutionOfLeastPriority: 0
+  m_ReduceResolutionOfLast: 0
+--- !u!114 &-6088312869098125056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e7beb0affb4ecd9f8da08d16140fec, type: 3}
+  m_Name: VeryLow_ShadowManagerConfig
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _enable: 0
+  _id: VeryLow
+  _parent: {fileID: 11400000}
+  m_MaxActiveShadows: 2
+  m_DefaultMaxShadowDistance: 10
+  m_ReduceInactiveLightRange: 0
+  m_DefaultRangeReductionCoeff: 1
+  m_ReduceInactiveLightIntensity: 0
+  m_DefaultIntensityReductionCoeff: 1
+  m_ReduceShadowResolutionOfLeastPriority: 0
+  m_ReduceResolutionOfLast: 0
+--- !u!114 &-5530358752230285443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e7beb0affb4ecd9f8da08d16140fec, type: 3}
+  m_Name: High_ShadowManagerConfig
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _enable: 0
+  _id: High
+  _parent: {fileID: 11400000}
+  m_MaxActiveShadows: 12
+  m_DefaultMaxShadowDistance: 25
+  m_ReduceInactiveLightRange: 1
+  m_DefaultRangeReductionCoeff: 1
+  m_ReduceInactiveLightIntensity: 1
+  m_DefaultIntensityReductionCoeff: 1
+  m_ReduceShadowResolutionOfLeastPriority: 0
+  m_ReduceResolutionOfLast: 0
+--- !u!114 &-3826528702527382884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e7beb0affb4ecd9f8da08d16140fec, type: 3}
+  m_Name: Low_ShadowManagerConfig
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _enable: 0
+  _id: Low
+  _parent: {fileID: 11400000}
+  m_MaxActiveShadows: 5
+  m_DefaultMaxShadowDistance: 15
+  m_ReduceInactiveLightRange: 0
+  m_DefaultRangeReductionCoeff: 1
+  m_ReduceInactiveLightIntensity: 0
+  m_DefaultIntensityReductionCoeff: 1
+  m_ReduceShadowResolutionOfLeastPriority: 0
+  m_ReduceResolutionOfLast: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c2560b3d1d5417c86ba100c2f632493, type: 3}
+  m_Name: ShadowManagerConfigCollector
+  m_EditorClassIdentifier: 
+  _enable: 0
+  _id: 
+  _configs:
+  - {fileID: -6088312869098125056}
+  - {fileID: -3826528702527382884}
+  - {fileID: -6324394252668920665}
+  - {fileID: -5530358752230285443}
+  - {fileID: 3673947136849251255}
+  - {fileID: -7924958520075783339}
+  _addedConfigId: 
+  _removedConfigId: 
+  <CurrentConfig>k__BackingField: {fileID: 0}
+--- !u!114 &3673947136849251255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e7beb0affb4ecd9f8da08d16140fec, type: 3}
+  m_Name: VeryHigh_ShadowManagerConfig
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _enable: 0
+  _id: VeryHigh
+  _parent: {fileID: 11400000}
+  m_MaxActiveShadows: 10
+  m_DefaultMaxShadowDistance: 25
+  m_ReduceInactiveLightRange: 0
+  m_DefaultRangeReductionCoeff: 1
+  m_ReduceInactiveLightIntensity: 0
+  m_DefaultIntensityReductionCoeff: 1
+  m_ReduceShadowResolutionOfLeastPriority: 0
+  m_ReduceResolutionOfLast: 0

@@ -1,0 +1,2809 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9048194127727216226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: FirstUpgradeTitle_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: FirstUpgradeTitle
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u0415\u0420\u0412\u041E\u0415 \u0423\u041B\u0423\u0427\u0428\u0415\u041D\u0418\u0415!"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: FIRST UPGRADE!
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\u0130LK Y\xDCKSELTME!"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-8977390905970973244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Level3_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Level3
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C3"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Level3
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Seviye3
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-8837250491390849142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Warning_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Warning
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0415\u0441\u043B\u0438 \u0432\u044B \u043D\u0430\u0447\u043D\u0451\u0442\u0435
+    \u043D\u043E\u0432\u0443\u044E \u0438\u0433\u0440\u0443, \u0442\u043E \u043F\u0440\u043E\u0448\u043B\u044B\u0435
+    \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u044F \u0441\u0431\u0440\u043E\u0441\u044F\u0442\u0441\u044F.
+    \u0412\u044B \u0443\u0432\u0435\u0440\u0435\u043D\u044B, \u0447\u0442\u043E \u0432\u044B
+    \u0445\u043E\u0442\u0438\u0442\u0435 \u043D\u0430\u0447\u0430\u0442\u044C \u043D\u043E\u0432\u0443\u044E
+    \u0438\u0433\u0440\u0443?"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: If you start a new game, the previous saves will be reset.
+    Are you sure you want to start a new game?
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Yeni bir oyuna baslarsan\u0131z, ge\xE7mis tasarruflar
+    s\u0131f\u0131rlan\u0131r. Yeni bir oyuna baslamak istedi\u011Finizden emin misiniz?"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-8714490712518705117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: FiftyWavesAchievementDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: FiftyWavesAchievementDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0414\u043E\u0439\u0434\u0438\u0442\u0435 \u0434\u043E
+    50 \u0432\u043E\u043B\u043D\u044B."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Reach 50th wave.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "50 dalgaya ula\u015F\u0131n."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-8106710555367711880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: ShowAd_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: ShowAd
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0420\u0435\u043A\u043B\u0430\u043C\u0430 \u043D\u0430\u0447\u043D\u0451\u0442\u0441\u044F
+    \u0447\u0435\u0440\u0435\u0437"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Advertising will start after
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Reklamlar \u015Fu yolla ba\u015Flayacak"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-8016398887129667329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: BackToGame_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: BackToGame
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F
+    \u043A \u0438\u0433\u0440\u0435"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Back to game
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Oyuna geri d\xF6n"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-7799275696723254838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: SawLauncherAbilityUpgrader_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: SawLauncherAbilityUpgrader
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+    \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0446\u0435\u0440\u043A\u0443\u043B\u044F\u0440\u043D\u044B\u0445
+    \u043F\u0438\u043B"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Increases the number of circular saws
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Daire testere say\u0131s\u0131n\u0131 art\u0131r\u0131r"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-7710532514247107899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: GameOver_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: GameOver
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041A\u041E\u041D\u0415\u0426 \u0418\u0413\u0420\u042B"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: GAME OVER
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\rOYUN B\u0130TT\u0130"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-7571267352467008962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: ReveiceReward_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: ReveiceReward
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u041E\u041B\u0423\u0427\u0418\u0422\u042C\n\u041D\u0410\u0413\u0420\u0410\u0414\u0423"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: 'RECEIVE
+
+    REWARD'
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "ALMAK\n\xD6D\xDCL\xDC"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-7489078748937483317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Level2_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Level2
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C2"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Level2
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Seviye2
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-7485049250364022501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Title_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Title
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0417\u041E\u041C\u0411\u0418 \u0410\u041F\u041E\u041A\u0410\u041B\u0418\u041F\u0421\u0418\u0421:\n\u0417\u0410\u0429\u0418\u0422\u0410
+    \u0423\u0411\u0415\u0416\u0418\u0429\u0410"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: 'ZOMBIE APOCALYPSE:
+
+    SHELTER PROTECTION'
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "ZOMB\u0130 KIYAMET\u0130:\nBARINAK SAVUNMASI"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-7053270886841528775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: MaxUpgradeAchievementTitle_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: MaxUpgradeAchievementTitle
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0410\u0411\u0421\u041E\u041B\u042E\u0422\u041D\u0410\u042F
+    \u041C\u041E\u0429\u042C!"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: ABSOLUTE POWER!
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "MUTLAK G\xDC\xC7!"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-6638702788014974585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Gameplay_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Gameplay
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0418\u0433\u0440\u0430"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Gameplay
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\rOynan\u0131s"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-6435351135959369604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Autosaving_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Autosaving
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0410\u0432\u0442\u043E\u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435..."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Autosaving...
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Otomatik kaydetme...
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-6368817302606658685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Settings_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Settings
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041D\u0410\u0421\u0422\u0420\u041E\u0419\u041A\u0418"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: SETTINGS
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: AYARLAR
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-6256734255822034777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Tutorial_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Tutorial
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041E\u0431\u0443\u0447\u0435\u043D\u0438\u0435"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Tutorial
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\xD6\u011Fretici"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-6245651734904918740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: GameCompletedWithOneHealthDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: GameCompletedWithOneHealthDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u0435
+    \u0438\u0433\u0440\u0443 \u0441 \u043E\u0434\u043D\u043E\u0439 \u0436\u0438\u0437\u043D\u044C\u044E."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Complete game with one health.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Bir sa\u011Fl\u0131kla oyunu tamamlay\u0131n."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-5973755270771653610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Audio_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Audio
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0410\u0443\u0434\u0438\u043E"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Audio
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Ses
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-5829269529844609934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Level1_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Level1
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C1"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Level1
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Seviye1
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-5748417609102489757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: KillEnemyCounterTutorialDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: KillEnemyCounterTutorialDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u042D\u0442\u043E \u0448\u043A\u0430\u043B\u0430, \u043A\u043E\u0442\u043E\u0440\u0430\u044F
+    \u043F\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0435\u0442, \u0441\u043A\u043E\u043B\u044C\u043A\u043E
+    \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E \u0443\u0431\u0438\u0442\u044C
+    \u0437\u043E\u043C\u0431\u0438 \u0438 \u0441\u043A\u043E\u043B\u044C\u043A\u043E
+    \u0432\u044B \u0443\u0436\u0435 \u0443\u0431\u0438\u043B\u0438. \u0427\u0435\u0440\u0435\u043F\u0430
+    \u043D\u0430 \u044D\u0442\u043E\u0439 \u0448\u043A\u0430\u043B\u0435 \u043F\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u044E\u0442
+    \"\u0432\u043E\u043B\u043D\u0443\". \u0412 \u043A\u0430\u0436\u0434\u043E\u0439
+    \"\u0432\u043E\u043B\u043D\u0435\" \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0451\u043D\u043D\u043E\u0435
+    \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0437\u043E\u043C\u0431\u0438.
+    \u0427\u0435\u043C \u0432\u044B\u0448\u0435 \u0432\u0430\u0448 \u0443\u0440\u043E\u0432\u0435\u043D\u044C,
+    \u0442\u0435\u043C \u0431\u043E\u043B\u044C\u0448\u0435 \u0437\u043E\u043C\u0431\u0438
+    \u0432\u0430\u043C \u043D\u0443\u0436\u043D\u043E \u0443\u0431\u0438\u0442\u044C."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: This is a scale that shows how many zombies you need
+    to kill and how many you have already killed. The skulls on this scale show a
+    "wave". There are a certain number of zombies in each "wave". The higher your
+    level, the more zombies you need to kill.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Bu, zombilerin ne kadar \xF6ld\xFCr\xFClmesi gerekti\u011Fini
+    ve ne kadar\u0131n\u0131 \xF6ld\xFCrd\xFC\u011F\xFCn\xFCz\xFC g\xF6steren bir
+    \xF6l\xE7ektir. Bu \xF6l\xE7ekteki kafataslar\u0131 bir \"dalga\" g\xF6steriyor.
+    Her \"dalgada\" belirli say\u0131da zombi vard\u0131r. Seviyeniz ne kadar y\xFCksek
+    olursa, o kadar \xE7ok zombiyi \xF6ld\xFCrmeniz gerekir."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-5748358494766720214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: WavePopUp_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: WavePopUp
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: 
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: 
+  <EnglishSprite>k__BackingField: {fileID: 21300000, guid: d96f8a17b37581a4a99766857f86bf74, type: 3}
+  _editTurkish: 0
+  <Turkish>k__BackingField: 
+  <TurkishSprite>k__BackingField: {fileID: 21300000, guid: 1aefe23726069fc479b347921fd45127, type: 3}
+--- !u!114 &-5718483366672282658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: MainMenu_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: MainMenu
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0413\u041B\u0410\u0412\u041D\u041E\u0415 \u041C\u0415\u041D\u042E"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: MAIN MENU
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\rANA MEN\xDC"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-5658780043097037236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Apply_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Apply
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u0440\u0438\u043C\u0435\u043D\u0438\u0442\u044C"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Apply
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Uygulamak
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-5578634930156736870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Achievements_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Achievements
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0414\u041E\u0421\u0422\u0418\u0416\u0415\u041D\u0418\u042F"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: ACHIEVEMENTS
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "BA\u015EARILAR"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-4956536571026282839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: LevelUp_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: LevelUp
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C \u043F\u043E\u0432\u044B\u0448\u0435\u043D"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Level up
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Seviye atla
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-4243362043036841627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Loading_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Loading
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Loading
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Y\xFCkleniyor"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-4169823259303798984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Pause_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Pause
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u0410\u0423\u0417\u0410"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: PAUSE
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\rDURAKLAT"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-3985417413785434233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Graphic_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Graphic
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0413\u0440\u0430\u0444\u0438\u043A\u0430"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Graphic
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Grafik
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-3465262421581960423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: SettingsTutorialDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: SettingsTutorialDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0412 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0430\u0445
+    \u0432\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043E\u0442\u0440\u0435\u0433\u0443\u043B\u0438\u0440\u043E\u0432\u0430\u0442\u044C
+    \u0433\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C \u043C\u0443\u0437\u044B\u043A\u0438
+    \u0438 \u0437\u0432\u0443\u043A\u043E\u0432."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: In the settings, you can adjust the volume of music and
+    sounds.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Ayarlardan m\xFCzi\u011Fin ve seslerin sesini ayarlayabilirsiniz."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-3166633869003568125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Level4_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Level4
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C4"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Level4
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Seviye4
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-3089776812635371540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: BunkerTutorial_Description_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: BunkerTutorial_Description
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u042D\u0442\u043E \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E
+    \u0436\u0438\u0437\u043D\u0435\u0439 \u0432\u0430\u0448\u0435\u0433\u043E \u0437\u0430\u043C\u043A\u0430.
+    \u0415\u0441\u043B\u0438 \u0432\u0440\u0430\u0433 \u0434\u043E\u0431\u0438\u0440\u0430\u0435\u0442\u0441\u044F
+    \u0434\u043E \u043D\u0435\u0433\u043E, \u0442\u043E \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u0435
+    \u0443\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442\u0441\u044F \u043D\u0430
+    \u043E\u0434\u043D\u0443 \u0436\u0438\u0437\u043D\u044C."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: This is the number of lives of your castle. If an enemy
+    gets to him, his health is reduced by one life.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Bu, kalenizin can say\u0131s\u0131d\u0131r.  D\xFC\u015Fman
+    ona ula\u015F\u0131rsa, sa\u011Fl\u0131k bir can azal\u0131r."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-3045387330775180738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: MaxUpgradeAchievementDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: MaxUpgradeAchievementDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u0435 \u0432\u0430\u0448\u0438
+    \u043D\u0430\u0432\u044B\u043A\u0438 \u0434\u043E \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0433\u043E
+    \u0443\u0440\u043E\u0432\u043D\u044F."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Upgrade your abilities to max level.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Becerilerinizi maksimum seviyeye y\xFCkseltin."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-3037633570474741760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: AllAbilitiesUsedDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: AllAbilitiesUsedDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439\u0442\u0435
+    \u0432\u0441\u0435 \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u0438."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Use all abilities.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "T\xFCm yeteneklerini kullan."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-3000961370085052042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: FirstHealthBoosterTitle_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: FirstHealthBoosterTitle
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u0415\u0420\u0412\u042B\u0419 \u0411\u0423\u0421\u0422!"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: FIRST BOOST!
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\u0130LK DESTEK!"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-2896424986738387369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: GreetingTutorialTitle_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: GreetingTutorialTitle
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0414\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C
+    \u0432 \u0438\u0433\u0440\u0443!"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Welcome to game!
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Oyuna ho\u015F geldiniz!"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-2852104507718271488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Score_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Score
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041E\u0427\u041A\u0418"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: SCORE
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: PUAN
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-2739287444455331825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Music_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Music
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041C\u0443\u0437\u044B\u043A\u0430"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Music
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "M\xFCzik"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-2630032618137094329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Quit_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Quit
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0412\u044B \u0445\u043E\u0442\u0438\u0442\u0435 \u0432\u044B\u0439\u0442\u0438?"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Do you want to quit?
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "D\u0131\u015Far\u0131 \xE7\u0131kmak ister misiniz?"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-2340926341720809940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: CharacterHealthUpgrader_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: CharacterHealthUpgrader
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\u0435
+    \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0430 \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F
+    \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Increasing the amount of health of the character
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Karakterin sa\u011Fl\u0131\u011F\u0131n\u0131 art\u0131rmak"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-2153293106902727409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: On_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: On
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0412\u041A\u041B"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: ON
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "A\xC7IK"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-2145494215223797878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: SawLauncherUpgrader_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: SawLauncherUpgrader
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+    \u0443\u0440\u043E\u043D \u043E\u0442 \u0446\u0435\u0440\u043A\u0443\u043B\u044F\u0440\u043D\u044B\u0445
+    \u043F\u0438\u043B"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Increases the damage from circular saws
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Daire testerelerden kaynaklanan hasar\u0131 art\u0131r\u0131r"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-1622143211485411810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: FirstWaveCompletedDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: FirstWaveCompletedDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u0441\u043F\u0435\u0448\u043D\u043E \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435
+    \u043F\u0435\u0440\u0432\u0443\u044E \u0432\u043E\u043B\u043D\u0443."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: First wave successfully completed.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\u0130lk dalga ba\u015Far\u0131yla ge\xE7ti."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-1509137246326993814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: AbilitiesTutorial_Description_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: AbilitiesTutorial_Description
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u042D\u0442\u043E \u0432\u0430\u0448\u0438 \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u0438
+    . \u041F\u0435\u0440\u0432\u0430\u044F - \u0441\u0431\u0440\u0430\u0441\u044B\u0432\u0430\u0435\u0442
+    \u0431\u043E\u043C\u0431\u0443 \u043D\u0430 \u0432\u0440\u0430\u0433\u043E\u0432.
+    \u0412\u0442\u043E\u0440\u0430\u044F - \u0432\u043E\u0441\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442
+    \u0432\u0441\u0435\u0445 \u0432\u0430\u0448\u0438\u0445 \u0431\u043E\u0439\u0446\u043E\u0432.\u0422\u0440\u0435\u0442\u044C\u044F
+    - \u0430\u043A\u0442\u0438\u0432\u0438\u0440\u0443\u0435\u0442 \u043E\u0433\u043D\u0435\u043C\u0435\u0442."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: These are your abilities. The first is to drop a bomb
+    on the enemies. The second one restores all your fighters.The third one activates
+    the flamethrower.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Bunlar sizin yetenekleriniz . Birincisi, d\xFC\u015Fmanlara
+    bomba atmakt\u0131r. \u0130kincisi - t\xFCm sava\u015F\xE7\u0131lar\u0131n\u0131z\u0131
+    geri y\xFCkler.\xDC\xE7\xFCnc\xFCs\xFC - alev makinesini etkinle\u015Ftirir."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-1169646632141698292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: UpgradeTopAbilitiesDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: UpgradeTopAbilitiesDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u042D\u0442\u043E \u043A\u043D\u043E\u043F\u043A\u0438
+    \u043F\u0440\u043E\u043A\u0430\u0447\u043A\u0438 \u0432\u0430\u0448\u0438\u0445
+    \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u0435\u0439. \u041A\u0430\u0436\u0434\u0430\u044F
+    \u043F\u0440\u043E\u043A\u0430\u0447\u043A\u0430 \u043E\u0442\u043D\u0438\u043C\u0430\u0435\u0442
+    \u0443 \u0432\u0430\u0441 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E
+    \u043E\u0447\u043A\u043E\u0432. \u041C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439
+    \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u043F\u0440\u043E\u043A\u0430\u0447\u043A\u0438
+    - \u0434\u0435\u0441\u044F\u0442\u044B\u0439."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: These are the buttons for leveling up your abilities.
+    Each upgrade takes away a number of points from you. The maximum leveling level
+    is the tenth.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Bunlar yeteneklerinizi seviyelendirme d\xFC\u011Fmeleridir.
+    Her pompalama sizden puan say\u0131s\u0131n\u0131 al\u0131r. Maksimum pompalama
+    seviyesi onuncu seviyededir."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-920647093419064292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: BearMassAttackUpgrader_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: BearMassAttackUpgrader
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u0435
+    \u043C\u0430\u0441\u0441\u043E\u0432\u043E\u0439 \u0430\u0442\u0430\u043A\u0438
+    \u043C\u0435\u0434\u0432\u0435\u0434\u044F"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Improving the bear's mass attack
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Toplu ay\u0131 sald\u0131r\u0131s\u0131n\u0131n iyile\u015Ftirilmesi"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-906205523627026144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: RewardedAd_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: RewardedAd
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0438\u0442\u0435
+    \u0432\u0438\u0434\u0435\u043E."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Watch the video.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Videoyu izleyin.
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-424725364809974512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Privacy Policy_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Privacy Policy
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u041E\u041B\u0418\u0422\u0418\u041A\u0410 \u041A\u041E\u041D\u0424\u0418\u0414\u0415\u041D\u0426\u0418\u0410\u041B\u042C\u041D\u041E\u0421\u0422\u0418"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: PRIVACY POLICY
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Gizlilik politikas\u0131"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-275142669951691233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: GreetingTutorialDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: GreetingTutorialDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u043E\u0441\u043A\u043E\u043B\u044C\u043A\u0443
+    \u0432\u044B \u0432\u043F\u0435\u0440\u0432\u044B\u0435 \u043F\u0440\u043E\u0445\u043E\u0434\u0438\u0442\u0435
+    \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u0435, \u043B\u0438\u0431\u043E \u043D\u0435
+    \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043B\u0438 \u0435\u0433\u043E \u0432
+    \u043F\u0440\u0435\u0434\u044B\u0434\u0443\u0449\u0438\u0439 \u0440\u0430\u0437,
+    \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0435\u0433\u043E \u0434\u043E
+    \u043A\u043E\u043D\u0446\u0430, \u0447\u0442\u043E\u0431\u044B \u043E\u043D\u043E
+    \u0443 \u0432\u0430\u0441 \u0431\u043E\u043B\u044C\u0448\u0435 \u043D\u0435 \u043F\u043E\u044F\u0432\u043B\u044F\u043B\u043E\u0441\u044C."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Since this is your first time taking the training, or
+    you did not complete it the previous time, go through it to the end so that you
+    no longer have it.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "E\u011Fitimi ilk kez ald\u0131\u011F\u0131n\u0131z veya
+    bir \xF6nceki sefer tamamlamad\u0131\u011F\u0131n\u0131z i\xE7in, bir daha size
+    gelmemesi i\xE7in sonuna kadar tamamlay\u0131n."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &-44179875279934328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: HealthBars_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: HealthBars
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0428\u043A\u0430\u043B\u044B \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Health Bars
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Sa\u011Fl\u0131k Barlar\u0131"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb287d07663487882911fedc21d0a58, type: 3}
+  m_Name: LocalizationDataBase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationDataBase</i></color></b></size>
+  _phrases:
+  - {fileID: 8224070170877804161}
+  - {fileID: 1246574901095727957}
+  - {fileID: -5658780043097037236}
+  - {fileID: -5973755270771653610}
+  - {fileID: -6435351135959369604}
+  - {fileID: 7090385843299365696}
+  - {fileID: -8016398887129667329}
+  - {fileID: 3148240805187373749}
+  - {fileID: -920647093419064292}
+  - {fileID: -2340926341720809940}
+  - {fileID: 1122561553406115891}
+  - {fileID: 3073514162943602889}
+  - {fileID: 5846583519601730132}
+  - {fileID: -7710532514247107899}
+  - {fileID: -6638702788014974585}
+  - {fileID: -3985417413785434233}
+  - {fileID: -275142669951691233}
+  - {fileID: -2896424986738387369}
+  - {fileID: -44179875279934328}
+  - {fileID: 5529956266888560464}
+  - {fileID: -5748417609102489757}
+  - {fileID: 2062490514707734419}
+  - {fileID: -5829269529844609934}
+  - {fileID: -7489078748937483317}
+  - {fileID: -8977390905970973244}
+  - {fileID: -3166633869003568125}
+  - {fileID: 3608724168722817644}
+  - {fileID: -4956536571026282839}
+  - {fileID: 6835082364301547020}
+  - {fileID: -4243362043036841627}
+  - {fileID: -5718483366672282658}
+  - {fileID: 3361585177844649299}
+  - {fileID: -2739287444455331825}
+  - {fileID: 2506591742304223981}
+  - {fileID: 5918407013494742060}
+  - {fileID: 8727284431849006686}
+  - {fileID: 2245398681066610470}
+  - {fileID: 6610014664543065953}
+  - {fileID: -2153293106902727409}
+  - {fileID: 7171604089684731652}
+  - {fileID: -4169823259303798984}
+  - {fileID: 3561057331734364861}
+  - {fileID: 562711224492482245}
+  - {fileID: 6072498139290405345}
+  - {fileID: -906205523627026144}
+  - {fileID: 1406614620130659177}
+  - {fileID: -7799275696723254838}
+  - {fileID: -2145494215223797878}
+  - {fileID: -2852104507718271488}
+  - {fileID: 7449828143545975863}
+  - {fileID: -6368817302606658685}
+  - {fileID: -3465262421581960423}
+  - {fileID: -8106710555367711880}
+  - {fileID: 2479459449794573606}
+  - {fileID: -6256734255822034777}
+  - {fileID: 6227071353628013496}
+  - {fileID: -1169646632141698292}
+  - {fileID: 4826722777252017251}
+  - {fileID: -8837250491390849142}
+  - {fileID: 783856341597308656}
+  - {fileID: -2630032618137094329}
+  - {fileID: -7571267352467008962}
+  - {fileID: -5578634930156736870}
+  - {fileID: 5619570895773535235}
+  - {fileID: 6466202604613630519}
+  - {fileID: 526446998994294440}
+  - {fileID: 6950433725313819436}
+  - {fileID: -9048194127727216226}
+  - {fileID: 1856019762363947377}
+  - {fileID: -3000961370085052042}
+  - {fileID: 677502031337852352}
+  - {fileID: 1726259522283929421}
+  - {fileID: -1622143211485411810}
+  - {fileID: 859398636186213785}
+  - {fileID: 7968120111115877996}
+  - {fileID: -7053270886841528775}
+  - {fileID: -3045387330775180738}
+  - {fileID: 6521264734291905314}
+  - {fileID: -8714490712518705117}
+  - {fileID: 1035089316193388343}
+  - {fileID: -3037633570474741760}
+  - {fileID: 3338106259852463986}
+  - {fileID: -6245651734904918740}
+  - {fileID: -7485049250364022501}
+  - {fileID: 5969787248905984405}
+  - {fileID: -3089776812635371540}
+  - {fileID: 4153720819052683178}
+  - {fileID: -1509137246326993814}
+  - {fileID: 3956707870985481566}
+  - {fileID: -5748358494766720214}
+  - {fileID: 2661683150511159699}
+  - {fileID: -424725364809974512}
+  _scopes: []
+  <Language>k__BackingField: 0
+  enableStateTextId: 1
+  _textId: Privacy Policy
+  enableStateRussian: 1
+  _russian: "\u041F\u043E\u043B\u0438\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438"
+  enableStateEnglish: 1
+  _english: Privacy Policy
+  enableStateTurkish: 1
+  _turkish: "Gizlilik politikas\u0131"
+--- !u!114 &526446998994294440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: FirstEnemyKillTitle_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: FirstEnemyKillTitle
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u0415\u0420\u0412\u041E\u0415 \u0423\u0411\u0418\u0419\u0421\u0422\u0412\u041E!"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: FIRST KILL!
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\u0130LK C\u0130NAYET!"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &562711224492482245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Rank_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Rank
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0420\u0430\u043D\u0433"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Rank
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "R\xFCtbe"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &677502031337852352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: FirstHealthBoosterDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: FirstHealthBoosterDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u0440\u0438\u043C\u0435\u043D\u0438\u0442\u0435
+    \u043F\u0435\u0440\u0432\u043E\u0435 \u043F\u043E\u0432\u044B\u0448\u0435\u043D\u0438\u0435
+    \u0443\u0440\u043E\u0432\u043D\u044F \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: First health boost was applied.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\u0130lk sa\u011Fl\u0131k deste\u011Fi uyguland\u0131."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &783856341597308656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Yes_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Yes
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0414\u0410"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: YES
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: EVET
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &859398636186213785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: ScullsDiggerTitle_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: ScullsDiggerTitle
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0417\u041E\u041B\u041E\u0422\u0410\u042F \u0416\u0418\u041B\u0410!"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: SCULLS DIGGER!
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: SCULLS KAZICI!
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &1035089316193388343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: AllAbilitiesUsedTitle_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: AllAbilitiesUsedTitle
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041D\u0415\u0423\u0414\u0415\u0420\u0416\u0418\u041C\u042B\u0419!"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: UNSTOPPABLE!
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: DURDURULAMAZ!
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &1122561553406115891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Continue_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Continue
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Continue
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Devam et
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &1246574901095727957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Anonymous_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Anonymous
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0410\u043D\u043E\u043D\u0438\u043C"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Anonymous
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Anonim
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &1406614620130659177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: SaveTutorialDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: SaveTutorialDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0412 \u0433\u043B\u0430\u0432\u043D\u043E\u043C \u043C\u0435\u043D\u044E
+    \u0432\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u0432\u044B\u0431\u0440\u0430\u0442\u044C
+    \u043D\u043E\u0432\u0443\u044E \u0438\u0433\u0440\u0443 \u0438\u043B\u0438 \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C
+    \u0443\u0436\u0435 \u0438\u043C\u0435\u044E\u0449\u0443\u044E\u0441\u044F. \u041D\u043E\u0432\u0443\u044E
+    \u0438\u0433\u0440\u0443 \u0432\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043D\u0430\u0447\u0430\u0442\u044C
+    \u0432 \u043B\u044E\u0431\u043E\u0439 \u043E\u0442\u043A\u0440\u044B\u0442\u043E\u0439
+    \u043B\u043E\u043A\u0430\u0446\u0438\u0438."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: In the main menu, you can select a new game or download
+    an existing one. You can start a new game in any open location.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Ana men\xFCden yeni bir oyun se\xE7ebilir veya mevcut
+    bir oyunu indirebilirsiniz. Herhangi bir a\xE7\u0131k yerde yeni bir oyuna ba\u015Flayabilirsiniz."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &1726259522283929421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: FirstWaveCompletedTitle_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: FirstWaveCompletedTitle
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u0415\u0420\u0412\u0410\u042F \u0412\u041E\u041B\u041D\u0410!"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: FIRST WAVE!
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\u0130LK DALGA!"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &1856019762363947377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: FirstUpgradeDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: FirstUpgradeDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u0440\u0438\u043C\u0435\u043D\u0438\u0442\u0435
+    \u043F\u0435\u0440\u0432\u043E\u0435 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u0435."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: You have applied the first improvement.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\u0130lk iyile\u015Ftirmeyi uygulad\u0131n\u0131z."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &2062490514707734419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Leaderboard_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Leaderboard
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0422\u0410\u0411\u041B\u0418\u0426\u0410 \u041B\u0418\u0414\u0415\u0420\u041E\u0412"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: LEADERBOARD
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "L\u0130DERLER SIRALAMASI"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &2245398681066610470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: No_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: No
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041D\u0415\u0422"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: NO
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: HAYIR
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &2479459449794573606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Sounds_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Sounds
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0417\u0432\u0443\u043A\u0438"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Sounds
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Sesler
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &2506591742304223981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Name_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Name
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0418\u043C\u044F"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Name
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\u0130sim"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &2661683150511159699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: WavePopUpTutorial_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: WavePopUpTutorial
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u043E\u0441\u043B\u0435 \u0442\u043E\u0433\u043E,
+    \u043A\u0430\u043A \u0432\u044B \u0443\u0431\u044A\u0435\u0442\u0435 \u0432\u0441\u0435\u0445
+    \u0432\u0440\u0430\u0433\u043E\u0432 \u0432 \u0432\u043E\u043B\u043D\u0435, \u0431\u0443\u0434\u0435\u0442
+    \u043F\u043E\u043A\u0430\u0437\u0430\u043D\u043E \u0432\u0441\u043F\u043B\u044B\u0432\u0430\u044E\u0449\u0435\u0435
+    \u043E\u043A\u043D\u043E \u043E \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u0438
+    \u0432\u043E\u043B\u043D\u044B."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: After you kill all the enemies in the wave, a pop-up
+    window will be shown about the completion of the wave.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Dalgadaki t\xFCm d\xFC\u015Fmanlar\u0131 \xF6ld\xFCrd\xFCkten
+    sonra, dalgan\u0131n sona erdi\u011Fini g\xF6steren bir a\xE7\u0131l\u0131r pencere
+    g\xF6sterilecektir."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &3073514162943602889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: EnemySpawnTutorialDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: EnemySpawnTutorialDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u042D\u0442\u0430 \u0448\u043A\u0430\u043B\u0430 \u043F\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0435\u0442
+    \u0438\u043D\u0434\u0435\u043A\u0441 \u0442\u0435\u043A\u0443\u0449\u0435\u0439
+    \u0432\u043E\u043B\u043D\u044B \u0432\u0440\u0430\u0433\u043E\u0432 \u0438 \u0441\u043A\u043E\u043B\u044C\u043A\u043E
+    \u043E\u0441\u0442\u0430\u043B\u043E\u0441\u044C \u0443\u0431\u0438\u0442\u044C
+    \u0434\u043E \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0439."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: This scale shows the index of the current wave of enemies
+    and how many are left to kill before the next one.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Bu \xF6l\xE7ek, mevcut d\xFC\u015Fman dalgas\u0131n\u0131n
+    endeksini ve bir sonrakine kadar ka\xE7 tane \xF6ld\xFCrmeniz gerekti\u011Fini
+    g\xF6sterir."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &3148240805187373749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: BearAttackUpgrader_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: BearAttackUpgrader
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u0435
+    \u0430\u0442\u0430\u043A\u0438 \u043C\u0435\u0434\u0432\u0435\u0434\u044F"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Improved bear attack
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Ay\u0131 sald\u0131r\u0131s\u0131n\u0131n iyile\u015Ftirilmesi"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &3338106259852463986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: GameCompletedWithOneHealthTitle_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: GameCompletedWithOneHealthTitle
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041D\u0410 \u0413\u0420\u0410\u041D\u0418!"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: ON THE EDGE!
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: SINIRDA!
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &3361585177844649299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: MiniGunAttackUpgrader_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: MiniGunAttackUpgrader
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\u0435
+    \u0430\u0442\u0430\u043A\u0438 \u043F\u0443\u043B\u0435\u043C\u0435\u0442\u0430"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Minigun Attack Increase
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Minigun sald\u0131r\u0131s\u0131n\u0131 art\u0131rmak"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &3561057331734364861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Previous_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Previous
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041D\u0430\u0437\u0430\u0434"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Previous
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\xD6nceki"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &3608724168722817644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: LevelCompleted_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: LevelCompleted
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u0420\u041E\u0412\u0415\u041D\u042C \u0417\u0410\u0412\u0415\u0420\u0428\u0415\u041D!"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: LEVEL COMPLETED!
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "SEV\u0130YE TAMAMLANDI!"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &3956707870985481566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Saving_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Saving
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0421\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Saving
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Kaydetme
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &4153720819052683178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: HealthBooster_Description_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: HealthBooster_Description
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u042D\u0442\u043E \u043A\u043D\u043E\u043F\u043A\u0430
+    \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u044F \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0445
+    \u0436\u0438\u0437\u043D\u0435\u0439 \u0432\u0430\u0448\u0435\u043C\u0443 \u0437\u0430\u043C\u043A\u0443.
+    \u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435
+    \u0436\u0438\u0437\u043D\u0438 \u043C\u043E\u0436\u043D\u043E, \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0432
+    \u0440\u0435\u043A\u043B\u0430\u043C\u0443 \u0438\u043B\u0438 \u043E\u0442\u043A\u0440\u044B\u0432
+    \u0435\u0436\u0435\u0434\u043D\u0435\u0432\u043D\u0443\u044E \u043D\u0430\u0433\u0440\u0430\u0434\u0443."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: This is the button to add extra lives to your castle.
+    You can get extra lives by watching an advertisement or opening a daily reward.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Bu, kalenize ekstra can eklemek i\xE7in bir d\xFC\u011Fmedir.
+    Bir reklam izleyerek veya g\xFCnl\xFCk \xF6d\xFCl\xFCn\xFCz\xFC a\xE7arak ekstra
+    can kazanabilirsiniz."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &4826722777252017251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: WalletTutorialDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: WalletTutorialDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u042D\u0442\u043E \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E
+    \u0432\u0430\u0448\u0438\u0445 \u0447\u0435\u0440\u0435\u043F\u043E\u0432. \u0417\u0430
+    \u043A\u0430\u0436\u0434\u043E\u0435 \u0443\u0431\u0438\u0439\u0441\u0442\u0432\u043E
+    \u0437\u043E\u043C\u0431\u0438 \u0432\u044B \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442\u0435
+    \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0451\u043D\u043D\u043E\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E
+    \u0447\u0435\u0440\u0435\u043F\u043E\u0432, \u043A\u043E\u0442\u043E\u0440\u044B\u0435
+    \u0432 \u0434\u0430\u043B\u044C\u043D\u0435\u0439\u0448\u0435\u043C \u0432\u044B
+    \u043C\u043E\u0436\u0435\u0442\u0435 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C
+    \u0434\u043B\u044F \u043F\u043E\u043A\u0443\u043F\u043A\u0438 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u0439."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: This is the number of your skulls. For every zombie you
+    kill, you receive a certain number of skulls, which you can later use to purchase
+    upgrades.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Bu sizin kafataslar\u0131n\u0131z\u0131n say\u0131s\u0131d\u0131r.
+    \xD6ld\xFCrd\xFC\u011F\xFCn\xFCz her zombi i\xE7in belirli say\u0131da kafatas\u0131
+    al\u0131rs\u0131n\u0131z ve bunlar\u0131 daha sonra y\xFCkseltme sat\u0131n almak
+    i\xE7in kullanabilirsiniz."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &5529956266888560464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: HealthBarTutorialDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: HealthBarTutorialDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u042D\u0442\u043E \u0448\u043A\u0430\u043B\u0430 \u0432\u0430\u0448\u0435\u0433\u043E
+    \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F. \u0415\u0441\u043B\u0438 \u0448\u043A\u0430\u043B\u0430
+    \u043E\u043F\u0443\u0441\u0442\u0438\u0442\u0441\u044F \u0434\u043E \u043D\u0443\u043B\u044F,
+    \u0432\u044B \u043F\u0440\u043E\u0438\u0433\u0440\u0430\u0435\u0442\u0435."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: This is the school of your health. If the scale drops
+    to zero, you lose.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Buras\u0131 sizin sa\u011Fl\u0131k okulunuz. \xD6l\xE7ek
+    s\u0131f\u0131ra d\xFC\u015Ferse kaybedersiniz."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &5619570895773535235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: You received daily reward_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: You received daily reward
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0412\u044B \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0438
+    \u0435\u0436\u0435\u0434\u043D\u0435\u0432\u043D\u0443\u044E \u043D\u0430\u0433\u0440\u0430\u0434\u0443!"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: You have received daily reward!
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "G\xFCnl\xFCk bir \xF6d\xFCl ald\u0131n\u0131z!"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &5846583519601730132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: FirstAidKitTutorialDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: FirstAidKitTutorialDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u042D\u0442\u043E \u0441\u043F\u0430\u0432\u043D\u0435\u0440\u044B,
+    \u043D\u0430 \u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043C\u043E\u0436\u0435\u0442
+    \u0437\u0430\u0441\u043F\u0430\u0432\u043D\u0438\u0442\u044C\u0441\u044F \u0430\u043F\u0442\u0435\u0447\u043A\u0430.
+    \u041D\u0430 \u043E\u0434\u043D\u043E\u0439 \u043B\u043E\u043A\u0430\u0446\u0438\u0438
+    \u0438\u0445 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E,
+    \u0442\u043E\u0433\u0434\u0430 \u0430\u043F\u0442\u0435\u0447\u043A\u0430 \u0431\u0443\u0434\u0435\u0442
+    \u0441\u043F\u0430\u0432\u043D\u0438\u0442\u044C\u0441\u044F \u0440\u0430\u043D\u0434\u043E\u043C\u043D\u043E.
+    \u041A\u0430\u0436\u0434\u0430\u044F \u0430\u043F\u0442\u0435\u0447\u043A\u0430
+    \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442 \u0432\u0430\u0448\u0435
+    \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u0435."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: These are the spawners on which the first-aid kit can
+    spawn. There may be several of them at one location, then the first-aid kit will
+    be spawned randomly. Each first aid kit increases your health.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Bunlar, \xFCzerine ilk yard\u0131m \xE7antas\u0131n\u0131n
+    uyuyabilece\u011Fi yumurtlay\u0131c\u0131lard\u0131r. Bir yerde bunlardan birka\xE7\u0131
+    olabilir, o zaman ilk yard\u0131m \xE7antas\u0131 rastgele do\u011Facakt\u0131r.
+    Her ilk yard\u0131m \xE7antas\u0131 sa\u011Fl\u0131\u011F\u0131n\u0131z\u0131
+    art\u0131r\u0131r."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &5918407013494742060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: NewGame_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: NewGame
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041D\u041E\u0412\u0410\u042F \u0418\u0413\u0420\u0410"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: NEW GAME
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\rYEN\u0130 OYUN"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &5969787248905984405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Add_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Add
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Add
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Eklemek
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &6072498139290405345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Resume_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Resume
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u0420\u041E\u0414\u041E\u041B\u0416\u0418\u0422\u042C"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: RESUME
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: DEVAM ET
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &6227071353628013496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: UpgradeAvailableAbilitiesDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: UpgradeAvailableAbilitiesDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u042D\u0442\u043E \u0441\u043F\u0438\u0441\u043E\u043A
+    \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u0439, \u043A\u043E\u0442\u043E\u0440\u044B\u0435
+    \u0432\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043A\u0443\u043F\u0438\u0442\u044C
+    \u0437\u0430 \u0432\u0430\u0448\u0438 \u0447\u0435\u0440\u0435\u043F\u0430."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: This is a list of upgrades that you can buy with your
+    skulls.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Bu, kafataslar\u0131n\u0131z i\xE7in sat\u0131n alabilece\u011Finiz
+    iyile\u015Ftirmelerin bir listesidir."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &6466202604613630519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Accept the award_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Accept the award
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u0440\u0438\u043D\u044F\u0442\u044C \u043D\u0430\u0433\u0440\u0430\u0434\u0443"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Accept the award
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\xD6d\xFCl\xFC kabul et"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &6521264734291905314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: FiftyWavesAchievementTitle_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: FiftyWavesAchievementTitle
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0411\u0415\u0413\u0420\u0410\u041D\u0418\u0427\u041D\u0410\u042F
+    \u041C\u041E\u0429\u042C!"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: BOUNDLESS POWER!
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "SINIRSIZ G\xDC\xC7!"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &6610014664543065953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Off_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Off
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0412\u042B\u041A\u041B"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: OFF
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: KAPALI
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &6835082364301547020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: LoadGame_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: LoadGame
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C
+    \u0438\u0433\u0440\u0443"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Load game
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Oyunu y\xFCkle"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &6950433725313819436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: FirstEnemyKillDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: FirstEnemyKillDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0423\u0431\u0435\u0439\u0442\u0435 \u043F\u0435\u0440\u0432\u043E\u0433\u043E
+    \u0432\u0440\u0430\u0433\u0430."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: The first enemy has been killed.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "\u0130lk d\xFC\u015Fman \xF6ld\xFCr\xFCld\xFC."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &7090385843299365696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: AutosavingDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: AutosavingDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0412 \u0433\u043B\u0430\u0432\u043D\u043E\u043C \u043C\u0435\u043D\u044E
+    \u0432\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u0432\u044B\u0431\u0440\u0430\u0442\u044C
+    \u043D\u043E\u0432\u0443\u044E \u0438\u0433\u0440\u0443 \u0438\u043B\u0438 \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C
+    \u0443\u0436\u0435 \u0438\u043C\u0435\u044E\u0449\u0443\u044E\u0441\u044F. \u041D\u043E\u0432\u0443\u044E
+    \u0438\u0433\u0440\u0443 \u0432\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043D\u0430\u0447\u0430\u0442\u044C
+    \u0432 \u043B\u044E\u0431\u043E\u0439 \u043E\u0442\u043A\u0440\u044B\u0442\u043E\u0439
+    \u043B\u043E\u043A\u0430\u0446\u0438\u0438."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: In the main menu, you can select a new game or download
+    an existing one. You can start a new game in any open location.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Ana men\xFCden yeni bir oyun se\xE7ebilir veya mevcut
+    bir oyunu indirebilirsiniz. Herhangi bir a\xE7\u0131k yerde yeni bir oyuna ba\u015Flayabilirsiniz."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &7171604089684731652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: OpenLeaderboard_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: OpenLeaderboard
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0414\u043B\u044F \u0442\u043E\u0433\u043E, \u0447\u0442\u043E\u0431\u044B
+    \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u0442\u0430\u0431\u043B\u0438\u0446\u0443
+    \u043B\u0438\u0434\u0435\u0440\u043E\u0432, \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E
+    \u0430\u0432\u0442\u043E\u0440\u0438\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F.
+    \u0412\u044B \u0445\u043E\u0442\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u0440\u0438\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F?"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: To open the leaderboard, you need to log in. Do you want
+    to log in?
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Liderlik tablosunu a\xE7mak i\xE7in giris yapman\u0131z
+    gerekir. Giris yapmak ister misiniz?"
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &7449828143545975863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: ScoreTutorialDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: ScoreTutorialDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u042D\u0442\u043E \u0448\u043A\u0430\u043B\u0430 \u0432\u0430\u0448\u0438\u0445
+    \u043E\u0447\u043A\u043E\u0432 \u0437\u0430 \u043A\u0430\u0436\u0434\u043E\u0433\u043E
+    \u0443\u0431\u0438\u0442\u043E\u0433\u043E \u0432\u0440\u0430\u0433\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0435
+    \u0432\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u0442\u0440\u0430\u0442\u0438\u0442\u044C
+    \u043D\u0430 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u0435  \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u0435\u0439"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: This is a scale of your points for each enemy you kill,
+    which you can spend on improving your abilities.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Bu, yetenekleri geli\u015Ftirmek i\xE7in harcayabilece\u011Finiz
+    \xF6ld\xFCr\xFClen her d\xFC\u015Fman i\xE7in puanlar\u0131n\u0131z\u0131n \xF6l\xE7e\u011Fidir."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &7968120111115877996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: ScullsDiggerDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: ScullsDiggerDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041D\u0430\u043A\u043E\u043F\u0438\u0442\u0435 100
+    \u0447\u0435\u0440\u0435\u043F\u043E\u0432 \u0432 \u0438\u0433\u0440\u0435."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Collect 100 skulls in the game.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Oyunda 100 kafatas\u0131 biriktirin."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &8224070170877804161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: AdTutorialDescription_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: AdTutorialDescription
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u041F\u0440\u0438 \u043D\u0430\u0436\u0430\u0442\u0438\u0438
+    \u043D\u0430 \u044D\u0442\u0443 \u043A\u043D\u043E\u043F\u043A\u0443 , \u0432
+    \u043E\u043A\u043D\u0435 \u043F\u0430\u0443\u0437\u044B \u0438 \u0432 \u0433\u043B\u0430\u0432\u043D\u043E\u043C
+    \u043C\u0435\u043D\u044E, \u0432\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C
+    5 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0445
+    \u0436\u0438\u0437\u043D\u0435\u0439. \u0422\u0430\u043A\u0436\u0435 \u0440\u0435\u043A\u043B\u0430\u043C\u0430
+    \u043F\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0435\u0442\u0441\u044F \u043F\u043E\u0441\u043B\u0435
+    \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u044F \u043A\u0430\u0436\u0434\u044B\u0445
+    20 \u0432\u043E\u043B\u043D. \u0415\u0441\u043B\u0438 \u0443 \u0432\u0430\u0441
+    \u0432\u043A\u043B\u044E\u0447\u0435\u043D AdBlock, \u0442\u043E \u0440\u0435\u043A\u043B\u0430\u043C\u0430
+    \u043F\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0442\u044C\u0441\u044F \u043D\u0435
+    \u0431\u0443\u0434\u0435\u0442."
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: By clicking on this button, in the pause window and in
+    the main menu, you can get 5 additional lives. Ads are also shown after every
+    20 waves are completed. If you have AdBlock enabled, then ads will not be displayed.
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: "Bu d\xFC\u011Fmeye bast\u0131\u011F\u0131n\u0131zda,
+    duraklatma penceresinde ve ana men\xFCde 5 ek can alabilirsiniz. Ayr\u0131ca,
+    her 20 dalgan\u0131n tamamlanmas\u0131ndan sonra reklamlar g\xF6sterilir. Adblock'u
+    etkinle\u015Ftirdiyseniz, reklam g\xF6sterilmeyecektir."
+  <TurkishSprite>k__BackingField: {fileID: 0}
+--- !u!114 &8727284431849006686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b47770bff74a2d91593ebd8dcce095, type: 3}
+  m_Name: Next_Phrase
+  m_EditorClassIdentifier: 
+  _headere: <size=18><b><color=#FF7F50><i>UiLocalizationPhrase</i></color></b></size>
+  _editParent: 0
+  <Parent>k__BackingField: {fileID: 11400000}
+  <Scope>k__BackingField: {fileID: 0}
+  <LocalizationId>k__BackingField: Next
+  <TextId>k__BackingField: 
+  _editRussian: 0
+  <Russian>k__BackingField: "\u0414\u0430\u043B\u0435\u0435"
+  <RussianSprite>k__BackingField: {fileID: 0}
+  _editEnglish: 0
+  <English>k__BackingField: Next
+  <EnglishSprite>k__BackingField: {fileID: 0}
+  _editTurkish: 0
+  <Turkish>k__BackingField: Sonraki
+  <TurkishSprite>k__BackingField: {fileID: 0}
