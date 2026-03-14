@@ -6,7 +6,7 @@ using NodeCanvas.StateMachines;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepUtils.Reflections;
 
-namespace Sources.EcsBoundedContexts.Common.Extancions.Colliders
+namespace Sources.EcsBoundedContexts.Common.Extansions.Colliders
 {
     public static class NodeCanvasExtension
     {

@@ -52,7 +52,7 @@ namespace Sources.Frameworks.YandexSdkFramework.Leaderboards.Services.Implementa
 
             if (YG2.player.auth == false)
                 return;
-
+            
             YG2.GetLeaderboard(LeaderBoardConst.LeaderboardName);
         }
 
@@ -63,13 +63,13 @@ namespace Sources.Frameworks.YandexSdkFramework.Leaderboards.Services.Implementa
             int count = players.Length < _leaderBoardElementViews.Count
                 ? players.Length
                 : _leaderBoardElementViews.Count;
-
+        
             for (var i = 0; i < count; i++)
             {
                 int rank = players[i].rank;
                 int score = players[i].score;
                 string name = players[i].name;
-
+        
                 if (string.IsNullOrEmpty(name))
                     name = YG2.envir.language switch
                     {
@@ -78,7 +78,7 @@ namespace Sources.Frameworks.YandexSdkFramework.Leaderboards.Services.Implementa
                         LocalizationConst.Russian => LeaderBoardConst.RussianAnonymous,
                         _ => LeaderBoardConst.EnglishAnonymous,
                     };
-
+        
                 _leaderBoardElementViews[i].Construct(new LeaderBoardPlayerData(rank, name, score));
             }
         }

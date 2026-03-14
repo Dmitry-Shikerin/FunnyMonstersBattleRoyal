@@ -1,7 +1,7 @@
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using MyDependencies.Sources.Containers;
-using Sources.EcsBoundedContexts.Common.Extancions.Colliders;
+using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Enemies.Domain.Components;
 using Sources.EcsBoundedContexts.Enemies.Domain.Enums;

@@ -12,11 +12,11 @@ namespace Sources.Frameworks.GameServices.DeepWrappers.Localizations
     {
         public void Translate()
         {
-            string key = WebApplication.IsRunningOnWebGL
-                ? YG2.envir.language
-                : GetEditorKey();
+            // string key = WebApplication.IsRunningOnWebGL
+            //     ? YG2.envir.language
+            //     : GetEditorKey();
 
-            DeepLocalizationBrain.Translate(key);
+            DeepLocalizationBrain.Translate("key");
         }
 
         public string GetText(string key) =>

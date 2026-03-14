@@ -22,6 +22,13 @@
         "com.unity.modules.animation": "1.0.0"
       }
     },
+    "com.medvejut.dotweentimeline": {
+      "version": "https://github.com/medvejut/dotween-timeline.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "a3c06d5d52ddf52c212c70c98866310d8e8125f3"
+    },
     "com.unity.addressables": {
       "version": "2.5.0",
       "depth": 0,

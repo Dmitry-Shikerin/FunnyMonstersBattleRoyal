@@ -110,7 +110,7 @@ namespace Sources.Frameworks.YandexSdkFramework.Sdk.Services
 
             if (YG2.player.auth)
                 return;
-
+            
             YG2.OpenAuthDialog();
         }
 
@@ -129,7 +129,7 @@ namespace Sources.Frameworks.YandexSdkFramework.Sdk.Services
 
             if (YG2.player.auth == false)
                 return;
-
+            
             _score = score;
             YG2.GetLeaderboard(LeaderBoardConst.LeaderboardName);
         }

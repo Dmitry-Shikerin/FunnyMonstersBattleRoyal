@@ -6,7 +6,7 @@ using Sources.EcsBoundedContexts.Characters.Domain.Components;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Characters.Domain.Enums;
 using Sources.EcsBoundedContexts.Characters.Presentation;
-using Sources.EcsBoundedContexts.Common.Extancions.Colliders;
+using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Factories;

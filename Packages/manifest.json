@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.medvejut.dotweentimeline": "https://github.com/medvejut/dotween-timeline.git#upm",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.hellgames.my-dependencies": "https://github.com/Dmitry-Shikerin/DeepJect.git",
     "com.unity.addressables": "2.5.0",
