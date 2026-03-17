@@ -118,7 +118,7 @@ namespace Sources.EcsBoundedContexts.DailyRewards.Controllers
                 return;
             
             //module.Animator.Play();
-            _healthBuster.AddIncreaseHealthBoosterEvent(_config.HealthBoostersAmount);
+            //_healthBuster.AddIncreaseHealthBoosterEvent(_config.HealthBoostersAmount);
             Debug.Log($"IncreaseHealthBoosterEvent");
             _storageService.Save(IdsConst.HealthBooster);
             _storageService.Save(IdsConst.DailyReward);

@@ -1,11 +1,8 @@
 using System;
 using UnityEngine;
-using System.Collections.Generic;
 using Leopotam.EcsProto;
-using Leopotam.EcsProto.QoL;
 using Sources.Frameworks.MyLeoEcsProto.EventBuffers.Implementation;
 using Sources.Frameworks.GameServices.EntityPools.Domain.Components;
-using System;
 using Sources.EcsBoundedContexts.Weapons.Domain;
 using Sources.EcsBoundedContexts.Weapons.Presentation;
 using Sources.EcsBoundedContexts.Volumes.Domain.Components;
@@ -14,17 +11,12 @@ using Sources.EcsBoundedContexts.Volumes.Domain.Enums;
 using Sources.EcsBoundedContexts.Upgrades.Domain.Components;
 using Sources.EcsBoundedContexts.Upgrades.Presentation;
 using Sources.EcsBoundedContexts.Upgrades.Domain.Configs;
-using Leopotam.EcsProto;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Components;
 using Sources.EcsBoundedContexts.Timers.Domain;
-using Sources.EcsBoundedContexts.SwingingTrees.Domain.Components;
-using Sources.EcsBoundedContexts.SwingingTrees.Domain.Types;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.PlayerWallets.Presentation;
 using Sources.EcsBoundedContexts.Particles.Domain;
-using UnityEngine;
-using Sources.EcsBoundedContexts.NukeAbilities.Domain;
 using Sources.EcsBoundedContexts.Movements.TargetPoint.Components;
 using Sources.EcsBoundedContexts.Movements.Rotation.Components;
 using Sources.EcsBoundedContexts.Movements.Rotation.Data;
@@ -35,18 +27,12 @@ using Sources.EcsBoundedContexts.Lights.Domain;
 using UnityEngine.Rendering;
 using Sources.EcsBoundedContexts.Lights.Domain.Enums;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Domain.Components;
-using Sources.EcsBoundedContexts.HealthBoosters.Domain.Components;
-using Sources.EcsBoundedContexts.HealthBoosters.Presentation;
 using Sources.EcsBoundedContexts.GraphOwners.Domain;
 using NodeCanvas.BehaviourTrees;
 using NodeCanvas.StateMachines;
 using Sources.EcsBoundedContexts.GameObjects.Domain;
-using Sources.EcsBoundedContexts.FlamethrowerAbility.Domain;
 using Sources.EcsBoundedContexts.ExplosionBodies.Domain;
-using Sources.EcsBoundedContexts.EnemySpawners.Domain.Components;
-using Sources.EcsBoundedContexts.EnemySpawners.Domain.Configs;
 using Sources.EcsBoundedContexts.Enemies.Domain.Enums;
-using Sources.EcsBoundedContexts.EnemySpawners.Presentation;
 using Sources.EcsBoundedContexts.Enemies.Domain.Components;
 using Sources.EcsBoundedContexts.Damage.Domain;
 using UnityEngine.UI;
@@ -56,17 +42,12 @@ using Sources.EcsBoundedContexts.DailyRewards.Presentation;
 using Sources.EcsBoundedContexts.Common.Domain.Components;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using DG.Tweening;
-using Sources.EcsBoundedContexts.CharacterSpawner.Domain;
-using Sources.EcsBoundedContexts.CharacterSpawner.Presentation.Types;
-using System.Collections.Generic;
 using Sources.EcsBoundedContexts.Characters.Domain.Components;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Characters.Domain.Enums;
 using Sources.EcsBoundedContexts.Cameras.Domain;
 using Unity.Cinemachine;
 using Sources.EcsBoundedContexts.BurnAbilities.Domain.Components;
-using Sources.EcsBoundedContexts.Bunker.Domain.Components;
-using Sources.EcsBoundedContexts.Bunker.Presentation;
 using Sources.EcsBoundedContexts.ApplyAbility.Domain;
 using Sources.EcsBoundedContexts.ApplyAbility.Presentation;
 using Sources.EcsBoundedContexts.Animators;
@@ -408,54 +389,6 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelTimer(this ProtoEntity entity)
 			=> s_GameAspect.Timer.Del(entity);
 
-		//SwingingTree
-		public static bool HasSwingingTree(this ProtoEntity entity) =>
-			s_GameAspect.SwingingTree.Has(entity);
-
-		public static ref SwingingTreeComponent GetSwingingTree(this ProtoEntity entity) =>
-			ref s_GameAspect.SwingingTree.Get(entity);
-
-		public static void ReplaceSwingingTree(this ProtoEntity entity, TreeType treeType, bool enableYAxisSwingingTree, float speedX, float speedY, float maxAngleX, float maxAngleY, float direction)
-		{
-			ref SwingingTreeComponent swingingTreeComponent = ref s_GameAspect.SwingingTree.Get(entity);
-			swingingTreeComponent.TreeType = treeType;
-			swingingTreeComponent.EnableYAxisSwingingTree = enableYAxisSwingingTree;
-			swingingTreeComponent.SpeedX = speedX;
-			swingingTreeComponent.SpeedY = speedY;
-			swingingTreeComponent.MaxAngleX = maxAngleX;
-			swingingTreeComponent.MaxAngleY = maxAngleY;
-			swingingTreeComponent.Direction = direction;
-		}
-
-		public static ref SwingingTreeComponent AddSwingingTree(this ProtoEntity entity, TreeType treeType, bool enableYAxisSwingingTree, float speedX, float speedY, float maxAngleX, float maxAngleY, float direction)
-		{
-			ref SwingingTreeComponent swingingTreeComponent = ref s_GameAspect.SwingingTree.Add(entity);
-			swingingTreeComponent.TreeType = treeType;
-			swingingTreeComponent.EnableYAxisSwingingTree = enableYAxisSwingingTree;
-			swingingTreeComponent.SpeedX = speedX;
-			swingingTreeComponent.SpeedY = speedY;
-			swingingTreeComponent.MaxAngleX = maxAngleX;
-			swingingTreeComponent.MaxAngleY = maxAngleY;
-			swingingTreeComponent.Direction = direction;
-			return ref swingingTreeComponent;
-		}
-
-		public static void DelSwingingTree(this ProtoEntity entity)
-			=> s_GameAspect.SwingingTree.Del(entity);
-
-		//Tree
-		public static bool HasTree(this ProtoEntity entity) =>
-			s_GameAspect.Tree.Has(entity);
-
-		public static ref TreeTag AddTree(this ProtoEntity entity)
-		{
-			ref TreeTag treeTag = ref s_GameAspect.Tree.Add(entity);
-			return ref treeTag;
-		}
-
-		public static void DelTree(this ProtoEntity entity)
-			=> s_GameAspect.Tree.Del(entity);
-
 		//ClearableData
 		public static bool HasClearableData(this ProtoEntity entity) =>
 			s_GameAspect.ClearableData.Has(entity);
@@ -658,101 +591,6 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelShootParticle(this ProtoEntity entity)
 			=> s_GameAspect.ShootParticle.Del(entity);
-
-		//NukeAbility
-		public static bool HasNukeAbility(this ProtoEntity entity) =>
-			s_GameAspect.NukeAbility.Has(entity);
-
-		public static ref NukeAbilityTag AddNukeAbility(this ProtoEntity entity)
-		{
-			ref NukeAbilityTag nukeAbilityTag = ref s_GameAspect.NukeAbility.Add(entity);
-			return ref nukeAbilityTag;
-		}
-
-		public static void DelNukeAbility(this ProtoEntity entity)
-			=> s_GameAspect.NukeAbility.Del(entity);
-
-		//NukeBombLink
-		public static bool HasNukeBombLink(this ProtoEntity entity) =>
-			s_GameAspect.NukeBombLink.Has(entity);
-
-		public static ref NukeBombLinkComponent GetNukeBombLink(this ProtoEntity entity) =>
-			ref s_GameAspect.NukeBombLink.Get(entity);
-
-		public static void ReplaceNukeBombLink(this ProtoEntity entity, ProtoEntity value)
-		{
-			ref NukeBombLinkComponent nukeBombLinkComponent = ref s_GameAspect.NukeBombLink.Get(entity);
-			nukeBombLinkComponent.Value = value;
-		}
-
-		public static ref NukeBombLinkComponent AddNukeBombLink(this ProtoEntity entity, ProtoEntity value)
-		{
-			ref NukeBombLinkComponent nukeBombLinkComponent = ref s_GameAspect.NukeBombLink.Add(entity);
-			nukeBombLinkComponent.Value = value;
-			return ref nukeBombLinkComponent;
-		}
-
-		public static void DelNukeBombLink(this ProtoEntity entity)
-			=> s_GameAspect.NukeBombLink.Del(entity);
-
-		//NukeBomb
-		public static bool HasNukeBomb(this ProtoEntity entity) =>
-			s_GameAspect.NukeBomb.Has(entity);
-
-		public static ref NukeBombTag AddNukeBomb(this ProtoEntity entity)
-		{
-			ref NukeBombTag nukeBombTag = ref s_GameAspect.NukeBomb.Add(entity);
-			return ref nukeBombTag;
-		}
-
-		public static void DelNukeBomb(this ProtoEntity entity)
-			=> s_GameAspect.NukeBomb.Del(entity);
-
-		//NukeDamageCollider
-		public static bool HasNukeDamageCollider(this ProtoEntity entity) =>
-			s_GameAspect.NukeDamageCollider.Has(entity);
-
-		public static ref NukeDamageColliderComponent GetNukeDamageCollider(this ProtoEntity entity) =>
-			ref s_GameAspect.NukeDamageCollider.Get(entity);
-
-		public static void ReplaceNukeDamageCollider(this ProtoEntity entity, BoxCollider value)
-		{
-			ref NukeDamageColliderComponent nukeDamageColliderComponent = ref s_GameAspect.NukeDamageCollider.Get(entity);
-			nukeDamageColliderComponent.Value = value;
-		}
-
-		public static ref NukeDamageColliderComponent AddNukeDamageCollider(this ProtoEntity entity, BoxCollider value)
-		{
-			ref NukeDamageColliderComponent nukeDamageColliderComponent = ref s_GameAspect.NukeDamageCollider.Add(entity);
-			nukeDamageColliderComponent.Value = value;
-			return ref nukeDamageColliderComponent;
-		}
-
-		public static void DelNukeDamageCollider(this ProtoEntity entity)
-			=> s_GameAspect.NukeDamageCollider.Del(entity);
-
-		//NukeParticle
-		public static bool HasNukeParticle(this ProtoEntity entity) =>
-			s_GameAspect.NukeParticle.Has(entity);
-
-		public static ref NukeParticleComponent GetNukeParticle(this ProtoEntity entity) =>
-			ref s_GameAspect.NukeParticle.Get(entity);
-
-		public static void ReplaceNukeParticle(this ProtoEntity entity, ParticleSystem value)
-		{
-			ref NukeParticleComponent nukeParticleComponent = ref s_GameAspect.NukeParticle.Get(entity);
-			nukeParticleComponent.Value = value;
-		}
-
-		public static ref NukeParticleComponent AddNukeParticle(this ProtoEntity entity, ParticleSystem value)
-		{
-			ref NukeParticleComponent nukeParticleComponent = ref s_GameAspect.NukeParticle.Add(entity);
-			nukeParticleComponent.Value = value;
-			return ref nukeParticleComponent;
-		}
-
-		public static void DelNukeParticle(this ProtoEntity entity)
-			=> s_GameAspect.NukeParticle.Del(entity);
 
 		//PointPath
 		public static bool HasPointPath(this ProtoEntity entity) =>
@@ -1346,75 +1184,7 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelKillEnemyCounter(this ProtoEntity entity)
 			=> s_GameAspect.KillEnemyCounter.Del(entity);
-
-		//HealthBuster
-		public static bool HasHealthBuster(this ProtoEntity entity) =>
-			s_GameAspect.HealthBuster.Has(entity);
-
-		public static ref HealthBusterComponent GetHealthBuster(this ProtoEntity entity) =>
-			ref s_GameAspect.HealthBuster.Get(entity);
-
-		public static void ReplaceHealthBuster(this ProtoEntity entity, int value)
-		{
-			ref HealthBusterComponent healthBusterComponent = ref s_GameAspect.HealthBuster.Get(entity);
-			healthBusterComponent.Value = value;
-		}
-
-		public static ref HealthBusterComponent AddHealthBuster(this ProtoEntity entity, int value)
-		{
-			ref HealthBusterComponent healthBusterComponent = ref s_GameAspect.HealthBuster.Add(entity);
-			healthBusterComponent.Value = value;
-			return ref healthBusterComponent;
-		}
-
-		public static void DelHealthBuster(this ProtoEntity entity)
-			=> s_GameAspect.HealthBuster.Del(entity);
-
-		//HealthBusterModule
-		public static bool HasHealthBusterModule(this ProtoEntity entity) =>
-			s_GameAspect.HealthBusterModule.Has(entity);
-
-		public static ref HealthBusterModuleComponent GetHealthBusterModule(this ProtoEntity entity) =>
-			ref s_GameAspect.HealthBusterModule.Get(entity);
-
-		public static void ReplaceHealthBusterModule(this ProtoEntity entity, HealthBusterModule value)
-		{
-			ref HealthBusterModuleComponent healthBusterModuleComponent = ref s_GameAspect.HealthBusterModule.Get(entity);
-			healthBusterModuleComponent.Value = value;
-		}
-
-		public static ref HealthBusterModuleComponent AddHealthBusterModule(this ProtoEntity entity, HealthBusterModule value)
-		{
-			ref HealthBusterModuleComponent healthBusterModuleComponent = ref s_GameAspect.HealthBusterModule.Add(entity);
-			healthBusterModuleComponent.Value = value;
-			return ref healthBusterModuleComponent;
-		}
-
-		public static void DelHealthBusterModule(this ProtoEntity entity)
-			=> s_GameAspect.HealthBusterModule.Del(entity);
-
-		//IncreaseHealthBoosterEvent
-		public static bool HasIncreaseHealthBoosterEvent(this ProtoEntity entity) =>
-			s_GameAspect.IncreaseHealthBoosterEvent.Has(entity);
-
-		public static ref IncreaseHealthBoosterEvent GetIncreaseHealthBoosterEvent(this ProtoEntity entity) =>
-			ref s_GameAspect.IncreaseHealthBoosterEvent.Get(entity);
-
-		public static void ReplaceIncreaseHealthBoosterEvent(this ProtoEntity entity, int value)
-		{
-			ref IncreaseHealthBoosterEvent increaseHealthBoosterEvent = ref s_GameAspect.IncreaseHealthBoosterEvent.Get(entity);
-			increaseHealthBoosterEvent.Value = value;
-		}
-
-		public static ref IncreaseHealthBoosterEvent AddIncreaseHealthBoosterEvent(this ProtoEntity entity, int value)
-		{
-			ref IncreaseHealthBoosterEvent increaseHealthBoosterEvent = ref s_GameAspect.IncreaseHealthBoosterEvent.Add(entity);
-			increaseHealthBoosterEvent.Value = value;
-			return ref increaseHealthBoosterEvent;
-		}
-
-		public static void DelIncreaseHealthBoosterEvent(this ProtoEntity entity)
-			=> s_GameAspect.IncreaseHealthBoosterEvent.Del(entity);
+		
 
 		//BehaviourTreeOwner
 		public static bool HasBehaviourTreeOwner(this ProtoEntity entity) =>
@@ -1524,78 +1294,6 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelGameObject(this ProtoEntity entity)
 			=> s_GameAspect.GameObject.Del(entity);
 
-		//FlameParticle
-		public static bool HasFlameParticle(this ProtoEntity entity) =>
-			s_GameAspect.FlameParticle.Has(entity);
-
-		public static ref FlameParticleComponent GetFlameParticle(this ProtoEntity entity) =>
-			ref s_GameAspect.FlameParticle.Get(entity);
-
-		public static void ReplaceFlameParticle(this ProtoEntity entity, ParticleSystem value)
-		{
-			ref FlameParticleComponent flameParticleComponent = ref s_GameAspect.FlameParticle.Get(entity);
-			flameParticleComponent.Value = value;
-		}
-
-		public static ref FlameParticleComponent AddFlameParticle(this ProtoEntity entity, ParticleSystem value)
-		{
-			ref FlameParticleComponent flameParticleComponent = ref s_GameAspect.FlameParticle.Add(entity);
-			flameParticleComponent.Value = value;
-			return ref flameParticleComponent;
-		}
-
-		public static void DelFlameParticle(this ProtoEntity entity)
-			=> s_GameAspect.FlameParticle.Del(entity);
-
-		//FlamethrowerAbility
-		public static bool HasFlamethrowerAbility(this ProtoEntity entity) =>
-			s_GameAspect.FlamethrowerAbility.Has(entity);
-
-		public static ref FlamethrowerAbilityTag AddFlamethrowerAbility(this ProtoEntity entity)
-		{
-			ref FlamethrowerAbilityTag flamethrowerAbilityTag = ref s_GameAspect.FlamethrowerAbility.Add(entity);
-			return ref flamethrowerAbilityTag;
-		}
-
-		public static void DelFlamethrowerAbility(this ProtoEntity entity)
-			=> s_GameAspect.FlamethrowerAbility.Del(entity);
-
-		//FlamethrowerLink
-		public static bool HasFlamethrowerLink(this ProtoEntity entity) =>
-			s_GameAspect.FlamethrowerLink.Has(entity);
-
-		public static ref FlamethrowerLinkComponent GetFlamethrowerLink(this ProtoEntity entity) =>
-			ref s_GameAspect.FlamethrowerLink.Get(entity);
-
-		public static void ReplaceFlamethrowerLink(this ProtoEntity entity, ProtoEntity value)
-		{
-			ref FlamethrowerLinkComponent flamethrowerLinkComponent = ref s_GameAspect.FlamethrowerLink.Get(entity);
-			flamethrowerLinkComponent.Value = value;
-		}
-
-		public static ref FlamethrowerLinkComponent AddFlamethrowerLink(this ProtoEntity entity, ProtoEntity value)
-		{
-			ref FlamethrowerLinkComponent flamethrowerLinkComponent = ref s_GameAspect.FlamethrowerLink.Add(entity);
-			flamethrowerLinkComponent.Value = value;
-			return ref flamethrowerLinkComponent;
-		}
-
-		public static void DelFlamethrowerLink(this ProtoEntity entity)
-			=> s_GameAspect.FlamethrowerLink.Del(entity);
-
-		//Flamethrower
-		public static bool HasFlamethrower(this ProtoEntity entity) =>
-			s_GameAspect.Flamethrower.Has(entity);
-
-		public static ref FlamethrowerTag AddFlamethrower(this ProtoEntity entity)
-		{
-			ref FlamethrowerTag flamethrowerTag = ref s_GameAspect.Flamethrower.Add(entity);
-			return ref flamethrowerTag;
-		}
-
-		public static void DelFlamethrower(this ProtoEntity entity)
-			=> s_GameAspect.Flamethrower.Del(entity);
-
 		//ExplosionBodyBloody
 		public static bool HasExplosionBodyBloody(this ProtoEntity entity) =>
 			s_GameAspect.ExplosionBodyBloody.Has(entity);
@@ -1621,170 +1319,6 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelExplosionBody(this ProtoEntity entity)
 			=> s_GameAspect.ExplosionBody.Del(entity);
-
-		//EnemySpawnerConfig
-		public static bool HasEnemySpawnerConfig(this ProtoEntity entity) =>
-			s_GameAspect.EnemySpawnerConfig.Has(entity);
-
-		public static ref EnemySpawnerConfigComponent GetEnemySpawnerConfig(this ProtoEntity entity) =>
-			ref s_GameAspect.EnemySpawnerConfig.Get(entity);
-
-		public static void ReplaceEnemySpawnerConfig(this ProtoEntity entity, EnemySpawnerConfig value)
-		{
-			ref EnemySpawnerConfigComponent enemySpawnerConfigComponent = ref s_GameAspect.EnemySpawnerConfig.Get(entity);
-			enemySpawnerConfigComponent.Value = value;
-		}
-
-		public static ref EnemySpawnerConfigComponent AddEnemySpawnerConfig(this ProtoEntity entity, EnemySpawnerConfig value)
-		{
-			ref EnemySpawnerConfigComponent enemySpawnerConfigComponent = ref s_GameAspect.EnemySpawnerConfig.Add(entity);
-			enemySpawnerConfigComponent.Value = value;
-			return ref enemySpawnerConfigComponent;
-		}
-
-		public static void DelEnemySpawnerConfig(this ProtoEntity entity)
-			=> s_GameAspect.EnemySpawnerConfig.Del(entity);
-
-		//EnemySpawnerData
-		public static bool HasEnemySpawnerData(this ProtoEntity entity) =>
-			s_GameAspect.EnemySpawnerData.Has(entity);
-
-		public static ref EnemySpawnerDataComponent GetEnemySpawnerData(this ProtoEntity entity) =>
-			ref s_GameAspect.EnemySpawnerData.Get(entity);
-
-		public static void ReplaceEnemySpawnerData(this ProtoEntity entity, int spawnedEnemies, int spawnedBosses, int spawnedKamikaze, int waweIndex, EnemyType lastSpawnedEnemyType)
-		{
-			ref EnemySpawnerDataComponent enemySpawnerDataComponent = ref s_GameAspect.EnemySpawnerData.Get(entity);
-			enemySpawnerDataComponent.SpawnedEnemies = spawnedEnemies;
-			enemySpawnerDataComponent.SpawnedBosses = spawnedBosses;
-			enemySpawnerDataComponent.SpawnedKamikaze = spawnedKamikaze;
-			enemySpawnerDataComponent.WaweIndex = waweIndex;
-			enemySpawnerDataComponent.LastSpawnedEnemyType = lastSpawnedEnemyType;
-		}
-
-		public static ref EnemySpawnerDataComponent AddEnemySpawnerData(this ProtoEntity entity, int spawnedEnemies, int spawnedBosses, int spawnedKamikaze, int waweIndex, EnemyType lastSpawnedEnemyType)
-		{
-			ref EnemySpawnerDataComponent enemySpawnerDataComponent = ref s_GameAspect.EnemySpawnerData.Add(entity);
-			enemySpawnerDataComponent.SpawnedEnemies = spawnedEnemies;
-			enemySpawnerDataComponent.SpawnedBosses = spawnedBosses;
-			enemySpawnerDataComponent.SpawnedKamikaze = spawnedKamikaze;
-			enemySpawnerDataComponent.WaweIndex = waweIndex;
-			enemySpawnerDataComponent.LastSpawnedEnemyType = lastSpawnedEnemyType;
-			return ref enemySpawnerDataComponent;
-		}
-
-		public static void DelEnemySpawnerData(this ProtoEntity entity)
-			=> s_GameAspect.EnemySpawnerData.Del(entity);
-
-		//EnemySpawner
-		public static bool HasEnemySpawner(this ProtoEntity entity) =>
-			s_GameAspect.EnemySpawner.Has(entity);
-
-		public static ref EnemySpawnerTag AddEnemySpawner(this ProtoEntity entity)
-		{
-			ref EnemySpawnerTag enemySpawnerTag = ref s_GameAspect.EnemySpawner.Add(entity);
-			return ref enemySpawnerTag;
-		}
-
-		public static void DelEnemySpawner(this ProtoEntity entity)
-			=> s_GameAspect.EnemySpawner.Del(entity);
-
-		//EnemySpawnerUiModule
-		public static bool HasEnemySpawnerUiModule(this ProtoEntity entity) =>
-			s_GameAspect.EnemySpawnerUiModule.Has(entity);
-
-		public static ref EnemySpawnerUiModuleComponent GetEnemySpawnerUiModule(this ProtoEntity entity) =>
-			ref s_GameAspect.EnemySpawnerUiModule.Get(entity);
-
-		public static void ReplaceEnemySpawnerUiModule(this ProtoEntity entity, EnemySpawnerUiModule value)
-		{
-			ref EnemySpawnerUiModuleComponent enemySpawnerUiModuleComponent = ref s_GameAspect.EnemySpawnerUiModule.Get(entity);
-			enemySpawnerUiModuleComponent.Value = value;
-		}
-
-		public static ref EnemySpawnerUiModuleComponent AddEnemySpawnerUiModule(this ProtoEntity entity, EnemySpawnerUiModule value)
-		{
-			ref EnemySpawnerUiModuleComponent enemySpawnerUiModuleComponent = ref s_GameAspect.EnemySpawnerUiModule.Add(entity);
-			enemySpawnerUiModuleComponent.Value = value;
-			return ref enemySpawnerUiModuleComponent;
-		}
-
-		public static void DelEnemySpawnerUiModule(this ProtoEntity entity)
-			=> s_GameAspect.EnemySpawnerUiModule.Del(entity);
-
-		//EnemySpawnPoints
-		public static bool HasEnemySpawnPoints(this ProtoEntity entity) =>
-			s_GameAspect.EnemySpawnPoints.Has(entity);
-
-		public static ref EnemySpawnPointsComponent GetEnemySpawnPoints(this ProtoEntity entity) =>
-			ref s_GameAspect.EnemySpawnPoints.Get(entity);
-
-		public static void ReplaceEnemySpawnPoints(this ProtoEntity entity, ProtoEntity[,] value)
-		{
-			ref EnemySpawnPointsComponent enemySpawnPointsComponent = ref s_GameAspect.EnemySpawnPoints.Get(entity);
-			enemySpawnPointsComponent.Value = value;
-		}
-
-		public static ref EnemySpawnPointsComponent AddEnemySpawnPoints(this ProtoEntity entity, ProtoEntity[,] value)
-		{
-			ref EnemySpawnPointsComponent enemySpawnPointsComponent = ref s_GameAspect.EnemySpawnPoints.Add(entity);
-			enemySpawnPointsComponent.Value = value;
-			return ref enemySpawnPointsComponent;
-		}
-
-		public static void DelEnemySpawnPoints(this ProtoEntity entity)
-			=> s_GameAspect.EnemySpawnPoints.Del(entity);
-
-		//EnemySpawnPoint
-		public static bool HasEnemySpawnPoint(this ProtoEntity entity) =>
-			s_GameAspect.EnemySpawnPoint.Has(entity);
-
-		public static ref EnemySpawnPointTag AddEnemySpawnPoint(this ProtoEntity entity)
-		{
-			ref EnemySpawnPointTag enemySpawnPointTag = ref s_GameAspect.EnemySpawnPoint.Add(entity);
-			return ref enemySpawnPointTag;
-		}
-
-		public static void DelEnemySpawnPoint(this ProtoEntity entity)
-			=> s_GameAspect.EnemySpawnPoint.Del(entity);
-
-		//TargetCharactersPoints
-		public static bool HasTargetCharactersPoints(this ProtoEntity entity) =>
-			s_GameAspect.TargetCharactersPoints.Has(entity);
-
-		public static ref TargetCharactersPoints GetTargetCharactersPoints(this ProtoEntity entity) =>
-			ref s_GameAspect.TargetCharactersPoints.Get(entity);
-
-		public static void ReplaceTargetCharactersPoints(this ProtoEntity entity, ProtoEntity melee, ProtoEntity range)
-		{
-			ref TargetCharactersPoints targetCharactersPoints = ref s_GameAspect.TargetCharactersPoints.Get(entity);
-			targetCharactersPoints.Melee = melee;
-			targetCharactersPoints.Range = range;
-		}
-
-		public static ref TargetCharactersPoints AddTargetCharactersPoints(this ProtoEntity entity, ProtoEntity melee, ProtoEntity range)
-		{
-			ref TargetCharactersPoints targetCharactersPoints = ref s_GameAspect.TargetCharactersPoints.Add(entity);
-			targetCharactersPoints.Melee = melee;
-			targetCharactersPoints.Range = range;
-			return ref targetCharactersPoints;
-		}
-
-		public static void DelTargetCharactersPoints(this ProtoEntity entity)
-			=> s_GameAspect.TargetCharactersPoints.Del(entity);
-
-		//WaveCompletedEvent
-		public static bool HasWaveCompletedEvent(this ProtoEntity entity) =>
-			s_GameAspect.WaveCompletedEvent.Has(entity);
-
-		public static ref WaveCompletedEvent AddWaveCompletedEvent(this ProtoEntity entity)
-		{
-			ref WaveCompletedEvent waveCompletedEvent = ref s_GameAspect.WaveCompletedEvent.Add(entity);
-			return ref waveCompletedEvent;
-		}
-
-		public static void DelWaveCompletedEvent(this ProtoEntity entity)
-			=> s_GameAspect.WaveCompletedEvent.Del(entity);
 
 		//CharacterMeleePoint
 		public static bool HasCharacterMeleePoint(this ProtoEntity entity) =>
@@ -2582,93 +2116,7 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelTransform(this ProtoEntity entity)
 			=> s_GameAspect.Transform.Del(entity);
-
-		//CharacterSpawner
-		public static bool HasCharacterSpawner(this ProtoEntity entity) =>
-			s_GameAspect.CharacterSpawner.Has(entity);
-
-		public static ref CharacterSpawnerTag AddCharacterSpawner(this ProtoEntity entity)
-		{
-			ref CharacterSpawnerTag characterSpawnerTag = ref s_GameAspect.CharacterSpawner.Add(entity);
-			return ref characterSpawnerTag;
-		}
-
-		public static void DelCharacterSpawner(this ProtoEntity entity)
-			=> s_GameAspect.CharacterSpawner.Del(entity);
-
-		//CharacterSpawnPoint
-		public static bool HasCharacterSpawnPoint(this ProtoEntity entity) =>
-			s_GameAspect.CharacterSpawnPoint.Has(entity);
-
-		public static ref CharacterSpawnPointTag AddCharacterSpawnPoint(this ProtoEntity entity)
-		{
-			ref CharacterSpawnPointTag characterSpawnPointTag = ref s_GameAspect.CharacterSpawnPoint.Add(entity);
-			return ref characterSpawnPointTag;
-		}
-
-		public static void DelCharacterSpawnPoint(this ProtoEntity entity)
-			=> s_GameAspect.CharacterSpawnPoint.Del(entity);
-
-		//CharacterSpawnPointType
-		public static bool HasCharacterSpawnPointType(this ProtoEntity entity) =>
-			s_GameAspect.CharacterSpawnPointType.Has(entity);
-
-		public static ref CharacterSpawnPointTypeComponent GetCharacterSpawnPointType(this ProtoEntity entity) =>
-			ref s_GameAspect.CharacterSpawnPointType.Get(entity);
-
-		public static void ReplaceCharacterSpawnPointType(this ProtoEntity entity, SpawnPointType value)
-		{
-			ref CharacterSpawnPointTypeComponent characterSpawnPointTypeComponent = ref s_GameAspect.CharacterSpawnPointType.Get(entity);
-			characterSpawnPointTypeComponent.Value = value;
-		}
-
-		public static ref CharacterSpawnPointTypeComponent AddCharacterSpawnPointType(this ProtoEntity entity, SpawnPointType value)
-		{
-			ref CharacterSpawnPointTypeComponent characterSpawnPointTypeComponent = ref s_GameAspect.CharacterSpawnPointType.Add(entity);
-			characterSpawnPointTypeComponent.Value = value;
-			return ref characterSpawnPointTypeComponent;
-		}
-
-		public static void DelCharacterSpawnPointType(this ProtoEntity entity)
-			=> s_GameAspect.CharacterSpawnPointType.Del(entity);
-
-		//CharactersSpawnPoints
-		public static bool HasCharactersSpawnPoints(this ProtoEntity entity) =>
-			s_GameAspect.CharactersSpawnPoints.Has(entity);
-
-		public static ref CharactersSpawnPointsComponent GetCharactersSpawnPoints(this ProtoEntity entity) =>
-			ref s_GameAspect.CharactersSpawnPoints.Get(entity);
-
-		public static void ReplaceCharactersSpawnPoints(this ProtoEntity entity, List<ProtoEntity> meleeSpawnPoints, List<ProtoEntity> rangeSpawnPoints)
-		{
-			ref CharactersSpawnPointsComponent charactersSpawnPointsComponent = ref s_GameAspect.CharactersSpawnPoints.Get(entity);
-			charactersSpawnPointsComponent.MeleeSpawnPoints = meleeSpawnPoints;
-			charactersSpawnPointsComponent.RangeSpawnPoints = rangeSpawnPoints;
-		}
-
-		public static ref CharactersSpawnPointsComponent AddCharactersSpawnPoints(this ProtoEntity entity, List<ProtoEntity> meleeSpawnPoints, List<ProtoEntity> rangeSpawnPoints)
-		{
-			ref CharactersSpawnPointsComponent charactersSpawnPointsComponent = ref s_GameAspect.CharactersSpawnPoints.Add(entity);
-			charactersSpawnPointsComponent.MeleeSpawnPoints = meleeSpawnPoints;
-			charactersSpawnPointsComponent.RangeSpawnPoints = rangeSpawnPoints;
-			return ref charactersSpawnPointsComponent;
-		}
-
-		public static void DelCharactersSpawnPoints(this ProtoEntity entity)
-			=> s_GameAspect.CharactersSpawnPoints.Del(entity);
-
-		//SpawnCharactersEvent
-		public static bool HasSpawnCharactersEvent(this ProtoEntity entity) =>
-			s_GameAspect.SpawnCharactersEvent.Has(entity);
-
-		public static ref SpawnCharactersEvent AddSpawnCharactersEvent(this ProtoEntity entity)
-		{
-			ref SpawnCharactersEvent spawnCharactersEvent = ref s_GameAspect.SpawnCharactersEvent.Add(entity);
-			return ref spawnCharactersEvent;
-		}
-
-		public static void DelSpawnCharactersEvent(this ProtoEntity entity)
-			=> s_GameAspect.SpawnCharactersEvent.Del(entity);
+		
 
 		//CharacterMeleeConfig
 		public static bool HasCharacterMeleeConfig(this ProtoEntity entity) =>
@@ -2990,42 +2438,7 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelForbiddingUseBurnTimer(this ProtoEntity entity)
 			=> s_GameAspect.ForbiddingUseBurnTimer.Del(entity);
-
-		//Bunker
-		public static bool HasBunker(this ProtoEntity entity) =>
-			s_GameAspect.Bunker.Has(entity);
-
-		public static ref BunkerTag AddBunker(this ProtoEntity entity)
-		{
-			ref BunkerTag bunkerTag = ref s_GameAspect.Bunker.Add(entity);
-			return ref bunkerTag;
-		}
-
-		public static void DelBunker(this ProtoEntity entity)
-			=> s_GameAspect.Bunker.Del(entity);
-
-		//BunkerUiModule
-		public static bool HasBunkerUiModule(this ProtoEntity entity) =>
-			s_GameAspect.BunkerUiModule.Has(entity);
-
-		public static ref BunkerUiModuleComponent GetBunkerUiModule(this ProtoEntity entity) =>
-			ref s_GameAspect.BunkerUiModule.Get(entity);
-
-		public static void ReplaceBunkerUiModule(this ProtoEntity entity, BunkerUiModule value)
-		{
-			ref BunkerUiModuleComponent bunkerUiModuleComponent = ref s_GameAspect.BunkerUiModule.Get(entity);
-			bunkerUiModuleComponent.Value = value;
-		}
-
-		public static ref BunkerUiModuleComponent AddBunkerUiModule(this ProtoEntity entity, BunkerUiModule value)
-		{
-			ref BunkerUiModuleComponent bunkerUiModuleComponent = ref s_GameAspect.BunkerUiModule.Add(entity);
-			bunkerUiModuleComponent.Value = value;
-			return ref bunkerUiModuleComponent;
-		}
-
-		public static void DelBunkerUiModule(this ProtoEntity entity)
-			=> s_GameAspect.BunkerUiModule.Del(entity);
+		
 
 		//AbilityApplierModule
 		public static bool HasAbilityApplierModule(this ProtoEntity entity) =>

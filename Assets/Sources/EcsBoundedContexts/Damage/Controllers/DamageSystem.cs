@@ -1,6 +1,5 @@
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
-using Sources.EcsBoundedContexts.Bunker.Domain.Components;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
@@ -17,12 +16,10 @@ namespace Sources.EcsBoundedContexts.Damage.Controllers
     [Aspect(AspectName.Game)]
     public class DamageSystem : IProtoRunSystem
     {
-        [DI] private readonly ProtoItExc _it = new(
+        [DI] private readonly ProtoIt _it = new(
             It.Inc<
                 HealthComponent,
-                DamageEvent>(), 
-            It.Exc<
-                BunkerTag>());
+                DamageEvent>());
         
         public void Run()
         {

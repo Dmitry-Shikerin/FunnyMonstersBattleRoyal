@@ -209,7 +209,7 @@ namespace Sources.Frameworks.YandexSdkFramework.Sdk.Services
                 return;
             
             //TODO вынести в конфиг
-            _healthBuster.AddIncreaseHealthBoosterEvent(5);
+            //_healthBuster.AddIncreaseHealthBoosterEvent(5);
         }
         #endregion    
     }

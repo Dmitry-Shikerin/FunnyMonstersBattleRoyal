@@ -4,23 +4,15 @@ using MyDependencies.Sources.Containers.Extensions;
 using MyDependencies.Sources.Installers;
 using Sources.EcsBoundedContexts.Achievements.Infrastructure;
 using Sources.EcsBoundedContexts.ApplyAbility.Infrastructure;
-using Sources.EcsBoundedContexts.Bunker.Infrastructure;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure;
 using Sources.EcsBoundedContexts.Characters.Infrastructure;
-using Sources.EcsBoundedContexts.CharacterSpawner.Infrastructure.Factories;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.DailyRewards.Infrastructure;
 using Sources.EcsBoundedContexts.Enemies.Infrastructure.Factories;
-using Sources.EcsBoundedContexts.EnemySpawners.Infrastructure.Factories;
-using Sources.EcsBoundedContexts.EnemySpawners.Infrastructure.Services;
 using Sources.EcsBoundedContexts.ExplosionBodies.Infrastructure;
-using Sources.EcsBoundedContexts.FlamethrowerAbility.Infrastructure;
-using Sources.EcsBoundedContexts.HealthBoosters.Infrastructure;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Infrastructure;
 using Sources.EcsBoundedContexts.Lights.Infrastructure;
-using Sources.EcsBoundedContexts.NukeAbilities.Infrastructure;
 using Sources.EcsBoundedContexts.PlayerWallets.Infrastructure;
-using Sources.EcsBoundedContexts.SwingingTrees.Infrastructure.Factories;
 using Sources.EcsBoundedContexts.Tutorials.Infrastructure;
 using Sources.EcsBoundedContexts.Upgrades.Infrastructure;
 using Sources.EcsBoundedContexts.Volumes.Infrastructure;
@@ -53,21 +45,15 @@ namespace Sources.App.DIContainers.Common
             container.Bind<IEntityPoolManager, EntityPoolManager>();
             
             //Characters
-            container.Bind<CharacterSpawnerEntityFactory>();
             container.Bind<CharacterMeleeEntityFactory>();
             container.Bind<CharacterRangeEntityFactory>();
-            container.Bind<CharacterSpawnPointEntityFactory>();
 
             //Enemies
-            container.Bind<ISpawnService, SpawnService>();
-            container.Bind<EnemySpawnerEntityFactory>();
             container.Bind<EnemyBossEntityFactory>();
             container.Bind<EnemyEntityFactory>();
             container.Bind<EnemyKamikazeEntityFactory>();
-            container.Bind<EnemySpawnPointEntityFactory>();
             
             //Trees
-            container.Bind<TreeSwingEntityFactory>();
             
             //Cameras
             container.Bind<MainCameraEntityFactory>();
@@ -76,14 +62,9 @@ namespace Sources.App.DIContainers.Common
             container.Bind<LightEntityFactory>();
             
             //Bunkers
-            container.Bind<BunkerEntityFactory>();
             
             //Abilities
             container.Bind<AbilityApplierEntityFactory>();
-            container.Bind<FlamethrowerEntityFactory>();
-            container.Bind<FlamethrowerAbilityEntityFactory>();
-            container.Bind<NukeAbilityEntityFactory>();
-            container.Bind<NukeBombEntityFactory>();
             
             //ExplosionsBodies
             container.Bind<ExplosionBodyEntityFactory>();
@@ -99,7 +80,6 @@ namespace Sources.App.DIContainers.Common
             container.Bind<TutorialEntityFactory>();
             
             //HealthBuster
-            container.Bind<HealthBusterEntityFactory>();
             
             //Upgrades
             container.Bind<UpgradeEntityFactory>();

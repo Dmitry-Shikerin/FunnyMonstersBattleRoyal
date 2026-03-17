@@ -5,7 +5,6 @@ using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
-using Sources.EcsBoundedContexts.EnemySpawners.Domain.Configs;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.Loads.Services.Interfaces;
@@ -28,7 +27,6 @@ namespace Sources.EcsBoundedContexts.GameCompleted.Controllers
         private ProtoEntity _enemySpawner;
         private ProtoEntity _killEnemyCounter;
         private bool _isCompleted;
-        private EnemySpawnerConfig _enemySpawnerConfig;
 
         public GameCompletedSystem(
             IUiViewService uiViewService,
@@ -48,7 +46,6 @@ namespace Sources.EcsBoundedContexts.GameCompleted.Controllers
         {
             _enemySpawner = _repository.GetByName(IdsConst.EnemySpawner);
             _killEnemyCounter = _repository.GetByName(IdsConst.KillEnemyCounter);
-            _enemySpawnerConfig = _assetCollector.Get<EnemySpawnerConfig>();
         }
 
         public void Run()
@@ -61,18 +58,18 @@ namespace Sources.EcsBoundedContexts.GameCompleted.Controllers
             if (_isCompleted)
                 return;
 
-            int wavesCount = _enemySpawnerConfig.Waves.Count;
-            
-            if (_enemySpawner.GetEnemySpawnerData().WaweIndex < wavesCount)
-                return;
-            
-            int score = _killEnemyCounter.GetKillEnemyCounter().Value;
-            _sdkService.SetPlayerScore(score);
-            _storageService.ClearAll();
-            //TODO обобщить GameOver и GameCompleted или сделать одну систему
-            _uiViewService.Show(UiViewId.GameCompleted);
-            _uiViewService.Get<GameCompletedUiView>().ScoreText.text = score.ToString();
-            _isCompleted = true;
+            // int wavesCount = _enemySpawnerConfig.Waves.Count;
+            //
+            // if (_enemySpawner.GetEnemySpawnerData().WaweIndex < wavesCount)
+            //     return;
+            //
+            // int score = _killEnemyCounter.GetKillEnemyCounter().Value;
+            // _sdkService.SetPlayerScore(score);
+            // _storageService.ClearAll();
+            // //TODO обобщить GameOver и GameCompleted или сделать одну систему
+            // _uiViewService.Show(UiViewId.GameCompleted);
+            // _uiViewService.Get<GameCompletedUiView>().ScoreText.text = score.ToString();
+            // _isCompleted = true;
         }
     }
 }

@@ -15,21 +15,5 @@ namespace Sources.BoundedContexts.RootGameObjects.Presentation
         
         [field: FoldoutGroup(CameraFolder)]
         [field: SerializeField] public Camera MainCamera { get; private set; }
-        
-        [field: FoldoutGroup(SpawnerFolder)]
-        [field: Required] [field: SerializeField] public EntityLink EnemySpawner { get; private set; }
-        
-        [field: FoldoutGroup(BunkerFolder)] 
-        [field: Required] [field: SerializeField] public EntityLink Bunker { get; private set; }
-        
-        [field: FoldoutGroup(AbilityFolder)]
-        [field: Required] [field: SerializeField] public EntityLink CharacterSpawner { get; private set; }
-        [field: FoldoutGroup(AbilityFolder)]
-        [field: Required] [field: SerializeField] public EntityLink FlamethrowerAbility { get; private set; }
-        [field: FoldoutGroup(AbilityFolder)]
-        [field: Required] [field: SerializeField] public EntityLink NukeAbility { get; private set; }        
-        [field: FoldoutGroup(GrasFolder)]
-        [field: Required] [field: SerializeField] public List<EntityLink> Gras { get; private set; }
-
     }
 }

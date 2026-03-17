@@ -5,12 +5,9 @@ using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using Sources.BoundedContexts.Hud.Presentations.Gameplay;
 using Sources.EcsBoundedContexts.AdvertisingAfterWaves.Domain;
-using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
-using Sources.EcsBoundedContexts.EnemySpawners.Domain.Components;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums;
-using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.Pauses;
@@ -32,10 +29,10 @@ namespace Sources.EcsBoundedContexts.AdvertisingAfterWaves.Controllers
         private readonly IUiViewService _uiViewService;
         private readonly IAssetCollector _assetCollector;
 
-        [DI] private readonly ProtoIt _spawnerIt = new(
-            It.Inc<
-                EnemySpawnerTag,
-                WaveCompletedEvent>());
+        // [DI] private readonly ProtoIt _spawnerIt = new(
+        //     It.Inc<
+        //         EnemySpawnerTag,
+        //         WaveCompletedEvent>());
 
         private readonly TimeSpan _timerTimeSpan = TimeSpan.FromSeconds(AdvertisingConst.Delay);
         private CancellationTokenSource _tokenSource;
@@ -63,15 +60,15 @@ namespace Sources.EcsBoundedContexts.AdvertisingAfterWaves.Controllers
 
         public void Run()
         {
-            foreach (ProtoEntity entity in _spawnerIt)
-            {
-                int currentWaveNumber = entity.GetEnemySpawnerData().WaweIndex;
-
-                if (currentWaveNumber % _config.WavesCount != 0)
-                    continue;
-
-                ShowTimerAsync().Forget();
-            }
+            // foreach (ProtoEntity entity in _spawnerIt)
+            // {
+            //     int currentWaveNumber = entity.GetEnemySpawnerData().WaweIndex;
+            //
+            //     if (currentWaveNumber % _config.WavesCount != 0)
+            //         continue;
+            //
+            //     ShowTimerAsync().Forget();
+            // }
         }
 
         private async UniTaskVoid ShowTimerAsync()

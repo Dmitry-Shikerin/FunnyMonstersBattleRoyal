@@ -9,32 +9,25 @@ using Sources.EcsBoundedContexts.Volumes.Domain.Components;
 using Sources.EcsBoundedContexts.Upgrades.Domain.Components;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Components;
 using Sources.EcsBoundedContexts.Timers.Domain;
-using Sources.EcsBoundedContexts.SwingingTrees.Domain.Components;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.Particles.Domain;
-using Sources.EcsBoundedContexts.NukeAbilities.Domain;
 using Sources.EcsBoundedContexts.Movements.TargetPoint.Components;
 using Sources.EcsBoundedContexts.Movements.Rotation.Components;
 using Sources.EcsBoundedContexts.Movements.Move.Components;
 using Sources.EcsBoundedContexts.LookAt.Domain;
 using Sources.EcsBoundedContexts.Lights.Domain;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Domain.Components;
-using Sources.EcsBoundedContexts.HealthBoosters.Domain.Components;
 using Sources.EcsBoundedContexts.GraphOwners.Domain;
 using Sources.EcsBoundedContexts.GameObjects.Domain;
-using Sources.EcsBoundedContexts.FlamethrowerAbility.Domain;
 using Sources.EcsBoundedContexts.ExplosionBodies.Domain;
-using Sources.EcsBoundedContexts.EnemySpawners.Domain.Components;
 using Sources.EcsBoundedContexts.Enemies.Domain.Components;
 using Sources.EcsBoundedContexts.Damage.Domain;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Components;
 using Sources.EcsBoundedContexts.Common.Domain.Components;
-using Sources.EcsBoundedContexts.CharacterSpawner.Domain;
 using Sources.EcsBoundedContexts.Characters.Domain.Components;
 using Sources.EcsBoundedContexts.Cameras.Domain;
 using Sources.EcsBoundedContexts.BurnAbilities.Domain.Components;
-using Sources.EcsBoundedContexts.Bunker.Domain.Components;
 using Sources.EcsBoundedContexts.ApplyAbility.Domain;
 using Sources.EcsBoundedContexts.Animators;
 using Sources.EcsBoundedContexts.AnimatorLod.Domain.Components;
@@ -64,10 +57,6 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<ClearDataEvent> ClearDataEvent = new ();
 		public readonly ProtoPool<SavableDataComponent> SavableData = new ();
 		public readonly ProtoPool<SaveDataEvent> SaveDataEvent = new ();
-		public readonly ProtoPool<NukeAbilityTag> NukeAbility = new ();
-		public readonly ProtoPool<NukeBombLinkComponent> NukeBombLink = new ();
-		public readonly ProtoPool<NukeBombTag> NukeBomb = new ();
-		public readonly ProtoPool<NukeDamageColliderComponent> NukeDamageCollider = new ();
 		public readonly ProtoPool<PointPathComponent> PointPath = new ();
 		public readonly ProtoPool<TargetPointComponent> TargetPoint = new ();
 		public readonly ProtoPool<TargetPointIndexComponent> TargetPointIndex = new ();
@@ -81,16 +70,10 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<TargetSpeedComponent> TargetSpeed = new ();
 		public readonly ProtoPool<LookAtComponent> LookAt = new ();
 		public readonly ProtoPool<KillEnemyCounterComponent> KillEnemyCounter = new ();
-		public readonly ProtoPool<HealthBusterComponent> HealthBuster = new ();
-		public readonly ProtoPool<HealthBusterModuleComponent> HealthBusterModule = new ();
-		public readonly ProtoPool<IncreaseHealthBoosterEvent> IncreaseHealthBoosterEvent = new ();
 		public readonly ProtoPool<ActiveComponent> Active = new ();
 		public readonly ProtoPool<DisableGameObjectEvent> DisableGameObjectEvent = new ();
 		public readonly ProtoPool<EnableGameObjectEvent> EnableGameObjectEvent = new ();
 		public readonly ProtoPool<GameObjectComponent> GameObject = new ();
-		public readonly ProtoPool<FlamethrowerAbilityTag> FlamethrowerAbility = new ();
-		public readonly ProtoPool<FlamethrowerLinkComponent> FlamethrowerLink = new ();
-		public readonly ProtoPool<FlamethrowerTag> Flamethrower = new ();
 		public readonly ProtoPool<BloodParticleComponent> BloodParticle = new ();
 		public readonly ProtoPool<DamageEvent> DamageEvent = new ();
 		public readonly ProtoPool<HealthTextComponent> HealthText = new ();
@@ -111,8 +94,6 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<SequenceComponent> Sequence = new ();
 		public readonly ProtoPool<StringIdComponent> StringId = new ();
 		public readonly ProtoPool<TransformComponent> Transform = new ();
-		public readonly ProtoPool<BunkerTag> Bunker = new ();
-		public readonly ProtoPool<BunkerUiModuleComponent> BunkerUiModule = new ();
 		public readonly ProtoPool<AnimatorComponent> Animator = new ();
 		public readonly ProtoPool<AnimancerEcsComponent> AnimancerEcs = new ();
 		public readonly ProtoPool<AnimancerStateComponent> AnimancerState = new ();
@@ -142,8 +123,6 @@ namespace Sources.EcsBoundedContexts.Core
 
 		//Tree
 		public readonly ProtoPool<TutorialTag> Tutorial = new ();
-		public readonly ProtoPool<SwingingTreeComponent> SwingingTree = new ();
-		public readonly ProtoPool<TreeTag> Tree = new ();
 
 		//Camera
 		public readonly ProtoPool<CameraComponent> Camera = new ();
@@ -163,23 +142,9 @@ namespace Sources.EcsBoundedContexts.Core
 		//Chunks
 
 		//Ability
-		public readonly ProtoPool<NukeParticleComponent> NukeParticle = new ();
 		public readonly ProtoPool<ExplosionBodyBloodyTag> ExplosionBodyBloody = new ();
 		public readonly ProtoPool<ExplosionBodyTag> ExplosionBody = new ();
-		public readonly ProtoPool<EnemySpawnerConfigComponent> EnemySpawnerConfig = new ();
-		public readonly ProtoPool<EnemySpawnerDataComponent> EnemySpawnerData = new ();
-		public readonly ProtoPool<EnemySpawnerTag> EnemySpawner = new ();
-		public readonly ProtoPool<EnemySpawnerUiModuleComponent> EnemySpawnerUiModule = new ();
-		public readonly ProtoPool<EnemySpawnPointsComponent> EnemySpawnPoints = new ();
-		public readonly ProtoPool<EnemySpawnPointTag> EnemySpawnPoint = new ();
-		public readonly ProtoPool<TargetCharactersPoints> TargetCharactersPoints = new ();
-		public readonly ProtoPool<WaveCompletedEvent> WaveCompletedEvent = new ();
 		public readonly ProtoPool<AvailableComponent> Available = new ();
-		public readonly ProtoPool<CharacterSpawnerTag> CharacterSpawner = new ();
-		public readonly ProtoPool<CharacterSpawnPointTag> CharacterSpawnPoint = new ();
-		public readonly ProtoPool<CharacterSpawnPointTypeComponent> CharacterSpawnPointType = new ();
-		public readonly ProtoPool<CharactersSpawnPointsComponent> CharactersSpawnPoints = new ();
-		public readonly ProtoPool<SpawnCharactersEvent> SpawnCharactersEvent = new ();
 		public readonly ProtoPool<BurnEvent> BurnEvent = new ();
 		public readonly ProtoPool<BurnPeriodicTimerComponent> BurnPeriodicTimer = new ();
 		public readonly ProtoPool<BurnTimerComponent> BurnTimer = new ();
@@ -205,7 +170,6 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<TargetEnemyComponent> TargetEnemy = new ();
 
 		//Enemy
-		public readonly ProtoPool<FlameParticleComponent> FlameParticle = new ();
 		public readonly ProtoPool<CharacterMeleePointComponent> CharacterMeleePoint = new ();
 		public readonly ProtoPool<EnemyBossTag> EnemyBoss = new ();
 		public readonly ProtoPool<EnemyKamikazeTag> EnemyKamikaze = new ();
@@ -257,8 +221,6 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<UpgradeTag>)] = Upgrade,
 				[typeof(ProtoPool<TutorialTag>)] = Tutorial,
 				[typeof(ProtoPool<TimerComponent>)] = Timer,
-				[typeof(ProtoPool<SwingingTreeComponent>)] = SwingingTree,
-				[typeof(ProtoPool<TreeTag>)] = Tree,
 				[typeof(ProtoPool<ClearableDataComponent>)] = ClearableData,
 				[typeof(ProtoPool<ClearDataEvent>)] = ClearDataEvent,
 				[typeof(ProtoPool<SavableDataComponent>)] = SavableData,
@@ -270,11 +232,6 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<PlayerWalletModuleComponent>)] = PlayerWalletModule,
 				[typeof(ProtoPool<HealParticleComponent>)] = HealParticle,
 				[typeof(ProtoPool<ShootParticleComponent>)] = ShootParticle,
-				[typeof(ProtoPool<NukeAbilityTag>)] = NukeAbility,
-				[typeof(ProtoPool<NukeBombLinkComponent>)] = NukeBombLink,
-				[typeof(ProtoPool<NukeBombTag>)] = NukeBomb,
-				[typeof(ProtoPool<NukeDamageColliderComponent>)] = NukeDamageCollider,
-				[typeof(ProtoPool<NukeParticleComponent>)] = NukeParticle,
 				[typeof(ProtoPool<PointPathComponent>)] = PointPath,
 				[typeof(ProtoPool<TargetPointComponent>)] = TargetPoint,
 				[typeof(ProtoPool<TargetPointIndexComponent>)] = TargetPointIndex,
@@ -298,29 +255,14 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<PeriodicLightComponent>)] = PeriodicLight,
 				[typeof(ProtoPool<ShadowControllerComponent>)] = ShadowController,
 				[typeof(ProtoPool<KillEnemyCounterComponent>)] = KillEnemyCounter,
-				[typeof(ProtoPool<HealthBusterComponent>)] = HealthBuster,
-				[typeof(ProtoPool<HealthBusterModuleComponent>)] = HealthBusterModule,
-				[typeof(ProtoPool<IncreaseHealthBoosterEvent>)] = IncreaseHealthBoosterEvent,
 				[typeof(ProtoPool<BehaviourTreeOwnerComponent>)] = BehaviourTreeOwner,
 				[typeof(ProtoPool<FsmOwnerComponent>)] = FsmOwner,
 				[typeof(ProtoPool<ActiveComponent>)] = Active,
 				[typeof(ProtoPool<DisableGameObjectEvent>)] = DisableGameObjectEvent,
 				[typeof(ProtoPool<EnableGameObjectEvent>)] = EnableGameObjectEvent,
 				[typeof(ProtoPool<GameObjectComponent>)] = GameObject,
-				[typeof(ProtoPool<FlameParticleComponent>)] = FlameParticle,
-				[typeof(ProtoPool<FlamethrowerAbilityTag>)] = FlamethrowerAbility,
-				[typeof(ProtoPool<FlamethrowerLinkComponent>)] = FlamethrowerLink,
-				[typeof(ProtoPool<FlamethrowerTag>)] = Flamethrower,
 				[typeof(ProtoPool<ExplosionBodyBloodyTag>)] = ExplosionBodyBloody,
 				[typeof(ProtoPool<ExplosionBodyTag>)] = ExplosionBody,
-				[typeof(ProtoPool<EnemySpawnerConfigComponent>)] = EnemySpawnerConfig,
-				[typeof(ProtoPool<EnemySpawnerDataComponent>)] = EnemySpawnerData,
-				[typeof(ProtoPool<EnemySpawnerTag>)] = EnemySpawner,
-				[typeof(ProtoPool<EnemySpawnerUiModuleComponent>)] = EnemySpawnerUiModule,
-				[typeof(ProtoPool<EnemySpawnPointsComponent>)] = EnemySpawnPoints,
-				[typeof(ProtoPool<EnemySpawnPointTag>)] = EnemySpawnPoint,
-				[typeof(ProtoPool<TargetCharactersPoints>)] = TargetCharactersPoints,
-				[typeof(ProtoPool<WaveCompletedEvent>)] = WaveCompletedEvent,
 				[typeof(ProtoPool<CharacterMeleePointComponent>)] = CharacterMeleePoint,
 				[typeof(ProtoPool<EnemyBossTag>)] = EnemyBoss,
 				[typeof(ProtoPool<EnemyKamikazeTag>)] = EnemyKamikaze,
@@ -362,11 +304,6 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<SequenceComponent>)] = Sequence,
 				[typeof(ProtoPool<StringIdComponent>)] = StringId,
 				[typeof(ProtoPool<TransformComponent>)] = Transform,
-				[typeof(ProtoPool<CharacterSpawnerTag>)] = CharacterSpawner,
-				[typeof(ProtoPool<CharacterSpawnPointTag>)] = CharacterSpawnPoint,
-				[typeof(ProtoPool<CharacterSpawnPointTypeComponent>)] = CharacterSpawnPointType,
-				[typeof(ProtoPool<CharactersSpawnPointsComponent>)] = CharactersSpawnPoints,
-				[typeof(ProtoPool<SpawnCharactersEvent>)] = SpawnCharactersEvent,
 				[typeof(ProtoPool<CharacterMeleeConfigComponent>)] = CharacterMeleeConfig,
 				[typeof(ProtoPool<CharacterMeleeTag>)] = CharacterMelee,
 				[typeof(ProtoPool<CharacterRangeTag>)] = CharacterRange,
@@ -384,8 +321,6 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<BurnPeriodicTimerComponent>)] = BurnPeriodicTimer,
 				[typeof(ProtoPool<BurnTimerComponent>)] = BurnTimer,
 				[typeof(ProtoPool<ForbiddingUseBurnTimerComponent>)] = ForbiddingUseBurnTimer,
-				[typeof(ProtoPool<BunkerTag>)] = Bunker,
-				[typeof(ProtoPool<BunkerUiModuleComponent>)] = BunkerUiModule,
 				[typeof(ProtoPool<AbilityApplierModuleComponent>)] = AbilityApplierModule,
 				[typeof(ProtoPool<AbilityCooldownDurationComponent>)] = AbilityCooldownDuration,
 				[typeof(ProtoPool<AbilityTag>)] = Ability,

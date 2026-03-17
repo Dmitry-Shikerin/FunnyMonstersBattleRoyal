@@ -2,13 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Sources.EcsBoundedContexts.Achievements.Domain.Data;
 using Sources.EcsBoundedContexts.ApplyAbility.Domain.Data;
-using Sources.EcsBoundedContexts.Bunker.Domain.Data;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Data;
-using Sources.EcsBoundedContexts.EnemySpawners.Domain.Data;
-using Sources.EcsBoundedContexts.HealthBoosters.Domain.Data;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Domain.Data;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Data;
-using Sources.EcsBoundedContexts.Tutorials.Domain;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Data;
 using Sources.EcsBoundedContexts.Upgrades.Domain.Data;
 using Sources.EcsBoundedContexts.Volumes.Domain.Data;
@@ -69,8 +65,6 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
             [CharacterSpawnerAbility] = new (CharacterSpawnerAbility, typeof(AbilitySaveData), false),
             [FlamethrowerAbility] = new (FlamethrowerAbility, typeof(AbilitySaveData), false),
             [NukeAbility] = new (NukeAbility, typeof(AbilitySaveData), false),
-            [EnemySpawner] = new (EnemySpawner, typeof(EnemySpawnerSaveData), true),
-            [Bunker] = new (Bunker, typeof(BunkerSaveData), true),
             [PlayerWallet] = new (PlayerWallet, typeof(PlayerWalletSaveData), true),
             [KillEnemyCounter] = new (KillEnemyCounter, typeof(KillEnemyCounterSaveData), true),
             [Tutorial] = new (Tutorial, typeof(TutorialSaveData), false),
@@ -78,7 +72,6 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
             [HealthUpgrade] = new (HealthUpgrade, typeof(UpgradeSaveData), true),
             [FlamethrowerUpgrade] = new (FlamethrowerUpgrade, typeof(UpgradeSaveData), true),
             [NukeUpgrade] = new (NukeUpgrade, typeof(UpgradeSaveData), true),
-            [HealthBooster] = new (HealthBooster, typeof(HealthBusterSaveData), false),
             [SoundsVolume] = new (SoundsVolume, typeof(GameVolumeSaveData), false),
             [MusicVolume] = new (MusicVolume, typeof(GameVolumeSaveData), false),
             [FirstEnemyKillAchievement] = new (FirstEnemyKillAchievement, typeof(AchievementSaveData), false),

@@ -1,9 +1,0 @@
-﻿namespace Sources.EcsBoundedContexts.CharacterSpawner.Presentation.Types
-{
-    public enum SpawnPointType
-    {
-        Enemy = 0,
-        CharacterMelee = 1,
-        CharacterRanged = 2,
-    }
-}
