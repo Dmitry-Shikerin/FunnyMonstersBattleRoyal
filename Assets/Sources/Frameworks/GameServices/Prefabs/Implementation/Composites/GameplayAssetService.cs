@@ -76,7 +76,6 @@ namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
             
             //Prefabs
             await AddressalesPrefabLoad<CharacterMeleeModule>(config.CharacterMeleeModule);
-            await AddressalesPrefabLoad<CharacterRangeModule>(config.CharacterRangeModule);
             await AddressalesPrefabLoad<EnemyModule>(config.EnemyModule);
             await AddressalesPrefabLoad<EnemyKamikazeModule>(config.EnemyKamikazeModule);
             await AddressalesPrefabLoad<EnemyBossModule>(config.EnemyBossModule);

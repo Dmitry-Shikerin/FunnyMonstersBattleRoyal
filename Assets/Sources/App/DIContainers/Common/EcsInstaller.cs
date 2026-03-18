@@ -46,7 +46,6 @@ namespace Sources.App.DIContainers.Common
             
             //Characters
             container.Bind<CharacterMeleeEntityFactory>();
-            container.Bind<CharacterRangeEntityFactory>();
 
             //Enemies
             container.Bind<EnemyBossEntityFactory>();
