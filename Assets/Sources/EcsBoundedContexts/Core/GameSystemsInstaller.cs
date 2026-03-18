@@ -15,7 +15,6 @@ using Sources.EcsBoundedContexts.Upgrades.Controllers;
 using Sources.EcsBoundedContexts.BurnAbilities.Controllers;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers;
 using Sources.EcsBoundedContexts.Cameras.Controllers;
-using Sources.EcsBoundedContexts.Characters.Controllers.Systems;
 using Sources.EcsBoundedContexts.DailyRewards.Controllers;
 using Sources.EcsBoundedContexts.Movements.Move.Systems;
 using Sources.EcsBoundedContexts.Damage.Controllers;
@@ -91,14 +90,9 @@ namespace Sources.EcsBoundedContexts.Core
 			container.Bind<PlayerWalletSaveSystem>();
 
 			//Characters
-			container.Bind<ClearTargetEnemySystem>();
-			container.Bind<FindEnemiesSystem>();
-			container.Bind<MeleeMassAttackSystem>();
-			container.Bind<RotationToEnemySystem>();
 			container.Bind<CleanTargetCharacterSystem>();
 
 			//Enemy
-			container.Bind<ExplodeSystem>();
 			container.Bind<FindCharactersSystem>();
 			container.Bind<MassAttackSystem>();
 

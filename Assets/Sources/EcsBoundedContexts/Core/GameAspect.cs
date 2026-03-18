@@ -159,15 +159,8 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<HealParticleComponent> HealParticle = new ();
 		public readonly ProtoPool<ShootParticleComponent> ShootParticle = new ();
 		public readonly ProtoPool<AttackPowerComponent> AttackPower = new ();
-		public readonly ProtoPool<CharacterMeleeConfigComponent> CharacterMeleeConfig = new ();
-		public readonly ProtoPool<CharacterMeleeTag> CharacterMelee = new ();
-		public readonly ProtoPool<CharacterRangeTag> CharacterRange = new ();
+		public readonly ProtoPool<CharacterConfigComponent> CharacterMeleeConfig = new ();
 		public readonly ProtoPool<CharacterTag> Character = new ();
-		public readonly ProtoPool<CharacterTypeComponent> CharacterType = new ();
-		public readonly ProtoPool<EnemiesFindRangeComponent> EnemiesFindRange = new ();
-		public readonly ProtoPool<FindEnemiesComponent> FindEnemies = new ();
-		public readonly ProtoPool<MassAttackEvent> MassAttackEvent = new ();
-		public readonly ProtoPool<TargetEnemyComponent> TargetEnemy = new ();
 
 		//Enemy
 		public readonly ProtoPool<CharacterMeleePointComponent> CharacterMeleePoint = new ();
@@ -304,15 +297,8 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<SequenceComponent>)] = Sequence,
 				[typeof(ProtoPool<StringIdComponent>)] = StringId,
 				[typeof(ProtoPool<TransformComponent>)] = Transform,
-				[typeof(ProtoPool<CharacterMeleeConfigComponent>)] = CharacterMeleeConfig,
-				[typeof(ProtoPool<CharacterMeleeTag>)] = CharacterMelee,
-				[typeof(ProtoPool<CharacterRangeTag>)] = CharacterRange,
+				[typeof(ProtoPool<CharacterConfigComponent>)] = CharacterMeleeConfig,
 				[typeof(ProtoPool<CharacterTag>)] = Character,
-				[typeof(ProtoPool<CharacterTypeComponent>)] = CharacterType,
-				[typeof(ProtoPool<EnemiesFindRangeComponent>)] = EnemiesFindRange,
-				[typeof(ProtoPool<FindEnemiesComponent>)] = FindEnemies,
-				[typeof(ProtoPool<MassAttackEvent>)] = MassAttackEvent,
-				[typeof(ProtoPool<TargetEnemyComponent>)] = TargetEnemy,
 				[typeof(ProtoPool<CameraComponent>)] = Camera,
 				[typeof(ProtoPool<CinemachineCameraComponent>)] = CinemachineCamera,
 				[typeof(ProtoPool<MainCameraTag>)] = MainCamera,

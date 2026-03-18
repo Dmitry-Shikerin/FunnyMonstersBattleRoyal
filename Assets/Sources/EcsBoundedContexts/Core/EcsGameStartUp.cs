@@ -94,7 +94,6 @@ namespace Sources.EcsBoundedContexts.Core
             _systems.DelHere<IncreaseCoinsEvent>();
             _systems.DelHere<DecreaseCoinsEvent>();
             _systems.DelHere<ApplyDailyRewardEvent>();
-            _systems.DelHere<MassAttackEvent>();
             _systems.DelHere<BurnEvent>();
             _systems.DelHere<ChangeVolumeEvent>();
             _systems.DelHere<SelectAchievementEvent>();

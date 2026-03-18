@@ -26,7 +26,7 @@ namespace Sources.Frameworks.GameServices.Prefabs.Domain.Configs
         [field: SerializeField] public AssetReferenceT<ShadowManagerConfigCollector> ShadowManagerConfigCollector { get; private set; }
         [field: SerializeField] public AssetReferenceT<UpgradeConfigContainer> UpgradeConfigContainer { get; private set; }
         [field: SerializeField] public AssetReferenceT<CharacterRangeConfig> CharacterRangeConfig { get; private set; }
-        [field: SerializeField] public AssetReferenceT<CharacterMeleeConfig> CharacterMeleeConfig { get; private set; }
+        [field: SerializeField] public AssetReferenceT<CharacterConfig> CharacterMeleeConfig { get; private set; }
         [field: SerializeField] public AssetReferenceT<EnemyConfig> EnemyConfig { get; private set; }        
         [field: SerializeField] public AssetReferenceT<EnemyKamikazeConfig> EnemyKamikazeConfig { get; private set; }
         [field: SerializeField] public AssetReferenceT<EnemyBossConfig> EnemyBossConfig { get; private set; }

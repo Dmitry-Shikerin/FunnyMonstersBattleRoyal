@@ -2122,50 +2122,24 @@ namespace Sources.EcsBoundedContexts.Core
 		public static bool HasCharacterMeleeConfig(this ProtoEntity entity) =>
 			s_GameAspect.CharacterMeleeConfig.Has(entity);
 
-		public static ref CharacterMeleeConfigComponent GetCharacterMeleeConfig(this ProtoEntity entity) =>
+		public static ref CharacterConfigComponent GetCharacterMeleeConfig(this ProtoEntity entity) =>
 			ref s_GameAspect.CharacterMeleeConfig.Get(entity);
 
-		public static void ReplaceCharacterMeleeConfig(this ProtoEntity entity, CharacterMeleeConfig value)
+		public static void ReplaceCharacterMeleeConfig(this ProtoEntity entity, CharacterConfig value)
 		{
-			ref CharacterMeleeConfigComponent characterMeleeConfigComponent = ref s_GameAspect.CharacterMeleeConfig.Get(entity);
-			characterMeleeConfigComponent.Value = value;
+			ref CharacterConfigComponent characterConfigComponent = ref s_GameAspect.CharacterMeleeConfig.Get(entity);
+			characterConfigComponent.Value = value;
 		}
 
-		public static ref CharacterMeleeConfigComponent AddCharacterMeleeConfig(this ProtoEntity entity, CharacterMeleeConfig value)
+		public static ref CharacterConfigComponent AddCharacterMeleeConfig(this ProtoEntity entity, CharacterConfig value)
 		{
-			ref CharacterMeleeConfigComponent characterMeleeConfigComponent = ref s_GameAspect.CharacterMeleeConfig.Add(entity);
-			characterMeleeConfigComponent.Value = value;
-			return ref characterMeleeConfigComponent;
+			ref CharacterConfigComponent characterConfigComponent = ref s_GameAspect.CharacterMeleeConfig.Add(entity);
+			characterConfigComponent.Value = value;
+			return ref characterConfigComponent;
 		}
 
 		public static void DelCharacterMeleeConfig(this ProtoEntity entity)
 			=> s_GameAspect.CharacterMeleeConfig.Del(entity);
-
-		//CharacterMelee
-		public static bool HasCharacterMelee(this ProtoEntity entity) =>
-			s_GameAspect.CharacterMelee.Has(entity);
-
-		public static ref CharacterMeleeTag AddCharacterMelee(this ProtoEntity entity)
-		{
-			ref CharacterMeleeTag characterMeleeTag = ref s_GameAspect.CharacterMelee.Add(entity);
-			return ref characterMeleeTag;
-		}
-
-		public static void DelCharacterMelee(this ProtoEntity entity)
-			=> s_GameAspect.CharacterMelee.Del(entity);
-
-		//CharacterRange
-		public static bool HasCharacterRange(this ProtoEntity entity) =>
-			s_GameAspect.CharacterRange.Has(entity);
-
-		public static ref CharacterRangeTag AddCharacterRange(this ProtoEntity entity)
-		{
-			ref CharacterRangeTag characterRangeTag = ref s_GameAspect.CharacterRange.Add(entity);
-			return ref characterRangeTag;
-		}
-
-		public static void DelCharacterRange(this ProtoEntity entity)
-			=> s_GameAspect.CharacterRange.Del(entity);
 
 		//Character
 		public static bool HasCharacter(this ProtoEntity entity) =>
@@ -2179,101 +2153,6 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelCharacter(this ProtoEntity entity)
 			=> s_GameAspect.Character.Del(entity);
-
-		//CharacterType
-		public static bool HasCharacterType(this ProtoEntity entity) =>
-			s_GameAspect.CharacterType.Has(entity);
-
-		public static ref CharacterTypeComponent GetCharacterType(this ProtoEntity entity) =>
-			ref s_GameAspect.CharacterType.Get(entity);
-
-		public static void ReplaceCharacterType(this ProtoEntity entity, CharacterType value)
-		{
-			ref CharacterTypeComponent characterTypeComponent = ref s_GameAspect.CharacterType.Get(entity);
-			characterTypeComponent.Value = value;
-		}
-
-		public static ref CharacterTypeComponent AddCharacterType(this ProtoEntity entity, CharacterType value)
-		{
-			ref CharacterTypeComponent characterTypeComponent = ref s_GameAspect.CharacterType.Add(entity);
-			characterTypeComponent.Value = value;
-			return ref characterTypeComponent;
-		}
-
-		public static void DelCharacterType(this ProtoEntity entity)
-			=> s_GameAspect.CharacterType.Del(entity);
-
-		//EnemiesFindRange
-		public static bool HasEnemiesFindRange(this ProtoEntity entity) =>
-			s_GameAspect.EnemiesFindRange.Has(entity);
-
-		public static ref EnemiesFindRangeComponent GetEnemiesFindRange(this ProtoEntity entity) =>
-			ref s_GameAspect.EnemiesFindRange.Get(entity);
-
-		public static void ReplaceEnemiesFindRange(this ProtoEntity entity, float value)
-		{
-			ref EnemiesFindRangeComponent enemiesFindRangeComponent = ref s_GameAspect.EnemiesFindRange.Get(entity);
-			enemiesFindRangeComponent.Value = value;
-		}
-
-		public static ref EnemiesFindRangeComponent AddEnemiesFindRange(this ProtoEntity entity, float value)
-		{
-			ref EnemiesFindRangeComponent enemiesFindRangeComponent = ref s_GameAspect.EnemiesFindRange.Add(entity);
-			enemiesFindRangeComponent.Value = value;
-			return ref enemiesFindRangeComponent;
-		}
-
-		public static void DelEnemiesFindRange(this ProtoEntity entity)
-			=> s_GameAspect.EnemiesFindRange.Del(entity);
-
-		//FindEnemies
-		public static bool HasFindEnemies(this ProtoEntity entity) =>
-			s_GameAspect.FindEnemies.Has(entity);
-
-		public static ref FindEnemiesComponent AddFindEnemies(this ProtoEntity entity)
-		{
-			ref FindEnemiesComponent findEnemiesComponent = ref s_GameAspect.FindEnemies.Add(entity);
-			return ref findEnemiesComponent;
-		}
-
-		public static void DelFindEnemies(this ProtoEntity entity)
-			=> s_GameAspect.FindEnemies.Del(entity);
-
-		//MassAttackEvent
-		public static bool HasMassAttackEvent(this ProtoEntity entity) =>
-			s_GameAspect.MassAttackEvent.Has(entity);
-
-		public static ref MassAttackEvent AddMassAttackEvent(this ProtoEntity entity)
-		{
-			ref MassAttackEvent massAttackEvent = ref s_GameAspect.MassAttackEvent.Add(entity);
-			return ref massAttackEvent;
-		}
-
-		public static void DelMassAttackEvent(this ProtoEntity entity)
-			=> s_GameAspect.MassAttackEvent.Del(entity);
-
-		//TargetEnemy
-		public static bool HasTargetEnemy(this ProtoEntity entity) =>
-			s_GameAspect.TargetEnemy.Has(entity);
-
-		public static ref TargetEnemyComponent GetTargetEnemy(this ProtoEntity entity) =>
-			ref s_GameAspect.TargetEnemy.Get(entity);
-
-		public static void ReplaceTargetEnemy(this ProtoEntity entity, ProtoEntity value)
-		{
-			ref TargetEnemyComponent targetEnemyComponent = ref s_GameAspect.TargetEnemy.Get(entity);
-			targetEnemyComponent.Value = value;
-		}
-
-		public static ref TargetEnemyComponent AddTargetEnemy(this ProtoEntity entity, ProtoEntity value)
-		{
-			ref TargetEnemyComponent targetEnemyComponent = ref s_GameAspect.TargetEnemy.Add(entity);
-			targetEnemyComponent.Value = value;
-			return ref targetEnemyComponent;
-		}
-
-		public static void DelTargetEnemy(this ProtoEntity entity)
-			=> s_GameAspect.TargetEnemy.Del(entity);
 
 		//Camera
 		public static bool HasCamera(this ProtoEntity entity) =>

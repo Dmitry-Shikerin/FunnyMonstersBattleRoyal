@@ -15,7 +15,6 @@ using Sources.EcsBoundedContexts.Upgrades.Controllers;
 using Sources.EcsBoundedContexts.BurnAbilities.Controllers;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers;
 using Sources.EcsBoundedContexts.Cameras.Controllers;
-using Sources.EcsBoundedContexts.Characters.Controllers.Systems;
 using Sources.EcsBoundedContexts.DailyRewards.Controllers;
 using Sources.EcsBoundedContexts.Movements.Move.Systems;
 using Sources.EcsBoundedContexts.Damage.Controllers;
@@ -54,16 +53,11 @@ namespace Sources.EcsBoundedContexts.Core
 			BurnSystem burnSystem, //Order: 50 //Ability
 			PlayerWalletSystem playerWalletSystem, //Order: 51 //Ability
 			MainCameraInitializeSystem mainCameraInitializeSystem, //Order: 51 //Camera
-			ClearTargetEnemySystem clearTargetEnemySystem, //Order: 52 //Characters
 			UpdateAvailabilityUpgradeButtonsSystem updateAvailabilityUpgradeButtonsSystem, //Order: 53 //Ability
-			FindEnemiesSystem findEnemiesSystem, //Order: 53 //Characters
-			MeleeMassAttackSystem meleeMassAttackSystem, //Order: 54 //Characters
-			RotationToEnemySystem rotationToEnemySystem, //Order: 55 //Characters
 			DailyRewardSystem dailyRewardSystem, //Order: 56 //Common
 			MoveAlongPathSystem moveAlongPathSystem, //Order: 58 //Light
 			CleanHealthSystem cleanHealthSystem, //Order: 60 //Player
 			CleanTargetCharacterSystem cleanTargetCharacterSystem, //Order: 61 //Characters
-			ExplodeSystem explodeSystem, //Order: 62 //Enemy
 			FindCharactersSystem findCharactersSystem, //Order: 63 //Enemy
 			DamageSystem damageSystem, //Order: 64 //Common
 			MassAttackSystem massAttackSystem, //Order: 65 //Enemy
@@ -110,16 +104,11 @@ namespace Sources.EcsBoundedContexts.Core
 				burnSystem, //Ability
 				playerWalletSystem, //Ability
 				mainCameraInitializeSystem, //Camera
-				clearTargetEnemySystem, //Characters
 				updateAvailabilityUpgradeButtonsSystem, //Ability
-				findEnemiesSystem, //Characters
-				meleeMassAttackSystem, //Characters
-				rotationToEnemySystem, //Characters
 				dailyRewardSystem, //Common
 				moveAlongPathSystem, //Light
 				cleanHealthSystem, //Player
 				cleanTargetCharacterSystem, //Characters
-				explodeSystem, //Enemy
 				findCharactersSystem, //Enemy
 				damageSystem, //Common
 				massAttackSystem, //Enemy

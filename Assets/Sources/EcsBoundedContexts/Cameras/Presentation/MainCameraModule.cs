@@ -8,7 +8,7 @@ namespace Sources.EcsBoundedContexts.Cameras.Presentation
     public class MainCameraModule : EntityModule
     {
         [field: SerializeField] public Camera Camera { get; private set; }
-        [field: SerializeField] public CinemachineCamera CinemachineCamera { get; private set; }
+        [field: SerializeField] public CinemachineBrain Brain { get; private set; }
         [field: SerializeField] public CinemachineCamerasDictionary Cameras { get; private set; }
     }
 }

@@ -3,7 +3,6 @@
     public enum VirtualCameraType
     {
         Default = 0,
-        Follow = 1,
-        Rotate = 2,
+        ThirdPerson = 1,
     }
 }

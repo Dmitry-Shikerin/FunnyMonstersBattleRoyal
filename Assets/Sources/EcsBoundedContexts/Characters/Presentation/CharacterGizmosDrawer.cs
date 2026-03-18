@@ -27,8 +27,8 @@ namespace Sources.EcsBoundedContexts.Characters.Presentation
         {
             Type type = _config.GetType();
             
-            if (type == typeof(CharacterMeleeConfig))
-                return ((CharacterMeleeConfig)_config).FindRange;
+            // if (type == typeof(CharacterConfig))
+            //     return ((CharacterConfig)_config).FindRange;
             
             if (type == typeof(CharacterRangeConfig))
                 return ((CharacterRangeConfig)_config).FindRange;

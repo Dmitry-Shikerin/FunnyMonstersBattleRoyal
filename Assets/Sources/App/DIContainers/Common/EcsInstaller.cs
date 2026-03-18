@@ -45,7 +45,7 @@ namespace Sources.App.DIContainers.Common
             container.Bind<IEntityPoolManager, EntityPoolManager>();
             
             //Characters
-            container.Bind<CharacterMeleeEntityFactory>();
+            container.Bind<CharacterEntityFactory>();
 
             //Enemies
             container.Bind<EnemyBossEntityFactory>();
