@@ -39,6 +39,8 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
             _inputManager.Enable();
             _inputManager.Gameplay.Stand.performed += UpdateStandState;
             _inputManager.Gameplay.Click.performed += UpdateSelectable;
+            // _inputManager.Gameplay.Look.canceled += OnLookCanceled;
+            // _inputManager.Gameplay.Zoom.performed += OnZoomPerformed;
             _entity = _it.First().Entity;
         }
 
@@ -73,6 +75,9 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
             _inputManager.Disable();
             _inputManager.Gameplay.Stand.performed -= UpdateStandState;
             _inputManager.Gameplay.Click.performed -= UpdateSelectable;
+            // _inputManager.Player.Look.performed -= OnLookPerformed;
+            // _inputManager.Player.Look.canceled -= OnLookCanceled;
+            // _inputManager.Player.Zoom.performed -= OnZoomPerformed;
         }
 
         private void UpdatePointerClick()
