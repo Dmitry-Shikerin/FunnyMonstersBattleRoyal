@@ -519,8 +519,6 @@ namespace NodeCanvas.Framework
                 Debug.Assert(!hasInitialized, "Graph is already initialized.");
             }
             
-            Debug.Assert(Threader.applicationIsPlaying, "Initialize should have been called in play mode only.");
-            Debug.Assert(!hasInitialized, "Graph is already initialized.");
             UpdateReferences(newAgent, newParentBlackboard);
             OnGraphInitialize();
             if ( preInitializeSubGraphs ) { PreInitializeSubGraphs(); }

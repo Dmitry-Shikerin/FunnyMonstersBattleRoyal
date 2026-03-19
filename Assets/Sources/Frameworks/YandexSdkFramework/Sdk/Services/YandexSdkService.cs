@@ -54,7 +54,7 @@ namespace Sources.Frameworks.YandexSdkFramework.Sdk.Services
         public void Initialize()
         {
             _token = new CancellationTokenSource();
-            _healthBuster = _entityRepository.GetByName(IdsConst.HealthBooster);
+            //_healthBuster = _entityRepository.GetByName(IdsConst.HealthBooster);
             YG2.onGetSDKData += OnGetSdkData;
             YG2.onGetLeaderboard += OnGetLeaderboard;
             YG2.onOpenRewardedAdv += OnOpenRewardAdv;

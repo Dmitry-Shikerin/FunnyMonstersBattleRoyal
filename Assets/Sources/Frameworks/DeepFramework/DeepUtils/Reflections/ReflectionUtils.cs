@@ -8,7 +8,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUtils.Reflections
 {
     public static class ReflectionUtils
     {
-
         private static readonly List<Func<object, Type>> _targetTypes = new ()
         {
             obj => obj.GetType(),
@@ -140,6 +139,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUtils.Reflections
 
         public static IEnumerable<Type> GetFilteredTypeList<T>()
         {
+            //Todo убрать линку
             return typeof(T).Assembly.GetTypes()
                 .Where(type => type.IsAbstract == false)
                 .Where(type => type.IsGenericTypeDefinition == false)

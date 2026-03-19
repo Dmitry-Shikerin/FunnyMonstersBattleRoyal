@@ -42,27 +42,27 @@ namespace Sources.EcsBoundedContexts.Volumes.Controllers.Data
 
         public void Init(IProtoSystems systems)
         {
-            SettingsUiView settingsUiView = _uiViewService.Get<SettingsUiView>();
-
-            //Create
-            ProtoEntity soundEntity = _volumeEntityFactory.Create(settingsUiView.SoundVolumeLink, IdsConst.SoundsVolume);
-            ProtoEntity musicEntity = _volumeEntityFactory.Create(settingsUiView.MusicVolumeLink, IdsConst.MusicVolume);
-
-            if (_dataService.HasKey(IdsConst.MusicVolume) == false)
-            {
-                settingsUiView.SoundVolumeLink.GetModule<VolumeModule>().UiStepper.SetValue(0.6f);
-                soundEntity.AddChangeVolumeEvent(0.6f);
-                soundEntity.AddUnmuteVolumeEvent();
-                settingsUiView.MusicVolumeLink.GetModule<VolumeModule>().UiStepper.SetValue(0.5f);
-                musicEntity.AddUnmuteVolumeEvent();
-                musicEntity.AddChangeVolumeEvent(0.6f);
-                
-                return;
-            }
-
-            //Load
-            Load(IdsConst.MusicVolume, _soundService.ChangeMusicVolume, _soundService.MuteMusic);
-            Load(IdsConst.SoundsVolume, _soundService.ChangeSoundsVolume, _soundService.MuteSounds);
+            // SettingsUiView settingsUiView = _uiViewService.Get<SettingsUiView>();
+            //
+            // //Create
+            // ProtoEntity soundEntity = _volumeEntityFactory.Create(settingsUiView.SoundVolumeLink, IdsConst.SoundsVolume);
+            // ProtoEntity musicEntity = _volumeEntityFactory.Create(settingsUiView.MusicVolumeLink, IdsConst.MusicVolume);
+            //
+            // if (_dataService.HasKey(IdsConst.MusicVolume) == false)
+            // {
+            //     settingsUiView.SoundVolumeLink.GetModule<VolumeModule>().UiStepper.SetValue(0.6f);
+            //     soundEntity.AddChangeVolumeEvent(0.6f);
+            //     soundEntity.AddUnmuteVolumeEvent();
+            //     settingsUiView.MusicVolumeLink.GetModule<VolumeModule>().UiStepper.SetValue(0.5f);
+            //     musicEntity.AddUnmuteVolumeEvent();
+            //     musicEntity.AddChangeVolumeEvent(0.6f);
+            //     
+            //     return;
+            // }
+            //
+            // //Load
+            // Load(IdsConst.MusicVolume, _soundService.ChangeMusicVolume, _soundService.MuteMusic);
+            // Load(IdsConst.SoundsVolume, _soundService.ChangeSoundsVolume, _soundService.MuteSounds);
         }
 
         private void Load(string id, Action<float> changeVolume, Action mute)

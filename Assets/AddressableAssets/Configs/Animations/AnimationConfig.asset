@@ -16,15 +16,9 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 76cd8dbf48ba69048af325ede7a35eb5, type: 2}
-    - {fileID: 11400000, guid: ffa1805b06926124887be6160b1f587c, type: 2}
-    - {fileID: 11400000, guid: d72b060973630b440bb8c2ccf3ea6752, type: 2}
-    - {fileID: 11400000, guid: 1b1023e7ea653ca4bbc153e0db2475eb, type: 2}
-    - {fileID: 11400000, guid: 99f229c2be7f7384ca69da4195f395a2, type: 2}
-    - {fileID: 11400000, guid: f8fd6d780aa764b4285b0fd9ccde8ce2, type: 2}
-    - {fileID: 11400000, guid: 193513ef3179389419509ac026f63c5c, type: 2}
-    - {fileID: 11400000, guid: bf0dce5e636a0fc4aa25302f05c75f87, type: 2}
-    - {fileID: 11400000, guid: af3a135ea63bd4447b50862b2f93a136, type: 2}
+    - {fileID: 11400000, guid: 80bc6d8b2d6f2a641a814e6f1571ecb8, type: 2}
+    - {fileID: 11400000, guid: cb1d5feafbb5d5743911037cfbee9934, type: 2}
+    - {fileID: 11400000, guid: 6c76e71fdc305f045957621b74e4b9e0, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -49,13 +43,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 9
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: $v
       Entry: 10
       Data: 0
@@ -67,7 +61,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: $v
       Entry: 10
       Data: 1
@@ -83,78 +77,6 @@ MonoBehaviour:
     - Name: $v
       Entry: 10
       Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 4
-    - Name: $v
-      Entry: 10
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 5
-    - Name: $v
-      Entry: 10
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 9
-    - Name: $v
-      Entry: 10
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 7
-    - Name: $v
-      Entry: 10
-      Data: 6
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 8
-    - Name: $v
-      Entry: 10
-      Data: 7
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 10
-    - Name: $v
-      Entry: 10
-      Data: 8
     - Name: 
       Entry: 8
       Data: 

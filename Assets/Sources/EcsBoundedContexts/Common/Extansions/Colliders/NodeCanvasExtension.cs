@@ -41,11 +41,11 @@ namespace Sources.EcsBoundedContexts.Common.Extansions.Colliders
             
             behaviour.Initialize(behaviour.agent, behaviour.blackboard, true, false);
             owner.ConstructFsm(entity, dependencies);
-            owner.InjectFsm(container);
+            owner.InjectOwner(container);
             owner.StartBehaviour();
         }
 
-        private static void InjectFsm<T>(this GraphOwner<T> owner, DiContainer container)
+        private static void InjectOwner<T>(this GraphOwner<T> owner, DiContainer container)
             where T : Graph
         {
             foreach (FSMState state in owner.behaviour.GetAllNodesOfType<FSMState>())

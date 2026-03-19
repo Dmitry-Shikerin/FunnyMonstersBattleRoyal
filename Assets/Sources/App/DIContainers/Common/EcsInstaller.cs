@@ -2,19 +2,16 @@
 using MyDependencies.Sources.Containers;
 using MyDependencies.Sources.Containers.Extensions;
 using MyDependencies.Sources.Installers;
-using Sources.EcsBoundedContexts.Achievements.Infrastructure;
-using Sources.EcsBoundedContexts.ApplyAbility.Infrastructure;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure;
 using Sources.EcsBoundedContexts.Characters.Infrastructure;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.DailyRewards.Infrastructure;
-using Sources.EcsBoundedContexts.Enemies.Infrastructure.Factories;
 using Sources.EcsBoundedContexts.ExplosionBodies.Infrastructure;
+using Sources.EcsBoundedContexts.Input.Infrastructure;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Infrastructure;
 using Sources.EcsBoundedContexts.Lights.Infrastructure;
 using Sources.EcsBoundedContexts.PlayerWallets.Infrastructure;
 using Sources.EcsBoundedContexts.Tutorials.Infrastructure;
-using Sources.EcsBoundedContexts.Upgrades.Infrastructure;
 using Sources.EcsBoundedContexts.Volumes.Infrastructure;
 using Sources.Frameworks.GameServices.EntityPools.Implementation;
 using Sources.Frameworks.MyLeoEcsProto.EventBuffers.Implementation;
@@ -46,13 +43,11 @@ namespace Sources.App.DIContainers.Common
             
             //Characters
             container.Bind<CharacterEntityFactory>();
-
-            //Enemies
-            container.Bind<EnemyBossEntityFactory>();
-            container.Bind<EnemyEntityFactory>();
-            container.Bind<EnemyKamikazeEntityFactory>();
             
             //Trees
+            
+            //Input
+            container.Bind<InputEntityFactory>();
             
             //Cameras
             container.Bind<MainCameraEntityFactory>();
@@ -63,7 +58,6 @@ namespace Sources.App.DIContainers.Common
             //Bunkers
             
             //Abilities
-            container.Bind<AbilityApplierEntityFactory>();
             
             //ExplosionsBodies
             container.Bind<ExplosionBodyEntityFactory>();
@@ -80,18 +74,12 @@ namespace Sources.App.DIContainers.Common
             
             //HealthBuster
             
-            //Upgrades
-            container.Bind<UpgradeEntityFactory>();
-            
             //DailyRewards
             container.Bind<DailyRewardEntityFactory>();
             container.Bind<DailyRewardService>();
             
             //Volume
             container.Bind<VolumeEntityFactory>();
-            
-            //Achievements
-            container.Bind<AchievementEntityFactory>();
         }
     }
 }

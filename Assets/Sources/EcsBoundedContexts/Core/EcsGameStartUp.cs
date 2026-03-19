@@ -3,10 +3,6 @@ using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity;
 using MyDependencies.Sources.Containers;
-using Sources.EcsBoundedContexts.Achievements.Domain.Components;
-using Sources.EcsBoundedContexts.ApplyAbility.Domain;
-using Sources.EcsBoundedContexts.BurnAbilities.Domain.Components;
-using Sources.EcsBoundedContexts.Characters.Domain.Components;
 using Sources.EcsBoundedContexts.Common.Domain.Components;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Components;
 using Sources.EcsBoundedContexts.Damage.Domain;
@@ -14,7 +10,6 @@ using Sources.EcsBoundedContexts.GameObjects.Domain;
 using Sources.EcsBoundedContexts.Movements.Move.Components;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
-using Sources.EcsBoundedContexts.Upgrades.Domain.Components;
 using Sources.EcsBoundedContexts.Volumes.Domain.Components;
 
 namespace Sources.EcsBoundedContexts.Core
@@ -78,7 +73,6 @@ namespace Sources.EcsBoundedContexts.Core
         {
             _systems.DelHere<CompleteMoveAlongPathEvent>();
             _systems.DelHere<CompleteMoveAlongPathPointEvent>();
-            _systems.DelHere<ApplyAbilityEvent>();
             _systems.DelHere<SaveDataEvent>();
             _systems.DelHere<ClearDataEvent>();
             _systems.DelHere<EnableGameObjectEvent>();
@@ -88,15 +82,12 @@ namespace Sources.EcsBoundedContexts.Core
             _systems.DelHere<MuteVolumeEvent>();
             _systems.DelHere<UnmuteVolumeEvent>();
             _systems.DelHere<InitializeEvent>();
-            _systems.DelHere<ApplyUpgradeEvent>();
             _systems.DelHere<DamageEvent>();
             _systems.DelHere<CoinsChangedEvent>();
             _systems.DelHere<IncreaseCoinsEvent>();
             _systems.DelHere<DecreaseCoinsEvent>();
             _systems.DelHere<ApplyDailyRewardEvent>();
-            _systems.DelHere<BurnEvent>();
             _systems.DelHere<ChangeVolumeEvent>();
-            _systems.DelHere<SelectAchievementEvent>();
         }
         
         private async void Init()

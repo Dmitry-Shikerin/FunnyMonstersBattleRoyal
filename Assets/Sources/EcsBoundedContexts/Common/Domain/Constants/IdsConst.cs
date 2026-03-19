@@ -1,12 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
-using Sources.EcsBoundedContexts.Achievements.Domain.Data;
-using Sources.EcsBoundedContexts.ApplyAbility.Domain.Data;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Data;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Domain.Data;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Data;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Data;
-using Sources.EcsBoundedContexts.Upgrades.Domain.Data;
 using Sources.EcsBoundedContexts.Volumes.Domain.Data;
 using Sources.Frameworks.GameServices.Loads.Domain;
 
@@ -62,27 +59,11 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
         public static IReadOnlyDictionary<string, EntityData> AllIds { get; } = new Dictionary<string, EntityData>()
         {
             [DailyReward] = new (DailyReward, typeof(DailyRewardSaveData), false),
-            [CharacterSpawnerAbility] = new (CharacterSpawnerAbility, typeof(AbilitySaveData), false),
-            [FlamethrowerAbility] = new (FlamethrowerAbility, typeof(AbilitySaveData), false),
-            [NukeAbility] = new (NukeAbility, typeof(AbilitySaveData), false),
             [PlayerWallet] = new (PlayerWallet, typeof(PlayerWalletSaveData), true),
             [KillEnemyCounter] = new (KillEnemyCounter, typeof(KillEnemyCounterSaveData), true),
             [Tutorial] = new (Tutorial, typeof(TutorialSaveData), false),
-            [AttackUpgrade] = new (AttackUpgrade, typeof(UpgradeSaveData), true),
-            [HealthUpgrade] = new (HealthUpgrade, typeof(UpgradeSaveData), true),
-            [FlamethrowerUpgrade] = new (FlamethrowerUpgrade, typeof(UpgradeSaveData), true),
-            [NukeUpgrade] = new (NukeUpgrade, typeof(UpgradeSaveData), true),
             [SoundsVolume] = new (SoundsVolume, typeof(GameVolumeSaveData), false),
             [MusicVolume] = new (MusicVolume, typeof(GameVolumeSaveData), false),
-            [FirstEnemyKillAchievement] = new (FirstEnemyKillAchievement, typeof(AchievementSaveData), false),
-            [FirstUpgradeAchievement] = new (FirstUpgradeAchievement, typeof(AchievementSaveData), false),
-            [FirstHealthBoosterUsageAchievement] = new (FirstHealthBoosterUsageAchievement, typeof(AchievementSaveData), false),
-            [FirstWaveCompletedAchievement] = new (FirstWaveCompletedAchievement, typeof(AchievementSaveData), false),
-            [ScullsDiggerAchievement] = new (ScullsDiggerAchievement, typeof(AchievementSaveData), false),
-            [MaxUpgradeAchievement] = new (MaxUpgradeAchievement, typeof(AchievementSaveData), false),
-            [FiftyWaveCompletedAchievement] = new (FiftyWaveCompletedAchievement, typeof(AchievementSaveData), false),
-            [AllAbilitiesUsedAchievement] = new (AllAbilitiesUsedAchievement, typeof(AchievementSaveData), false),
-            [CompleteGameWithOneHealthAchievement] = new (CompleteGameWithOneHealthAchievement, typeof(AchievementSaveData), false),
         };
 
         public static IReadOnlyList<string> GetIds<T>() 

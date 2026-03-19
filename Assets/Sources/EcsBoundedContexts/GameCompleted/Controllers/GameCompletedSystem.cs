@@ -44,8 +44,8 @@ namespace Sources.EcsBoundedContexts.GameCompleted.Controllers
 
         public void Init(IProtoSystems systems)
         {
-            _enemySpawner = _repository.GetByName(IdsConst.EnemySpawner);
-            _killEnemyCounter = _repository.GetByName(IdsConst.KillEnemyCounter);
+            //_enemySpawner = _repository.GetByName(IdsConst.EnemySpawner);
+            //_killEnemyCounter = _repository.GetByName(IdsConst.KillEnemyCounter);
         }
 
         public void Run()

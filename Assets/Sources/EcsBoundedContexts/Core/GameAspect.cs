@@ -6,7 +6,6 @@ using Sources.Frameworks.MyLeoEcsProto.EventBuffers.Implementation;
 using Sources.Frameworks.GameServices.EntityPools.Domain.Components;
 using Sources.EcsBoundedContexts.Weapons.Domain;
 using Sources.EcsBoundedContexts.Volumes.Domain.Components;
-using Sources.EcsBoundedContexts.Upgrades.Domain.Components;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Components;
 using Sources.EcsBoundedContexts.Timers.Domain;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
@@ -18,21 +17,18 @@ using Sources.EcsBoundedContexts.Movements.Move.Components;
 using Sources.EcsBoundedContexts.LookAt.Domain;
 using Sources.EcsBoundedContexts.Lights.Domain;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Domain.Components;
+using Sources.EcsBoundedContexts.Input.Domain;
 using Sources.EcsBoundedContexts.GraphOwners.Domain;
 using Sources.EcsBoundedContexts.GameObjects.Domain;
 using Sources.EcsBoundedContexts.ExplosionBodies.Domain;
-using Sources.EcsBoundedContexts.Enemies.Domain.Components;
 using Sources.EcsBoundedContexts.Damage.Domain;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Components;
 using Sources.EcsBoundedContexts.Common.Domain.Components;
 using Sources.EcsBoundedContexts.Characters.Domain.Components;
 using Sources.EcsBoundedContexts.Cameras.Domain;
-using Sources.EcsBoundedContexts.BurnAbilities.Domain.Components;
-using Sources.EcsBoundedContexts.ApplyAbility.Domain;
 using Sources.EcsBoundedContexts.Animators;
 using Sources.EcsBoundedContexts.AnimatorLod.Domain.Components;
 using Sources.EcsBoundedContexts.Animancers.Domain.Components;
-using Sources.EcsBoundedContexts.Achievements.Domain.Components;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -112,6 +108,8 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<TargetRotationSpeedComponent> TargetRotationSpeed = new ();
 		public readonly ProtoPool<CharacterControllerComponent> CharacterController = new ();
 		public readonly ProtoPool<MoveDeltaComponent> MoveDelta = new ();
+		public readonly ProtoPool<DirectionComponent> Direction = new ();
+		public readonly ProtoPool<InputTag> Input = new ();
 		public readonly ProtoPool<BehaviourTreeOwnerComponent> BehaviourTreeOwner = new ();
 		public readonly ProtoPool<FsmOwnerComponent> FsmOwner = new ();
 		public readonly ProtoPool<DamageTimerComponent> DamageTimer = new ();
@@ -145,51 +143,15 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<ExplosionBodyBloodyTag> ExplosionBodyBloody = new ();
 		public readonly ProtoPool<ExplosionBodyTag> ExplosionBody = new ();
 		public readonly ProtoPool<AvailableComponent> Available = new ();
-		public readonly ProtoPool<BurnEvent> BurnEvent = new ();
-		public readonly ProtoPool<BurnPeriodicTimerComponent> BurnPeriodicTimer = new ();
-		public readonly ProtoPool<BurnTimerComponent> BurnTimer = new ();
-		public readonly ProtoPool<ForbiddingUseBurnTimerComponent> ForbiddingUseBurnTimer = new ();
-		public readonly ProtoPool<AbilityApplierModuleComponent> AbilityApplierModule = new ();
-		public readonly ProtoPool<AbilityCooldownDurationComponent> AbilityCooldownDuration = new ();
-		public readonly ProtoPool<AbilityTag> Ability = new ();
-		public readonly ProtoPool<ApplyAbilityEvent> ApplyAbilityEvent = new ();
-		public readonly ProtoPool<ChangeForDurationTimeComponent> ChangeForDurationTime = new ();
 
 		//Characters
 		public readonly ProtoPool<HealParticleComponent> HealParticle = new ();
 		public readonly ProtoPool<ShootParticleComponent> ShootParticle = new ();
 		public readonly ProtoPool<AttackPowerComponent> AttackPower = new ();
-		public readonly ProtoPool<CharacterConfigComponent> CharacterMeleeConfig = new ();
+		public readonly ProtoPool<CharacterConfigComponent> CharacterConfig = new ();
 		public readonly ProtoPool<CharacterTag> Character = new ();
 
-		//Enemy
-		public readonly ProtoPool<CharacterMeleePointComponent> CharacterMeleePoint = new ();
-		public readonly ProtoPool<EnemyBossTag> EnemyBoss = new ();
-		public readonly ProtoPool<EnemyKamikazeTag> EnemyKamikaze = new ();
-		public readonly ProtoPool<EnemyTag> Enemy = new ();
-		public readonly ProtoPool<EnemyTypeComponent> EnemyType = new ();
-		public readonly ProtoPool<ExplodeComponent> Explode = new ();
-		public readonly ProtoPool<FindCharactersComponent> FindCharacters = new ();
-		public readonly ProtoPool<MassAttackParticleComponent> MassAttackParticle = new ();
-		public readonly ProtoPool<MassAttackPowerComponent> MassAttackPower = new ();
-		public readonly ProtoPool<MassAttackTimerComponent> MassAttackTimer = new ();
-		public readonly ProtoPool<ReachedMeleePointComponent> ReachedMeleePoint = new ();
-		public readonly ProtoPool<TargetBunkerComponent> TargetBunker = new ();
-		public readonly ProtoPool<TargetCharacterComponent> TargetCharacter = new ();
-		public readonly ProtoPool<BurnParticleComponent> BurnParticle = new ();
-
-		//Upgrade
-		public readonly ProtoPool<ApplyUpgradeEvent> ApplyUpgradeEvent = new ();
-		public readonly ProtoPool<ApplyUpgradeUiModuleComponent> ApplyUpgradeUiModule = new ();
-		public readonly ProtoPool<UpgradeConfigComponent> UpgradeConfig = new ();
-		public readonly ProtoPool<UpgradeLinkComponent> UpgradeLink = new ();
-		public readonly ProtoPool<UpgradeTag> Upgrade = new ();
-
 		//Achievements
-		public readonly ProtoPool<AchievementModuleComponent> AchievementModule = new ();
-		public readonly ProtoPool<AchievementTag> Achievement = new ();
-		public readonly ProtoPool<FirstUsedCompletedComponent> FirstUsedCompleted = new ();
-		public readonly ProtoPool<SelectAchievementEvent> SelectAchievementEvent = new ();
 
 		//Tutorial
 
@@ -207,11 +169,6 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<UnmuteVolumeEvent>)] = UnmuteVolumeEvent,
 				[typeof(ProtoPool<VolumeModuleComponent>)] = VolumeModule,
 				[typeof(ProtoPool<VolumeTypeComponent>)] = VolumeType,
-				[typeof(ProtoPool<ApplyUpgradeEvent>)] = ApplyUpgradeEvent,
-				[typeof(ProtoPool<ApplyUpgradeUiModuleComponent>)] = ApplyUpgradeUiModule,
-				[typeof(ProtoPool<UpgradeConfigComponent>)] = UpgradeConfig,
-				[typeof(ProtoPool<UpgradeLinkComponent>)] = UpgradeLink,
-				[typeof(ProtoPool<UpgradeTag>)] = Upgrade,
 				[typeof(ProtoPool<TutorialTag>)] = Tutorial,
 				[typeof(ProtoPool<TimerComponent>)] = Timer,
 				[typeof(ProtoPool<ClearableDataComponent>)] = ClearableData,
@@ -248,6 +205,8 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<PeriodicLightComponent>)] = PeriodicLight,
 				[typeof(ProtoPool<ShadowControllerComponent>)] = ShadowController,
 				[typeof(ProtoPool<KillEnemyCounterComponent>)] = KillEnemyCounter,
+				[typeof(ProtoPool<DirectionComponent>)] = Direction,
+				[typeof(ProtoPool<InputTag>)] = Input,
 				[typeof(ProtoPool<BehaviourTreeOwnerComponent>)] = BehaviourTreeOwner,
 				[typeof(ProtoPool<FsmOwnerComponent>)] = FsmOwner,
 				[typeof(ProtoPool<ActiveComponent>)] = Active,
@@ -256,19 +215,6 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<GameObjectComponent>)] = GameObject,
 				[typeof(ProtoPool<ExplosionBodyBloodyTag>)] = ExplosionBodyBloody,
 				[typeof(ProtoPool<ExplosionBodyTag>)] = ExplosionBody,
-				[typeof(ProtoPool<CharacterMeleePointComponent>)] = CharacterMeleePoint,
-				[typeof(ProtoPool<EnemyBossTag>)] = EnemyBoss,
-				[typeof(ProtoPool<EnemyKamikazeTag>)] = EnemyKamikaze,
-				[typeof(ProtoPool<EnemyTag>)] = Enemy,
-				[typeof(ProtoPool<EnemyTypeComponent>)] = EnemyType,
-				[typeof(ProtoPool<ExplodeComponent>)] = Explode,
-				[typeof(ProtoPool<FindCharactersComponent>)] = FindCharacters,
-				[typeof(ProtoPool<MassAttackParticleComponent>)] = MassAttackParticle,
-				[typeof(ProtoPool<MassAttackPowerComponent>)] = MassAttackPower,
-				[typeof(ProtoPool<MassAttackTimerComponent>)] = MassAttackTimer,
-				[typeof(ProtoPool<ReachedMeleePointComponent>)] = ReachedMeleePoint,
-				[typeof(ProtoPool<TargetBunkerComponent>)] = TargetBunker,
-				[typeof(ProtoPool<TargetCharacterComponent>)] = TargetCharacter,
 				[typeof(ProtoPool<BloodParticleComponent>)] = BloodParticle,
 				[typeof(ProtoPool<DamageEvent>)] = DamageEvent,
 				[typeof(ProtoPool<DamageTimerComponent>)] = DamageTimer,
@@ -297,29 +243,15 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<SequenceComponent>)] = Sequence,
 				[typeof(ProtoPool<StringIdComponent>)] = StringId,
 				[typeof(ProtoPool<TransformComponent>)] = Transform,
-				[typeof(ProtoPool<CharacterConfigComponent>)] = CharacterMeleeConfig,
+				[typeof(ProtoPool<CharacterConfigComponent>)] = CharacterConfig,
 				[typeof(ProtoPool<CharacterTag>)] = Character,
 				[typeof(ProtoPool<CameraComponent>)] = Camera,
 				[typeof(ProtoPool<CinemachineCameraComponent>)] = CinemachineCamera,
 				[typeof(ProtoPool<MainCameraTag>)] = MainCamera,
-				[typeof(ProtoPool<BurnEvent>)] = BurnEvent,
-				[typeof(ProtoPool<BurnParticleComponent>)] = BurnParticle,
-				[typeof(ProtoPool<BurnPeriodicTimerComponent>)] = BurnPeriodicTimer,
-				[typeof(ProtoPool<BurnTimerComponent>)] = BurnTimer,
-				[typeof(ProtoPool<ForbiddingUseBurnTimerComponent>)] = ForbiddingUseBurnTimer,
-				[typeof(ProtoPool<AbilityApplierModuleComponent>)] = AbilityApplierModule,
-				[typeof(ProtoPool<AbilityCooldownDurationComponent>)] = AbilityCooldownDuration,
-				[typeof(ProtoPool<AbilityTag>)] = Ability,
-				[typeof(ProtoPool<ApplyAbilityEvent>)] = ApplyAbilityEvent,
-				[typeof(ProtoPool<ChangeForDurationTimeComponent>)] = ChangeForDurationTime,
 				[typeof(ProtoPool<AnimatorComponent>)] = Animator,
 				[typeof(ProtoPool<AnimatorLodComponent>)] = AnimatorLod,
 				[typeof(ProtoPool<AnimancerEcsComponent>)] = AnimancerEcs,
 				[typeof(ProtoPool<AnimancerStateComponent>)] = AnimancerState,
-				[typeof(ProtoPool<AchievementModuleComponent>)] = AchievementModule,
-				[typeof(ProtoPool<AchievementTag>)] = Achievement,
-				[typeof(ProtoPool<FirstUsedCompletedComponent>)] = FirstUsedCompleted,
-				[typeof(ProtoPool<SelectAchievementEvent>)] = SelectAchievementEvent,
 			};
 
 			GameAspectExt.Construct(this);

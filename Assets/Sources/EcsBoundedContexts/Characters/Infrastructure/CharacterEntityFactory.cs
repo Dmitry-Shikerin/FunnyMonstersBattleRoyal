@@ -3,7 +3,6 @@ using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runt
 using MyDependencies.Sources.Containers;
 using Sources.EcsBoundedContexts.Characters.Domain.Components;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
-using Sources.EcsBoundedContexts.Characters.Domain.Enums;
 using Sources.EcsBoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
@@ -38,26 +37,26 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
         {
             _assetCollector = assetCollector;
             _container = container;
-            _pool = entityPoolManager.GetPool<CharacterTag>();
-            _pool.InitPool(Create);
+            // _pool = entityPoolManager.GetPool<CharacterTag>();
+            // _pool.InitPool(Create);
         }
 
-        public override ProtoEntity Create(EntityLink link) =>
-            Create(Vector3.zero);
-
-        public ProtoEntity Create(Vector3 position)
-        {
-            ProtoEntity entity = _pool.Get();
-            entity.GetTransform().Value.position = position;
-            
-            return entity;
-        }
+        // public override ProtoEntity Create(EntityLink link) =>
+        //     Create(Vector3.zero);
+        //
+        // public ProtoEntity Create(Vector3 position)
+        // {
+        //     ProtoEntity entity = _pool.Get();
+        //     entity.GetTransform().Value.position = position;
+        //     
+        //     return entity;
+        // }
         
-        private ProtoEntity Create()
+        public override ProtoEntity Create(EntityLink link)
         {
-            CharacterModule resourceObject = _assetCollector.Get<CharacterModule>();
-            CharacterModule gameObject = Object.Instantiate(resourceObject);
-            EntityLink link = gameObject.GetComponent<EntityLink>();
+            // CharacterModule resourceObject = _assetCollector.Get<CharacterModule>();
+            // CharacterModule gameObject = Object.Instantiate(resourceObject);
+            // EntityLink link = gameObject.GetComponent<EntityLink>();
             
             CharacterConfig config = _assetCollector.Get<CharacterConfig>();
             CharacterModule module = link.GetModule<CharacterModule>();
@@ -73,19 +72,18 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             entity.AddActive();
             
             //Stats
-            entity.AddCharacter();
             entity.AddAttackPower(4);
-            entity.AddCharacterMeleeConfig(config);
+            // entity.AddCharacterMeleeConfig(config);
 
             //Rotation
             // entity.AddRotationSpeed(config.RotationSpeed);
             // entity.AddChangeRotationSpeedDelta(config.ChangeRotationSpeedDelta);
             
             //Health
-            entity.AddLookAt(module.HealthBarTransform);
-            entity.AddHealthBar(module.HealthBarImage);
-            
-            module.BehaviourTreeOwner.InitGraphOwner(_container, entity);
+            // entity.AddLookAt(module.HealthBarTransform);
+            // entity.AddHealthBar(module.HealthBarImage);
+
+            module.FsmOwner.InitGraphOwner(_container, entity);
             
             return entity;
         }

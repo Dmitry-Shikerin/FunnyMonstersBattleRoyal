@@ -61,7 +61,7 @@ namespace Sources.Frameworks.GameServices.Curtains.Presentation.Implementation
 
         public async UniTask ShowAsync()
         {
-            DeepSoundManager.Play(SoundDatabaseName.UiSounds, SoundName.ShowCurtain);
+            //DeepSoundManager.Play(SoundDatabaseName.UiSounds, SoundName.ShowCurtain);
             IsInProgress = true;
             Show();
             _spriteSwapAnimation.Play();

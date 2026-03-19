@@ -44,14 +44,14 @@ namespace Sources.EcsBoundedContexts.Tutorials.Controllers
 
         public async void Init(IProtoSystems systems)
         {
-            _tutorial = _entityRepository.GetByName(IdsConst.Tutorial);
-            
-            if (_tutorial.HasComplete())
-                return;
-
-            //Todo добавить сюда трай кетч
-            await UniTask.WaitWhile(() => _curtainView.IsInProgress);
-            _uiViewService.Show(UiViewId.Tutorial);
+            // _tutorial = _entityRepository.GetByName(IdsConst.Tutorial);
+            //
+            // if (_tutorial.HasComplete())
+            //     return;
+            //
+            // //Todo добавить сюда трай кетч
+            // await UniTask.WaitWhile(() => _curtainView.IsInProgress);
+            // _uiViewService.Show(UiViewId.Tutorial);
         }
     }
 }

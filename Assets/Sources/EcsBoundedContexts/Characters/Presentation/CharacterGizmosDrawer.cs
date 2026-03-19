@@ -18,9 +18,9 @@ namespace Sources.EcsBoundedContexts.Characters.Presentation
         
         public override void Draw(GameObject obj)
         {
-            Gizmos.color = _color;
-            float radius = GetRadius();
-            Gizmos.DrawSphere(obj.transform.position, radius);
+            // Gizmos.color = _color;
+            // float radius = GetRadius();
+            // Gizmos.DrawSphere(obj.transform.position, radius);
         }
 
         private float GetRadius()
@@ -30,8 +30,8 @@ namespace Sources.EcsBoundedContexts.Characters.Presentation
             // if (type == typeof(CharacterConfig))
             //     return ((CharacterConfig)_config).FindRange;
             
-            if (type == typeof(CharacterRangeConfig))
-                return ((CharacterRangeConfig)_config).FindRange;
+            // if (type == typeof(CharacterRangeConfig))
+            //     return ((CharacterRangeConfig)_config).FindRange;
             
             throw new InvalidOperationException();
         }

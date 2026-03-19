@@ -59,8 +59,8 @@ namespace Sources.EcsBoundedContexts.Volumes.Controllers
 
         public void Init(IProtoSystems systems)
         {
-            UpdateModule(IdsConst.SoundsVolume);
-            UpdateModule(IdsConst.MusicVolume);
+            //UpdateModule(IdsConst.SoundsVolume);
+            //UpdateModule(IdsConst.MusicVolume);
         }
 
         public void Run()

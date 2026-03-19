@@ -1,4 +1,9 @@
 ﻿using Leopotam.EcsProto;
+using Leopotam.EcsProto.QoL;
+using Sources.EcsBoundedContexts.Core;
+using Sources.EcsBoundedContexts.Core.Domain;
+using Sources.EcsBoundedContexts.Core.Domain.Systems;
+using Sources.EcsBoundedContexts.Input.Domain;
 using Sources.Frameworks.GameServices.InputServices.Inputs;
 using Sources.Frameworks.GameServices.Pauses;
 using UnityEngine;
@@ -6,11 +11,19 @@ using UnityEngine.InputSystem;
 
 namespace Sources.EcsBoundedContexts.Input.Controllers
 {
-    public class InputSystem : IProtoInitSystem, IProtoRunSystem
+    [EcsSystem(50)]
+    [ComponentGroup(ComponentGroup.Characters)]
+    [Aspect(AspectName.Game)]
+    public class InputSystem : IProtoInitSystem, IProtoRunSystem, IProtoDestroySystem
     {
+        [DI] private readonly ProtoIt _it = new(
+            It.Inc<
+                InputTag,
+                DirectionComponent>());
+
         private readonly IPauseService _pauseService;
         private InputManager _inputManager;
-        private float _speed;
+        private ProtoEntity _entity;
 
         public InputSystem(IPauseService pauseService)
         {
@@ -26,16 +39,18 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
             _inputManager.Enable();
             _inputManager.Gameplay.Stand.performed += UpdateStandState;
             _inputManager.Gameplay.Click.performed += UpdateSelectable;
+            _entity = _it.First().Entity;
         }
 
         public void Run()
         {
             if (_pauseService == null)
                 return;
-            
+
             if (_pauseService.IsPaused)
                 return;
 
+            Debug.Log("Update input");
             UpdateMovement();
             UpdateAttack();
             UpdatePointerClick();
@@ -69,7 +84,7 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
 
             if (TryGetLook(out Vector3 lookDirection) == false)
                 return;
-            
+
             InputData.PointerPosition = lookDirection;
         }
 
@@ -86,18 +101,19 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
 
             Vector3 lookDirection = Vector3.zero;
 
-            if (TryGetLook(out Vector3 look))
-                lookDirection = look;
+            // if (TryGetLook(out Vector3 look))
+            //     lookDirection = look;
 
             Vector3 cameraForward = Camera.main.transform.forward;
             cameraForward.y = 0;
 
             float angle = Vector3.SignedAngle(Vector3.forward, cameraForward, Vector3.up);
             Vector3 moveDirection = Quaternion.Euler(0, angle, 0) * new Vector3(input.x, 0, input.y);
-
-            InputData.MoveDirection = moveDirection;
-            InputData.LookPosition = lookDirection;
-            InputData.Speed = speed;
+            _entity.ReplaceDirection(moveDirection);
+            Debug.Log($"MoveDirection {moveDirection}");
+            // InputData.MoveDirection = moveDirection;
+            // InputData.LookPosition = lookDirection;
+            // InputData.Speed = speed;
         }
 
         private bool TryGetLook(out Vector3 lookDirection)
@@ -110,7 +126,7 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
             //     return false;
 
             //lookDirection = raycastHit.point;
-            
+
             return true;
         }
     }

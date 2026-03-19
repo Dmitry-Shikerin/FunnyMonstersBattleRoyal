@@ -2,8 +2,6 @@ using MyDependencies.Sources.Containers;
 using MyDependencies.Sources.Containers.Extensions;
 using Sources.EcsBoundedContexts.Volumes.Controllers.Data;
 using Sources.EcsBoundedContexts.DailyRewards.Controllers.Data;
-using Sources.EcsBoundedContexts.Achievements.Controllers.SaveLoads;
-using Sources.EcsBoundedContexts.Achievements.Controllers.Base;
 using Sources.EcsBoundedContexts.Cameras.Controllers;
 using Sources.EcsBoundedContexts.DailyRewards.Controllers;
 using Sources.EcsBoundedContexts.Volumes.Controllers;
@@ -48,9 +46,6 @@ namespace Sources.EcsBoundedContexts.Core
 			//Upgrade
 
 			//Achievements
-			container.Bind<AchievementsLoadSystem>();
-			container.Bind<SelectAchievementSystem>();
-			container.Bind<AchievementsSaveSystem>();
 
 			//Tutorial
 

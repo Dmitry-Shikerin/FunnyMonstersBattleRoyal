@@ -22,19 +22,19 @@ namespace Sources.EcsBoundedContexts.Volumes.Presentation
 
         private void OnEnable()
         {
-            if (IsInitialized == false)
-                return;
-            
-            _increaceButton.onClick.AddListener(OnIncreaseVolume);
-            _decreaseButton.onClick.AddListener(OnDecreaseVolume);
-            MuteToggle.StateChanged += OnMuteToggleStateChanged;
+            // if (IsInitialized == false)
+            //     return;
+            //
+            // _increaceButton.onClick.AddListener(OnIncreaseVolume);
+            // _decreaseButton.onClick.AddListener(OnDecreaseVolume);
+            // MuteToggle.StateChanged += OnMuteToggleStateChanged;
         }
 
         protected override void OnAfterDisable()
         {
-            _increaceButton.onClick.RemoveListener(OnIncreaseVolume);
-            _decreaseButton.onClick.RemoveListener(OnDecreaseVolume);
-            MuteToggle.StateChanged -= OnMuteToggleStateChanged;
+            // _increaceButton.onClick.RemoveListener(OnIncreaseVolume);
+            // _decreaseButton.onClick.RemoveListener(OnDecreaseVolume);
+            // MuteToggle.StateChanged -= OnMuteToggleStateChanged;
         }
 
         private void OnMuteToggleStateChanged(EnableState state)

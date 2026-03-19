@@ -18,20 +18,20 @@ namespace Sources.EcsBoundedContexts.DailyRewards.Presentation
 
         private void OnEnable()
         {
-            Button.onClick.AddListener(OnClick);
+            //Button.onClick.AddListener(OnClick);
         }
 
         protected override void OnAfterDisable()
         {
-            Button.onClick.RemoveListener(OnClick);
+            //Button.onClick.RemoveListener(OnClick);
         }
 
         private void OnClick()
         {
-            if (Entity.HasApplyDailyRewardEvent())
-                return;
-            
-            Entity.AddApplyDailyRewardEvent();
+            // if (Entity.HasApplyDailyRewardEvent())
+            //     return;
+            //
+            // Entity.AddApplyDailyRewardEvent();
         }
     }
 }

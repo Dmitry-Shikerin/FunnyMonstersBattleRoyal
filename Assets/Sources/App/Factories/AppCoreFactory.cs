@@ -42,7 +42,7 @@ namespace Sources.App.Factories
             sceneFactories[IdsConst.Gameplay] = (payload, sceneContext) =>
                 sceneContext.Container.Resolve<ISceneFactory>().Create(payload);            
 
-            sceneService.AddBeforeSceneChangeHandler(async _ => await curtainView.ShowAsync());
+            //sceneService.AddBeforeSceneChangeHandler(async _ => await curtainView.ShowAsync());
             sceneService.AddBeforeSceneChangeHandler(async sceneName => await sceneLoaderService.Load(sceneName));
 
             appCore.Construct(sceneService);

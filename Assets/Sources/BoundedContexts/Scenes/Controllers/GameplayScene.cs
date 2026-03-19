@@ -3,6 +3,7 @@ using MyDependencies.Sources.Containers;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.EcsBoundedContexts.Animancers.Extension;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
+using Sources.EcsBoundedContexts.Cameras.Presentation;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepSound.Runtime.Domain.Enums;
@@ -83,13 +84,13 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _ecsGameStartUp.Initialize();
             _sdkService.Initialize();
             _soundService.Initialize();
-            _soundService.Play(SoundDatabaseName.Music, SoundName.GameplayBackgroundMusic);
-            await _curtainView.HideAsync();
+            //_soundService.Play(SoundDatabaseName.Music, SoundName.GameplayBackgroundMusic);
+            //await _curtainView.HideAsync();
         }
 
         public void Exit()
         {
-            _soundService.Stop(SoundName.GameplayBackgroundMusic);
+            //_soundService.Stop(SoundName.GameplayBackgroundMusic);
             _soundService.Destroy();
             _ecsGameStartUp.Destroy();
             _sdkService.Destroy();
@@ -115,7 +116,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private void InitDeepUiBrain()
         {
             UiConfig hudConfig = _assetCollector.Get<UiConfig>();
-            Camera mainCamera = _rootGameObject.MainCamera;
+            Camera mainCamera = _rootGameObject.MainCamera.GetModule<MainCameraModule>().Camera;
             DeepUiBrain.Instance.Initialize(hudConfig.GameUiConfig, mainCamera, _container);
         }
 

@@ -12,80 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca847753a5d94f218812d46edcc9b4a3, type: 3}
   m_Name: AddressablesAssetConfig
   m_EditorClassIdentifier: 
-  <SkyAndWeatherCollector>k__BackingField:
-    m_AssetGUID: 726119fb65e9bd242ad671b6e2ba4111
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <AchievementConfigCollector>k__BackingField:
-    m_AssetGUID: 3bd52550824da1c42b566a3ffc81bc13
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <TreeSwingerCollector>k__BackingField:
-    m_AssetGUID: ee7179fffceeb274b90810b1471e76a9
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <AnimatorLodSettingsCollector>k__BackingField:
-    m_AssetGUID: 9624bf56ca609ce4a97ed9cfd555890b
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <ShadowManagerConfigCollector>k__BackingField:
-    m_AssetGUID: f832e6d91e88cd14382244a3a11792ae
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <UpgradeConfigContainer>k__BackingField:
-    m_AssetGUID: 7a1d9e10b11f9ef4484931c5e5f8eac1
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <EnemySpawnerConfig>k__BackingField:
-    m_AssetGUID: cadfa67efc1fd264c994c9dacc1bf098
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <EnemySpawnStrategyCollector>k__BackingField:
-    m_AssetGUID: 801f57d159662ed499adeec6507cdf10
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <CharacterRangeConfig>k__BackingField:
-    m_AssetGUID: 2faff40262fb8604990b2c97e1d47231
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
   <CharacterMeleeConfig>k__BackingField:
     m_AssetGUID: da42ee7698e590a41bf39c1b9b122481
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <EnemyConfig>k__BackingField:
-    m_AssetGUID: 1aeae0027428e094a8ead51e2dcaea37
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <EnemyKamikazeConfig>k__BackingField:
-    m_AssetGUID: 123396799d51587449ff5be70d8eba87
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <EnemyBossConfig>k__BackingField:
-    m_AssetGUID: 3010c378f3fc79745a931326599f2e00
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 
@@ -108,68 +36,20 @@ MonoBehaviour:
     m_SubObjectType: 
     m_SubObjectGUID: 
     m_EditorAssetChanged: 0
-  <BurnConfig>k__BackingField:
-    m_AssetGUID: 8999591ab9b9b204b980e1955091795d
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
   <DailyRewardConfig>k__BackingField:
     m_AssetGUID: 32fbce1f55e94fa4d969915c195a8fa1
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 
     m_EditorAssetChanged: 0
-  <CharacterMeleeModule>k__BackingField:
-    m_AssetGUID: 92ea41cf769023049afcb4ef628ae058
+  <AnimatorLodConfig>k__BackingField:
+    m_AssetGUID: 9624bf56ca609ce4a97ed9cfd555890b
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 
     m_EditorAssetChanged: 0
-  <CharacterRangeModule>k__BackingField:
-    m_AssetGUID: f23c2215844839e4498af342a1a040d3
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <EnemyModule>k__BackingField:
-    m_AssetGUID: ee56551a16ae8e0419ab0a13bade8c86
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <EnemyKamikazeModule>k__BackingField:
-    m_AssetGUID: 347d80cddf9b3bd48a19ce17298d87f5
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <EnemyBossModule>k__BackingField:
-    m_AssetGUID: 8168928e6a079d74e844b4ec826a7c4b
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <NukeBombModule>k__BackingField:
-    m_AssetGUID: d3a2c8ce95ae39a42b3c11eda89199e7
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <FlamethrowerModule>k__BackingField:
-    m_AssetGUID: 705a167c17e4aae43a0c6e5f5081216f
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <ExplosionBodyBloodyModule>k__BackingField:
-    m_AssetGUID: 0f0cbc09eca8cff4692c7f4be22d785b
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <ExplosionBodyModule>k__BackingField:
-    m_AssetGUID: 3f99070002349624b8119b0678d2fd00
+  <CharacterModule>k__BackingField:
+    m_AssetGUID: 01b3f6af76196af458d66d9a80886948
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 

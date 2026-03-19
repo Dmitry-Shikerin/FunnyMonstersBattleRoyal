@@ -60,8 +60,8 @@ namespace Sources.EcsBoundedContexts.DailyRewards.Controllers
         {
             _config = _assetCollector.Get<DailyRewardConfig>();
             _dailyReward = _entityRepository.GetByName(IdsConst.DailyReward);
-            _healthBuster = _entityRepository.GetByName(IdsConst.HealthBooster);
-            StartTimer();
+            //_healthBuster = _entityRepository.GetByName(IdsConst.HealthBooster);
+            //StartTimer();
         }
 
         public void Run()
