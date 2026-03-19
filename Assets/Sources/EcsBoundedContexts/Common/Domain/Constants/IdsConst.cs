@@ -14,8 +14,9 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
         //Scenes
         public const string MainMenu = "MainMenu";
         public const string Gameplay = "Gameplay";
-        
+
         //Common
+        public const string Input = "Input";
         public const string MainCamera = "MainCamera";
         public const string Player = "Player";
         public const string EnemySpawner = "EnemySpawner";
@@ -26,12 +27,14 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
         public const string Tutorial = "Tutorial";
         public const string DailyReward = "DailyReward";
         public const string HealthBooster = "HealthBuster";
-        
+
+
         //Abilities
         public const string CharacterSpawnerAbility = "CharacterSpawnerAbility";
         public const string NukeAbility = "NukeAbility";
         public const string FlamethrowerAbility = "FlamethrowerAbility";
         public const string NukeBomb = "NukeBomb";
+
 
         //Upgrades
         public const string AttackUpgrade = "AttackUpgrade";
@@ -39,10 +42,12 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
         public const string FlamethrowerUpgrade = "FlamethrowerUpgrade";
         public const string NukeUpgrade = "NukeUpgrade";
 
+
         //Settings
         public const string SoundsVolume = "SoundsVolume";
         public const string MusicVolume = "MusicVolume";
-        
+
+
         //Achievements
         public const string FirstEnemyKillAchievement = "FirstEnemyKillAchievement";
         public const string FirstUpgradeAchievement = "FirstUpgradeAchievement";
@@ -53,8 +58,9 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
         public const string FiftyWaveCompletedAchievement = "FiftyWaveCompletedAchievement";
         public const string AllAbilitiesUsedAchievement = "AllAbilitiesUsedAchievement";
         public const string CompleteGameWithOneHealthAchievement = "CompleteGameWithOneHealthAchievement";
-        
+
         private static Dictionary<string, List<string>> _cachedIdsByType = new ();
+
 
         public static IReadOnlyDictionary<string, EntityData> AllIds { get; } = new Dictionary<string, EntityData>()
         {

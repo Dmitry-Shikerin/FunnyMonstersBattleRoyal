@@ -69,6 +69,7 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             entity.AddGameObject(link.gameObject);
             entity.AddAnimancerEcs(module.Animancer);
             entity.AddAnimancerState(null);
+            entity.AddCharacterController(module.CharacterController);
             entity.AddActive();
             
             //Stats

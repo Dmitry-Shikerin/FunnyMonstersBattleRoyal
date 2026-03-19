@@ -50,7 +50,7 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
             if (_pauseService.IsPaused)
                 return;
 
-            Debug.Log("Update input");
+            //Debug.Log("Update input");
             UpdateMovement();
             UpdateAttack();
             UpdatePointerClick();
@@ -110,8 +110,6 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
             float angle = Vector3.SignedAngle(Vector3.forward, cameraForward, Vector3.up);
             Vector3 moveDirection = Quaternion.Euler(0, angle, 0) * new Vector3(input.x, 0, input.y);
             _entity.ReplaceDirection(moveDirection);
-            Debug.Log($"MoveDirection {moveDirection}");
-            // InputData.MoveDirection = moveDirection;
             // InputData.LookPosition = lookDirection;
             // InputData.Speed = speed;
         }
