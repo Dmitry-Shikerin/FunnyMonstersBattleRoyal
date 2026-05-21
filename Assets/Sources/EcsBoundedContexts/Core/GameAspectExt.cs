@@ -1,8 +1,11 @@
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 using Leopotam.EcsProto;
+using Leopotam.EcsProto.QoL;
 using Sources.Frameworks.MyLeoEcsProto.EventBuffers.Implementation;
 using Sources.Frameworks.GameServices.EntityPools.Domain.Components;
+using System;
 using Sources.EcsBoundedContexts.Weapons.Domain;
 using Sources.EcsBoundedContexts.Weapons.Presentation;
 using Sources.EcsBoundedContexts.Volumes.Domain.Components;
@@ -14,6 +17,7 @@ using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.PlayerWallets.Presentation;
 using Sources.EcsBoundedContexts.Particles.Domain;
+using UnityEngine;
 using Sources.EcsBoundedContexts.Movements.TargetPoint.Components;
 using Sources.EcsBoundedContexts.Movements.Rotation.Components;
 using Sources.EcsBoundedContexts.Movements.Rotation.Data;
@@ -33,6 +37,7 @@ using Sources.EcsBoundedContexts.ExplosionBodies.Domain;
 using Sources.EcsBoundedContexts.Damage.Domain;
 using UnityEngine.UI;
 using TMPro;
+using Leopotam.EcsProto;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Components;
 using Sources.EcsBoundedContexts.DailyRewards.Presentation;
 using Sources.EcsBoundedContexts.Common.Domain.Components;
@@ -40,6 +45,7 @@ using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runt
 using DG.Tweening;
 using Sources.EcsBoundedContexts.Characters.Domain.Components;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
+using Sources.EcsBoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Cameras.Domain;
 using Unity.Cinemachine;
 using Sources.EcsBoundedContexts.Animators;
@@ -1078,6 +1084,42 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelKillEnemyCounter(this ProtoEntity entity)
 			=> s_GameAspect.KillEnemyCounter.Del(entity);
 
+		//CameraLook
+		public static bool HasCameraLook(this ProtoEntity entity) =>
+			s_GameAspect.CameraLook.Has(entity);
+
+		public static ref CameraLookComponent AddCameraLook(this ProtoEntity entity)
+		{
+			ref CameraLookComponent cameraLookComponent = ref s_GameAspect.CameraLook.Add(entity);
+			return ref cameraLookComponent;
+		}
+
+		public static void DelCameraLook(this ProtoEntity entity)
+			=> s_GameAspect.CameraLook.Del(entity);
+
+		//CameraZoom
+		public static bool HasCameraZoom(this ProtoEntity entity) =>
+			s_GameAspect.CameraZoom.Has(entity);
+
+		public static ref CameraZoomComponent GetCameraZoom(this ProtoEntity entity) =>
+			ref s_GameAspect.CameraZoom.Get(entity);
+
+		public static void ReplaceCameraZoom(this ProtoEntity entity, Vector2 value)
+		{
+			ref CameraZoomComponent cameraZoomComponent = ref s_GameAspect.CameraZoom.Get(entity);
+			cameraZoomComponent.Value = value;
+		}
+
+		public static ref CameraZoomComponent AddCameraZoom(this ProtoEntity entity, Vector2 value)
+		{
+			ref CameraZoomComponent cameraZoomComponent = ref s_GameAspect.CameraZoom.Add(entity);
+			cameraZoomComponent.Value = value;
+			return ref cameraZoomComponent;
+		}
+
+		public static void DelCameraZoom(this ProtoEntity entity)
+			=> s_GameAspect.CameraZoom.Del(entity);
+
 		//Direction
 		public static bool HasDirection(this ProtoEntity entity) =>
 			s_GameAspect.Direction.Has(entity);
@@ -1829,6 +1871,29 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelCharacterConfig(this ProtoEntity entity)
 			=> s_GameAspect.CharacterConfig.Del(entity);
 
+		//CharacterModule
+		public static bool HasCharacterModule(this ProtoEntity entity) =>
+			s_GameAspect.CharacterModule.Has(entity);
+
+		public static ref CharacterModuleComponent GetCharacterModule(this ProtoEntity entity) =>
+			ref s_GameAspect.CharacterModule.Get(entity);
+
+		public static void ReplaceCharacterModule(this ProtoEntity entity, CharacterModule value)
+		{
+			ref CharacterModuleComponent characterModuleComponent = ref s_GameAspect.CharacterModule.Get(entity);
+			characterModuleComponent.Value = value;
+		}
+
+		public static ref CharacterModuleComponent AddCharacterModule(this ProtoEntity entity, CharacterModule value)
+		{
+			ref CharacterModuleComponent characterModuleComponent = ref s_GameAspect.CharacterModule.Add(entity);
+			characterModuleComponent.Value = value;
+			return ref characterModuleComponent;
+		}
+
+		public static void DelCharacterModule(this ProtoEntity entity)
+			=> s_GameAspect.CharacterModule.Del(entity);
+
 		//Character
 		public static bool HasCharacter(this ProtoEntity entity) =>
 			s_GameAspect.Character.Has(entity);
@@ -1841,6 +1906,19 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelCharacter(this ProtoEntity entity)
 			=> s_GameAspect.Character.Del(entity);
+
+		//Grounded
+		public static bool HasGrounded(this ProtoEntity entity) =>
+			s_GameAspect.Grounded.Has(entity);
+
+		public static ref GroundedComponent AddGrounded(this ProtoEntity entity)
+		{
+			ref GroundedComponent groundedComponent = ref s_GameAspect.Grounded.Add(entity);
+			return ref groundedComponent;
+		}
+
+		public static void DelGrounded(this ProtoEntity entity)
+			=> s_GameAspect.Grounded.Del(entity);
 
 		//Camera
 		public static bool HasCamera(this ProtoEntity entity) =>

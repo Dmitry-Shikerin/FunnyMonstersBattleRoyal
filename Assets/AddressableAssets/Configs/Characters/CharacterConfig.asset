@@ -24,3 +24,7 @@ MonoBehaviour:
   enableState: 0
   _id: 
   _parent: {fileID: 0}
+  <GroundRadius>k__BackingField: 0.3
+  <GroundMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 1

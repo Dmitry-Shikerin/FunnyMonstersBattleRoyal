@@ -8,7 +8,7 @@ namespace Sources.Frameworks.GameServices.InputServices
 {
     public class NewInputService : IInputService, IInputServiceUpdater
     {
-        private InputManager _inputManager;
+        //private InputManager _inputManager;
         private float _speed;
         private IPauseService _pauseService;
 
@@ -23,10 +23,10 @@ namespace Sources.Frameworks.GameServices.InputServices
 
         public void Initialize()
         {
-            _inputManager = new InputManager();
-            _inputManager.Enable();
-            _inputManager.Gameplay.Stand.performed += UpdateStandState;
-            _inputManager.Gameplay.Click.performed += UpdateSelectable;
+            // _inputManager = new InputManager();
+            // _inputManager.Enable();
+            // _inputManager.Gameplay.Stand.performed += UpdateStandState;
+            // _inputManager.Gameplay.Click.performed += UpdateSelectable;
         }
 
         private void UpdateSelectable(InputAction.CallbackContext obj)
@@ -43,9 +43,9 @@ namespace Sources.Frameworks.GameServices.InputServices
 
         public void Destroy()
         {
-            _inputManager.Disable();
-            _inputManager.Gameplay.Stand.performed -= UpdateStandState;
-            _inputManager.Gameplay.Click.performed -= UpdateSelectable;
+            // _inputManager.Disable();
+            // _inputManager.Gameplay.Stand.performed -= UpdateStandState;
+            // _inputManager.Gameplay.Click.performed -= UpdateSelectable;
         }
 
         public void Update(float deltaTime)
@@ -57,7 +57,7 @@ namespace Sources.Frameworks.GameServices.InputServices
                 return;
 
             UpdateMovement();
-            UpdateAttack();
+            //UpdateAttack();
             UpdatePointerClick();
         }
 
@@ -77,28 +77,28 @@ namespace Sources.Frameworks.GameServices.InputServices
         private void UpdateStandState(InputAction.CallbackContext context) =>
             InputData.InvokeStand();
 
-        private void UpdateAttack() =>
-            InputData.IsAttacking = _inputManager.Gameplay.Attack.IsPressed();
+        // private void UpdateAttack() =>
+        //     InputData.IsAttacking = _inputManager.Gameplay.Attack.IsPressed();
 
         private void UpdateMovement()
         {
-            Vector2 input = _inputManager.Gameplay.Movement.ReadValue<Vector2>();
-            float speed = _inputManager.Gameplay.Run.ReadValue<float>();
+            // Vector2 input = _inputManager.Gameplay.Movement.ReadValue<Vector2>();
+            // float speed = _inputManager.Gameplay.Run.ReadValue<float>();
 
-            Vector3 lookDirection = Vector3.zero;
-
-            if (TryGetLook(out Vector3 look))
-                lookDirection = look;
-
-            Vector3 cameraForward = Camera.main.transform.forward;
-            cameraForward.y = 0;
-
-            float angle = Vector3.SignedAngle(Vector3.forward, cameraForward, Vector3.up);
-            Vector3 moveDirection = Quaternion.Euler(0, angle, 0) * new Vector3(input.x, 0, input.y);
-
-            InputData.MoveDirection = moveDirection;
-            InputData.LookPosition = lookDirection;
-            InputData.Speed = speed;
+            // Vector3 lookDirection = Vector3.zero;
+            //
+            // if (TryGetLook(out Vector3 look))
+            //     lookDirection = look;
+            //
+            // Vector3 cameraForward = Camera.main.transform.forward;
+            // cameraForward.y = 0;
+            //
+            // float angle = Vector3.SignedAngle(Vector3.forward, cameraForward, Vector3.up);
+            // Vector3 moveDirection = Quaternion.Euler(0, angle, 0) * new Vector3(input.x, 0, input.y);
+            //
+            // InputData.MoveDirection = moveDirection;
+            // InputData.LookPosition = lookDirection;
+            // InputData.Speed = speed;
         }
 
         private bool TryGetLook(out Vector3 lookDirection)

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Leopotam.EcsProto;
+using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.AnimatorLod.Controllers;
 using Sources.EcsBoundedContexts.AdvertisingAfterWaves.Controllers;
 using Sources.EcsBoundedContexts.Volumes.Controllers.Data;
@@ -38,11 +39,13 @@ namespace Sources.EcsBoundedContexts.Core
 			TutorialLoadSystem tutorialLoadSystem, //Order: 9 //Ability
 			PlayerWalletLoadSystem playerWalletLoadSystem, //Order: 10 //Ability
 			CharacterInitializeSystem characterInitializeSystem, //Order: 10 //Characters
+			GroundedSystem groundedSystem, //Order: 10 //Characters
 			KillEnemyCounterLoadSystem killEnemyCounterLoadSystem, //Order: 12 //Common
 			InputInitializeSystem inputInitializeSystem, //Order: 15 //Characters
 			DailyRewardLoadSystem dailyRewardLoadSystem, //Order: 15 //Common
 			InputSystem inputSystem, //Order: 50 //Characters
 			PlayerWalletSystem playerWalletSystem, //Order: 51 //Ability
+			CameraRotationSystem cameraRotationSystem, //Order: 51 //Camera
 			MainCameraInitializeSystem mainCameraInitializeSystem, //Order: 51 //Camera
 			DailyRewardSystem dailyRewardSystem, //Order: 56 //Common
 			MoveAlongPathSystem moveAlongPathSystem, //Order: 58 //Light
@@ -75,11 +78,13 @@ namespace Sources.EcsBoundedContexts.Core
 				tutorialLoadSystem, //Ability
 				playerWalletLoadSystem, //Ability
 				characterInitializeSystem, //Characters
+				groundedSystem, //Characters
 				killEnemyCounterLoadSystem, //Common
 				inputInitializeSystem, //Characters
 				dailyRewardLoadSystem, //Common
 				inputSystem, //Characters
 				playerWalletSystem, //Ability
+				cameraRotationSystem, //Camera
 				mainCameraInitializeSystem, //Camera
 				dailyRewardSystem, //Common
 				moveAlongPathSystem, //Light

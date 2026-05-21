@@ -73,8 +73,10 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             entity.AddActive();
             
             //Stats
-            entity.AddAttackPower(4);
-            // entity.AddCharacterMeleeConfig(config);
+            entity.AddCharacterModule(module);
+            entity.AddCharacterConfig(config);
+            
+            //Grounded
 
             //Rotation
             // entity.AddRotationSpeed(config.RotationSpeed);

@@ -108,6 +108,8 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<TargetRotationSpeedComponent> TargetRotationSpeed = new ();
 		public readonly ProtoPool<CharacterControllerComponent> CharacterController = new ();
 		public readonly ProtoPool<MoveDeltaComponent> MoveDelta = new ();
+		public readonly ProtoPool<CameraLookComponent> CameraLook = new ();
+		public readonly ProtoPool<CameraZoomComponent> CameraZoom = new ();
 		public readonly ProtoPool<DirectionComponent> Direction = new ();
 		public readonly ProtoPool<InputTag> Input = new ();
 		public readonly ProtoPool<BehaviourTreeOwnerComponent> BehaviourTreeOwner = new ();
@@ -149,7 +151,13 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<ShootParticleComponent> ShootParticle = new ();
 		public readonly ProtoPool<AttackPowerComponent> AttackPower = new ();
 		public readonly ProtoPool<CharacterConfigComponent> CharacterConfig = new ();
+		public readonly ProtoPool<CharacterModuleComponent> CharacterModule = new ();
 		public readonly ProtoPool<CharacterTag> Character = new ();
+		public readonly ProtoPool<GroundedComponent> Grounded = new ();
+
+		//Enemy
+
+		//Upgrade
 
 		//Achievements
 
@@ -205,6 +213,8 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<PeriodicLightComponent>)] = PeriodicLight,
 				[typeof(ProtoPool<ShadowControllerComponent>)] = ShadowController,
 				[typeof(ProtoPool<KillEnemyCounterComponent>)] = KillEnemyCounter,
+				[typeof(ProtoPool<CameraLookComponent>)] = CameraLook,
+				[typeof(ProtoPool<CameraZoomComponent>)] = CameraZoom,
 				[typeof(ProtoPool<DirectionComponent>)] = Direction,
 				[typeof(ProtoPool<InputTag>)] = Input,
 				[typeof(ProtoPool<BehaviourTreeOwnerComponent>)] = BehaviourTreeOwner,
@@ -244,7 +254,9 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<StringIdComponent>)] = StringId,
 				[typeof(ProtoPool<TransformComponent>)] = Transform,
 				[typeof(ProtoPool<CharacterConfigComponent>)] = CharacterConfig,
+				[typeof(ProtoPool<CharacterModuleComponent>)] = CharacterModule,
 				[typeof(ProtoPool<CharacterTag>)] = Character,
+				[typeof(ProtoPool<GroundedComponent>)] = Grounded,
 				[typeof(ProtoPool<CameraComponent>)] = Camera,
 				[typeof(ProtoPool<CinemachineCameraComponent>)] = CinemachineCamera,
 				[typeof(ProtoPool<MainCameraTag>)] = MainCamera,

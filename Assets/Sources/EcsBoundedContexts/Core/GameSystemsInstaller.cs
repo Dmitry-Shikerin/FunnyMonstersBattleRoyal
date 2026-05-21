@@ -58,6 +58,7 @@ namespace Sources.EcsBoundedContexts.Core
 			//Tree
 
 			//Camera
+			container.Bind<CameraRotationSystem>();
 			container.Bind<MainCameraInitializeSystem>();
 
 			//AnimatorLod
@@ -79,6 +80,7 @@ namespace Sources.EcsBoundedContexts.Core
 
 			//Characters
 			container.Bind<CharacterInitializeSystem>();
+			container.Bind<GroundedSystem>();
 			container.Bind<InputInitializeSystem>();
 			container.Bind<InputSystem>();
 

@@ -22,7 +22,7 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
                 DirectionComponent>());
 
         private readonly IPauseService _pauseService;
-        private InputManager _inputManager;
+        private InputSystem_Actions _inputActions;
         private ProtoEntity _entity;
 
         public InputSystem(IPauseService pauseService)
@@ -35,12 +35,11 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
 
         public void Init(IProtoSystems systems)
         {
-            _inputManager = new InputManager();
-            _inputManager.Enable();
-            _inputManager.Gameplay.Stand.performed += UpdateStandState;
-            _inputManager.Gameplay.Click.performed += UpdateSelectable;
-            // _inputManager.Gameplay.Look.canceled += OnLookCanceled;
-            // _inputManager.Gameplay.Zoom.performed += OnZoomPerformed;
+            _inputActions = new InputSystem_Actions();
+            _inputActions.Enable();
+            _inputActions.Player.Look.performed += OnLookPerformed;
+            _inputActions.Player.Look.canceled += OnLookCanceled;
+            _inputActions.Player.Zoom.performed += OnZoomPerformed;
             _entity = _it.First().Entity;
         }
 
@@ -54,8 +53,24 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
 
             //Debug.Log("Update input");
             UpdateMovement();
-            UpdateAttack();
+            //UpdateAttack();
             UpdatePointerClick();
+        }
+        
+        // Обработчики Input System
+        private void OnLookPerformed(InputAction.CallbackContext context)
+        {
+            //lookInput = context.ReadValue<Vector2>();
+        }
+
+        private void OnLookCanceled(InputAction.CallbackContext context)
+        {
+            //lookInput = Vector2.zero;
+        }
+
+        private void OnZoomPerformed(InputAction.CallbackContext context)
+        {
+            //zoomInput = context.ReadValue<float>();
         }
 
         private void UpdateSelectable(InputAction.CallbackContext obj)
@@ -72,12 +87,10 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
 
         public void Destroy()
         {
-            _inputManager.Disable();
-            _inputManager.Gameplay.Stand.performed -= UpdateStandState;
-            _inputManager.Gameplay.Click.performed -= UpdateSelectable;
-            // _inputManager.Player.Look.performed -= OnLookPerformed;
-            // _inputManager.Player.Look.canceled -= OnLookCanceled;
-            // _inputManager.Player.Zoom.performed -= OnZoomPerformed;
+            _inputActions.Disable();
+            _inputActions.Player.Look.performed -= OnLookPerformed;
+            _inputActions.Player.Look.canceled -= OnLookCanceled;
+            _inputActions.Player.Zoom.performed -= OnZoomPerformed;
         }
 
         private void UpdatePointerClick()
@@ -96,13 +109,13 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
         private void UpdateStandState(InputAction.CallbackContext context) =>
             InputData.InvokeStand();
 
-        private void UpdateAttack() =>
-            InputData.IsAttacking = _inputManager.Gameplay.Attack.IsPressed();
+        // private void UpdateAttack() =>
+        //     InputData.IsAttacking = _inputManager.Gameplay.Attack.IsPressed();
 
         private void UpdateMovement()
         {
-            Vector2 input = _inputManager.Gameplay.Movement.ReadValue<Vector2>();
-            float speed = _inputManager.Gameplay.Run.ReadValue<float>();
+            Vector2 input = _inputActions.Player.Move.ReadValue<Vector2>();
+            //float speed = _inputActions.Player.Run.ReadValue<float>();
 
             Vector3 lookDirection = Vector3.zero;
 
