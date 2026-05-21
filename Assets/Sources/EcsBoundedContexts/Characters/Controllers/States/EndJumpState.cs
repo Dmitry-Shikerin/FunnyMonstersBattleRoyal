@@ -9,7 +9,7 @@ using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
 namespace Sources.EcsBoundedContexts.Characters.Controllers.States
 {
     [Category(NcCategoriesConst.Characters)]
-    public class CharacterJumpState : FSMState
+    public class EndJumpState : FSMState
     {
         private ProtoEntity _entity;
 
@@ -21,7 +21,7 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
         
         protected override void OnEnter()
         {
-            _entity.PlayAnimation(AnimationName.Jump);
+            _entity.PlayAnimation(AnimationName.EndJump).SetCallback(AnimationEventName.End, Finish);
         }
     }
 }

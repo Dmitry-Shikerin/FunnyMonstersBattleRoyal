@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
 {
-    [EcsSystem(10)]
+    [EcsSystem(55)]
     [ComponentGroup(ComponentGroup.Characters)]
     [Aspect(AspectName.Game)]
     public class GroundedSystem : IProtoRunSystem, IProtoInitSystem
@@ -22,8 +22,7 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
 
         [DI] private readonly ProtoIt _it = new(
             It.Inc<
-                CharacterTag,
-                GroundCheckComponent>());
+                CharacterTag>());
 
         public GroundedSystem(IAssetCollector collector)
         {

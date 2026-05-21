@@ -1156,6 +1156,19 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelInput(this ProtoEntity entity)
 			=> s_GameAspect.Input.Del(entity);
 
+		//JumpEvent
+		public static bool HasJumpEvent(this ProtoEntity entity) =>
+			s_GameAspect.JumpEvent.Has(entity);
+
+		public static ref JumpEventComponent AddJumpEvent(this ProtoEntity entity)
+		{
+			ref JumpEventComponent jumpEventComponent = ref s_GameAspect.JumpEvent.Add(entity);
+			return ref jumpEventComponent;
+		}
+
+		public static void DelJumpEvent(this ProtoEntity entity)
+			=> s_GameAspect.JumpEvent.Del(entity);
+
 		//BehaviourTreeOwner
 		public static bool HasBehaviourTreeOwner(this ProtoEntity entity) =>
 			s_GameAspect.BehaviourTreeOwner.Has(entity);
@@ -1919,6 +1932,19 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelGrounded(this ProtoEntity entity)
 			=> s_GameAspect.Grounded.Del(entity);
+
+		//Jumping
+		public static bool HasJumping(this ProtoEntity entity) =>
+			s_GameAspect.Jumping.Has(entity);
+
+		public static ref JumpingComponent AddJumping(this ProtoEntity entity)
+		{
+			ref JumpingComponent jumpingComponent = ref s_GameAspect.Jumping.Add(entity);
+			return ref jumpingComponent;
+		}
+
+		public static void DelJumping(this ProtoEntity entity)
+			=> s_GameAspect.Jumping.Del(entity);
 
 		//Camera
 		public static bool HasCamera(this ProtoEntity entity) =>

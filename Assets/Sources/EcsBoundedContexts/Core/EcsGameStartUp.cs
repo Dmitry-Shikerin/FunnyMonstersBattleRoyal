@@ -7,6 +7,7 @@ using Sources.EcsBoundedContexts.Common.Domain.Components;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Components;
 using Sources.EcsBoundedContexts.Damage.Domain;
 using Sources.EcsBoundedContexts.GameObjects.Domain;
+using Sources.EcsBoundedContexts.Input.Domain;
 using Sources.EcsBoundedContexts.Movements.Move.Components;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
@@ -88,6 +89,7 @@ namespace Sources.EcsBoundedContexts.Core
             _systems.DelHere<DecreaseCoinsEvent>();
             _systems.DelHere<ApplyDailyRewardEvent>();
             _systems.DelHere<ChangeVolumeEvent>();
+            _systems.DelHere<JumpEventComponent>();
         }
         
         private async void Init()

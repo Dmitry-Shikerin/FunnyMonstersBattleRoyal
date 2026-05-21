@@ -112,6 +112,7 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<CameraZoomComponent> CameraZoom = new ();
 		public readonly ProtoPool<DirectionComponent> Direction = new ();
 		public readonly ProtoPool<InputTag> Input = new ();
+		public readonly ProtoPool<JumpEventComponent> JumpEvent = new ();
 		public readonly ProtoPool<BehaviourTreeOwnerComponent> BehaviourTreeOwner = new ();
 		public readonly ProtoPool<FsmOwnerComponent> FsmOwner = new ();
 		public readonly ProtoPool<DamageTimerComponent> DamageTimer = new ();
@@ -154,6 +155,7 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<CharacterModuleComponent> CharacterModule = new ();
 		public readonly ProtoPool<CharacterTag> Character = new ();
 		public readonly ProtoPool<GroundedComponent> Grounded = new ();
+		public readonly ProtoPool<JumpingComponent> Jumping = new ();
 
 		//Enemy
 
@@ -217,6 +219,7 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<CameraZoomComponent>)] = CameraZoom,
 				[typeof(ProtoPool<DirectionComponent>)] = Direction,
 				[typeof(ProtoPool<InputTag>)] = Input,
+				[typeof(ProtoPool<JumpEventComponent>)] = JumpEvent,
 				[typeof(ProtoPool<BehaviourTreeOwnerComponent>)] = BehaviourTreeOwner,
 				[typeof(ProtoPool<FsmOwnerComponent>)] = FsmOwner,
 				[typeof(ProtoPool<ActiveComponent>)] = Active,
@@ -257,6 +260,7 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<CharacterModuleComponent>)] = CharacterModule,
 				[typeof(ProtoPool<CharacterTag>)] = Character,
 				[typeof(ProtoPool<GroundedComponent>)] = Grounded,
+				[typeof(ProtoPool<JumpingComponent>)] = Jumping,
 				[typeof(ProtoPool<CameraComponent>)] = Camera,
 				[typeof(ProtoPool<CinemachineCameraComponent>)] = CinemachineCamera,
 				[typeof(ProtoPool<MainCameraTag>)] = MainCamera,

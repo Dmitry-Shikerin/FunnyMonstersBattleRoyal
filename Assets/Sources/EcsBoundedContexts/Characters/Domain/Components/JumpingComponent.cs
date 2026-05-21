@@ -1,11 +1,11 @@
 ﻿using System;
 using Sources.EcsBoundedContexts.Core.Domain;
-using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Characters.Domain.Components
 {
-    public struct GroundCheckComponent
+    [Serializable] 
+    [Component(group: ComponentGroup.Characters)]
+    public struct JumpingComponent
     {
-        public Transform Value;
     }
 }

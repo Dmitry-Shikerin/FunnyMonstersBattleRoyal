@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5a8877f26e7a6a43aaf06fade1a064a, type: 3}
-  m_Name: Jump
+  m_Name: EndJump
   m_EditorClassIdentifier: 
   _Transition:
     rid: 7907531914466033740
@@ -23,8 +23,11 @@ MonoBehaviour:
         _FadeDuration: 0.25
         _Speed: 1
         _Events:
-          _NormalizedTimes: []
+          _NormalizedTimes:
+          - 0.9978787
+          - NaN
           _Callbacks: []
-          _Names: []
-        _Clip: {fileID: 7400000, guid: c3e32176ced6478082661c6c296f19b2, type: 3}
+          _Names:
+          - {fileID: 11400000, guid: e08d6e01dc13ae44d8d82e76f7bf80cb, type: 2}
+        _Clip: {fileID: 7400000, guid: 641bf3452f804b80844f6c9a233f3b15, type: 3}
         _NormalizedStartTime: NaN

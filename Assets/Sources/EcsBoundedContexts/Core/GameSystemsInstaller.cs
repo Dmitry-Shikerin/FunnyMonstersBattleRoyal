@@ -80,9 +80,10 @@ namespace Sources.EcsBoundedContexts.Core
 
 			//Characters
 			container.Bind<CharacterInitializeSystem>();
-			container.Bind<GroundedSystem>();
 			container.Bind<InputInitializeSystem>();
 			container.Bind<InputSystem>();
+			container.Bind<CharacterUpdateSystem>();
+			container.Bind<GroundedSystem>();
 
 			//Enemy
 

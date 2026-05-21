@@ -4,6 +4,7 @@ using NodeCanvas.StateMachines;
 using ParadoxNotion.Design;
 using Sources.EcsBoundedContexts.Animancers.Domain.Enums;
 using Sources.EcsBoundedContexts.Animancers.Extension;
+using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
@@ -44,13 +45,15 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
         protected override void OnUpdate()
         {
             CharacterController characterController = _entity.GetCharacterController().Value;
-            Vector3 direction = _inputEntity.GetDirection().Value * 10;
-            //форвард
-            Transform transform = _entity.GetTransform().Value;
-            transform.forward = direction;
+            CharacterConfig config = _entity.GetCharacterConfig().Value;
+            Vector3 direction = _inputEntity.GetDirection().Value * config.Speed * Time.deltaTime;
             //гравитация
-            direction.y += 3;
-            characterController.SimpleMove(direction);
+            direction.y -= config.GroundedGravity;
+            //Форвард
+            Transform transform = _entity.GetTransform().Value;
+            transform.forward = _inputEntity.GetDirection().Value.normalized;
+            
+            characterController.Move(direction);
         }
     }
 }

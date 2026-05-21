@@ -5,6 +5,8 @@ namespace Sources.EcsBoundedContexts.Animancers.Domain.Enums
         Default = 0,
         Idle = 1,
         Walk = 2,
-        Jump = 3,
+        AirJump = 3,
+        StartJump = 4,
+        EndJump = 5,
     }
 }

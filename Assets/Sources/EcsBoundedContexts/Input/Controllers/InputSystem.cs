@@ -40,6 +40,7 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
             _inputActions.Player.Look.performed += OnLookPerformed;
             _inputActions.Player.Look.canceled += OnLookCanceled;
             _inputActions.Player.Zoom.performed += OnZoomPerformed;
+            _inputActions.Player.Jump.performed += OnJumpPerformed;
             _entity = _it.First().Entity;
         }
 
@@ -71,6 +72,12 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
         private void OnZoomPerformed(InputAction.CallbackContext context)
         {
             //zoomInput = context.ReadValue<float>();
+        }     
+        
+        private void OnJumpPerformed(InputAction.CallbackContext context)
+        {
+            _entity.AddJumpEvent();
+            Debug.Log($"AddJumpEvent");
         }
 
         private void UpdateSelectable(InputAction.CallbackContext obj)
@@ -91,6 +98,7 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
             _inputActions.Player.Look.performed -= OnLookPerformed;
             _inputActions.Player.Look.canceled -= OnLookCanceled;
             _inputActions.Player.Zoom.performed -= OnZoomPerformed;
+            _inputActions.Player.Jump.performed -= OnJumpPerformed;
         }
 
         private void UpdatePointerClick()

@@ -39,7 +39,6 @@ namespace Sources.EcsBoundedContexts.Core
 			TutorialLoadSystem tutorialLoadSystem, //Order: 9 //Ability
 			PlayerWalletLoadSystem playerWalletLoadSystem, //Order: 10 //Ability
 			CharacterInitializeSystem characterInitializeSystem, //Order: 10 //Characters
-			GroundedSystem groundedSystem, //Order: 10 //Characters
 			KillEnemyCounterLoadSystem killEnemyCounterLoadSystem, //Order: 12 //Common
 			InputInitializeSystem inputInitializeSystem, //Order: 15 //Characters
 			DailyRewardLoadSystem dailyRewardLoadSystem, //Order: 15 //Common
@@ -47,6 +46,8 @@ namespace Sources.EcsBoundedContexts.Core
 			PlayerWalletSystem playerWalletSystem, //Order: 51 //Ability
 			CameraRotationSystem cameraRotationSystem, //Order: 51 //Camera
 			MainCameraInitializeSystem mainCameraInitializeSystem, //Order: 51 //Camera
+			CharacterUpdateSystem characterUpdateSystem, //Order: 55 //Characters
+			GroundedSystem groundedSystem, //Order: 55 //Characters
 			DailyRewardSystem dailyRewardSystem, //Order: 56 //Common
 			MoveAlongPathSystem moveAlongPathSystem, //Order: 58 //Light
 			CleanHealthSystem cleanHealthSystem, //Order: 60 //Player
@@ -78,7 +79,6 @@ namespace Sources.EcsBoundedContexts.Core
 				tutorialLoadSystem, //Ability
 				playerWalletLoadSystem, //Ability
 				characterInitializeSystem, //Characters
-				groundedSystem, //Characters
 				killEnemyCounterLoadSystem, //Common
 				inputInitializeSystem, //Characters
 				dailyRewardLoadSystem, //Common
@@ -86,6 +86,8 @@ namespace Sources.EcsBoundedContexts.Core
 				playerWalletSystem, //Ability
 				cameraRotationSystem, //Camera
 				mainCameraInitializeSystem, //Camera
+				characterUpdateSystem, //Characters
+				groundedSystem, //Characters
 				dailyRewardSystem, //Common
 				moveAlongPathSystem, //Light
 				cleanHealthSystem, //Player

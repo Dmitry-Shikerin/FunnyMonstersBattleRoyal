@@ -4,5 +4,6 @@ namespace Sources.EcsBoundedContexts.Animancers.Domain.Enums
     {
         Default = 0,
         Attack = 1,
+        End = 2,
     }
 }
