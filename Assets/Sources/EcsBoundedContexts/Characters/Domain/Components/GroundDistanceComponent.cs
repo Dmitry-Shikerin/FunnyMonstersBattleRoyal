@@ -1,15 +1,12 @@
 ﻿using System;
 using Sources.EcsBoundedContexts.Core.Domain;
-using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Characters.Domain.Components
 {
     [Serializable] 
     [Component(group: ComponentGroup.Characters)]
-    public struct JumpingComponent
+    public struct GroundDistanceComponent
     {
-        public float JumpTimer;
-        public float JumpValue;
-        public Vector3 StartPos;
+        public float Value;
     }
 }

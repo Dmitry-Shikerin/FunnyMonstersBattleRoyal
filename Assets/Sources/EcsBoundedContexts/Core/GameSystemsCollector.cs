@@ -47,7 +47,9 @@ namespace Sources.EcsBoundedContexts.Core
 			CameraRotationSystem cameraRotationSystem, //Order: 51 //Camera
 			MainCameraInitializeSystem mainCameraInitializeSystem, //Order: 51 //Camera
 			CharacterUpdateSystem characterUpdateSystem, //Order: 55 //Characters
+			GroundDistanceSystem groundDistanceSystem, //Order: 55 //Characters
 			GroundedSystem groundedSystem, //Order: 55 //Characters
+			JumpSystem jumpSystem, //Order: 55 //Characters
 			DailyRewardSystem dailyRewardSystem, //Order: 56 //Common
 			MoveAlongPathSystem moveAlongPathSystem, //Order: 58 //Light
 			CleanHealthSystem cleanHealthSystem, //Order: 60 //Player
@@ -87,7 +89,9 @@ namespace Sources.EcsBoundedContexts.Core
 				cameraRotationSystem, //Camera
 				mainCameraInitializeSystem, //Camera
 				characterUpdateSystem, //Characters
+				groundDistanceSystem, //Characters
 				groundedSystem, //Characters
+				jumpSystem, //Characters
 				dailyRewardSystem, //Common
 				moveAlongPathSystem, //Light
 				cleanHealthSystem, //Player

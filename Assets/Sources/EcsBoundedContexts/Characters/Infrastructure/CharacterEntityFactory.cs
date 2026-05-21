@@ -77,6 +77,7 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             entity.AddCharacterConfig(config);
             
             //Grounded
+            entity.AddGroundDistance(0);
 
             //Rotation
             // entity.AddRotationSpeed(config.RotationSpeed);

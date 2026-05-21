@@ -154,6 +154,7 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<CharacterConfigComponent> CharacterConfig = new ();
 		public readonly ProtoPool<CharacterModuleComponent> CharacterModule = new ();
 		public readonly ProtoPool<CharacterTag> Character = new ();
+		public readonly ProtoPool<GroundDistanceComponent> GroundDistance = new ();
 		public readonly ProtoPool<GroundedComponent> Grounded = new ();
 		public readonly ProtoPool<JumpingComponent> Jumping = new ();
 
@@ -259,6 +260,7 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<CharacterConfigComponent>)] = CharacterConfig,
 				[typeof(ProtoPool<CharacterModuleComponent>)] = CharacterModule,
 				[typeof(ProtoPool<CharacterTag>)] = Character,
+				[typeof(ProtoPool<GroundDistanceComponent>)] = GroundDistance,
 				[typeof(ProtoPool<GroundedComponent>)] = Grounded,
 				[typeof(ProtoPool<JumpingComponent>)] = Jumping,
 				[typeof(ProtoPool<CameraComponent>)] = Camera,

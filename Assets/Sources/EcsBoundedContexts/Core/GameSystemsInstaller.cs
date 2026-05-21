@@ -83,7 +83,9 @@ namespace Sources.EcsBoundedContexts.Core
 			container.Bind<InputInitializeSystem>();
 			container.Bind<InputSystem>();
 			container.Bind<CharacterUpdateSystem>();
+			container.Bind<GroundDistanceSystem>();
 			container.Bind<GroundedSystem>();
+			container.Bind<JumpSystem>();
 
 			//Enemy
 

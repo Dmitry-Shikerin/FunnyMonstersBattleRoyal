@@ -1920,6 +1920,29 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelCharacter(this ProtoEntity entity)
 			=> s_GameAspect.Character.Del(entity);
 
+		//GroundDistance
+		public static bool HasGroundDistance(this ProtoEntity entity) =>
+			s_GameAspect.GroundDistance.Has(entity);
+
+		public static ref GroundDistanceComponent GetGroundDistance(this ProtoEntity entity) =>
+			ref s_GameAspect.GroundDistance.Get(entity);
+
+		public static void ReplaceGroundDistance(this ProtoEntity entity, float value)
+		{
+			ref GroundDistanceComponent groundDistanceComponent = ref s_GameAspect.GroundDistance.Get(entity);
+			groundDistanceComponent.Value = value;
+		}
+
+		public static ref GroundDistanceComponent AddGroundDistance(this ProtoEntity entity, float value)
+		{
+			ref GroundDistanceComponent groundDistanceComponent = ref s_GameAspect.GroundDistance.Add(entity);
+			groundDistanceComponent.Value = value;
+			return ref groundDistanceComponent;
+		}
+
+		public static void DelGroundDistance(this ProtoEntity entity)
+			=> s_GameAspect.GroundDistance.Del(entity);
+
 		//Grounded
 		public static bool HasGrounded(this ProtoEntity entity) =>
 			s_GameAspect.Grounded.Has(entity);
@@ -1937,9 +1960,23 @@ namespace Sources.EcsBoundedContexts.Core
 		public static bool HasJumping(this ProtoEntity entity) =>
 			s_GameAspect.Jumping.Has(entity);
 
-		public static ref JumpingComponent AddJumping(this ProtoEntity entity)
+		public static ref JumpingComponent GetJumping(this ProtoEntity entity) =>
+			ref s_GameAspect.Jumping.Get(entity);
+
+		public static void ReplaceJumping(this ProtoEntity entity, float jumpTimer, float jumpValue, Vector3 startPos)
+		{
+			ref JumpingComponent jumpingComponent = ref s_GameAspect.Jumping.Get(entity);
+			jumpingComponent.JumpTimer = jumpTimer;
+			jumpingComponent.JumpValue = jumpValue;
+			jumpingComponent.StartPos = startPos;
+		}
+
+		public static ref JumpingComponent AddJumping(this ProtoEntity entity, float jumpTimer, float jumpValue, Vector3 startPos)
 		{
 			ref JumpingComponent jumpingComponent = ref s_GameAspect.Jumping.Add(entity);
+			jumpingComponent.JumpTimer = jumpTimer;
+			jumpingComponent.JumpValue = jumpValue;
+			jumpingComponent.StartPos = startPos;
 			return ref jumpingComponent;
 		}
 
