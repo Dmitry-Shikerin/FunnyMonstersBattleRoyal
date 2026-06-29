@@ -46,6 +46,7 @@ namespace Sources.EcsBoundedContexts.Core
 			PlayerWalletSystem playerWalletSystem, //Order: 51 //Ability
 			CameraRotationSystem cameraRotationSystem, //Order: 51 //Camera
 			MainCameraInitializeSystem mainCameraInitializeSystem, //Order: 51 //Camera
+			CharacterAirSystem characterAirSystem, //Order: 55 //Characters
 			CharacterUpdateSystem characterUpdateSystem, //Order: 55 //Characters
 			GroundDistanceSystem groundDistanceSystem, //Order: 55 //Characters
 			GroundedSystem groundedSystem, //Order: 55 //Characters
@@ -88,6 +89,7 @@ namespace Sources.EcsBoundedContexts.Core
 				playerWalletSystem, //Ability
 				cameraRotationSystem, //Camera
 				mainCameraInitializeSystem, //Camera
+				characterAirSystem, //Characters
 				characterUpdateSystem, //Characters
 				groundDistanceSystem, //Characters
 				groundedSystem, //Characters

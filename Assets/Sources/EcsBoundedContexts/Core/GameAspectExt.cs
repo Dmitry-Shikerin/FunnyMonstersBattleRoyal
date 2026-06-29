@@ -1861,6 +1861,19 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelTransform(this ProtoEntity entity)
 			=> s_GameAspect.Transform.Del(entity);
 
+		//Air
+		public static bool HasAir(this ProtoEntity entity) =>
+			s_GameAspect.Air.Has(entity);
+
+		public static ref AirComponent AddAir(this ProtoEntity entity)
+		{
+			ref AirComponent airComponent = ref s_GameAspect.Air.Add(entity);
+			return ref airComponent;
+		}
+
+		public static void DelAir(this ProtoEntity entity)
+			=> s_GameAspect.Air.Del(entity);
+
 		//CharacterConfig
 		public static bool HasCharacterConfig(this ProtoEntity entity) =>
 			s_GameAspect.CharacterConfig.Has(entity);
@@ -1982,6 +1995,29 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelJumping(this ProtoEntity entity)
 			=> s_GameAspect.Jumping.Del(entity);
+
+		//VerticalVelocity
+		public static bool HasVerticalVelocity(this ProtoEntity entity) =>
+			s_GameAspect.VerticalVelocity.Has(entity);
+
+		public static ref VerticalVelocityComponent GetVerticalVelocity(this ProtoEntity entity) =>
+			ref s_GameAspect.VerticalVelocity.Get(entity);
+
+		public static void ReplaceVerticalVelocity(this ProtoEntity entity, float value)
+		{
+			ref VerticalVelocityComponent verticalVelocityComponent = ref s_GameAspect.VerticalVelocity.Get(entity);
+			verticalVelocityComponent.Value = value;
+		}
+
+		public static ref VerticalVelocityComponent AddVerticalVelocity(this ProtoEntity entity, float value)
+		{
+			ref VerticalVelocityComponent verticalVelocityComponent = ref s_GameAspect.VerticalVelocity.Add(entity);
+			verticalVelocityComponent.Value = value;
+			return ref verticalVelocityComponent;
+		}
+
+		public static void DelVerticalVelocity(this ProtoEntity entity)
+			=> s_GameAspect.VerticalVelocity.Del(entity);
 
 		//Camera
 		public static bool HasCamera(this ProtoEntity entity) =>

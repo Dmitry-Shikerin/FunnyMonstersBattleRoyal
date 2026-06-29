@@ -27,5 +27,9 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
             CharacterConfig config = _entity.GetCharacterConfig().Value;
             _entity.AddJumping(config.JumpDuration, 0, _entity.GetTransform().Value.position);
         }
+
+        protected override void OnUpdate()
+        {
+        }
     }
 }

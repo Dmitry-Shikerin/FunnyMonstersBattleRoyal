@@ -82,6 +82,7 @@ namespace Sources.EcsBoundedContexts.Core
 			container.Bind<CharacterInitializeSystem>();
 			container.Bind<InputInitializeSystem>();
 			container.Bind<InputSystem>();
+			container.Bind<CharacterAirSystem>();
 			container.Bind<CharacterUpdateSystem>();
 			container.Bind<GroundDistanceSystem>();
 			container.Bind<GroundedSystem>();

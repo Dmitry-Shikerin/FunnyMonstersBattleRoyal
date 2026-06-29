@@ -48,7 +48,7 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
             CharacterConfig config = _entity.GetCharacterConfig().Value;
             Vector3 direction = _inputEntity.GetDirection().Value * config.Speed * Time.deltaTime;
             //гравитация
-            direction.y -= config.GroundedGravity;
+            direction.y = config.GroundedGravity;
             //Форвард
             Transform transform = _entity.GetTransform().Value;
             transform.forward = _inputEntity.GetDirection().Value.normalized;

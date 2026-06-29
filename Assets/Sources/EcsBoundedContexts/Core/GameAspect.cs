@@ -151,12 +151,14 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<HealParticleComponent> HealParticle = new ();
 		public readonly ProtoPool<ShootParticleComponent> ShootParticle = new ();
 		public readonly ProtoPool<AttackPowerComponent> AttackPower = new ();
+		public readonly ProtoPool<AirComponent> Air = new ();
 		public readonly ProtoPool<CharacterConfigComponent> CharacterConfig = new ();
 		public readonly ProtoPool<CharacterModuleComponent> CharacterModule = new ();
 		public readonly ProtoPool<CharacterTag> Character = new ();
 		public readonly ProtoPool<GroundDistanceComponent> GroundDistance = new ();
 		public readonly ProtoPool<GroundedComponent> Grounded = new ();
 		public readonly ProtoPool<JumpingComponent> Jumping = new ();
+		public readonly ProtoPool<VerticalVelocityComponent> VerticalVelocity = new ();
 
 		//Enemy
 
@@ -257,12 +259,14 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<SequenceComponent>)] = Sequence,
 				[typeof(ProtoPool<StringIdComponent>)] = StringId,
 				[typeof(ProtoPool<TransformComponent>)] = Transform,
+				[typeof(ProtoPool<AirComponent>)] = Air,
 				[typeof(ProtoPool<CharacterConfigComponent>)] = CharacterConfig,
 				[typeof(ProtoPool<CharacterModuleComponent>)] = CharacterModule,
 				[typeof(ProtoPool<CharacterTag>)] = Character,
 				[typeof(ProtoPool<GroundDistanceComponent>)] = GroundDistance,
 				[typeof(ProtoPool<GroundedComponent>)] = Grounded,
 				[typeof(ProtoPool<JumpingComponent>)] = Jumping,
+				[typeof(ProtoPool<VerticalVelocityComponent>)] = VerticalVelocity,
 				[typeof(ProtoPool<CameraComponent>)] = Camera,
 				[typeof(ProtoPool<CinemachineCameraComponent>)] = CinemachineCamera,
 				[typeof(ProtoPool<MainCameraTag>)] = MainCamera,

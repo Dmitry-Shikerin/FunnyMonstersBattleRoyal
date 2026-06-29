@@ -26,7 +26,7 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
         public void Init(IProtoSystems systems)
         {
             EntityLink characterLink = _rootGameObject.Character;
-            //_entityFactory.Create(characterLink);
+            _entityFactory.Create(characterLink);
         }
     }
 }

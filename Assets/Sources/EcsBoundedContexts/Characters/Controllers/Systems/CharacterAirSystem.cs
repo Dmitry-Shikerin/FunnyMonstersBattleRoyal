@@ -13,12 +13,13 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
     [EcsSystem(55)]
     [ComponentGroup(ComponentGroup.Characters)]
     [Aspect(AspectName.Game)]
-    public class JumpSystem : IProtoRunSystem
+    public class CharacterAirSystem : IProtoRunSystem
     {
-        [DI] private readonly ProtoIt _it = new(
+        [DI] private readonly ProtoItExc _it = new(
             It.Inc<
                 CharacterTag,
-                JumpingComponent>());
+                AirComponent>(),
+            It.Exc<JumpingComponent>());
         [DI] private readonly ProtoIt _inputIt = new(
             It.Inc<
                 InputTag>());
@@ -26,26 +27,10 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
         public void Run()
         {
             foreach (ProtoEntity entity in _it)
-            {
-                ref JumpingComponent jumping = ref entity.GetJumping();
-                CharacterConfig config = entity.GetCharacterConfig().Value;
-                Transform transform = entity.GetTransform().Value;
-
-                jumping.JumpTimer -= Time.deltaTime;
-                //transform.position += new Vector3(0, 5f * Time.deltaTime, 0);
-
+            { 
                 //Move
                 ProtoEntity inputEntity = _inputIt.First().Entity;
                 Move(entity, inputEntity);
-                
-                // Завершение прыжка
-                float currentHeight = transform.position.y;
-                float targetHeight = jumping.StartPos.y + config.JumpHeight;
-
-                if (currentHeight < targetHeight)
-                    continue;
-
-                entity.DelJumping();
             }
         }
 
@@ -54,14 +39,14 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
             CharacterController characterController = entity.GetCharacterController().Value;
             CharacterConfig config = entity.GetCharacterConfig().Value;
             Vector3 direction = inputEntity.GetDirection().Value * config.Speed * Time.deltaTime;
-            
+
             //jump
-            direction.y += config.JumpPower * Time.deltaTime;
-            
+            direction.y -= config.JumpPower * Time.deltaTime;
+
             //Форвард
             Transform transform = entity.GetTransform().Value;
             transform.forward = inputEntity.GetDirection().Value.normalized;
-            
+
             characterController.Move(direction);
         }
     }
