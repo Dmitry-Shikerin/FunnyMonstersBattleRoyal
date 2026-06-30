@@ -33,6 +33,8 @@ namespace Sources.EcsBoundedContexts.Input.Infrastructure
 
             _repository.AddByName(entity, IdsConst.Input);
             entity.AddDirection(Vector3.zero);
+            entity.AddCameraZoom(3);
+            entity.AddCameraLook(Vector2.zero);
             
             return default;
         }

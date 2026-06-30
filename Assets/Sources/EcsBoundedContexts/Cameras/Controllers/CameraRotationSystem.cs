@@ -1,4 +1,7 @@
 ﻿using Leopotam.EcsProto;
+using Leopotam.EcsProto.QoL;
+using Sources.EcsBoundedContexts.Cameras.Domain;
+using Sources.EcsBoundedContexts.Characters.Domain.Components;
 using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
 using UnityEngine;
@@ -9,7 +12,7 @@ namespace Sources.EcsBoundedContexts.Cameras.Controllers
     [EcsSystem(51)]
     [ComponentGroup(ComponentGroup.Camera)]
     [Aspect(AspectName.Game)]
-    public class CameraRotationSystem : IProtoRunSystem
+    public class CameraRotationSystem : IProtoRunSystem, IProtoInitSystem
     {
         public class CameraSettings
         {
@@ -37,6 +40,10 @@ namespace Sources.EcsBoundedContexts.Cameras.Controllers
             public float maxDistance = 10f;
         }
 
+        [DI] private readonly ProtoIt _it = new(
+            It.Inc<
+                MainCameraTag>());
+
         public Transform target;
         public CameraSettings cameraSettings = new CameraSettings();
         public CollisionSettings collisionSettings = new CollisionSettings();
@@ -51,45 +58,23 @@ namespace Sources.EcsBoundedContexts.Cameras.Controllers
         private float currentDistance;
         private Vector3 positionSmoothVelocity = Vector3.zero;
 
-        void Awake()
+        public void Init(IProtoSystems systems)
         {
-            // Инициализация Input System
-            // inputActions = new PlayerInputActions();
+            // LockCursor();
+            // InitializeCamera();
         }
 
-        void OnEnable()
+        public void Run()
         {
-            // // Включаем input actions
-            // inputActions.Enable();
-            //
-            // // Подписываемся на события
-            // inputActions.Player.Look.performed += OnLookPerformed;
-            // inputActions.Player.Look.canceled += OnLookCanceled;
-            // inputActions.Player.Zoom.performed += OnZoomPerformed;
         }
 
-        void OnDisable()
-        {
-            // Отписываемся и отключаем
-            // inputActions.Player.Look.performed -= OnLookPerformed;
-            // inputActions.Player.Look.canceled -= OnLookCanceled;
-            // inputActions.Player.Zoom.performed -= OnZoomPerformed;
-            // inputActions.Disable();
-        }
-
-        void Start()
-        {
-            LockCursor();
-            InitializeCamera();
-        }
-
-        void LockCursor()
+        private void LockCursor()
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
 
-        void InitializeCamera()
+        private void InitializeCamera()
         {
             if (target != null)
             {
@@ -100,58 +85,39 @@ namespace Sources.EcsBoundedContexts.Cameras.Controllers
             }
         }
 
-        // Обработчики Input System
-        private void OnLookPerformed(InputAction.CallbackContext context)
+        void Update()
         {
-            lookInput = context.ReadValue<Vector2>();
+            if (target == null)
+                return;
+        
+            // Обработка ввода мыши через Input System
+            float mouseX = lookInput.x * cameraSettings.mouseSensitivity * Time.deltaTime;
+            float mouseY = lookInput.y * cameraSettings.mouseSensitivity * Time.deltaTime;
+        
+            currentYaw += mouseX;
+            currentPitch += cameraSettings.invertY ? mouseY : -mouseY;
+            currentPitch = Mathf.Clamp(currentPitch, cameraSettings.pitchLimits.x, cameraSettings.pitchLimits.y);
+        
+            // Зум через Input System
+            if (zoomSettings.enabled && zoomInput != 0)
+            {
+                cameraSettings.distance -= zoomInput * zoomSettings.zoomSpeed * Time.deltaTime;
+                cameraSettings.distance = Mathf.Clamp(cameraSettings.distance,
+                    zoomSettings.minDistance, zoomSettings.maxDistance);
+            }
+        
+            // Управление курсором
+            if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+        
+            if (Mouse.current.leftButton.wasPressedThisFrame && Cursor.visible)
+            {
+                LockCursor();
+            }
         }
-
-        private void OnLookCanceled(InputAction.CallbackContext context)
-        {
-            lookInput = Vector2.zero;
-        }
-
-        private void OnZoomPerformed(InputAction.CallbackContext context)
-        {
-            zoomInput = context.ReadValue<float>();
-        }
-
-        public void Run()
-        {
-        }
-
-        // void Update()
-        // {
-        //     if (target == null) return;
-        //
-        //     // Обработка ввода мыши через Input System
-        //     float mouseX = lookInput.x * cameraSettings.mouseSensitivity * Time.deltaTime;
-        //     float mouseY = lookInput.y * cameraSettings.mouseSensitivity * Time.deltaTime;
-        //
-        //     currentYaw += mouseX;
-        //     currentPitch += cameraSettings.invertY ? mouseY : -mouseY;
-        //     currentPitch = Mathf.Clamp(currentPitch, cameraSettings.pitchLimits.x, cameraSettings.pitchLimits.y);
-        //
-        //     // Зум через Input System
-        //     if (zoomSettings.enabled && zoomInput != 0)
-        //     {
-        //         cameraSettings.distance -= zoomInput * zoomSettings.zoomSpeed * Time.deltaTime;
-        //         cameraSettings.distance = Mathf.Clamp(cameraSettings.distance,
-        //             zoomSettings.minDistance, zoomSettings.maxDistance);
-        //     }
-        //
-        //     // Управление курсором
-        //     if (Keyboard.current.escapeKey.wasPressedThisFrame)
-        //     {
-        //         Cursor.lockState = CursorLockMode.None;
-        //         Cursor.visible = true;
-        //     }
-        //
-        //     if (Mouse.current.leftButton.wasPressedThisFrame && Cursor.visible)
-        //     {
-        //         LockCursor();
-        //     }
-        // }
         //
         // void LateUpdate()
         // {
@@ -183,5 +149,6 @@ namespace Sources.EcsBoundedContexts.Cameras.Controllers
         //
         //     return targetDistance;
         // }
+
     }
 }

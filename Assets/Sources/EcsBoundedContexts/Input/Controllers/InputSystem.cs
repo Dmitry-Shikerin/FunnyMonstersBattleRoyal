@@ -61,17 +61,19 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
         // Обработчики Input System
         private void OnLookPerformed(InputAction.CallbackContext context)
         {
-            //lookInput = context.ReadValue<Vector2>();
+             Vector2 look = context.ReadValue<Vector2>();
+             _entity.ReplaceCameraLook(look);
         }
 
         private void OnLookCanceled(InputAction.CallbackContext context)
         {
-            //lookInput = Vector2.zero;
+            _entity.ReplaceCameraLook(Vector2.zero);
         }
 
         private void OnZoomPerformed(InputAction.CallbackContext context)
         {
-            //zoomInput = context.ReadValue<float>();
+            float zoomInput = context.ReadValue<float>();
+            _entity.ReplaceCameraZoom(zoomInput);
         }     
         
         private void OnJumpPerformed(InputAction.CallbackContext context)

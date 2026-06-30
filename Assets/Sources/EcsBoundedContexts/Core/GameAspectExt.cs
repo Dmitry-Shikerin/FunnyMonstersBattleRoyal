@@ -1088,9 +1088,19 @@ namespace Sources.EcsBoundedContexts.Core
 		public static bool HasCameraLook(this ProtoEntity entity) =>
 			s_GameAspect.CameraLook.Has(entity);
 
-		public static ref CameraLookComponent AddCameraLook(this ProtoEntity entity)
+		public static ref CameraLookComponent GetCameraLook(this ProtoEntity entity) =>
+			ref s_GameAspect.CameraLook.Get(entity);
+
+		public static void ReplaceCameraLook(this ProtoEntity entity, Vector2 value)
+		{
+			ref CameraLookComponent cameraLookComponent = ref s_GameAspect.CameraLook.Get(entity);
+			cameraLookComponent.Value = value;
+		}
+
+		public static ref CameraLookComponent AddCameraLook(this ProtoEntity entity, Vector2 value)
 		{
 			ref CameraLookComponent cameraLookComponent = ref s_GameAspect.CameraLook.Add(entity);
+			cameraLookComponent.Value = value;
 			return ref cameraLookComponent;
 		}
 
@@ -1104,13 +1114,13 @@ namespace Sources.EcsBoundedContexts.Core
 		public static ref CameraZoomComponent GetCameraZoom(this ProtoEntity entity) =>
 			ref s_GameAspect.CameraZoom.Get(entity);
 
-		public static void ReplaceCameraZoom(this ProtoEntity entity, Vector2 value)
+		public static void ReplaceCameraZoom(this ProtoEntity entity, float value)
 		{
 			ref CameraZoomComponent cameraZoomComponent = ref s_GameAspect.CameraZoom.Get(entity);
 			cameraZoomComponent.Value = value;
 		}
 
-		public static ref CameraZoomComponent AddCameraZoom(this ProtoEntity entity, Vector2 value)
+		public static ref CameraZoomComponent AddCameraZoom(this ProtoEntity entity, float value)
 		{
 			ref CameraZoomComponent cameraZoomComponent = ref s_GameAspect.CameraZoom.Add(entity);
 			cameraZoomComponent.Value = value;

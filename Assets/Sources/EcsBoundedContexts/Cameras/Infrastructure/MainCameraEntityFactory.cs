@@ -3,6 +3,7 @@ using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runt
 using MyDependencies.Sources.Containers;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.EcsBoundedContexts.Cameras.Presentation;
+using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.MyLeoEcsProto.Factories;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
@@ -36,7 +37,7 @@ namespace Sources.EcsBoundedContexts.Cameras.Infrastructure
             MainCameraModule module = link.GetModule<MainCameraModule>();
             
             Aspect.MainCamera.NewEntity(out ProtoEntity entity);
-            //_repository.AddByName(entity, EntityIdsConst.MainCamera);
+            _repository.AddByName(entity, IdsConst.MainCamera);
             Authoring(link, entity);
             
             entity.AddCamera(module.Camera);
