@@ -72,8 +72,8 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
 
         private void OnZoomPerformed(InputAction.CallbackContext context)
         {
-            float zoomInput = context.ReadValue<float>();
-            _entity.ReplaceCameraZoom(zoomInput);
+            // float zoomInput = context.ReadValue<float>();
+            // _entity.ReplaceCameraZoom(zoomInput);
         }     
         
         private void OnJumpPerformed(InputAction.CallbackContext context)
