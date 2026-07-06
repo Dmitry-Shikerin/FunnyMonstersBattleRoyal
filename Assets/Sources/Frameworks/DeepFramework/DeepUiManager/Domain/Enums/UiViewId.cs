@@ -26,5 +26,8 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums
         WarningNewGame = 21,
         ContinueGameView = 22,
         AdvertisingAfterWave = 23,
+        Connect = 24,
+        Wait = 25,
+        CreateRoom = 26,
     }
 }

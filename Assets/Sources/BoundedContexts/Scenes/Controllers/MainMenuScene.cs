@@ -82,17 +82,20 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _localizationService.Translate();
             _ecsGameStartUp.Initialize();
             _sdkService.Initialize();
-            _leaderboardService.Initialize();
-            _soundService.Initialize();
+            //Придумать получше
+            _container.Inject(_uiViewService.Get<MainHudUiView>().LobbyView);
+            _container.Inject(_uiViewService.Get<ConnectUiView>());
+            //_leaderboardService.Initialize();
+            //_soundService.Initialize();
             HideBlackScreen();
             await _curtainView.HideAsync();
-            _soundService.Play(SoundDatabaseName.Music, SoundName.MainMenuBackgroundMusic);
+            //_soundService.Play(SoundDatabaseName.Music, SoundName.MainMenuBackgroundMusic);
             await GameReady((IScenePayload)payload);
         }
 
         public void Exit()
         {
-            _soundService.Stop(SoundName.MainMenuBackgroundMusic);
+            //_soundService.Stop(SoundName.MainMenuBackgroundMusic);
             _ecsGameStartUp.Destroy();
             _leaderboardService.Destroy();
             _sdkService.Destroy();

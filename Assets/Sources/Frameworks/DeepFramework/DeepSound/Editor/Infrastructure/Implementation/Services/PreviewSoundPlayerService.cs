@@ -39,6 +39,14 @@ namespace Sources.Frameworks.DeepFramework.DeepSound.Editor.Infrastructure.Imple
 
         private static void UpdateSlider(float deltaTime)
         {
+            if (_audioSource == null)
+            {
+                _soundController = Object.FindFirstObjectByType<DeepSoundController>() ??
+                                   new GameObject(nameof(DeepSoundController)).AddComponent<DeepSoundController>();
+                _audioSource = _soundController.gameObject.GetComponent<AudioSource>() 
+                               ?? _soundController.gameObject.AddComponent<AudioSource>();
+            }
+            
             SliderValueChange?.Invoke(_audioSource.time);
 
             if (_audioSource.clip == null)

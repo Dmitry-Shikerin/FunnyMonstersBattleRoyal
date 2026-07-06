@@ -223,7 +223,7 @@ MonoBehaviour:
   _fadeUpDuration: 1
   _fadeUpDelay: 1
   _fadeEase: 1
-  _backgroundRectTransform: {fileID: 0}
+  _backgroundRectTransform: {fileID: 1539562056879085227}
   _moveDuration: 1.5
   _moveDownEase: 30
   _moveUpEase: 29

@@ -2,7 +2,6 @@ using MyDependencies.Sources.Containers;
 using MyDependencies.Sources.Containers.Extensions;
 using Sources.EcsBoundedContexts.Volumes.Controllers.Data;
 using Sources.EcsBoundedContexts.DailyRewards.Controllers.Data;
-using Sources.EcsBoundedContexts.Cameras.Controllers;
 using Sources.EcsBoundedContexts.DailyRewards.Controllers;
 using Sources.EcsBoundedContexts.Volumes.Controllers;
 
@@ -29,7 +28,6 @@ namespace Sources.EcsBoundedContexts.Core
 			//Tree
 
 			//Camera
-			container.Bind<MainCameraInitializeSystem>();
 
 			//AnimatorLod
 

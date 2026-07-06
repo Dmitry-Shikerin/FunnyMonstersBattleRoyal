@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Sources.BoundedContexts.RootGameObjects.Presentation
 {
-    public class RootGameObject : MonoBehaviour
+    public class RootGameObject : MonoBehaviour, IRootGameObject
     {
         private const string CameraFolder = "Camera";
         private const string SpawnerFolder = "Spawner";

@@ -8,14 +8,14 @@ namespace Sources.EcsBoundedContexts.Cameras.Controllers
 {
     [EcsSystem(51)]
     [ComponentGroup(ComponentGroup.Camera)]
-    [Aspect(AspectName.Game, AspectName.MainMenu)]
+    [Aspect(AspectName.Game)]
     public class MainCameraInitializeSystem : IProtoInitSystem
     {
-        private readonly RootGameObject _rootGameObject;
+        private readonly IRootGameObject _rootGameObject;
         private readonly MainCameraEntityFactory _factory;
 
         public MainCameraInitializeSystem(
-            RootGameObject rootGameObject,
+            IRootGameObject rootGameObject,
             MainCameraEntityFactory factory)
         {
             _rootGameObject = rootGameObject;

@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &84907842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7084708136107463306, guid: 020f4f851e7849341b3ef6919ab1539a, type: 3}
+  m_PrefabInstance: {fileID: 7707662707531956881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &213551437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -455,7 +460,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 55
 --- !u!114 &1499342447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,13 +703,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7084708136107463306, guid: 020f4f851e7849341b3ef6919ab1539a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7707662707531956887}
   m_SourcePrefab: {fileID: 100100000, guid: 020f4f851e7849341b3ef6919ab1539a, type: 3}
 --- !u!20 &7707662707531956882 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 3274369998394586124, guid: 020f4f851e7849341b3ef6919ab1539a, type: 3}
   m_PrefabInstance: {fileID: 7707662707531956881}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7707662707531956887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84907842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15dd002843574e1ba35c4b84aa191c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _modules: []
 --- !u!1001 &9029514730166099885
 PrefabInstance:
   m_ObjectHideFlags: 0
