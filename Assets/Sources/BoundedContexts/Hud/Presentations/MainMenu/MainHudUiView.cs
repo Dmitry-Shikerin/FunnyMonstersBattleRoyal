@@ -1,5 +1,6 @@
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using Sirenix.OdinInspector;
+using Sources.BoundedContexts.Networks;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Views;
 using UnityEngine;
 using UnityEngine.UI;

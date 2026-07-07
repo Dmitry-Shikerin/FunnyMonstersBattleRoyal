@@ -10,7 +10,8 @@ namespace Sources.App.DIContainers.Projects
     {
         public override void InstallBindings(DiContainer container)
         {
-            container.Bind<ISceneLoaderService, SceneLoaderService>();
+            container.Bind<ISceneLoaderService, PhotonSceneLoaderService>();
+            //container.Bind<ISceneLoaderService, SceneLoaderService>();
             //container.Bind<ISceneLoaderService, AddressableSceneLoaderService>();
         }
     }

@@ -83,7 +83,8 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _ecsGameStartUp.Initialize();
             _sdkService.Initialize();
             //Придумать получше
-            _container.Inject(_uiViewService.Get<MainHudUiView>().LobbyView);
+            _container.Inject(_uiViewService.Get<MainHudUiView>().LobbyView);            
+            _container.Inject(_uiViewService.Get<CreateRoomUiView>().RoomView);
             _container.Inject(_uiViewService.Get<ConnectUiView>());
             //_leaderboardService.Initialize();
             //_soundService.Initialize();

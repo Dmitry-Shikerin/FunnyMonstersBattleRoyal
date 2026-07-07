@@ -11,11 +11,11 @@ namespace Sources.EcsBoundedContexts.Cameras.Controllers
     [Aspect(AspectName.Game)]
     public class MainCameraInitializeSystem : IProtoInitSystem
     {
-        private readonly IRootGameObject _rootGameObject;
+        private readonly RootGameObject _rootGameObject;
         private readonly MainCameraEntityFactory _factory;
 
         public MainCameraInitializeSystem(
-            IRootGameObject rootGameObject,
+            RootGameObject rootGameObject,
             MainCameraEntityFactory factory)
         {
             _rootGameObject = rootGameObject;
