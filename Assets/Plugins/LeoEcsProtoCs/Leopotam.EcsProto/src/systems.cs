@@ -5,7 +5,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using Debug = UnityEngine.Debug;
 #if ENABLE_IL2CPP
 using Unity.IL2CPP.CompilerServices;
 #endif
@@ -219,6 +221,13 @@ namespace Leopotam.EcsProto {
         public virtual void Run () {
             for (int i = 0, iMax = _runSystems.Len (); i < iMax; i++) {
 #if DEBUG || LEOECSPROTO_SYSTEM_BENCHES
+                if (_sw == null)
+                {
+                    //выдавало ошибку
+                    Debug.Log($"SW null");
+                    _sw = new Stopwatch();
+                }
+                
                 _sw.Restart ();
                 _runSystems.Get (i).Run ();
                 _sw.Stop ();

@@ -1,5 +1,6 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
+using Sources.EcsBoundedContexts.Characters.Presentation;
 using Sources.Frameworks.GameServices.EntityPools.Domain.Configs;
 using Sources.Frameworks.GameServices.Prefabs.Domain;
 using Sources.Frameworks.GameServices.Prefabs.Domain.Configs;
@@ -46,7 +47,8 @@ namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
         {
             await UniTask.WhenAll
             (
-                _resourcesAssetLoader.LoadAsset<PoolManagerCollector>(ResourcesPrefabPath.PoolManagerCollector)
+                _resourcesAssetLoader.LoadAsset<PoolManagerCollector>(ResourcesPrefabPath.PoolManagerCollector),
+                _resourcesAssetLoader.LoadAsset<CharacterModule>(ResourcesPrefabPath.Character)
             );
         }
         
@@ -55,12 +57,12 @@ namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
             AddressablesAssetConfig config = await _addressablesAssetLoader.LoadAsset<AddressablesAssetConfig>(addressablesCollectorPath);
 
             //Configs
-            await AddressalesLoad(config.CharacterMeleeConfig);
-            await AddressalesLoad(config.UiConfig);
-            await AddressalesLoad(config.AnimationConfig);
-            await AddressalesLoad(config.AdvertisingAfterWaveConfig);
-            await AddressalesLoad(config.DailyRewardConfig);            
-            await AddressalesLoad(config.AnimatorLodConfig);
+            await AddressablesLoad(config.CharacterMeleeConfig);
+            await AddressablesLoad(config.UiConfig);
+            await AddressablesLoad(config.AnimationConfig);
+            await AddressablesLoad(config.AdvertisingAfterWaveConfig);
+            await AddressablesLoad(config.DailyRewardConfig);            
+            await AddressablesLoad(config.AnimatorLodConfig);
             
             //Prefabs
             //await AddressalesPrefabLoad<CharacterModule>(config.CharacterModule);

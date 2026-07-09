@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity;
@@ -12,6 +13,7 @@ using Sources.EcsBoundedContexts.Movements.Move.Components;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.Volumes.Domain.Components;
+using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -39,10 +41,10 @@ namespace Sources.EcsBoundedContexts.Core
             _systemsCollector = systemsCollector ?? throw new ArgumentNullException(nameof(systemsCollector));
         }
 
-        public async void Initialize()
+        public async UniTask Initialize()
         {
             InitUnitySystems();
-            //await UniTask.Yield();
+            await UniTask.Yield();
             AddModules();
             _systemsCollector.AddSystems();
             AddOneFrame();

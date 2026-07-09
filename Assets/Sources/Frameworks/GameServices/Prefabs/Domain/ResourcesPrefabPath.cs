@@ -6,5 +6,6 @@
         public const string Curtain = "Ui/CurtainView";
         public const string YandexGame = "YandexGame";
         public const string PoolManagerCollector = "Services/PoolManagers/PoolManagerCollector";
+        public const string Character = "Character";
     }
 }

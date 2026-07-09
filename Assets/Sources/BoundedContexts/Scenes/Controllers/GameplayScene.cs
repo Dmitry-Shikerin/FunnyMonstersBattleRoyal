@@ -1,5 +1,7 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using MyDependencies.Sources.Containers;
+using Photon.Pun;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.EcsBoundedContexts.Animancers.Extension;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
@@ -40,6 +42,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private readonly ICurtainView _curtainView;
         private readonly ICameraService _cameraService;
         private readonly IUpdateService _updateService;
+        private bool _isLoaded;
 
         public GameplayScene(
             ISdkService sdkService,
@@ -74,16 +77,20 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 
         public async void Enter(object payload = null)
         {
+            await UniTask.Delay(TimeSpan.FromSeconds(3));
             _focusService.Initialize();
             await _compositeAssetService.LoadAsync(ResourcesPrefabPath.ResourcesAssetsConfig, AddressablesPrefabPath.AddressablesAssetConfig);
             ColliderExt.Construct(_entityRepository);
             AnimancerExtension.Construct(_assetCollector);
             InitUiActions();
+            Debug.Log($"Befor load");
             InitDeepUiBrain();
+            Debug.Log($"After load");
             _localizationService.Translate();
-            _ecsGameStartUp.Initialize();
+            await _ecsGameStartUp.Initialize();
             _sdkService.Initialize();
             _soundService.Initialize();
+            _isLoaded = true;
             //_soundService.Play(SoundDatabaseName.Music, SoundName.GameplayBackgroundMusic);
             //await _curtainView.HideAsync();
         }
@@ -101,6 +108,9 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 
         public void Update(float deltaTime)
         {
+            if (_isLoaded == false)
+                return;
+            
             _updateService.Update(deltaTime);
             _ecsGameStartUp.Update(deltaTime);
         }
@@ -116,7 +126,10 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private void InitDeepUiBrain()
         {
             UiConfig hudConfig = _assetCollector.Get<UiConfig>();
-            Camera mainCamera = _rootGameObject.MainCamera.GetModule<MainCameraModule>().Camera;
+            //что бы камера не была пустой
+            Camera mainCamera = Camera.main;
+            
+            //Camera mainCamera = _rootGameObject.MainCamera.GetModule<MainCameraModule>().Camera;
             DeepUiBrain.Instance.Initialize(hudConfig.GameUiConfig, mainCamera, _container);
         }
 

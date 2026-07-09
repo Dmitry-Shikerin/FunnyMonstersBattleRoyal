@@ -35,7 +35,7 @@ namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
         protected abstract UniTask LoadByResourcesFoldersAsync();
         protected abstract UniTask LoadByAddressableConfigAsync(string addressablesCollectorPath);
 
-        protected async UniTask AddressalesLoad<T>(AssetReferenceT<T> assetReference)
+        protected async UniTask AddressablesLoad<T>(AssetReferenceT<T> assetReference)
             where T : Object =>
             await _addressablesAssetLoader.LoadAsset(assetReference);
 

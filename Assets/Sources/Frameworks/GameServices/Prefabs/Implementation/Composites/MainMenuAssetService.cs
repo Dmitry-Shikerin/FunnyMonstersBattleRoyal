@@ -33,8 +33,8 @@ namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
             AddressablesAssetConfig config = await _addressablesAssetLoader.LoadAsset<AddressablesAssetConfig>(addressablesCollectorPath);
 
             //Configs
-            await AddressalesLoad(config.UiConfig);
-            await AddressalesLoad(config.DailyRewardConfig);
+            await AddressablesLoad(config.UiConfig);
+            await AddressablesLoad(config.DailyRewardConfig);
         }
     }
 }
