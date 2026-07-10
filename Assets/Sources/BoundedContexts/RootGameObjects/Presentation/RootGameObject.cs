@@ -13,6 +13,6 @@ namespace Sources.BoundedContexts.RootGameObjects.Presentation
         [field: SerializeField] public EntityLink MainCamera { get; private set; }
         
         [field: FoldoutGroup("Character")]
-        [field: SerializeField] public EntityLink Character { get; private set; }
+        [field: SerializeField] public Transform CharacterSpawnPoint { get; private set; }
     }
 }

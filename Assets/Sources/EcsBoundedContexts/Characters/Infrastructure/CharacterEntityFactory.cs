@@ -3,6 +3,7 @@ using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runt
 using Reflex.Core;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Characters.Presentation;
+using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
@@ -15,6 +16,7 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
     public class CharacterEntityFactory : EntityFactory
     {
         private readonly IAssetCollector _assetCollector;
+        private readonly IEntityRepository _repository;
 
         private readonly Container _container;
         private readonly IEntityPool _pool;
@@ -33,6 +35,7 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
                 container)
         {
             _assetCollector = assetCollector;
+            _repository = repository;
             _container = container;
             // _pool = entityPoolManager.GetPool<CharacterTag>();
             // _pool.InitPool(Create);
@@ -60,6 +63,7 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             
             Aspect.Character.NewEntity(out ProtoEntity entity);
             Authoring(link, entity);
+            _repository.AddByName(entity, IdsConst.Player);
 
             //Components
             entity.AddTransform(link.transform);
