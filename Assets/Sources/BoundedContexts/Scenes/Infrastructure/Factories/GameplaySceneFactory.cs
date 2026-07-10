@@ -1,6 +1,6 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
-using MyDependencies.Sources.Containers;
+using Reflex.Core;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Controllers;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
@@ -25,7 +25,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         private readonly ISdkService _sdkService;
         private readonly IAssetCollector _assetCollector;
         private readonly IEntityRepository _entityRepository;
-        private readonly DiContainer _container;
+        private readonly Container _container;
         private readonly RootGameObject _rootGameObject;
         private readonly ICompositeAssetService _compositeAssetService;
         private readonly ISoundService _soundService;
@@ -40,7 +40,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             ISdkService sdkService,
             IAssetCollector assetCollector,
             IEntityRepository entityRepository,
-            DiContainer container,
+            Container container,
             RootGameObject rootGameObject,
             ICompositeAssetService compositeAssetService,
             ISoundService soundService,

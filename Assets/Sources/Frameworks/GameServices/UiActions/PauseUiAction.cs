@@ -1,8 +1,7 @@
-﻿using MyDependencies.Sources.Attributes;
+﻿using Reflex.Attributes;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementation.UiActions;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums;
 using Sources.Frameworks.GameServices.Pauses;
-using UnityEngine;
 
 namespace Sources.Frameworks.GameServices.UiActions
 {

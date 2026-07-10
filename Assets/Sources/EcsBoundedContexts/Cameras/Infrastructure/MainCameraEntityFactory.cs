@@ -1,6 +1,6 @@
 ﻿using Leopotam.EcsProto;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
-using MyDependencies.Sources.Containers;
+using Reflex.Core;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.EcsBoundedContexts.Cameras.Presentation;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
@@ -21,7 +21,7 @@ namespace Sources.EcsBoundedContexts.Cameras.Infrastructure
             IEntityRepository repository, 
             ProtoWorld world, 
             GameAspect aspect, 
-            DiContainer container) 
+            Container container) 
             : base(
                 repository, 
                 world, 

@@ -1,26 +1,27 @@
-﻿using MyDependencies.Sources.Containers;
-using MyDependencies.Sources.Containers.Extensions;
-using MyDependencies.Sources.Installers;
+﻿using Reflex.Core;
+using Reflex.Enums;
 using Sources.Frameworks.GameServices.Loads.Services.Implementation;
 using Sources.Frameworks.GameServices.Loads.Services.Implementation.Data;
 using Sources.Frameworks.GameServices.Loads.Services.Interfaces;
 using Sources.Frameworks.GameServices.Loads.Services.Interfaces.Data;
 using Sources.Frameworks.GameServices.Prefabs.Implementation;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
+using UnityEngine;
+using Resolution = Reflex.Enums.Resolution;
 
 namespace Sources.App.DIContainers.Common
 {
-    public class SaveLoadServicesInstaller : MonoInstaller
+    public class SaveLoadServicesInstaller : MonoBehaviour, IInstaller
     {
-        public override void InstallBindings(DiContainer container)
+        public void InstallBindings(ContainerBuilder containerBuilder)
         {
-            container.Bind<IStorageService, StorageService>();
-            container.Bind<IDataService, PlayerPrefsDataService>();
+            containerBuilder.RegisterType(typeof(StorageService), new [] { typeof(IStorageService) }, Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(PlayerPrefsDataService), new [] { typeof(IDataService) }, Lifetime.Singleton, Resolution.Lazy);
             
             //Assets
-            container.Bind<IAssetCollector, AssetCollector>();
-            container.Bind<IResourcesAssetLoader, ResourcesAssetLoader>();
-            container.Bind<IAddressablesAssetLoader, AddressablesAssetLoader>();
+            containerBuilder.RegisterType(typeof(AssetCollector), new [] { typeof(IAssetCollector) }, Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(ResourcesAssetLoader), new [] { typeof(IResourcesAssetLoader) }, Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(AddressablesAssetLoader), new [] { typeof(IAddressablesAssetLoader) }, Lifetime.Singleton, Resolution.Lazy);
         }
     }
 }

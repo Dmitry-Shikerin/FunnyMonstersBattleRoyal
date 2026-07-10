@@ -1,6 +1,5 @@
-﻿using MyDependencies.Sources.Containers;
-using MyDependencies.Sources.Containers.Extensions;
-using MyDependencies.Sources.Installers;
+﻿using Reflex.Core;
+using Reflex.Enums;
 using Sirenix.OdinInspector;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories;
@@ -12,26 +11,27 @@ using Sources.Frameworks.GameServices.Prefabs.Implementation.Composites;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces.Composites;
 using Sources.Frameworks.GameServices.Scenes.Infrastructure.Factories.Controllers.Interfaces;
 using UnityEngine;
+using Resolution = Reflex.Enums.Resolution;
 
 namespace Sources.App.DIContainers.MainMenu
 {
-    public class MainMenuInstaller : MonoInstaller
+    public class MainMenuInstaller : MonoBehaviour, IInstaller
     {
         [Required] [SerializeField] private MainMenuRootGameObjects _mainRootGameObjects;
         
-        public override void InstallBindings(DiContainer container)
+        public void InstallBindings(ContainerBuilder containerBuilder)
         {
-            container.Bind<ISceneFactory, MainMenuSceneFactory>();
-            container.Bind(_mainRootGameObjects);
+            containerBuilder.RegisterType(typeof(MainMenuSceneFactory), new [] { typeof(ISceneFactory) }, Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterValue(_mainRootGameObjects);
 
             //Services
-            container.Bind<IPauseService, PauseService>();
-            container.Bind<ICameraService, CameraService>();
-            container.Bind<ICompositeAssetService, MainMenuAssetService>();
+            containerBuilder.RegisterType(typeof(PauseService), new [] { typeof(IPauseService) }, Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(CameraService), new [] { typeof(ICameraService) }, Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(MainMenuAssetService), new [] { typeof(ICompositeAssetService) }, Lifetime.Singleton, Resolution.Lazy);
             
             //Systems
-            container.Bind<ISystemsCollector, MainMenuSystemsCollector>();
-            MainMenuSystemsInstaller.InstallBindings(container);
+            containerBuilder.RegisterType(typeof(MainMenuSystemsCollector), new [] { typeof(ISystemsCollector) }, Lifetime.Singleton, Resolution.Lazy);
+            MainMenuSystemsInstaller.InstallBindings(containerBuilder);
         }
     }
 }

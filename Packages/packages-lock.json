@@ -7,12 +7,12 @@
       "dependencies": {},
       "hash": "a9e27c03d411d2fca01cc7410c24c97cd77cb539"
     },
-    "com.hellgames.my-dependencies": {
-      "version": "https://github.com/Dmitry-Shikerin/DeepJect.git",
+    "com.gustavopsantos.reflex": {
+      "version": "https://github.com/gustavopsantos/reflex.git?path=/Assets/Reflex/#14.3.1",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "95229560d2738c2c67a7738de782a73ee9239400"
+      "hash": "55423389e8d443f18090720891af52d9952d6e5e"
     },
     "com.kybernetik.animancer": {
       "version": "file:com.kybernetik.animancer",

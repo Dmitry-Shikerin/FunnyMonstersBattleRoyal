@@ -2,7 +2,8 @@
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.Unity;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
-using MyDependencies.Sources.Containers;
+using Reflex.Core;
+using Reflex.Injectors;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 
@@ -11,14 +12,14 @@ namespace Sources.Frameworks.MyLeoEcsProto.Factories
     public abstract class EntityFactory
     {
         private readonly IEntityRepository _repository;
-        private readonly DiContainer _container;
+        private readonly Container _container;
         private readonly ProtoWorld _world;
 
         protected EntityFactory(
             IEntityRepository repository,
             ProtoWorld world, 
             GameAspect aspect,
-            DiContainer container)
+            Container container)
         {
             _repository = repository;
             _container = container;
@@ -44,7 +45,7 @@ namespace Sources.Frameworks.MyLeoEcsProto.Factories
             entity.AddEntityLink(link, entity.GetHashCode(), entity);
 
             foreach (EntityModule module in link.GetModules())
-                _container.Inject(module);
+                AttributeInjector.Inject(module, _container);
         }
         
         public void InitLink(EntityLink link, ProtoEntity entity, bool addByHash = true)
@@ -62,7 +63,7 @@ namespace Sources.Frameworks.MyLeoEcsProto.Factories
 
             foreach (EntityModule module in link.GetModules())
             {
-                _container.Inject(module);
+                AttributeInjector.Inject(module, _container);
             }
         }
     }

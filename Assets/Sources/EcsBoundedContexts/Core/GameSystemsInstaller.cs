@@ -1,5 +1,5 @@
-using MyDependencies.Sources.Containers;
-using MyDependencies.Sources.Containers.Extensions;
+using Reflex.Core;
+using Reflex.Enums;
 using Sources.EcsBoundedContexts.AnimatorLod.Controllers;
 using Sources.EcsBoundedContexts.AdvertisingAfterWaves.Controllers;
 using Sources.EcsBoundedContexts.Volumes.Controllers.Data;
@@ -27,76 +27,69 @@ namespace Sources.EcsBoundedContexts.Core
 {
 	public static class GameSystemsInstaller
 	{
-		public static void InstallBindings(DiContainer container)
+		public static void InstallBindings(ContainerBuilder containerBuilder)
 		{
 			//Default
 
 			//Common
-			container.Bind<InterstitialAfterWaveSystem>();
-			container.Bind<VolumeLoadSystem>();
-			container.Bind<KillEnemyCounterLoadSystem>();
-			container.Bind<DailyRewardLoadSystem>();
-			container.Bind<DailyRewardSystem>();
-			container.Bind<DamageSystem>();
-			container.Bind<GameCompletedSystem>();
-			container.Bind<GameOverSystem>();
-			container.Bind<NavMeshMoveSystem>();
-			container.Bind<ChangeVolumeSystem>();
-			container.Bind<ActiveGameObjectSystem>();
-			container.Bind<VolumeSaveSystem>();
-			container.Bind<KillEnemyCounterSaveSystem>();
-			container.Bind<DailyRewardSaveSystem>();
+			containerBuilder.RegisterType(typeof(InterstitialAfterWaveSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(VolumeLoadSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(KillEnemyCounterLoadSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(DailyRewardLoadSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(DailyRewardSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(DamageSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(GameCompletedSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(GameOverSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(NavMeshMoveSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(ChangeVolumeSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(ActiveGameObjectSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(VolumeSaveSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(KillEnemyCounterSaveSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(DailyRewardSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//EventBuffer
 
 			//Player
-			container.Bind<CleanHealthSystem>();
-			container.Bind<MoveSpeedSystem>();
-			container.Bind<RotationSpeedSystem>();
-			container.Bind<RotationSystem>();
+			containerBuilder.RegisterType(typeof(CleanHealthSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(MoveSpeedSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(RotationSpeedSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(RotationSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//Tree
 
 			//Camera
-			container.Bind<CameraRotationSystem>();
-			container.Bind<MainCameraInitializeSystem>();
+			containerBuilder.RegisterType(typeof(CameraRotationSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(MainCameraInitializeSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//AnimatorLod
-			container.Bind<AnimatorLodSystem>();
+			containerBuilder.RegisterType(typeof(AnimatorLodSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//Light
-			container.Bind<MoveAlongPathSystem>();
-			container.Bind<LookAtCameraSystem>();
+			containerBuilder.RegisterType(typeof(MoveAlongPathSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(LookAtCameraSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//Chunks
 
 			//Ability
-			container.Bind<TutorialLoadSystem>();
-			container.Bind<PlayerWalletLoadSystem>();
-			container.Bind<PlayerWalletSystem>();
-			container.Bind<TimerSystem>();
-			container.Bind<TutorialSystem>();
-			container.Bind<PlayerWalletSaveSystem>();
+			containerBuilder.RegisterType(typeof(TutorialLoadSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(PlayerWalletLoadSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(PlayerWalletSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(TimerSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(TutorialSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(PlayerWalletSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//Characters
-			container.Bind<CharacterInitializeSystem>();
-			container.Bind<InputInitializeSystem>();
-			container.Bind<InputSystem>();
-			container.Bind<CharacterAirSystem>();
-			container.Bind<CharacterUpdateSystem>();
-			container.Bind<GroundDistanceSystem>();
-			container.Bind<GroundedSystem>();
-			container.Bind<JumpSystem>();
-
-			//Enemy
-
-			//Upgrade
-
-			//Achievements
+			containerBuilder.RegisterType(typeof(CharacterInitializeSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(InputInitializeSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(InputSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(CharacterAirSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(CharacterUpdateSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(GroundDistanceSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(GroundedSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(JumpSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//Tutorial
-			container.Bind<TutorialSaveSystem>();
-
+			containerBuilder.RegisterType(typeof(TutorialSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 		}
 	}
 }

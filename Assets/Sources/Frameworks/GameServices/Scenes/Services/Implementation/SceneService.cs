@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using MyDependencies.Sources.Contexts;
+using Reflex.Core;
+using Reflex.Extensions;
 using Sources.Frameworks.GameServices.Scenes.Controllers.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
 using Sources.Frameworks.StateMachines.SceneStateMachines.Implementation;
-using Object = UnityEngine.Object;
+using UnityEngine.SceneManagement;
 
 namespace Sources.Frameworks.GameServices.Scenes.Services.Implementation
 {
@@ -15,15 +16,20 @@ namespace Sources.Frameworks.GameServices.Scenes.Services.Implementation
         private readonly List<Func<UniTask>> _exitingHandlers = new();
 
         private readonly SceneStateMachine _stateMachine;
-        private readonly IReadOnlyDictionary<string, Func<object, SceneContext, UniTask<IScene>>> _sceneFactories;
+        private readonly Dictionary<string, Func<object, Container, UniTask<IScene>>> _sceneFactories;
         
-        public SceneService(IReadOnlyDictionary<string, Func<object, SceneContext, UniTask<IScene>>> sceneFactories)
+        public SceneService()
         {
             _stateMachine = new SceneStateMachine();
-            _sceneFactories = sceneFactories ?? throw new ArgumentNullException(nameof(sceneFactories));
+            _sceneFactories = new ();
         }
         
         public string CurrentSceneName { get; private set; }
+
+        public void AddFactory(string key, Func<object, Container, UniTask<IScene>> value)
+        {
+            _sceneFactories.Add(key, value);
+        }
         
         public void AddBeforeSceneChangeHandler(Func<string, UniTask> handler) =>
             _enteringHandlers.Add(handler);
@@ -41,13 +47,13 @@ namespace Sources.Frameworks.GameServices.Scenes.Services.Implementation
         {
             try
             {
-                if (_sceneFactories.TryGetValue(sceneName, out Func<object, SceneContext, UniTask<IScene>> sceneFactory) == false)
+                if (_sceneFactories.TryGetValue(sceneName, out Func<object, Container, UniTask<IScene>> sceneFactory) == false)
                     throw new InvalidOperationException(nameof(sceneName));
 
                 foreach (Func<string, UniTask> enteringHandler in _enteringHandlers)
                     await enteringHandler.Invoke(sceneName);
 
-                SceneContext sceneContext = Object.FindObjectOfType<SceneContext>();
+                Container sceneContext = SceneManager.GetActiveScene().GetSceneContainer();
                 IScene scene = await sceneFactory.Invoke(payload, sceneContext);
                 CurrentSceneName = sceneName;
                 _stateMachine.ChangeState(scene, payload);

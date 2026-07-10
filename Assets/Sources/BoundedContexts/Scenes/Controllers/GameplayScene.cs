@@ -1,14 +1,11 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
-using MyDependencies.Sources.Containers;
-using Photon.Pun;
+using Reflex.Core;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.EcsBoundedContexts.Animancers.Extension;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
-using Sources.EcsBoundedContexts.Cameras.Presentation;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
-using Sources.Frameworks.DeepFramework.DeepSound.Runtime.Domain.Enums;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
 using Sources.Frameworks.GameServices.Curtains.Presentation.Interfaces;
@@ -32,7 +29,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private readonly ISdkService _sdkService;
         private readonly IAssetCollector _assetCollector;
         private readonly IEntityRepository _entityRepository;
-        private readonly DiContainer _container;
+        private readonly Container _container;
         private readonly RootGameObject _rootGameObject;
         private readonly ICompositeAssetService _compositeAssetService;
         private readonly ISoundService _soundService;
@@ -48,7 +45,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             ISdkService sdkService,
             IAssetCollector assetCollector,
             IEntityRepository entityRepository,
-            DiContainer container,
+            Container container,
             RootGameObject rootGameObject,
             ICompositeAssetService compositeAssetService,
             ISoundService soundService,
@@ -77,15 +74,14 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 
         public async void Enter(object payload = null)
         {
-            await UniTask.Delay(TimeSpan.FromSeconds(3));
             _focusService.Initialize();
             await _compositeAssetService.LoadAsync(ResourcesPrefabPath.ResourcesAssetsConfig, AddressablesPrefabPath.AddressablesAssetConfig);
             ColliderExt.Construct(_entityRepository);
             AnimancerExtension.Construct(_assetCollector);
             InitUiActions();
-            Debug.Log($"Befor load");
+            //Debug.Log($"Befor load");
             InitDeepUiBrain();
-            Debug.Log($"After load");
+            //Debug.Log($"After load");
             _localizationService.Translate();
             await _ecsGameStartUp.Initialize();
             _sdkService.Initialize();

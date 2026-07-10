@@ -1,5 +1,5 @@
-using MyDependencies.Sources.Containers;
-using MyDependencies.Sources.Containers.Extensions;
+using Reflex.Core;
+using Reflex.Enums;
 using Sources.EcsBoundedContexts.Volumes.Controllers.Data;
 using Sources.EcsBoundedContexts.DailyRewards.Controllers.Data;
 using Sources.EcsBoundedContexts.DailyRewards.Controllers;
@@ -9,17 +9,17 @@ namespace Sources.EcsBoundedContexts.Core
 {
 	public static class MainMenuSystemsInstaller
 	{
-		public static void InstallBindings(DiContainer container)
+		public static void InstallBindings(ContainerBuilder containerBuilder)
 		{
 			//Default
 
 			//Common
-			container.Bind<VolumeLoadSystem>();
-			container.Bind<DailyRewardLoadSystem>();
-			container.Bind<DailyRewardSystem>();
-			container.Bind<ChangeVolumeSystem>();
-			container.Bind<VolumeSaveSystem>();
-			container.Bind<DailyRewardSaveSystem>();
+			containerBuilder.RegisterType(typeof(VolumeLoadSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(DailyRewardLoadSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(DailyRewardSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(ChangeVolumeSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(VolumeSaveSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(DailyRewardSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//EventBuffer
 

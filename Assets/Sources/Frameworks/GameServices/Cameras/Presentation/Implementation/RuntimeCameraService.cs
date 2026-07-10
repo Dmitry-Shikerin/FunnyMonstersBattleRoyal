@@ -1,5 +1,5 @@
 ﻿using System;
-using MyDependencies.Sources.Attributes;
+using Reflex.Attributes;
 using Sirenix.OdinInspector;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.Frameworks.DeepFramework.DeepUtils.Singletones;

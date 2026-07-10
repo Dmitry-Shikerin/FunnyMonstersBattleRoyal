@@ -1,5 +1,5 @@
 using Leopotam.EcsProto;
-using MyDependencies.Sources.Attributes;
+using Reflex.Attributes;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementation.UiActions;

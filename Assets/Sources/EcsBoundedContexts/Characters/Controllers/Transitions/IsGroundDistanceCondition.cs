@@ -1,7 +1,7 @@
 ﻿using Leopotam.EcsProto;
-using MyDependencies.Sources.Attributes;
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using Reflex.Attributes;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;

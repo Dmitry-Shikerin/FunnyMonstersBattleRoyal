@@ -1,8 +1,9 @@
 using Leopotam.EcsProto;
-using MyDependencies.Sources.Containers;
 using NodeCanvas.BehaviourTrees;
 using NodeCanvas.Framework;
 using NodeCanvas.StateMachines;
+using Reflex.Core;
+using Reflex.Injectors;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepUtils.Reflections;
 
@@ -27,7 +28,7 @@ namespace Sources.EcsBoundedContexts.Common.Extansions.Colliders
         }
         
         public static void InitGraphOwner<T>(
-            this GraphOwner<T> owner, DiContainer container, ProtoEntity entity, params object[] dependencies)
+            this GraphOwner<T> owner, Container container, ProtoEntity entity, params object[] dependencies)
             where T : Graph
         {
             T behaviour = owner.behaviour;
@@ -45,19 +46,19 @@ namespace Sources.EcsBoundedContexts.Common.Extansions.Colliders
             owner.StartBehaviour();
         }
 
-        private static void InjectOwner<T>(this GraphOwner<T> owner, DiContainer container)
+        private static void InjectOwner<T>(this GraphOwner<T> owner, Container container)
             where T : Graph
         {
             foreach (FSMState state in owner.behaviour.GetAllNodesOfType<FSMState>())
-                container.Inject(state);
+                AttributeInjector.Inject(state, container);
             
             foreach (Task task in owner.behaviour.GetAllTasksOfType<Task>())
-                container.Inject(task);
+                AttributeInjector.Inject(task, container);
             
             foreach (var graph in owner.behaviour.GetAllNestedGraphs<BehaviourTree>(true))
             {
                 foreach (var task in graph.GetAllTasksOfType<Task>())
-                    container.Inject(task);
+                    AttributeInjector.Inject(task, container);
             }
         }
     }

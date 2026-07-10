@@ -1,4 +1,4 @@
-﻿using MyDependencies.Sources.Attributes;
+﻿using Reflex.Attributes;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementation.UiActions;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums;

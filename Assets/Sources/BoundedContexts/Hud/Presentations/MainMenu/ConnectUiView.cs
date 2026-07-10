@@ -1,4 +1,4 @@
-﻿using MyDependencies.Sources.Attributes;
+﻿using Reflex.Attributes;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Buttons;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Views;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;

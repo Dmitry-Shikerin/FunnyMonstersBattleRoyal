@@ -1,6 +1,6 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
-using MyDependencies.Sources.Containers;
+using Reflex.Core;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Controllers;
 using Sources.EcsBoundedContexts.Core;
@@ -27,7 +27,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         private readonly IStorageService _storageService;
         private readonly MainMenuRootGameObjects _mainMenuRootGameObjects;
         private readonly IAssetCollector _assetCollector;
-        private readonly DiContainer _container;
+        private readonly Container _container;
         private readonly IEcsGameStartUp _ecsGameStartUp;
         private readonly ILeaderboardService _leaderboardService;
         private readonly ICompositeAssetService _compositeAssetService;
@@ -42,7 +42,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             IStorageService storageService,
             MainMenuRootGameObjects mainMenuRootGameObjects,
             IAssetCollector assetCollector,
-            DiContainer container,
+            Container container,
             IEcsGameStartUp ecsGameStartUp,
             ILeaderboardService leaderboardService,
             ICompositeAssetService compositeAssetService,

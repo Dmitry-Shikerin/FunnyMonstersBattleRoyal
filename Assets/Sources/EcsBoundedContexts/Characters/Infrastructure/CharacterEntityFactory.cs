@@ -1,7 +1,6 @@
 ﻿using Leopotam.EcsProto;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
-using MyDependencies.Sources.Containers;
-using Sources.EcsBoundedContexts.Characters.Domain.Components;
+using Reflex.Core;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
@@ -10,8 +9,6 @@ using Sources.Frameworks.GameServices.Prefabs.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Factories;
 using Sources.Frameworks.MyLeoEcsProto.ObjectPools.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
-using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace Sources.EcsBoundedContexts.Characters.Infrastructure
 {
@@ -19,7 +16,7 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
     {
         private readonly IAssetCollector _assetCollector;
 
-        private readonly DiContainer _container;
+        private readonly Container _container;
         private readonly IEntityPool _pool;
 
         public CharacterEntityFactory(
@@ -28,7 +25,7 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             IEntityRepository repository, 
             ProtoWorld world, 
             GameAspect aspect, 
-            DiContainer container) 
+            Container container) 
             : base(
                 repository, 
                 world, 

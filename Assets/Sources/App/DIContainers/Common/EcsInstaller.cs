@@ -1,7 +1,6 @@
 ﻿using Leopotam.EcsProto;
-using MyDependencies.Sources.Containers;
-using MyDependencies.Sources.Containers.Extensions;
-using MyDependencies.Sources.Installers;
+using Reflex.Core;
+using Reflex.Enums;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure;
 using Sources.EcsBoundedContexts.Characters.Infrastructure;
 using Sources.EcsBoundedContexts.Core;
@@ -20,66 +19,62 @@ using Sources.Frameworks.MyLeoEcsProto.Features;
 using Sources.Frameworks.MyLeoEcsProto.ObjectPools.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 using Sources.Frameworks.MyLeoEcsProto.Repositories.Impl;
+using UnityEngine;
+using Resolution = Reflex.Enums.Resolution;
 
 namespace Sources.App.DIContainers.Common
 {
-    public class EcsInstaller : MonoInstaller
+    public class EcsInstaller : MonoBehaviour, IInstaller
     {
-        public override void InstallBindings(DiContainer container)
+        public void InstallBindings(ContainerBuilder containerBuilder)
         {
-            container.Bind<IEcsGameStartUp, EcsGameStartUp>();
+            containerBuilder.RegisterType(typeof(EcsGameStartUp), new [] { typeof(IEcsGameStartUp) }, Lifetime.Singleton, Resolution.Lazy);
             GameAspect aspect = new GameAspect();
             ProtoWorld world = new ProtoWorld(aspect);
             ProtoSystems systems = new ProtoSystems(world);
-            container.Bind(world);
-            container.Bind(aspect);
-            container.Bind(systems);
-            container.Bind<IEventBuffer, EventBuffer>();
-            container.Bind<IEntityRepository, EntityRepository>();
-            container.Bind<IFeatureService, FeatureService>();
+            containerBuilder.RegisterValue(world);
+            containerBuilder.RegisterValue(aspect);
+            containerBuilder.RegisterValue(systems);
+            containerBuilder.RegisterType(typeof(EventBuffer), new[] { typeof(IEventBuffer) }, Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(EntityRepository), new[] { typeof(IEntityRepository) }, Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(FeatureService), new[] { typeof(IFeatureService) }, Lifetime.Singleton, Resolution.Lazy);
             
             //Pools
-            container.Bind<IEntityPoolManager, EntityPoolManager>();
+            containerBuilder.RegisterType(typeof(EntityPoolManager), new[] { typeof(IEntityPoolManager) }, Lifetime.Singleton, Resolution.Lazy);
             
             //Characters
-            container.Bind<CharacterEntityFactory>();
-            
-            //Trees
+            containerBuilder.RegisterType(typeof(CharacterEntityFactory), Lifetime.Singleton, Resolution.Lazy);
             
             //Input
-            container.Bind<InputEntityFactory>();
+            containerBuilder.RegisterType(typeof(InputEntityFactory), Lifetime.Singleton, Resolution.Lazy);
             
             //Cameras
-            container.Bind<MainCameraEntityFactory>();
+            containerBuilder.RegisterType(typeof(MainCameraEntityFactory), Lifetime.Singleton, Resolution.Lazy);
             
             //Lights
-            container.Bind<LightEntityFactory>();
-            
-            //Bunkers
-            
-            //Abilities
+            containerBuilder.RegisterType(typeof(LightEntityFactory), Lifetime.Singleton, Resolution.Lazy);
             
             //ExplosionsBodies
-            container.Bind<ExplosionBodyEntityFactory>();
-            container.Bind<ExplosionBodyBloodyEntityFactory>();
+            containerBuilder.RegisterType(typeof(ExplosionBodyEntityFactory), Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(ExplosionBodyBloodyEntityFactory), Lifetime.Singleton, Resolution.Lazy);
             
             //Wallet
-            container.Bind<PlayerWalletEntityFactory>();
+            containerBuilder.RegisterType(typeof(PlayerWalletEntityFactory), Lifetime.Singleton, Resolution.Lazy);
             
             //KillEnemyCounter
-            container.Bind<KillEnemyCounterEntityFactory>();
+            containerBuilder.RegisterType(typeof(KillEnemyCounterEntityFactory), Lifetime.Singleton, Resolution.Lazy);
             
             //Tutorial
-            container.Bind<TutorialEntityFactory>();
+            containerBuilder.RegisterType(typeof(TutorialEntityFactory), Lifetime.Singleton, Resolution.Lazy);
             
             //HealthBuster
             
             //DailyRewards
-            container.Bind<DailyRewardEntityFactory>();
-            container.Bind<DailyRewardService>();
+            containerBuilder.RegisterType(typeof(DailyRewardEntityFactory), Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(DailyRewardService), Lifetime.Singleton, Resolution.Lazy);
             
             //Volume
-            container.Bind<VolumeEntityFactory>();
+            containerBuilder.RegisterType(typeof(VolumeEntityFactory), Lifetime.Singleton, Resolution.Lazy);
         }
     }
 }

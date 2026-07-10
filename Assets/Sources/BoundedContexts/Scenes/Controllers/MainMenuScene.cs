@@ -1,10 +1,10 @@
 ﻿using Cysharp.Threading.Tasks;
-using MyDependencies.Sources.Containers;
+using Reflex.Core;
+using Reflex.Injectors;
 using Sources.BoundedContexts.Hud.Presentations.MainMenu;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
-using Sources.Frameworks.DeepFramework.DeepSound.Runtime.Domain.Enums;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
 using Sources.Frameworks.GameServices.Curtains.Presentation.Interfaces;
@@ -32,7 +32,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private readonly IStorageService _storageService;
         private readonly MainMenuRootGameObjects _mainMenuRootGameObjects;
         private readonly IAssetCollector _assetCollector;
-        private readonly DiContainer _container;
+        private readonly Container _container;
         private readonly IEcsGameStartUp _ecsGameStartUp;
         private readonly ILeaderboardService _leaderboardService;
         private readonly ICompositeAssetService _compositeAssetService;
@@ -47,7 +47,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             IStorageService storageService,
             MainMenuRootGameObjects mainMenuRootGameObjects,
             IAssetCollector assetCollector,
-            DiContainer container,
+            Container container,
             IEcsGameStartUp ecsGameStartUp,
             ILeaderboardService leaderboardService,
             ICompositeAssetService compositeAssetService,
@@ -83,9 +83,9 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _ecsGameStartUp.Initialize();
             _sdkService.Initialize();
             //Придумать получше
-            _container.Inject(_uiViewService.Get<MainHudUiView>().LobbyView);            
-            _container.Inject(_uiViewService.Get<CreateRoomUiView>().RoomView);
-            _container.Inject(_uiViewService.Get<ConnectUiView>());
+            AttributeInjector.Inject(_uiViewService.Get<MainHudUiView>().LobbyView, _container);
+            AttributeInjector.Inject(_uiViewService.Get<CreateRoomUiView>().RoomView, _container);
+            AttributeInjector.Inject(_uiViewService.Get<ConnectUiView>(), _container);
             //_leaderboardService.Initialize();
             //_soundService.Initialize();
             HideBlackScreen();

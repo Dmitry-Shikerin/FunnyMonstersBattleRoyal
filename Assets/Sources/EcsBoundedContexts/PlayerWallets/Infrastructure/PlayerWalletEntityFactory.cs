@@ -1,6 +1,6 @@
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
-using MyDependencies.Sources.Containers;
+using Reflex.Core;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.PlayerWallets.Presentation;
@@ -17,7 +17,7 @@ namespace Sources.EcsBoundedContexts.PlayerWallets.Infrastructure
             IEntityRepository repository,
             ProtoWorld world,
             GameAspect aspect,
-            DiContainer container)
+            Container container)
             : base(
                 repository,
                 world,

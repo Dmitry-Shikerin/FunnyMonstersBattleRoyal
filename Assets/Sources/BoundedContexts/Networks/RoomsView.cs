@@ -1,5 +1,5 @@
-﻿using MyDependencies.Sources.Attributes;
-using Photon.Pun;
+﻿using Photon.Pun;
+using Reflex.Attributes;
 using Sirenix.OdinInspector;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Buttons;

@@ -1,6 +1,6 @@
-﻿using MyDependencies.Sources.Attributes;
-using Photon.Pun;
+﻿using Photon.Pun;
 using Photon.Realtime;
+using Reflex.Attributes;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using UnityEngine;

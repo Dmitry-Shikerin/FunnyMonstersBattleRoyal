@@ -1,4 +1,4 @@
-using MyDependencies.Sources.Containers;
+using Reflex.Core;
 using Sources.Frameworks.DeepFramework.DeepCores.Core;
 using Sources.Frameworks.DeepFramework.DeepCores.Presentation;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
@@ -48,7 +48,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implemen
             InitCore();
         }
 
-        public void Initialize(UiManagerConfig config, Camera mainCamera, DiContainer container)
+        public void Initialize(UiManagerConfig config, Camera mainCamera, Container container)
         {
             _hud = Instantiate(config.Hud);
             Transform parentTransform = _hud.Canvas.transform;

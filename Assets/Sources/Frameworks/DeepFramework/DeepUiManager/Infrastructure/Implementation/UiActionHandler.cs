@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using MyDependencies.Sources.Containers;
+using Reflex.Core;
+using Reflex.Injectors;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Interfaces;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Signals;
 using Sources.Frameworks.DeepFramework.DeepUtils.SignalBuses.StreamBuses.Implementation;
-using UnityEngine;
 
 namespace Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation
 {
@@ -20,10 +20,10 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implemen
             _signalBus = signalBus;
         }
 
-        public void Initialize(DiContainer container)
+        public void Initialize(Container container)
         {
             foreach (IUiAction action in GetActions())
-                container.Inject(action);
+                AttributeInjector.Inject(action, container);
             
             _actionHandler.Initialize();
             _signalBus.Subscribe<UiActionSignal>(Handle);

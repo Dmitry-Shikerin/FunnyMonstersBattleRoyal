@@ -1,7 +1,7 @@
 using System;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
-using MyDependencies.Sources.Containers;
+using Reflex.Core;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Volumes.Presentation;
 using Sources.Frameworks.MyLeoEcsProto.Factories;
@@ -17,7 +17,7 @@ namespace Sources.EcsBoundedContexts.Volumes.Infrastructure
             IEntityRepository repository,
             ProtoWorld world,
             GameAspect aspect,
-            DiContainer container) 
+            Container container) 
             : base(repository,
                 world,
                 aspect,

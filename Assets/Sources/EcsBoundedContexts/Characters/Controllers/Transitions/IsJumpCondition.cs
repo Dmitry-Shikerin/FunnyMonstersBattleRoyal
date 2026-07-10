@@ -1,11 +1,10 @@
 ﻿using Leopotam.EcsProto;
-using MyDependencies.Sources.Attributes;
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using Reflex.Attributes;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
-using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Characters.Controllers.Transitions
 {

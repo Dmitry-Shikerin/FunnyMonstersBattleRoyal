@@ -1,7 +1,7 @@
 using System;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
-using MyDependencies.Sources.Containers;
+using Reflex.Core;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.DailyRewards.Presentation;
@@ -18,7 +18,7 @@ namespace Sources.EcsBoundedContexts.DailyRewards.Infrastructure
             IEntityRepository repository,
             ProtoWorld world,
             GameAspect aspect,
-            DiContainer container)
+            Container container)
             : base(
                 repository,
                 world,

@@ -1,25 +1,26 @@
-﻿using MyDependencies.Sources.Containers;
-using MyDependencies.Sources.Containers.Extensions;
-using MyDependencies.Sources.Installers;
+﻿using Reflex.Core;
+using Reflex.Enums;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
 using Sources.Frameworks.GameServices.DeepWrappers.Views;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
+using UnityEngine;
+using Resolution = Reflex.Enums.Resolution;
 
 namespace Sources.App.DIContainers.Common
 {
-    public class UiFrameworkInstaller : MonoInstaller
+    public class UiFrameworkInstaller : MonoBehaviour, IInstaller
     {
-        public override void InstallBindings(DiContainer container)
+        public void InstallBindings(ContainerBuilder containerBuilder)
         {
-            container.Bind<ILocalizationService, LocalizationService>();
+            containerBuilder.RegisterType(typeof(LocalizationService), new [] { typeof(ILocalizationService) }, Lifetime.Singleton, Resolution.Lazy);
             
             //Soundy
-            container.Bind<ISoundService, SoundService>();
+            containerBuilder.RegisterType(typeof(SoundService), new [] { typeof(ISoundService) }, Lifetime.Singleton, Resolution.Lazy);
             
             //UI
-            container.Bind<IUiPopUpService, UiPopUpService>();
-            container.Bind<IUiViewService, UiViewService>();
+            containerBuilder.RegisterType(typeof(UiPopUpService), new [] { typeof(IUiPopUpService) }, Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(UiViewService), new [] { typeof(IUiViewService) }, Lifetime.Singleton, Resolution.Lazy);
         }
     }
 }

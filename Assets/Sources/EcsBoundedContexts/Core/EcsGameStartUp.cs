@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity;
-using MyDependencies.Sources.Containers;
+using Reflex.Core;
 using Sources.EcsBoundedContexts.Common.Domain.Components;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Components;
 using Sources.EcsBoundedContexts.Damage.Domain;
@@ -13,13 +13,12 @@ using Sources.EcsBoundedContexts.Movements.Move.Components;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.Volumes.Domain.Components;
-using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Core
 {
     public class EcsGameStartUp : IEcsGameStartUp
     {
-        private readonly DiContainer _container;
+        private readonly Container _container;
         private readonly ProtoSystems _systems;
         private readonly ProtoWorld _world;
         private readonly GameAspect _aspect;
@@ -28,7 +27,7 @@ namespace Sources.EcsBoundedContexts.Core
         private bool _isInitialize;
 
         public EcsGameStartUp(
-            DiContainer container, 
+            Container container, 
             ProtoWorld protoWorld,
             ProtoSystems systems,
             GameAspect aspect,

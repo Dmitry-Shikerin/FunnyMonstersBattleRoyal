@@ -1,6 +1,5 @@
-﻿using MyDependencies.Sources.Containers;
-using MyDependencies.Sources.Containers.Extensions;
-using MyDependencies.Sources.Installers;
+﻿using Reflex.Core;
+using Reflex.Enums;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.Frameworks.GameServices.Linecasts.Implementation;
 using Sources.Frameworks.GameServices.Linecasts.Interfaces;
@@ -9,24 +8,24 @@ using Sources.Frameworks.GameServices.Overlaps.Interfaces;
 using Sources.Frameworks.GameServices.Pauses;
 using Sources.Frameworks.GameServices.Pauses.Impl;
 using Sources.Frameworks.GameServices.UpdateServices.Implementation;
+using Sources.Frameworks.GameServices.UpdateServices.Interfaces;
+using UnityEngine;
+using Resolution = Reflex.Enums.Resolution;
 
 namespace Sources.App.DIContainers.Gameplay
 {
-    public class GameServicesInstaller : MonoInstaller
+    public class GameServicesInstaller : MonoBehaviour, IInstaller
     {
-        // [Required] [SerializeField] private CameraView _cameraView;
-        // [Required] [SerializeField] private SkyAndWeatherView _skyAndWeatherView;
-        
-        public override void InstallBindings(DiContainer container)
+        public void InstallBindings(ContainerBuilder containerBuilder)
         {
-            container.Bind<IOverlapService, OverlapService>();
-            container.Bind<ILinecastService, LinecastService>();
-            container.Bind<IPauseService, PauseService>();
-            container.BindInterfaces<UpdateService>();
+            containerBuilder.RegisterType(typeof(OverlapService), new [] { typeof(IOverlapService) }, Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(LinecastService), new [] { typeof(ILinecastService) }, Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(PauseService), new [] { typeof(IPauseService) }, Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(UpdateService), new [] { typeof(IUpdateService), typeof(IUpdateRegister) }, Lifetime.Singleton, Resolution.Lazy);
             
             //Camera
             //container.Bind<CameraView>().FromInstance(_cameraView).AsSingle();
-            container.Bind<ICameraService, CameraService>();
+            containerBuilder.RegisterType(typeof(CameraService), new [] { typeof(ICameraService) }, Lifetime.Singleton, Resolution.Lazy);
             
             //SkyAndWeather
             //container.Bind<SkyAndWeatherView>().FromInstance(_skyAndWeatherView).AsSingle();

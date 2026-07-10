@@ -1,7 +1,7 @@
 ﻿using Leopotam.EcsProto;
-using MyDependencies.Sources.Attributes;
 using NodeCanvas.StateMachines;
 using ParadoxNotion.Design;
+using Reflex.Attributes;
 using Sources.EcsBoundedContexts.Animancers.Domain.Enums;
 using Sources.EcsBoundedContexts.Animancers.Extension;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;

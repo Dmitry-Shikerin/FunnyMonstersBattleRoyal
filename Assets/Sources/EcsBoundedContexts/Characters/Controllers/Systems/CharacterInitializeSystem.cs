@@ -40,6 +40,10 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
             {
                 module = PhotonNetwork.Instantiate("Character", Vector3.zero, Quaternion.identity).GetComponent<CharacterModule>();
             }
+            else
+            {
+                module = Object.Instantiate(module, Vector3.zero, Quaternion.identity);
+            }
             Debug.Log($"Init character");
             _entityFactory.Create(module.GetComponent<EntityLink>());
         }
