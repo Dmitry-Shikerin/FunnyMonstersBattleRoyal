@@ -16,13 +16,13 @@ namespace Sources.BoundedContexts.Hud.Presentations.MainMenu
         private void Construct(IUiViewService uiViewService) =>
             _uiViewService = uiViewService;
 
-        private void OnEnable() =>
-            _button.OnClick += Connect;
-
-        private void OnDisable() =>
-            _button.OnClick -= Connect;
-
-        private void Connect() =>
-            _uiViewService.Get<MainHudUiView>().LobbyView.Connect();
+        // private void OnEnable() =>
+        //     _button.OnClick += Connect;
+        //
+        // private void OnDisable() =>
+        //     _button.OnClick -= Connect;
+        //
+        // private void Connect() =>
+        //     _uiViewService.Get<MainHudUiView>().LobbyView.Connect();
     }
 }

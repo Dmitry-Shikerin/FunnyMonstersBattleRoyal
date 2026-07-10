@@ -82,7 +82,7 @@ PlayerSettings:
   androidApplicationEntry: 1
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
-  runInBackground: 0
+  runInBackground: 1
   muteOtherAudioSources: 0
   Prepare IOS For Recording: 0
   Force IOS Speakers When Recording: 0
@@ -768,7 +768,7 @@ PlayerSettings:
     QNX: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN
     ReservedCFE: DOTWEEN
     Stadia: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER
-    Standalone: NODECANVAS;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;ODIN_VALIDATOR;ODIN_VALIDATOR_3_1;PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;RewardedAdv_yg;EnvirData_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2;Authorization_yg;InterstitialAdv_yg
+    Standalone: NODECANVAS;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;ODIN_VALIDATOR;ODIN_VALIDATOR_3_1;PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;RewardedAdv_yg;EnvirData_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2;Authorization_yg;InterstitialAdv_yg;FUSION_LOGLEVEL_INFO;FUSION_WEAVER;FUSION2;FUSION_2;FUSION_2_0;FUSION_2_0_12;FUSION_2_OR_NEWER;FUSION_2_0_OR_NEWER
     VisionOS: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN
     WebGL: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;RewardedAdv_yg;EnvirData_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2;Authorization_yg;InterstitialAdv_yg
     Windows Store Apps: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;RewardedAdv_yg;EnvirData_yg;Leaderboards_yg;Localization_yg;StickyAdv_yg;ServerTime_yg;RU_YG2;Authorization_yg;InterstitialAdv_yg
@@ -799,7 +799,7 @@ PlayerSettings:
     tvOS: 1
   incrementalIl2cppBuild: {}
   suppressCommonWarnings: 1
-  allowUnsafeCode: 0
+  allowUnsafeCode: 1
   useDeterministicCompilation: 1
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1

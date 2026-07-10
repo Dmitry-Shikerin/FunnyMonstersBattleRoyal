@@ -1,6 +1,7 @@
 ﻿using Leopotam.EcsProto;
 using Reflex.Core;
 using Reflex.Enums;
+using Reflex.Injectors;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure;
 using Sources.EcsBoundedContexts.Characters.Infrastructure;
 using Sources.EcsBoundedContexts.Core;

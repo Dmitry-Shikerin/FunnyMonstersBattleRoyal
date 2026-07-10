@@ -1,5 +1,4 @@
 ﻿using Cysharp.Threading.Tasks;
-using Photon.Pun;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.InfrastructureInterfaces.Services.SceneLoaderService;
 using UnityEngine;
@@ -13,11 +12,11 @@ namespace Sources.Frameworks.GameServices.SceneLoaderServices.Implementation
         {
             if (sceneName == IdsConst.Gameplay)
             {
-                PhotonNetwork.AutomaticallySyncScene = false;
-                PhotonNetwork.SendRate = 60;
-                PhotonNetwork.SerializationRate = 60;
-                PhotonNetwork.LoadLevel(IdsConst.Gameplay);
-                await UniTask.WaitUntil(() => Mathf.Approximately(PhotonNetwork.LevelLoadingProgress, 1) == false);
+                // PhotonNetwork.AutomaticallySyncScene = false;
+                // PhotonNetwork.SendRate = 60;
+                // PhotonNetwork.SerializationRate = 60;
+                // PhotonNetwork.LoadLevel(IdsConst.Gameplay);
+                // await UniTask.WaitUntil(() => Mathf.Approximately(PhotonNetwork.LevelLoadingProgress, 1) == false);
                 Debug.Log($"Load gameplay");
                 
                 return;

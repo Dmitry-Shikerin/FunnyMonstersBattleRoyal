@@ -1,5 +1,4 @@
-﻿using Photon.Pun;
-using Reflex.Attributes;
+﻿using Reflex.Attributes;
 using Sirenix.OdinInspector;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Buttons;
@@ -8,7 +7,7 @@ using UnityEngine;
 
 namespace Sources.BoundedContexts.Networks
 {
-    public class RoomsView : MonoBehaviourPunCallbacks
+    public class RoomsView : MonoBehaviour
     {
         [Required] [SerializeField] private UiButton _button;
         
@@ -18,26 +17,26 @@ namespace Sources.BoundedContexts.Networks
         private void Construct(ISceneService sceneService) =>
             _sceneService = sceneService;
 
-        public override void OnJoinedRoom()
-        {
-            _sceneService.ChangeSceneAsync(IdsConst.Gameplay);
-        }
-        
-        public override void OnEnable()
-        {
-            base.OnEnable();
-            _button.OnClick += QuickGame;
-        }
-
-        public override void OnDisable()
-        {
-            base.OnDisable();
-            _button.OnClick -= QuickGame;
-        }
-
-        private void QuickGame()
-        {
-            PhotonNetwork.JoinRandomOrCreateRoom();
-        }
+        // public override void OnJoinedRoom()
+        // {
+        //     _sceneService.ChangeSceneAsync(IdsConst.Gameplay);
+        // }
+        //
+        // public override void OnEnable()
+        // {
+        //     base.OnEnable();
+        //     _button.OnClick += QuickGame;
+        // }
+        //
+        // public override void OnDisable()
+        // {
+        //     base.OnDisable();
+        //     _button.OnClick -= QuickGame;
+        // }
+        //
+        // private void QuickGame()
+        // {
+        //     PhotonNetwork.JoinRandomOrCreateRoom();
+        // }
     }
 }
