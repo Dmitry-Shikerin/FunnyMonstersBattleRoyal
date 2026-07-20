@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 681144794509144462}
   - component: {fileID: 7876304859219709914}
   - component: {fileID: 7696694129009652957}
+  - component: {fileID: -5670176121934993331}
+  - component: {fileID: -4448029086740193229}
+  - component: {fileID: 8264912322341880240}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -53,6 +56,8 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 7696694129009652957}
+  - {fileID: -5670176121934993331}
+  - {fileID: -4448029086740193229}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &7696694129009652957
 MonoBehaviour:
@@ -94,6 +99,46 @@ MonoBehaviour:
     MinImpactfulCollisionAlignment: 0.3
     ImpactStartCorrectionTime: 0.1
     ImpactCorrectionTimeComplete: 0.3
+--- !u!114 &-5670176121934993331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437079635881909599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be5c74f278b4b58bcbb4028a050ffff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementDirection: {x: 0, y: 0, z: 0}
+--- !u!114 &-4448029086740193229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437079635881909599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469217f46e3b4833866edbc3c28f94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementComponent: {fileID: 8264912322341880240}
+  _networkInputReceiver: {fileID: -5670176121934993331}
+--- !u!114 &8264912322341880240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437079635881909599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4940bdacea3470492574b53735a9923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 5
 --- !u!1 &1092471812263552243
 GameObject:
   m_ObjectHideFlags: 0
