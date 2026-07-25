@@ -60,7 +60,7 @@ namespace Sources.EcsBoundedContexts.GameOvers.Infrastructure.Controllers
             int score = _killEnemyCounter.GetKillEnemyCounter().Value;
             _sdkService.SetPlayerScore(score);
             _storageService.ClearAll();
-            _uiViewService.Show(UiViewId.GameOverView);
+            _uiViewService.Show(UiViewId.GameOver);
             _uiViewService.Get<GameOverUiView>().ScoreText.text = score.ToString();
             _isDeath = true;
         }

@@ -3,8 +3,8 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums
     public enum UiViewId
     {
         Default = 0,
-        GameOverView = 1,
-        MainMenuView = 2,
+        GameOver = 1,
+        MainMenu = 2,
         Pause = 3,
         Achievements = 4,
         GameCompleted = 5,
@@ -24,10 +24,15 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums
         LeaderBoard = 19,
         MainHud = 20,
         WarningNewGame = 21,
-        ContinueGameView = 22,
+        ContinueGame = 22,
         AdvertisingAfterWave = 23,
         Connect = 24,
         Wait = 25,
         CreateRoom = 26,
+        Levels = 27,
+        Loading = 28,
+        NameInput = 29,
+        Party = 30,
+        SessionInfo = 31,
     }
 }

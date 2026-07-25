@@ -177,7 +177,7 @@ namespace Sources.Frameworks.YandexSdkFramework.Sdk.Services
         private void OnCloseInterAdv()
         {
             _soundService.UnpauseMusic();
-            _uiViewService.Show(UiViewId.ContinueGameView);
+            _uiViewService.Show(UiViewId.ContinueGame);
             IsInAdv = false;
         }
         

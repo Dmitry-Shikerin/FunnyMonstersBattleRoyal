@@ -1,5 +1,4 @@
 ﻿using Fusion;
-using Fusion.Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
