@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 1174167440314675454}
   - component: {fileID: 392550814529015038}
   m_Layer: 5
-  m_Name: Authorization_View
+  m_Name: Authorization_UiView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

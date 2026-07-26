@@ -2930,7 +2930,7 @@ GameObject:
   - component: {fileID: 7384135578520430304}
   - component: {fileID: 5472377966390906032}
   m_Layer: 5
-  m_Name: MainHud_View
+  m_Name: MainHud_UiView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

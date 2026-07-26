@@ -9,10 +9,8 @@ using Sources.EcsBoundedContexts.PlayerWallets.Controllers.Data;
 using Sources.EcsBoundedContexts.Characters.Controllers.Systems;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Controllers.Data;
 using Sources.EcsBoundedContexts.Input.Controllers;
-using Sources.EcsBoundedContexts.DailyRewards.Controllers.Data;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers;
 using Sources.EcsBoundedContexts.Cameras.Controllers;
-using Sources.EcsBoundedContexts.DailyRewards.Controllers;
 using Sources.EcsBoundedContexts.Movements.Move.Systems;
 using Sources.EcsBoundedContexts.Damage.Controllers;
 using Sources.EcsBoundedContexts.GameCompleted.Controllers;
@@ -41,7 +39,6 @@ namespace Sources.EcsBoundedContexts.Core
 			CharacterInitializeSystem characterInitializeSystem, //Order: 10 //Characters
 			KillEnemyCounterLoadSystem killEnemyCounterLoadSystem, //Order: 12 //Common
 			InputInitializeSystem inputInitializeSystem, //Order: 15 //Characters
-			DailyRewardLoadSystem dailyRewardLoadSystem, //Order: 15 //Common
 			InputSystem inputSystem, //Order: 50 //Characters
 			PlayerWalletSystem playerWalletSystem, //Order: 51 //Ability
 			CameraRotationSystem cameraRotationSystem, //Order: 51 //Camera
@@ -51,7 +48,6 @@ namespace Sources.EcsBoundedContexts.Core
 			GroundDistanceSystem groundDistanceSystem, //Order: 55 //Characters
 			GroundedSystem groundedSystem, //Order: 55 //Characters
 			JumpSystem jumpSystem, //Order: 55 //Characters
-			DailyRewardSystem dailyRewardSystem, //Order: 56 //Common
 			MoveAlongPathSystem moveAlongPathSystem, //Order: 58 //Light
 			CleanHealthSystem cleanHealthSystem, //Order: 60 //Player
 			DamageSystem damageSystem, //Order: 64 //Common
@@ -69,8 +65,7 @@ namespace Sources.EcsBoundedContexts.Core
 			VolumeSaveSystem volumeSaveSystem, //Order: 501 //Common
 			TutorialSaveSystem tutorialSaveSystem, //Order: 503 //Tutorial
 			PlayerWalletSaveSystem playerWalletSaveSystem, //Order: 504 //Ability
-			KillEnemyCounterSaveSystem killEnemyCounterSaveSystem, //Order: 506 //Common
-			DailyRewardSaveSystem dailyRewardSaveSystem //Order: 510 //Common
+			KillEnemyCounterSaveSystem killEnemyCounterSaveSystem //Order: 506 //Common
 		)
 		{
 			_protoSystems = protoSystems;
@@ -84,7 +79,6 @@ namespace Sources.EcsBoundedContexts.Core
 				characterInitializeSystem, //Characters
 				killEnemyCounterLoadSystem, //Common
 				inputInitializeSystem, //Characters
-				dailyRewardLoadSystem, //Common
 				inputSystem, //Characters
 				playerWalletSystem, //Ability
 				cameraRotationSystem, //Camera
@@ -94,7 +88,6 @@ namespace Sources.EcsBoundedContexts.Core
 				groundDistanceSystem, //Characters
 				groundedSystem, //Characters
 				jumpSystem, //Characters
-				dailyRewardSystem, //Common
 				moveAlongPathSystem, //Light
 				cleanHealthSystem, //Player
 				damageSystem, //Common
@@ -113,7 +106,6 @@ namespace Sources.EcsBoundedContexts.Core
 				tutorialSaveSystem, //Tutorial
 				playerWalletSaveSystem, //Ability
 				killEnemyCounterSaveSystem, //Common
-				dailyRewardSaveSystem, //Common
 			};
 		}
 

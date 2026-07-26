@@ -8,10 +8,8 @@ using Sources.EcsBoundedContexts.PlayerWallets.Controllers.Data;
 using Sources.EcsBoundedContexts.Characters.Controllers.Systems;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Controllers.Data;
 using Sources.EcsBoundedContexts.Input.Controllers;
-using Sources.EcsBoundedContexts.DailyRewards.Controllers.Data;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers;
 using Sources.EcsBoundedContexts.Cameras.Controllers;
-using Sources.EcsBoundedContexts.DailyRewards.Controllers;
 using Sources.EcsBoundedContexts.Movements.Move.Systems;
 using Sources.EcsBoundedContexts.Damage.Controllers;
 using Sources.EcsBoundedContexts.GameCompleted.Controllers;
@@ -35,8 +33,6 @@ namespace Sources.EcsBoundedContexts.Core
 			containerBuilder.RegisterType(typeof(InterstitialAfterWaveSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(VolumeLoadSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(KillEnemyCounterLoadSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(DailyRewardLoadSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(DailyRewardSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(DamageSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(GameCompletedSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(GameOverSystem), Lifetime.Singleton, Resolution.Lazy);
@@ -45,7 +41,6 @@ namespace Sources.EcsBoundedContexts.Core
 			containerBuilder.RegisterType(typeof(ActiveGameObjectSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(VolumeSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(KillEnemyCounterSaveSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(DailyRewardSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//EventBuffer
 
@@ -88,8 +83,15 @@ namespace Sources.EcsBoundedContexts.Core
 			containerBuilder.RegisterType(typeof(GroundedSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(JumpSystem), Lifetime.Singleton, Resolution.Lazy);
 
+			//Enemy
+
+			//Upgrade
+
+			//Achievements
+
 			//Tutorial
 			containerBuilder.RegisterType(typeof(TutorialSaveSystem), Lifetime.Singleton, Resolution.Lazy);
+
 		}
 	}
 }

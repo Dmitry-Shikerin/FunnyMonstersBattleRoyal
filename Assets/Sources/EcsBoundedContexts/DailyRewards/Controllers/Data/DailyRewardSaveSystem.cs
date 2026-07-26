@@ -11,9 +11,9 @@ using Sources.Frameworks.GameServices.Loads.Services.Interfaces.Data;
 
 namespace Sources.EcsBoundedContexts.DailyRewards.Controllers.Data
 {
-    [EcsSystem(510)]
-    [ComponentGroup(ComponentGroup.Common)]
-    [Aspect(AspectName.MainMenu, AspectName.Game)]
+    // [EcsSystem(510)]
+    // [ComponentGroup(ComponentGroup.Common)]
+    // [Aspect(AspectName.MainMenu, AspectName.Game)]
     public class DailyRewardSaveSystem : IProtoRunSystem
     {
         [DI] private readonly ProtoIt _it = new(

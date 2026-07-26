@@ -15,9 +15,9 @@ using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
 
 namespace Sources.EcsBoundedContexts.DailyRewards.Controllers.Data
 {
-    [EcsSystem(15)]
-    [ComponentGroup(ComponentGroup.Common)]
-    [Aspect(AspectName.MainMenu, AspectName.Game)]
+    // [EcsSystem(15)]
+    // [ComponentGroup(ComponentGroup.Common)]
+    // [Aspect(AspectName.MainMenu, AspectName.Game)]
     public class DailyRewardLoadSystem : IProtoInitSystem
     {
         private readonly IUiViewService _uiViewService;

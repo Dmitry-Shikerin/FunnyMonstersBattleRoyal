@@ -3038,7 +3038,7 @@ GameObject:
   - component: {fileID: 6599214722967453575}
   - component: {fileID: 6106904021046554734}
   m_Layer: 5
-  m_Name: SessionInfo_View
+  m_Name: SessionInfo_UiView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

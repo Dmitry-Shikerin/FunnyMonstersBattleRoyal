@@ -1334,7 +1334,7 @@ GameObject:
   - component: {fileID: 1050739014979403582}
   - component: {fileID: 3660986153922108320}
   m_Layer: 5
-  m_Name: Leaderboard_View
+  m_Name: Leaderboard_UiView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

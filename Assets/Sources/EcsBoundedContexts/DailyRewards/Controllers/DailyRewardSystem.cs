@@ -20,9 +20,9 @@ using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.DailyRewards.Controllers
 {
-    [EcsSystem(56)]
-    [ComponentGroup(ComponentGroup.Common)]
-    [Aspect(AspectName.MainMenu, AspectName.Game)]
+    // [EcsSystem(56)]
+    // [ComponentGroup(ComponentGroup.Common)]
+    // [Aspect(AspectName.MainMenu, AspectName.Game)]
     public class DailyRewardSystem : IProtoInitSystem, IProtoRunSystem, IProtoDestroySystem
     {
         [DI] private readonly ProtoIt _it = new(

@@ -21,8 +21,8 @@ namespace Sources.EcsBoundedContexts.Core.Editor.Configs.Generate
             string fileName = aspect.ToString() + "SystemsInstaller";
             string fullPath = $"{Application.dataPath}/{path}/{fileName}.cs";
             StringBuilder builder = new StringBuilder();
-            builder.Append("using MyDependencies.Sources.Containers;\n");
-            builder.Append("using MyDependencies.Sources.Containers.Extensions;\n");
+            builder.Append("using Reflex.Core;\n");
+            builder.Append("using Reflex.Enums;\n");
 
             foreach (Type type in types)
             {
@@ -40,7 +40,7 @@ namespace Sources.EcsBoundedContexts.Core.Editor.Configs.Generate
             builder.Append("{\n");
             builder.Append($"\tpublic static class {fileName}\n");
             builder.Append("\t{\n");
-            builder.Append("\t\tpublic static void InstallBindings(DiContainer container)\n");
+            builder.Append("\t\tpublic static void InstallBindings(ContainerBuilder containerBuilder)\n");
             builder.Append("\t\t{\n");
 
             foreach (string groupName in Enum.GetNames(typeof(ComponentGroup)))
@@ -58,8 +58,8 @@ namespace Sources.EcsBoundedContexts.Core.Editor.Configs.Generate
                         continue;
 
                     string name = type.Name;
-
-                    builder.Append($"\t\t\tcontainer.Bind<{name}>();\n");
+                    
+                    builder.Append($"\t\t\tcontainerBuilder.RegisterType(typeof({name}), Lifetime.Singleton, Resolution.Lazy);\n");
                 }
 
                 builder.AppendLine();

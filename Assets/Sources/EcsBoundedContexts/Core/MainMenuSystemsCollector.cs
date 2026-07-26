@@ -2,8 +2,6 @@ using System.Collections.Generic;
 using Leopotam.EcsProto;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Volumes.Controllers.Data;
-using Sources.EcsBoundedContexts.DailyRewards.Controllers.Data;
-using Sources.EcsBoundedContexts.DailyRewards.Controllers;
 using Sources.EcsBoundedContexts.Volumes.Controllers;
 
 namespace Sources.EcsBoundedContexts.Core
@@ -16,22 +14,16 @@ namespace Sources.EcsBoundedContexts.Core
 		public MainMenuSystemsCollector(
 			ProtoSystems protoSystems,
 			VolumeLoadSystem volumeLoadSystem, //Order: 7 //Common
-			DailyRewardLoadSystem dailyRewardLoadSystem, //Order: 15 //Common
-			DailyRewardSystem dailyRewardSystem, //Order: 56 //Common
 			ChangeVolumeSystem changeVolumeSystem, //Order: 83 //Common
-			VolumeSaveSystem volumeSaveSystem, //Order: 501 //Common
-			DailyRewardSaveSystem dailyRewardSaveSystem //Order: 510 //Common
+			VolumeSaveSystem volumeSaveSystem //Order: 501 //Common
 		)
 		{
 			_protoSystems = protoSystems;
 			_systems = new IProtoSystem[]
 			{
 				volumeLoadSystem, //Common
-				dailyRewardLoadSystem, //Common
-				dailyRewardSystem, //Common
 				changeVolumeSystem, //Common
 				volumeSaveSystem, //Common
-				dailyRewardSaveSystem, //Common
 			};
 		}
 

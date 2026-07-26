@@ -10860,7 +10860,7 @@ GameObject:
   - component: {fileID: 4123914716327533956}
   - component: {fileID: 2496198237466960154}
   m_Layer: 5
-  m_Name: Settings_View
+  m_Name: Settings_UiView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
