@@ -18,10 +18,6 @@ namespace Sources.App.DIContainers
 {
     public class ProjectInstaller : MonoBehaviour, IInstaller
     {
-        private NetworkRunner _networkRunner;
-        private NetworkSceneManagerDefault _networkSceneManagerDefault;
-        private NetworkCallbacksReceiver _networkCallbacksReceiver;
-
         public void InstallBindings(ContainerBuilder containerBuilder)
         {
             containerBuilder.RegisterType(typeof(PhotonSceneLoaderService), new []{typeof(ISceneLoaderService)}, Lifetime.Singleton, Resolution.Lazy);
@@ -30,17 +26,13 @@ namespace Sources.App.DIContainers
             containerBuilder.RegisterType(typeof(SceneService), new []{typeof(ISceneService)}, Lifetime.Singleton, Resolution.Lazy);
             
             //Network
-            _networkRunner = FindObjectOfType<NetworkRunner>();
+            NetworkRunner networkRunner = new GameObject("NetworkCore").AddComponent<NetworkRunner>();
+            NetworkSceneManagerDefault networkSceneManagerDefault = networkRunner.gameObject.AddComponent<NetworkSceneManagerDefault>();
+            NetworkCallbacksReceiver networkCallbacksReceiver = networkRunner.gameObject.AddComponent<NetworkCallbacksReceiver>();
 
-            if (_networkRunner == null)
-                throw new NullReferenceException("Runner not found");
-
-            _networkSceneManagerDefault = _networkRunner.GetComponent<NetworkSceneManagerDefault>();
-            _networkCallbacksReceiver = _networkRunner.GetComponent<NetworkCallbacksReceiver>();
-            
-            containerBuilder.RegisterValue(_networkRunner);
-            containerBuilder.RegisterValue(_networkSceneManagerDefault);
-            containerBuilder.RegisterValue(_networkCallbacksReceiver);
+            containerBuilder.RegisterValue(networkRunner);
+            containerBuilder.RegisterValue(networkSceneManagerDefault);
+            containerBuilder.RegisterValue(networkCallbacksReceiver);
 
             //Curtain
              CurtainView curtainView =

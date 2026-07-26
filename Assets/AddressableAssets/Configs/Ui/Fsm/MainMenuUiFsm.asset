@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
   m_Name: MainMenuUiFsm
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":549.1412,"y":149.0383},"$type":"Sources.BoundedContexts.Hud.Controllers.MainMenu.ConnectUiState","$id":"0"},{"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":439.9407,"y":202.9711},"$type":"Sources.BoundedContexts.Hud.Controllers.MainMenu.WaitUiView","$id":"1"},{"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":306.0,"y":287.0},"$type":"Sources.BoundedContexts.Hud.Controllers.MainMenu.CreateRoomUiState","$id":"2"},{"IsHideAllViewsEntered":true,"EnterShowViews":[20,16],"EnterHideViews":[],"ExitShowViews":[],"ExitHideViews":[],"EnterUiActions":[],"ExitUiActions":[],"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Hud","_position":{"x":91.9453,"y":290.9946},"$type":"Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementation.States.ShowViewsState","$id":"3"},{"IsHideAllViewsEntered":true,"EnterShowViews":[17,16],"EnterHideViews":[],"ExitShowViews":[],"ExitHideViews":[],"EnterUiActions":[],"ExitUiActions":[],"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Authorization","_position":{"x":-27.0,"y":368.0},"$type":"Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementation.States.ShowViewsState","$id":"4"},{"_position":{"x":559.0,"y":53.0},"$type":"NodeCanvas.StateMachines.AnyState","$id":"5"}],"connections":[{"_condition":{"ViewId":25,"$type":"Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementation.Conditions.ShowUiViewCondition"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"ViewId":26,"$type":"Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementation.Conditions.ShowUiViewCondition"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"ViewId":17,"$type":"Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementation.Conditions.ShowUiViewCondition"},"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":550.8007,"y":146.5928},"$type":"Sources.BoundedContexts.Hud.Controllers.MainMenu.MainMenuUiState"},{"_position":{"x":559.0,"y":53.0},"$type":"NodeCanvas.StateMachines.AnyState"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _objectReferences: []
   _graphSource:
     _version: 3.29
     _category: 
     _comments: 
-    _translation: {x: 494, y: -90}
-    _zoomFactor: 1
+    _translation: {x: -34.718735, y: 106.919846}
+    _zoomFactor: 0.64482
   _haltSerialization: 0
   _externalSerializationFile: {fileID: 0}

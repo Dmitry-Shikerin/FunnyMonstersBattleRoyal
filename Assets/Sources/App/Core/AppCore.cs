@@ -23,7 +23,7 @@ namespace Sources.App.Core
 #if UNITY_EDITOR
                 await _sceneService.ChangeSceneAsync(
                     SceneManager.GetActiveScene().name,
-                    new ScenePayload(SceneManager.GetActiveScene().name, false, false));                
+                    new ScenePayload(SceneManager.GetActiveScene().name, false, false));  
 #else
                 await _sceneService.ChangeSceneAsync(
                     IdsConst.MainMenu,

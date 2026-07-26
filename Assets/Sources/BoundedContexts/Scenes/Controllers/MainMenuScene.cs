@@ -73,6 +73,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 
         public async void Enter(object payload = null)
         {
+            Debug.Log($"Main menu load");
             //await InitializeAsync((IScenePayload)payload);
             await _compositeAssetService.LoadAsync(ResourcesPrefabPath.ResourcesAssetsConfig, AddressablesPrefabPath.AddressablesAssetConfig);
             _focusService.Initialize();
@@ -83,15 +84,16 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _ecsGameStartUp.Initialize();
             _sdkService.Initialize();
             //Придумать получше
-            AttributeInjector.Inject(_uiViewService.Get<MainHudUiView>().LobbyView, _container);
-            AttributeInjector.Inject(_uiViewService.Get<CreateRoomUiView>().RoomView, _container);
-            AttributeInjector.Inject(_uiViewService.Get<ConnectUiView>(), _container);
+            // AttributeInjector.Inject(_uiViewService.Get<MainHudUiView>().LobbyView, _container);
+            // AttributeInjector.Inject(_uiViewService.Get<CreateRoomUiView>().RoomView, _container);
+            // AttributeInjector.Inject(_uiViewService.Get<ConnectUiView>(), _container);
             //_leaderboardService.Initialize();
             //_soundService.Initialize();
             HideBlackScreen();
             await _curtainView.HideAsync();
             //_soundService.Play(SoundDatabaseName.Music, SoundName.MainMenuBackgroundMusic);
             await GameReady((IScenePayload)payload);
+            Debug.Log($"Main menu load");
         }
 
         public void Exit()
@@ -120,15 +122,15 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         
         private void ActivateLoadGameButton()
         {
-            MainHudUiView view = _uiViewService.Get<MainHudUiView>();
-            
-            if (_storageService.HasKey(IdsConst.PlayerWallet))
-            {
-                view.LoadGameButton.gameObject.SetActive(true);
-                return;
-            }
-            
-            view.LoadGameButton.gameObject.SetActive(false);
+            // MainHudUiView view = _uiViewService.Get<MainHudUiView>();
+            //
+            // if (_storageService.HasKey(IdsConst.PlayerWallet))
+            // {
+            //     view.LoadGameButton.gameObject.SetActive(true);
+            //     return;
+            // }
+            //
+            // view.LoadGameButton.gameObject.SetActive(false);
         }
         
         private void HideBlackScreen()

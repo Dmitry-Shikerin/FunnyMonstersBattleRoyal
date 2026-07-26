@@ -16,9 +16,11 @@ MonoBehaviour:
   <Hud>k__BackingField: {fileID: 2251821043641021725, guid: d63dddcdcad28ed4192b5d6821041346, type: 3}
   <Views>k__BackingField:
   - {fileID: 4759960517668393713, guid: 43d3caa06e9a429498f8aafde9fac665, type: 3}
-  - {fileID: 5472377966390906032, guid: 7e2a7eee8abf14b4a9b05bcec8ea581e, type: 3}
-  - {fileID: 1174167440314675454, guid: 27e9eb1c5e689334ba4a087a0b555551, type: 3}
-  - {fileID: 5345347979184091173, guid: 488503808e763794d9f6613a296c8ceb, type: 3}
-  - {fileID: 7811413315730993850, guid: f9f3ad08223246b4587f552e29dab37b, type: 3}
-  - {fileID: 6330366544306816130, guid: 3ab0ad07c07b8fe46b6aa65453fa3a51, type: 3}
+  - {fileID: -5100572175920766970, guid: 526ff9b96c701b64a8463cf955409793, type: 3}
+  - {fileID: 3604464476901068671, guid: 5eda3948c9855524e824ba16390e66a5, type: 3}
+  - {fileID: 1337546476567325473, guid: c4247d26ab1fde345957dbfc9ab1b8a2, type: 3}
+  - {fileID: 9185089304747470626, guid: 5e52c7d194dff9844a2585d67251adb0, type: 3}
+  - {fileID: 3912615525064174572, guid: f3acfb9854a87b24ca660d4fd0e011eb, type: 3}
+  - {fileID: 6106904021046554734, guid: ade3b73a771ada94996ed0c946a7223f, type: 3}
+  - {fileID: 2496198237466960154, guid: 4dc9659478202c64fb72237530f54f42, type: 3}
   <PopUps>k__BackingField: []

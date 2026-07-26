@@ -6,6 +6,7 @@ using Reflex.Extensions;
 using Sources.Frameworks.GameServices.Scenes.Controllers.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
 using Sources.Frameworks.StateMachines.SceneStateMachines.Implementation;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Sources.Frameworks.GameServices.Scenes.Services.Implementation
@@ -50,9 +51,11 @@ namespace Sources.Frameworks.GameServices.Scenes.Services.Implementation
                 if (_sceneFactories.TryGetValue(sceneName, out Func<object, Container, UniTask<IScene>> sceneFactory) == false)
                     throw new InvalidOperationException(nameof(sceneName));
 
+                Debug.Log($"After Handlers");
                 foreach (Func<string, UniTask> enteringHandler in _enteringHandlers)
                     await enteringHandler.Invoke(sceneName);
-
+                Debug.Log($"Before Handlers");
+                
                 Container sceneContext = SceneManager.GetActiveScene().GetSceneContainer();
                 IScene scene = await sceneFactory.Invoke(payload, sceneContext);
                 CurrentSceneName = sceneName;

@@ -19,19 +19,8 @@ namespace Sources.Frameworks.GameServices.SceneLoaderServices.Implementation
 
         public async UniTask Load(string sceneName)
         {
-            await UniTask.WaitWhile(() => _runner.IsRunning == false);
-            
             if (sceneName == IdsConst.Gameplay)
             {
-                // if (_runner.IsServer)
-                // {
-                //     await _runner.LoadScene(
-                //         SceneRef.FromIndex(1),
-                //         new LoadSceneParameters
-                //         {
-                //             loadSceneMode = LoadSceneMode.Additive
-                //         });
-                // }
                 _runner.ProvideInput = true;
             
                 await _runner.StartGame(new StartGameArgs
@@ -49,20 +38,21 @@ namespace Sources.Frameworks.GameServices.SceneLoaderServices.Implementation
             }
 
             Debug.Log($"Load main menu");
-            await _runner.LoadScene(
-                SceneRef.FromIndex(0),
-                new LoadSceneParameters
-                {
-                    loadSceneMode = LoadSceneMode.Single
-                });
+            // await _runner.LoadScene(
+            //     SceneRef.FromIndex(0),
+            //     new LoadSceneParameters
+            //     {
+            //         loadSceneMode = LoadSceneMode.Single
+            //     });
+            await SceneManager.LoadSceneAsync(sceneName);
         }
 
-        public async UniTask Unload()
+        public UniTask Unload()
         {
             if (_isRunned == false)
-                return;
+                return UniTask.CompletedTask;
             
-            await _runner.UnloadScene(SceneManager.GetActiveScene().name);
+            return _runner.UnloadScene(SceneManager.GetActiveScene().name).ToUniTask();
         }
     }
 }
