@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
   m_Name: MainMenuUiFsm
   m_EditorClassIdentifier: 
-  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":550.8007,"y":146.5928},"$type":"Sources.BoundedContexts.Hud.Controllers.MainMenu.MainMenuUiState"},{"_position":{"x":559.0,"y":53.0},"$type":"NodeCanvas.StateMachines.AnyState"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":550.8007,"y":146.5928},"$type":"Sources.BoundedContexts.Hud.Controllers.MainMenu.MainMenuUiState","$id":"0"},{"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":314.5429,"y":226.0837},"$type":"Sources.BoundedContexts.Hud.Controllers.MainMenu.LevelsUiState","$id":"1"},{"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":391.3844,"y":280.3006},"$type":"Sources.BoundedContexts.Hud.Controllers.MainMenu.NameInputUiView","$id":"2"},{"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":677.6768,"y":279.1106},"$type":"Sources.BoundedContexts.Hud.Controllers.MainMenu.PartyUiState","$id":"3"},{"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":730.6665,"y":229.8479},"$type":"Sources.BoundedContexts.Hud.Controllers.MainMenu.SessionInfoUiState","$id":"4"},{"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":847.2809,"y":284.4886},"$type":"Sources.BoundedContexts.Hud.Controllers.MainMenu.SettingsUiState","$id":"5"},{"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":294.8915,"y":321.0585},"$type":"Sources.BoundedContexts.Hud.Controllers.MainMenu.LoadingUiState"},{"_position":{"x":559.0,"y":53.0},"$type":"NodeCanvas.StateMachines.AnyState"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _objectReferences: []
   _graphSource:
     _version: 3.29
     _category: 
     _comments: 
-    _translation: {x: -34.718735, y: 106.919846}
-    _zoomFactor: 0.64482
+    _translation: {x: -258, y: -80}
+    _zoomFactor: 1
   _haltSerialization: 0
   _externalSerializationFile: {fileID: 0}
