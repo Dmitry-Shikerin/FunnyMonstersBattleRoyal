@@ -18,6 +18,7 @@ using Sources.Frameworks.GameServices.Prefabs.Interfaces.Composites;
 using Sources.Frameworks.GameServices.Scenes.Controllers.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Domain.Interfaces;
 using Sources.Frameworks.GameServices.UiActions;
+using Sources.Frameworks.GameServices.UiReflexInjectors;
 using Sources.Frameworks.YandexSdkFramework.Focuses.Interfaces;
 using Sources.Frameworks.YandexSdkFramework.Leaderboards.Services.Interfaces;
 using Sources.Frameworks.YandexSdkFramework.Sdk.Services;
@@ -27,6 +28,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 {
     public class MainMenuScene : IScene
     {
+        private readonly UiReflexInjector _uiReflexInjector;
         private readonly IUiViewService _uiViewService;
         private readonly ISdkService _sdkService;
         private readonly IStorageService _storageService;
@@ -42,6 +44,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private readonly ICurtainView _curtainView;
 
         public MainMenuScene(
+            UiReflexInjector uiReflexInjector,
             IUiViewService uiViewService,
             ISdkService sdkService,
             IStorageService storageService,
@@ -56,6 +59,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             ILocalizationService localizationService,
             ICurtainView curtainView)
         {
+            _uiReflexInjector = uiReflexInjector;
             _uiViewService = uiViewService;
             _sdkService = sdkService;
             _storageService = storageService;
@@ -73,12 +77,12 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 
         public async void Enter(object payload = null)
         {
-            Debug.Log($"Main menu load");
             //await InitializeAsync((IScenePayload)payload);
             await _compositeAssetService.LoadAsync(ResourcesPrefabPath.ResourcesAssetsConfig, AddressablesPrefabPath.AddressablesAssetConfig);
             _focusService.Initialize();
             InitUiActions();
             InitDeepUiBrain();
+            _uiReflexInjector.InjectUiViews();
             ActivateLoadGameButton();
             _localizationService.Translate();
             _ecsGameStartUp.Initialize();
@@ -92,8 +96,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             HideBlackScreen();
             await _curtainView.HideAsync();
             //_soundService.Play(SoundDatabaseName.Music, SoundName.MainMenuBackgroundMusic);
-            await GameReady((IScenePayload)payload);
-            Debug.Log($"Main menu load");
+            // await GameReady((IScenePayload)payload);
         }
 
         public void Exit()

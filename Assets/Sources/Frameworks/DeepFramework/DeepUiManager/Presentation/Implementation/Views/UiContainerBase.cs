@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
         [Required] [SerializeField] private bool _isHideCanvas;
         [Required] [SerializeField] private bool _isCanvasGroupBlockRaycast;
         [SerializeField] private CanvasGroup _canvasGroup;
+        [field: SerializeField] public List<MonoBehaviour> InjectedMonoBehaviours { get; private set; }
         
         private bool _isInit;
         

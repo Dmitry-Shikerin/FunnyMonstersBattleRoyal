@@ -2,6 +2,7 @@
 using Reflex.Enums;
 using Sirenix.OdinInspector;
 using Sources.BoundedContexts.Networks;
+using Sources.BoundedContexts.Networks.Core;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories;
 using Sources.BoundedContexts.TestGameplays;
@@ -25,6 +26,7 @@ namespace Sources.App.DIContainers.Gameplay
             containerBuilder.RegisterType(typeof(GameplaySceneFactory), new [] { typeof(ISceneFactory) }, Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterType(typeof(GameplayAssetService), new [] { typeof(ICompositeAssetService) }, Lifetime.Singleton, Resolution.Lazy);
 
+            //todo Придумать получше
             MovementInput input = new GameObject("InputCore").AddComponent<MovementInput>();
             InputPopulator inputPopulator = input.gameObject.AddComponent<InputPopulator>();
             containerBuilder.RegisterValue(input);

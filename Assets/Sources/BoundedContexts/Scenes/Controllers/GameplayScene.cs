@@ -16,6 +16,7 @@ using Sources.Frameworks.GameServices.Prefabs.Interfaces;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces.Composites;
 using Sources.Frameworks.GameServices.Scenes.Controllers.Interfaces;
 using Sources.Frameworks.GameServices.UiActions;
+using Sources.Frameworks.GameServices.UiReflexInjectors;
 using Sources.Frameworks.GameServices.UpdateServices.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 using Sources.Frameworks.YandexSdkFramework.Focuses.Interfaces;
@@ -26,6 +27,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 {
     public class GameplayScene : IScene
     {
+        private readonly UiReflexInjector _uiReflexInjector;
         private readonly ISdkService _sdkService;
         private readonly IAssetCollector _assetCollector;
         private readonly IEntityRepository _entityRepository;
@@ -42,6 +44,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private bool _isLoaded;
 
         public GameplayScene(
+            UiReflexInjector uiReflexInjector,
             ISdkService sdkService,
             IAssetCollector assetCollector,
             IEntityRepository entityRepository,
@@ -56,6 +59,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             ICameraService cameraService,
             IUpdateService updateService)
         {
+            _uiReflexInjector = uiReflexInjector;
             _sdkService = sdkService;
             _assetCollector = assetCollector;
             _entityRepository = entityRepository;
@@ -79,11 +83,10 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             ColliderExt.Construct(_entityRepository);
             AnimancerExtension.Construct(_assetCollector);
             InitUiActions();
-            //Debug.Log($"Befor load");
             InitDeepUiBrain();
-            //Debug.Log($"After load");
+            _uiReflexInjector.InjectUiViews();
             _localizationService.Translate();
-            await _ecsGameStartUp.Initialize();
+            //await _ecsGameStartUp.Initialize();
             _sdkService.Initialize();
             _soundService.Initialize();
             _isLoaded = true;
@@ -95,7 +98,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         {
             //_soundService.Stop(SoundName.GameplayBackgroundMusic);
             _soundService.Destroy();
-            _ecsGameStartUp.Destroy();
+            //_ecsGameStartUp.Destroy();
             _sdkService.Destroy();
             _compositeAssetService.Release();
             _focusService.Destroy();
@@ -108,7 +111,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
                 return;
             
             _updateService.Update(deltaTime);
-            _ecsGameStartUp.Update(deltaTime);
+            //_ecsGameStartUp.Update(deltaTime);
         }
 
         public void UpdateLate(float deltaTime)

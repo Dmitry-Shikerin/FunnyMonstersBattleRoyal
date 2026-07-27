@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Signals;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
@@ -14,5 +15,8 @@ namespace Sources.Frameworks.GameServices.DeepWrappers.Views
 
         public void Show(UiViewId id) =>
             DeepUiBrain.SignalBus.Handle(new ShowUiViewSignal(id));
+
+        public IEnumerable<UiView> GetAll() =>
+            DeepUiBrain.ViewManager.GetAll();
     }
 }

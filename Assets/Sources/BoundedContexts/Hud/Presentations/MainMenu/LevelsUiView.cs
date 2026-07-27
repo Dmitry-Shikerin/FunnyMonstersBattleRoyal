@@ -4,6 +4,5 @@ namespace Sources.BoundedContexts.Hud.Presentations.MainMenu
 {
     public class LevelsUiView : UiView
     {
-        
     }
 }

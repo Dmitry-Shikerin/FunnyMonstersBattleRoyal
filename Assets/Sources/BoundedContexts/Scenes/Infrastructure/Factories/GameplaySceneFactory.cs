@@ -12,6 +12,7 @@ using Sources.Frameworks.GameServices.Prefabs.Interfaces;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces.Composites;
 using Sources.Frameworks.GameServices.Scenes.Controllers.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Infrastructure.Factories.Controllers.Interfaces;
+using Sources.Frameworks.GameServices.UiReflexInjectors;
 using Sources.Frameworks.GameServices.UpdateServices.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 using Sources.Frameworks.YandexSdkFramework.Focuses.Interfaces;
@@ -22,6 +23,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
 {
     public class GameplaySceneFactory : ISceneFactory
     {
+        private readonly UiReflexInjector _uiReflexInjector;
         private readonly ISdkService _sdkService;
         private readonly IAssetCollector _assetCollector;
         private readonly IEntityRepository _entityRepository;
@@ -37,6 +39,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         private readonly IUpdateService _updateService;
 
         public GameplaySceneFactory(
+            UiReflexInjector uiReflexInjector,
             ISdkService sdkService,
             IAssetCollector assetCollector,
             IEntityRepository entityRepository,
@@ -51,6 +54,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             ICameraService cameraService,
             IUpdateService updateService)
         {
+            _uiReflexInjector = uiReflexInjector;
             _sdkService = sdkService;
             _assetCollector = assetCollector;
             _entityRepository = entityRepository;
@@ -70,6 +74,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         public UniTask<IScene> Create(object payload)
         {
             IScene gameplayScene = new GameplayScene(
+                _uiReflexInjector,
                 _sdkService,
                 _assetCollector,
                 _entityRepository,

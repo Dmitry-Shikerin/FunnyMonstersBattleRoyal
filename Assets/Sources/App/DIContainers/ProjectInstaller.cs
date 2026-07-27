@@ -3,6 +3,9 @@ using Fusion;
 using Reflex.Core;
 using Reflex.Enums;
 using Sources.BoundedContexts.Networks;
+using Sources.BoundedContexts.Networks.Core;
+using Sources.BoundedContexts.Networks.Infrastructure;
+using Sources.BoundedContexts.Networks.Infrastructure.Services;
 using Sources.Frameworks.GameServices.Curtains.Presentation.Implementation;
 using Sources.Frameworks.GameServices.Curtains.Presentation.Interfaces;
 using Sources.Frameworks.GameServices.Prefabs.Domain;
@@ -10,6 +13,7 @@ using Sources.Frameworks.GameServices.SceneLoaderServices.Implementation;
 using Sources.Frameworks.GameServices.Scenes.Services.Implementation;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
 using Sources.InfrastructureInterfaces.Services.SceneLoaderService;
+using Unity.VisualScripting;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using Resolution = Reflex.Enums.Resolution;
@@ -26,13 +30,7 @@ namespace Sources.App.DIContainers
             containerBuilder.RegisterType(typeof(SceneService), new []{typeof(ISceneService)}, Lifetime.Singleton, Resolution.Lazy);
             
             //Network
-            NetworkRunner networkRunner = new GameObject("NetworkCore").AddComponent<NetworkRunner>();
-            NetworkSceneManagerDefault networkSceneManagerDefault = networkRunner.gameObject.AddComponent<NetworkSceneManagerDefault>();
-            NetworkCallbacksReceiver networkCallbacksReceiver = networkRunner.gameObject.AddComponent<NetworkCallbacksReceiver>();
-
-            containerBuilder.RegisterValue(networkRunner);
-            containerBuilder.RegisterValue(networkSceneManagerDefault);
-            containerBuilder.RegisterValue(networkCallbacksReceiver);
+            containerBuilder.RegisterType(typeof(NetworkStartGameService), Lifetime.Singleton, Resolution.Lazy);
 
             //Curtain
              CurtainView curtainView =

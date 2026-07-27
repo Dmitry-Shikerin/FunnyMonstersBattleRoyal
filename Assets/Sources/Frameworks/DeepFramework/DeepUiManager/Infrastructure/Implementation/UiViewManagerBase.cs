@@ -9,6 +9,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implemen
         where TUiView : UiContainerBase
     {
         private readonly Dictionary<TViewId, TUiView> _views = new ();
+        private readonly List<TUiView> _viewsList = new ();
 
         public void Initialize()
         {
@@ -78,6 +79,22 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implemen
             }
             
             throw new KeyNotFoundException(typeof(T).ToString());
-        }         
+        }
+        
+        public IEnumerable<TUiView> GetAll()
+        {
+            if (_viewsList.Count > 0)
+                return _viewsList;
+            
+            foreach (KeyValuePair<TViewId, TUiView> viewId in _views)
+            {
+                if (_viewsList.Contains(viewId.Value))
+                    throw new InvalidOperationException();
+                
+                _viewsList.Add(viewId.Value);
+            }
+
+            return _viewsList;
+        }
     }
 }

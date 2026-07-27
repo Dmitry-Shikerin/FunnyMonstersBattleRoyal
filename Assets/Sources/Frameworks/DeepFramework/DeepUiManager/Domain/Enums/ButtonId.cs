@@ -19,5 +19,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums
         Leaderboard = 14,
         NewGame = 15,
         DailyReward = 16,
+        PartyMenu = 17,
     }
 }

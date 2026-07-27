@@ -39,16 +39,16 @@ namespace Sources.EcsBoundedContexts.DailyRewards.Controllers.Data
 
         public void Init(IProtoSystems systems)
         {
-            EntityLink link = _sceneService.CurrentSceneName == IdsConst.MainMenu
-                ? _uiViewService.Get<MainHudUiView>().DailyReward
-                : _uiViewService.Get<GameplayPauseUiView>().DailyReward;
-            ProtoEntity entity = _dailyRewardEntityFactory.Create(link);
-
-            if (_dataService.HasKey(IdsConst.DailyReward) == false)
-                return;
-
-            DailyRewardSaveData data = _dataService.LoadData<DailyRewardSaveData>(IdsConst.DailyReward);
-            entity.ReplaceDailyRewardData(data.LastRewardTime, data.CurrentTime, data.TargetRewardTime, data.ServerTime);
+            // EntityLink link = _sceneService.CurrentSceneName == IdsConst.MainMenu
+            //     ? _uiViewService.Get<MainHudUiView>().DailyReward
+            //     : _uiViewService.Get<GameplayPauseUiView>().DailyReward;
+            // ProtoEntity entity = _dailyRewardEntityFactory.Create(link);
+            //
+            // if (_dataService.HasKey(IdsConst.DailyReward) == false)
+            //     return;
+            //
+            // DailyRewardSaveData data = _dataService.LoadData<DailyRewardSaveData>(IdsConst.DailyReward);
+            // entity.ReplaceDailyRewardData(data.LastRewardTime, data.CurrentTime, data.TargetRewardTime, data.ServerTime);
         }
     }
 }

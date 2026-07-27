@@ -1,4 +1,5 @@
 ﻿using Fusion;
+using Sources.BoundedContexts.Networks.Core;
 using UnityEngine;
 using UnityEngine.Serialization;
 
