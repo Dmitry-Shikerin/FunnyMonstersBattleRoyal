@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using System.Collections.Generic;
 using Leopotam.EcsProto;
@@ -30,6 +29,7 @@ using Sources.EcsBoundedContexts.Lights.Domain.Enums;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Domain.Components;
 using Sources.EcsBoundedContexts.Input.Domain;
 using Leopotam.EcsProto;
+using System.Numerics;
 using Sources.EcsBoundedContexts.GraphOwners.Domain;
 using NodeCanvas.BehaviourTrees;
 using NodeCanvas.StateMachines;
@@ -53,6 +53,9 @@ using Sources.EcsBoundedContexts.Animators;
 using Sources.EcsBoundedContexts.AnimatorLod.Domain.Components;
 using Sources.EcsBoundedContexts.Animancers.Domain.Components;
 using Animancer;
+using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -1202,6 +1205,29 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelJumpEvent(this ProtoEntity entity)
 			=> s_GameAspect.JumpEvent.Del(entity);
+
+		//NetworkCameraForward
+		public static bool HasNetworkCameraForward(this ProtoEntity entity) =>
+			s_GameAspect.NetworkCameraForward.Has(entity);
+
+		public static ref NetworkCameraForwardComponent GetNetworkCameraForward(this ProtoEntity entity) =>
+			ref s_GameAspect.NetworkCameraForward.Get(entity);
+
+		public static void ReplaceNetworkCameraForward(this ProtoEntity entity, Vector3 value)
+		{
+			ref NetworkCameraForwardComponent networkCameraForwardComponent = ref s_GameAspect.NetworkCameraForward.Get(entity);
+			networkCameraForwardComponent.Value = value;
+		}
+
+		public static ref NetworkCameraForwardComponent AddNetworkCameraForward(this ProtoEntity entity, Vector3 value)
+		{
+			ref NetworkCameraForwardComponent networkCameraForwardComponent = ref s_GameAspect.NetworkCameraForward.Add(entity);
+			networkCameraForwardComponent.Value = value;
+			return ref networkCameraForwardComponent;
+		}
+
+		public static void DelNetworkCameraForward(this ProtoEntity entity)
+			=> s_GameAspect.NetworkCameraForward.Del(entity);
 
 		//NetworkInputDirection
 		public static bool HasNetworkInputDirection(this ProtoEntity entity) =>

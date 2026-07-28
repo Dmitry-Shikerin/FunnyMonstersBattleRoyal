@@ -13,6 +13,7 @@ namespace Sources.BoundedContexts.Networks.Input
         [Required] [SerializeField] private EntityLink _character;
         
         public Vector3 MovementDirection;
+        public Vector3 CameraForward;
         private NetworkButtons _previousButtons;
         
         public override void FixedUpdateNetwork()
@@ -22,6 +23,7 @@ namespace Sources.BoundedContexts.Networks.Input
 
             Vector2 input = inputData.MovementInput;
             MovementDirection = new Vector3(input.x, 0, input.y);
+            CameraForward = inputData.CameraForward;
 
             if (_character.IsInitialized == false)
                 return;
@@ -36,10 +38,11 @@ namespace Sources.BoundedContexts.Networks.Input
 
             ProtoEntity inputEntity = _character.Entity.GetInputEntity().Value;
             inputEntity.ReplaceNetworkInputDirection(MovementDirection);
+            inputEntity.ReplaceNetworkCameraForward(CameraForward);
 
             if (inputData.InputButtons.WasPressed(_previousButtons, InputButtons.Jump))
                 inputEntity.AddJumpEvent();
-            Debug.Log($"Direction {MovementDirection}, IsJump {inputData.InputButtons.WasPressed(_previousButtons, InputButtons.Jump)}");
+            //Debug.Log($"Direction {MovementDirection}, IsJump {inputData.InputButtons.WasPressed(_previousButtons, InputButtons.Jump)}");
         }
     }
 }

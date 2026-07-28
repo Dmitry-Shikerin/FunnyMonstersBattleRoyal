@@ -114,6 +114,7 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<InputOwnerComponent> InputOwner = new ();
 		public readonly ProtoPool<InputTag> Input = new ();
 		public readonly ProtoPool<JumpEventComponent> JumpEvent = new ();
+		public readonly ProtoPool<NetworkCameraForwardComponent> NetworkCameraForward = new ();
 		public readonly ProtoPool<NetworkInputDirectionComponent> NetworkInputDirection = new ();
 		public readonly ProtoPool<BehaviourTreeOwnerComponent> BehaviourTreeOwner = new ();
 		public readonly ProtoPool<FsmOwnerComponent> FsmOwner = new ();
@@ -228,6 +229,7 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<InputOwnerComponent>)] = InputOwner,
 				[typeof(ProtoPool<InputTag>)] = Input,
 				[typeof(ProtoPool<JumpEventComponent>)] = JumpEvent,
+				[typeof(ProtoPool<NetworkCameraForwardComponent>)] = NetworkCameraForward,
 				[typeof(ProtoPool<NetworkInputDirectionComponent>)] = NetworkInputDirection,
 				[typeof(ProtoPool<BehaviourTreeOwnerComponent>)] = BehaviourTreeOwner,
 				[typeof(ProtoPool<FsmOwnerComponent>)] = FsmOwner,

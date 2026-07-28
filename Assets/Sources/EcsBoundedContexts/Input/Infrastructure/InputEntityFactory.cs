@@ -34,6 +34,7 @@ namespace Sources.EcsBoundedContexts.Input.Infrastructure
             //_repository.AddByName(entity, IdsConst.Input);
             entity.AddDirection(Vector3.zero);
             entity.AddNetworkInputDirection(Vector3.zero);
+            entity.AddNetworkCameraForward(Vector3.forward);
             entity.AddCameraZoom(3);
             entity.AddCameraLook(Vector2.zero);
             

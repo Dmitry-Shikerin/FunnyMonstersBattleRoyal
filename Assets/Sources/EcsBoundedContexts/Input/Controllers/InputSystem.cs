@@ -56,8 +56,8 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
 
         private void UpdateMovement(ProtoEntity entity)
         {
-            Vector2 networkInput = entity.GetNetworkInputDirection().Value;
-            Vector3 cameraForward = Camera.main.transform.forward;
+            Vector3 networkInput = entity.GetNetworkInputDirection().Value;
+            Vector3 cameraForward = entity.GetNetworkCameraForward().Value;
             cameraForward.y = 0;
             float angle = Vector3.SignedAngle(Vector3.forward, cameraForward, Vector3.up);
             Vector3 moveDirection = Quaternion.Euler(0, angle, 0) * networkInput;

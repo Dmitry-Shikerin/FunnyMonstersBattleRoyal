@@ -11,6 +11,7 @@ namespace Sources.BoundedContexts.Networks.Core
     public struct NetworkInputData : INetworkInput
     {
         public Vector2 MovementInput;
+        public Vector3 CameraForward;
         public NetworkButtons InputButtons;
     }
 }

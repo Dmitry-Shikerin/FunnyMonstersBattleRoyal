@@ -50,7 +50,11 @@ namespace Sources.Frameworks.GameServices.InputServices
 
         private void PopulateInput(NetworkRunner runner, NetworkInput input)
         {
-            NetworkInputData data = new NetworkInputData { MovementInput = MovementInput };
+            NetworkInputData data = new NetworkInputData
+            {
+                MovementInput = MovementInput,
+                CameraForward = Camera.main.transform.forward,
+            };
             data.InputButtons.Set(InputButtons.Jump, IsJumpPerformed);
             input.Set(data);
         }
