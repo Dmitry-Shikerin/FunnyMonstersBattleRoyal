@@ -1,9 +1,13 @@
-﻿using Sources.Frameworks.GameServices.InputServices.Inputs;
+﻿using UnityEngine;
 
 namespace Sources.Frameworks.GameServices.InputServices.InputServices
 {
     public interface IInputService
     {
-        InputData InputData { get; }
+        Vector2 MovementInput { get; }
+        bool IsJumpPerformed { get; }
+        
+        void Initialize();
+        void Destroy();
     }
 }

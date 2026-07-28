@@ -32,17 +32,17 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
         public void Init(IProtoSystems systems)
         {
             //EntityLink characterLink = _rootGameObject.Character;
-            CharacterModule module = _assetCollector.Get<CharacterModule>();
-            Vector3 position = _rootGameObject.CharacterSpawnPoint.position;
-            Quaternion rotation = _rootGameObject.CharacterSpawnPoint.rotation;
-            
-            // if (PhotonNetwork.IsConnected)
-            //     module = PhotonNetwork.Instantiate("Character", position, rotation).GetComponent<CharacterModule>();
-            // else
-                module = Object.Instantiate(module, position, rotation);
-            Debug.Log($"Init character");
-            
-            _entityFactory.Create(module.GetComponent<EntityLink>());
+            // CharacterModule module = _assetCollector.Get<CharacterModule>();
+            // Vector3 position = _rootGameObject.CharacterSpawnPoint.position;
+            // Quaternion rotation = _rootGameObject.CharacterSpawnPoint.rotation;
+            //
+            // // if (PhotonNetwork.IsConnected)
+            // //     module = PhotonNetwork.Instantiate("Character", position, rotation).GetComponent<CharacterModule>();
+            // // else
+            //     module = Object.Instantiate(module, position, rotation);
+            // Debug.Log($"Init character");
+            //
+            // _entityFactory.Create(module.GetComponent<EntityLink>());
         }
     }
 }

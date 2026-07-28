@@ -1,34 +1,55 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Fusion;
+using Sirenix.OdinInspector;
+using Sources.BoundedContexts.Networks.Core;
+using Sources.BoundedContexts.Networks.Infrastructure.Services;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace Sources.BoundedContexts.Networks.Infrastructure
+namespace Sources.BoundedContexts.Networks
 {
-    public class JoinManager : SimulationBehaviour, IPlayerJoined, IPlayerLeft
+    public class JoinManager : MonoBehaviour
     {
+        [Required] [SerializeField] private NetworkPrefabRef _playerPrefab;
         private readonly Dictionary<PlayerRef, NetworkObject> _players = new();
         
-        public void PlayerJoined(PlayerRef player)
+        private NetworkRunner _runner;
+        private NetworkCallbacksReceiver _callbackReceiver;
+
+        private void Awake()
         {
-            // if (Runner.IsServer == false)
-            //     return;
-            
-            // NetworkObject playerObject = Runner.Spawn(_playerPrefab, Vector3.zero, quaternion.identity, player);
-            //_players.Add(player, playerObject);
-            Debug.Log($"Player Join");
+            _runner = NetworkRunnerProvider.Runner;
+            _callbackReceiver = NetworkRunnerProvider.NetworkCallbacksReceiver;
+            _callbackReceiver.PlayerJoined += PlayerJoined;
         }
 
-        public void PlayerLeft(PlayerRef player)
+        private void OnDestroy()
         {
-            // if (Runner.IsServer == false)
-            //     return;
-            //
-            // if (_players.Remove(player, out NetworkObject playerObject) == false)
-            //     return;
-            //
-            // Runner.Despawn(playerObject);
-            Debug.Log($"Player Left");
+            _callbackReceiver.PlayerJoined -= PlayerJoined;
+        }
+
+        private void PlayerJoined(PlayerRef player)
+        {
+            Debug.Log($"Join Player");
+            
+             if (_runner.IsServer == false)
+                 return;
+            
+             Debug.Log($"Join Player");
+             NetworkObject playerObject = _runner.Spawn(_playerPrefab, Vector3.zero, Quaternion.identity, player);
+            _players.Add(player, playerObject);
+        }
+
+        private void PlayerLeft(PlayerRef player)
+        {
+            if (_runner.IsServer == false)
+                return;
+            
+            if (_players.Remove(player, out NetworkObject playerObject) == false)
+                return;
+            
+            _runner.Despawn(playerObject);
         }
     }
 }

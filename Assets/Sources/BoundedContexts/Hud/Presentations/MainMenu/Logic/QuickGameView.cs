@@ -1,4 +1,6 @@
-﻿using Fusion;
+﻿using System;
+using Cysharp.Threading.Tasks;
+using Fusion;
 using Reflex.Attributes;
 using Sirenix.OdinInspector;
 using Sources.BoundedContexts.Networks.Infrastructure.Services;
@@ -26,7 +28,11 @@ namespace Sources.BoundedContexts.Hud.Presentations.MainMenu.Logic
         {
             //Доработать логику назвавния катки
             await _startGameService.StartSimulationAsync(GameMode.AutoHostOrClient, "SampleSession");
-            _sceneService.ChangeSceneAsync(IdsConst.Gameplay);
+            //Иначе загружает мейн меню сцену
+            await UniTask.WaitUntil(() => NetworkRunnerProvider.Runner.IsRunning);
+            await UniTask.Delay(TimeSpan.FromSeconds(1));
+
+            await _sceneService.ChangeSceneAsync(IdsConst.Gameplay);
         }
 
         [Inject]

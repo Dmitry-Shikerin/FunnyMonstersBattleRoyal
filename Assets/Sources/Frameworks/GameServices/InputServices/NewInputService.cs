@@ -1,118 +1,58 @@
-﻿using Sources.Frameworks.GameServices.InputServices.Inputs;
+﻿using Fusion;
+using Sources.BoundedContexts.Networks.Core;
+using Sources.BoundedContexts.Networks.Infrastructure.Services;
 using Sources.Frameworks.GameServices.InputServices.InputServices;
-using Sources.Frameworks.GameServices.Pauses;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Sources.Frameworks.GameServices.InputServices
 {
-    public class NewInputService : IInputService, IInputServiceUpdater
+    public class NewInputService : IInputService
     {
-        //private InputManager _inputManager;
-        private float _speed;
-        private IPauseService _pauseService;
+        private NetworkCallbacksReceiver _callbacksReceiver;
+        private readonly InputSystem_Actions _inputActions;
+        private bool _jumpPerformed;
 
-        public NewInputService(
-            IPauseService pauseService)
+        public NewInputService()
         {
-            _pauseService = pauseService;
-            InputData = new InputData();
+            _inputActions = new InputSystem_Actions();
         }
 
-        public InputData InputData { get; }
+        public Vector2 MovementInput => _inputActions == null 
+            ? Vector2.zero 
+            : _inputActions.Player.Move.ReadValue<Vector2>();
+        public bool IsJumpPerformed => GetJumpPerformed();
 
         public void Initialize()
         {
-            // _inputManager = new InputManager();
-            // _inputManager.Enable();
-            // _inputManager.Gameplay.Stand.performed += UpdateStandState;
-            // _inputManager.Gameplay.Click.performed += UpdateSelectable;
-        }
-
-        private void UpdateSelectable(InputAction.CallbackContext obj)
-        {
-            //Debug.Log($"UpdateSelectable");
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            // if (Physics.Raycast(
-            //         ray, out RaycastHit raycastHit, float.MaxValue, GraphView.Layer.Selectable) == false)
-            //     return;
-
-            //Debug.Log($"RaycastHit: {raycastHit.collider.name}");
+            _inputActions.Player.Jump.performed += JumpPerformed;
+            _callbacksReceiver = NetworkRunnerProvider.NetworkCallbacksReceiver;
+            _callbacksReceiver.OnPopulateInput += PopulateInput;
+            _inputActions.Enable();
         }
 
         public void Destroy()
         {
-            // _inputManager.Disable();
-            // _inputManager.Gameplay.Stand.performed -= UpdateStandState;
-            // _inputManager.Gameplay.Click.performed -= UpdateSelectable;
+            _inputActions.Player.Jump.performed -= JumpPerformed;
+            _callbacksReceiver.OnPopulateInput -= PopulateInput;
+            _inputActions.Disable();
         }
 
-        public void Update(float deltaTime)
+        private bool GetJumpPerformed()
         {
-            if (_pauseService == null)
-                return;
-            
-            if (_pauseService.IsPaused)
-                return;
-
-            UpdateMovement();
-            //UpdateAttack();
-            UpdatePointerClick();
+            bool accumulatedJump = _jumpPerformed;
+            _jumpPerformed = false;
+            return accumulatedJump;
         }
 
-        private void UpdatePointerClick()
+        private void JumpPerformed(InputAction.CallbackContext obj) =>
+            _jumpPerformed = true;
+
+        private void PopulateInput(NetworkRunner runner, NetworkInput input)
         {
-            // InputData.PointerPosition = Vector3.zero;
-            //
-            if (Input.GetMouseButtonDown(0) == false)
-                return;
-
-            if (TryGetLook(out Vector3 lookDirection) == false)
-                return;
-            
-            InputData.PointerPosition = lookDirection;
-        }
-        
-        private void UpdateStandState(InputAction.CallbackContext context) =>
-            InputData.InvokeStand();
-
-        // private void UpdateAttack() =>
-        //     InputData.IsAttacking = _inputManager.Gameplay.Attack.IsPressed();
-
-        private void UpdateMovement()
-        {
-            // Vector2 input = _inputManager.Gameplay.Movement.ReadValue<Vector2>();
-            // float speed = _inputManager.Gameplay.Run.ReadValue<float>();
-
-            // Vector3 lookDirection = Vector3.zero;
-            //
-            // if (TryGetLook(out Vector3 look))
-            //     lookDirection = look;
-            //
-            // Vector3 cameraForward = Camera.main.transform.forward;
-            // cameraForward.y = 0;
-            //
-            // float angle = Vector3.SignedAngle(Vector3.forward, cameraForward, Vector3.up);
-            // Vector3 moveDirection = Quaternion.Euler(0, angle, 0) * new Vector3(input.x, 0, input.y);
-            //
-            // InputData.MoveDirection = moveDirection;
-            // InputData.LookPosition = lookDirection;
-            // InputData.Speed = speed;
-        }
-
-        private bool TryGetLook(out Vector3 lookDirection)
-        {
-            lookDirection = Vector3.zero;
-            Ray cameraPosition = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            // if (Physics.Raycast(
-            //         cameraPosition, out RaycastHit raycastHit, float.MaxValue, GraphView.Layer.Plane) == false)
-            //     return false;
-
-            //lookDirection = raycastHit.point;
-            
-            return true;
+            NetworkInputData data = new NetworkInputData { MovementInput = MovementInput };
+            data.InputButtons.Set(InputButtons.Jump, IsJumpPerformed);
+            input.Set(data);
         }
     }
 }

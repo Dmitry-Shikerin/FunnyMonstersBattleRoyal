@@ -1,8 +1,10 @@
 using System;
 using Cysharp.Threading.Tasks;
+using Fusion;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity;
+using Reflex.Attributes;
 using Reflex.Core;
 using Sources.EcsBoundedContexts.Common.Domain.Components;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Components;
@@ -16,17 +18,18 @@ using Sources.EcsBoundedContexts.Volumes.Domain.Components;
 
 namespace Sources.EcsBoundedContexts.Core
 {
-    public class EcsGameStartUp : IEcsGameStartUp
+    public class EcsGameStartUp : NetworkBehaviour, IEcsGameStartUp
     {
-        private readonly Container _container;
-        private readonly ProtoSystems _systems;
-        private readonly ProtoWorld _world;
-        private readonly GameAspect _aspect;
-        private readonly ISystemsCollector _systemsCollector;
+        private Container _container;
+        private ProtoSystems _systems;
+        private ProtoWorld _world;
+        private GameAspect _aspect;
+        private ISystemsCollector _systemsCollector;
         private ProtoSystems _unitySystems;
         private bool _isInitialize;
 
-        public EcsGameStartUp(
+        [Inject]
+        private void Construct(
             Container container, 
             ProtoWorld protoWorld,
             ProtoSystems systems,
@@ -51,7 +54,15 @@ namespace Sources.EcsBoundedContexts.Core
             Init();
         }
 
-        public void Update(float deltaTime)
+        public override void FixedUpdateNetwork()
+        {
+            if (Runner.IsServer == false)
+                return;
+            
+            MyUpdate(Runner.DeltaTime);
+        }
+
+        private void MyUpdate(float deltaTime)
         {
             if (_isInitialize == false)
                 return;
@@ -92,10 +103,9 @@ namespace Sources.EcsBoundedContexts.Core
             _systems.DelHere<ChangeVolumeEvent>();
             _systems.DelHere<JumpEventComponent>();
         }
-        
-        private async void Init()
+
+        private void Init()
         {
-            //await UniTask.Delay(TimeSpan.FromSeconds(2f));
             _isInitialize = true;
         }
 
@@ -106,9 +116,6 @@ namespace Sources.EcsBoundedContexts.Core
                 .AddModule(new AutoInjectModule())
                 .AddModule(new UnityModule())
                 .Init();
-            // _rootGameObject
-            //     .GetComponentsInChildren<ProtoUnityAuthoring>()
-            //     .ForEach(authoring => authoring.ProcessAuthoring());
         }
     }
 }

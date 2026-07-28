@@ -31,7 +31,6 @@ namespace Sources.EcsBoundedContexts.Tutorials.Infrastructure
         {
             Aspect.Tutorial.NewEntity(out ProtoEntity entity);
             _repository.AddByName(entity, IdsConst.Tutorial);
-            Debug.Log($"Entity id {entity.GetHashCode()}");
             entity.AddStringId(IdsConst.Tutorial);
             
             //Save

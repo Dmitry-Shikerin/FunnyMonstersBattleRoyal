@@ -1,6 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using Reflex.Core;
+using Reflex.Injectors;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.EcsBoundedContexts.Animancers.Extension;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
@@ -11,6 +12,7 @@ using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementati
 using Sources.Frameworks.GameServices.Curtains.Presentation.Interfaces;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
+using Sources.Frameworks.GameServices.InputServices.InputServices;
 using Sources.Frameworks.GameServices.Prefabs.Domain;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces.Composites;
@@ -27,6 +29,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 {
     public class GameplayScene : IScene
     {
+        private readonly IInputService _inputService;
         private readonly UiReflexInjector _uiReflexInjector;
         private readonly ISdkService _sdkService;
         private readonly IAssetCollector _assetCollector;
@@ -44,6 +47,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private bool _isLoaded;
 
         public GameplayScene(
+            IInputService inputService,
             UiReflexInjector uiReflexInjector,
             ISdkService sdkService,
             IAssetCollector assetCollector,
@@ -59,6 +63,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             ICameraService cameraService,
             IUpdateService updateService)
         {
+            _inputService = inputService;
             _uiReflexInjector = uiReflexInjector;
             _sdkService = sdkService;
             _assetCollector = assetCollector;
@@ -78,6 +83,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 
         public async void Enter(object payload = null)
         {
+            _inputService.Initialize();
             _focusService.Initialize();
             await _compositeAssetService.LoadAsync(ResourcesPrefabPath.ResourcesAssetsConfig, AddressablesPrefabPath.AddressablesAssetConfig);
             ColliderExt.Construct(_entityRepository);
@@ -86,7 +92,8 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             InitDeepUiBrain();
             _uiReflexInjector.InjectUiViews();
             _localizationService.Translate();
-            //await _ecsGameStartUp.Initialize();
+            AttributeInjector.Inject(_ecsGameStartUp, _container);
+            await _ecsGameStartUp.Initialize();
             _sdkService.Initialize();
             _soundService.Initialize();
             _isLoaded = true;
@@ -96,6 +103,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 
         public void Exit()
         {
+            _inputService.Destroy();
             //_soundService.Stop(SoundName.GameplayBackgroundMusic);
             _soundService.Destroy();
             //_ecsGameStartUp.Destroy();

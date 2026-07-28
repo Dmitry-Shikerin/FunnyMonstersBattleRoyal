@@ -32,9 +32,9 @@ namespace Sources.EcsBoundedContexts.Cameras.Controllers
 
         public void Init(IProtoSystems systems)
         {
-            _rootGameObject.MainCamera.GetModule<MainCameraModule>().Cameras[VirtualCameraType.ThirdPerson].Follow =
-                _repository.GetByName(IdsConst.Player).GetTransform().Value; 
-            _factory.Create(_rootGameObject.MainCamera);
+            // _rootGameObject.MainCamera.GetModule<MainCameraModule>().Cameras[VirtualCameraType.ThirdPerson].Follow =
+            //     _repository.GetByName(IdsConst.Player).GetTransform().Value; 
+            // _factory.Create(_rootGameObject.MainCamera);
         }
     }
 }

@@ -8,6 +8,8 @@ namespace Sources.BoundedContexts.Networks.Infrastructure.Services
     public class NetworkRunnerProvider
     {
         private static NetworkRunner _runner;
+        private static NetworkCallbacksReceiver _networkCallbacksReceiver;
+        private static NetworkSceneManagerDefault _sceneManagerDefault;
 
         public static NetworkRunner Runner
         {
@@ -21,17 +23,35 @@ namespace Sources.BoundedContexts.Networks.Infrastructure.Services
                 return _runner;
             }
         }
-        
-        public static NetworkSceneManagerDefault SceneManagerDefault { get; private set; }
-        public static NetworkCallbacksReceiver NetworkCallbacksReceiver { get; private set; }
-        
+
+        public static NetworkSceneManagerDefault SceneManagerDefault
+        {
+            get
+            {
+                if (_sceneManagerDefault == null)
+                    _runner = CreateRunner();
+
+                return _sceneManagerDefault;
+            }
+        }
+
+        public static NetworkCallbacksReceiver NetworkCallbacksReceiver
+        {
+            get
+            {
+                if (_networkCallbacksReceiver == null)
+                    _runner = CreateRunner();
+
+                return _networkCallbacksReceiver;
+            }
+        }
+
         private static NetworkRunner CreateRunner()
         {
             NetworkRunner networkRunner = new GameObject("NetworkCore").AddComponent<NetworkRunner>();
             networkRunner.AddComponent<NetworkRunnerMemento>();
-            SceneManagerDefault = networkRunner.gameObject.AddComponent<NetworkSceneManagerDefault>();
-            NetworkCallbacksReceiver = networkRunner.gameObject.AddComponent<NetworkCallbacksReceiver>();
-            networkRunner.gameObject.AddComponent<JoinManager>();
+            _sceneManagerDefault = networkRunner.gameObject.AddComponent<NetworkSceneManagerDefault>();
+            _networkCallbacksReceiver = networkRunner.gameObject.AddComponent<NetworkCallbacksReceiver>();
 
             return networkRunner;
         }

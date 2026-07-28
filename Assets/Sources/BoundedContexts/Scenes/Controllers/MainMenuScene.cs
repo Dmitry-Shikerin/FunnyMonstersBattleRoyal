@@ -85,12 +85,9 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _uiReflexInjector.InjectUiViews();
             ActivateLoadGameButton();
             _localizationService.Translate();
-            _ecsGameStartUp.Initialize();
+            AttributeInjector.Inject(_ecsGameStartUp, _container);
+            await _ecsGameStartUp.Initialize();
             _sdkService.Initialize();
-            //Придумать получше
-            // AttributeInjector.Inject(_uiViewService.Get<MainHudUiView>().LobbyView, _container);
-            // AttributeInjector.Inject(_uiViewService.Get<CreateRoomUiView>().RoomView, _container);
-            // AttributeInjector.Inject(_uiViewService.Get<ConnectUiView>(), _container);
             //_leaderboardService.Initialize();
             //_soundService.Initialize();
             HideBlackScreen();
@@ -112,7 +109,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 
         public void Update(float deltaTime)
         {
-            _ecsGameStartUp.Update(deltaTime);
         }
 
         public void UpdateLate(float deltaTime)
