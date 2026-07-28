@@ -26,6 +26,7 @@ namespace Sources.BoundedContexts.Hud.Presentations.MainMenu.Logic
 
         private async void StartQuickGame()
         {
+            _button.Interactable(false);
             //Доработать логику назвавния катки
             await _startGameService.StartSimulationAsync(GameMode.AutoHostOrClient, "SampleSession");
             //Иначе загружает мейн меню сцену

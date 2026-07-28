@@ -1,5 +1,6 @@
 ﻿using Fusion;
 using Sources.BoundedContexts.Networks.Core;
+using Sources.EcsBoundedContexts.Core;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace Sources.BoundedContexts.Networks.Infrastructure.Services
         private static NetworkRunner _runner;
         private static NetworkCallbacksReceiver _networkCallbacksReceiver;
         private static NetworkSceneManagerDefault _sceneManagerDefault;
+        private static EcsGameStartUp _ecsGameStartUp;
 
         public static NetworkRunner Runner
         {
@@ -46,12 +48,24 @@ namespace Sources.BoundedContexts.Networks.Infrastructure.Services
             }
         }
 
+        public static EcsGameStartUp EcsGameStartUp
+        {
+            get
+            {
+                if (_ecsGameStartUp == null)
+                    _runner = CreateRunner();
+
+                return _ecsGameStartUp;
+            }
+        }
+
         private static NetworkRunner CreateRunner()
         {
             NetworkRunner networkRunner = new GameObject("NetworkCore").AddComponent<NetworkRunner>();
             networkRunner.AddComponent<NetworkRunnerMemento>();
             _sceneManagerDefault = networkRunner.gameObject.AddComponent<NetworkSceneManagerDefault>();
             _networkCallbacksReceiver = networkRunner.gameObject.AddComponent<NetworkCallbacksReceiver>();
+            _ecsGameStartUp = networkRunner.gameObject.AddComponent<EcsGameStartUp>();
 
             return networkRunner;
         }

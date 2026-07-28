@@ -14,23 +14,19 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Transitions
     [Category(NcCategoriesConst.Characters)]
     public class IsGroundDistanceCondition : ConditionTask
     {
-        private IEntityRepository _repository;
-        private ProtoEntity _input;
         private ProtoEntity _entity;
         private IAssetCollector _assetCollector;
         private CharacterConfig _config;
 
         protected override string OnInit()
         {
-            _input = _repository.GetByName(IdsConst.Input);
             _config = _assetCollector.Get<CharacterConfig>();
             return null;
         }
 
         [Inject]
-        private void Construct(IEntityRepository repository, IAssetCollector assetCollector)
+        private void Construct(IAssetCollector assetCollector)
         {
-            _repository = repository;
             _assetCollector = assetCollector;
         }
 

@@ -4,6 +4,7 @@ using ParadoxNotion.Design;
 using Reflex.Attributes;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
+using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 using UnityEngine;
 
@@ -12,22 +13,15 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Transitions
     [Category(NcCategoriesConst.Characters)]
     public class IsZeroDirectionCondition : ConditionTask
     {
-        private IEntityRepository _repository;
-        private ProtoEntity _input;
-
-        protected override string OnInit()
+        private ProtoEntity _entity;
+        
+        [Construct]
+        private void Construct(ProtoEntity entity)
         {
-            _input = _repository.GetByName(IdsConst.Input);
-            return null;
-        }
-
-        [Inject]
-        private void Construct(IEntityRepository repository)
-        {
-            _repository = repository;
+            _entity = entity;
         }
 
         protected override bool OnCheck() =>
-            _input.GetDirection().Value == Vector3.zero;
+            _entity.GetInputEntity().Value.GetDirection().Value == Vector3.zero;
     }
 }

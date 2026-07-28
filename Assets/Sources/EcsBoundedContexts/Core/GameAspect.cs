@@ -111,8 +111,10 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<CameraLookComponent> CameraLook = new ();
 		public readonly ProtoPool<CameraZoomComponent> CameraZoom = new ();
 		public readonly ProtoPool<DirectionComponent> Direction = new ();
+		public readonly ProtoPool<InputOwnerComponent> InputOwner = new ();
 		public readonly ProtoPool<InputTag> Input = new ();
 		public readonly ProtoPool<JumpEventComponent> JumpEvent = new ();
+		public readonly ProtoPool<NetworkInputDirectionComponent> NetworkInputDirection = new ();
 		public readonly ProtoPool<BehaviourTreeOwnerComponent> BehaviourTreeOwner = new ();
 		public readonly ProtoPool<FsmOwnerComponent> FsmOwner = new ();
 		public readonly ProtoPool<DamageTimerComponent> DamageTimer = new ();
@@ -128,6 +130,7 @@ namespace Sources.EcsBoundedContexts.Core
 		//Camera
 		public readonly ProtoPool<CameraComponent> Camera = new ();
 		public readonly ProtoPool<CinemachineCameraComponent> CinemachineCamera = new ();
+		public readonly ProtoPool<MainCameraModuleComponent> MainCameraModule = new ();
 		public readonly ProtoPool<MainCameraTag> MainCamera = new ();
 
 		//AnimatorLod
@@ -157,6 +160,7 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<CharacterTag> Character = new ();
 		public readonly ProtoPool<GroundDistanceComponent> GroundDistance = new ();
 		public readonly ProtoPool<GroundedComponent> Grounded = new ();
+		public readonly ProtoPool<InputEntityComponent> InputEntity = new ();
 		public readonly ProtoPool<JumpingComponent> Jumping = new ();
 		public readonly ProtoPool<VerticalVelocityComponent> VerticalVelocity = new ();
 
@@ -221,8 +225,10 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<CameraLookComponent>)] = CameraLook,
 				[typeof(ProtoPool<CameraZoomComponent>)] = CameraZoom,
 				[typeof(ProtoPool<DirectionComponent>)] = Direction,
+				[typeof(ProtoPool<InputOwnerComponent>)] = InputOwner,
 				[typeof(ProtoPool<InputTag>)] = Input,
 				[typeof(ProtoPool<JumpEventComponent>)] = JumpEvent,
+				[typeof(ProtoPool<NetworkInputDirectionComponent>)] = NetworkInputDirection,
 				[typeof(ProtoPool<BehaviourTreeOwnerComponent>)] = BehaviourTreeOwner,
 				[typeof(ProtoPool<FsmOwnerComponent>)] = FsmOwner,
 				[typeof(ProtoPool<ActiveComponent>)] = Active,
@@ -265,10 +271,12 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<CharacterTag>)] = Character,
 				[typeof(ProtoPool<GroundDistanceComponent>)] = GroundDistance,
 				[typeof(ProtoPool<GroundedComponent>)] = Grounded,
+				[typeof(ProtoPool<InputEntityComponent>)] = InputEntity,
 				[typeof(ProtoPool<JumpingComponent>)] = Jumping,
 				[typeof(ProtoPool<VerticalVelocityComponent>)] = VerticalVelocity,
 				[typeof(ProtoPool<CameraComponent>)] = Camera,
 				[typeof(ProtoPool<CinemachineCameraComponent>)] = CinemachineCamera,
+				[typeof(ProtoPool<MainCameraModuleComponent>)] = MainCameraModule,
 				[typeof(ProtoPool<MainCameraTag>)] = MainCamera,
 				[typeof(ProtoPool<AnimatorComponent>)] = Animator,
 				[typeof(ProtoPool<AnimatorLodComponent>)] = AnimatorLod,

@@ -11,6 +11,7 @@ namespace Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.
         [SerializeField] private List<EntityModule> _modules;
         public ProtoEntity Entity { get; private set; }
         public ProtoWorld World { get; private set; }
+        public bool IsInitialized { get; private set; }
 
         public void Initialize(ProtoEntity entity, ProtoWorld world)
         {
@@ -19,6 +20,8 @@ namespace Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.
             
             foreach (EntityModule module in _modules)
                 module.Initialize(entity, world, this);
+
+            IsInitialized = true;
         }
         
         public T GetModule<T>()

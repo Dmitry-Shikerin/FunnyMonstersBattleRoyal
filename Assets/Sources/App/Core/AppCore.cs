@@ -1,4 +1,7 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
+using Fusion;
+using Sources.BoundedContexts.Networks.Infrastructure.Services;
 using Sources.Frameworks.DeepFramework.DeepCores.Domain.Constants;
 using Sources.Frameworks.GameServices.Scenes.Domain.Implementation;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
@@ -21,6 +24,27 @@ namespace Sources.App.Core
             try
             {
 #if UNITY_EDITOR
+                if (SceneManager.GetActiveScene().name == IdsConst.Gameplay)
+                {
+                    NetworkRunner runner = NetworkRunnerProvider.Runner;
+                    runner.ProvideInput = true;
+            
+                    await runner.StartGame(new StartGameArgs
+                    {
+                        GameMode = GameMode.AutoHostOrClient,
+                        SceneManager = runner.SceneManager,
+                        Scene = SceneRef.FromIndex(1),
+                        SessionName = "SampleSession",
+                    });
+                    //Иначе загружает мейн меню сцену
+                    await UniTask.WaitUntil(() => NetworkRunnerProvider.Runner.IsRunning);
+                    await UniTask.Delay(TimeSpan.FromSeconds(1));
+
+                    await _sceneService.ChangeSceneAsync(IdsConst.Gameplay);
+                    
+                    return;
+                }
+                
                 await _sceneService.ChangeSceneAsync(
                     SceneManager.GetActiveScene().name,
                     new ScenePayload(SceneManager.GetActiveScene().name, false, false));  

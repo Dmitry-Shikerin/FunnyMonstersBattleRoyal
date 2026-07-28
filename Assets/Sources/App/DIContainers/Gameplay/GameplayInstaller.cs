@@ -6,6 +6,7 @@ using Sources.BoundedContexts.Networks.Core;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories;
 using Sources.BoundedContexts.TestGameplays;
+using Sources.EcsBoundedContexts.Characters.Infrastructure;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.GameServices.InputServices;
 using Sources.Frameworks.GameServices.InputServices.InputServices;
@@ -20,17 +21,19 @@ namespace Sources.App.DIContainers.Gameplay
     public class GameplayInstaller : MonoBehaviour, IInstaller
     {
         [Required] [SerializeField] private RootGameObject _rootGameObject;
-        [Required] [SerializeField] private EcsGameStartUp _ecsGameStartUp;
+        [Required] [SerializeField] private JoinManager _joinManager;
         
         public void InstallBindings(ContainerBuilder containerBuilder)
         {
             containerBuilder.RegisterValue(_rootGameObject);
-            containerBuilder.RegisterValue(_ecsGameStartUp, new []{ typeof(IEcsGameStartUp) });
+            containerBuilder.RegisterValue(_joinManager);
             
             containerBuilder.RegisterType(typeof(GameplaySceneFactory), new [] { typeof(ISceneFactory) }, Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterType(typeof(GameplayAssetService), new [] { typeof(ICompositeAssetService) }, Lifetime.Singleton, Resolution.Lazy);
             
             containerBuilder.RegisterType(typeof(NewInputService), new [] { typeof(IInputService) }, Lifetime.Singleton, Resolution.Lazy);
+            
+            containerBuilder.RegisterType(typeof(CharacterFactory), Lifetime.Singleton, Resolution.Lazy);
             
             //ECS
             containerBuilder.RegisterType(typeof(GameSystemsCollector), new [] { typeof(ISystemsCollector) }, Lifetime.Singleton, Resolution.Lazy);

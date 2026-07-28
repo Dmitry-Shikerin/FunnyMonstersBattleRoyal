@@ -19,7 +19,7 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
 
         public void Init(IProtoSystems systems)
         {
-            _factory.Create(null);
+            //_factory.Create(null);
         }
     }
 }

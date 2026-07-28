@@ -1,6 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using Reflex.Core;
+using Sources.BoundedContexts.Networks;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Controllers;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
@@ -24,6 +25,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
 {
     public class GameplaySceneFactory : ISceneFactory
     {
+        private readonly JoinManager _joinManager;
         private readonly IInputService _inputService;
         private readonly UiReflexInjector _uiReflexInjector;
         private readonly ISdkService _sdkService;
@@ -33,7 +35,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         private readonly RootGameObject _rootGameObject;
         private readonly ICompositeAssetService _compositeAssetService;
         private readonly ISoundService _soundService;
-        private readonly IEcsGameStartUp _ecsGameStartUp;
         private readonly IFocusService _focusService;
         private readonly ILocalizationService _localizationService;
         private readonly ICurtainView _curtainView;
@@ -41,6 +42,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         private readonly IUpdateService _updateService;
 
         public GameplaySceneFactory(
+            JoinManager joinManager,
             IInputService inputService,
             UiReflexInjector uiReflexInjector,
             ISdkService sdkService,
@@ -50,13 +52,13 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             RootGameObject rootGameObject,
             ICompositeAssetService compositeAssetService,
             ISoundService soundService,
-            IEcsGameStartUp ecsGameStartUp,
             IFocusService focusService,
             ILocalizationService localizationService,
             ICurtainView curtainView,
             ICameraService cameraService,
             IUpdateService updateService)
         {
+            _joinManager = joinManager;
             _inputService = inputService;
             _uiReflexInjector = uiReflexInjector;
             _sdkService = sdkService;
@@ -67,7 +69,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             _compositeAssetService = compositeAssetService ?? 
                                      throw new ArgumentNullException(nameof(compositeAssetService));
             _soundService = soundService ?? throw new ArgumentNullException(nameof(soundService));
-            _ecsGameStartUp = ecsGameStartUp ?? throw new ArgumentNullException(nameof(ecsGameStartUp));
             _focusService = focusService ?? throw new ArgumentNullException(nameof(focusService));
             _localizationService = localizationService ?? throw new ArgumentNullException(nameof(localizationService));
             _curtainView = curtainView ?? throw new ArgumentNullException(nameof(curtainView));
@@ -78,6 +79,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         public UniTask<IScene> Create(object payload)
         {
             IScene gameplayScene = new GameplayScene(
+                _joinManager,
                 _inputService,
                 _uiReflexInjector,
                 _sdkService,
@@ -87,7 +89,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
                 _rootGameObject,
                 _compositeAssetService,
                 _soundService,
-                _ecsGameStartUp,
                 _focusService,
                 _localizationService,
                 _curtainView,

@@ -29,6 +29,7 @@ using UnityEngine.Rendering;
 using Sources.EcsBoundedContexts.Lights.Domain.Enums;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Domain.Components;
 using Sources.EcsBoundedContexts.Input.Domain;
+using Leopotam.EcsProto;
 using Sources.EcsBoundedContexts.GraphOwners.Domain;
 using NodeCanvas.BehaviourTrees;
 using NodeCanvas.StateMachines;
@@ -37,7 +38,6 @@ using Sources.EcsBoundedContexts.ExplosionBodies.Domain;
 using Sources.EcsBoundedContexts.Damage.Domain;
 using UnityEngine.UI;
 using TMPro;
-using Leopotam.EcsProto;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Components;
 using Sources.EcsBoundedContexts.DailyRewards.Presentation;
 using Sources.EcsBoundedContexts.Common.Domain.Components;
@@ -48,6 +48,7 @@ using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Cameras.Domain;
 using Unity.Cinemachine;
+using Sources.EcsBoundedContexts.Cameras.Presentation;
 using Sources.EcsBoundedContexts.Animators;
 using Sources.EcsBoundedContexts.AnimatorLod.Domain.Components;
 using Sources.EcsBoundedContexts.Animancers.Domain.Components;
@@ -1153,6 +1154,29 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelDirection(this ProtoEntity entity)
 			=> s_GameAspect.Direction.Del(entity);
 
+		//InputOwner
+		public static bool HasInputOwner(this ProtoEntity entity) =>
+			s_GameAspect.InputOwner.Has(entity);
+
+		public static ref InputOwnerComponent GetInputOwner(this ProtoEntity entity) =>
+			ref s_GameAspect.InputOwner.Get(entity);
+
+		public static void ReplaceInputOwner(this ProtoEntity entity, ProtoEntity value)
+		{
+			ref InputOwnerComponent inputOwnerComponent = ref s_GameAspect.InputOwner.Get(entity);
+			inputOwnerComponent.Value = value;
+		}
+
+		public static ref InputOwnerComponent AddInputOwner(this ProtoEntity entity, ProtoEntity value)
+		{
+			ref InputOwnerComponent inputOwnerComponent = ref s_GameAspect.InputOwner.Add(entity);
+			inputOwnerComponent.Value = value;
+			return ref inputOwnerComponent;
+		}
+
+		public static void DelInputOwner(this ProtoEntity entity)
+			=> s_GameAspect.InputOwner.Del(entity);
+
 		//Input
 		public static bool HasInput(this ProtoEntity entity) =>
 			s_GameAspect.Input.Has(entity);
@@ -1178,6 +1202,29 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelJumpEvent(this ProtoEntity entity)
 			=> s_GameAspect.JumpEvent.Del(entity);
+
+		//NetworkInputDirection
+		public static bool HasNetworkInputDirection(this ProtoEntity entity) =>
+			s_GameAspect.NetworkInputDirection.Has(entity);
+
+		public static ref NetworkInputDirectionComponent GetNetworkInputDirection(this ProtoEntity entity) =>
+			ref s_GameAspect.NetworkInputDirection.Get(entity);
+
+		public static void ReplaceNetworkInputDirection(this ProtoEntity entity, Vector3 value)
+		{
+			ref NetworkInputDirectionComponent networkInputDirectionComponent = ref s_GameAspect.NetworkInputDirection.Get(entity);
+			networkInputDirectionComponent.Value = value;
+		}
+
+		public static ref NetworkInputDirectionComponent AddNetworkInputDirection(this ProtoEntity entity, Vector3 value)
+		{
+			ref NetworkInputDirectionComponent networkInputDirectionComponent = ref s_GameAspect.NetworkInputDirection.Add(entity);
+			networkInputDirectionComponent.Value = value;
+			return ref networkInputDirectionComponent;
+		}
+
+		public static void DelNetworkInputDirection(this ProtoEntity entity)
+			=> s_GameAspect.NetworkInputDirection.Del(entity);
 
 		//BehaviourTreeOwner
 		public static bool HasBehaviourTreeOwner(this ProtoEntity entity) =>
@@ -1979,6 +2026,29 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelGrounded(this ProtoEntity entity)
 			=> s_GameAspect.Grounded.Del(entity);
 
+		//InputEntity
+		public static bool HasInputEntity(this ProtoEntity entity) =>
+			s_GameAspect.InputEntity.Has(entity);
+
+		public static ref InputEntityComponent GetInputEntity(this ProtoEntity entity) =>
+			ref s_GameAspect.InputEntity.Get(entity);
+
+		public static void ReplaceInputEntity(this ProtoEntity entity, ProtoEntity value)
+		{
+			ref InputEntityComponent inputEntityComponent = ref s_GameAspect.InputEntity.Get(entity);
+			inputEntityComponent.Value = value;
+		}
+
+		public static ref InputEntityComponent AddInputEntity(this ProtoEntity entity, ProtoEntity value)
+		{
+			ref InputEntityComponent inputEntityComponent = ref s_GameAspect.InputEntity.Add(entity);
+			inputEntityComponent.Value = value;
+			return ref inputEntityComponent;
+		}
+
+		public static void DelInputEntity(this ProtoEntity entity)
+			=> s_GameAspect.InputEntity.Del(entity);
+
 		//Jumping
 		public static bool HasJumping(this ProtoEntity entity) =>
 			s_GameAspect.Jumping.Has(entity);
@@ -2074,6 +2144,29 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelCinemachineCamera(this ProtoEntity entity)
 			=> s_GameAspect.CinemachineCamera.Del(entity);
+
+		//MainCameraModule
+		public static bool HasMainCameraModule(this ProtoEntity entity) =>
+			s_GameAspect.MainCameraModule.Has(entity);
+
+		public static ref MainCameraModuleComponent GetMainCameraModule(this ProtoEntity entity) =>
+			ref s_GameAspect.MainCameraModule.Get(entity);
+
+		public static void ReplaceMainCameraModule(this ProtoEntity entity, MainCameraModule value)
+		{
+			ref MainCameraModuleComponent mainCameraModuleComponent = ref s_GameAspect.MainCameraModule.Get(entity);
+			mainCameraModuleComponent.Value = value;
+		}
+
+		public static ref MainCameraModuleComponent AddMainCameraModule(this ProtoEntity entity, MainCameraModule value)
+		{
+			ref MainCameraModuleComponent mainCameraModuleComponent = ref s_GameAspect.MainCameraModule.Add(entity);
+			mainCameraModuleComponent.Value = value;
+			return ref mainCameraModuleComponent;
+		}
+
+		public static void DelMainCameraModule(this ProtoEntity entity)
+			=> s_GameAspect.MainCameraModule.Del(entity);
 
 		//MainCamera
 		public static bool HasMainCamera(this ProtoEntity entity) =>

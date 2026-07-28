@@ -3,7 +3,6 @@ using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runt
 using Reflex.Core;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Characters.Presentation;
-using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
@@ -63,7 +62,7 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             
             Aspect.Character.NewEntity(out ProtoEntity entity);
             Authoring(link, entity);
-            _repository.AddByName(entity, IdsConst.Player);
+            //_repository.AddByName(entity, IdsConst.Player);
 
             //Components
             entity.AddTransform(link.transform);

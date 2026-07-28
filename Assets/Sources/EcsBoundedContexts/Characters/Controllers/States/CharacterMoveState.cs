@@ -18,23 +18,11 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
     {
         private ProtoEntity _entity;
         private IEntityRepository _entityRepository;
-        private ProtoEntity _inputEntity;
 
         [Construct]
         private void Construct(ProtoEntity entity)
         {
             _entity = entity;
-        }
-
-        [Inject]
-        private void Construct(IEntityRepository entityRepository)
-        {
-            _entityRepository = entityRepository;
-        }
-
-        protected override void OnInit()
-        {
-            _inputEntity = _entityRepository.GetByName(IdsConst.Input);
         }
 
         protected override void OnEnter()
@@ -46,12 +34,13 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
         {
             CharacterController characterController = _entity.GetCharacterController().Value;
             CharacterConfig config = _entity.GetCharacterConfig().Value;
-            Vector3 direction = _inputEntity.GetDirection().Value * config.Speed * Time.deltaTime;
+            ProtoEntity inputEntity = _entity.GetInputEntity().Value;
+            Vector3 direction = inputEntity.GetDirection().Value * config.Speed * Time.deltaTime;
             //гравитация
             direction.y = config.GroundedGravity;
             //Форвард
             Transform transform = _entity.GetTransform().Value;
-            transform.forward = _inputEntity.GetDirection().Value.normalized;
+            transform.forward = inputEntity.GetDirection().Value.normalized;
             
             characterController.Move(direction);
         }

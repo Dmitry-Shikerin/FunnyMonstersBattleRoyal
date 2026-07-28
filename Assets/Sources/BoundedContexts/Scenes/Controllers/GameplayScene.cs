@@ -2,6 +2,8 @@
 using Cysharp.Threading.Tasks;
 using Reflex.Core;
 using Reflex.Injectors;
+using Sources.BoundedContexts.Networks;
+using Sources.BoundedContexts.Networks.Infrastructure.Services;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.EcsBoundedContexts.Animancers.Extension;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
@@ -29,6 +31,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 {
     public class GameplayScene : IScene
     {
+        private readonly JoinManager _joinManager;
         private readonly IInputService _inputService;
         private readonly UiReflexInjector _uiReflexInjector;
         private readonly ISdkService _sdkService;
@@ -38,15 +41,16 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private readonly RootGameObject _rootGameObject;
         private readonly ICompositeAssetService _compositeAssetService;
         private readonly ISoundService _soundService;
-        private readonly IEcsGameStartUp _ecsGameStartUp;
         private readonly IFocusService _focusService;
         private readonly ILocalizationService _localizationService;
         private readonly ICurtainView _curtainView;
         private readonly ICameraService _cameraService;
         private readonly IUpdateService _updateService;
+        private IEcsGameStartUp _ecsGameStartUp;
         private bool _isLoaded;
 
         public GameplayScene(
+            JoinManager joinManager,
             IInputService inputService,
             UiReflexInjector uiReflexInjector,
             ISdkService sdkService,
@@ -56,13 +60,13 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             RootGameObject rootGameObject,
             ICompositeAssetService compositeAssetService,
             ISoundService soundService,
-            IEcsGameStartUp ecsGameStartUp,
             IFocusService focusService,
             ILocalizationService localizationService,
             ICurtainView curtainView,
             ICameraService cameraService,
             IUpdateService updateService)
         {
+            _joinManager = joinManager;
             _inputService = inputService;
             _uiReflexInjector = uiReflexInjector;
             _sdkService = sdkService;
@@ -72,7 +76,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _rootGameObject = rootGameObject;
             _compositeAssetService = compositeAssetService ?? throw new ArgumentNullException(nameof(compositeAssetService));
             _soundService = soundService ?? throw new ArgumentNullException(nameof(soundService));
-            _ecsGameStartUp = ecsGameStartUp ?? throw new ArgumentNullException(nameof(ecsGameStartUp));
             _focusService = focusService ?? throw new ArgumentNullException(nameof(focusService));
             _localizationService = localizationService ?? 
                                    throw new ArgumentNullException(nameof(localizationService));
@@ -92,6 +95,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             InitDeepUiBrain();
             _uiReflexInjector.InjectUiViews();
             _localizationService.Translate();
+            _ecsGameStartUp = NetworkRunnerProvider.EcsGameStartUp;
             AttributeInjector.Inject(_ecsGameStartUp, _container);
             await _ecsGameStartUp.Initialize();
             _sdkService.Initialize();
@@ -99,6 +103,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _isLoaded = true;
             //_soundService.Play(SoundDatabaseName.Music, SoundName.GameplayBackgroundMusic);
             //await _curtainView.HideAsync();
+            _joinManager.FreedomQueue();
         }
 
         public void Exit()
@@ -106,7 +111,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _inputService.Destroy();
             //_soundService.Stop(SoundName.GameplayBackgroundMusic);
             _soundService.Destroy();
-            //_ecsGameStartUp.Destroy();
+            _ecsGameStartUp.Destroy();
             _sdkService.Destroy();
             _compositeAssetService.Release();
             _focusService.Destroy();

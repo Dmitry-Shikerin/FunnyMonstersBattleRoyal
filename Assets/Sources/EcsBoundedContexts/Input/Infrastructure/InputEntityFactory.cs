@@ -31,12 +31,13 @@ namespace Sources.EcsBoundedContexts.Input.Infrastructure
         {
             Aspect.Input.NewEntity(out ProtoEntity entity);
 
-            _repository.AddByName(entity, IdsConst.Input);
+            //_repository.AddByName(entity, IdsConst.Input);
             entity.AddDirection(Vector3.zero);
+            entity.AddNetworkInputDirection(Vector3.zero);
             entity.AddCameraZoom(3);
             entity.AddCameraLook(Vector2.zero);
             
-            return default;
+            return entity;
         }
     }
 }

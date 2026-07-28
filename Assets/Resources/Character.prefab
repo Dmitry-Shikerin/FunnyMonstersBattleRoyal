@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be5c74f278b4b58bcbb4028a050ffff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _character: {fileID: 3492080140936881330}
   MovementDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &8445449419463790362
 GameObject:

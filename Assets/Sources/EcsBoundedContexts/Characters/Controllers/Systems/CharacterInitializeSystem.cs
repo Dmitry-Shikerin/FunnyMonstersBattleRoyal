@@ -5,6 +5,7 @@ using Sources.EcsBoundedContexts.Characters.Infrastructure;
 using Sources.EcsBoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
+using Sources.EcsBoundedContexts.Input.Infrastructure;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
 using UnityEngine;
 
@@ -20,6 +21,7 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
         private readonly RootGameObject _rootGameObject;
 
         public CharacterInitializeSystem(
+            InputEntityFactory factory,
             IAssetCollector assetCollector,
             CharacterEntityFactory entityFactory,
             RootGameObject rootGameObject)
@@ -31,18 +33,18 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
 
         public void Init(IProtoSystems systems)
         {
-            //EntityLink characterLink = _rootGameObject.Character;
-            // CharacterModule module = _assetCollector.Get<CharacterModule>();
-            // Vector3 position = _rootGameObject.CharacterSpawnPoint.position;
-            // Quaternion rotation = _rootGameObject.CharacterSpawnPoint.rotation;
-            //
-            // // if (PhotonNetwork.IsConnected)
-            // //     module = PhotonNetwork.Instantiate("Character", position, rotation).GetComponent<CharacterModule>();
-            // // else
-            //     module = Object.Instantiate(module, position, rotation);
-            // Debug.Log($"Init character");
-            //
-            // _entityFactory.Create(module.GetComponent<EntityLink>());
+             // EntityLink characterLink = _rootGameObject.Character;
+             // CharacterModule module = _assetCollector.Get<CharacterModule>();
+             // Vector3 position = _rootGameObject.CharacterSpawnPoint.position;
+             // Quaternion rotation = _rootGameObject.CharacterSpawnPoint.rotation;
+             //
+             // // if (PhotonNetwork.IsConnected)
+             // //     module = PhotonNetwork.Instantiate("Character", position, rotation).GetComponent<CharacterModule>();
+             // // else
+             // module = Object.Instantiate(module, position, rotation);
+             // Debug.Log($"Init character");
+             //
+             // _entityFactory.Create(module.GetComponent<EntityLink>());
         }
     }
 }
