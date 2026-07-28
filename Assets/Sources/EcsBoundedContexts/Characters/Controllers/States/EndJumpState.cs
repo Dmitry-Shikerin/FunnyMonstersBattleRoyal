@@ -28,6 +28,7 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
         protected override void OnExit()
         {
             _entity.DelAir();
+            _entity.DelJumping();
         }
     }
 }

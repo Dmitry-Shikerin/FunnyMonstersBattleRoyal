@@ -60,7 +60,10 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
             
             //Форвард
             Transform transform = entity.GetTransform().Value;
-            transform.forward = inputEntity.GetDirection().Value.normalized;
+            Vector3 forwardDirection = inputEntity.GetDirection().Value.normalized;
+            transform.forward = forwardDirection == Vector3.zero 
+                ? transform.forward
+                : forwardDirection;
             
             characterController.Move(direction);
         }

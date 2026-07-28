@@ -26,7 +26,7 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
                 LayerMask mask = entity.GetCharacterConfig().Value.GroundMask;
                 
                 Ray ray = new Ray(groundedCheck.position, Vector3.down);
-
+                
                 if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, mask) == false)
                     continue;
                 

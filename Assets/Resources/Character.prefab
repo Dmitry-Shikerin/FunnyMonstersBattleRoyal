@@ -147,7 +147,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 2.4, z: 0}
+  m_Center: {x: 0, y: 2.3, z: 0}
 --- !u!114 &1781100867345296748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _character: {fileID: 3492080140936881330}
   MovementDirection: {x: 0, y: 0, z: 0}
+  CameraForward: {x: 0, y: 0, z: 0}
 --- !u!1 &8445449419463790362
 GameObject:
   m_ObjectHideFlags: 0
