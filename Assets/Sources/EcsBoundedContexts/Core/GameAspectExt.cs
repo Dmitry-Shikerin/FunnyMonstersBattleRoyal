@@ -2123,6 +2123,29 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelPlayerRef(this ProtoEntity entity)
 			=> s_GameAspect.PlayerRef.Del(entity);
 
+		//Speed
+		public static bool HasSpeed(this ProtoEntity entity) =>
+			s_GameAspect.Speed.Has(entity);
+
+		public static ref SpeedComponent GetSpeed(this ProtoEntity entity) =>
+			ref s_GameAspect.Speed.Get(entity);
+
+		public static void ReplaceSpeed(this ProtoEntity entity, float value)
+		{
+			ref SpeedComponent speedComponent = ref s_GameAspect.Speed.Get(entity);
+			speedComponent.Value = value;
+		}
+
+		public static ref SpeedComponent AddSpeed(this ProtoEntity entity, float value)
+		{
+			ref SpeedComponent speedComponent = ref s_GameAspect.Speed.Add(entity);
+			speedComponent.Value = value;
+			return ref speedComponent;
+		}
+
+		public static void DelSpeed(this ProtoEntity entity)
+			=> s_GameAspect.Speed.Del(entity);
+
 		//VerticalVelocity
 		public static bool HasVerticalVelocity(this ProtoEntity entity) =>
 			s_GameAspect.VerticalVelocity.Has(entity);

@@ -9,7 +9,7 @@ using UnityEngine;
 namespace Sources.EcsBoundedContexts.Characters.Controllers.Transitions
 {
     [Category(NcCategoriesConst.Characters)]
-    public class IsZeroDirectionCondition : ConditionTask
+    public class ToIdleTransition : ConditionTask
     {
         private ProtoEntity _entity;
         
@@ -17,7 +17,16 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Transitions
         private void Construct(ProtoEntity entity) =>
             _entity = entity;
 
-        protected override bool OnCheck() =>
-            _entity.GetDirection().Value == Vector3.zero;
+        protected override bool OnCheck()
+        {
+            if (_entity.HasGrounded() == false)
+                return false;
+            
+            if (_entity.GetDirection().Value == Vector3.zero)
+                return true;
+
+            //Debug.Log($"{_entity.GetSpeed().Value}");
+            return _entity.GetSpeed().Value == 0;
+        }
     }
 }

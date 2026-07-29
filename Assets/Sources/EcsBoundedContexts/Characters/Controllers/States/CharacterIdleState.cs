@@ -29,6 +29,7 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
         protected override void OnEnter()
         {
             _entity.PlayAnimation(AnimationName.Idle);
+            _entity.ReplaceSpeed(0);
             NetworkAnimationView networkAnimationView = _entity.GetCharacterModule().Value.NetworkAnimationView;
             networkAnimationView.PlayAnimation_Rpc((int)AnimationName.Idle);
         }

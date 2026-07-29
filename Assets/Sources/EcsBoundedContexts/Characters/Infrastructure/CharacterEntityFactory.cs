@@ -9,6 +9,7 @@ using Sources.Frameworks.GameServices.Prefabs.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Factories;
 using Sources.Frameworks.MyLeoEcsProto.ObjectPools.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
+using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Characters.Infrastructure
 {
@@ -79,6 +80,10 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             //Grounded
             entity.AddGroundDistance(0);
             entity.AddVerticalVelocity(config.GroundedGravity);
+            
+            //Movement
+            entity.AddSpeed(0);
+            entity.AddDirection(Vector3.zero);
 
             //Rotation
             // entity.AddRotationSpeed(config.RotationSpeed);

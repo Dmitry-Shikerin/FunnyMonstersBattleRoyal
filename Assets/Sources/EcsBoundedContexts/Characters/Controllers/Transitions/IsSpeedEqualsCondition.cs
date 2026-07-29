@@ -4,13 +4,14 @@ using ParadoxNotion.Design;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
-using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Characters.Controllers.Transitions
 {
     [Category(NcCategoriesConst.Characters)]
-    public class IsZeroDirectionCondition : ConditionTask
+    public class IsSpeedEqualsCondition : ConditionTask
     {
+        public float EqualValue;
+        
         private ProtoEntity _entity;
         
         [Construct]
@@ -18,6 +19,6 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Transitions
             _entity = entity;
 
         protected override bool OnCheck() =>
-            _entity.GetDirection().Value == Vector3.zero;
+            EqualValue.Equals(_entity.GetSpeed().Value);
     }
 }

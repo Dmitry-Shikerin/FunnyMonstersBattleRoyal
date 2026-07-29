@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca847753a5d94f218812d46edcc9b4a3, type: 3}
   m_Name: AddressablesAssetConfig
   m_EditorClassIdentifier: 
-  <CharacterMeleeConfig>k__BackingField:
+  <CharacterConfig>k__BackingField:
     m_AssetGUID: da42ee7698e590a41bf39c1b9b122481
     m_SubObjectName: 
     m_SubObjectType: 
@@ -44,12 +44,6 @@ MonoBehaviour:
     m_EditorAssetChanged: 0
   <AnimatorLodConfig>k__BackingField:
     m_AssetGUID: 9624bf56ca609ce4a97ed9cfd555890b
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  <CharacterModule>k__BackingField:
-    m_AssetGUID: 01b3f6af76196af458d66d9a80886948
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 

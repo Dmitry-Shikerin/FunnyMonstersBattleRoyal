@@ -164,6 +164,7 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<InputEntityComponent> InputEntity = new ();
 		public readonly ProtoPool<JumpingComponent> Jumping = new ();
 		public readonly ProtoPool<PlayerRefComponent> PlayerRef = new ();
+		public readonly ProtoPool<SpeedComponent> Speed = new ();
 		public readonly ProtoPool<VerticalVelocityComponent> VerticalVelocity = new ();
 
 		//Enemy
@@ -277,6 +278,7 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<InputEntityComponent>)] = InputEntity,
 				[typeof(ProtoPool<JumpingComponent>)] = Jumping,
 				[typeof(ProtoPool<PlayerRefComponent>)] = PlayerRef,
+				[typeof(ProtoPool<SpeedComponent>)] = Speed,
 				[typeof(ProtoPool<VerticalVelocityComponent>)] = VerticalVelocity,
 				[typeof(ProtoPool<CameraComponent>)] = Camera,
 				[typeof(ProtoPool<CinemachineCameraComponent>)] = CinemachineCamera,

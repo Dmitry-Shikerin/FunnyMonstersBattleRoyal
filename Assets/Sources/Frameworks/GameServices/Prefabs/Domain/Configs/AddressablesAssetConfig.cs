@@ -14,15 +14,14 @@ namespace Sources.Frameworks.GameServices.Prefabs.Domain.Configs
     public class AddressablesAssetConfig  : ScriptableObject
     {
         [field: Title("Configs")]
-        [field: SerializeField] public AssetReferenceT<CharacterConfig> CharacterMeleeConfig { get; private set; }
+        [field: SerializeField] public AssetReferenceT<CharacterConfig> CharacterConfig { get; private set; }
         [field: SerializeField] public AssetReferenceT<UiConfig> UiConfig { get; private set; }
         [field: SerializeField] public AssetReferenceT<AnimationConfig> AnimationConfig { get; private set; }
         [field: SerializeField] public AssetReferenceT<AdvertisingAfterWaveConfig> AdvertisingAfterWaveConfig { get; private set; }
         [field: SerializeField] public AssetReferenceT<DailyRewardConfig> DailyRewardConfig { get; private set; }
         [field: SerializeField] public AssetReferenceT<AnimatorLodSettingsCollector> AnimatorLodConfig { get; set; }
 
-
-        [field: Title("Prefabs")]
-        [field: SerializeField] public AssetReferenceT<GameObject> CharacterModule { get; private set; }
+        // [field: Title("Prefabs")]
+        // [field: SerializeField] public AssetReferenceT<GameObject> CharacterModule { get; private set; }
     }
 }

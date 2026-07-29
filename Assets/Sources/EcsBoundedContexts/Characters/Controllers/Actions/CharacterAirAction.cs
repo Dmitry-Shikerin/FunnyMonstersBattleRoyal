@@ -5,13 +5,12 @@ using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Characters.Controllers.Actions
 {
     [Category(NcCategoriesConst.Characters)]
-    public class CharacterAirSystem : ActionTask
+    public class CharacterAirAction : ActionTask
     {
         private ProtoEntity _entity;
 

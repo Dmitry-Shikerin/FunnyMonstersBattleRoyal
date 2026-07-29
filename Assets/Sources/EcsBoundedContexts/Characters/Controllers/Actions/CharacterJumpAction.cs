@@ -29,7 +29,6 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Actions
             Transform transform = _entity.GetTransform().Value;
 
             jumping.JumpTimer -= Time.deltaTime;
-            //transform.position += new Vector3(0, 5f * Time.deltaTime, 0);
 
             //Move
             ProtoEntity inputEntity = _entity.GetInputEntity().Value;

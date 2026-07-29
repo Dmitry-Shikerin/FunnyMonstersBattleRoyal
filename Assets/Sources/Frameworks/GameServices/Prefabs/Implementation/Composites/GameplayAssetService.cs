@@ -5,6 +5,7 @@ using Sources.Frameworks.GameServices.EntityPools.Domain.Configs;
 using Sources.Frameworks.GameServices.Prefabs.Domain;
 using Sources.Frameworks.GameServices.Prefabs.Domain.Configs;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
+using UnityEngine;
 
 namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
 {
@@ -35,7 +36,7 @@ namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
             if (string.IsNullOrWhiteSpace(assetCollectorPath))
                 return;
 
-            ResourcesAssetsConfig config = await _resourcesAssetLoader.LoadAsset<ResourcesAssetsConfig>(assetCollectorPath);
+            //ResourcesAssetsConfig config = await _resourcesAssetLoader.LoadAsset<ResourcesAssetsConfig>(assetCollectorPath);
 
             // foreach (var asset in config.Assets)
             // {
@@ -47,8 +48,8 @@ namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
         {
             await UniTask.WhenAll
             (
-                _resourcesAssetLoader.LoadAsset<PoolManagerCollector>(ResourcesPrefabPath.PoolManagerCollector),
-                _resourcesAssetLoader.LoadAsset<CharacterModule>(ResourcesPrefabPath.Character)
+                _resourcesAssetLoader.LoadAsset<PoolManagerCollector>(ResourcesPrefabPath.PoolManagerCollector)
+                //_resourcesAssetLoader.LoadAsset<CharacterModule>(ResourcesPrefabPath.Character)
             );
         }
         
@@ -57,11 +58,17 @@ namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
             AddressablesAssetConfig config = await _addressablesAssetLoader.LoadAsset<AddressablesAssetConfig>(addressablesCollectorPath);
 
             //Configs
-            await AddressablesLoad(config.CharacterMeleeConfig);
+            Debug.Log($"Load characterConfig");
+            await AddressablesLoad(config.CharacterConfig);
+            Debug.Log($"Load UiConfig");
             await AddressablesLoad(config.UiConfig);
+            Debug.Log($"Load AnimationConfig");
             await AddressablesLoad(config.AnimationConfig);
+            Debug.Log($"Load AdvertisingAfterWaveConfig");
             await AddressablesLoad(config.AdvertisingAfterWaveConfig);
-            await AddressablesLoad(config.DailyRewardConfig);            
+            Debug.Log($"Load DailyRewardConfig");
+            await AddressablesLoad(config.DailyRewardConfig);
+            Debug.Log($"Load AnimatorLodConfig");
             await AddressablesLoad(config.AnimatorLodConfig);
             
             //Prefabs

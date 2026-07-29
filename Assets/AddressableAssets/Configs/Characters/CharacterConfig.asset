@@ -24,9 +24,11 @@ MonoBehaviour:
   enableState: 0
   _id: 
   _parent: {fileID: 0}
-  <Speed>k__BackingField: 10
+  <Speed>k__BackingField: 23
+  <SpeedChangeDelta>k__BackingField: 1
   <GroundedGravity>k__BackingField: -3
-  <GroundedDistanceEndAnim>k__BackingField: 0.5
+  <RotationSpeed>k__BackingField: 22
+  <GroundedDistanceEndAnim>k__BackingField: 0.7
   <JumpDuration>k__BackingField: 2
   <JumpHeight>k__BackingField: 4
   <JumpPower>k__BackingField: 7

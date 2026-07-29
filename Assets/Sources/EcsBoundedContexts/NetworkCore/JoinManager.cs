@@ -48,6 +48,7 @@ namespace Sources.EcsBoundedContexts.NetworkCore
             {
                 PlayerRef player = _joinedQueue.Dequeue();
                 NetworkObject playerObject = _factory.Create(_playerPrefab, player, _networkRunner);
+                Debug.Log($"Create");
                 Players.Add(player, playerObject);
             }
 
@@ -67,6 +68,8 @@ namespace Sources.EcsBoundedContexts.NetworkCore
         {
             if (_networkRunner.IsClient)
                 return;
+            
+            Debug.Log($"Player joined");
 
             if (_isJoinedQueueFreedom == false)
             {

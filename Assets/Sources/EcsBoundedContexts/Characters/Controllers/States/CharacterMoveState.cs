@@ -4,6 +4,7 @@ using ParadoxNotion.Design;
 using Reflex.Attributes;
 using Sources.EcsBoundedContexts.Animancers.Domain.Enums;
 using Sources.EcsBoundedContexts.Animancers.Extension;
+using Sources.EcsBoundedContexts.Characters.Domain.Components;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Characters.Presentation.Network;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
@@ -41,15 +42,33 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
         {
             CharacterController characterController = _entity.GetCharacterController().Value;
             CharacterConfig config = _entity.GetCharacterConfig().Value;
-            ProtoEntity inputEntity = _entity.GetInputEntity().Value;
-            Vector3 direction = inputEntity.GetDirection().Value * config.Speed * Time.deltaTime;
+            float speed = _entity.GetSpeed().Value;
+            Vector3 direction = _entity.GetDirection().Value.normalized * speed * Time.deltaTime;
             //гравитация
             direction.y = config.GroundedGravity;
-            //Форвард
-            Transform transform = _entity.GetTransform().Value;
-            transform.forward = inputEntity.GetDirection().Value.normalized;
             
             characterController.Move(direction);
+        }
+
+        private void ChangeSpeed(CharacterConfig config)
+        {
+            ref SpeedComponent speed = ref _entity.GetSpeed();
+            Vector3 input = _entity.GetInputEntity().Value.GetDirection().Value;
+            
+            if (input == Vector3.zero)
+            {
+                if (speed.Value > 0)
+                {
+                    speed.Value -= config.SpeedChangeDelta;
+                }
+            }
+            else
+            {
+                if (speed.Value < config.Speed)
+                {
+                    speed.Value += config.SpeedChangeDelta;
+                }
+            }
         }
     }
 }

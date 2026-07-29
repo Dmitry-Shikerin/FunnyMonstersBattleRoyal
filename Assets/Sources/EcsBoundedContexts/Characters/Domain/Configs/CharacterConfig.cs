@@ -8,7 +8,9 @@ namespace Sources.EcsBoundedContexts.Characters.Domain.Configs
     {
         [field: Header("Movement")]
         [field: SerializeField] public float Speed { get; private set; } = 10f;
+        [field: SerializeField] public float SpeedChangeDelta { get; private set; } = 10f;
         [field: SerializeField] public float GroundedGravity { get; private set; } = -3f;
+        [field: SerializeField] public float RotationSpeed { get; private set; } = 2f;
         
         [field: Header("Jump")]
         [field: SerializeField] public float GroundedDistanceEndAnim { get; private set; } = 0.5f;
