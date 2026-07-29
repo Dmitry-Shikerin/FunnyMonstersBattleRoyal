@@ -77,11 +77,7 @@ namespace Sources.EcsBoundedContexts.Core
 			containerBuilder.RegisterType(typeof(CharacterInitializeSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(InputInitializeSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(InputSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(CharacterAirSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(CharacterUpdateSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(GroundDistanceSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(GroundedSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(JumpSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//Enemy
 

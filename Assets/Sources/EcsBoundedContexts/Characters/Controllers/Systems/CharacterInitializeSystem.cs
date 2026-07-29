@@ -1,13 +1,10 @@
 ﻿using Leopotam.EcsProto;
-using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.EcsBoundedContexts.Characters.Infrastructure;
-using Sources.EcsBoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
 using Sources.EcsBoundedContexts.Input.Infrastructure;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
-using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
 {

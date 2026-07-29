@@ -2,13 +2,10 @@
 using Leopotam.EcsProto.QoL;
 using NodeCanvas.StateMachines;
 using Sources.EcsBoundedContexts.Characters.Domain.Components;
-using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
 using Sources.EcsBoundedContexts.GraphOwners.Domain;
-using Sources.Frameworks.GameServices.Prefabs.Interfaces;
-using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
 {
