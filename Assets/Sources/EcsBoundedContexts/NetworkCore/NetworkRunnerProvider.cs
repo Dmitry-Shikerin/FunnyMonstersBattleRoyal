@@ -1,10 +1,9 @@
 ﻿using Fusion;
-using Sources.BoundedContexts.Networks.Core;
 using Sources.EcsBoundedContexts.Core;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Sources.BoundedContexts.Networks.Infrastructure.Services
+namespace Sources.EcsBoundedContexts.NetworkCore
 {
     public class NetworkRunnerProvider
     {
@@ -12,6 +11,7 @@ namespace Sources.BoundedContexts.Networks.Infrastructure.Services
         private static NetworkCallbacksReceiver _networkCallbacksReceiver;
         private static NetworkSceneManagerDefault _sceneManagerDefault;
         private static EcsGameStartUp _ecsGameStartUp;
+        //private static JoinManager _joinManager;
 
         public static NetworkRunner Runner
         {
@@ -57,15 +57,34 @@ namespace Sources.BoundedContexts.Networks.Infrastructure.Services
 
                 return _ecsGameStartUp;
             }
-        }
+        } 
+        //
+        // public static JoinManager JoinManager
+        // {
+        //     get
+        //     {
+        //         if (_joinManager == null)
+        //             _runner = CreateRunner();
+        //
+        //         return _joinManager;
+        //     }
+        // }
 
         private static NetworkRunner CreateRunner()
         {
-            NetworkRunner networkRunner = new GameObject("NetworkCore").AddComponent<NetworkRunner>();
-            networkRunner.AddComponent<NetworkRunnerMemento>();
-            _sceneManagerDefault = networkRunner.gameObject.AddComponent<NetworkSceneManagerDefault>();
-            _networkCallbacksReceiver = networkRunner.gameObject.AddComponent<NetworkCallbacksReceiver>();
-            _ecsGameStartUp = networkRunner.gameObject.AddComponent<EcsGameStartUp>();
+            NetworkRunner prefab = Resources.Load<NetworkRunner>("NetworkRunner");
+            NetworkRunner networkRunner = Object.Instantiate(prefab);
+            _sceneManagerDefault = networkRunner.gameObject.GetComponent<NetworkSceneManagerDefault>();
+            _networkCallbacksReceiver = networkRunner.gameObject.GetComponent<NetworkCallbacksReceiver>();
+            _ecsGameStartUp = networkRunner.gameObject.GetComponent<EcsGameStartUp>();
+            //_joinManager = networkRunner.gameObject.GetComponent<JoinManager>();
+            
+            // NetworkRunner networkRunner = new GameObject("NetworkCore").AddComponent<NetworkRunner>();
+            // networkRunner.AddComponent<NetworkRunnerMemento>();
+            // _sceneManagerDefault = networkRunner.gameObject.AddComponent<NetworkSceneManagerDefault>();
+            // _networkCallbacksReceiver = networkRunner.gameObject.AddComponent<NetworkCallbacksReceiver>();
+            // _ecsGameStartUp = networkRunner.gameObject.AddComponent<EcsGameStartUp>();
+            // _joinManager = networkRunner.gameObject.AddComponent<JoinManager>();
 
             return networkRunner;
         }

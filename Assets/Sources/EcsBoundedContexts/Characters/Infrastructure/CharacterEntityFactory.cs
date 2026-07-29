@@ -88,6 +88,7 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             // entity.AddLookAt(module.HealthBarTransform);
             // entity.AddHealthBar(module.HealthBarImage);
 
+            //Todo тут может быть проблема
             module.FsmOwner.InitGraphOwner(_container, entity);
             
             return entity;

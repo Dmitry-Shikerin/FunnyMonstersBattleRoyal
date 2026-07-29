@@ -6,6 +6,7 @@ using Reflex.Core;
 using Reflex.Injectors;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
+using UnityEngine;
 
 namespace Sources.Frameworks.MyLeoEcsProto.Factories
 {
@@ -45,7 +46,10 @@ namespace Sources.Frameworks.MyLeoEcsProto.Factories
             entity.AddEntityLink(link, entity.GetHashCode(), entity);
 
             foreach (EntityModule module in link.GetModules())
-                AttributeInjector.Inject(module, _container);
+                AttributeInjector.Inject(module, _container);            
+            
+            foreach (MonoBehaviour behaviour in link.InjectBehaviours)
+                AttributeInjector.Inject(behaviour, _container);
         }
         
         public void InitLink(EntityLink link, ProtoEntity entity, bool addByHash = true)

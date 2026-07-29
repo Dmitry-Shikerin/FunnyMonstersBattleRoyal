@@ -56,7 +56,7 @@ namespace Sources.EcsBoundedContexts.Core
 
         public override void FixedUpdateNetwork()
         {
-            if (Runner.IsServer == false)
+            if (Runner.IsClient)
                 return;
             
             MyUpdate(Runner.DeltaTime);

@@ -1,13 +1,11 @@
 ﻿using Reflex.Core;
 using Reflex.Enums;
 using Sirenix.OdinInspector;
-using Sources.BoundedContexts.Networks;
-using Sources.BoundedContexts.Networks.Core;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories;
-using Sources.BoundedContexts.TestGameplays;
 using Sources.EcsBoundedContexts.Characters.Infrastructure;
 using Sources.EcsBoundedContexts.Core;
+using Sources.EcsBoundedContexts.NetworkCore;
 using Sources.Frameworks.GameServices.InputServices;
 using Sources.Frameworks.GameServices.InputServices.InputServices;
 using Sources.Frameworks.GameServices.Prefabs.Implementation.Composites;

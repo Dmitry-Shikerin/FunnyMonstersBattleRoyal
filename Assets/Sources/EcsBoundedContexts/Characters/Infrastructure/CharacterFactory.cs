@@ -39,6 +39,7 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             
             ProtoEntity inputEntity = _inputEntityFactory.Create(null);
             ProtoEntity characterEntity = _characterEntityFactory.Create(networkObject.GetComponent<EntityLink>());
+            characterEntity.AddPlayerRef(playerRef);
             characterEntity.AddInputEntity(inputEntity);
             inputEntity.AddInputOwner(characterEntity);
 
@@ -50,6 +51,21 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             }
             
             return networkObject;
+        }
+
+        public ProtoEntity Create(NetworkObject networkObject, PlayerRef playerRef)
+        {
+            ProtoEntity inputEntity = _inputEntityFactory.Create(null);
+            ProtoEntity characterEntity = _characterEntityFactory.Create(networkObject.GetComponent<EntityLink>());
+            characterEntity.AddPlayerRef(playerRef);
+            characterEntity.AddInputEntity(inputEntity);
+            inputEntity.AddInputOwner(characterEntity);
+            
+            _rootGameObject.MainCamera.GetModule<MainCameraModule>().Cameras[VirtualCameraType.ThirdPerson].Follow =
+                characterEntity.GetTransform().Value; 
+            //_mainCameraEntityFactory.Create(_rootGameObject.MainCamera);
+
+            return characterEntity;
         }
     }
 }

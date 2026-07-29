@@ -1,5 +1,7 @@
 ﻿using Reflex.Core;
 using Reflex.Enums;
+using Sources.EcsBoundedContexts.SignalBuses;
+using Sources.Frameworks.DeepFramework.DeepUtils.SignalBuses.StreamBuses.Interfaces;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
 using Sources.Frameworks.GameServices.DeepWrappers.Views;
@@ -25,6 +27,9 @@ namespace Sources.App.DIContainers.Common
             
             //Injector
             containerBuilder.RegisterType(typeof(UiReflexInjector), Lifetime.Singleton, Resolution.Lazy);
+            
+            //SignalBus
+            containerBuilder.RegisterType(typeof(SignalBus), new [] { typeof(ISignalBus) }, Lifetime.Singleton, Resolution.Lazy);
         }
     }
 }

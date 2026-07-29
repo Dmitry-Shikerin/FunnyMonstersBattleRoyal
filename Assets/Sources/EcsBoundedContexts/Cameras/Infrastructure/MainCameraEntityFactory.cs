@@ -37,7 +37,7 @@ namespace Sources.EcsBoundedContexts.Cameras.Infrastructure
             MainCameraModule module = link.GetModule<MainCameraModule>();
             
             Aspect.MainCamera.NewEntity(out ProtoEntity entity);
-            _repository.AddByName(entity, IdsConst.MainCamera);
+            //_repository.AddByName(entity, IdsConst.MainCamera);
             Authoring(link, entity);
             
             entity.AddCamera(module.Camera);

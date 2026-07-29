@@ -8,7 +8,8 @@ namespace Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.
     public class EntityLink : MonoBehaviour
     {
         [Header("Entity")] 
-        [SerializeField] private List<EntityModule> _modules;
+        [SerializeField] private List<EntityModule> _modules;        
+        [field: SerializeField] public List<MonoBehaviour> InjectBehaviours { get; private set; }
         public ProtoEntity Entity { get; private set; }
         public ProtoWorld World { get; private set; }
         public bool IsInitialized { get; private set; }

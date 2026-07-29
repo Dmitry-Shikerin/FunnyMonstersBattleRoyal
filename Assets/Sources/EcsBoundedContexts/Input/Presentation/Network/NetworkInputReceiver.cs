@@ -2,11 +2,12 @@
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using Sirenix.OdinInspector;
-using Sources.BoundedContexts.Networks.Core;
 using Sources.EcsBoundedContexts.Core;
+using Sources.EcsBoundedContexts.Input.Domain.Data;
+using Sources.EcsBoundedContexts.Input.Domain.Data.Network;
 using UnityEngine;
 
-namespace Sources.BoundedContexts.Networks.Input
+namespace Sources.EcsBoundedContexts.Input.Presentation.Network
 {
     public class NetworkInputReceiver : NetworkBehaviour
     {

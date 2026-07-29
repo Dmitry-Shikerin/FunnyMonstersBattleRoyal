@@ -4,12 +4,13 @@ using Fusion;
 using Fusion.Sockets;
 using UnityEngine;
 
-namespace Sources.BoundedContexts.Networks.Core
+namespace Sources.EcsBoundedContexts.NetworkCore
 {
     public class NetworkCallbacksReceiver : MonoBehaviour, INetworkRunnerCallbacks
     {
         public event Action<NetworkRunner, NetworkInput> OnPopulateInput;
         public event Action<PlayerRef> PlayerJoined; 
+        public event Action<PlayerRef> PlayerLeft; 
         
         public void OnObjectExitAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }
 
@@ -18,7 +19,8 @@ namespace Sources.BoundedContexts.Networks.Core
         public void OnPlayerJoined(NetworkRunner runner, PlayerRef player) =>
             PlayerJoined?.Invoke(player);
 
-        public void OnPlayerLeft(NetworkRunner runner, PlayerRef player) { }
+        public void OnPlayerLeft(NetworkRunner runner, PlayerRef player) =>
+            PlayerLeft?.Invoke(player);
 
         public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason) { }
 

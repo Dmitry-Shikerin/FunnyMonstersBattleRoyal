@@ -1,6 +1,7 @@
 ﻿using Fusion;
-using Sources.BoundedContexts.Networks.Core;
-using Sources.BoundedContexts.Networks.Infrastructure.Services;
+using Sources.EcsBoundedContexts.Input.Domain.Data;
+using Sources.EcsBoundedContexts.Input.Domain.Data.Network;
+using Sources.EcsBoundedContexts.NetworkCore;
 using Sources.Frameworks.GameServices.InputServices.InputServices;
 using UnityEngine;
 using UnityEngine.InputSystem;

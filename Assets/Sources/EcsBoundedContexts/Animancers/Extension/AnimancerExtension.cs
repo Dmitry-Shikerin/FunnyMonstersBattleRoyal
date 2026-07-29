@@ -19,7 +19,7 @@ namespace Sources.EcsBoundedContexts.Animancers.Extension
         
         public static AnimancerState PlayAnimation(this ProtoEntity entity, AnimationName animationName)
         {
-            var transition = s_config.Animations[animationName];
+            TransitionAsset transition = s_config.Animations[animationName];
             return entity.GetAnimancerEcs().Value.Play(transition);
         }
 

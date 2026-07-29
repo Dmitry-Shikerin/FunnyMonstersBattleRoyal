@@ -1,11 +1,11 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using Reflex.Core;
-using Sources.BoundedContexts.Networks;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Controllers;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.EcsBoundedContexts.Core;
+using Sources.EcsBoundedContexts.NetworkCore;
 using Sources.Frameworks.GameServices.Curtains.Presentation.Interfaces;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
@@ -25,7 +25,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
 {
     public class GameplaySceneFactory : ISceneFactory
     {
-        private readonly JoinManager _joinManager;
         private readonly IInputService _inputService;
         private readonly UiReflexInjector _uiReflexInjector;
         private readonly ISdkService _sdkService;
@@ -42,7 +41,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         private readonly IUpdateService _updateService;
 
         public GameplaySceneFactory(
-            JoinManager joinManager,
             IInputService inputService,
             UiReflexInjector uiReflexInjector,
             ISdkService sdkService,
@@ -58,7 +56,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             ICameraService cameraService,
             IUpdateService updateService)
         {
-            _joinManager = joinManager;
             _inputService = inputService;
             _uiReflexInjector = uiReflexInjector;
             _sdkService = sdkService;
@@ -79,7 +76,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         public UniTask<IScene> Create(object payload)
         {
             IScene gameplayScene = new GameplayScene(
-                _joinManager,
                 _inputService,
                 _uiReflexInjector,
                 _sdkService,

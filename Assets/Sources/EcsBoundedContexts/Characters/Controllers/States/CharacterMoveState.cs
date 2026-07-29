@@ -5,9 +5,11 @@ using Reflex.Attributes;
 using Sources.EcsBoundedContexts.Animancers.Domain.Enums;
 using Sources.EcsBoundedContexts.Animancers.Extension;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
+using Sources.EcsBoundedContexts.Characters.Presentation.Network;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
+using Sources.Frameworks.DeepFramework.DeepUtils.SignalBuses.StreamBuses.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 using UnityEngine;
 
@@ -18,16 +20,21 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
     {
         private ProtoEntity _entity;
         private IEntityRepository _entityRepository;
+        private ISignalBus _signalBus;
 
         [Construct]
-        private void Construct(ProtoEntity entity)
-        {
+        private void Construct(ProtoEntity entity) =>
             _entity = entity;
-        }
+
+        [Inject]
+        private void Construct(ISignalBus signalBus) =>
+            _signalBus = signalBus;
 
         protected override void OnEnter()
         {
             _entity.PlayAnimation(AnimationName.Walk);
+            NetworkAnimationView networkAnimationView = _entity.GetCharacterModule().Value.NetworkAnimationView;
+            networkAnimationView.PlayAnimation_Rpc((int)AnimationName.Walk);
         }
 
         protected override void OnUpdate()

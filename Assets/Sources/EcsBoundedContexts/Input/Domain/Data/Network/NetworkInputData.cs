@@ -1,13 +1,8 @@
 ﻿using Fusion;
 using UnityEngine;
 
-namespace Sources.BoundedContexts.Networks.Core
+namespace Sources.EcsBoundedContexts.Input.Domain.Data.Network
 {
-    public enum InputButtons
-    {
-        Jump = 0,
-    }
-    
     public struct NetworkInputData : INetworkInput
     {
         public Vector2 MovementInput;

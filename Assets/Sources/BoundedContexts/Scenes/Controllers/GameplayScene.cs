@@ -2,13 +2,12 @@
 using Cysharp.Threading.Tasks;
 using Reflex.Core;
 using Reflex.Injectors;
-using Sources.BoundedContexts.Networks;
-using Sources.BoundedContexts.Networks.Infrastructure.Services;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.EcsBoundedContexts.Animancers.Extension;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
+using Sources.EcsBoundedContexts.NetworkCore;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
 using Sources.Frameworks.GameServices.Curtains.Presentation.Interfaces;
@@ -26,12 +25,13 @@ using Sources.Frameworks.MyLeoEcsProto.Repositories;
 using Sources.Frameworks.YandexSdkFramework.Focuses.Interfaces;
 using Sources.Frameworks.YandexSdkFramework.Sdk.Services;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Sources.BoundedContexts.Scenes.Controllers
 {
     public class GameplayScene : IScene
     {
-        private readonly JoinManager _joinManager;
+        private JoinManager _joinManager;
         private readonly IInputService _inputService;
         private readonly UiReflexInjector _uiReflexInjector;
         private readonly ISdkService _sdkService;
@@ -50,7 +50,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private bool _isLoaded;
 
         public GameplayScene(
-            JoinManager joinManager,
             IInputService inputService,
             UiReflexInjector uiReflexInjector,
             ISdkService sdkService,
@@ -66,7 +65,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             ICameraService cameraService,
             IUpdateService updateService)
         {
-            _joinManager = joinManager;
             _inputService = inputService;
             _uiReflexInjector = uiReflexInjector;
             _sdkService = sdkService;
@@ -103,7 +101,10 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _isLoaded = true;
             //_soundService.Play(SoundDatabaseName.Music, SoundName.GameplayBackgroundMusic);
             //await _curtainView.HideAsync();
+            _joinManager = _container.Resolve<JoinManager>();
+            AttributeInjector.Inject(_joinManager, _container);
             _joinManager.FreedomQueue();
+            _joinManager.CreatePlayerEntities();
         }
 
         public void Exit()

@@ -1,8 +1,9 @@
 ﻿using System;
 using Sources.Frameworks.DeepFramework.DeepUtils.SignalBuses.StreamBuses.Interfaces.Generic;
+using Sources.Frameworks.GameServices.SignalBuses.StreamBuses.Interfaces;
 using Sources.Frameworks.GameServices.SignalBuses.StreamBuses.Interfaces.Generic;
 
-namespace Sources.Frameworks.GameServices.SignalBuses.StreamBuses.Interfaces
+namespace Sources.Frameworks.DeepFramework.DeepUtils.SignalBuses.StreamBuses.Interfaces
 {
     public interface ISignalBus
     {

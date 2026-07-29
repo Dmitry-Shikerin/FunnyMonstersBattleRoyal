@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 1781100867345296748}
   - component: {fileID: 7840379252826797560}
   - component: {fileID: 6361660916615637044}
+  - component: {fileID: 2062534942586215354}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -87,6 +88,8 @@ MonoBehaviour:
   _modules:
   - {fileID: 7507060205731736314}
   - {fileID: 1483490228090140627}
+  <InjectBehaviours>k__BackingField:
+  - {fileID: 2062534942586215354}
 --- !u!114 &7507060205731736314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +126,7 @@ MonoBehaviour:
   <Animancer>k__BackingField: {fileID: 621492899313384078}
   <CharacterController>k__BackingField: {fileID: 343228178934919456}
   <GroundCheck>k__BackingField: {fileID: 72820465754033901}
+  <NetworkAnimationView>k__BackingField: {fileID: 2062534942586215354}
 --- !u!143 &343228178934919456
 CharacterController:
   m_ObjectHideFlags: 0
@@ -168,6 +172,7 @@ MonoBehaviour:
   NetworkedBehaviours:
   - {fileID: 7840379252826797560}
   - {fileID: 6361660916615637044}
+  - {fileID: 2062534942586215354}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &7840379252826797560
 MonoBehaviour:
@@ -224,6 +229,19 @@ MonoBehaviour:
   _character: {fileID: 3492080140936881330}
   MovementDirection: {x: 0, y: 0, z: 0}
   CameraForward: {x: 0, y: 0, z: 0}
+--- !u!114 &2062534942586215354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5474647321340379836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e3e6b7f41d45939b766b9407fcadca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _character: {fileID: 3492080140936881330}
 --- !u!1 &8445449419463790362
 GameObject:
   m_ObjectHideFlags: 0

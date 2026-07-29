@@ -1,4 +1,4 @@
-﻿namespace Sources.Frameworks.GameServices.SignalBuses.StreamBuses.Interfaces
+﻿namespace Sources.Frameworks.DeepFramework.DeepUtils.SignalBuses.StreamBuses.Interfaces
 {
     public interface ISignal
     {

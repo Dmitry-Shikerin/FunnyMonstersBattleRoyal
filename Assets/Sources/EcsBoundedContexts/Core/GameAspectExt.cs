@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 using Leopotam.EcsProto;
@@ -29,7 +30,6 @@ using Sources.EcsBoundedContexts.Lights.Domain.Enums;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Domain.Components;
 using Sources.EcsBoundedContexts.Input.Domain;
 using Leopotam.EcsProto;
-using System.Numerics;
 using Sources.EcsBoundedContexts.GraphOwners.Domain;
 using NodeCanvas.BehaviourTrees;
 using NodeCanvas.StateMachines;
@@ -46,6 +46,7 @@ using DG.Tweening;
 using Sources.EcsBoundedContexts.Characters.Domain.Components;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Characters.Presentation;
+using Fusion;
 using Sources.EcsBoundedContexts.Cameras.Domain;
 using Unity.Cinemachine;
 using Sources.EcsBoundedContexts.Cameras.Presentation;
@@ -53,9 +54,6 @@ using Sources.EcsBoundedContexts.Animators;
 using Sources.EcsBoundedContexts.AnimatorLod.Domain.Components;
 using Sources.EcsBoundedContexts.Animancers.Domain.Components;
 using Animancer;
-using Quaternion = UnityEngine.Quaternion;
-using Vector2 = UnityEngine.Vector2;
-using Vector3 = UnityEngine.Vector3;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -2101,6 +2099,29 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelJumping(this ProtoEntity entity)
 			=> s_GameAspect.Jumping.Del(entity);
+
+		//PlayerRef
+		public static bool HasPlayerRef(this ProtoEntity entity) =>
+			s_GameAspect.PlayerRef.Has(entity);
+
+		public static ref PlayerRefComponent GetPlayerRef(this ProtoEntity entity) =>
+			ref s_GameAspect.PlayerRef.Get(entity);
+
+		public static void ReplacePlayerRef(this ProtoEntity entity, PlayerRef value)
+		{
+			ref PlayerRefComponent playerRefComponent = ref s_GameAspect.PlayerRef.Get(entity);
+			playerRefComponent.Value = value;
+		}
+
+		public static ref PlayerRefComponent AddPlayerRef(this ProtoEntity entity, PlayerRef value)
+		{
+			ref PlayerRefComponent playerRefComponent = ref s_GameAspect.PlayerRef.Add(entity);
+			playerRefComponent.Value = value;
+			return ref playerRefComponent;
+		}
+
+		public static void DelPlayerRef(this ProtoEntity entity)
+			=> s_GameAspect.PlayerRef.Del(entity);
 
 		//VerticalVelocity
 		public static bool HasVerticalVelocity(this ProtoEntity entity) =>
