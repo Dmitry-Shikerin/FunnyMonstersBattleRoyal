@@ -9,7 +9,6 @@ namespace Sources.EcsBoundedContexts.Characters.Domain.Configs
         [field: Header("Movement")]
         [field: SerializeField] public float Speed { get; private set; } = 10f;
         [field: SerializeField] public float SpeedChangeDelta { get; private set; } = 10f;
-        [field: SerializeField] public float GroundedGravity { get; private set; } = -3f;
         [field: SerializeField] public float RotationSpeed { get; private set; } = 2f;
         
         [field: Header("Jump")]
@@ -17,6 +16,10 @@ namespace Sources.EcsBoundedContexts.Characters.Domain.Configs
         [field: SerializeField] public float JumpDuration { get; private set; } = 2f;
         [field: SerializeField] public float JumpHeight { get; private set; } = 1.5f;
         [field: SerializeField] public float JumpPower { get; private set; } = 5f;
+        
+        [field: Header("Gravity")]
+        [field: SerializeField] public float Gravity { get; private set; } = -3f;
+        [field: SerializeField] public float ChangeGravityDelta { get; private set; }
         
         [field: Header("Animations")]
         [field: SerializeField] public float EndAirDistance { get; private set; } = 1f;

@@ -11,5 +11,6 @@ namespace Sources.EcsBoundedContexts.Animancers.Domain.Configs
     {
          public Dictionary<AnimationName, TransitionAsset> Animations = new();
          public Dictionary<AnimationEventName, StringReference> AnimationNames = new();
+         [field: SerializeField] public AvatarMask AvatarMask { get; private set; }
     }
 }

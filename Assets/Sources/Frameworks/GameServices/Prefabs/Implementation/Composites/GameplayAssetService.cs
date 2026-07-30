@@ -1,11 +1,9 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
-using Sources.EcsBoundedContexts.Characters.Presentation;
 using Sources.Frameworks.GameServices.EntityPools.Domain.Configs;
 using Sources.Frameworks.GameServices.Prefabs.Domain;
 using Sources.Frameworks.GameServices.Prefabs.Domain.Configs;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
-using UnityEngine;
 
 namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
 {
@@ -58,17 +56,11 @@ namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
             AddressablesAssetConfig config = await _addressablesAssetLoader.LoadAsset<AddressablesAssetConfig>(addressablesCollectorPath);
 
             //Configs
-            Debug.Log($"Load characterConfig");
             await AddressablesLoad(config.CharacterConfig);
-            Debug.Log($"Load UiConfig");
             await AddressablesLoad(config.UiConfig);
-            Debug.Log($"Load AnimationConfig");
             await AddressablesLoad(config.AnimationConfig);
-            Debug.Log($"Load AdvertisingAfterWaveConfig");
             await AddressablesLoad(config.AdvertisingAfterWaveConfig);
-            Debug.Log($"Load DailyRewardConfig");
             await AddressablesLoad(config.DailyRewardConfig);
-            Debug.Log($"Load AnimatorLodConfig");
             await AddressablesLoad(config.AnimatorLodConfig);
             
             //Prefabs

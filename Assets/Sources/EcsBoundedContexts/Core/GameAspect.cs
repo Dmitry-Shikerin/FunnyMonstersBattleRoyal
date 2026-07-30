@@ -159,12 +159,14 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<CharacterConfigComponent> CharacterConfig = new ();
 		public readonly ProtoPool<CharacterModuleComponent> CharacterModule = new ();
 		public readonly ProtoPool<CharacterTag> Character = new ();
+		public readonly ProtoPool<GravityComponent> Gravity = new ();
 		public readonly ProtoPool<GroundDistanceComponent> GroundDistance = new ();
 		public readonly ProtoPool<GroundedComponent> Grounded = new ();
 		public readonly ProtoPool<InputEntityComponent> InputEntity = new ();
 		public readonly ProtoPool<JumpingComponent> Jumping = new ();
 		public readonly ProtoPool<PlayerRefComponent> PlayerRef = new ();
 		public readonly ProtoPool<SpeedComponent> Speed = new ();
+		public readonly ProtoPool<TargetGravityComponent> TargetGravity = new ();
 		public readonly ProtoPool<VerticalVelocityComponent> VerticalVelocity = new ();
 
 		//Enemy
@@ -273,12 +275,14 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<CharacterConfigComponent>)] = CharacterConfig,
 				[typeof(ProtoPool<CharacterModuleComponent>)] = CharacterModule,
 				[typeof(ProtoPool<CharacterTag>)] = Character,
+				[typeof(ProtoPool<GravityComponent>)] = Gravity,
 				[typeof(ProtoPool<GroundDistanceComponent>)] = GroundDistance,
 				[typeof(ProtoPool<GroundedComponent>)] = Grounded,
 				[typeof(ProtoPool<InputEntityComponent>)] = InputEntity,
 				[typeof(ProtoPool<JumpingComponent>)] = Jumping,
 				[typeof(ProtoPool<PlayerRefComponent>)] = PlayerRef,
 				[typeof(ProtoPool<SpeedComponent>)] = Speed,
+				[typeof(ProtoPool<TargetGravityComponent>)] = TargetGravity,
 				[typeof(ProtoPool<VerticalVelocityComponent>)] = VerticalVelocity,
 				[typeof(ProtoPool<CameraComponent>)] = Camera,
 				[typeof(ProtoPool<CinemachineCameraComponent>)] = CinemachineCamera,

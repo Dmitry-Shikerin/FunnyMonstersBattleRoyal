@@ -2014,6 +2014,29 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelCharacter(this ProtoEntity entity)
 			=> s_GameAspect.Character.Del(entity);
 
+		//Gravity
+		public static bool HasGravity(this ProtoEntity entity) =>
+			s_GameAspect.Gravity.Has(entity);
+
+		public static ref GravityComponent GetGravity(this ProtoEntity entity) =>
+			ref s_GameAspect.Gravity.Get(entity);
+
+		public static void ReplaceGravity(this ProtoEntity entity, float value)
+		{
+			ref GravityComponent gravityComponent = ref s_GameAspect.Gravity.Get(entity);
+			gravityComponent.Value = value;
+		}
+
+		public static ref GravityComponent AddGravity(this ProtoEntity entity, float value)
+		{
+			ref GravityComponent gravityComponent = ref s_GameAspect.Gravity.Add(entity);
+			gravityComponent.Value = value;
+			return ref gravityComponent;
+		}
+
+		public static void DelGravity(this ProtoEntity entity)
+			=> s_GameAspect.Gravity.Del(entity);
+
 		//GroundDistance
 		public static bool HasGroundDistance(this ProtoEntity entity) =>
 			s_GameAspect.GroundDistance.Has(entity);
@@ -2145,6 +2168,29 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelSpeed(this ProtoEntity entity)
 			=> s_GameAspect.Speed.Del(entity);
+
+		//TargetGravity
+		public static bool HasTargetGravity(this ProtoEntity entity) =>
+			s_GameAspect.TargetGravity.Has(entity);
+
+		public static ref TargetGravityComponent GetTargetGravity(this ProtoEntity entity) =>
+			ref s_GameAspect.TargetGravity.Get(entity);
+
+		public static void ReplaceTargetGravity(this ProtoEntity entity, float value)
+		{
+			ref TargetGravityComponent targetGravityComponent = ref s_GameAspect.TargetGravity.Get(entity);
+			targetGravityComponent.Value = value;
+		}
+
+		public static ref TargetGravityComponent AddTargetGravity(this ProtoEntity entity, float value)
+		{
+			ref TargetGravityComponent targetGravityComponent = ref s_GameAspect.TargetGravity.Add(entity);
+			targetGravityComponent.Value = value;
+			return ref targetGravityComponent;
+		}
+
+		public static void DelTargetGravity(this ProtoEntity entity)
+			=> s_GameAspect.TargetGravity.Del(entity);
 
 		//VerticalVelocity
 		public static bool HasVerticalVelocity(this ProtoEntity entity) =>

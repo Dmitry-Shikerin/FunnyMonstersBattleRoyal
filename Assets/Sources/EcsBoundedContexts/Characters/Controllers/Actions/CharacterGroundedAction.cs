@@ -20,14 +20,23 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Actions
 
         protected override void OnUpdate()
         {
-            Transform groundCheck = _entity.GetCharacterModule().Value.GroundCheck;
-            CharacterConfig config = _entity.GetCharacterConfig().Value;
-            bool isGrounded = Physics.CheckSphere(groundCheck.position, config.GroundRadius, config.GroundMask);
+            bool isGrounded = IsControllerGrounded();
+            // bool isGrounded = IsCustomGrounded();
 
             if (isGrounded && _entity.HasGrounded() == false)
                 _entity.AddGrounded();
             else if (isGrounded == false && _entity.HasGrounded())
                 _entity.DelGrounded();
         }
+
+        private bool IsCustomGrounded()
+        {
+            Transform groundCheck = _entity.GetCharacterModule().Value.GroundCheck;
+            CharacterConfig config = _entity.GetCharacterConfig().Value;
+            return Physics.CheckSphere(groundCheck.position, config.GroundRadius, config.GroundMask);
+        }
+
+        private bool IsControllerGrounded() =>
+            _entity.GetCharacterController().Value.isGrounded;
     }
 }

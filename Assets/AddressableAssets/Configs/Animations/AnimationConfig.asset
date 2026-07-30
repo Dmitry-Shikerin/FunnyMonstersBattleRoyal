@@ -16,7 +16,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 80bc6d8b2d6f2a641a814e6f1571ecb8, type: 2}
+    - {fileID: 11400000, guid: 67d7860e0a0027347b65f2469c2b1d88, type: 2}
     - {fileID: 11400000, guid: cb1d5feafbb5d5743911037cfbee9934, type: 2}
     - {fileID: 11400000, guid: 6c76e71fdc305f045957621b74e4b9e0, type: 2}
     - {fileID: 11400000, guid: 0d2d0160835ed4243a98802862718318, type: 2}
@@ -131,7 +131,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -169,8 +169,27 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 6|Animancer.StringReference, Kybernetik.Animancer
+    - Name: String
+      Entry: 1
+      Data: PlayRun
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
+  <AvatarMask>k__BackingField: {fileID: 31900000, guid: a41aa3bb818b2114b857051acab29e6f, type: 2}

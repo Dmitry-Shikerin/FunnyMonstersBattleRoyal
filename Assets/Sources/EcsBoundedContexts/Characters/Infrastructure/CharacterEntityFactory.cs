@@ -79,11 +79,13 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             
             //Grounded
             entity.AddGroundDistance(0);
-            entity.AddVerticalVelocity(config.GroundedGravity);
+            //entity.AddVerticalVelocity(config.GroundedGravity);
             
             //Movement
             entity.AddSpeed(0);
             entity.AddDirection(Vector3.zero);
+            entity.AddGravity(config.Gravity);
+            entity.AddTargetGravity(config.Gravity);
 
             //Rotation
             // entity.AddRotationSpeed(config.RotationSpeed);
