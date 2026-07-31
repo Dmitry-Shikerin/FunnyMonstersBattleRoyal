@@ -20,13 +20,13 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Actions
 
         protected override void OnUpdate()
         {
-            CharacterConfig config = _entity.GetCharacterConfig().Value;
-            float gravity = _entity.GetGravity().Value;
-            float targetGravity = _entity.GetTargetGravity().Value;
-
-            float currentGravity = Mathf.Lerp(gravity, targetGravity, config.ChangeGravityDelta);
-
-            _entity.ReplaceGravity(currentGravity);
+            // CharacterConfig config = _entity.GetCharacterConfig().Value;
+            // float gravity = _entity.GetGravity().Value;
+            // float targetGravity = _entity.GetTargetGravity().Value;
+            //
+            // float currentGravity = Mathf.Lerp(gravity, targetGravity, config.ChangeGravityDelta);
+            //
+            // _entity.ReplaceGravity(currentGravity);
         }
     }
 }

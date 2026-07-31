@@ -1848,6 +1848,29 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelInPool(this ProtoEntity entity)
 			=> s_GameAspect.InPool.Del(entity);
 
+		//RigidBody
+		public static bool HasRigidBody(this ProtoEntity entity) =>
+			s_GameAspect.RigidBody.Has(entity);
+
+		public static ref RigidBodyComponent GetRigidBody(this ProtoEntity entity) =>
+			ref s_GameAspect.RigidBody.Get(entity);
+
+		public static void ReplaceRigidBody(this ProtoEntity entity, Rigidbody value)
+		{
+			ref RigidBodyComponent rigidBodyComponent = ref s_GameAspect.RigidBody.Get(entity);
+			rigidBodyComponent.Value = value;
+		}
+
+		public static ref RigidBodyComponent AddRigidBody(this ProtoEntity entity, Rigidbody value)
+		{
+			ref RigidBodyComponent rigidBodyComponent = ref s_GameAspect.RigidBody.Add(entity);
+			rigidBodyComponent.Value = value;
+			return ref rigidBodyComponent;
+		}
+
+		public static void DelRigidBody(this ProtoEntity entity)
+			=> s_GameAspect.RigidBody.Del(entity);
+
 		//Scale
 		public static bool HasScale(this ProtoEntity entity) =>
 			s_GameAspect.Scale.Has(entity);
@@ -2095,6 +2118,29 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelInputEntity(this ProtoEntity entity)
 			=> s_GameAspect.InputEntity.Del(entity);
+
+		//JumpImpulseDirection
+		public static bool HasJumpImpulseDirection(this ProtoEntity entity) =>
+			s_GameAspect.JumpImpulseDirection.Has(entity);
+
+		public static ref JumpImpulseDirectionComponent GetJumpImpulseDirection(this ProtoEntity entity) =>
+			ref s_GameAspect.JumpImpulseDirection.Get(entity);
+
+		public static void ReplaceJumpImpulseDirection(this ProtoEntity entity, Vector3 value)
+		{
+			ref JumpImpulseDirectionComponent jumpImpulseDirectionComponent = ref s_GameAspect.JumpImpulseDirection.Get(entity);
+			jumpImpulseDirectionComponent.Value = value;
+		}
+
+		public static ref JumpImpulseDirectionComponent AddJumpImpulseDirection(this ProtoEntity entity, Vector3 value)
+		{
+			ref JumpImpulseDirectionComponent jumpImpulseDirectionComponent = ref s_GameAspect.JumpImpulseDirection.Add(entity);
+			jumpImpulseDirectionComponent.Value = value;
+			return ref jumpImpulseDirectionComponent;
+		}
+
+		public static void DelJumpImpulseDirection(this ProtoEntity entity)
+			=> s_GameAspect.JumpImpulseDirection.Del(entity);
 
 		//Jumping
 		public static bool HasJumping(this ProtoEntity entity) =>

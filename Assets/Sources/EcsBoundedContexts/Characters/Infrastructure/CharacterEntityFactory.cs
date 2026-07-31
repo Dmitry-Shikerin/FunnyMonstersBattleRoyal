@@ -71,6 +71,7 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             entity.AddAnimancerEcs(module.Animancer);
             entity.AddAnimancerState(null);
             entity.AddCharacterController(module.CharacterController);
+            entity.AddRigidBody(module.Rigidbody);
             entity.AddActive();
             
             //Stats
@@ -84,8 +85,8 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             //Movement
             entity.AddSpeed(0);
             entity.AddDirection(Vector3.zero);
-            entity.AddGravity(config.Gravity);
-            entity.AddTargetGravity(config.Gravity);
+            entity.AddGravity(config.IdleGravity);
+            entity.AddTargetGravity(config.IdleGravity);
 
             //Rotation
             // entity.AddRotationSpeed(config.RotationSpeed);

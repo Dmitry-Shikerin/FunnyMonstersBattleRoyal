@@ -86,6 +86,7 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<InitializedComponent> Initialized = new ();
 		public readonly ProtoPool<InitializeEvent> InitializeEvent = new ();
 		public readonly ProtoPool<InPoolComponent> InPool = new ();
+		public readonly ProtoPool<RigidBodyComponent> RigidBody = new ();
 		public readonly ProtoPool<ScaleComponent> Scale = new ();
 		public readonly ProtoPool<SequenceComponent> Sequence = new ();
 		public readonly ProtoPool<StringIdComponent> StringId = new ();
@@ -163,6 +164,7 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<GroundDistanceComponent> GroundDistance = new ();
 		public readonly ProtoPool<GroundedComponent> Grounded = new ();
 		public readonly ProtoPool<InputEntityComponent> InputEntity = new ();
+		public readonly ProtoPool<JumpImpulseDirectionComponent> JumpImpulseDirection = new ();
 		public readonly ProtoPool<JumpingComponent> Jumping = new ();
 		public readonly ProtoPool<PlayerRefComponent> PlayerRef = new ();
 		public readonly ProtoPool<SpeedComponent> Speed = new ();
@@ -267,6 +269,7 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<InitializedComponent>)] = Initialized,
 				[typeof(ProtoPool<InitializeEvent>)] = InitializeEvent,
 				[typeof(ProtoPool<InPoolComponent>)] = InPool,
+				[typeof(ProtoPool<RigidBodyComponent>)] = RigidBody,
 				[typeof(ProtoPool<ScaleComponent>)] = Scale,
 				[typeof(ProtoPool<SequenceComponent>)] = Sequence,
 				[typeof(ProtoPool<StringIdComponent>)] = StringId,
@@ -279,6 +282,7 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<GroundDistanceComponent>)] = GroundDistance,
 				[typeof(ProtoPool<GroundedComponent>)] = Grounded,
 				[typeof(ProtoPool<InputEntityComponent>)] = InputEntity,
+				[typeof(ProtoPool<JumpImpulseDirectionComponent>)] = JumpImpulseDirection,
 				[typeof(ProtoPool<JumpingComponent>)] = Jumping,
 				[typeof(ProtoPool<PlayerRefComponent>)] = PlayerRef,
 				[typeof(ProtoPool<SpeedComponent>)] = Speed,

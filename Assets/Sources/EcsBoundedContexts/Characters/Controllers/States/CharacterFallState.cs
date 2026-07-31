@@ -1,4 +1,5 @@
-﻿using Leopotam.EcsProto;
+﻿using DG.Tweening;
+using Leopotam.EcsProto;
 using NodeCanvas.StateMachines;
 using ParadoxNotion.Design;
 using Sources.EcsBoundedContexts.Animancers.Domain.Enums;
@@ -13,7 +14,7 @@ using UnityEngine;
 namespace Sources.EcsBoundedContexts.Characters.Controllers.States
 {
     [Category(NcCategoriesConst.Characters)]
-    public class CharacterAirJumpState : FSMState
+    public class CharacterFallState : FSMState
     {
         private ProtoEntity _entity;
 
@@ -28,8 +29,14 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
             NetworkAnimationView networkAnimationView = _entity.GetCharacterModule().Value.NetworkAnimationView;
             networkAnimationView.PlayAnimation_Rpc((int)AnimationName.AirJump);
             CharacterConfig config = _entity.GetCharacterConfig().Value;
-            _entity.ReplaceTargetGravity(config.Gravity);
+            _entity.ReplaceTargetGravity(config.FallGravity);
             _entity.AddAir();
+            DOVirtual.Float(
+                    _entity.GetGravity().Value,
+                    -config.JumpGravity,
+                    config.ChangeFallGravityDuration,
+                    value => _entity.ReplaceGravity(value))
+                .SetEase(config.ChangeFallGravityEase);
         }
         
         protected override void OnUpdate()

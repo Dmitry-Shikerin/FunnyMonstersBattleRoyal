@@ -28,8 +28,10 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
 
         protected override void OnEnter()
         {
+            var config = _entity.GetCharacterConfig().Value;
             _entity.PlayAnimation(AnimationName.Idle);
             _entity.ReplaceSpeed(0);
+            _entity.ReplaceGravity(config.IdleGravity);
             NetworkAnimationView networkAnimationView = _entity.GetCharacterModule().Value.NetworkAnimationView;
             networkAnimationView.PlayAnimation_Rpc((int)AnimationName.Idle);
         }
