@@ -8,6 +8,7 @@ namespace Sources.EcsBoundedContexts.Core
     public interface IEcsGameStartUp
     {
         UniTask Initialize();
+        void Update(float deltaTime);
         void Destroy();
     }
 }

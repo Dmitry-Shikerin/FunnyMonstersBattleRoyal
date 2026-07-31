@@ -6,35 +6,33 @@ using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
 using Sources.Frameworks.DeepFramework.DeepUtils.Enums;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Buttons
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Button))]
-    public class UiButton : UiSelectable
+    public class UiButton : UiSelectable, IPointerEnterHandler, IPointerExitHandler
     {
         //Const
         private const string Label = "<size=18><b><color=#C71585><i>Ui Button</i></color></b></size>";
         private const int Space = 10;
 
         //Fields
-        [DisplayAsString(false)] [HideLabel] [SerializeField]
-        private string _label = Label;
+        [DisplayAsString(false)] 
+        [HideLabel] [SerializeField] private string _label = Label;
+        [EnumToggleButtons]
+        [SerializeField] private EnableState _sendOnClick = EnableState.On;
+        [Space(Space)] 
+        [ShowIf(nameof(_sendOnClick), EnableState.On)] 
+        [Required] [SerializeField] private ButtonId _buttonId = ButtonId.Default;
 
-        [EnumToggleButtons] [SerializeField] private EnableState _sendOnClick = EnableState.On;
-
-        [Space(Space)] [ShowIf(nameof(_sendOnClick), EnableState.On)] [Required] [SerializeField]
-        private ButtonId _buttonId = ButtonId.Default;
-
-        [Space(Space)] [Required] [SerializeField]
-        private Button _button;
-
+        [Space(Space)] 
+        [Required] [SerializeField] private Button _button;
         //TODO зарефакторить делей
         [SerializeField] private bool _isDelayedOnClick;
-
-        [EnableIf("_isDelayedOnClick")] [SerializeField]
-        private float _seconds;
+        [EnableIf("_isDelayedOnClick")] [SerializeField] private float _seconds;
 
         private ButtonsManager _buttonsManager;
         private CancellationTokenSource _token;
@@ -95,5 +93,11 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
             if (_button == null)
                 _button = GetComponent<Button>();
         }
+
+        public void OnPointerEnter(PointerEventData eventData) =>
+            Highlite(true);
+
+        public void OnPointerExit(PointerEventData eventData) =>
+            Highlite(false);
     }
 }

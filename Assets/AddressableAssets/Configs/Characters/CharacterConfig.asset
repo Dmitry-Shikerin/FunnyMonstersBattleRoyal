@@ -36,7 +36,7 @@ MonoBehaviour:
   <ChangeJumpGravityEase>k__BackingField: 18
   <FallGravity>k__BackingField: -0.3
   <ChangeFallGravityDuration>k__BackingField: 0.13
-  <ChangeFallGravityEase>k__BackingField: 17
+  <ChangeFallGravityEase>k__BackingField: 19
   <EndAirDistance>k__BackingField: 1
   <GroundRadius>k__BackingField: 0.3
   <GroundMask>k__BackingField:

@@ -16,6 +16,7 @@ using Sources.EcsBoundedContexts.Timers.Domain;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.PlayerWallets.Presentation;
+using Sources.EcsBoundedContexts.Players.Domain.Components;
 using Sources.EcsBoundedContexts.Particles.Domain;
 using UnityEngine;
 using Sources.EcsBoundedContexts.Movements.TargetPoint.Components;
@@ -446,6 +447,42 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelPlayerWalletModule(this ProtoEntity entity)
 			=> s_GameAspect.PlayerWalletModule.Del(entity);
+
+		//PlayerName
+		public static bool HasPlayerName(this ProtoEntity entity) =>
+			s_GameAspect.PlayerName.Has(entity);
+
+		public static ref PlayerNameComponent GetPlayerName(this ProtoEntity entity) =>
+			ref s_GameAspect.PlayerName.Get(entity);
+
+		public static void ReplacePlayerName(this ProtoEntity entity, String name)
+		{
+			ref PlayerNameComponent playerNameComponent = ref s_GameAspect.PlayerName.Get(entity);
+			playerNameComponent.Value = name;
+		}
+
+		public static ref PlayerNameComponent AddPlayerName(this ProtoEntity entity, String name)
+		{
+			ref PlayerNameComponent playerNameComponent = ref s_GameAspect.PlayerName.Add(entity);
+			playerNameComponent.Value = name;
+			return ref playerNameComponent;
+		}
+
+		public static void DelPlayerName(this ProtoEntity entity)
+			=> s_GameAspect.PlayerName.Del(entity);
+
+		//Player
+		public static bool HasPlayer(this ProtoEntity entity) =>
+			s_GameAspect.Player.Has(entity);
+
+		public static ref PlayerTag AddPlayer(this ProtoEntity entity)
+		{
+			ref PlayerTag playerTag = ref s_GameAspect.Player.Add(entity);
+			return ref playerTag;
+		}
+
+		public static void DelPlayer(this ProtoEntity entity)
+			=> s_GameAspect.Player.Del(entity);
 
 		//HealParticle
 		public static bool HasHealParticle(this ProtoEntity entity) =>

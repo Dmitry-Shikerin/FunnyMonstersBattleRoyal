@@ -20,5 +20,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums
         NewGame = 15,
         DailyReward = 16,
         PartyMenu = 17,
+        NameInput = 18,
     }
 }

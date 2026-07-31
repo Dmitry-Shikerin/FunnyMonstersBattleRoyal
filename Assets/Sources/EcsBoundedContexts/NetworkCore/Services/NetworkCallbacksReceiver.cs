@@ -4,7 +4,7 @@ using Fusion;
 using Fusion.Sockets;
 using UnityEngine;
 
-namespace Sources.EcsBoundedContexts.NetworkCore
+namespace Sources.EcsBoundedContexts.NetworkCore.Services
 {
     public class NetworkCallbacksReceiver : MonoBehaviour, INetworkRunnerCallbacks
     {

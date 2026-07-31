@@ -1,7 +1,9 @@
 using System;
+using DG.Tweening;
 using Dott;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Buttons
 {
@@ -17,7 +19,13 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
         [SerializeField] private string _label = Label;
         
         [Required] [SerializeField] private UiSelectable _selectable;
-        [Required] [SerializeField] private DOTweenTimeline _selectableTimeline;
+        [Required] [SerializeField] private DOTweenTimeline _onClickTimeline;
+        [Required] [SerializeField] private DOTweenTimeline _highlitedEnterTimeline;
+        [Required] [SerializeField] private DOTweenTimeline _highlitedExitTimeline;
+
+        private Sequence _onClickSequence;
+        private Sequence _highlitedEnterSequence;
+        private Sequence _highlitedExitSequence;
 
         [OnInspectorInit]
         private void Init()
@@ -31,6 +39,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
                 throw new NullReferenceException("UiSelectable is null");
             
             _selectable.OnClick += OnClick;
+            _selectable.Highlited += Highlited;
         }
 
         private void OnDestroy()
@@ -39,11 +48,41 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
                 return;
             
             _selectable.OnClick -= OnClick;
+            _selectable.Highlited -= Highlited;
         }
 
         private void OnClick()
         {
-            _selectableTimeline.Restart();
+            _onClickSequence = _onClickTimeline.Restart();
+        }
+
+        private void Highlited(bool highlited)
+        {
+            if (highlited)
+            {
+                PlayEnterHighlitedTimeline();
+                return;
+            }
+            
+            PlayExitHighlitedTimeline();
+        }
+
+        private void PlayEnterHighlitedTimeline()
+        {
+            if (_highlitedEnterTimeline == null)
+                return;
+
+            _highlitedExitSequence?.Kill();
+            _highlitedEnterSequence = _highlitedEnterTimeline.Restart();
+        }  
+        
+        private void PlayExitHighlitedTimeline()
+        {
+            if (_highlitedExitTimeline == null)
+                return;
+            
+            _highlitedEnterSequence?.Kill();
+            _highlitedExitSequence = _highlitedExitTimeline?.Restart();
         }
     }
 }

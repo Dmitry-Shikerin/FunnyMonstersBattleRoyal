@@ -2,6 +2,7 @@
 using Reflex.Core;
 using Reflex.Enums;
 using Sources.EcsBoundedContexts.NetworkCore;
+using Sources.EcsBoundedContexts.NetworkCore.Services;
 using Sources.Frameworks.GameServices.Curtains.Presentation.Implementation;
 using Sources.Frameworks.GameServices.Curtains.Presentation.Interfaces;
 using Sources.Frameworks.GameServices.Prefabs.Domain;

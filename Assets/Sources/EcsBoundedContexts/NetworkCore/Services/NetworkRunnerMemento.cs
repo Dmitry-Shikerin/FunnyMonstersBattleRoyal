@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Sources.EcsBoundedContexts.NetworkCore
+namespace Sources.EcsBoundedContexts.NetworkCore.Services
 {
     public class NetworkRunnerMemento : MonoBehaviour
     {

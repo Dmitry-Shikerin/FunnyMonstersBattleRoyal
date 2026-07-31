@@ -6,6 +6,7 @@ using Sources.BoundedContexts.Scenes.Infrastructure.Factories;
 using Sources.EcsBoundedContexts.Characters.Infrastructure;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.NetworkCore;
+using Sources.EcsBoundedContexts.NetworkCore.Services;
 using Sources.Frameworks.GameServices.InputServices;
 using Sources.Frameworks.GameServices.InputServices.InputServices;
 using Sources.Frameworks.GameServices.Prefabs.Implementation.Composites;

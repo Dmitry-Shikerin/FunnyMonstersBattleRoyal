@@ -4,11 +4,10 @@ using Fusion;
 using Reflex.Attributes;
 using Sirenix.OdinInspector;
 using Sources.EcsBoundedContexts.Characters.Infrastructure;
-using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
 using UnityEngine;
 
-namespace Sources.EcsBoundedContexts.NetworkCore
+namespace Sources.EcsBoundedContexts.NetworkCore.Services
 {
     public class JoinManager : NetworkBehaviour
     {
@@ -18,7 +17,6 @@ namespace Sources.EcsBoundedContexts.NetworkCore
         private NetworkDictionary<PlayerRef, NetworkObject> Players => default;
         private readonly Queue<PlayerRef> _joinedQueue = new();
         private bool _isJoinedQueueFreedom = false;
-        private EcsGameStartUp _ecsGameStartUp;
 
         private NetworkCallbacksReceiver _callbackReceiver;
         private static CharacterFactory _factory;

@@ -109,6 +109,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 
         public void Update(float deltaTime)
         {
+            _ecsGameStartUp.Update(deltaTime);
         }
 
         public void UpdateLate(float deltaTime)

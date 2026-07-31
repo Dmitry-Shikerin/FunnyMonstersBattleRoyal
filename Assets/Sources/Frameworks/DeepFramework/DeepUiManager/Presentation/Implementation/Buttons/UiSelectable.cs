@@ -6,10 +6,12 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
     public abstract class UiSelectable : MonoBehaviour
     {
         public event Action OnClick;
+        public event Action<bool> Highlited;
 
-        protected virtual void Click()
-        {
+        protected virtual void Click() =>
             OnClick?.Invoke();
-        }
+
+        protected virtual void Highlite(bool highlited) =>
+            Highlited?.Invoke(highlited);
     }
 }

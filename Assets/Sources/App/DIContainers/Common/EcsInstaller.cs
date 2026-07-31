@@ -10,6 +10,7 @@ using Sources.EcsBoundedContexts.ExplosionBodies.Infrastructure;
 using Sources.EcsBoundedContexts.Input.Infrastructure;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Infrastructure;
 using Sources.EcsBoundedContexts.Lights.Infrastructure;
+using Sources.EcsBoundedContexts.Players.Infrastructure;
 using Sources.EcsBoundedContexts.PlayerWallets.Infrastructure;
 using Sources.EcsBoundedContexts.Tutorials.Infrastructure;
 using Sources.EcsBoundedContexts.Volumes.Infrastructure;
@@ -29,7 +30,6 @@ namespace Sources.App.DIContainers.Common
     {
         public void InstallBindings(ContainerBuilder containerBuilder)
         {
-            containerBuilder.RegisterType(typeof(EcsGameStartUp), new [] { typeof(IEcsGameStartUp) }, Lifetime.Singleton, Resolution.Lazy);
             GameAspect aspect = new GameAspect();
             ProtoWorld world = new ProtoWorld(aspect);
             ProtoSystems systems = new ProtoSystems(world);
@@ -76,6 +76,9 @@ namespace Sources.App.DIContainers.Common
             
             //Volume
             containerBuilder.RegisterType(typeof(VolumeEntityFactory), Lifetime.Singleton, Resolution.Lazy);
+            
+            //Player
+            containerBuilder.RegisterType(typeof(PlayerEntityFactory), Lifetime.Singleton, Resolution.Lazy);
         }
     }
 }

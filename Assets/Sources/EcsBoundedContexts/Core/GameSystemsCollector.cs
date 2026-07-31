@@ -6,6 +6,7 @@ using Sources.EcsBoundedContexts.AdvertisingAfterWaves.Controllers;
 using Sources.EcsBoundedContexts.Volumes.Controllers.Data;
 using Sources.EcsBoundedContexts.Tutorials.Controllers.Data;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers.Data;
+using Sources.EcsBoundedContexts.Players.Systems.Data;
 using Sources.EcsBoundedContexts.Characters.Controllers.Systems;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Controllers.Data;
 using Sources.EcsBoundedContexts.Input.Controllers;
@@ -36,6 +37,7 @@ namespace Sources.EcsBoundedContexts.Core
 			VolumeLoadSystem volumeLoadSystem, //Order: 7 //Common
 			TutorialLoadSystem tutorialLoadSystem, //Order: 9 //Ability
 			PlayerWalletLoadSystem playerWalletLoadSystem, //Order: 10 //Ability
+			PlayerLoadSystem playerLoadSystem, //Order: 10 //Ability
 			CharacterInitializeSystem characterInitializeSystem, //Order: 10 //Characters
 			KillEnemyCounterLoadSystem killEnemyCounterLoadSystem, //Order: 12 //Common
 			InputInitializeSystem inputInitializeSystem, //Order: 15 //Characters
@@ -61,6 +63,7 @@ namespace Sources.EcsBoundedContexts.Core
 			VolumeSaveSystem volumeSaveSystem, //Order: 501 //Common
 			TutorialSaveSystem tutorialSaveSystem, //Order: 503 //Tutorial
 			PlayerWalletSaveSystem playerWalletSaveSystem, //Order: 504 //Ability
+			PlayerSaveSystem playerSaveSystem, //Order: 504 //Ability
 			KillEnemyCounterSaveSystem killEnemyCounterSaveSystem //Order: 506 //Common
 		)
 		{
@@ -72,6 +75,7 @@ namespace Sources.EcsBoundedContexts.Core
 				volumeLoadSystem, //Common
 				tutorialLoadSystem, //Ability
 				playerWalletLoadSystem, //Ability
+				playerLoadSystem, //Ability
 				characterInitializeSystem, //Characters
 				killEnemyCounterLoadSystem, //Common
 				inputInitializeSystem, //Characters
@@ -97,6 +101,7 @@ namespace Sources.EcsBoundedContexts.Core
 				volumeSaveSystem, //Common
 				tutorialSaveSystem, //Tutorial
 				playerWalletSaveSystem, //Ability
+				playerSaveSystem, //Ability
 				killEnemyCounterSaveSystem, //Common
 			};
 		}

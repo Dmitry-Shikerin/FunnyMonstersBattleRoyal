@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7818686156947969433}
   - component: {fileID: 3491590824740179789}
   - component: {fileID: 8767027735735187191}
-  - component: {fileID: -1999171305620500971}
   - component: {fileID: -5242973048986072737}
+  - component: {fileID: 6901746607459711400}
   m_Layer: 0
   m_Name: NetworkRunner
   m_TagString: Untagged
@@ -75,18 +75,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11398dbded3c40839ed101bb60a4e2db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-1999171305620500971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885865132298458837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2e637ca97588c84f9dcae7710da34cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-5242973048986072737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,5 +85,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e767d2441a940298ec23d93967c366d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6901746607459711400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885865132298458837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f15eef440143ddb15f62018e746a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

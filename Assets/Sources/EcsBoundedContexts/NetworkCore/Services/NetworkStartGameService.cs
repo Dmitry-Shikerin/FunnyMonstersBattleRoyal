@@ -2,7 +2,7 @@
 using Fusion;
 using UnityEngine.SceneManagement;
 
-namespace Sources.EcsBoundedContexts.NetworkCore
+namespace Sources.EcsBoundedContexts.NetworkCore.Services
 {
     public class NetworkStartGameService
     {

@@ -10,6 +10,7 @@ using Sources.EcsBoundedContexts.Tutorials.Domain.Components;
 using Sources.EcsBoundedContexts.Timers.Domain;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
+using Sources.EcsBoundedContexts.Players.Domain.Components;
 using Sources.EcsBoundedContexts.Particles.Domain;
 using Sources.EcsBoundedContexts.Movements.TargetPoint.Components;
 using Sources.EcsBoundedContexts.Movements.Rotation.Components;
@@ -153,6 +154,8 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<AvailableComponent> Available = new ();
 
 		//Characters
+		public readonly ProtoPool<PlayerNameComponent> PlayerName = new ();
+		public readonly ProtoPool<PlayerTag> Player = new ();
 		public readonly ProtoPool<HealParticleComponent> HealParticle = new ();
 		public readonly ProtoPool<ShootParticleComponent> ShootParticle = new ();
 		public readonly ProtoPool<AttackPowerComponent> AttackPower = new ();
@@ -204,6 +207,8 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<IncreaseCoinsEvent>)] = IncreaseCoinsEvent,
 				[typeof(ProtoPool<PlayerWalletComponent>)] = PlayerWallet,
 				[typeof(ProtoPool<PlayerWalletModuleComponent>)] = PlayerWalletModule,
+				[typeof(ProtoPool<PlayerNameComponent>)] = PlayerName,
+				[typeof(ProtoPool<PlayerTag>)] = Player,
 				[typeof(ProtoPool<HealParticleComponent>)] = HealParticle,
 				[typeof(ProtoPool<ShootParticleComponent>)] = ShootParticle,
 				[typeof(ProtoPool<PointPathComponent>)] = PointPath,

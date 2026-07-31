@@ -784,6 +784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0f1c45b2e749bfb26a3503cc2302b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _label: <size=18><b><color=#C71585><i>Deep Sound Sender</i></color></b></size>
   <SoundData>k__BackingField:
     SoundSource: 0
     DatabaseName: 3
@@ -804,6 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc42bf26b7d1417099954a8edb957f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _label: <size=18><b><color=#C71585><i>Button To Deep Sound</i></color></b></size>
   _button: {fileID: 874085986548934651}
   _sender: {fileID: 365929170050923268}
 --- !u!114 &6848751744052546195
@@ -838,4 +840,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _label: <size=18><b><color=#C71585><i>Ui Selectable Animator</i></color></b></size>
   _selectable: {fileID: 6848751744052546195}
-  _selectableTimeline: {fileID: 7947253813600538903}
+  _onClickTimeline: {fileID: 7947253813600538903}

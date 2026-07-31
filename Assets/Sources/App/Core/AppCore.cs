@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.NetworkCore;
+using Sources.EcsBoundedContexts.NetworkCore.Services;
 
 namespace Sources.App.Core
 {

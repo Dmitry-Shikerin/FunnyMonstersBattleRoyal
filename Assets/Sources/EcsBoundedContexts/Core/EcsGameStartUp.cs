@@ -18,7 +18,7 @@ using Sources.EcsBoundedContexts.Volumes.Domain.Components;
 
 namespace Sources.EcsBoundedContexts.Core
 {
-    public class EcsGameStartUp : SimulationBehaviour, IEcsGameStartUp
+    public class EcsGameStartUp : IEcsGameStartUp
     {
         private Container _container;
         private ProtoSystems _systems;
@@ -54,15 +54,7 @@ namespace Sources.EcsBoundedContexts.Core
             Init();
         }
 
-        public override void FixedUpdateNetwork()
-        {
-            if (Runner.IsClient)
-                return;
-            
-            MyUpdate(Runner.DeltaTime);
-        }
-
-        private void MyUpdate(float deltaTime)
+        public void Update(float deltaTime)
         {
             if (_isInitialize == false)
                 return;

@@ -2,6 +2,7 @@
 using Sources.EcsBoundedContexts.Input.Domain.Data;
 using Sources.EcsBoundedContexts.Input.Domain.Data.Network;
 using Sources.EcsBoundedContexts.NetworkCore;
+using Sources.EcsBoundedContexts.NetworkCore.Services;
 using Sources.Frameworks.GameServices.InputServices.InputServices;
 using UnityEngine;
 using UnityEngine.InputSystem;

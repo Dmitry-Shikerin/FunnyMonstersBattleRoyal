@@ -19,14 +19,15 @@ namespace Sources.App.DIContainers.MainMenu
     public class MainMenuInstaller : MonoBehaviour, IInstaller
     {
         [Required] [SerializeField] private MainMenuRootGameObjects _mainRootGameObjects;
-        [Required] [SerializeField] private EcsGameStartUp _ecsGameStartUp;
         
         public void InstallBindings(ContainerBuilder containerBuilder)
         {
             containerBuilder.RegisterType(typeof(MainMenuSceneFactory), new [] { typeof(ISceneFactory) }, Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterValue(_mainRootGameObjects);
-            containerBuilder.RegisterValue(_ecsGameStartUp, new []{ typeof(IEcsGameStartUp) });
 
+            //Ecs
+            containerBuilder.RegisterType(typeof(EcsGameStartUp), new [] { typeof(IEcsGameStartUp) }, Lifetime.Singleton, Resolution.Lazy);
+            
             //Services
             containerBuilder.RegisterType(typeof(PauseService), new [] { typeof(IPauseService) }, Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterType(typeof(CameraService), new [] { typeof(ICameraService) }, Lifetime.Singleton, Resolution.Lazy);

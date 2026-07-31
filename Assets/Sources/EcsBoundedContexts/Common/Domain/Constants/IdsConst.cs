@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Data;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Domain.Data;
+using Sources.EcsBoundedContexts.Players.Domain.Data;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Data;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Data;
 using Sources.EcsBoundedContexts.Volumes.Domain.Data;
@@ -19,6 +20,7 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
         public const string Input = "Input";
         public const string MainCamera = "MainCamera";
         public const string Player = "Player";
+        public const string Character = "Character";
         public const string EnemySpawner = "EnemySpawner";
         public const string Bunker = "Bunker";
         public const string ExplosionBodiesSpawner = "ExplosionBodiesSpawner";
@@ -28,25 +30,21 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
         public const string DailyReward = "DailyReward";
         public const string HealthBooster = "HealthBuster";
 
-
         //Abilities
         public const string CharacterSpawnerAbility = "CharacterSpawnerAbility";
         public const string NukeAbility = "NukeAbility";
         public const string FlamethrowerAbility = "FlamethrowerAbility";
         public const string NukeBomb = "NukeBomb";
-
-
+        
         //Upgrades
         public const string AttackUpgrade = "AttackUpgrade";
         public const string HealthUpgrade = "HealthUpgrade";
         public const string FlamethrowerUpgrade = "FlamethrowerUpgrade";
         public const string NukeUpgrade = "NukeUpgrade";
 
-
         //Settings
         public const string SoundsVolume = "SoundsVolume";
         public const string MusicVolume = "MusicVolume";
-
 
         //Achievements
         public const string FirstEnemyKillAchievement = "FirstEnemyKillAchievement";
@@ -70,6 +68,7 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
             [Tutorial] = new (Tutorial, typeof(TutorialSaveData), false),
             [SoundsVolume] = new (SoundsVolume, typeof(GameVolumeSaveData), false),
             [MusicVolume] = new (MusicVolume, typeof(GameVolumeSaveData), false),
+            [MusicVolume] = new (Player, typeof(PlayerSaveData), false),
         };
 
         public static IReadOnlyList<string> GetIds<T>() 
