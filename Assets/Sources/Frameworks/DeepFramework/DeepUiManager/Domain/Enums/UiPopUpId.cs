@@ -8,5 +8,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums
         Achievement = 3,
         DailyRewards = 4,
         WaveCompleted = 5,
+        MainMenuPopUp = 6,
     }
 }

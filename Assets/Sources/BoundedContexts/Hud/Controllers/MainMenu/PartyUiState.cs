@@ -9,6 +9,8 @@ namespace Sources.BoundedContexts.Hud.Controllers.MainMenu
     [Category(NcCategoriesConst.Ui)]
     public class PartyUiState : UiViewStateBase
     {
+        protected override bool IsHideAllPopUpsEntered { get; }
+        protected override bool IsHideAllPopUpsExited { get; }
         protected override bool IsHideAllViewsEntered { get; } = true;
         protected override bool IsHideAllViewsExited { get; }
         

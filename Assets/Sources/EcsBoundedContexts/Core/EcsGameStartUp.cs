@@ -1,6 +1,5 @@
 using System;
 using Cysharp.Threading.Tasks;
-using Fusion;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity;

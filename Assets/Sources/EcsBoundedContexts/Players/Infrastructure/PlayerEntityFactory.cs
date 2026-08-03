@@ -3,7 +3,6 @@ using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runt
 using Reflex.Core;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
-using Sources.EcsBoundedContexts.Players.Presentation;
 using Sources.Frameworks.MyLeoEcsProto.Factories;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 
@@ -29,8 +28,6 @@ namespace Sources.EcsBoundedContexts.Players.Infrastructure
 
         public override ProtoEntity Create(EntityLink link)
         {
-            PlayerNameUiModule module = link.GetModule<PlayerNameUiModule>();
-            
             Aspect.Player.NewEntity(out ProtoEntity entity);
             _repository.AddByName(entity, IdsConst.Player);
             Authoring(link, entity);

@@ -9,9 +9,14 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementat
 {
     public abstract class UiViewStateBase : FSMState
     {
+        protected abstract bool IsHideAllPopUpsEntered { get; }
+        protected abstract bool IsHideAllPopUpsExited { get; }
+        
+        //EnteredViews
         private readonly List<UiViewId> _enterShowViews = new();
         private readonly List<UiViewId> _enterHideViews = new();
         protected abstract bool IsHideAllViewsEntered { get; }
+        //ExitedViews
         private readonly List<UiViewId> _exitShowViews = new();
         private readonly List<UiViewId> _exitHideViews = new();
         private readonly List<UiActionId> _enterUiActions = new();
@@ -30,6 +35,25 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementat
 
         protected override void OnEnter()
         {
+            ManageEnterViews();
+            ManageEnterPopUp();
+        }
+
+        protected override void OnExit()
+        {
+            ManageExitView();
+            ManageExitPopUp();
+        }
+
+        protected abstract void AddEnterShowedViews(List<UiViewId> viewIds);
+        protected abstract void AddEnterHidedViews(List<UiViewId> viewIds);
+        protected abstract void AddExitShowViews(List<UiViewId> viewIds);
+        protected abstract void AddExitHidedViews(List<UiViewId> viewIds);
+        protected abstract void AddEnterUiActions(List<UiActionId> uiActionIds);
+        protected abstract void AddExitUiActions(List<UiActionId> uiActionIds);
+
+        private void ManageEnterViews()
+        {
             UiViewManager manager = DeepUiBrain.ViewManager;
 
             if (IsHideAllViewsEntered)
@@ -40,7 +64,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementat
             DeepUiBrain.SignalBus.Handle(new UiActionSignal(_enterUiActions));
         }
 
-        protected override void OnExit()
+        private void ManageExitView()
         {
             if (DeepCoreManager.IsApplicationQuitting)
                 return;
@@ -55,11 +79,20 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementat
             DeepUiBrain.SignalBus.Handle(new UiActionSignal(_exitUiActions));
         }
 
-        protected abstract void AddEnterShowedViews(List<UiViewId> viewIds);
-        protected abstract void AddEnterHidedViews(List<UiViewId> viewIds);
-        protected abstract void AddExitShowViews(List<UiViewId> viewIds);
-        protected abstract void AddExitHidedViews(List<UiViewId> viewIds);
-        protected abstract void AddEnterUiActions(List<UiActionId> uiActionIds);
-        protected abstract void AddExitUiActions(List<UiActionId> uiActionIds);
+        private void ManageEnterPopUp()
+        {
+            UiPopUpViewManager manager = DeepUiBrain.PopUpViewManager;
+            
+            if (IsHideAllPopUpsEntered)
+                manager.HideAll();
+        }
+
+        private void ManageExitPopUp()
+        {
+            UiPopUpViewManager manager = DeepUiBrain.PopUpViewManager;
+            
+            if (IsHideAllPopUpsExited)
+                manager.HideAll();
+        }
     }
 }

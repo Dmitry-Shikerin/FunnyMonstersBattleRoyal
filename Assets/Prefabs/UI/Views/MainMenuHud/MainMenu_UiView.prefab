@@ -2323,6 +2323,7 @@ MonoBehaviour:
   ShowId: 1
   _id: 2
   _quickGameButton: {fileID: 2699650912683836299}
+  _config: {fileID: 11400000, guid: d2707dbfcf2a1d849890862896e257ae, type: 2}
   <PlayerNameUiLink>k__BackingField: {fileID: 6160959784254542558}
 --- !u!114 &6160959784254542558
 MonoBehaviour:
