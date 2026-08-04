@@ -20,8 +20,8 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Actions
 
         protected override void OnUpdate()
         {
-            bool isGrounded = IsControllerGrounded();
-            // bool isGrounded = IsCustomGrounded();
+            //bool isGrounded = IsControllerGrounded();
+            bool isGrounded = IsCustomGrounded();
 
             if (isGrounded && _entity.HasGrounded() == false)
                 _entity.AddGrounded();

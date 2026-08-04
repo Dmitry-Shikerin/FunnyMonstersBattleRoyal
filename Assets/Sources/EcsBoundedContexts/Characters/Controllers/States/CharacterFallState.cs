@@ -5,7 +5,6 @@ using ParadoxNotion.Design;
 using Sources.EcsBoundedContexts.Animancers.Domain.Enums;
 using Sources.EcsBoundedContexts.Animancers.Extension;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
-using Sources.EcsBoundedContexts.Characters.Presentation.Network;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
@@ -32,7 +31,7 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
             _entity.AddAir();
             DOVirtual.Float(
                     _entity.GetGravity().Value,
-                    -config.JumpGravity,
+                    config.FallGravity,
                     config.ChangeFallGravityDuration,
                     value => _entity.ReplaceGravity(value))
                 .SetEase(config.ChangeFallGravityEase);
@@ -47,9 +46,10 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
 
             //Gravity
             direction.y = _entity.GetGravity().Value;
-            Debug.Log(direction);
+            //Debug.Log($"Direction {direction}");
 
-            characterController.Move(direction);
+            //characterController.Move(direction);
+            _entity.GetTransform().Value.Translate(direction);
         }
 
         protected override void OnExit()

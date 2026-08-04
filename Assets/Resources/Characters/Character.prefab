@@ -48,7 +48,6 @@ GameObject:
   - component: {fileID: 7840379252826797560}
   - component: {fileID: 6361660916615637044}
   - component: {fileID: 2062534942586215354}
-  - component: {fileID: 5691824704503007722}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -126,7 +125,7 @@ MonoBehaviour:
   <FsmOwner>k__BackingField: {fileID: 5921213939749778996}
   <Animancer>k__BackingField: {fileID: 621492899313384078}
   <CharacterController>k__BackingField: {fileID: 343228178934919456}
-  <Rigidbody>k__BackingField: {fileID: 5691824704503007722}
+  <Rigidbody>k__BackingField: {fileID: 0}
   <GroundCheck>k__BackingField: {fileID: 72820465754033901}
   <NetworkAnimationView>k__BackingField: {fileID: 2062534942586215354}
 --- !u!143 &343228178934919456
@@ -139,7 +138,7 @@ CharacterController:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -244,33 +243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 3492080140936881330}
---- !u!54 &5691824704503007722
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5474647321340379836}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
 --- !u!1 &8445449419463790362
 GameObject:
   m_ObjectHideFlags: 0

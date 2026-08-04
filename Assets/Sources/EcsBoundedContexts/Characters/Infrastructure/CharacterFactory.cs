@@ -39,7 +39,7 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             ProtoEntity spawnPointEntity = _spawnPointEntitiesProvider.GetFreedomPoint();
             Vector3 position = spawnPointEntity.GetSpawnPointTransform().Value.position;
             Quaternion rotation = spawnPointEntity.GetSpawnPointTransform().Value.rotation;
-            Debug.Log($"Position {position}");
+            position.y += 10;
 
             NetworkObject networkObject = runner.Spawn(prefab, position, rotation, playerRef);
             spawnPointEntity.AddBusy();
@@ -49,9 +49,6 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             characterEntity.AddPlayerRef(playerRef);
             characterEntity.AddInputEntity(inputEntity);
             inputEntity.AddInputOwner(characterEntity);
-            // //TODO костыль
-            // networkObject.transform.position = spawnPointEntity.GetSpawnPointTransform().Value.position;
-            // Debug.Log($"Position {networkObject.transform.position}");
 
             if (runner.LocalPlayer == playerRef)
             {

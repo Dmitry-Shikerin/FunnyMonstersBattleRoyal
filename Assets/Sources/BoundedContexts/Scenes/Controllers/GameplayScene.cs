@@ -90,7 +90,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         {
             _inputService.Initialize();
             _focusService.Initialize();
-            Debug.Log($"After init");
             await _compositeAssetService.LoadAsync(ResourcesPrefabPath.ResourcesAssetsConfig, AddressablesPrefabPath.AddressablesAssetConfig);
             ColliderExt.Construct(_entityRepository);
             AnimancerExtension.Construct(_assetCollector);
@@ -101,7 +100,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _ecsGameStartUp = NetworkRunnerProvider.LeoEcsGameStartUp;
             AttributeInjector.Inject(_ecsGameStartUp, _container);
             await _ecsGameStartUp.Initialize();
-            Debug.Log($"Before init");
             _sdkService.Initialize();
             _soundService.Initialize();
             _isLoaded = true;
