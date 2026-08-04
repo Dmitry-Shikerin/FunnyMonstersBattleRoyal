@@ -314,8 +314,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 789577770}
-  - component: {fileID: 789577772}
-  - component: {fileID: 789577771}
   m_Layer: 0
   m_Name: EcsGameStartUp
   m_TagString: Untagged
@@ -338,37 +336,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1341820056}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &789577771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789577769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2e637ca97588c84f9dcae7710da34cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &789577772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789577769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SortKey: 888548986
-  SendPriority: 1
-  EnableInterpolation: 1
-  Flags: 262146
-  NestedObjects: []
-  NetworkedBehaviours: []
-  ForceRemoteRenderTimeframe: 0
 --- !u!1 &829068205
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,7 +925,7 @@ PrefabInstance:
     - target: {fileID: 1960697249013102964, guid: 328ef7da6f559c244bbf18aad739ae55, type: 3}
       propertyPath: _ecsGameStartUp
       value: 
-      objectReference: {fileID: 789577771}
+      objectReference: {fileID: 0}
     - target: {fileID: 1960697249013102964, guid: 328ef7da6f559c244bbf18aad739ae55, type: 3}
       propertyPath: _mainRootGameObjects
       value: 

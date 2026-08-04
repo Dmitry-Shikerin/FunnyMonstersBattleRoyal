@@ -14,6 +14,7 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
     {
         //Scenes
         public const string MainMenu = "MainMenu";
+        public const string Lobby = "Lobby";
         public const string Gameplay = "Gameplay";
 
         //Common

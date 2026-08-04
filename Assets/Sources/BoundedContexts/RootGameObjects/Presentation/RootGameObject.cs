@@ -1,4 +1,5 @@
-﻿using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
+﻿using System.Collections.Generic;
+using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -14,5 +15,6 @@ namespace Sources.BoundedContexts.RootGameObjects.Presentation
         
         [field: FoldoutGroup("Character")]
         [field: SerializeField] public Transform CharacterSpawnPoint { get; private set; }
+        [field: SerializeField] public List<EntityLink> CharacterSpawnPoints { get; private set; }
     }
 }

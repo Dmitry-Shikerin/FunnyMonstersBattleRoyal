@@ -10,7 +10,7 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
         private static NetworkRunner _runner;
         private static NetworkCallbacksReceiver _networkCallbacksReceiver;
         private static NetworkSceneManagerDefault _sceneManagerDefault;
-        private static EcsGameStartUp _ecsGameStartUp;
+        private static LeoEcsGameStartUp _leoEcsGameStartUp;
 
         public static NetworkRunner Runner
         {
@@ -47,30 +47,24 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
             }
         }
 
-        public static EcsGameStartUp EcsGameStartUp
+        public static LeoEcsGameStartUp LeoEcsGameStartUp
         {
             get
             {
-                if (_ecsGameStartUp == null)
+                if (_leoEcsGameStartUp == null)
                     _runner = CreateRunner();
 
-                return _ecsGameStartUp;
+                return _leoEcsGameStartUp;
             }
         } 
 
         private static NetworkRunner CreateRunner()
         {
-            // NetworkRunner prefab = Resources.Load<NetworkRunner>("NetworkRunner");
-            // NetworkRunner networkRunner = Object.Instantiate(prefab);
-            // _sceneManagerDefault = networkRunner.gameObject.GetComponent<NetworkSceneManagerDefault>();
-            // _networkCallbacksReceiver = networkRunner.gameObject.GetComponent<NetworkCallbacksReceiver>();
-            // _ecsGameStartUp = networkRunner.gameObject.GetComponent<NetworkEcsRunner>().EcsGameStartUp;
-            //
             NetworkRunner networkRunner = new GameObject("NetworkCore").AddComponent<NetworkRunner>();
             networkRunner.AddComponent<NetworkRunnerMemento>();
             _sceneManagerDefault = networkRunner.gameObject.AddComponent<NetworkSceneManagerDefault>();
             _networkCallbacksReceiver = networkRunner.gameObject.AddComponent<NetworkCallbacksReceiver>();
-            _ecsGameStartUp = networkRunner.gameObject.AddComponent<NetworkEcsRunner>().EcsGameStartUp;
+            _leoEcsGameStartUp = networkRunner.gameObject.AddComponent<NetworkEcsRunner>().LeoEcsGameStartUp;
 
             return networkRunner;
         }

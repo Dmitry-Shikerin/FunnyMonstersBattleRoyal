@@ -4,6 +4,7 @@ using Cysharp.Threading.Tasks;
 using Fusion;
 using Fusion.Menu;
 using Fusion.Photon.Realtime;
+using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -44,7 +45,7 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
             return sceneRef;
         }
 
-        public async UniTask<ConnectResult> ConnectAsync(FusionMenuConnectArgs connectionArgs, FusionMenuConfig config)
+        public async UniTask<ConnectResult> ConnectAsync(FusionMenuConnectArgs connectionArgs, FusionMenuConfig config, string sceneName)
         {
             _config = config;
             
@@ -66,10 +67,10 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
                 }
             }
 
-            return await ConnectAsyncInternal(connectionArgs);
+            return await ConnectAsyncInternal(connectionArgs, sceneName);
         }
 
-        private async UniTask<ConnectResult> ConnectAsyncInternal(FusionMenuConnectArgs connectArgs)
+        private async UniTask<ConnectResult> ConnectAsyncInternal(FusionMenuConnectArgs connectArgs, string sceneName)
         {
             // Safety
             if (_connectingSafeCheck)
@@ -102,12 +103,13 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
             //startGameArgs.GameMode = connectArgs.GameMode ?? ResolveGameMode(connectArgs);
             startGameArgs.GameMode = GameMode.AutoHostOrClient;
             startGameArgs.SessionName = _sessionName = connectArgs.Session;
+            Debug.Log($"Session Name {_sessionName}");
             startGameArgs.PlayerCount = _maxPlayerCount = connectArgs.MaxPlayerCount;
 
             // Scene info
             NetworkSceneInfo sceneInfo = new NetworkSceneInfo();
             //sceneInfo.AddSceneRef(sceneManager.GetSceneRef(connectArgs.Scene.ScenePath), LoadSceneMode.Additive);
-            sceneInfo.AddSceneRef(SceneRef.FromIndex(1));
+            sceneInfo.AddSceneRef(GetSceneRef(sceneName));
             startGameArgs.Scene = sceneInfo;
 
             // Cancellation Token
@@ -130,6 +132,19 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
                 _sessionName = _runner.SessionInfo.Name;
 
             return connectResult;
+        }
+
+        private SceneRef GetSceneRef(string sceneName)
+        {
+            int index = sceneName switch
+            {
+                IdsConst.MainMenu => 0,
+                IdsConst.Lobby => 1,
+                IdsConst.Gameplay => 2,
+                _ => throw new InvalidOperationException("Not enough scene name")
+            };
+            
+            return SceneRef.FromIndex(index);
         }
 
         private FusionAppSettings CopyAppSettings(FusionMenuConnectArgs connectArgs)

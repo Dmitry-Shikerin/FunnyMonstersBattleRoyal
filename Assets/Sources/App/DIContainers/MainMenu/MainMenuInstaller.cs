@@ -26,7 +26,7 @@ namespace Sources.App.DIContainers.MainMenu
             containerBuilder.RegisterValue(_mainRootGameObjects);
 
             //Ecs
-            containerBuilder.RegisterType(typeof(EcsGameStartUp), new [] { typeof(IEcsGameStartUp) }, Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(LeoEcsGameStartUp), new [] { typeof(IEcsGameStartUp) }, Lifetime.Singleton, Resolution.Lazy);
             
             //Services
             containerBuilder.RegisterType(typeof(PauseService), new [] { typeof(IPauseService) }, Lifetime.Singleton, Resolution.Lazy);

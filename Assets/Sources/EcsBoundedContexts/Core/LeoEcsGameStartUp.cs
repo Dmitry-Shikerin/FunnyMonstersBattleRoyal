@@ -17,7 +17,7 @@ using Sources.EcsBoundedContexts.Volumes.Domain.Components;
 
 namespace Sources.EcsBoundedContexts.Core
 {
-    public class EcsGameStartUp : IEcsGameStartUp
+    public class LeoEcsGameStartUp : IEcsGameStartUp
     {
         private Container _container;
         private ProtoSystems _systems;

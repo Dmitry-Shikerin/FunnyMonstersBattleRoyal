@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Threading;
 using Cysharp.Threading.Tasks;
-using Fusion;
 using Fusion.Menu;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using Reflex.Attributes;
@@ -47,7 +45,7 @@ namespace Sources.BoundedContexts.Hud.Presentations.MainMenu
             ConnectionArgs.MaxPlayerCount = 6;
             
             _uiViewService.Show(UiViewId.Loading);
-            ConnectResult result = await _startGameService.ConnectAsync(ConnectionArgs, _config);
+            ConnectResult result = await _startGameService.ConnectAsync(ConnectionArgs, _config, IdsConst.Lobby);
 
             await HandleConnectionResult(result);
         }

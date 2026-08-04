@@ -12,6 +12,7 @@ using Sources.EcsBoundedContexts.KillEnemyCounters.Infrastructure;
 using Sources.EcsBoundedContexts.Lights.Infrastructure;
 using Sources.EcsBoundedContexts.Players.Infrastructure;
 using Sources.EcsBoundedContexts.PlayerWallets.Infrastructure;
+using Sources.EcsBoundedContexts.Spawners.Infrastructure;
 using Sources.EcsBoundedContexts.Tutorials.Infrastructure;
 using Sources.EcsBoundedContexts.Volumes.Infrastructure;
 using Sources.Frameworks.GameServices.EntityPools.Implementation;
@@ -79,6 +80,9 @@ namespace Sources.App.DIContainers.Common
             
             //Player
             containerBuilder.RegisterType(typeof(PlayerEntityFactory), Lifetime.Singleton, Resolution.Lazy);
+            
+            //SpawnPoints
+            containerBuilder.RegisterType(typeof(SpawnPointEntityFactory), Lifetime.Singleton, Resolution.Lazy);
         }
     }
 }

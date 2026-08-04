@@ -95,7 +95,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             InitDeepUiBrain();
             _uiReflexInjector.InjectUiViews();
             _localizationService.Translate();
-            _ecsGameStartUp = NetworkRunnerProvider.EcsGameStartUp;
+            _ecsGameStartUp = NetworkRunnerProvider.LeoEcsGameStartUp;
             AttributeInjector.Inject(_ecsGameStartUp, _container);
             await _ecsGameStartUp.Initialize();
             Debug.Log($"Before init");
