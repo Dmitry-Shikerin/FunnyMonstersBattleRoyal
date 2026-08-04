@@ -4,6 +4,7 @@ using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
 using Sources.EcsBoundedContexts.Spawners.Infrastructure;
+using Sources.EcsBoundedContexts.Spawners.Infrastructure.Factories;
 
 namespace Sources.EcsBoundedContexts.Spawners.Controllers
 {

@@ -13,7 +13,6 @@ namespace Sources.EcsBoundedContexts.Timers.Infrastructure
     [Aspect(AspectName.Game)]
     public class TimerSystem : IProtoRunSystem
     {
-        [DI] private readonly GameAspect _aspect;
         [DI] private readonly ProtoIt _it = new (It.Inc<TimerComponent>());
         
         public void Run()

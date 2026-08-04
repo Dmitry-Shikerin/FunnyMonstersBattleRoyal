@@ -8,6 +8,7 @@ using Sources.EcsBoundedContexts.Tutorials.Controllers.Data;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers.Data;
 using Sources.EcsBoundedContexts.Players.Systems.Data;
 using Sources.EcsBoundedContexts.Characters.Controllers.Systems;
+using Sources.EcsBoundedContexts.Spawners.Controllers;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Controllers.Data;
 using Sources.EcsBoundedContexts.Input.Controllers;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers;
@@ -39,6 +40,7 @@ namespace Sources.EcsBoundedContexts.Core
 			PlayerWalletLoadSystem playerWalletLoadSystem, //Order: 10 //Ability
 			PlayerLoadSystem playerLoadSystem, //Order: 10 //Ability
 			CharacterInitializeSystem characterInitializeSystem, //Order: 10 //Characters
+			SpawnPointsInitializeSystem spawnPointsInitializeSystem, //Order: 11 //Ability
 			KillEnemyCounterLoadSystem killEnemyCounterLoadSystem, //Order: 12 //Common
 			InputInitializeSystem inputInitializeSystem, //Order: 15 //Characters
 			InputSystem inputSystem, //Order: 50 //Characters
@@ -77,6 +79,7 @@ namespace Sources.EcsBoundedContexts.Core
 				playerWalletLoadSystem, //Ability
 				playerLoadSystem, //Ability
 				characterInitializeSystem, //Characters
+				spawnPointsInitializeSystem, //Ability
 				killEnemyCounterLoadSystem, //Common
 				inputInitializeSystem, //Characters
 				inputSystem, //Characters

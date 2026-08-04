@@ -47,7 +47,6 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
             ref JumpingComponent jumping = ref _entity.GetJumping();
             
             jumping.JumpTimer -= Time.deltaTime;
-            //Debug.Log($"{jumping.JumpTimer}");
             
             Move(_entity);
             

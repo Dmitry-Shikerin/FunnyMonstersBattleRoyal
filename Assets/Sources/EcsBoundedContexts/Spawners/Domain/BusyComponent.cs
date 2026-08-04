@@ -1,5 +1,8 @@
-﻿namespace Sources.EcsBoundedContexts.Spawners.Domain
+﻿using Sources.EcsBoundedContexts.Core.Domain;
+
+namespace Sources.EcsBoundedContexts.Spawners.Domain
 {
+    [Component(group: ComponentGroup.Common)]
     public struct BusyComponent
     {
     }

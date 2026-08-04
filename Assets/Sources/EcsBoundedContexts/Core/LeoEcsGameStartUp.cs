@@ -13,6 +13,7 @@ using Sources.EcsBoundedContexts.Input.Domain;
 using Sources.EcsBoundedContexts.Movements.Move.Components;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
+using Sources.EcsBoundedContexts.Spawners.Infrastructure.Services;
 using Sources.EcsBoundedContexts.Volumes.Domain.Components;
 
 namespace Sources.EcsBoundedContexts.Core
@@ -26,15 +27,18 @@ namespace Sources.EcsBoundedContexts.Core
         private ISystemsCollector _systemsCollector;
         private ProtoSystems _unitySystems;
         private bool _isInitialize;
+        private SpawnPointEntitiesProvider _spawnPointEntitiesProvider;
 
         [Inject]
         private void Construct(
+            SpawnPointEntitiesProvider spawnPointEntitiesProvider,
             Container container, 
             ProtoWorld protoWorld,
             ProtoSystems systems,
             GameAspect aspect,
             ISystemsCollector systemsCollector)
         {
+            _spawnPointEntitiesProvider = spawnPointEntitiesProvider;
             _container = container ?? throw new ArgumentNullException(nameof(container));
             _world = protoWorld ?? throw new ArgumentNullException(nameof(protoWorld));
             _systems = systems ?? throw new ArgumentNullException(nameof(systems));
@@ -47,6 +51,7 @@ namespace Sources.EcsBoundedContexts.Core
             InitUnitySystems();
             await UniTask.Yield();
             AddModules();
+            _systems.AddService(_spawnPointEntitiesProvider);
             _systemsCollector.AddSystems();
             AddOneFrame();
             _systems.Init();
@@ -70,7 +75,7 @@ namespace Sources.EcsBoundedContexts.Core
 
         private void AddModules()
         {
-            _systems.AddModule(new AutoInjectModule());
+            _systems.AddModule(new AutoInjectModule(true));
         }
 
         private void AddOneFrame()

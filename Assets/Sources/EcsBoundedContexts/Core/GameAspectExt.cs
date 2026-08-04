@@ -13,12 +13,13 @@ using Sources.EcsBoundedContexts.Volumes.Presentation;
 using Sources.EcsBoundedContexts.Volumes.Domain.Enums;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Components;
 using Sources.EcsBoundedContexts.Timers.Domain;
+using Sources.EcsBoundedContexts.Spawners.Domain;
+using UnityEngine;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.PlayerWallets.Presentation;
 using Sources.EcsBoundedContexts.Players.Domain.Components;
 using Sources.EcsBoundedContexts.Particles.Domain;
-using UnityEngine;
 using Sources.EcsBoundedContexts.Movements.TargetPoint.Components;
 using Sources.EcsBoundedContexts.Movements.Rotation.Components;
 using Sources.EcsBoundedContexts.Movements.Rotation.Data;
@@ -291,6 +292,55 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelTimer(this ProtoEntity entity)
 			=> s_GameAspect.Timer.Del(entity);
 
+		//Busy
+		public static bool HasBusy(this ProtoEntity entity) =>
+			s_GameAspect.Busy.Has(entity);
+
+		public static ref BusyComponent AddBusy(this ProtoEntity entity)
+		{
+			ref BusyComponent busyComponent = ref s_GameAspect.Busy.Add(entity);
+			return ref busyComponent;
+		}
+
+		public static void DelBusy(this ProtoEntity entity)
+			=> s_GameAspect.Busy.Del(entity);
+
+		//SpawnPoint
+		public static bool HasSpawnPoint(this ProtoEntity entity) =>
+			s_GameAspect.SpawnPoint.Has(entity);
+
+		public static ref SpawnPointTag AddSpawnPoint(this ProtoEntity entity)
+		{
+			ref SpawnPointTag spawnPointTag = ref s_GameAspect.SpawnPoint.Add(entity);
+			return ref spawnPointTag;
+		}
+
+		public static void DelSpawnPoint(this ProtoEntity entity)
+			=> s_GameAspect.SpawnPoint.Del(entity);
+
+		//SpawnPointTransform
+		public static bool HasSpawnPointTransform(this ProtoEntity entity) =>
+			s_GameAspect.SpawnPointTransform.Has(entity);
+
+		public static ref SpawnPointTransformComponent GetSpawnPointTransform(this ProtoEntity entity) =>
+			ref s_GameAspect.SpawnPointTransform.Get(entity);
+
+		public static void ReplaceSpawnPointTransform(this ProtoEntity entity, Transform value)
+		{
+			ref SpawnPointTransformComponent spawnPointTransformComponent = ref s_GameAspect.SpawnPointTransform.Get(entity);
+			spawnPointTransformComponent.Value = value;
+		}
+
+		public static ref SpawnPointTransformComponent AddSpawnPointTransform(this ProtoEntity entity, Transform value)
+		{
+			ref SpawnPointTransformComponent spawnPointTransformComponent = ref s_GameAspect.SpawnPointTransform.Add(entity);
+			spawnPointTransformComponent.Value = value;
+			return ref spawnPointTransformComponent;
+		}
+
+		public static void DelSpawnPointTransform(this ProtoEntity entity)
+			=> s_GameAspect.SpawnPointTransform.Del(entity);
+
 		//ClearableData
 		public static bool HasClearableData(this ProtoEntity entity) =>
 			s_GameAspect.ClearableData.Has(entity);
@@ -455,16 +505,16 @@ namespace Sources.EcsBoundedContexts.Core
 		public static ref PlayerNameComponent GetPlayerName(this ProtoEntity entity) =>
 			ref s_GameAspect.PlayerName.Get(entity);
 
-		public static void ReplacePlayerName(this ProtoEntity entity, String name)
+		public static void ReplacePlayerName(this ProtoEntity entity, String value)
 		{
 			ref PlayerNameComponent playerNameComponent = ref s_GameAspect.PlayerName.Get(entity);
-			playerNameComponent.Value = name;
+			playerNameComponent.Value = value;
 		}
 
-		public static ref PlayerNameComponent AddPlayerName(this ProtoEntity entity, String name)
+		public static ref PlayerNameComponent AddPlayerName(this ProtoEntity entity, String value)
 		{
 			ref PlayerNameComponent playerNameComponent = ref s_GameAspect.PlayerName.Add(entity);
-			playerNameComponent.Value = name;
+			playerNameComponent.Value = value;
 			return ref playerNameComponent;
 		}
 

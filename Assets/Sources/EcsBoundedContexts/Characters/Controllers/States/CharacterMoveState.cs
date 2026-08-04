@@ -28,7 +28,7 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
 
         protected override void OnEnter()
         {
-            var config = _entity.GetCharacterConfig().Value;
+            CharacterConfig config = _entity.GetCharacterConfig().Value;
             _entity.ReplaceGravity(config.IdleGravity);
             AnimancerState state = _entity.PlayAnimation(AnimationName.Walk);
 

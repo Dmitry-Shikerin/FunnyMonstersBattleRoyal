@@ -24,10 +24,9 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
         
         protected override void OnEnter()
         {
-            //_entity.PlayAnimation(AnimationName.AirJump).SetCallback(AnimationEventName.End, Finish);
             _entity.PlayAnimation(AnimationName.AirJump);
-            NetworkAnimationView networkAnimationView = _entity.GetCharacterModule().Value.NetworkAnimationView;
-            networkAnimationView.PlayAnimation_Rpc((int)AnimationName.AirJump);
+            _entity.GetCharacterModule().Value.NetworkAnimationView
+                .PlayAnimation_Rpc((int)AnimationName.AirJump);
             CharacterConfig config = _entity.GetCharacterConfig().Value;
             _entity.ReplaceTargetGravity(config.FallGravity);
             _entity.AddAir();
@@ -48,6 +47,7 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
 
             //Gravity
             direction.y = _entity.GetGravity().Value;
+            Debug.Log(direction);
 
             characterController.Move(direction);
         }

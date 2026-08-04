@@ -25,7 +25,9 @@ namespace Sources.App.Core
             try
             {
 #if UNITY_EDITOR
-                if (SceneManager.GetActiveScene().name == IdsConst.Gameplay)
+                string sceneName = SceneManager.GetActiveScene().name;
+                
+                if (sceneName == IdsConst.Gameplay || sceneName == IdsConst.Lobby)
                 {
                     NetworkRunner runner = NetworkRunnerProvider.Runner;
                     runner.ProvideInput = true;
@@ -34,7 +36,7 @@ namespace Sources.App.Core
                     {
                         GameMode = GameMode.AutoHostOrClient,
                         SceneManager = runner.SceneManager,
-                        Scene = SceneRef.FromIndex(1),
+                        Scene = GetSceneRef(sceneName),
                         SessionName = "SampleSession",
                     });
                     //Иначе загружает мейн меню сцену
@@ -61,6 +63,19 @@ namespace Sources.App.Core
             catch (OperationCanceledException)
             {
             }
+        }
+        
+        private SceneRef GetSceneRef(string sceneName)
+        {
+            int index = sceneName switch
+            {
+                IdsConst.MainMenu => 0,
+                IdsConst.Lobby => 1,
+                IdsConst.Gameplay => 2,
+                _ => throw new InvalidOperationException("Not enough scene name")
+            };
+            
+            return SceneRef.FromIndex(index);
         }
 
         private void Update() =>

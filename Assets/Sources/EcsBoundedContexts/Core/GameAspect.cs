@@ -8,6 +8,7 @@ using Sources.EcsBoundedContexts.Weapons.Domain;
 using Sources.EcsBoundedContexts.Volumes.Domain.Components;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Components;
 using Sources.EcsBoundedContexts.Timers.Domain;
+using Sources.EcsBoundedContexts.Spawners.Domain;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.Players.Domain.Components;
@@ -50,6 +51,9 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<VolumeModuleComponent> VolumeModule = new ();
 		public readonly ProtoPool<VolumeTypeComponent> VolumeType = new ();
 		public readonly ProtoPool<TimerComponent> Timer = new ();
+		public readonly ProtoPool<BusyComponent> Busy = new ();
+		public readonly ProtoPool<SpawnPointTag> SpawnPoint = new ();
+		public readonly ProtoPool<SpawnPointTransformComponent> SpawnPointTransform = new ();
 		public readonly ProtoPool<ClearableDataComponent> ClearableData = new ();
 		public readonly ProtoPool<ClearDataEvent> ClearDataEvent = new ();
 		public readonly ProtoPool<SavableDataComponent> SavableData = new ();
@@ -198,6 +202,9 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<VolumeTypeComponent>)] = VolumeType,
 				[typeof(ProtoPool<TutorialTag>)] = Tutorial,
 				[typeof(ProtoPool<TimerComponent>)] = Timer,
+				[typeof(ProtoPool<BusyComponent>)] = Busy,
+				[typeof(ProtoPool<SpawnPointTag>)] = SpawnPoint,
+				[typeof(ProtoPool<SpawnPointTransformComponent>)] = SpawnPointTransform,
 				[typeof(ProtoPool<ClearableDataComponent>)] = ClearableData,
 				[typeof(ProtoPool<ClearDataEvent>)] = ClearDataEvent,
 				[typeof(ProtoPool<SavableDataComponent>)] = SavableData,
