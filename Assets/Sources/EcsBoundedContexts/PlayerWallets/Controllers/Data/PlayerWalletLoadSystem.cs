@@ -32,18 +32,18 @@ namespace Sources.EcsBoundedContexts.PlayerWallets.Controllers.Data
 
         public void Init(IProtoSystems systems)
         {
-            GameplayUiView gameplayUiView = _uiViewService.Get<GameplayUiView>();
-
-            //PlayerWallet
-            ProtoEntity wallet = _playerWalletEntityFactory.Create(gameplayUiView.Wallet);
-
-            if (_dataService.HasKey(IdsConst.PlayerWallet) == false)
-                return;
-            
-            //Load
-            PlayerWalletSaveData playerWalletSaveData =
-                _dataService.LoadData<PlayerWalletSaveData>(IdsConst.PlayerWallet);
-            wallet.ReplacePlayerWallet(playerWalletSaveData.Coins);
+            // GameplayUiView gameplayUiView = _uiViewService.Get<GameplayUiView>();
+            //
+            // //PlayerWallet
+            // ProtoEntity wallet = _playerWalletEntityFactory.Create(gameplayUiView.Wallet);
+            //
+            // if (_dataService.HasKey(IdsConst.PlayerWallet) == false)
+            //     return;
+            //
+            // //Load
+            // PlayerWalletSaveData playerWalletSaveData =
+            //     _dataService.LoadData<PlayerWalletSaveData>(IdsConst.PlayerWallet);
+            // wallet.ReplacePlayerWallet(playerWalletSaveData.Coins);
         }
     }
 }

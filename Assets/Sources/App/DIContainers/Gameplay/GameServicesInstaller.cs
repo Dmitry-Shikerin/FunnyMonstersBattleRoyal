@@ -24,12 +24,7 @@ namespace Sources.App.DIContainers.Gameplay
             containerBuilder.RegisterType(typeof(UpdateService), new [] { typeof(IUpdateService), typeof(IUpdateRegister) }, Lifetime.Singleton, Resolution.Lazy);
             
             //Camera
-            //container.Bind<CameraView>().FromInstance(_cameraView).AsSingle();
             containerBuilder.RegisterType(typeof(CameraService), new [] { typeof(ICameraService) }, Lifetime.Singleton, Resolution.Lazy);
-            
-            //SkyAndWeather
-            //container.Bind<SkyAndWeatherView>().FromInstance(_skyAndWeatherView).AsSingle();
-            //container.Bind<ISkyAndWeatherService>().To<SkyAndWeatherService>().AsSingle();
         }
     }
 }

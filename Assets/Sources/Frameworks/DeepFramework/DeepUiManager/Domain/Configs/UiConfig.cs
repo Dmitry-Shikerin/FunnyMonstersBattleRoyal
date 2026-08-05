@@ -8,5 +8,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs
     {
         [field: SerializeField] public UiManagerConfig GameUiConfig { get; private set; }
         [field: SerializeField] public UiManagerConfig MainMenuUiConfig { get; private set; }
+        [field: SerializeField] public UiManagerConfig LobbyUiConfig { get; private set; }
     }
 }

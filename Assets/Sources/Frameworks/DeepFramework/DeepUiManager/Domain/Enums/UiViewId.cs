@@ -34,5 +34,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums
         NameInput = 29,
         Party = 30,
         SessionInfo = 31,
+        Lobby = 32,
     }
 }

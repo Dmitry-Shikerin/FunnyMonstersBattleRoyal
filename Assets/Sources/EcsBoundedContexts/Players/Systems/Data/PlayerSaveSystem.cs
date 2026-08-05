@@ -14,7 +14,7 @@ namespace Sources.EcsBoundedContexts.Players.Systems.Data
 {
     [EcsSystem(504)]
     [ComponentGroup(ComponentGroup.Ability)]
-    [Aspect(AspectName.MainMenu, AspectName.Game)]
+    [Aspect(AspectName.MainMenu, AspectName.Game, AspectName.Lobby)]
     public class PlayerSaveSystem : IProtoRunSystem
     {
         private readonly IDataService _dataService;
@@ -44,7 +44,6 @@ namespace Sources.EcsBoundedContexts.Players.Systems.Data
                     Id = IdsConst.Player,
                     Name = name,
                 };
-                Debug.Log($"Save name {name}");
                 _dataService.SaveData(data, IdsConst.Player);
             }
 

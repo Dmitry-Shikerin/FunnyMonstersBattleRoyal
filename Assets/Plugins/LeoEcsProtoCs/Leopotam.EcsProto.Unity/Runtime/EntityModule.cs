@@ -31,6 +31,10 @@ namespace Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.
             OnAfterDisable();
         }
 
+        protected virtual void OnAfterInitialize()
+        {
+        }
+
         protected virtual void OnAfterDisable()
         {
         }

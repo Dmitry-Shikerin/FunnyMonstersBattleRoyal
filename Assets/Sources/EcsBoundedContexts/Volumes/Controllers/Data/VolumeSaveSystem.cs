@@ -12,7 +12,7 @@ namespace Sources.EcsBoundedContexts.Volumes.Controllers.Data
 {
     [EcsSystem(501)]
     [ComponentGroup(ComponentGroup.Common)]
-    [Aspect(AspectName.Game, AspectName.MainMenu)]
+    [Aspect(AspectName.Game, AspectName.MainMenu, AspectName.Lobby)]
     public class VolumeSaveSystem : IProtoRunSystem
     {
         [DI] private readonly ProtoIt _saveIt = new(

@@ -60,7 +60,7 @@ namespace Sources.BoundedContexts.Hud.Presentations.MainMenu
                 await UniTask.WaitUntil(() => NetworkRunnerProvider.Runner.IsRunning);
                 await UniTask.Delay(TimeSpan.FromSeconds(1));
 
-                await _sceneService.ChangeSceneAsync(IdsConst.Gameplay);
+                await _sceneService.ChangeSceneAsync(IdsConst.Lobby);
             } 
             else if (result.FailReason != ConnectFailReason.ApplicationQuit) 
             {

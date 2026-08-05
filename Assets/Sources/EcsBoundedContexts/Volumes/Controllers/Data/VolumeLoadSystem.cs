@@ -17,7 +17,7 @@ namespace Sources.EcsBoundedContexts.Volumes.Controllers.Data
 {
     [EcsSystem(7)]
     [ComponentGroup(ComponentGroup.Common)]
-    [Aspect(AspectName.Game, AspectName.MainMenu)]
+    [Aspect(AspectName.Game, AspectName.MainMenu, AspectName.Lobby)]
     public class VolumeLoadSystem : IProtoInitSystem
     {
         private readonly IUiViewService _uiViewService;

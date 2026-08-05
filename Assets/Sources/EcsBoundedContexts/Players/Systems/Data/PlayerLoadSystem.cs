@@ -1,6 +1,7 @@
 ﻿using Leopotam.EcsProto;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using Sources.BoundedContexts.Hud.Presentations.Gameplay;
+using Sources.BoundedContexts.Hud.Presentations.Lobby;
 using Sources.BoundedContexts.Hud.Presentations.MainMenu;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
@@ -17,7 +18,7 @@ namespace Sources.EcsBoundedContexts.Players.Systems.Data
 {
     [EcsSystem(10)]
     [ComponentGroup(ComponentGroup.Ability)]
-    [Aspect(AspectName.MainMenu, AspectName.Game)]
+    [Aspect(AspectName.MainMenu, AspectName.Game, AspectName.Lobby)]
     public class PlayerLoadSystem : IProtoInitSystem
     {
         private readonly ISceneService _sceneService;
@@ -50,7 +51,9 @@ namespace Sources.EcsBoundedContexts.Players.Systems.Data
 
         private void LoadGameplay()
         {
-            EntityLink link = _uiViewService.Get<GameplayUiView>().PlayerName;
+            EntityLink link = _sceneService.CurrentSceneName == IdsConst.Gameplay  ?
+                _uiViewService.Get<GameplayUiView>().PlayerName :
+                _uiViewService.Get<LobbyUiView>().PlayerNameLink;
             GameplayPlayerNameUiModule module = link.GetModule<GameplayPlayerNameUiModule>();
             
             //PlayerWallet

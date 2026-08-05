@@ -18,6 +18,9 @@ namespace Sources.Frameworks.GameServices.SceneLoaderServices.Implementation
             if (sceneName == IdsConst.Gameplay)
                 return;
             
+            if (sceneName == IdsConst.Lobby)
+                return;
+            
             await SceneManager.LoadSceneAsync(sceneName);
         }
 

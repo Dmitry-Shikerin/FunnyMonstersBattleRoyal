@@ -48,6 +48,7 @@ using DG.Tweening;
 using Sources.EcsBoundedContexts.Characters.Domain.Components;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Characters.Presentation;
+using Sources.EcsBoundedContexts.Characters.Presentation.Skins;
 using Fusion;
 using Sources.EcsBoundedContexts.Cameras.Domain;
 using Unity.Cinemachine;
@@ -2110,6 +2111,29 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelCharacterModule(this ProtoEntity entity)
 			=> s_GameAspect.CharacterModule.Del(entity);
+
+		//CharacterSkinChangerModule
+		public static bool HasCharacterSkinChangerModule(this ProtoEntity entity) =>
+			s_GameAspect.CharacterSkinChangerModule.Has(entity);
+
+		public static ref CharacterSkinChangerModuleComponent GetCharacterSkinChangerModule(this ProtoEntity entity) =>
+			ref s_GameAspect.CharacterSkinChangerModule.Get(entity);
+
+		public static void ReplaceCharacterSkinChangerModule(this ProtoEntity entity, CharacterSkinChangerModule value)
+		{
+			ref CharacterSkinChangerModuleComponent characterSkinChangerModuleComponent = ref s_GameAspect.CharacterSkinChangerModule.Get(entity);
+			characterSkinChangerModuleComponent.Value = value;
+		}
+
+		public static ref CharacterSkinChangerModuleComponent AddCharacterSkinChangerModule(this ProtoEntity entity, CharacterSkinChangerModule value)
+		{
+			ref CharacterSkinChangerModuleComponent characterSkinChangerModuleComponent = ref s_GameAspect.CharacterSkinChangerModule.Add(entity);
+			characterSkinChangerModuleComponent.Value = value;
+			return ref characterSkinChangerModuleComponent;
+		}
+
+		public static void DelCharacterSkinChangerModule(this ProtoEntity entity)
+			=> s_GameAspect.CharacterSkinChangerModule.Del(entity);
 
 		//Character
 		public static bool HasCharacter(this ProtoEntity entity) =>

@@ -11,7 +11,7 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.Systems
 {
     [EcsSystem(55)]
     [ComponentGroup(ComponentGroup.Characters)]
-    [Aspect(AspectName.Game)]
+    [Aspect(AspectName.Game, AspectName.Lobby)]
     public class CharacterUpdateSystem : IProtoRunSystem
     {
         [DI] private readonly ProtoIt _it = new(

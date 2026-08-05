@@ -6,6 +6,7 @@ using Reflex.Injectors;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.EcsBoundedContexts.Animancers.Extension;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
+using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.NetworkCore;
@@ -21,6 +22,7 @@ using Sources.Frameworks.GameServices.Prefabs.Domain;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces.Composites;
 using Sources.Frameworks.GameServices.Scenes.Controllers.Interfaces;
+using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
 using Sources.Frameworks.GameServices.UiActions;
 using Sources.Frameworks.GameServices.UiReflexInjectors;
 using Sources.Frameworks.GameServices.UpdateServices.Interfaces;
@@ -36,6 +38,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
     {
         private JoinManager _joinManager;
         private readonly SpawnPointEntitiesProvider _spawnPointEntitiesProvider;
+        private readonly ISceneService _sceneService;
         private readonly IInputService _inputService;
         private readonly UiReflexInjector _uiReflexInjector;
         private readonly ISdkService _sdkService;
@@ -54,6 +57,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private bool _isLoaded;
 
         public GameplayScene(
+            ISceneService sceneService,
             IInputService inputService,
             UiReflexInjector uiReflexInjector,
             ISdkService sdkService,
@@ -69,6 +73,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             ICameraService cameraService,
             IUpdateService updateService)
         {
+            _sceneService = sceneService;
             _inputService = inputService;
             _uiReflexInjector = uiReflexInjector;
             _sdkService = sdkService;
@@ -144,9 +149,16 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             UiConfig hudConfig = _assetCollector.Get<UiConfig>();
             //что бы камера не была пустой
             Camera mainCamera = Camera.main;
+
+            //TODO возможно разделить на отдельную сцену
+            UiManagerConfig managerConfig = _sceneService.CurrentSceneName == IdsConst.Gameplay
+                ? hudConfig.GameUiConfig
+                : hudConfig.LobbyUiConfig;
+            
+            Debug.Log($"Scene name [{_sceneService.CurrentSceneName}], config name [{managerConfig.name}]");
             
             //Camera mainCamera = _rootGameObject.MainCamera.GetModule<MainCameraModule>().Camera;
-            DeepUiBrain.Instance.Initialize(hudConfig.GameUiConfig, mainCamera, _container);
+            DeepUiBrain.Instance.Initialize(managerConfig, mainCamera, _container);
         }
 
         private void InitUiActions()

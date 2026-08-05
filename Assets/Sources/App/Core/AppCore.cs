@@ -43,14 +43,13 @@ namespace Sources.App.Core
                     await UniTask.WaitUntil(() => NetworkRunnerProvider.Runner.IsRunning);
                     await UniTask.Delay(TimeSpan.FromSeconds(1));
 
-                    await _sceneService.ChangeSceneAsync(IdsConst.Gameplay);
+                    await _sceneService.ChangeSceneAsync(sceneName);
                     
                     return;
                 }
                 
                 await _sceneService.ChangeSceneAsync(
-                    SceneManager.GetActiveScene().name,
-                    new ScenePayload(SceneManager.GetActiveScene().name, false, false));  
+                    sceneName, new ScenePayload(SceneManager.GetActiveScene().name, false, false));  
 #else
                 await _sceneService.ChangeSceneAsync(
                     IdsConst.MainMenu,

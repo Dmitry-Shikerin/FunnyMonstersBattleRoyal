@@ -166,6 +166,7 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<AirComponent> Air = new ();
 		public readonly ProtoPool<CharacterConfigComponent> CharacterConfig = new ();
 		public readonly ProtoPool<CharacterModuleComponent> CharacterModule = new ();
+		public readonly ProtoPool<CharacterSkinChangerModuleComponent> CharacterSkinChangerModule = new ();
 		public readonly ProtoPool<CharacterTag> Character = new ();
 		public readonly ProtoPool<GravityComponent> Gravity = new ();
 		public readonly ProtoPool<GroundDistanceComponent> GroundDistance = new ();
@@ -289,6 +290,7 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<AirComponent>)] = Air,
 				[typeof(ProtoPool<CharacterConfigComponent>)] = CharacterConfig,
 				[typeof(ProtoPool<CharacterModuleComponent>)] = CharacterModule,
+				[typeof(ProtoPool<CharacterSkinChangerModuleComponent>)] = CharacterSkinChangerModule,
 				[typeof(ProtoPool<CharacterTag>)] = Character,
 				[typeof(ProtoPool<GravityComponent>)] = Gravity,
 				[typeof(ProtoPool<GroundDistanceComponent>)] = GroundDistance,

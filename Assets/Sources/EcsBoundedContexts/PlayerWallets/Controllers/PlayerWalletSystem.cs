@@ -36,8 +36,8 @@ namespace Sources.EcsBoundedContexts.PlayerWallets.Controllers
 
         public void Init(IProtoSystems systems)
         {
-            ProtoEntity wallet = _entityRepository.GetByName(IdsConst.PlayerWallet);
-            UpdateMoneyTexts(wallet);
+            // ProtoEntity wallet = _entityRepository.GetByName(IdsConst.PlayerWallet);
+            // UpdateMoneyTexts(wallet);
         }
 
         public void Run()

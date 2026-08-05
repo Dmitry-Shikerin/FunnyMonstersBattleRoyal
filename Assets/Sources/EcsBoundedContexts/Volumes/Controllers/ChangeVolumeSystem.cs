@@ -17,7 +17,7 @@ namespace Sources.EcsBoundedContexts.Volumes.Controllers
 {
     [EcsSystem(83)]
     [ComponentGroup(ComponentGroup.Common)]
-    [Aspect(AspectName.Game, AspectName.MainMenu)]
+    [Aspect(AspectName.Game, AspectName.MainMenu, AspectName.Lobby)]
     public class ChangeVolumeSystem : IProtoRunSystem, IProtoInitSystem
     {
         [DI] private readonly ProtoIt _increaseIt = new(

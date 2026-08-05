@@ -18,10 +18,10 @@ EditorBuildSettings:
     path: Assets/Scenes/TestGameplay.unity
     guid: 42fcf1f00a34e4c4496ff0703ab38e3c
   - enabled: 1
-    path: Assets/Photon/FusionMenu/FusionSampleMenu.unity
+    path: Assets/Plugins/Photon/FusionMenu/FusionMenu/FusionSampleMenu.unity
     guid: 74c3b330900a03442806ce69f1fe5955
   - enabled: 1
-    path: Assets/Photon/FusionDemos/Fusion-Intro-Shared/Scenes/FusionIntroShared.unity
+    path: Assets/Plugins/Photon/FusionDemos/FusionDemos/Fusion-Intro-Shared/Scenes/FusionIntroShared.unity
     guid: 0c93e24ebcb1fed489eeaf2f36cfb925
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: b4e86abf6ac68974282914813a07e253, type: 2}

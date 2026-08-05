@@ -21,8 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _enable: 0
+  enableState: 0
   _id: 
   _parent: {fileID: 0}
   <GameUiConfig>k__BackingField: {fileID: 11400000, guid: 6e094ab120d30d342b7fe148dbfa4a34, type: 2}
   <MainMenuUiConfig>k__BackingField: {fileID: 11400000, guid: f53013e058c59114eb6dcdd6e9de2667, type: 2}
+  <LobbyUiConfig>k__BackingField: {fileID: 11400000, guid: 37646fcd83ddbff429c1ff246f284ad4, type: 2}
