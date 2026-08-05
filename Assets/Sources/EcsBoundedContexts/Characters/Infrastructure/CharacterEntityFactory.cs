@@ -3,6 +3,7 @@ using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runt
 using Reflex.Core;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Characters.Presentation;
+using Sources.EcsBoundedContexts.Characters.Presentation.Skins;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
@@ -77,6 +78,9 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             //Stats
             entity.AddCharacterModule(module);
             entity.AddCharacterConfig(config);
+
+            CharacterSkinChangerModule skinModule = link.GetModule<CharacterSkinChangerModule>();
+            entity.AddCharacterSkinChangerModule(skinModule);
             
             //Grounded
             entity.AddGroundDistance(0);

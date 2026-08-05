@@ -9,13 +9,13 @@ using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Characters.Presentation.Skins.Ui
 {
-    public class HeadSkinChangerModule : EntityModule
+    public class BodyPartSkinChangerModule : EntityModule
     {
         [Required] [SerializeField] private UiButton _leftButton;
         [Required] [SerializeField] private UiButton _rightButton;
         [Required] [SerializeField] private TMP_Text _nameText;
 
-        private HeadSkinName _currentSkinName = HeadSkinName.Ear01;
+        private BodyPartSkinName _currentSkinName = BodyPartSkinName.BodyPart01;
         private int _currentIndex = 1;
 
         protected override void OnAfterInitialize()
@@ -40,12 +40,12 @@ namespace Sources.EcsBoundedContexts.Characters.Presentation.Skins.Ui
             // Переход к следующему скину
             _currentIndex++;
             
-            if (_currentIndex >= Enum.GetValues(typeof(HeadSkinName)).Length)
+            if (_currentIndex >= Enum.GetValues(typeof(BodyPartSkinName)).Length)
                 _currentIndex = 1; // Зацикливаем
         
-            _currentSkinName = (HeadSkinName)_currentIndex;
+            _currentSkinName = (BodyPartSkinName)_currentIndex;
             _nameText.text = _currentSkinName.ToString();
-            Entity.GetCharacterSkinChangerModule().Value.SetHeadSkin(_currentSkinName);
+            Entity.GetCharacterSkinChangerModule().Value.SetBodyPartSkin(_currentSkinName);
         }
 
         private void SetPreviousSkin()
@@ -54,11 +54,11 @@ namespace Sources.EcsBoundedContexts.Characters.Presentation.Skins.Ui
             _currentIndex--;
             
             if (_currentIndex <= 0)
-                _currentIndex = Enum.GetValues(typeof(HeadSkinName)).Length - 1; // Зацикливаем
+                _currentIndex = Enum.GetValues(typeof(BodyPartSkinName)).Length - 1; // Зацикливаем
         
-            _currentSkinName = (HeadSkinName)_currentIndex;
+            _currentSkinName = (BodyPartSkinName)_currentIndex;
             _nameText.text = _currentSkinName.ToString();
-            Entity.GetCharacterSkinChangerModule().Value.SetHeadSkin(_currentSkinName);
+            Entity.GetCharacterSkinChangerModule().Value.SetBodyPartSkin(_currentSkinName);
         }
     }
 }

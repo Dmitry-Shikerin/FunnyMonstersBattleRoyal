@@ -13,7 +13,7 @@ namespace Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.
         protected bool IsInitialized { get; private set; }
 
         public void Initialize(
-            ProtoEntity entity, 
+            ProtoEntity entity,
             ProtoWorld world,
             EntityLink link)
         {
@@ -21,6 +21,7 @@ namespace Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.
             World = world;
             Link = link;
             IsInitialized = true;
+            OnAfterInitialize();
         }
 
         private void OnDisable()

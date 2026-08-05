@@ -9,13 +9,13 @@ using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Characters.Presentation.Skins.Ui
 {
-    public class HeadSkinChangerModule : EntityModule
+    public class EyeSkinChangerModule : EntityModule
     {
         [Required] [SerializeField] private UiButton _leftButton;
         [Required] [SerializeField] private UiButton _rightButton;
         [Required] [SerializeField] private TMP_Text _nameText;
 
-        private HeadSkinName _currentSkinName = HeadSkinName.Ear01;
+        private EyeSkinName _currentSkinName = EyeSkinName.Eye01;
         private int _currentIndex = 1;
 
         protected override void OnAfterInitialize()
@@ -40,12 +40,12 @@ namespace Sources.EcsBoundedContexts.Characters.Presentation.Skins.Ui
             // Переход к следующему скину
             _currentIndex++;
             
-            if (_currentIndex >= Enum.GetValues(typeof(HeadSkinName)).Length)
+            if (_currentIndex >= Enum.GetValues(typeof(EyeSkinName)).Length)
                 _currentIndex = 1; // Зацикливаем
         
-            _currentSkinName = (HeadSkinName)_currentIndex;
+            _currentSkinName = (EyeSkinName)_currentIndex;
             _nameText.text = _currentSkinName.ToString();
-            Entity.GetCharacterSkinChangerModule().Value.SetHeadSkin(_currentSkinName);
+            Entity.GetCharacterSkinChangerModule().Value.SetEyeSkin(_currentSkinName);
         }
 
         private void SetPreviousSkin()
@@ -56,9 +56,9 @@ namespace Sources.EcsBoundedContexts.Characters.Presentation.Skins.Ui
             if (_currentIndex <= 0)
                 _currentIndex = Enum.GetValues(typeof(HeadSkinName)).Length - 1; // Зацикливаем
         
-            _currentSkinName = (HeadSkinName)_currentIndex;
+            _currentSkinName = (EyeSkinName)_currentIndex;
             _nameText.text = _currentSkinName.ToString();
-            Entity.GetCharacterSkinChangerModule().Value.SetHeadSkin(_currentSkinName);
+            Entity.GetCharacterSkinChangerModule().Value.SetEyeSkin(_currentSkinName);
         }
     }
 }
