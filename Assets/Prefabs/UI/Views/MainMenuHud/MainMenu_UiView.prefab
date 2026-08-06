@@ -2324,6 +2324,12 @@ MonoBehaviour:
   _id: 2
   _quickGameButton: {fileID: 2699650912683836299}
   _config: {fileID: 11400000, guid: d2707dbfcf2a1d849890862896e257ae, type: 2}
+  <ConnectionArgs>k__BackingField:
+    Username: 
+    PreferredRegion: 
+    AppVersion: 
+    MaxPlayerCount: 0
+    SceneName: 
   <PlayerNameUiLink>k__BackingField: {fileID: 6160959784254542558}
 --- !u!114 &6160959784254542558
 MonoBehaviour:
@@ -3064,6 +3070,10 @@ PrefabInstance:
     - target: {fileID: 7512179955917451023, guid: 5e52c7d194dff9844a2585d67251adb0, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246517752022515687, guid: 5e52c7d194dff9844a2585d67251adb0, type: 3}
+      propertyPath: m_Alpha
+      value: 0.79
       objectReference: {fileID: 0}
     - target: {fileID: 8332054602689967329, guid: 5e52c7d194dff9844a2585d67251adb0, type: 3}
       propertyPath: m_Name

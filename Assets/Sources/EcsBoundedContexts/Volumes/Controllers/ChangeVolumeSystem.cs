@@ -6,9 +6,9 @@ using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
+using Sources.EcsBoundedContexts.Settings.Presentation;
 using Sources.EcsBoundedContexts.Volumes.Domain.Components;
 using Sources.EcsBoundedContexts.Volumes.Domain.Enums;
-using Sources.EcsBoundedContexts.Volumes.Presentation;
 using Sources.Frameworks.DeepFramework.DeepUtils.Enums;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
@@ -114,37 +114,37 @@ namespace Sources.EcsBoundedContexts.Volumes.Controllers
                     _soundService.ChangeSoundsVolume(nextVolume);
             }
 
-            foreach (ProtoEntity entity in _muteIt)
-            {
-                entity.AddMutedVolume();
-                VolumeType volumeType = entity.GetVolumeType().Value;
-
-                if (volumeType == VolumeType.Music)
-                    _soundService.MuteMusic();
-                else if (volumeType == VolumeType.Sounds)
-                    _soundService.MuteSounds();
-            }
-
-            foreach (ProtoEntity entity in _unmuteIt)
-            {
-                entity.DelMutedVolume();
-                VolumeType volumeType = entity.GetVolumeType().Value;
-
-                if (volumeType == VolumeType.Music)
-                    _soundService.UnmuteMusic();
-                else if (volumeType == VolumeType.Sounds)
-                    _soundService.UnmuteSounds();
-            }
+            // foreach (ProtoEntity entity in _muteIt)
+            // {
+            //     entity.AddMutedVolume();
+            //     VolumeType volumeType = entity.GetVolumeType().Value;
+            //
+            //     if (volumeType == VolumeType.Music)
+            //         _soundService.MuteMusic();
+            //     else if (volumeType == VolumeType.Sounds)
+            //         _soundService.MuteSounds();
+            // }
+            //
+            // foreach (ProtoEntity entity in _unmuteIt)
+            // {
+            //     entity.DelMutedVolume();
+            //     VolumeType volumeType = entity.GetVolumeType().Value;
+            //
+            //     if (volumeType == VolumeType.Music)
+            //         _soundService.UnmuteMusic();
+            //     else if (volumeType == VolumeType.Sounds)
+            //         _soundService.UnmuteSounds();
+            // }
         }
 
         private void UpdateModule(string id)
         {
-            ProtoEntity entity = _entityRepository.GetByName(id);
-            VolumeModule module = entity.GetVolumeModule().Value;
-            float volume = entity.GetGameVolume().Value;
-            EnableState state = entity.HasMutedVolume() ? EnableState.Off : EnableState.On;
-            module.MuteToggle.SetState(state);
-            module.UiStepper.SetValue(volume);
+            // ProtoEntity entity = _entityRepository.GetByName(id);
+            // MusicVolumeModule module = entity.GetVolumeModule().Value;
+            // float volume = entity.GetGameVolume().Value;
+            // EnableState state = entity.HasMutedVolume() ? EnableState.Off : EnableState.On;
+            // module.MuteToggle.SetState(state);
+            // module.UiStepper.SetValue(volume);
         }
     }
 }

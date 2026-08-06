@@ -9,6 +9,8 @@ using Sources.EcsBoundedContexts.Volumes.Domain.Components;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Components;
 using Sources.EcsBoundedContexts.Timers.Domain;
 using Sources.EcsBoundedContexts.Spawners.Domain;
+using Sources.EcsBoundedContexts.Settings.Domain.Components;
+using Sources.EcsBoundedContexts.Settings.Domain.Components.Volume;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.Players.Domain.Components;
@@ -45,15 +47,15 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<GunOwnerModuleComponent> GunOwnerModule = new ();
 		public readonly ProtoPool<ChangeVolumeEvent> ChangeVolumeEvent = new ();
 		public readonly ProtoPool<GameVolumeComponent> GameVolume = new ();
-		public readonly ProtoPool<MutedVolumeComponent> MutedVolume = new ();
 		public readonly ProtoPool<MuteVolumeEvent> MuteVolumeEvent = new ();
 		public readonly ProtoPool<UnmuteVolumeEvent> UnmuteVolumeEvent = new ();
-		public readonly ProtoPool<VolumeModuleComponent> VolumeModule = new ();
+		public readonly ProtoPool<MusicVolumeModuleComponent> VolumeModule = new ();
 		public readonly ProtoPool<VolumeTypeComponent> VolumeType = new ();
 		public readonly ProtoPool<TimerComponent> Timer = new ();
 		public readonly ProtoPool<BusyComponent> Busy = new ();
 		public readonly ProtoPool<SpawnPointTag> SpawnPoint = new ();
 		public readonly ProtoPool<SpawnPointTransformComponent> SpawnPointTransform = new ();
+		public readonly ProtoPool<MutedSoundVolumeComponent> MutedSoundVolume = new ();
 		public readonly ProtoPool<ClearableDataComponent> ClearableData = new ();
 		public readonly ProtoPool<ClearDataEvent> ClearDataEvent = new ();
 		public readonly ProtoPool<SavableDataComponent> SavableData = new ();
@@ -158,6 +160,15 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<AvailableComponent> Available = new ();
 
 		//Characters
+		public readonly ProtoPool<FramerateComponent> Framerate = new ();
+		public readonly ProtoPool<FullScreenComponent> FullScreen = new ();
+		public readonly ProtoPool<GraphicsQualityComponent> GraphicsQuality = new ();
+		public readonly ProtoPool<ResolutionIndexComponent> ResolutionIndex = new ();
+		public readonly ProtoPool<SettingsTag> Settings = new ();
+		public readonly ProtoPool<VSyncComponent> VSync = new ();
+		public readonly ProtoPool<MusicVolumeComponent> MusicVolume = new ();
+		public readonly ProtoPool<MutedMusicVolumeComponent> MutedMusicVolume = new ();
+		public readonly ProtoPool<SoundVolumeComponent> SoundVolume = new ();
 		public readonly ProtoPool<PlayerNameComponent> PlayerName = new ();
 		public readonly ProtoPool<PlayerTag> Player = new ();
 		public readonly ProtoPool<HealParticleComponent> HealParticle = new ();
@@ -196,16 +207,25 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<GunOwnerModuleComponent>)] = GunOwnerModule,
 				[typeof(ProtoPool<ChangeVolumeEvent>)] = ChangeVolumeEvent,
 				[typeof(ProtoPool<GameVolumeComponent>)] = GameVolume,
-				[typeof(ProtoPool<MutedVolumeComponent>)] = MutedVolume,
 				[typeof(ProtoPool<MuteVolumeEvent>)] = MuteVolumeEvent,
 				[typeof(ProtoPool<UnmuteVolumeEvent>)] = UnmuteVolumeEvent,
-				[typeof(ProtoPool<VolumeModuleComponent>)] = VolumeModule,
+				[typeof(ProtoPool<MusicVolumeModuleComponent>)] = VolumeModule,
 				[typeof(ProtoPool<VolumeTypeComponent>)] = VolumeType,
 				[typeof(ProtoPool<TutorialTag>)] = Tutorial,
 				[typeof(ProtoPool<TimerComponent>)] = Timer,
 				[typeof(ProtoPool<BusyComponent>)] = Busy,
 				[typeof(ProtoPool<SpawnPointTag>)] = SpawnPoint,
 				[typeof(ProtoPool<SpawnPointTransformComponent>)] = SpawnPointTransform,
+				[typeof(ProtoPool<FramerateComponent>)] = Framerate,
+				[typeof(ProtoPool<FullScreenComponent>)] = FullScreen,
+				[typeof(ProtoPool<GraphicsQualityComponent>)] = GraphicsQuality,
+				[typeof(ProtoPool<ResolutionIndexComponent>)] = ResolutionIndex,
+				[typeof(ProtoPool<SettingsTag>)] = Settings,
+				[typeof(ProtoPool<VSyncComponent>)] = VSync,
+				[typeof(ProtoPool<MusicVolumeComponent>)] = MusicVolume,
+				[typeof(ProtoPool<MutedMusicVolumeComponent>)] = MutedMusicVolume,
+				[typeof(ProtoPool<MutedSoundVolumeComponent>)] = MutedSoundVolume,
+				[typeof(ProtoPool<SoundVolumeComponent>)] = SoundVolume,
 				[typeof(ProtoPool<ClearableDataComponent>)] = ClearableData,
 				[typeof(ProtoPool<ClearDataEvent>)] = ClearDataEvent,
 				[typeof(ProtoPool<SavableDataComponent>)] = SavableData,

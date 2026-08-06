@@ -1,15 +1,13 @@
 using System;
 using Leopotam.EcsProto.Unity;
 using Sources.EcsBoundedContexts.Core.Domain;
-using Sources.EcsBoundedContexts.Volumes.Presentation;
 
-namespace Sources.EcsBoundedContexts.Volumes.Domain.Components
+namespace Sources.EcsBoundedContexts.Settings.Domain.Components.Volume
 {
     [Serializable]
     [ProtoUnityAuthoring]
     [Component(group: ComponentGroup.Common)]
-    public struct VolumeModuleComponent
+    public struct MutedSoundVolumeComponent
     {
-        public VolumeModule Value;
     }
 }

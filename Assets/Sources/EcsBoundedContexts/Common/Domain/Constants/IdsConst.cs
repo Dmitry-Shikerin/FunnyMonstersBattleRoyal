@@ -21,6 +21,7 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
         public const string Input = "Input";
         public const string MainCamera = "MainCamera";
         public const string Player = "Player";
+        public const string Settings = "Settings";
         public const string Character = "Character";
         public const string EnemySpawner = "EnemySpawner";
         public const string Bunker = "Bunker";

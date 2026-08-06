@@ -9,6 +9,7 @@ using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Characters.Presentation.Network;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
+using Sources.Frameworks.DeepFramework.DeepUtils.Extensions;
 using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 using UnityEngine;
@@ -45,7 +46,8 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
         {
             CharacterConfig config = _entity.GetCharacterConfig().Value;
             float currentSpeed = _entity.GetSpeed().Value;
-            _state.Parameter = Normalize(currentSpeed, 0, config.Speed);
+            //_state.Parameter = Normalize(currentSpeed, 0, config.Speed);
+            _state.Parameter = currentSpeed.Normalize(0, config.Speed);
             
             CharacterController characterController = _entity.GetCharacterController().Value;
             float speed = _entity.GetSpeed().Value;
@@ -54,12 +56,6 @@ namespace Sources.EcsBoundedContexts.Characters.Controllers.States
             direction.y = _entity.GetGravity().Value;
             
             characterController.Move(direction);
-        }
-
-        private float Normalize(float value, float min, float max)
-        {
-            float result = (value - min) / (max - min);
-            return Mathf.Clamp01(result);
         }
     }
 }

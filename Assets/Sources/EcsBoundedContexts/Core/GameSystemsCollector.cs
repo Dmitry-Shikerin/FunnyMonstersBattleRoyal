@@ -5,8 +5,9 @@ using Sources.EcsBoundedContexts.AnimatorLod.Controllers;
 using Sources.EcsBoundedContexts.AdvertisingAfterWaves.Controllers;
 using Sources.EcsBoundedContexts.Volumes.Controllers.Data;
 using Sources.EcsBoundedContexts.Tutorials.Controllers.Data;
+using Sources.EcsBoundedContexts.Settings.Controllers.Data;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers.Data;
-using Sources.EcsBoundedContexts.Players.Systems.Data;
+using Sources.EcsBoundedContexts.Players.Controllers.Data;
 using Sources.EcsBoundedContexts.Characters.Controllers.Systems;
 using Sources.EcsBoundedContexts.Spawners.Controllers;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Controllers.Data;
@@ -37,6 +38,7 @@ namespace Sources.EcsBoundedContexts.Core
 			InterstitialAfterWaveSystem interstitialAfterWaveSystem, //Order: 6 //Common
 			VolumeLoadSystem volumeLoadSystem, //Order: 7 //Common
 			TutorialLoadSystem tutorialLoadSystem, //Order: 9 //Ability
+			SettingsLoadSystem settingsLoadSystem, //Order: 10 //Ability
 			PlayerWalletLoadSystem playerWalletLoadSystem, //Order: 10 //Ability
 			PlayerLoadSystem playerLoadSystem, //Order: 10 //Ability
 			CharacterInitializeSystem characterInitializeSystem, //Order: 10 //Characters
@@ -64,6 +66,7 @@ namespace Sources.EcsBoundedContexts.Core
 			ActiveGameObjectSystem activeGameObjectSystem, //Order: 84 //Common
 			VolumeSaveSystem volumeSaveSystem, //Order: 501 //Common
 			TutorialSaveSystem tutorialSaveSystem, //Order: 503 //Tutorial
+			SettingsSaveSystem settingsSaveSystem, //Order: 504 //Ability
 			PlayerWalletSaveSystem playerWalletSaveSystem, //Order: 504 //Ability
 			PlayerSaveSystem playerSaveSystem, //Order: 504 //Ability
 			KillEnemyCounterSaveSystem killEnemyCounterSaveSystem //Order: 506 //Common
@@ -76,6 +79,7 @@ namespace Sources.EcsBoundedContexts.Core
 				interstitialAfterWaveSystem, //Common
 				volumeLoadSystem, //Common
 				tutorialLoadSystem, //Ability
+				settingsLoadSystem, //Ability
 				playerWalletLoadSystem, //Ability
 				playerLoadSystem, //Ability
 				characterInitializeSystem, //Characters
@@ -103,6 +107,7 @@ namespace Sources.EcsBoundedContexts.Core
 				activeGameObjectSystem, //Common
 				volumeSaveSystem, //Common
 				tutorialSaveSystem, //Tutorial
+				settingsSaveSystem, //Ability
 				playerWalletSaveSystem, //Ability
 				playerSaveSystem, //Ability
 				killEnemyCounterSaveSystem, //Common

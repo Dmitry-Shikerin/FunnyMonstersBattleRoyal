@@ -14,7 +14,7 @@ using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.Loads.Services.Interfaces.Data;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
 
-namespace Sources.EcsBoundedContexts.Players.Systems.Data
+namespace Sources.EcsBoundedContexts.Players.Controllers.Data
 {
     [EcsSystem(10)]
     [ComponentGroup(ComponentGroup.Ability)]

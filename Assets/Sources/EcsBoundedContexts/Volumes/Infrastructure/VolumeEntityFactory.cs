@@ -3,7 +3,7 @@ using Leopotam.EcsProto;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using Reflex.Core;
 using Sources.EcsBoundedContexts.Core;
-using Sources.EcsBoundedContexts.Volumes.Presentation;
+using Sources.EcsBoundedContexts.Settings.Presentation;
 using Sources.Frameworks.MyLeoEcsProto.Factories;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 
@@ -33,12 +33,12 @@ namespace Sources.EcsBoundedContexts.Volumes.Infrastructure
 
         public ProtoEntity Create(EntityLink link, string id)
         {
-            VolumeModule module = link.GetModule<VolumeModule>();
+            MusicVolumeModule module = link.GetModule<MusicVolumeModule>();
             
             Aspect.GameVolume.NewEntity(out ProtoEntity entity);
             Authoring(link, entity);
             _repository.AddByName(entity, id);
-            entity.AddVolumeType(module.VolumeType);
+            //entity.AddVolumeType(module.VolumeType);
             entity.AddStringId(id);
             entity.AddVolumeModule(module);
             

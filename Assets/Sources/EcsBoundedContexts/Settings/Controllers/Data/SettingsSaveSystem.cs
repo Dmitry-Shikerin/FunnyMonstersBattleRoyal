@@ -7,28 +7,29 @@ using Sources.EcsBoundedContexts.Core.Domain.Systems;
 using Sources.EcsBoundedContexts.Players.Domain.Components;
 using Sources.EcsBoundedContexts.Players.Domain.Data;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
+using Sources.EcsBoundedContexts.Settings.Domain.Components;
+using Sources.EcsBoundedContexts.Settings.Domain.Data;
 using Sources.Frameworks.GameServices.Loads.Services.Interfaces.Data;
-using UnityEngine;
 
-namespace Sources.EcsBoundedContexts.Players.Systems.Data
+namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
 {
     [EcsSystem(504)]
     [ComponentGroup(ComponentGroup.Ability)]
     [Aspect(AspectName.MainMenu, AspectName.Game, AspectName.Lobby)]
-    public class PlayerSaveSystem : IProtoRunSystem
+    public class SettingsSaveSystem : IProtoRunSystem
     {
         private readonly IDataService _dataService;
 
         [DI] private readonly ProtoIt _saveIt = new(
             It.Inc<
-                PlayerTag,
+                SettingsTag,
                 SaveDataEvent>());
         [DI] private readonly ProtoIt _clearIt = new(
             It.Inc<
-                PlayerTag,
+                SettingsTag,
                 ClearDataEvent>());
 
-        public PlayerSaveSystem(IDataService dataService)
+        public SettingsSaveSystem(IDataService dataService)
         {
             _dataService = dataService;
         }
@@ -39,17 +40,20 @@ namespace Sources.EcsBoundedContexts.Players.Systems.Data
             {
                 string name = entity.GetPlayerName().Value;
 
-                PlayerSaveData data = new PlayerSaveData
+                SettingsSaveData data = new SettingsSaveData
                 {
-                    Id = IdsConst.Player,
-                    Name = name,
+                    Id = IdsConst.Settings,
+                    MusicVolume = entity.GetSoundVolume().Value,
+                    IsMusicMuted = entity.HasMutedMusicVolume(),
+                    SoundVolume = entity.GetSoundVolume().Value,
+                    IsSoundMuted = entity.HasMutedSoundVolume(),
                 };
-                _dataService.SaveData(data, IdsConst.Player);
+                _dataService.SaveData(data, IdsConst.Settings);
             }
 
             foreach (ProtoEntity entity in _clearIt)
             {
-                _dataService.Clear(IdsConst.Player);
+                _dataService.Clear(IdsConst.Settings);
             }
         }
     }

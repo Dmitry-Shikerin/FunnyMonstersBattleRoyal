@@ -7,7 +7,6 @@ using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
 using Sources.EcsBoundedContexts.Volumes.Domain.Data;
 using Sources.EcsBoundedContexts.Volumes.Infrastructure;
-using Sources.EcsBoundedContexts.Volumes.Presentation;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.Loads.Services.Interfaces.Data;
@@ -65,18 +64,18 @@ namespace Sources.EcsBoundedContexts.Volumes.Controllers.Data
             // Load(IdsConst.SoundsVolume, _soundService.ChangeSoundsVolume, _soundService.MuteSounds);
         }
 
-        private void Load(string id, Action<float> changeVolume, Action mute)
-        {
-            GameVolumeSaveData gameVolumeData = _dataService.LoadData<GameVolumeSaveData>(id);
-            ProtoEntity entity = _entityRepository.GetByName(id);
-            entity.ReplaceGameVolume(gameVolumeData.Value);
-            changeVolume.Invoke(gameVolumeData.Value);
-
-            if (gameVolumeData.IsMuted)
-            {
-                entity.AddMutedVolume();
-                mute.Invoke();
-            }
-        }
+        // private void Load(string id, Action<float> changeVolume, Action mute)
+        // {
+        //     GameVolumeSaveData gameVolumeData = _dataService.LoadData<GameVolumeSaveData>(id);
+        //     ProtoEntity entity = _entityRepository.GetByName(id);
+        //     entity.ReplaceGameVolume(gameVolumeData.Value);
+        //     changeVolume.Invoke(gameVolumeData.Value);
+        //
+        //     if (gameVolumeData.IsMuted)
+        //     {
+        //         entity.AddMutedVolume();
+        //         mute.Invoke();
+        //     }
+        // }
     }
 }

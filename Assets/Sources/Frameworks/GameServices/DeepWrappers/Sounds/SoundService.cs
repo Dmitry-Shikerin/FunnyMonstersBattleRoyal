@@ -123,9 +123,9 @@ namespace Sources.Frameworks.GameServices.DeepWrappers.Sounds
         {
             return databaseName switch
             {
-                SoundDatabaseName.Music => _entityRepository.GetByName(IdsConst.MusicVolume).HasMutedVolume(),
-                SoundDatabaseName.Sounds => _entityRepository.GetByName(IdsConst.SoundsVolume).HasMutedVolume(),
-                SoundDatabaseName.UiSounds => _entityRepository.GetByName(IdsConst.SoundsVolume).HasMutedVolume(),
+                // SoundDatabaseName.Music => _entityRepository.GetByName(IdsConst.MusicVolume).HasMutedVolume(),
+                // SoundDatabaseName.Sounds => _entityRepository.GetByName(IdsConst.SoundsVolume).HasMutedVolume(),
+                // SoundDatabaseName.UiSounds => _entityRepository.GetByName(IdsConst.SoundsVolume).HasMutedVolume(),
                 _ => throw new ArgumentOutOfRangeException(nameof(databaseName), databaseName, null)
             };
         }

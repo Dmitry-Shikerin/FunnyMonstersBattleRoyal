@@ -29,19 +29,19 @@ namespace Sources.EcsBoundedContexts.Volumes.Controllers.Data
 
         public void Run()
         {
-            foreach (ProtoEntity entity in _saveIt)
-            {
-                float volume = entity.GetGameVolume().Value;
-                string id = entity.GetStringId().Value;
-
-                GameVolumeSaveData data = new GameVolumeSaveData
-                {
-                    Id = id,
-                    Value = volume,
-                    IsMuted = entity.HasMutedVolume(),
-                };
-                _dataService.SaveData(data, id);
-            }
+            // foreach (ProtoEntity entity in _saveIt)
+            // {
+            //     float volume = entity.GetGameVolume().Value;
+            //     string id = entity.GetStringId().Value;
+            //
+            //     GameVolumeSaveData data = new GameVolumeSaveData
+            //     {
+            //         Id = id,
+            //         Value = volume,
+            //         IsMuted = entity.HasMutedVolume(),
+            //     };
+            //     _dataService.SaveData(data, id);
+            // }
         }
     }
 }
