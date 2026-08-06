@@ -220,7 +220,6 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static ref ChangedSettingsComponent AddChangedSettings(this ProtoEntity entity)
 		{
-			Debug.Log($"Change Settings");
 			ref ChangedSettingsComponent changedSettingsComponent = ref s_GameAspect.ChangedSettings.Add(entity);
 			return ref changedSettingsComponent;
 		}

@@ -58,7 +58,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
             if (state == State)
                 return;
             
-            Debug.Log($"State {state.ToString()}");
             State = state;
             StateChanged?.Invoke(state);
 

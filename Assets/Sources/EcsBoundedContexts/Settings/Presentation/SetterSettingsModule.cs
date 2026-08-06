@@ -30,7 +30,6 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
 
         protected override void OnAfterInitialize()
         {
-            Debug.Log($"Hide button");
             ApplyButton.gameObject.SetActive(false);
         }
 
