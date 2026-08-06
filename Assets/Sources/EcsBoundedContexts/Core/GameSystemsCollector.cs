@@ -3,7 +3,6 @@ using Leopotam.EcsProto;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.AnimatorLod.Controllers;
 using Sources.EcsBoundedContexts.AdvertisingAfterWaves.Controllers;
-using Sources.EcsBoundedContexts.Volumes.Controllers.Data;
 using Sources.EcsBoundedContexts.Tutorials.Controllers.Data;
 using Sources.EcsBoundedContexts.Settings.Controllers.Data;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers.Data;
@@ -12,6 +11,7 @@ using Sources.EcsBoundedContexts.Characters.Controllers.Systems;
 using Sources.EcsBoundedContexts.Spawners.Controllers;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Controllers.Data;
 using Sources.EcsBoundedContexts.Input.Controllers;
+using Sources.EcsBoundedContexts.Settings.Controllers;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers;
 using Sources.EcsBoundedContexts.Cameras.Controllers;
 using Sources.EcsBoundedContexts.Movements.Move.Systems;
@@ -22,7 +22,6 @@ using Sources.EcsBoundedContexts.LookAt.Controllers;
 using Sources.EcsBoundedContexts.Movements.Rotation.Systems;
 using Sources.EcsBoundedContexts.Timers.Infrastructure;
 using Sources.EcsBoundedContexts.Tutorials.Controllers;
-using Sources.EcsBoundedContexts.Volumes.Controllers;
 using Sources.EcsBoundedContexts.GameObjects.Controllers;
 
 namespace Sources.EcsBoundedContexts.Core
@@ -36,7 +35,6 @@ namespace Sources.EcsBoundedContexts.Core
 			ProtoSystems protoSystems,
 			AnimatorLodSystem animatorLodSystem, //Order: 3 //AnimatorLod
 			InterstitialAfterWaveSystem interstitialAfterWaveSystem, //Order: 6 //Common
-			VolumeLoadSystem volumeLoadSystem, //Order: 7 //Common
 			TutorialLoadSystem tutorialLoadSystem, //Order: 9 //Ability
 			SettingsLoadSystem settingsLoadSystem, //Order: 10 //Ability
 			PlayerWalletLoadSystem playerWalletLoadSystem, //Order: 10 //Ability
@@ -45,6 +43,7 @@ namespace Sources.EcsBoundedContexts.Core
 			SpawnPointsInitializeSystem spawnPointsInitializeSystem, //Order: 11 //Ability
 			KillEnemyCounterLoadSystem killEnemyCounterLoadSystem, //Order: 12 //Common
 			InputInitializeSystem inputInitializeSystem, //Order: 15 //Characters
+			ChangedSettingsSystem changedSettingsSystem, //Order: 50 //Ability
 			InputSystem inputSystem, //Order: 50 //Characters
 			PlayerWalletSystem playerWalletSystem, //Order: 51 //Ability
 			CameraRotationSystem cameraRotationSystem, //Order: 51 //Camera
@@ -62,9 +61,7 @@ namespace Sources.EcsBoundedContexts.Core
 			NavMeshMoveSystem navMeshMoveSystem, //Order: 75 //Common
 			TimerSystem timerSystem, //Order: 79 //Ability
 			TutorialSystem tutorialSystem, //Order: 80 //Ability
-			ChangeVolumeSystem changeVolumeSystem, //Order: 83 //Common
 			ActiveGameObjectSystem activeGameObjectSystem, //Order: 84 //Common
-			VolumeSaveSystem volumeSaveSystem, //Order: 501 //Common
 			TutorialSaveSystem tutorialSaveSystem, //Order: 503 //Tutorial
 			SettingsSaveSystem settingsSaveSystem, //Order: 504 //Ability
 			PlayerWalletSaveSystem playerWalletSaveSystem, //Order: 504 //Ability
@@ -77,7 +74,6 @@ namespace Sources.EcsBoundedContexts.Core
 			{
 				animatorLodSystem, //AnimatorLod
 				interstitialAfterWaveSystem, //Common
-				volumeLoadSystem, //Common
 				tutorialLoadSystem, //Ability
 				settingsLoadSystem, //Ability
 				playerWalletLoadSystem, //Ability
@@ -86,6 +82,7 @@ namespace Sources.EcsBoundedContexts.Core
 				spawnPointsInitializeSystem, //Ability
 				killEnemyCounterLoadSystem, //Common
 				inputInitializeSystem, //Characters
+				changedSettingsSystem, //Ability
 				inputSystem, //Characters
 				playerWalletSystem, //Ability
 				cameraRotationSystem, //Camera
@@ -103,9 +100,7 @@ namespace Sources.EcsBoundedContexts.Core
 				navMeshMoveSystem, //Common
 				timerSystem, //Ability
 				tutorialSystem, //Ability
-				changeVolumeSystem, //Common
 				activeGameObjectSystem, //Common
-				volumeSaveSystem, //Common
 				tutorialSaveSystem, //Tutorial
 				settingsSaveSystem, //Ability
 				playerWalletSaveSystem, //Ability

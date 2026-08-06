@@ -4,8 +4,6 @@ using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
-using Sources.EcsBoundedContexts.Players.Domain.Components;
-using Sources.EcsBoundedContexts.Players.Domain.Data;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.Settings.Domain.Components;
 using Sources.EcsBoundedContexts.Settings.Domain.Data;
@@ -38,17 +36,17 @@ namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
         {
             foreach (ProtoEntity entity in _saveIt)
             {
-                string name = entity.GetPlayerName().Value;
-
                 SettingsSaveData data = new SettingsSaveData
                 {
                     Id = IdsConst.Settings,
-                    MusicVolume = entity.GetSoundVolume().Value,
+                    MusicVolume = entity.GetMusicVolume().Value,
                     IsMusicMuted = entity.HasMutedMusicVolume(),
                     SoundVolume = entity.GetSoundVolume().Value,
                     IsSoundMuted = entity.HasMutedSoundVolume(),
                 };
+                
                 _dataService.SaveData(data, IdsConst.Settings);
+                entity.ReplaceSavedSettings(data);
             }
 
             foreach (ProtoEntity entity in _clearIt)

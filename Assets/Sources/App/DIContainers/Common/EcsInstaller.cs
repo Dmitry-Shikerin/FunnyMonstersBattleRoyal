@@ -1,7 +1,6 @@
 ﻿using Leopotam.EcsProto;
 using Reflex.Core;
 using Reflex.Enums;
-using Reflex.Injectors;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure;
 using Sources.EcsBoundedContexts.Characters.Infrastructure;
 using Sources.EcsBoundedContexts.Core;
@@ -13,11 +12,9 @@ using Sources.EcsBoundedContexts.Lights.Infrastructure;
 using Sources.EcsBoundedContexts.Players.Infrastructure;
 using Sources.EcsBoundedContexts.PlayerWallets.Infrastructure;
 using Sources.EcsBoundedContexts.Settings.Infrastructure;
-using Sources.EcsBoundedContexts.Spawners.Infrastructure;
 using Sources.EcsBoundedContexts.Spawners.Infrastructure.Factories;
 using Sources.EcsBoundedContexts.Spawners.Infrastructure.Services;
 using Sources.EcsBoundedContexts.Tutorials.Infrastructure;
-using Sources.EcsBoundedContexts.Volumes.Infrastructure;
 using Sources.Frameworks.GameServices.EntityPools.Implementation;
 using Sources.Frameworks.MyLeoEcsProto.EventBuffers.Implementation;
 using Sources.Frameworks.MyLeoEcsProto.EventBuffers.Interfaces;
@@ -77,9 +74,6 @@ namespace Sources.App.DIContainers.Common
             //DailyRewards
             containerBuilder.RegisterType(typeof(DailyRewardEntityFactory), Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterType(typeof(DailyRewardService), Lifetime.Singleton, Resolution.Lazy);
-            
-            //Volume
-            containerBuilder.RegisterType(typeof(VolumeEntityFactory), Lifetime.Singleton, Resolution.Lazy);
             
             //Player
             containerBuilder.RegisterType(typeof(PlayerEntityFactory), Lifetime.Singleton, Resolution.Lazy);

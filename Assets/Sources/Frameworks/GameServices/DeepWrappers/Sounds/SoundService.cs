@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Leopotam.EcsProto;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepSound.Runtime.Domain.Enums;
@@ -121,22 +122,26 @@ namespace Sources.Frameworks.GameServices.DeepWrappers.Sounds
 
         private bool GetMute(SoundDatabaseName databaseName)
         {
+            ProtoEntity entity = _entityRepository.GetByName(IdsConst.Settings);
+            
             return databaseName switch
             {
-                // SoundDatabaseName.Music => _entityRepository.GetByName(IdsConst.MusicVolume).HasMutedVolume(),
-                // SoundDatabaseName.Sounds => _entityRepository.GetByName(IdsConst.SoundsVolume).HasMutedVolume(),
-                // SoundDatabaseName.UiSounds => _entityRepository.GetByName(IdsConst.SoundsVolume).HasMutedVolume(),
+                SoundDatabaseName.Music => entity.HasMutedMusicVolume(),
+                SoundDatabaseName.Sounds => entity.HasMutedSoundVolume(),
+                SoundDatabaseName.UiSounds => entity.HasMutedSoundVolume(),
                 _ => throw new ArgumentOutOfRangeException(nameof(databaseName), databaseName, null)
             };
         }
 
         private float GetVolume(SoundDatabaseName databaseName)
         {
+            ProtoEntity entity = _entityRepository.GetByName(IdsConst.Settings);
+            
             return databaseName switch
             {
-                SoundDatabaseName.Music => _entityRepository.GetByName(IdsConst.MusicVolume).GetGameVolume().Value,
-                SoundDatabaseName.Sounds => _entityRepository.GetByName(IdsConst.SoundsVolume).GetGameVolume().Value,
-                SoundDatabaseName.UiSounds => _entityRepository.GetByName(IdsConst.SoundsVolume).GetGameVolume().Value,
+                SoundDatabaseName.Music => entity.GetMusicVolume().Value,
+                SoundDatabaseName.Sounds => entity.GetSoundVolume().Value,
+                SoundDatabaseName.UiSounds => entity.GetSoundVolume().Value,
                 _ => throw new ArgumentOutOfRangeException(nameof(databaseName), databaseName, null)
             };
         }

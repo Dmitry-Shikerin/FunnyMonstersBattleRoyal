@@ -14,7 +14,6 @@ using Sources.EcsBoundedContexts.Movements.Move.Components;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.Spawners.Infrastructure.Services;
-using Sources.EcsBoundedContexts.Volumes.Domain.Components;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -88,16 +87,13 @@ namespace Sources.EcsBoundedContexts.Core
             _systems.DelHere<DisableGameObjectEvent>();
             _systems.DelHere<IncreaseEvent>();
             _systems.DelHere<DecreaseEvent>();
-            _systems.DelHere<MuteVolumeEvent>();
-            _systems.DelHere<UnmuteVolumeEvent>();
             _systems.DelHere<InitializeEvent>();
             _systems.DelHere<DamageEvent>();
             _systems.DelHere<CoinsChangedEvent>();
             _systems.DelHere<IncreaseCoinsEvent>();
             _systems.DelHere<DecreaseCoinsEvent>();
             _systems.DelHere<ApplyDailyRewardEvent>();
-            _systems.DelHere<ChangeVolumeEvent>();
-            _systems.DelHere<JumpEventComponent>();
+            _systems.DelHere<JumpEvent>();
         }
 
         private void Init()

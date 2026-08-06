@@ -4,8 +4,8 @@ using Sources.EcsBoundedContexts.DailyRewards.Domain.Data;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Domain.Data;
 using Sources.EcsBoundedContexts.Players.Domain.Data;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Data;
+using Sources.EcsBoundedContexts.Settings.Domain.Data;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Data;
-using Sources.EcsBoundedContexts.Volumes.Domain.Data;
 using Sources.Frameworks.GameServices.Loads.Domain;
 
 namespace Sources.EcsBoundedContexts.Common.Domain.Constants
@@ -21,7 +21,7 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
         public const string Input = "Input";
         public const string MainCamera = "MainCamera";
         public const string Player = "Player";
-        public const string Settings = "Settings";
+
         public const string Character = "Character";
         public const string EnemySpawner = "EnemySpawner";
         public const string Bunker = "Bunker";
@@ -45,19 +45,7 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
         public const string NukeUpgrade = "NukeUpgrade";
 
         //Settings
-        public const string SoundsVolume = "SoundsVolume";
-        public const string MusicVolume = "MusicVolume";
-
-        //Achievements
-        public const string FirstEnemyKillAchievement = "FirstEnemyKillAchievement";
-        public const string FirstUpgradeAchievement = "FirstUpgradeAchievement";
-        public const string FirstHealthBoosterUsageAchievement = "FirstHealthBoosterUsageAchievement";
-        public const string FirstWaveCompletedAchievement = "FirstWaveCompletedAchievement";
-        public const string ScullsDiggerAchievement = "ScullsDiggerAchievement";
-        public const string MaxUpgradeAchievement = "MaxUpgradeAchievement";
-        public const string FiftyWaveCompletedAchievement = "FiftyWaveCompletedAchievement";
-        public const string AllAbilitiesUsedAchievement = "AllAbilitiesUsedAchievement";
-        public const string CompleteGameWithOneHealthAchievement = "CompleteGameWithOneHealthAchievement";
+        public const string Settings = "Settings";
 
         private static Dictionary<string, List<string>> _cachedIdsByType = new ();
 
@@ -68,9 +56,8 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
             [PlayerWallet] = new (PlayerWallet, typeof(PlayerWalletSaveData), true),
             [KillEnemyCounter] = new (KillEnemyCounter, typeof(KillEnemyCounterSaveData), true),
             [Tutorial] = new (Tutorial, typeof(TutorialSaveData), false),
-            [SoundsVolume] = new (SoundsVolume, typeof(GameVolumeSaveData), false),
-            [MusicVolume] = new (MusicVolume, typeof(GameVolumeSaveData), false),
-            [MusicVolume] = new (Player, typeof(PlayerSaveData), false),
+            [Player] = new (Player, typeof(PlayerSaveData), false),
+            [Settings] = new (Settings, typeof(SettingsSaveData), false),
         };
 
         public static IReadOnlyList<string> GetIds<T>() 

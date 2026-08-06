@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using Leopotam.EcsProto;
 using Sources.EcsBoundedContexts.Core;
-using Sources.EcsBoundedContexts.Volumes.Controllers.Data;
 using Sources.EcsBoundedContexts.Settings.Controllers.Data;
 using Sources.EcsBoundedContexts.Players.Controllers.Data;
 using Sources.EcsBoundedContexts.Spawners.Controllers;
+using Sources.EcsBoundedContexts.Settings.Controllers;
 using Sources.EcsBoundedContexts.Characters.Controllers.Systems;
-using Sources.EcsBoundedContexts.Volumes.Controllers;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -17,13 +16,11 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public LobbySystemsCollector(
 			ProtoSystems protoSystems,
-			VolumeLoadSystem volumeLoadSystem, //Order: 7 //Common
 			SettingsLoadSystem settingsLoadSystem, //Order: 10 //Ability
 			PlayerLoadSystem playerLoadSystem, //Order: 10 //Ability
 			SpawnPointsInitializeSystem spawnPointsInitializeSystem, //Order: 11 //Ability
+			ChangedSettingsSystem changedSettingsSystem, //Order: 50 //Ability
 			CharacterUpdateSystem characterUpdateSystem, //Order: 55 //Characters
-			ChangeVolumeSystem changeVolumeSystem, //Order: 83 //Common
-			VolumeSaveSystem volumeSaveSystem, //Order: 501 //Common
 			SettingsSaveSystem settingsSaveSystem, //Order: 504 //Ability
 			PlayerSaveSystem playerSaveSystem //Order: 504 //Ability
 		)
@@ -31,13 +28,11 @@ namespace Sources.EcsBoundedContexts.Core
 			_protoSystems = protoSystems;
 			_systems = new IProtoSystem[]
 			{
-				volumeLoadSystem, //Common
 				settingsLoadSystem, //Ability
 				playerLoadSystem, //Ability
 				spawnPointsInitializeSystem, //Ability
+				changedSettingsSystem, //Ability
 				characterUpdateSystem, //Characters
-				changeVolumeSystem, //Common
-				volumeSaveSystem, //Common
 				settingsSaveSystem, //Ability
 				playerSaveSystem, //Ability
 			};

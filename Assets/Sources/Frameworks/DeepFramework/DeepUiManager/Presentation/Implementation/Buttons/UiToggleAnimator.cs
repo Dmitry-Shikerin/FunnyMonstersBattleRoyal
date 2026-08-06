@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Dott;
 using Sirenix.OdinInspector;
 using Sources.Frameworks.DeepFramework.DeepUtils.Enums;
@@ -15,11 +16,12 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
         [DisplayAsString(false)] 
         [HideLabel]
         [SerializeField] private string _label = Label;
-        
         [SerializeField] private UiToggle _toggle;
         [SerializeField] private DOTweenTimeline _enableTimeline;
         [SerializeField] private DOTweenTimeline _disableTimeline;
-        [SerializeField] private EnableState _startState;
+
+        private Sequence _enableSequence;
+        private Sequence _disableSequence;
 
         private void Awake() => 
             _toggle.StateChanged += OnStateChanged;        
@@ -30,9 +32,15 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
         private void OnStateChanged(EnableState obj)
         {
             if (obj == EnableState.On)
-                _enableTimeline.Restart();
+            {
+                _disableSequence?.Kill();
+                _enableSequence = _enableTimeline.Restart();
+            }
             else
-                _disableTimeline.Restart();
+            {
+                _enableSequence?.Kill();
+                _disableSequence = _disableTimeline.Restart();
+            }
         }
     }
 }

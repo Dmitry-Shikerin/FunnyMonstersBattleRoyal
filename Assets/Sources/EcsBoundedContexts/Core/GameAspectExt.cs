@@ -8,15 +8,16 @@ using Sources.Frameworks.GameServices.EntityPools.Domain.Components;
 using System;
 using Sources.EcsBoundedContexts.Weapons.Domain;
 using Sources.EcsBoundedContexts.Weapons.Presentation;
-using Sources.EcsBoundedContexts.Volumes.Domain.Components;
-using Sources.EcsBoundedContexts.Settings.Presentation;
-using Sources.EcsBoundedContexts.Volumes.Domain.Enums;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Components;
 using Sources.EcsBoundedContexts.Timers.Domain;
 using Sources.EcsBoundedContexts.Spawners.Domain;
 using UnityEngine;
 using Sources.EcsBoundedContexts.Settings.Domain.Components;
+using Sources.EcsBoundedContexts.Settings.Domain.Data;
 using Sources.EcsBoundedContexts.Settings.Domain.Components.Volume;
+using Sources.EcsBoundedContexts.Settings.Presentation;
+using Sources.EcsBoundedContexts.Settings.Domain.Components.Parts;
+using Sources.EcsBoundedContexts.Settings.Domain.Components.Modules;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.PlayerWallets.Presentation;
@@ -128,124 +129,6 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelGunOwnerModule(this ProtoEntity entity)
 			=> s_GameAspect.GunOwnerModule.Del(entity);
 
-		//ChangeVolumeEvent
-		public static bool HasChangeVolumeEvent(this ProtoEntity entity) =>
-			s_GameAspect.ChangeVolumeEvent.Has(entity);
-
-		public static ref ChangeVolumeEvent GetChangeVolumeEvent(this ProtoEntity entity) =>
-			ref s_GameAspect.ChangeVolumeEvent.Get(entity);
-
-		public static void ReplaceChangeVolumeEvent(this ProtoEntity entity, float value)
-		{
-			ref ChangeVolumeEvent changeVolumeEvent = ref s_GameAspect.ChangeVolumeEvent.Get(entity);
-			changeVolumeEvent.Value = value;
-		}
-
-		public static ref ChangeVolumeEvent AddChangeVolumeEvent(this ProtoEntity entity, float value)
-		{
-			ref ChangeVolumeEvent changeVolumeEvent = ref s_GameAspect.ChangeVolumeEvent.Add(entity);
-			changeVolumeEvent.Value = value;
-			return ref changeVolumeEvent;
-		}
-
-		public static void DelChangeVolumeEvent(this ProtoEntity entity)
-			=> s_GameAspect.ChangeVolumeEvent.Del(entity);
-
-		//GameVolume
-		public static bool HasGameVolume(this ProtoEntity entity) =>
-			s_GameAspect.GameVolume.Has(entity);
-
-		public static ref GameVolumeComponent GetGameVolume(this ProtoEntity entity) =>
-			ref s_GameAspect.GameVolume.Get(entity);
-
-		public static void ReplaceGameVolume(this ProtoEntity entity, float value)
-		{
-			ref GameVolumeComponent gameVolumeComponent = ref s_GameAspect.GameVolume.Get(entity);
-			gameVolumeComponent.Value = value;
-		}
-
-		public static ref GameVolumeComponent AddGameVolume(this ProtoEntity entity, float value)
-		{
-			ref GameVolumeComponent gameVolumeComponent = ref s_GameAspect.GameVolume.Add(entity);
-			gameVolumeComponent.Value = value;
-			return ref gameVolumeComponent;
-		}
-
-		public static void DelGameVolume(this ProtoEntity entity)
-			=> s_GameAspect.GameVolume.Del(entity);
-
-		//MuteVolumeEvent
-		public static bool HasMuteVolumeEvent(this ProtoEntity entity) =>
-			s_GameAspect.MuteVolumeEvent.Has(entity);
-
-		public static ref MuteVolumeEvent AddMuteVolumeEvent(this ProtoEntity entity)
-		{
-			ref MuteVolumeEvent muteVolumeEvent = ref s_GameAspect.MuteVolumeEvent.Add(entity);
-			return ref muteVolumeEvent;
-		}
-
-		public static void DelMuteVolumeEvent(this ProtoEntity entity)
-			=> s_GameAspect.MuteVolumeEvent.Del(entity);
-
-		//UnmuteVolumeEvent
-		public static bool HasUnmuteVolumeEvent(this ProtoEntity entity) =>
-			s_GameAspect.UnmuteVolumeEvent.Has(entity);
-
-		public static ref UnmuteVolumeEvent AddUnmuteVolumeEvent(this ProtoEntity entity)
-		{
-			ref UnmuteVolumeEvent unmuteVolumeEvent = ref s_GameAspect.UnmuteVolumeEvent.Add(entity);
-			return ref unmuteVolumeEvent;
-		}
-
-		public static void DelUnmuteVolumeEvent(this ProtoEntity entity)
-			=> s_GameAspect.UnmuteVolumeEvent.Del(entity);
-
-		//VolumeModule
-		public static bool HasVolumeModule(this ProtoEntity entity) =>
-			s_GameAspect.VolumeModule.Has(entity);
-
-		public static ref MusicVolumeModuleComponent GetVolumeModule(this ProtoEntity entity) =>
-			ref s_GameAspect.VolumeModule.Get(entity);
-
-		public static void ReplaceVolumeModule(this ProtoEntity entity, MusicVolumeModule value)
-		{
-			ref MusicVolumeModuleComponent musicVolumeModuleComponent = ref s_GameAspect.VolumeModule.Get(entity);
-			musicVolumeModuleComponent.Value = value;
-		}
-
-		public static ref MusicVolumeModuleComponent AddVolumeModule(this ProtoEntity entity, MusicVolumeModule value)
-		{
-			ref MusicVolumeModuleComponent musicVolumeModuleComponent = ref s_GameAspect.VolumeModule.Add(entity);
-			musicVolumeModuleComponent.Value = value;
-			return ref musicVolumeModuleComponent;
-		}
-
-		public static void DelVolumeModule(this ProtoEntity entity)
-			=> s_GameAspect.VolumeModule.Del(entity);
-
-		//VolumeType
-		public static bool HasVolumeType(this ProtoEntity entity) =>
-			s_GameAspect.VolumeType.Has(entity);
-
-		public static ref VolumeTypeComponent GetVolumeType(this ProtoEntity entity) =>
-			ref s_GameAspect.VolumeType.Get(entity);
-
-		public static void ReplaceVolumeType(this ProtoEntity entity, VolumeType value)
-		{
-			ref VolumeTypeComponent volumeTypeComponent = ref s_GameAspect.VolumeType.Get(entity);
-			volumeTypeComponent.Value = value;
-		}
-
-		public static ref VolumeTypeComponent AddVolumeType(this ProtoEntity entity, VolumeType value)
-		{
-			ref VolumeTypeComponent volumeTypeComponent = ref s_GameAspect.VolumeType.Add(entity);
-			volumeTypeComponent.Value = value;
-			return ref volumeTypeComponent;
-		}
-
-		public static void DelVolumeType(this ProtoEntity entity)
-			=> s_GameAspect.VolumeType.Del(entity);
-
 		//Tutorial
 		public static bool HasTutorial(this ProtoEntity entity) =>
 			s_GameAspect.Tutorial.Has(entity);
@@ -331,6 +214,151 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelSpawnPointTransform(this ProtoEntity entity)
 			=> s_GameAspect.SpawnPointTransform.Del(entity);
 
+		//ChangedSettings
+		public static bool HasChangedSettings(this ProtoEntity entity) =>
+			s_GameAspect.ChangedSettings.Has(entity);
+
+		public static ref ChangedSettingsComponent AddChangedSettings(this ProtoEntity entity)
+		{
+			Debug.Log($"Change Settings");
+			ref ChangedSettingsComponent changedSettingsComponent = ref s_GameAspect.ChangedSettings.Add(entity);
+			return ref changedSettingsComponent;
+		}
+
+		public static void DelChangedSettings(this ProtoEntity entity)
+			=> s_GameAspect.ChangedSettings.Del(entity);
+
+		//SavedSettings
+		public static bool HasSavedSettings(this ProtoEntity entity) =>
+			s_GameAspect.SavedSettings.Has(entity);
+
+		public static ref SavedSettingsComponent GetSavedSettings(this ProtoEntity entity) =>
+			ref s_GameAspect.SavedSettings.Get(entity);
+
+		public static void ReplaceSavedSettings(this ProtoEntity entity, SettingsSaveData value)
+		{
+			ref SavedSettingsComponent savedSettingsComponent = ref s_GameAspect.SavedSettings.Get(entity);
+			savedSettingsComponent.Value = value;
+		}
+
+		public static ref SavedSettingsComponent AddSavedSettings(this ProtoEntity entity, SettingsSaveData value)
+		{
+			ref SavedSettingsComponent savedSettingsComponent = ref s_GameAspect.SavedSettings.Add(entity);
+			savedSettingsComponent.Value = value;
+			return ref savedSettingsComponent;
+		}
+
+		public static void DelSavedSettings(this ProtoEntity entity)
+			=> s_GameAspect.SavedSettings.Del(entity);
+
+		//Settings
+		public static bool HasSettings(this ProtoEntity entity) =>
+			s_GameAspect.Settings.Has(entity);
+
+		public static ref SettingsTag AddSettings(this ProtoEntity entity)
+		{
+			ref SettingsTag settingsTag = ref s_GameAspect.Settings.Add(entity);
+			return ref settingsTag;
+		}
+
+		public static void DelSettings(this ProtoEntity entity)
+			=> s_GameAspect.Settings.Del(entity);
+
+		//MusicVolume
+		public static bool HasMusicVolume(this ProtoEntity entity) =>
+			s_GameAspect.MusicVolume.Has(entity);
+
+		public static ref MusicVolumeComponent GetMusicVolume(this ProtoEntity entity) =>
+			ref s_GameAspect.MusicVolume.Get(entity);
+
+		public static void ReplaceMusicVolume(this ProtoEntity entity, float value)
+		{
+			ref MusicVolumeComponent musicVolumeComponent = ref s_GameAspect.MusicVolume.Get(entity);
+			musicVolumeComponent.Value = value;
+		}
+
+		public static ref MusicVolumeComponent AddMusicVolume(this ProtoEntity entity, float value)
+		{
+			ref MusicVolumeComponent musicVolumeComponent = ref s_GameAspect.MusicVolume.Add(entity);
+			musicVolumeComponent.Value = value;
+			return ref musicVolumeComponent;
+		}
+
+		public static void DelMusicVolume(this ProtoEntity entity)
+			=> s_GameAspect.MusicVolume.Del(entity);
+
+		//MusicVolumeModule
+		public static bool HasMusicVolumeModule(this ProtoEntity entity) =>
+			s_GameAspect.MusicVolumeModule.Has(entity);
+
+		public static ref MusicVolumeModuleComponent GetMusicVolumeModule(this ProtoEntity entity) =>
+			ref s_GameAspect.MusicVolumeModule.Get(entity);
+
+		public static void ReplaceMusicVolumeModule(this ProtoEntity entity, MusicVolumeModule value)
+		{
+			ref MusicVolumeModuleComponent musicVolumeModuleComponent = ref s_GameAspect.MusicVolumeModule.Get(entity);
+			musicVolumeModuleComponent.Value = value;
+		}
+
+		public static ref MusicVolumeModuleComponent AddMusicVolumeModule(this ProtoEntity entity, MusicVolumeModule value)
+		{
+			ref MusicVolumeModuleComponent musicVolumeModuleComponent = ref s_GameAspect.MusicVolumeModule.Add(entity);
+			musicVolumeModuleComponent.Value = value;
+			return ref musicVolumeModuleComponent;
+		}
+
+		public static void DelMusicVolumeModule(this ProtoEntity entity)
+			=> s_GameAspect.MusicVolumeModule.Del(entity);
+
+		//MutedMusicVolume
+		public static bool HasMutedMusicVolume(this ProtoEntity entity) =>
+			s_GameAspect.MutedMusicVolume.Has(entity);
+
+		public static ref MutedMusicVolumeComponent AddMutedMusicVolume(this ProtoEntity entity)
+		{
+			ref MutedMusicVolumeComponent mutedMusicVolumeComponent = ref s_GameAspect.MutedMusicVolume.Add(entity);
+			return ref mutedMusicVolumeComponent;
+		}
+
+		public static void DelMutedMusicVolume(this ProtoEntity entity)
+			=> s_GameAspect.MutedMusicVolume.Del(entity);
+
+		//MutedSoundVolume
+		public static bool HasMutedSoundVolume(this ProtoEntity entity) =>
+			s_GameAspect.MutedSoundVolume.Has(entity);
+
+		public static ref MutedSoundVolumeComponent AddMutedSoundVolume(this ProtoEntity entity)
+		{
+			ref MutedSoundVolumeComponent mutedSoundVolumeComponent = ref s_GameAspect.MutedSoundVolume.Add(entity);
+			return ref mutedSoundVolumeComponent;
+		}
+
+		public static void DelMutedSoundVolume(this ProtoEntity entity)
+			=> s_GameAspect.MutedSoundVolume.Del(entity);
+
+		//SoundVolume
+		public static bool HasSoundVolume(this ProtoEntity entity) =>
+			s_GameAspect.SoundVolume.Has(entity);
+
+		public static ref SoundVolumeComponent GetSoundVolume(this ProtoEntity entity) =>
+			ref s_GameAspect.SoundVolume.Get(entity);
+
+		public static void ReplaceSoundVolume(this ProtoEntity entity, float value)
+		{
+			ref SoundVolumeComponent soundVolumeComponent = ref s_GameAspect.SoundVolume.Get(entity);
+			soundVolumeComponent.Value = value;
+		}
+
+		public static ref SoundVolumeComponent AddSoundVolume(this ProtoEntity entity, float value)
+		{
+			ref SoundVolumeComponent soundVolumeComponent = ref s_GameAspect.SoundVolume.Add(entity);
+			soundVolumeComponent.Value = value;
+			return ref soundVolumeComponent;
+		}
+
+		public static void DelSoundVolume(this ProtoEntity entity)
+			=> s_GameAspect.SoundVolume.Del(entity);
+
 		//Framerate
 		public static bool HasFramerate(this ProtoEntity entity) =>
 			s_GameAspect.Framerate.Has(entity);
@@ -413,19 +441,6 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelResolutionIndex(this ProtoEntity entity)
 			=> s_GameAspect.ResolutionIndex.Del(entity);
 
-		//Settings
-		public static bool HasSettings(this ProtoEntity entity) =>
-			s_GameAspect.Settings.Has(entity);
-
-		public static ref SettingsTag AddSettings(this ProtoEntity entity)
-		{
-			ref SettingsTag settingsTag = ref s_GameAspect.Settings.Add(entity);
-			return ref settingsTag;
-		}
-
-		public static void DelSettings(this ProtoEntity entity)
-			=> s_GameAspect.Settings.Del(entity);
-
 		//VSync
 		public static bool HasVSync(this ProtoEntity entity) =>
 			s_GameAspect.VSync.Has(entity);
@@ -439,77 +454,28 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelVSync(this ProtoEntity entity)
 			=> s_GameAspect.VSync.Del(entity);
 
-		//MusicVolume
-		public static bool HasMusicVolume(this ProtoEntity entity) =>
-			s_GameAspect.MusicVolume.Has(entity);
+		//SetterSettingsModule
+		public static bool HasSetterSettingsModule(this ProtoEntity entity) =>
+			s_GameAspect.SetterSettingsModule.Has(entity);
 
-		public static ref MusicVolumeComponent GetMusicVolume(this ProtoEntity entity) =>
-			ref s_GameAspect.MusicVolume.Get(entity);
+		public static ref SetterSettingsModuleComponent GetSetterSettingsModule(this ProtoEntity entity) =>
+			ref s_GameAspect.SetterSettingsModule.Get(entity);
 
-		public static void ReplaceMusicVolume(this ProtoEntity entity, float value)
+		public static void ReplaceSetterSettingsModule(this ProtoEntity entity, SetterSettingsModule value)
 		{
-			ref MusicVolumeComponent musicVolumeComponent = ref s_GameAspect.MusicVolume.Get(entity);
-			musicVolumeComponent.Value = value;
+			ref SetterSettingsModuleComponent setterSettingsModuleComponent = ref s_GameAspect.SetterSettingsModule.Get(entity);
+			setterSettingsModuleComponent.Value = value;
 		}
 
-		public static ref MusicVolumeComponent AddMusicVolume(this ProtoEntity entity, float value)
+		public static ref SetterSettingsModuleComponent AddSetterSettingsModule(this ProtoEntity entity, SetterSettingsModule value)
 		{
-			ref MusicVolumeComponent musicVolumeComponent = ref s_GameAspect.MusicVolume.Add(entity);
-			musicVolumeComponent.Value = value;
-			return ref musicVolumeComponent;
+			ref SetterSettingsModuleComponent setterSettingsModuleComponent = ref s_GameAspect.SetterSettingsModule.Add(entity);
+			setterSettingsModuleComponent.Value = value;
+			return ref setterSettingsModuleComponent;
 		}
 
-		public static void DelMusicVolume(this ProtoEntity entity)
-			=> s_GameAspect.MusicVolume.Del(entity);
-
-		//MutedMusicVolume
-		public static bool HasMutedMusicVolume(this ProtoEntity entity) =>
-			s_GameAspect.MutedMusicVolume.Has(entity);
-
-		public static ref MutedMusicVolumeComponent AddMutedMusicVolume(this ProtoEntity entity)
-		{
-			ref MutedMusicVolumeComponent mutedMusicVolumeComponent = ref s_GameAspect.MutedMusicVolume.Add(entity);
-			return ref mutedMusicVolumeComponent;
-		}
-
-		public static void DelMutedMusicVolume(this ProtoEntity entity)
-			=> s_GameAspect.MutedMusicVolume.Del(entity);
-
-		//MutedSoundVolume
-		public static bool HasMutedSoundVolume(this ProtoEntity entity) =>
-			s_GameAspect.MutedSoundVolume.Has(entity);
-
-		public static ref MutedSoundVolumeComponent AddMutedSoundVolume(this ProtoEntity entity)
-		{
-			ref MutedSoundVolumeComponent mutedSoundVolumeComponent = ref s_GameAspect.MutedSoundVolume.Add(entity);
-			return ref mutedSoundVolumeComponent;
-		}
-
-		public static void DelMutedSoundVolume(this ProtoEntity entity)
-			=> s_GameAspect.MutedSoundVolume.Del(entity);
-
-		//SoundVolume
-		public static bool HasSoundVolume(this ProtoEntity entity) =>
-			s_GameAspect.SoundVolume.Has(entity);
-
-		public static ref SoundVolumeComponent GetSoundVolume(this ProtoEntity entity) =>
-			ref s_GameAspect.SoundVolume.Get(entity);
-
-		public static void ReplaceSoundVolume(this ProtoEntity entity, float value)
-		{
-			ref SoundVolumeComponent soundVolumeComponent = ref s_GameAspect.SoundVolume.Get(entity);
-			soundVolumeComponent.Value = value;
-		}
-
-		public static ref SoundVolumeComponent AddSoundVolume(this ProtoEntity entity, float value)
-		{
-			ref SoundVolumeComponent soundVolumeComponent = ref s_GameAspect.SoundVolume.Add(entity);
-			soundVolumeComponent.Value = value;
-			return ref soundVolumeComponent;
-		}
-
-		public static void DelSoundVolume(this ProtoEntity entity)
-			=> s_GameAspect.SoundVolume.Del(entity);
+		public static void DelSetterSettingsModule(this ProtoEntity entity)
+			=> s_GameAspect.SetterSettingsModule.Del(entity);
 
 		//ClearableData
 		public static bool HasClearableData(this ProtoEntity entity) =>
@@ -1452,10 +1418,10 @@ namespace Sources.EcsBoundedContexts.Core
 		public static bool HasJumpEvent(this ProtoEntity entity) =>
 			s_GameAspect.JumpEvent.Has(entity);
 
-		public static ref JumpEventComponent AddJumpEvent(this ProtoEntity entity)
+		public static ref JumpEvent AddJumpEvent(this ProtoEntity entity)
 		{
-			ref JumpEventComponent jumpEventComponent = ref s_GameAspect.JumpEvent.Add(entity);
-			return ref jumpEventComponent;
+			ref JumpEvent jumpEvent = ref s_GameAspect.JumpEvent.Add(entity);
+			return ref jumpEvent;
 		}
 
 		public static void DelJumpEvent(this ProtoEntity entity)

@@ -4,6 +4,7 @@ using Sources.EcsBoundedContexts.Animancers.Domain.Configs;
 using Sources.EcsBoundedContexts.AnimatorLod.Domain.Configs;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Configs;
+using Sources.EcsBoundedContexts.Settings.Domain.Data;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -20,6 +21,7 @@ namespace Sources.Frameworks.GameServices.Prefabs.Domain.Configs
         [field: SerializeField] public AssetReferenceT<AdvertisingAfterWaveConfig> AdvertisingAfterWaveConfig { get; private set; }
         [field: SerializeField] public AssetReferenceT<DailyRewardConfig> DailyRewardConfig { get; private set; }
         [field: SerializeField] public AssetReferenceT<AnimatorLodSettingsCollector> AnimatorLodConfig { get; set; }
+        [field: SerializeField] public AssetReferenceT<SettingsConfig> SettingsConfig { get; set; }
 
         // [field: Title("Prefabs")]
         // [field: SerializeField] public AssetReferenceT<GameObject> CharacterModule { get; private set; }

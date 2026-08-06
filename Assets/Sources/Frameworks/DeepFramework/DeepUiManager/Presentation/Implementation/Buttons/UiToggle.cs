@@ -19,6 +19,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
         [HideLabel]
         [SerializeField] private string _label = Label;
         [SerializeField] private Button _button;
+        [SerializeField] private EnableState _startState = EnableState.On;
 
         public event Action<EnableState> StateChanged;
         private readonly List<Action<EnableState>> _stateCallbacks = new ();
@@ -27,7 +28,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
 
         private void Awake()
         {
-            SetState(EnableState.Off);
+            SetState(_startState);
             _button.onClick.AddListener(ChangeState);
         }
 
@@ -57,6 +58,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
             if (state == State)
                 return;
             
+            Debug.Log($"State {state.ToString()}");
             State = state;
             StateChanged?.Invoke(state);
 

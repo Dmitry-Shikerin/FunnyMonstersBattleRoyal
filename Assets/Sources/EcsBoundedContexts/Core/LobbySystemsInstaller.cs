@@ -1,11 +1,10 @@
 using Reflex.Core;
 using Reflex.Enums;
-using Sources.EcsBoundedContexts.Volumes.Controllers.Data;
 using Sources.EcsBoundedContexts.Settings.Controllers.Data;
 using Sources.EcsBoundedContexts.Players.Controllers.Data;
 using Sources.EcsBoundedContexts.Spawners.Controllers;
+using Sources.EcsBoundedContexts.Settings.Controllers;
 using Sources.EcsBoundedContexts.Characters.Controllers.Systems;
-using Sources.EcsBoundedContexts.Volumes.Controllers;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -16,9 +15,6 @@ namespace Sources.EcsBoundedContexts.Core
 			//Default
 
 			//Common
-			containerBuilder.RegisterType(typeof(VolumeLoadSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(ChangeVolumeSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(VolumeSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//EventBuffer
 
@@ -38,6 +34,7 @@ namespace Sources.EcsBoundedContexts.Core
 			containerBuilder.RegisterType(typeof(SettingsLoadSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(PlayerLoadSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(SpawnPointsInitializeSystem), Lifetime.Singleton, Resolution.Lazy);
+			containerBuilder.RegisterType(typeof(ChangedSettingsSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(SettingsSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(PlayerSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 

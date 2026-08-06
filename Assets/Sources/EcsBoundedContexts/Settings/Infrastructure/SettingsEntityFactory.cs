@@ -3,6 +3,9 @@ using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runt
 using Reflex.Core;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
+using Sources.EcsBoundedContexts.Settings.Domain.Data;
+using Sources.EcsBoundedContexts.Settings.Presentation;
+using Sources.Frameworks.GameServices.Prefabs.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Factories;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 
@@ -10,9 +13,11 @@ namespace Sources.EcsBoundedContexts.Settings.Infrastructure
 {
     public class SettingsEntityFactory : EntityFactory
     {
+        private readonly IAssetCollector _assetCollector;
         private readonly IEntityRepository _repository;
 
         public SettingsEntityFactory(
+            IAssetCollector assetCollector,
             IEntityRepository repository,
             ProtoWorld world,
             GameAspect aspect,
@@ -23,23 +28,28 @@ namespace Sources.EcsBoundedContexts.Settings.Infrastructure
                 aspect,
                 container)
         {
+            _assetCollector = assetCollector;
             _repository = repository;
         }
 
         public override ProtoEntity Create(EntityLink link)
         {
+            SettingsConfig config = _assetCollector.Get<SettingsConfig>();
             Aspect.Settings.NewEntity(out ProtoEntity entity);
             _repository.AddByName(entity, IdsConst.Settings);
             Authoring(link, entity);
-            
+
+            SetterSettingsModule module = link.GetModule<SetterSettingsModule>();
+            entity.AddSetterSettingsModule(module);
             entity.AddStringId(IdsConst.Settings);
-            entity.AddSoundVolume(0);
-            entity.AddMusicVolume(0);
+            entity.AddSoundVolume(config.SoundVolume);
+            entity.AddMusicVolume(config.MusicVolume);
             entity.AddFramerate(0);
             entity.AddFullScreen();
             entity.AddGraphicsQuality("");
             entity.AddResolutionIndex(0);
             entity.AddVSync();
+            entity.AddSavedSettings(new SettingsSaveData());
             
             //Save
             entity.AddSavableData();

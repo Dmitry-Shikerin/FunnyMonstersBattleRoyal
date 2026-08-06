@@ -1,13 +1,14 @@
-﻿using Leopotam.EcsProto;
+﻿using System.Collections.Generic;
+using Leopotam.EcsProto;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using Sources.BoundedContexts.Hud.Presentations.Common;
-using Sources.BoundedContexts.Hud.Presentations.MainMenu;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
 using Sources.EcsBoundedContexts.Settings.Domain.Data;
 using Sources.EcsBoundedContexts.Settings.Infrastructure;
+using Sources.EcsBoundedContexts.Settings.Presentation.Interfaces;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.Loads.Services.Interfaces.Data;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
@@ -40,9 +41,12 @@ namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
         {
             EntityLink link = _uiViewService.Get<SettingsUiView>().SettingsLink;
             ProtoEntity settingsEntity = _factory.Create(link);
-            
+
             if (_dataService.HasKey(IdsConst.Settings) == false)
+            {
+                UpdateModules(link);
                 return;
+            }
             
             //Load
             SettingsSaveData settingsSaveData = _dataService.LoadData<SettingsSaveData>(IdsConst.Settings);
@@ -54,10 +58,26 @@ namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
                 settingsEntity.AddMutedMusicVolume();
             
             //Volume
-            settingsEntity.ReplaceSoundVolume(settingsSaveData.MusicVolume);
+            settingsEntity.ReplaceSoundVolume(settingsSaveData.SoundVolume);
 
-            if (settingsSaveData.IsMusicMuted)
+            if (settingsSaveData.IsSoundMuted)
                 settingsEntity.AddMutedSoundVolume();
+            
+            UpdateModules(link);
+            settingsEntity.AddInitialized();
+        }
+
+        private void UpdateModules(EntityLink link)
+        {
+            IReadOnlyList<EntityModule> modules = link.GetModules();
+
+            foreach (EntityModule module in modules)
+            {
+                if (module is not ISettingsModule concrete)
+                    continue;
+                    
+                concrete.UpdateView();
+            }
         }
     }
 }

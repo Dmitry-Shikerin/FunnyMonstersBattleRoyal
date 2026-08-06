@@ -62,6 +62,7 @@ namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
             await AddressablesLoad(config.AdvertisingAfterWaveConfig);
             await AddressablesLoad(config.DailyRewardConfig);
             await AddressablesLoad(config.AnimatorLodConfig);
+            await AddressablesLoad(config.SettingsConfig);
             
             //Prefabs
             //await AddressalesPrefabLoad<CharacterModule>(config.CharacterModule);

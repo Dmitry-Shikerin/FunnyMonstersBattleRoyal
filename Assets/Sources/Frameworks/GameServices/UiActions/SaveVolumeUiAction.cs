@@ -18,8 +18,8 @@ namespace Sources.Frameworks.GameServices.UiActions
 
         public override void Handle()
         {
-            _storageService.Save(IdsConst.SoundsVolume);
-            _storageService.Save(IdsConst.MusicVolume);
+            // _storageService.Save(IdsConst.SoundsVolume);
+            // _storageService.Save(IdsConst.MusicVolume);
         }
     }
 }

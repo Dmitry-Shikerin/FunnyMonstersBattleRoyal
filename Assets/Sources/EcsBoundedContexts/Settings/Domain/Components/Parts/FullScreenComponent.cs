@@ -1,11 +1,11 @@
 ﻿using System;
 using Sources.EcsBoundedContexts.Core.Domain;
 
-namespace Sources.EcsBoundedContexts.Settings.Domain.Components
+namespace Sources.EcsBoundedContexts.Settings.Domain.Components.Parts
 {
-    [Serializable]
+    [Serializable] 
     [Component(group: ComponentGroup.Characters)]
-    public struct ChangedSettingsComponent
+    public struct FullScreenComponent
     {
     }
 }

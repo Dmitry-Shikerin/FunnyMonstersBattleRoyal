@@ -35,6 +35,7 @@ namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
             //Configs
             await AddressablesLoad(config.UiConfig);
             await AddressablesLoad(config.DailyRewardConfig);
+            await AddressablesLoad(config.SettingsConfig);
         }
     }
 }
