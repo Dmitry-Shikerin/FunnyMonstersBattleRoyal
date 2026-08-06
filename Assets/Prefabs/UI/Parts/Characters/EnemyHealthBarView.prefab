@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 620131460261323111, guid: 10f79fe2a6a0cdb4dbf2ec878334b236, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2526934233254303710, guid: 10f79fe2a6a0cdb4dbf2ec878334b236, type: 3}
       propertyPath: m_Layer
