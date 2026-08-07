@@ -381,18 +381,28 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelFramerate(this ProtoEntity entity)
 			=> s_GameAspect.Framerate.Del(entity);
 
-		//FullScreen
-		public static bool HasFullScreen(this ProtoEntity entity) =>
-			s_GameAspect.FullScreen.Has(entity);
+		//FullScreenMode
+		public static bool HasFullScreenMode(this ProtoEntity entity) =>
+			s_GameAspect.FullScreenMode.Has(entity);
 
-		public static ref FullScreenComponent AddFullScreen(this ProtoEntity entity)
+		public static ref FullScreenModeComponent GetFullScreenMode(this ProtoEntity entity) =>
+			ref s_GameAspect.FullScreenMode.Get(entity);
+
+		public static void ReplaceFullScreenMode(this ProtoEntity entity, FullScreenMode value)
 		{
-			ref FullScreenComponent fullScreenComponent = ref s_GameAspect.FullScreen.Add(entity);
-			return ref fullScreenComponent;
+			ref FullScreenModeComponent fullScreenModeComponent = ref s_GameAspect.FullScreenMode.Get(entity);
+			fullScreenModeComponent.Value = value;
 		}
 
-		public static void DelFullScreen(this ProtoEntity entity)
-			=> s_GameAspect.FullScreen.Del(entity);
+		public static ref FullScreenModeComponent AddFullScreenMode(this ProtoEntity entity, FullScreenMode value)
+		{
+			ref FullScreenModeComponent fullScreenModeComponent = ref s_GameAspect.FullScreenMode.Add(entity);
+			fullScreenModeComponent.Value = value;
+			return ref fullScreenModeComponent;
+		}
+
+		public static void DelFullScreenMode(this ProtoEntity entity)
+			=> s_GameAspect.FullScreenMode.Del(entity);
 
 		//GraphicsQuality
 		public static bool HasGraphicsQuality(this ProtoEntity entity) =>

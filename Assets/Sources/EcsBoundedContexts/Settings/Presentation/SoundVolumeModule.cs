@@ -61,6 +61,10 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
         public void ResetToDefaultSettings() =>
             SetSettings(_config.SoundVolume, _config.IsMutedSound);
 
+        public void ApplySettings()
+        {
+        }
+
         private void SetSettings(float volume, bool isMuted)
         {
             float sliderValue = GetSliderValue(volume);

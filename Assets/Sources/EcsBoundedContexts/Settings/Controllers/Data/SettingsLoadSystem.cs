@@ -36,7 +36,7 @@ namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
             _factory = factory;
             _dataService = dataService;
         }
-        
+
         public void Init(IProtoSystems systems)
         {
             EntityLink link = _uiViewService.Get<SettingsUiView>().SettingsLink;
@@ -64,6 +64,10 @@ namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
             if (settingsSaveData.IsSoundMuted)
                 settingsEntity.AddMutedSoundVolume();
             
+            //FullScreen
+            settingsEntity.ReplaceFullScreenMode(settingsSaveData.FullScreenMode);
+            
+            //Finish
             UpdateModules(link);
             settingsEntity.AddInitialized();
         }

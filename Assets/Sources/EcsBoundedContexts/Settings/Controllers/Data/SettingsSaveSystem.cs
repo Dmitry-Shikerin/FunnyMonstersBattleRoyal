@@ -39,6 +39,7 @@ namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
                 SettingsSaveData data = new SettingsSaveData
                 {
                     Id = IdsConst.Settings,
+                    FullScreenMode = entity.GetFullScreenMode().Value,
                     MusicVolume = entity.GetMusicVolume().Value,
                     IsMusicMuted = entity.HasMutedMusicVolume(),
                     SoundVolume = entity.GetSoundVolume().Value,

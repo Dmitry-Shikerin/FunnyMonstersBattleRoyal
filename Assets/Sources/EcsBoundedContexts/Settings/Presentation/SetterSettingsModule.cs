@@ -75,6 +75,16 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
 
         private void ApplySettings()
         {
+            IReadOnlyList<EntityModule> modules = Link.GetModules();
+
+            foreach (EntityModule module in modules)
+            {
+                if (module is not ISettingsModule concrete)
+                    continue;
+                
+                concrete.ApplySettings();
+            }
+            
             ApplyButton.gameObject.SetActive(false);
             Entity.DelChangedSettings();
             Entity.AddSaveDataEvent();

@@ -5,5 +5,6 @@
         void UpdateView();
         void CancelSettings();
         void ResetToDefaultSettings();
+        void ApplySettings();
     }
 }

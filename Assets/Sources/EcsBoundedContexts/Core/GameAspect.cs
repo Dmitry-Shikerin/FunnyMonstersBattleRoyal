@@ -163,7 +163,7 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<MutedMusicVolumeComponent> MutedMusicVolume = new ();
 		public readonly ProtoPool<SoundVolumeComponent> SoundVolume = new ();
 		public readonly ProtoPool<FramerateComponent> Framerate = new ();
-		public readonly ProtoPool<FullScreenComponent> FullScreen = new ();
+		public readonly ProtoPool<FullScreenModeComponent> FullScreenMode = new ();
 		public readonly ProtoPool<GraphicsQualityComponent> GraphicsQuality = new ();
 		public readonly ProtoPool<ResolutionIndexComponent> ResolutionIndex = new ();
 		public readonly ProtoPool<VSyncComponent> VSync = new ();
@@ -218,7 +218,7 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<MutedSoundVolumeComponent>)] = MutedSoundVolume,
 				[typeof(ProtoPool<SoundVolumeComponent>)] = SoundVolume,
 				[typeof(ProtoPool<FramerateComponent>)] = Framerate,
-				[typeof(ProtoPool<FullScreenComponent>)] = FullScreen,
+				[typeof(ProtoPool<FullScreenModeComponent>)] = FullScreenMode,
 				[typeof(ProtoPool<GraphicsQualityComponent>)] = GraphicsQuality,
 				[typeof(ProtoPool<ResolutionIndexComponent>)] = ResolutionIndex,
 				[typeof(ProtoPool<VSyncComponent>)] = VSync,

@@ -8,6 +8,7 @@ using Sources.EcsBoundedContexts.Settings.Presentation;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Factories;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
+using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Settings.Infrastructure
 {
@@ -45,7 +46,7 @@ namespace Sources.EcsBoundedContexts.Settings.Infrastructure
             entity.AddSoundVolume(config.SoundVolume);
             entity.AddMusicVolume(config.MusicVolume);
             entity.AddFramerate(0);
-            entity.AddFullScreen();
+            entity.AddFullScreenMode(FullScreenMode.ExclusiveFullScreen);
             entity.AddGraphicsQuality("");
             entity.AddResolutionIndex(0);
             entity.AddVSync();
