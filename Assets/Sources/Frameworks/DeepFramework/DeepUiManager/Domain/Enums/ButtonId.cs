@@ -21,5 +21,8 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums
         DailyReward = 16,
         PartyMenu = 17,
         NameInput = 18,
+        CancelSetDefaultSettings = 19,
+        ApplyDefaultSettings = 20,
+        DefaultSettings = 21,
     }
 }

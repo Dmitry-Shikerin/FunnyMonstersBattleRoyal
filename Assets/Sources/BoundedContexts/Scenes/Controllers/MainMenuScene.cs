@@ -1,9 +1,11 @@
 ﻿using Cysharp.Threading.Tasks;
+using NodeCanvas.StateMachines;
 using Reflex.Core;
 using Reflex.Injectors;
 using Sources.BoundedContexts.Hud.Presentations.MainMenu;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
+using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
@@ -169,6 +171,11 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             UiConfig hudConfig = _assetCollector.Get<UiConfig>();
             Camera mainCamera = _mainMenuRootGameObjects.MainCamera;
             DeepUiBrain.Instance.Initialize(hudConfig.MainMenuUiConfig, mainCamera, _container);
+            FSMOwner fsmOwner = DeepUiBrain.Hud.MainMenuFsmOwner;
+            FSM behaviour = fsmOwner.behaviour;
+            behaviour.Initialize(behaviour.agent, behaviour.blackboard, true, false);
+            fsmOwner.InjectOwner(_container);
+            fsmOwner.StartBehaviour();
         }
 
         private void InitUiActions()

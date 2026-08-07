@@ -69,8 +69,8 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implemen
 
             _popUpViewManager.Initialize();
 
-            _hud.FsmOwner.behaviour = config.Fsm;
-            _hud.FsmOwner.StartBehaviour();
+            // _hud.FsmOwner.behaviour = config.Fsm;
+            // _hud.FsmOwner.StartBehaviour();
         }
 
         public void Destroy()

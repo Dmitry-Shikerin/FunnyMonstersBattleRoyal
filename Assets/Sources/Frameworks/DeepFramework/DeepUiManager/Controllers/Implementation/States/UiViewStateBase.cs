@@ -46,11 +46,11 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementat
         }
 
         protected abstract void AddEnterShowedViews(List<UiViewId> viewIds);
-        protected abstract void AddEnterHidedViews(List<UiViewId> viewIds);
-        protected abstract void AddExitShowViews(List<UiViewId> viewIds);
-        protected abstract void AddExitHidedViews(List<UiViewId> viewIds);
-        protected abstract void AddEnterUiActions(List<UiActionId> uiActionIds);
-        protected abstract void AddExitUiActions(List<UiActionId> uiActionIds);
+        protected virtual void AddEnterHidedViews(List<UiViewId> viewIds) { }
+        protected virtual void AddExitShowViews(List<UiViewId> viewIds) { }
+        protected virtual void AddExitHidedViews(List<UiViewId> viewIds) { }
+        protected virtual void AddEnterUiActions(List<UiActionId> uiActionIds) { }
+        protected virtual void AddExitUiActions(List<UiActionId> uiActionIds) { }
 
         private void ManageEnterViews()
         {

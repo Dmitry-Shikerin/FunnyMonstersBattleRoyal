@@ -35,5 +35,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums
         Party = 30,
         SessionInfo = 31,
         Lobby = 32,
+        WarningSaveSettings = 33,
+        WarningDefaultSettings = 34,
     }
 }

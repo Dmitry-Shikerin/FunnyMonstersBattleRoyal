@@ -50,6 +50,7 @@ namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
             
             //Load
             SettingsSaveData settingsSaveData = _dataService.LoadData<SettingsSaveData>(IdsConst.Settings);
+            settingsEntity.ReplaceSavedSettings(settingsSaveData);
             
             //Music
             settingsEntity.ReplaceMusicVolume(settingsSaveData.MusicVolume);

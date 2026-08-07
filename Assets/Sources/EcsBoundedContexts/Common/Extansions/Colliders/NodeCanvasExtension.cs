@@ -35,10 +35,10 @@ namespace Sources.EcsBoundedContexts.Common.Extansions.Colliders
             //fsm.preInitializeSubGraphs = true;
             //fsm.Initialize();
 
-            if (owner is FSMOwner)
-                entity.AddFsmOwner(owner as FSMOwner);
-            else if (owner is BehaviourTreeOwner)
-                entity.AddBehaviourTreeOwner(owner as BehaviourTreeOwner);
+            if (owner is FSMOwner concreteOwner)
+                entity.AddFsmOwner(concreteOwner);
+            else if (owner is BehaviourTreeOwner concreteBtOwner)
+                entity.AddBehaviourTreeOwner(concreteBtOwner);
             
             behaviour.Initialize(behaviour.agent, behaviour.blackboard, true, false);
             owner.ConstructFsm(entity, dependencies);
@@ -46,7 +46,7 @@ namespace Sources.EcsBoundedContexts.Common.Extansions.Colliders
             owner.StartBehaviour();
         }
 
-        private static void InjectOwner<T>(this GraphOwner<T> owner, Container container)
+        public static void  InjectOwner<T>(this GraphOwner<T> owner, Container container)
             where T : Graph
         {
             foreach (FSMState state in owner.behaviour.GetAllNodesOfType<FSMState>())
@@ -55,9 +55,9 @@ namespace Sources.EcsBoundedContexts.Common.Extansions.Colliders
             foreach (Task task in owner.behaviour.GetAllTasksOfType<Task>())
                 AttributeInjector.Inject(task, container);
             
-            foreach (var graph in owner.behaviour.GetAllNestedGraphs<BehaviourTree>(true))
+            foreach (BehaviourTree graph in owner.behaviour.GetAllNestedGraphs<BehaviourTree>(true))
             {
-                foreach (var task in graph.GetAllTasksOfType<Task>())
+                foreach (Task task in graph.GetAllTasksOfType<Task>())
                     AttributeInjector.Inject(task, container);
             }
         }

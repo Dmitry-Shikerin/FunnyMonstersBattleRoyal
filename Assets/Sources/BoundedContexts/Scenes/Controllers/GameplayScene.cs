@@ -1,6 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using Leopotam.EcsProto.QoL;
+using NodeCanvas.StateMachines;
 using Reflex.Core;
 using Reflex.Injectors;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
@@ -149,16 +150,19 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             UiConfig hudConfig = _assetCollector.Get<UiConfig>();
             //что бы камера не была пустой
             Camera mainCamera = Camera.main;
-
             //TODO возможно разделить на отдельную сцену
             UiManagerConfig managerConfig = _sceneService.CurrentSceneName == IdsConst.Gameplay
                 ? hudConfig.GameUiConfig
                 : hudConfig.LobbyUiConfig;
-            
-            Debug.Log($"Scene name [{_sceneService.CurrentSceneName}], config name [{managerConfig.name}]");
-            
             //Camera mainCamera = _rootGameObject.MainCamera.GetModule<MainCameraModule>().Camera;
             DeepUiBrain.Instance.Initialize(managerConfig, mainCamera, _container);
+            FSMOwner fsmOwner = _sceneService.CurrentSceneName == IdsConst.Gameplay ?
+                DeepUiBrain.Hud.GameplayFsmOwner :
+                DeepUiBrain.Hud.LobbyFsmOwner;
+            FSM behaviour = fsmOwner.behaviour;
+            behaviour.Initialize(behaviour.agent, behaviour.blackboard, true, false);
+            fsmOwner.InjectOwner(_container);
+            fsmOwner.StartBehaviour();
         }
 
         private void InitUiActions()

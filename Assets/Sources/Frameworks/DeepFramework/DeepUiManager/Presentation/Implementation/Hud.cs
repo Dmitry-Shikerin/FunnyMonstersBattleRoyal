@@ -6,7 +6,10 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
     public class Hud : MonoBehaviour
     {
         [field: SerializeField] public Canvas Canvas { get; private set; }
-        [field: SerializeField] public FSMOwner FsmOwner { get; private set; }
         [field: SerializeField] public Camera UiCamera { get; private set; }
+        [field: SerializeField] public FSMOwner FsmOwner { get; private set; }
+        [field: SerializeField] public FSMOwner MainMenuFsmOwner { get; private set; }
+        [field: SerializeField] public FSMOwner LobbyFsmOwner { get; private set; }
+        [field: SerializeField] public FSMOwner GameplayFsmOwner { get; private set; }
     }
 }

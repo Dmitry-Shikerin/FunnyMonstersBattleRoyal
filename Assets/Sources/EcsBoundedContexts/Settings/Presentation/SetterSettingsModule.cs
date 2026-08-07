@@ -18,14 +18,14 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
         {
             ApplyButton.OnClick += ApplySettings;
             _resetToDefaultButton.OnClick += ResetToDefaultSettings;
-            _mainMenuButton.OnClick += OpenMainMenu;
+            _mainMenuButton.OnClick += CancelSettings;
         }
 
         protected override void OnAfterDisable()
         {
             ApplyButton.OnClick -= ApplySettings;
             _resetToDefaultButton.OnClick -= ResetToDefaultSettings;
-            _mainMenuButton.OnClick -= OpenMainMenu;
+            _mainMenuButton.OnClick -= CancelSettings;
         }
 
         protected override void OnAfterInitialize()
@@ -33,9 +33,24 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
             ApplyButton.gameObject.SetActive(false);
         }
 
-        private void OpenMainMenu()
+        private void CancelSettings()
         {
+            IReadOnlyList<EntityModule> modules = Link.GetModules();
+
+            foreach (EntityModule module in modules)
+            {
+                if (module is not ISettingsModule concrete)
+                    continue;
+                
+                concrete.CancelSettings();
+            }
+
+            if (Entity.HasChangedSettings())
+                Entity.DelChangedSettings();
             
+            ApplyButton.gameObject.SetActive(false);
+            Entity.AddSaveDataEvent();
+            Debug.Log($"Cancel Settings");
         }
 
         private void ResetToDefaultSettings()
@@ -55,6 +70,7 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
             
             ApplyButton.gameObject.SetActive(false);
             Entity.AddSaveDataEvent();
+            Debug.Log($"Reset to default");
         }
 
         private void ApplySettings()
@@ -62,6 +78,7 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
             ApplyButton.gameObject.SetActive(false);
             Entity.DelChangedSettings();
             Entity.AddSaveDataEvent();
+            Debug.Log($"Apply settings");
         }
     }
 }
