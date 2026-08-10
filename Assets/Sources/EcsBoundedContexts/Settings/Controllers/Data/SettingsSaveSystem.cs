@@ -6,8 +6,10 @@ using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.Settings.Domain.Components;
+using Sources.EcsBoundedContexts.Settings.Domain.Components.Parts;
 using Sources.EcsBoundedContexts.Settings.Domain.Data;
 using Sources.Frameworks.GameServices.Loads.Services.Interfaces.Data;
+using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
 {
@@ -36,15 +38,25 @@ namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
         {
             foreach (ProtoEntity entity in _saveIt)
             {
+                ResolutionComponent resolutionComponent = entity.GetResolution();
                 SettingsSaveData data = new SettingsSaveData
                 {
                     Id = IdsConst.Settings,
                     FullScreenMode = entity.GetFullScreenMode().Value,
+                    Framerate = entity.GetFramerate().Value,
+                    Resolution = new ResolutionSaveData()
+                    {
+                        Width = resolutionComponent.Width,
+                        Height = resolutionComponent.Height,
+                        RefreshRate = resolutionComponent.RefreshRate,
+                    },
+                    IsVSync = entity.HasVSync(),
                     MusicVolume = entity.GetMusicVolume().Value,
                     IsMusicMuted = entity.HasMutedMusicVolume(),
                     SoundVolume = entity.GetSoundVolume().Value,
                     IsSoundMuted = entity.HasMutedSoundVolume(),
                 };
+                Debug.Log($"Framerate {data.Framerate}");
                 
                 _dataService.SaveData(data, IdsConst.Settings);
                 entity.ReplaceSavedSettings(data);

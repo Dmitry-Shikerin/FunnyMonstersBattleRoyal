@@ -5,8 +5,10 @@ namespace Sources.EcsBoundedContexts.Settings.Domain.Components.Parts
 {
     [Serializable] 
     [Component(group: ComponentGroup.Characters)]
-    public struct ResolutionIndexComponent
+    public struct ResolutionComponent
     {
-        public int Value;
+        public int Width;
+        public int Height;
+        public int RefreshRate;
     }
 }

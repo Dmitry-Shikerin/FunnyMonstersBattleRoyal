@@ -7,10 +7,12 @@ namespace Sources.EcsBoundedContexts.Settings.Domain.Data
     {
         public string Id { get; set; }
         public FullScreenMode FullScreenMode { get; set; }
+        public int Framerate { get; set; }
+        public ResolutionSaveData Resolution { get; set; }
+        public bool IsVSync { get; set; }
         public float MusicVolume { get; set; }
         public bool IsMusicMuted { get; set; }
         public float SoundVolume { get; set; }
         public bool IsSoundMuted { get; set; }
-        public int Framerate { get; set; }
     }
 }

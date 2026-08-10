@@ -45,11 +45,11 @@ namespace Sources.EcsBoundedContexts.Settings.Infrastructure
             entity.AddStringId(IdsConst.Settings);
             entity.AddSoundVolume(config.SoundVolume);
             entity.AddMusicVolume(config.MusicVolume);
-            entity.AddFramerate(0);
-            entity.AddFullScreenMode(FullScreenMode.ExclusiveFullScreen);
+            entity.AddFramerate(config.Framerate);
+            entity.AddFullScreenMode(config.FullScreenMode);
             entity.AddGraphicsQuality("");
-            entity.AddResolutionIndex(0);
-            entity.AddVSync();
+            Resolution resolution = Screen.currentResolution;
+            entity.AddResolution(resolution.width, resolution.height, resolution.refreshRate);
             entity.AddSavedSettings(new SettingsSaveData());
             
             //Save

@@ -120,6 +120,7 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
         {
             _mode = (FullScreenMode)_currentIndex;
             _dropdown.value = _currentIndex;
+            _dropdown.RefreshShownValue();
             Entity.ReplaceFullScreenMode(_mode);
 
             if (Entity.HasChangedSettings())

@@ -427,28 +427,32 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelGraphicsQuality(this ProtoEntity entity)
 			=> s_GameAspect.GraphicsQuality.Del(entity);
 
-		//ResolutionIndex
-		public static bool HasResolutionIndex(this ProtoEntity entity) =>
-			s_GameAspect.ResolutionIndex.Has(entity);
+		//Resolution
+		public static bool HasResolution(this ProtoEntity entity) =>
+			s_GameAspect.Resolution.Has(entity);
 
-		public static ref ResolutionIndexComponent GetResolutionIndex(this ProtoEntity entity) =>
-			ref s_GameAspect.ResolutionIndex.Get(entity);
+		public static ref ResolutionComponent GetResolution(this ProtoEntity entity) =>
+			ref s_GameAspect.Resolution.Get(entity);
 
-		public static void ReplaceResolutionIndex(this ProtoEntity entity, int value)
+		public static void ReplaceResolution(this ProtoEntity entity, int width, int height, int refreshRate)
 		{
-			ref ResolutionIndexComponent resolutionIndexComponent = ref s_GameAspect.ResolutionIndex.Get(entity);
-			resolutionIndexComponent.Value = value;
+			ref ResolutionComponent resolutionComponent = ref s_GameAspect.Resolution.Get(entity);
+			resolutionComponent.Width = width;
+			resolutionComponent.Height = height;
+			resolutionComponent.RefreshRate = refreshRate;
 		}
 
-		public static ref ResolutionIndexComponent AddResolutionIndex(this ProtoEntity entity, int value)
+		public static ref ResolutionComponent AddResolution(this ProtoEntity entity, int width, int heigth, int refrashRate)
 		{
-			ref ResolutionIndexComponent resolutionIndexComponent = ref s_GameAspect.ResolutionIndex.Add(entity);
-			resolutionIndexComponent.Value = value;
-			return ref resolutionIndexComponent;
+			ref ResolutionComponent resolutionComponent = ref s_GameAspect.Resolution.Add(entity);
+			resolutionComponent.Width = width;
+			resolutionComponent.Height = heigth;
+			resolutionComponent.RefreshRate = refrashRate;
+			return ref resolutionComponent;
 		}
 
-		public static void DelResolutionIndex(this ProtoEntity entity)
-			=> s_GameAspect.ResolutionIndex.Del(entity);
+		public static void DelResolution(this ProtoEntity entity)
+			=> s_GameAspect.Resolution.Del(entity);
 
 		//VSync
 		public static bool HasVSync(this ProtoEntity entity) =>

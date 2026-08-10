@@ -32,18 +32,6 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
         public const string DailyReward = "DailyReward";
         public const string HealthBooster = "HealthBuster";
 
-        //Abilities
-        public const string CharacterSpawnerAbility = "CharacterSpawnerAbility";
-        public const string NukeAbility = "NukeAbility";
-        public const string FlamethrowerAbility = "FlamethrowerAbility";
-        public const string NukeBomb = "NukeBomb";
-        
-        //Upgrades
-        public const string AttackUpgrade = "AttackUpgrade";
-        public const string HealthUpgrade = "HealthUpgrade";
-        public const string FlamethrowerUpgrade = "FlamethrowerUpgrade";
-        public const string NukeUpgrade = "NukeUpgrade";
-
         //Settings
         public const string Settings = "Settings";
 

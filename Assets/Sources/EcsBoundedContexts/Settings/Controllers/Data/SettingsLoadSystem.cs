@@ -12,6 +12,7 @@ using Sources.EcsBoundedContexts.Settings.Presentation.Interfaces;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.Loads.Services.Interfaces.Data;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
+using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
 {
@@ -66,6 +67,18 @@ namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
             
             //FullScreen
             settingsEntity.ReplaceFullScreenMode(settingsSaveData.FullScreenMode);
+            
+            //Framerate
+            settingsEntity.ReplaceFramerate(settingsSaveData.Framerate);
+            Debug.Log($"Framerate {settingsSaveData.Framerate}");
+            
+            //VSync
+            if (settingsSaveData.IsVSync)
+                settingsEntity.AddVSync();
+            
+            //Resolution
+            ResolutionSaveData resolutionData = settingsSaveData.Resolution;
+            settingsEntity.ReplaceResolution(resolutionData.Width, resolutionData.Height, resolutionData.RefreshRate);
             
             //Finish
             UpdateModules(link);

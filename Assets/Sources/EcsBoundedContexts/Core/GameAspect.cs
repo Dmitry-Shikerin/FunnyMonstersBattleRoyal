@@ -165,7 +165,7 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<FramerateComponent> Framerate = new ();
 		public readonly ProtoPool<FullScreenModeComponent> FullScreenMode = new ();
 		public readonly ProtoPool<GraphicsQualityComponent> GraphicsQuality = new ();
-		public readonly ProtoPool<ResolutionIndexComponent> ResolutionIndex = new ();
+		public readonly ProtoPool<ResolutionComponent> Resolution = new ();
 		public readonly ProtoPool<VSyncComponent> VSync = new ();
 		public readonly ProtoPool<SetterSettingsModuleComponent> SetterSettingsModule = new ();
 		public readonly ProtoPool<PlayerNameComponent> PlayerName = new ();
@@ -220,7 +220,7 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<FramerateComponent>)] = Framerate,
 				[typeof(ProtoPool<FullScreenModeComponent>)] = FullScreenMode,
 				[typeof(ProtoPool<GraphicsQualityComponent>)] = GraphicsQuality,
-				[typeof(ProtoPool<ResolutionIndexComponent>)] = ResolutionIndex,
+				[typeof(ProtoPool<ResolutionComponent>)] = Resolution,
 				[typeof(ProtoPool<VSyncComponent>)] = VSync,
 				[typeof(ProtoPool<SetterSettingsModuleComponent>)] = SetterSettingsModule,
 				[typeof(ProtoPool<ClearableDataComponent>)] = ClearableData,
