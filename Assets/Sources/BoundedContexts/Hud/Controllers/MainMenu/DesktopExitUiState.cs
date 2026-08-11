@@ -7,11 +7,11 @@ using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums;
 namespace Sources.BoundedContexts.Hud.Controllers.MainMenu
 {
     [Category(NcCategoriesConst.Ui)]
-    public class WarningSaveSettingsUiState : UiViewStateBase
+    public class DesktopExitUiState : UiViewStateBase
     {
         protected override void AddEnterShowedViews(List<UiViewId> viewIds)
         {
-            viewIds.Add(UiViewId.WarningSaveSettings);
+            viewIds.Add(UiViewId.DesktopExit);
         }
     }
 }

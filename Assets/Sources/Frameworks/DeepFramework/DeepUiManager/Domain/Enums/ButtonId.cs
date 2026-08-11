@@ -24,5 +24,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums
         CancelSetDefaultSettings = 19,
         ApplyDefaultSettings = 20,
         DefaultSettings = 21,
+        ExitToDesktop = 22,
     }
 }

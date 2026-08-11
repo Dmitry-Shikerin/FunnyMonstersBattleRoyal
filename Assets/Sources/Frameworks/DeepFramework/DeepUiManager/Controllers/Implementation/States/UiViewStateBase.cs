@@ -9,19 +9,19 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementat
 {
     public abstract class UiViewStateBase : FSMState
     {
-        protected abstract bool IsHideAllPopUpsEntered { get; }
-        protected abstract bool IsHideAllPopUpsExited { get; }
+        protected virtual bool IsHideAllPopUpsEntered { get; }
+        protected virtual bool IsHideAllPopUpsExited { get; }
         
         //EnteredViews
         private readonly List<UiViewId> _enterShowViews = new();
         private readonly List<UiViewId> _enterHideViews = new();
-        protected abstract bool IsHideAllViewsEntered { get; }
+        protected virtual bool IsHideAllViewsEntered { get; }
         //ExitedViews
         private readonly List<UiViewId> _exitShowViews = new();
         private readonly List<UiViewId> _exitHideViews = new();
         private readonly List<UiActionId> _enterUiActions = new();
         private readonly List<UiActionId> _exitUiActions = new();
-        protected abstract bool IsHideAllViewsExited { get; }
+        protected virtual bool IsHideAllViewsExited { get; }
 
         protected override void OnInit()
         {

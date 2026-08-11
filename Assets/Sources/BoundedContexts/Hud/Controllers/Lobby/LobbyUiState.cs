@@ -3,41 +3,17 @@ using ParadoxNotion.Design;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementation.States;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums;
-using VHierarchy.Libs;
 
 namespace Sources.BoundedContexts.Hud.Controllers.Lobby
 {
     [Category(NcCategoriesConst.Ui)]
     public class LobbyUiState : UiViewStateBase
     {
-        protected override bool IsHideAllPopUpsEntered { get; } = true;
-        protected override bool IsHideAllPopUpsExited { get; }
         protected override bool IsHideAllViewsEntered { get; } = true;
-        protected override bool IsHideAllViewsExited { get; }
         
         protected override void AddEnterShowedViews(List<UiViewId> viewIds)
         {
             viewIds.Add(UiViewId.Lobby);
-        }
-
-        protected override void AddEnterHidedViews(List<UiViewId> viewIds)
-        {
-        }
-
-        protected override void AddExitShowViews(List<UiViewId> viewIds)
-        {
-        }
-
-        protected override void AddExitHidedViews(List<UiViewId> viewIds)
-        {
-        }
-
-        protected override void AddEnterUiActions(List<UiActionId> uiActionIds)
-        {
-        }
-
-        protected override void AddExitUiActions(List<UiActionId> uiActionIds)
-        {
         }
     }
 }

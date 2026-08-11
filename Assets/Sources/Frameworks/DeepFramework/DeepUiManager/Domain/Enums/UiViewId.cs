@@ -37,5 +37,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums
         Lobby = 32,
         WarningSaveSettings = 33,
         WarningDefaultSettings = 34,
+        DesktopExit = 35,
     }
 }

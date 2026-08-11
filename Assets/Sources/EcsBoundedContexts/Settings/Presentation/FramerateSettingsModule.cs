@@ -36,9 +36,10 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
         {
             _config = collector.Get<SettingsConfig>();
             _screenService = screenService;
+            OnAfterConstruct();
         }
 
-        private void Awake()
+        private void OnAfterConstruct()
         {
             _dropdown.ClearOptions();
             _fpsOptions = GetFpsOptions();

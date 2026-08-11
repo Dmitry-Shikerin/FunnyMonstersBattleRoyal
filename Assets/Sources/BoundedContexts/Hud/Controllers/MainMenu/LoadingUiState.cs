@@ -9,35 +9,12 @@ namespace Sources.BoundedContexts.Hud.Controllers.MainMenu
     [Category(NcCategoriesConst.Ui)]
     public class LoadingUiState : UiViewStateBase
     {
-        protected override bool IsHideAllPopUpsEntered { get; }
-        protected override bool IsHideAllPopUpsExited { get; }
         protected override bool IsHideAllViewsEntered { get; } = true;
-        protected override bool IsHideAllViewsExited { get; }
         
         protected override void AddEnterShowedViews(List<UiViewId> viewIds)
         {
             viewIds.Add(UiViewId.Loading);
             viewIds.Add(UiViewId.HudBackground);
-        }
-
-        protected override void AddEnterHidedViews(List<UiViewId> viewIds)
-        {
-        }
-
-        protected override void AddExitShowViews(List<UiViewId> viewIds)
-        {
-        }
-
-        protected override void AddExitHidedViews(List<UiViewId> viewIds)
-        {
-        }
-
-        protected override void AddEnterUiActions(List<UiActionId> uiActionIds)
-        {
-        }
-
-        protected override void AddExitUiActions(List<UiActionId> uiActionIds)
-        {
         }
     }
 }
