@@ -1,5 +1,6 @@
 ﻿using System;
 using Sources.EcsBoundedContexts.Core.Domain;
+using Sources.EcsBoundedContexts.Settings.Domain.Enums;
 
 namespace Sources.EcsBoundedContexts.Settings.Domain.Components.Parts
 {
@@ -7,6 +8,6 @@ namespace Sources.EcsBoundedContexts.Settings.Domain.Components.Parts
     [Component(group: ComponentGroup.Characters)]
     public struct GraphicsQualityComponent
     {
-        public string Value;
+        public GraphicsQualities Value;
     }
 }

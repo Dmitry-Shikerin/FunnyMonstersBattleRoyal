@@ -24,6 +24,15 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
         private ISoundService _soundService;
         private SettingsConfig _config;
 
+        [Inject]
+        private void Construct(
+            ISoundService soundService,
+            IAssetCollector assetCollector)
+        {
+            _soundService = soundService;
+            _config = assetCollector.Get<SettingsConfig>();
+        }
+        
         private void OnEnable()
         {
             _slider.onValueChanged.AddListener(ChangeVolume);
@@ -121,14 +130,5 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
         
         private float GetSliderValue(float value) =>
             Mathf.Clamp(Mathf.RoundToInt(value * 100f), _slider.minValue, _slider.maxValue);
-
-        [Inject]
-        private void Construct(
-            ISoundService soundService,
-            IAssetCollector assetCollector)
-        {
-            _soundService = soundService;
-            _config = assetCollector.Get<SettingsConfig>();
-        }
     }
 }

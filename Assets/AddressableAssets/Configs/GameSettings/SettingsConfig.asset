@@ -24,7 +24,11 @@ MonoBehaviour:
   enableState: 0
   _id: 
   _parent: {fileID: 0}
+  <GraphicsQuality>k__BackingField: 2
+  <IsVSync>k__BackingField: 0
+  <Framerate>k__BackingField: -1
+  <FullScreenMode>k__BackingField: 0
   <MusicVolume>k__BackingField: 0.75
-  <IsMutedMusicVolume>k__BackingField: 0
+  <IsMutedMusic>k__BackingField: 0
   <SoundVolume>k__BackingField: 0.75
-  <IsMutedSoundVolume>k__BackingField: 0
+  <IsMutedSound>k__BackingField: 0

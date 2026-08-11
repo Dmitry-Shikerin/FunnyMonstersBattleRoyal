@@ -5,6 +5,7 @@ using Reflex.Attributes;
 using Sirenix.OdinInspector;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Settings.Domain.Data;
+using Sources.EcsBoundedContexts.Settings.Infrastructure.Services.Interfaces;
 using Sources.EcsBoundedContexts.Settings.Presentation.Interfaces;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Buttons;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
@@ -23,11 +24,15 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
         private FullScreenMode _mode = FullScreenMode.ExclusiveFullScreen;
         private int _currentIndex;
         private SettingsConfig _config;
+        private IScreenService _screenService;
 
         [Inject]
-        private void Construct(IAssetCollector collector)
+        private void Construct(
+            IAssetCollector collector,
+            IScreenService screenService)
         {
             _config = collector.Get<SettingsConfig>();
+            _screenService = screenService;
         }
 
         private void Awake()
@@ -79,7 +84,7 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
 
         public void ApplySettings()
         {
-            Screen.fullScreenMode = _mode;
+            _screenService.SetFullScreen(_mode);
         }
 
         private void ChangeMode(int index)

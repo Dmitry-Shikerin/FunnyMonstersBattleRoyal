@@ -51,12 +51,12 @@ namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
                         RefreshRate = resolutionComponent.RefreshRate,
                     },
                     IsVSync = entity.HasVSync(),
+                    GraphicsQuality = entity.GetGraphicsQuality().Value,
                     MusicVolume = entity.GetMusicVolume().Value,
                     IsMusicMuted = entity.HasMutedMusicVolume(),
                     SoundVolume = entity.GetSoundVolume().Value,
                     IsSoundMuted = entity.HasMutedSoundVolume(),
                 };
-                Debug.Log($"Framerate {data.Framerate}");
                 
                 _dataService.SaveData(data, IdsConst.Settings);
                 entity.ReplaceSavedSettings(data);

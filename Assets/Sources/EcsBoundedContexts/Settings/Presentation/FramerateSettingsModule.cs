@@ -6,6 +6,7 @@ using Reflex.Attributes;
 using Sirenix.OdinInspector;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Settings.Domain.Data;
+using Sources.EcsBoundedContexts.Settings.Infrastructure.Services.Interfaces;
 using Sources.EcsBoundedContexts.Settings.Presentation.Interfaces;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Buttons;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
@@ -26,16 +27,19 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
         private int _currentIndex;
         private SettingsConfig _config;
         private Dictionary<int, string> _fpsOptions;
+        private IScreenService _screenService;
 
         [Inject]
-        private void Construct(IAssetCollector collector)
+        private void Construct(
+            IAssetCollector collector,
+            IScreenService screenService)
         {
             _config = collector.Get<SettingsConfig>();
+            _screenService = screenService;
         }
 
         private void Awake()
         {
-            //TODO учесть что framerate зависит еще от разрешения так что зоздавать этот диктионари нужно еще с учетом разрешения
             _dropdown.ClearOptions();
             _fpsOptions = GetFpsOptions();
             _dropdown.AddOptions(_fpsOptions.Values.ToList());
@@ -93,7 +97,7 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
 
         public void ApplySettings()
         {
-            Application.targetFrameRate = _framerate;
+            _screenService.SetFramerate(_framerate);
         }
 
         private void AfterVSyncApplySettings(bool isOn)
@@ -101,7 +105,7 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
             if (isOn == false)
                 return;
 
-            Application.targetFrameRate = -1;
+            _screenService.SetFramerate(-1);
         }
 
         private void OnVSyncChanged(bool isOn)
@@ -224,7 +228,7 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
                 -1,
             };
 
-            int maxFramerate = Screen.currentResolution.refreshRate;
+            int maxFramerate = _screenService.MaxFramerate;
             List<int> result = new List<int>();
 
             foreach (int option in allFpsOptions)

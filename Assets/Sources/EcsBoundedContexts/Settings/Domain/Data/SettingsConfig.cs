@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using Sources.EcsBoundedContexts.Settings.Domain.Enums;
 using Sources.Frameworks.DeepFramework.DeepUtils.ConfigCollectors.Domain.ScriptableObjects;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ namespace Sources.EcsBoundedContexts.Settings.Domain.Data
     [CreateAssetMenu(fileName = nameof(SettingsConfig), menuName = "Configs/" + nameof(SettingsConfig), order = 51)]
     public class SettingsConfig : Config
     {
+        [field: Header("GraphicsQuality")]
+        [field: SerializeField] public GraphicsQualities GraphicsQuality { get; private set; }
+        
         [field: Header("VSync")]
         [field: SerializeField] public bool IsVSync { get; private set; } = false;
 

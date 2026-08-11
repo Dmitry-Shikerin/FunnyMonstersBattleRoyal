@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5837328698917048419}
   - component: {fileID: 2954229841743675639}
   - component: {fileID: 5683583022311490258}
+  - component: {fileID: 6876332955330918293}
   m_Layer: 0
   m_Name: GameplaySceneScope
   m_TagString: Untagged
@@ -63,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rootGameObject: {fileID: 0}
+  _joinManager: {fileID: 0}
 --- !u!114 &7737560259366211219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,5 +123,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba61bee06edf457c976e458120a3d57d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6876332955330918293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4708552925082302978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c71f6d070c74efc81faa47b2dc71686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

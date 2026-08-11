@@ -8,6 +8,7 @@ using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
 using Sources.EcsBoundedContexts.Settings.Domain.Data;
 using Sources.EcsBoundedContexts.Settings.Infrastructure;
+using Sources.EcsBoundedContexts.Settings.Infrastructure.Factories;
 using Sources.EcsBoundedContexts.Settings.Presentation.Interfaces;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.Loads.Services.Interfaces.Data;
@@ -70,7 +71,6 @@ namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
             
             //Framerate
             settingsEntity.ReplaceFramerate(settingsSaveData.Framerate);
-            Debug.Log($"Framerate {settingsSaveData.Framerate}");
             
             //VSync
             if (settingsSaveData.IsVSync)
@@ -79,6 +79,9 @@ namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
             //Resolution
             ResolutionSaveData resolutionData = settingsSaveData.Resolution;
             settingsEntity.ReplaceResolution(resolutionData.Width, resolutionData.Height, resolutionData.RefreshRate);
+            
+            //VSync
+            settingsEntity.ReplaceGraphicsQuality(settingsSaveData.GraphicsQuality);
             
             //Finish
             UpdateModules(link);

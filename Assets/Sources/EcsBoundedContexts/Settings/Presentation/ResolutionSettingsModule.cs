@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
+using Reflex.Attributes;
 using Sirenix.OdinInspector;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Settings.Domain.Components.Parts;
+using Sources.EcsBoundedContexts.Settings.Infrastructure.Services.Interfaces;
 using Sources.EcsBoundedContexts.Settings.Presentation.Interfaces;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Buttons;
 using TMPro;
@@ -20,6 +22,13 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
         private readonly List<Resolution> _resolutions = new ();
         private int _currentIndex;
         private Resolution _currentResolution;
+        private IScreenService _screenService;
+
+        [Inject]
+        private void Construct(IScreenService screenService)
+        {
+            _screenService = screenService;
+        }
         
         private void Awake()
         {
@@ -81,7 +90,7 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
                 numerator = (uint)resolution.refreshRate,
                 denominator = 1,
             };
-            Screen.SetResolution(resolutionComponent.Width, resolutionComponent.Height, FullScreenMode.ExclusiveFullScreen, refreshRate);
+            _screenService.SetResolution(resolutionComponent.Width, resolutionComponent.Height, refreshRate);
         }
 
         private void ChangeMode(int index)

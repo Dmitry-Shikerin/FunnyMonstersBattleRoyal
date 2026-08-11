@@ -4,6 +4,7 @@ using Reflex.Attributes;
 using Sirenix.OdinInspector;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Settings.Domain.Data;
+using Sources.EcsBoundedContexts.Settings.Infrastructure.Services.Interfaces;
 using Sources.EcsBoundedContexts.Settings.Presentation.Interfaces;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Buttons;
 using Sources.Frameworks.DeepFramework.DeepUtils.Enums;
@@ -17,15 +18,19 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
         [Required] [SerializeField] private UiToggle _toggle;
 
         private SettingsConfig _config;
+        private IQualityService _qualityService;
 
         public event Action<bool> OnVSyncChanged;
         public event Action<bool> OnVSyncInitialized;
         public event Action<bool> OnVSyncApplyChanges;
 
         [Inject]
-        private void Construct(IAssetCollector collector)
+        private void Construct(
+            IAssetCollector collector,
+            IQualityService qualityService)
         {
             _config = collector.Get<SettingsConfig>();
+            _qualityService = qualityService;
         }
 
         private void OnEnable()
@@ -46,7 +51,7 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
                 : EnableState.Off;
             _toggle.SetState(state);
             OnVSyncInitialized?.Invoke(hasVSync);
-            QualitySettings.vSyncCount = hasVSync ? 1 : 0;
+            _qualityService.EnableVSync(hasVSync);
         }
 
         public void CancelSettings()
@@ -68,7 +73,7 @@ namespace Sources.EcsBoundedContexts.Settings.Presentation
         public void ApplySettings()
         {
             bool hasVSync = Entity.HasVSync();
-            QualitySettings.vSyncCount = hasVSync ? 1 : 0;
+            _qualityService.EnableVSync(hasVSync);
             OnVSyncApplyChanges?.Invoke(hasVSync);
         }
 

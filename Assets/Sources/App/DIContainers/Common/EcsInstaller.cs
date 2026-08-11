@@ -11,7 +11,7 @@ using Sources.EcsBoundedContexts.KillEnemyCounters.Infrastructure;
 using Sources.EcsBoundedContexts.Lights.Infrastructure;
 using Sources.EcsBoundedContexts.Players.Infrastructure;
 using Sources.EcsBoundedContexts.PlayerWallets.Infrastructure;
-using Sources.EcsBoundedContexts.Settings.Infrastructure;
+using Sources.EcsBoundedContexts.Settings.Infrastructure.Factories;
 using Sources.EcsBoundedContexts.Spawners.Infrastructure.Factories;
 using Sources.EcsBoundedContexts.Spawners.Infrastructure.Services;
 using Sources.EcsBoundedContexts.Tutorials.Infrastructure;

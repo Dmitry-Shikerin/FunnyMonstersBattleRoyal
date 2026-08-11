@@ -10,7 +10,7 @@ using Sources.Frameworks.MyLeoEcsProto.Factories;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 using UnityEngine;
 
-namespace Sources.EcsBoundedContexts.Settings.Infrastructure
+namespace Sources.EcsBoundedContexts.Settings.Infrastructure.Factories
 {
     public class SettingsEntityFactory : EntityFactory
     {
@@ -47,7 +47,7 @@ namespace Sources.EcsBoundedContexts.Settings.Infrastructure
             entity.AddMusicVolume(config.MusicVolume);
             entity.AddFramerate(config.Framerate);
             entity.AddFullScreenMode(config.FullScreenMode);
-            entity.AddGraphicsQuality("");
+            entity.AddGraphicsQuality(config.GraphicsQuality);
             Resolution resolution = Screen.currentResolution;
             entity.AddResolution(resolution.width, resolution.height, resolution.refreshRate);
             entity.AddSavedSettings(new SettingsSaveData());

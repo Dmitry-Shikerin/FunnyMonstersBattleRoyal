@@ -60,6 +60,7 @@ using Sources.EcsBoundedContexts.Animators;
 using Sources.EcsBoundedContexts.AnimatorLod.Domain.Components;
 using Sources.EcsBoundedContexts.Animancers.Domain.Components;
 using Animancer;
+using Sources.EcsBoundedContexts.Settings.Domain.Enums;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -411,13 +412,13 @@ namespace Sources.EcsBoundedContexts.Core
 		public static ref GraphicsQualityComponent GetGraphicsQuality(this ProtoEntity entity) =>
 			ref s_GameAspect.GraphicsQuality.Get(entity);
 
-		public static void ReplaceGraphicsQuality(this ProtoEntity entity, String value)
+		public static void ReplaceGraphicsQuality(this ProtoEntity entity, GraphicsQualities value)
 		{
 			ref GraphicsQualityComponent graphicsQualityComponent = ref s_GameAspect.GraphicsQuality.Get(entity);
 			graphicsQualityComponent.Value = value;
 		}
 
-		public static ref GraphicsQualityComponent AddGraphicsQuality(this ProtoEntity entity, String value)
+		public static ref GraphicsQualityComponent AddGraphicsQuality(this ProtoEntity entity, GraphicsQualities value)
 		{
 			ref GraphicsQualityComponent graphicsQualityComponent = ref s_GameAspect.GraphicsQuality.Add(entity);
 			graphicsQualityComponent.Value = value;

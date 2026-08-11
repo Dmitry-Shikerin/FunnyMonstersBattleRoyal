@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1358863760436667669}
   - component: {fileID: 8540309133152457185}
   - component: {fileID: 3908210847251503312}
+  - component: {fileID: 8573592098097148575}
   m_Layer: 0
   m_Name: MainMenuSceneScope
   m_TagString: Untagged
@@ -108,5 +109,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba61bee06edf457c976e458120a3d57d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8573592098097148575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069356386147399339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c71f6d070c74efc81faa47b2dc71686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
