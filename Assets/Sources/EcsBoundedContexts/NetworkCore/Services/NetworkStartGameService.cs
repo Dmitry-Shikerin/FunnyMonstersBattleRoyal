@@ -7,6 +7,7 @@ using Fusion.Photon.Realtime;
 using Sources.BoundedContexts.Hud.Presentations.MainMenu;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums;
+using Sources.Frameworks.GameServices.DeepWrappers.Curtains;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
 using UnityEngine;
@@ -20,6 +21,7 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
         private readonly IUiViewService _uiViewService;
         private readonly FusionMenuConfig _config;
         private readonly MainMenuUiPopUp _popUp;
+        private readonly ICurtainService _curtainService;
         private string _region;
         private bool _connectingSafeCheck;
         private NetworkRunner _runner;
@@ -29,11 +31,13 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
         private string _appVersion;
 
         public NetworkStartGameService(
+            ICurtainService curtainService,
             IUiPopUpService popUpService, 
             ISceneService sceneService,
             IUiViewService uiViewService,
             FusionMenuConfig config)
         {
+            _curtainService = curtainService;
             _popUp = popUpService.Get<MainMenuUiPopUp>();
             _sceneService = sceneService;
             _uiViewService = uiViewService;
@@ -71,7 +75,9 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
             connectArgs.Region = connectArgs.PreferredRegion;
             connectArgs.MaxPlayerCount = 10;
             
-            _uiViewService.Show(UiViewId.Loading);
+            // _uiViewService.Show(UiViewId.Loading);
+            Debug.Log($"ShowAsync");
+            await _curtainService.ShowAsync();
             string sceneName = IdsConst.Lobby;
             ConnectResult result = await ConnectAsync(connectArgs, sceneName);
 
@@ -90,8 +96,9 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
 
                 await _sceneService.ChangeSceneAsync(sceneName);
             } 
-            else if (result.FailReason != ConnectFailReason.ApplicationQuit) 
+            else if (result.FailReason != ConnectFailReason.ApplicationQuit)
             {
+                _curtainService.HideAsync();
                 _popUp.SetMassage("Connection Failed");
             }
         }

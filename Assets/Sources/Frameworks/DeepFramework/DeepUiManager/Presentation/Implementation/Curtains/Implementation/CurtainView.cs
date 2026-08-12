@@ -2,8 +2,6 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
-using Sources.Frameworks.DeepFramework.DeepCores.Core;
-using Sources.Frameworks.DeepFramework.DeepCores.Presentation;
 using Sources.Frameworks.DeepFramework.DeepTwens.Presentation.Concrete;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Interfaces;
 using UnityEngine;
@@ -104,11 +102,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
                 animationTime += (Time.deltaTime / duration);
                 float delta = EaseManager.Evaluate(ease, animationTime);
                 _backgroundRectTransform.localPosition = Vector3.Lerp(startPos, endPos, delta);
-
-                if (_cancellationTokenSource == null)
-                {
-                    Debug.Log($"Token null");
-                }
 
                 await UniTask.Yield(PlayerLoopTiming.Initialization, _cancellationTokenSource.Token);
             }
