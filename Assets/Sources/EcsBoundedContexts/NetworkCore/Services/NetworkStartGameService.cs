@@ -4,7 +4,12 @@ using Cysharp.Threading.Tasks;
 using Fusion;
 using Fusion.Menu;
 using Fusion.Photon.Realtime;
+using Sources.BoundedContexts.Hud.Presentations.MainMenu;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
+using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums;
+using Sources.Frameworks.GameServices.DeepWrappers.Views;
+using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
+using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +17,10 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
 {
     public class NetworkStartGameService
     {
+        private readonly ISceneService _sceneService;
+        private readonly IUiViewService _uiViewService;
+        private readonly FusionMenuConfig _config;
+        private readonly MainMenuUiPopUp _popUp;
         private string _region;
         private bool _connectingSafeCheck;
         private NetworkRunner _runner;
@@ -19,7 +28,18 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
         private int _maxPlayerCount;
         private CancellationTokenSource _tokenSource;
         private string _appVersion;
-        private FusionMenuConfig _config;
+
+        public NetworkStartGameService(
+            IUiPopUpService popUpService, 
+            ISceneService sceneService,
+            IUiViewService uiViewService,
+            FusionMenuConfig config)
+        {
+            _popUp = popUpService.Get<MainMenuUiPopUp>();
+            _sceneService = sceneService;
+            _uiViewService = uiViewService;
+            _config = config;
+        }
 
         public event Action<FusionMenuConnectArgs> OnBeforeConnect;
 
@@ -44,11 +64,41 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
             sceneInfo.AddSceneRef(sceneRef, LoadSceneMode.Additive);
             return sceneRef;
         }
-
-        public async UniTask<ConnectResult> ConnectAsync(FusionMenuConnectArgs connectionArgs, FusionMenuConfig config, string sceneName)
+        
+        public async UniTask StartGameAsync(FusionMenuConnectArgs connectArgs, string session, bool isCreating)
         {
-            _config = config;
+            connectArgs.Session = session;
+            connectArgs.Creating = isCreating;
+            connectArgs.Region = connectArgs.PreferredRegion;
+            connectArgs.MaxPlayerCount = 10;
             
+            _uiViewService.Show(UiViewId.Loading);
+            string sceneName = IdsConst.Lobby;
+            ConnectResult result = await ConnectAsync(connectArgs, sceneName);
+
+            await HandleConnectionResult(result, sceneName);
+        }
+
+        private async UniTask HandleConnectionResult(ConnectResult result, string sceneName) 
+        {
+            if (result.CustomResultHandling)
+                return;
+            
+            if (result.Success) 
+            {
+                await UniTask.WaitUntil(() => NetworkRunnerProvider.Runner.IsRunning);
+                await UniTask.Delay(TimeSpan.FromSeconds(1));
+
+                await _sceneService.ChangeSceneAsync(sceneName);
+            } 
+            else if (result.FailReason != ConnectFailReason.ApplicationQuit) 
+            {
+                _popUp.SetMassage("Connection Failed");
+            }
+        }
+
+        private async UniTask<ConnectResult> ConnectAsync(FusionMenuConnectArgs connectionArgs, string sceneName)
+        {
             if (OnBeforeConnect != null)
             {
                 try
@@ -74,14 +124,7 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
         {
             // Safety
             if (_connectingSafeCheck)
-            {
-                return new ConnectResult
-                {
-                    CustomResultHandling = true,
-                    Success = false,
-                    FailReason = ConnectFailReason.None,
-                };
-            }
+                return GetCustomHandlingConnectResult();
 
             _connectingSafeCheck = true;
 
@@ -91,41 +134,12 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
             // Create and prepare Runner object
             _runner = NetworkRunnerProvider.Runner;
             NetworkSceneManagerDefault sceneManager = NetworkRunnerProvider.SceneManagerDefault;
-            NetworkRunnerProvider.SceneManagerDefault.IsSceneTakeOverEnabled = false;
-
-            // Copy and update AppSettings
-            FusionAppSettings appSettings = CopyAppSettings(connectArgs);
+            sceneManager.IsSceneTakeOverEnabled = false;
 
             // Solve StartGameArgs
-            StartGameArgs startGameArgs = new StartGameArgs();
-            startGameArgs.CustomPhotonAppSettings = appSettings;
-            //TODO потом придумать что то
-            //startGameArgs.GameMode = connectArgs.GameMode ?? ResolveGameMode(connectArgs);
-            startGameArgs.GameMode = GameMode.AutoHostOrClient;
-            startGameArgs.SessionName = _sessionName = connectArgs.Session;
-            Debug.Log($"Session Name {_sessionName}");
-            startGameArgs.PlayerCount = _maxPlayerCount = connectArgs.MaxPlayerCount;
-
-            // Scene info
-            NetworkSceneInfo sceneInfo = new NetworkSceneInfo();
-            //sceneInfo.AddSceneRef(sceneManager.GetSceneRef(connectArgs.Scene.ScenePath), LoadSceneMode.Additive);
-            sceneInfo.AddSceneRef(GetSceneRef(sceneName));
-            startGameArgs.Scene = sceneInfo;
-
-            // Cancellation Token
-            _tokenSource?.Dispose();
-            _tokenSource = new CancellationTokenSource();
-            startGameArgs.StartGameCancellationToken = _tokenSource.Token;
-
-            int regionIndex = _config.AvailableRegions.IndexOf(connectArgs.Region);
-            startGameArgs.SessionNameGenerator = () =>
-                _config.CodeGenerator.EncodeRegion(_config.CodeGenerator.Create(), regionIndex);
-            StartGameResult startGameResult = default(StartGameResult);
-            ConnectResult connectResult = new ConnectResult();
-            startGameResult = await _runner.StartGame(startGameArgs);
-
-            connectResult.Success = startGameResult.Ok;
-            connectResult.FailReason = ResolveConnectFailReason(startGameResult.ShutdownReason);
+            StartGameArgs startGameArgs = GetGameArgs(connectArgs, sceneName);
+            StartGameResult startGameResult = await _runner.StartGame(startGameArgs);
+            ConnectResult connectResult = GetConnectResult(startGameResult);
             _connectingSafeCheck = false;
 
             if (connectResult.Success)
@@ -133,6 +147,46 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
 
             return connectResult;
         }
+
+        private ConnectResult GetCustomHandlingConnectResult()
+        {
+            return new ConnectResult
+            {
+                CustomResultHandling = true,
+                Success = false,
+                FailReason = ConnectFailReason.None,
+            };
+        }
+
+        private ConnectResult GetConnectResult(StartGameResult startGameResult)
+        {
+            return new ConnectResult()
+            {
+                Success = startGameResult.Ok,
+                FailReason = ResolveConnectFailReason(startGameResult.ShutdownReason),
+            };
+        }
+
+        private StartGameArgs GetGameArgs(FusionMenuConnectArgs connectArgs, string sceneName)
+        {
+            FusionAppSettings appSettings = CopyAppSettings(connectArgs);
+            NetworkSceneInfo sceneInfo = new NetworkSceneInfo();
+            sceneInfo.AddSceneRef(GetSceneRef(sceneName));
+            _tokenSource?.Dispose();
+            _tokenSource = new CancellationTokenSource();
+            int regionIndex = _config.AvailableRegions.IndexOf(connectArgs.Region);
+            
+            return new StartGameArgs()
+            {
+                CustomPhotonAppSettings = appSettings,
+                GameMode = GameMode.AutoHostOrClient,
+                SessionName = _sessionName = connectArgs.Session,
+                PlayerCount = _maxPlayerCount = connectArgs.MaxPlayerCount,
+                Scene = sceneInfo,
+                StartGameCancellationToken = _tokenSource.Token,
+                SessionNameGenerator = () => _config.CodeGenerator.EncodeRegion(_config.CodeGenerator.Create(), regionIndex),
+            };
+        } 
 
         private SceneRef GetSceneRef(string sceneName)
         {
@@ -157,6 +211,18 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
             return appSettings;
         }
 
+        private int ResolveConnectFailReason(ShutdownReason reason)
+        {
+            return reason switch
+            {
+                ShutdownReason.Ok => ConnectFailReason.UserRequest,
+                ShutdownReason.OperationCanceled => ConnectFailReason.UserRequest,
+                ShutdownReason.DisconnectedByPluginLogic => ConnectFailReason.Disconnect,
+                ShutdownReason.Error => ConnectFailReason.Disconnect,
+                _ => ConnectFailReason.None,
+            };
+        }
+
         private GameMode ResolveGameMode(FusionMenuConnectArgs args)
         {
             bool isSharedSession = args.Scene.SceneName.Contains("Shared");
@@ -175,18 +241,6 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
 
             // Join session
             return isSharedSession ? GameMode.Shared : GameMode.Client;
-        }
-
-        private int ResolveConnectFailReason(ShutdownReason reason)
-        {
-            return reason switch
-            {
-                ShutdownReason.Ok => ConnectFailReason.UserRequest,
-                ShutdownReason.OperationCanceled => ConnectFailReason.UserRequest,
-                ShutdownReason.DisconnectedByPluginLogic => ConnectFailReason.Disconnect,
-                ShutdownReason.Error => ConnectFailReason.Disconnect,
-                _ => ConnectFailReason.None,
-            };
         }
     }
 }

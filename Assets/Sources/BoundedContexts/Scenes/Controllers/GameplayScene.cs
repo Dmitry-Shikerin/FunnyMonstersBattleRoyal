@@ -103,7 +103,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             InitDeepUiBrain();
             _uiReflexInjector.InjectUiViews();
             _localizationService.Translate();
-            _ecsGameStartUp = NetworkRunnerProvider.LeoEcsGameStartUp;
+            _ecsGameStartUp = NetworkRunnerProvider.LeoGameStartUp;
             AttributeInjector.Inject(_ecsGameStartUp, _container);
             await _ecsGameStartUp.Initialize();
             _sdkService.Initialize();

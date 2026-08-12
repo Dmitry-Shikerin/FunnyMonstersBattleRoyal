@@ -23,7 +23,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
         public event Action Showed;
         public event Action Hided;
         
-        
         [OnInspectorInit]
         private void OnInspectorInit()
         {
@@ -35,21 +34,22 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
             _isInit = true;
         }
 
-        public virtual void Show()
+        public void Show()
         {
             if (_isHideGameObject)
                 gameObject.SetActive(true);
             
             if (_isHideCanvas)
-                _canvasGroup.alpha = 1;     
+                _canvasGroup.alpha = 1;
             
             if (_isCanvasGroupBlockRaycast)
                 _canvasGroup.blocksRaycasts = true;
             
             Showed?.Invoke();
+            OnAfterShow();
         }
 
-        public virtual void Hide()
+        public void Hide()
         {
             if (_isHideGameObject)
                 gameObject.SetActive(false);
@@ -61,6 +61,15 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
                 _canvasGroup.blocksRaycasts = false;
             
             Hided?.Invoke();
+            OnAfterHide();
+        }
+
+        protected virtual void OnAfterShow()
+        {
+        }
+        
+        protected virtual void OnAfterHide()
+        {
         }
     }
 }

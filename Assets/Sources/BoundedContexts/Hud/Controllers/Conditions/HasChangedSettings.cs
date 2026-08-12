@@ -16,7 +16,7 @@ namespace Sources.BoundedContexts.Hud.Controllers.Conditions
 
         protected override string OnInit()
         {
-            _entity = _repository.GetByName(IdsConst.Settings); 
+            _entity = _repository.GetByName(IdsConst.Settings);
             return null;
         }
 

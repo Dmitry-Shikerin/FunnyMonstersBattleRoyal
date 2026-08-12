@@ -10,7 +10,7 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
         private static NetworkRunner _runner;
         private static NetworkCallbacksReceiver _networkCallbacksReceiver;
         private static NetworkSceneManagerDefault _sceneManagerDefault;
-        private static LeoEcsGameStartUp _leoEcsGameStartUp;
+        private static IEcsGameStartUp _leoGameStartUp;
 
         public static NetworkRunner Runner
         {
@@ -47,14 +47,14 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
             }
         }
 
-        public static LeoEcsGameStartUp LeoEcsGameStartUp
+        public static IEcsGameStartUp LeoGameStartUp
         {
             get
             {
-                if (_leoEcsGameStartUp == null)
+                if (_leoGameStartUp == null)
                     _runner = CreateRunner();
 
-                return _leoEcsGameStartUp;
+                return _leoGameStartUp;
             }
         } 
 
@@ -64,7 +64,7 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
             networkRunner.AddComponent<NetworkRunnerMemento>();
             _sceneManagerDefault = networkRunner.gameObject.AddComponent<NetworkSceneManagerDefault>();
             _networkCallbacksReceiver = networkRunner.gameObject.AddComponent<NetworkCallbacksReceiver>();
-            _leoEcsGameStartUp = networkRunner.gameObject.AddComponent<NetworkEcsRunner>().LeoEcsGameStartUp;
+            _leoGameStartUp = networkRunner.gameObject.AddComponent<NetworkEcsRunner>().LeoGameStartUp;
 
             return networkRunner;
         }

@@ -24,9 +24,6 @@ namespace Sources.App.DIContainers
             //containerBuilder.RegisterType(typeof(SceneLoaderService), new []{typeof(ISceneLoaderService)}, Lifetime.Singleton, Resolution.Lazy);
             //containerBuilder.RegisterType(typeof(AddressableSceneLoaderService), new []{typeof(ISceneLoaderService)}, Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterType(typeof(SceneService), new []{typeof(ISceneService)}, Lifetime.Singleton, Resolution.Lazy);
-            
-            //Network
-            containerBuilder.RegisterType(typeof(NetworkStartGameService), Lifetime.Singleton, Resolution.Lazy);
 
             //Curtain
              CurtainView curtainView =

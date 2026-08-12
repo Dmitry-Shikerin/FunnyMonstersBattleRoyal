@@ -14,7 +14,6 @@ namespace Sources.BoundedContexts.Hud.Controllers.MainMenu
         protected override void AddEnterShowedViews(List<UiViewId> viewIds)
         {
             viewIds.Add(UiViewId.Loading);
-            viewIds.Add(UiViewId.HudBackground);
         }
     }
 }

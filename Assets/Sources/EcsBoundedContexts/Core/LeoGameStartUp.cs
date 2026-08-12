@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using Cysharp.Threading.Tasks;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
@@ -17,7 +18,7 @@ using Sources.EcsBoundedContexts.Spawners.Infrastructure.Services;
 
 namespace Sources.EcsBoundedContexts.Core
 {
-    public class LeoEcsGameStartUp : IEcsGameStartUp
+    public class LeoGameStartUp : IEcsGameStartUp
     {
         private Container _container;
         private ProtoSystems _systems;

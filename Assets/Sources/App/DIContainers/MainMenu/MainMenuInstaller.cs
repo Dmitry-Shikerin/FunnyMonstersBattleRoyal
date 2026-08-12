@@ -1,5 +1,4 @@
-﻿using Fusion;
-using Reflex.Core;
+﻿using Reflex.Core;
 using Reflex.Enums;
 using Sirenix.OdinInspector;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
@@ -22,11 +21,11 @@ namespace Sources.App.DIContainers.MainMenu
         
         public void InstallBindings(ContainerBuilder containerBuilder)
         {
-            containerBuilder.RegisterType(typeof(MainMenuSceneFactory), new [] { typeof(ISceneFactory) }, Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterValue(_mainRootGameObjects);
+            containerBuilder.RegisterType(typeof(MainMenuSceneFactory), new [] { typeof(ISceneFactory) }, Lifetime.Singleton, Resolution.Lazy);
 
             //Ecs
-            containerBuilder.RegisterType(typeof(LeoEcsGameStartUp), new [] { typeof(IEcsGameStartUp) }, Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(LeoGameStartUp), new [] { typeof(IEcsGameStartUp) }, Lifetime.Singleton, Resolution.Lazy);
             
             //Services
             containerBuilder.RegisterType(typeof(PauseService), new [] { typeof(IPauseService) }, Lifetime.Singleton, Resolution.Lazy);

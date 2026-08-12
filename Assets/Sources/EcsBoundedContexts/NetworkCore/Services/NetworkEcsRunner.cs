@@ -5,14 +5,14 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
 {
     public class NetworkEcsRunner : SimulationBehaviour
     {
-        public LeoEcsGameStartUp LeoEcsGameStartUp { get; } = new ();
+        public IEcsGameStartUp LeoGameStartUp { get; } = new LeoGameStartUp();
         
         public override void FixedUpdateNetwork()
         {
             if (Runner.IsClient)
                 return;
             
-            LeoEcsGameStartUp.Update(Runner.DeltaTime);
+            LeoGameStartUp.Update(Runner.DeltaTime);
         }
     }
 }
