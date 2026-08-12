@@ -10,6 +10,7 @@ using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Interfaces;
+using Sources.Frameworks.GameServices.DeepWrappers.Curtains;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
@@ -43,7 +44,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private readonly ISoundService _soundService;
         private readonly IFocusService _focusService;
         private readonly ILocalizationService _localizationService;
-        private readonly ICurtainView _curtainView;
+        private readonly ICurtainService _curtainService;
 
         public MainMenuScene(
             UiReflexInjector uiReflexInjector,
@@ -59,7 +60,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             ISoundService soundService,
             IFocusService focusService,
             ILocalizationService localizationService,
-            ICurtainView curtainView)
+            ICurtainService curtainService)
         {
             _uiReflexInjector = uiReflexInjector;
             _uiViewService = uiViewService;
@@ -74,7 +75,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _soundService = soundService;
             _focusService = focusService;
             _localizationService = localizationService;
-            _curtainView = curtainView;
+            _curtainService = curtainService;
         }
 
         public async void Enter(object payload = null)
@@ -93,7 +94,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             //_leaderboardService.Initialize();
             //_soundService.Initialize();
             HideBlackScreen();
-            await _curtainView.HideAsync();
+            await _curtainService.HideAsync();
             //_soundService.Play(SoundDatabaseName.Music, SoundName.MainMenuBackgroundMusic);
             // await GameReady((IScenePayload)payload);
         }

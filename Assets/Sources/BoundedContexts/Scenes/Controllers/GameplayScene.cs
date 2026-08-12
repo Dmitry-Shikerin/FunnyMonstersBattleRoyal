@@ -1,6 +1,4 @@
 ﻿using System;
-using Cysharp.Threading.Tasks;
-using Leopotam.EcsProto.QoL;
 using NodeCanvas.StateMachines;
 using Reflex.Core;
 using Reflex.Injectors;
@@ -10,12 +8,12 @@ using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
-using Sources.EcsBoundedContexts.NetworkCore;
 using Sources.EcsBoundedContexts.NetworkCore.Services;
 using Sources.EcsBoundedContexts.Spawners.Infrastructure.Services;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Interfaces;
+using Sources.Frameworks.GameServices.DeepWrappers.Curtains;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
 using Sources.Frameworks.GameServices.InputServices.InputServices;
@@ -31,7 +29,6 @@ using Sources.Frameworks.MyLeoEcsProto.Repositories;
 using Sources.Frameworks.YandexSdkFramework.Focuses.Interfaces;
 using Sources.Frameworks.YandexSdkFramework.Sdk.Services;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace Sources.BoundedContexts.Scenes.Controllers
 {
@@ -51,7 +48,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private readonly ISoundService _soundService;
         private readonly IFocusService _focusService;
         private readonly ILocalizationService _localizationService;
-        private readonly ICurtainView _curtainView;
+        private readonly ICurtainService _curtainService;
         private readonly ICameraService _cameraService;
         private readonly IUpdateService _updateService;
         private IEcsGameStartUp _ecsGameStartUp;
@@ -70,7 +67,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             ISoundService soundService,
             IFocusService focusService,
             ILocalizationService localizationService,
-            ICurtainView curtainView,
+            ICurtainService curtainService,
             ICameraService cameraService,
             IUpdateService updateService)
         {
@@ -87,7 +84,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _focusService = focusService ?? throw new ArgumentNullException(nameof(focusService));
             _localizationService = localizationService ?? 
                                    throw new ArgumentNullException(nameof(localizationService));
-            _curtainView = curtainView ?? throw new ArgumentNullException(nameof(curtainView));
+            _curtainService = curtainService ?? throw new ArgumentNullException(nameof(curtainService));
             _cameraService = cameraService ?? throw new ArgumentNullException(nameof(cameraService));
             _updateService = updateService ?? throw new ArgumentNullException(nameof(updateService));
         }

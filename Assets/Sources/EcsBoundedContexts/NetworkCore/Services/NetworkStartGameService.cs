@@ -7,7 +7,6 @@ using Fusion.Photon.Realtime;
 using Sources.BoundedContexts.Hud.Presentations.MainMenu;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums;
-using Sources.Frameworks.GameServices.DeepWrappers.Views;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
 using UnityEngine;

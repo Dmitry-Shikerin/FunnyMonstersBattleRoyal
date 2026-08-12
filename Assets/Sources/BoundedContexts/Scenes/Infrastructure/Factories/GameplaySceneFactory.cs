@@ -4,9 +4,7 @@ using Reflex.Core;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Controllers;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
-using Sources.EcsBoundedContexts.Core;
-using Sources.EcsBoundedContexts.NetworkCore;
-using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Interfaces;
+using Sources.Frameworks.GameServices.DeepWrappers.Curtains;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
 using Sources.Frameworks.GameServices.InputServices.InputServices;
@@ -19,7 +17,6 @@ using Sources.Frameworks.GameServices.UiReflexInjectors;
 using Sources.Frameworks.GameServices.UpdateServices.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 using Sources.Frameworks.YandexSdkFramework.Focuses.Interfaces;
-using Sources.Frameworks.YandexSdkFramework.Sdk;
 using Sources.Frameworks.YandexSdkFramework.Sdk.Services;
 
 namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
@@ -38,7 +35,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         private readonly ISoundService _soundService;
         private readonly IFocusService _focusService;
         private readonly ILocalizationService _localizationService;
-        private readonly ICurtainView _curtainView;
+        private readonly ICurtainService _curtainService;
         private readonly ICameraService _cameraService;
         private readonly IUpdateService _updateService;
 
@@ -55,7 +52,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             ISoundService soundService,
             IFocusService focusService,
             ILocalizationService localizationService,
-            ICurtainView curtainView,
+            ICurtainService curtainService,
             ICameraService cameraService,
             IUpdateService updateService)
         {
@@ -72,7 +69,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             _soundService = soundService ?? throw new ArgumentNullException(nameof(soundService));
             _focusService = focusService ?? throw new ArgumentNullException(nameof(focusService));
             _localizationService = localizationService ?? throw new ArgumentNullException(nameof(localizationService));
-            _curtainView = curtainView ?? throw new ArgumentNullException(nameof(curtainView));
+            _curtainService = curtainService ?? throw new ArgumentNullException(nameof(curtainService));
             _cameraService = cameraService ?? throw new ArgumentNullException(nameof(cameraService));
             _updateService = updateService ?? throw new ArgumentNullException(nameof(updateService));
         }
@@ -92,7 +89,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
                 _soundService,
                 _focusService,
                 _localizationService,
-                _curtainView,
+                _curtainService,
                 _cameraService,
                 _updateService);
 

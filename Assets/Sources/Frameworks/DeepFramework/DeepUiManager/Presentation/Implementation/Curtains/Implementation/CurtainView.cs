@@ -2,6 +2,8 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
+using Sources.Frameworks.DeepFramework.DeepCores.Core;
+using Sources.Frameworks.DeepFramework.DeepCores.Presentation;
 using Sources.Frameworks.DeepFramework.DeepTwens.Presentation.Concrete;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Interfaces;
 using UnityEngine;
@@ -36,13 +38,12 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
 
         private void Awake()
         {
-            DontDestroyOnLoad(this);
-            _canvasGroup.alpha = 0;
+            Hide();
         }
 
         private void OnEnable() =>
             _cancellationTokenSource = new CancellationTokenSource();
-        
+
         private void OnDisable() =>
             _cancellationTokenSource.Cancel();
 
@@ -83,8 +84,8 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
         private async UniTask DownFade(CanvasGroup canvasGroup)
         {
             await Fade(canvasGroup, 1, _fadeDownDuration);
-        }    
-        
+        }
+
         private async UniTask UpFade(CanvasGroup canvasGroup)
         {
             await UniTask.Delay(TimeSpan.FromSeconds(_fadeUpDelay));
@@ -104,10 +105,15 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
                 float delta = EaseManager.Evaluate(ease, animationTime);
                 _backgroundRectTransform.localPosition = Vector3.Lerp(startPos, endPos, delta);
 
+                if (_cancellationTokenSource == null)
+                {
+                    Debug.Log($"Token null");
+                }
+
                 await UniTask.Yield(PlayerLoopTiming.Initialization, _cancellationTokenSource.Token);
             }
-        }    
-        
+        }
+
         private async UniTask Fade(CanvasGroup canvasGroup, float target, float duration)
         {
             float animationTime = 0;

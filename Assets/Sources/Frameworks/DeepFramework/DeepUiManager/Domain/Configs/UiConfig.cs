@@ -1,4 +1,3 @@
-using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Implementation;
 using Sources.Frameworks.DeepFramework.DeepUtils.ConfigCollectors.Domain.ScriptableObjects;
 using UnityEngine;
 
@@ -11,6 +10,5 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs
         [field: SerializeField] public UiManagerConfig GameUiConfig { get; private set; }
         [field: SerializeField] public UiManagerConfig MainMenuUiConfig { get; private set; }
         [field: SerializeField] public UiManagerConfig LobbyUiConfig { get; private set; }
-        [field: SerializeField] public CurtainView CurtainView { get; private set; }
     }
 }

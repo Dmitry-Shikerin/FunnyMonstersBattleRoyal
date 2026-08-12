@@ -3,6 +3,7 @@ using Sources.Frameworks.DeepFramework.DeepCores.Core;
 using Sources.Frameworks.DeepFramework.DeepCores.Presentation;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation;
+using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Implementation;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Views;
 using Sources.Frameworks.DeepFramework.DeepUtils.Managers;
 using Sources.Frameworks.DeepFramework.DeepUtils.SignalBuses.StreamBuses.Implementation;
@@ -23,6 +24,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implemen
         private ButtonsManager _buttonsManager;
         private DeepCore _core;
         private Hud _hud;
+        private CurtainView _curtainView;
         private UiScaler _uiScaler;
 
         public static StreamSignalBus SignalBus => Instance._signalBus;
@@ -31,6 +33,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implemen
         public static UiPopUpViewManager PopUpViewManager => Instance._popUpViewManager;
         public static ButtonsManager ButtonsManager => Instance._buttonsManager;
         public static Hud Hud => Instance._hud;
+        public static CurtainView CurtainView => Instance._curtainView;
         public static UiScaler UiScaler => Instance._uiScaler;
         public GameObject GameObject => gameObject;
 
@@ -45,6 +48,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implemen
             _popUpViewManager = new UiPopUpViewManager();
             _buttonsManager = new ButtonsManager(_signalBus);
             _uiScaler = new UiScaler();
+            _curtainView = Instantiate(Resources.Load<CurtainView>("Services/Ui/CurtainView"), transform, true);
             InitCore();
         }
 

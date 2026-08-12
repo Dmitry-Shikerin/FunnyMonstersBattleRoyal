@@ -4,7 +4,7 @@ using Reflex.Core;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Controllers;
 using Sources.EcsBoundedContexts.Core;
-using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Interfaces;
+using Sources.Frameworks.GameServices.DeepWrappers.Curtains;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
@@ -16,7 +16,6 @@ using Sources.Frameworks.GameServices.Scenes.Infrastructure.Factories.Controller
 using Sources.Frameworks.GameServices.UiReflexInjectors;
 using Sources.Frameworks.YandexSdkFramework.Focuses.Interfaces;
 using Sources.Frameworks.YandexSdkFramework.Leaderboards.Services.Interfaces;
-using Sources.Frameworks.YandexSdkFramework.Sdk;
 using Sources.Frameworks.YandexSdkFramework.Sdk.Services;
 
 namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
@@ -36,7 +35,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         private readonly ISoundService _soundService;
         private readonly IFocusService _focusService;
         private readonly ILocalizationService _localizationService;
-        private readonly ICurtainView _curtainView;
+        private readonly ICurtainService _curtainService;
 
         public MainMenuSceneFactory(
             UiReflexInjector uiReflexInjector,
@@ -52,7 +51,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             ISoundService soundService,
             IFocusService focusService,
             ILocalizationService localizationService,
-            ICurtainView curtainView)
+            ICurtainService curtainService)
         {
             _uiReflexInjector = uiReflexInjector;
             _uiViewService = uiViewService;
@@ -69,7 +68,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             _focusService = focusService ?? throw new ArgumentNullException(nameof(focusService));
             _localizationService = localizationService ?? 
                                    throw new ArgumentNullException(nameof(localizationService));
-            _curtainView = curtainView ?? throw new ArgumentNullException(nameof(curtainView));
+            _curtainService = curtainService ?? throw new ArgumentNullException(nameof(curtainService));
         }
         
         public UniTask<IScene> Create(object payload)
@@ -88,7 +87,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
                 _soundService,
                 _focusService,
                 _localizationService,
-                _curtainView);
+                _curtainService);
             
             return UniTask.FromResult(mainMenuScene);
         }
