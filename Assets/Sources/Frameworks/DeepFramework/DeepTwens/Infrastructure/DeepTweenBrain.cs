@@ -2,7 +2,6 @@
 using Sources.Frameworks.DeepFramework.DeepCores.Presentation;
 using Sources.Frameworks.DeepFramework.DeepTwens.Infrastructure.Sequences;
 using Sources.Frameworks.DeepFramework.DeepTwens.Infrastructure.Tweners;
-using Sources.Frameworks.DeepFramework.DeepTwens.Tweners;
 using Sources.Frameworks.DeepFramework.DeepUtils.Managers;
 using Sources.Frameworks.DeepFramework.DeepUtils.Singletones;
 using UnityEditor;

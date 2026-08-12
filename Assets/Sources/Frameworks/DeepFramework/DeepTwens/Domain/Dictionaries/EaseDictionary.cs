@@ -1,5 +1,5 @@
 ﻿using System;
-using Sources.Frameworks.DeepFramework.DeepTwens.Eases;
+using Sources.Frameworks.DeepFramework.DeepTwens.Domain.Eases;
 using Sources.Frameworks.DeepFramework.DeepUtils.Dictionaries;
 using UnityEngine;
 

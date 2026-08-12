@@ -16,9 +16,6 @@ MonoBehaviour:
   <Hud>k__BackingField: {fileID: 2251821043641021725, guid: d63dddcdcad28ed4192b5d6821041346, type: 3}
   <Views>k__BackingField:
   - {fileID: 8829307301692101568, guid: e072139ace1a6e34a9b25deb054c4d14, type: 3}
-  - {fileID: 2271827485331833276, guid: 890db0ca860d8684d878b0a823e6971a, type: 3}
-  - {fileID: 4432077969793362392, guid: d98d9c4f6fe867c4a99b8bba445131a5, type: 3}
-  - {fileID: 2970208404253165152, guid: a54b8df468224f94cb89036eb6ef1ea8, type: 3}
   - {fileID: 2734523891560333517, guid: 50eddc9baab09804c8f4f0ba5dfbeab7, type: 3}
   - {fileID: 5795300214889293189, guid: 4f4e49b0df9a00f4da28d06709708b58, type: 3}
   - {fileID: 3098259461703886903, guid: 158756f554bc44e4390abb44b3456c25, type: 3}

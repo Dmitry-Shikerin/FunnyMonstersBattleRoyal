@@ -1,7 +1,7 @@
 ﻿using System;
 using Sources.Frameworks.DeepFramework.DeepUtils.Constants;
 
-namespace Sources.Frameworks.DeepFramework.DeepTwens.Eases.Methods
+namespace Sources.Frameworks.DeepFramework.DeepTwens.Domain.Eases.Methods
 {
     public class SineEase : Ease
     {

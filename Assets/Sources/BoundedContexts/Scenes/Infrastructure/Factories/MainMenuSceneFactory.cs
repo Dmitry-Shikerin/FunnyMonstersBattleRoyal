@@ -4,7 +4,7 @@ using Reflex.Core;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Controllers;
 using Sources.EcsBoundedContexts.Core;
-using Sources.Frameworks.GameServices.Curtains.Presentation.Interfaces;
+using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Interfaces;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;

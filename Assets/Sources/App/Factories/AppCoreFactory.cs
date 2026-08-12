@@ -1,7 +1,6 @@
 ﻿using Reflex.Core;
 using Sources.App.Core;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
-using Sources.Frameworks.GameServices.Curtains.Presentation.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Infrastructure.Factories.Controllers.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
 using Sources.InfrastructureInterfaces.Services.SceneLoaderService;

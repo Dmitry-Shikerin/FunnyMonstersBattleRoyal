@@ -1,4 +1,4 @@
-﻿namespace Sources.Frameworks.DeepFramework.DeepTwens.Sequences.Types
+﻿namespace Sources.Frameworks.DeepFramework.DeepTwens.Domain.Enums
 {
     public enum LoopType
     {

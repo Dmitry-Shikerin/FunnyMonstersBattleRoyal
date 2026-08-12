@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sources.Frameworks.DeepFramework.DeepTwens.Eases.Methods
+namespace Sources.Frameworks.DeepFramework.DeepTwens.Domain.Eases.Methods
 {
     public class CircEase : Ease
     {

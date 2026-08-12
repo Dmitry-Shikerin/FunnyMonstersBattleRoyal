@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Sources.Frameworks.DeepFramework.DeepTwens.Eases.Methods;
+using Sources.Frameworks.DeepFramework.DeepTwens.Domain.Eases.Methods;
 
-namespace Sources.Frameworks.DeepFramework.DeepTwens.Eases
+namespace Sources.Frameworks.DeepFramework.DeepTwens.Domain.Eases
 {
     public static class EaseManager
     {

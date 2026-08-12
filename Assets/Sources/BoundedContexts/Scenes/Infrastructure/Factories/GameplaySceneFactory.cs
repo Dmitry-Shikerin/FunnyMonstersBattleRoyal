@@ -6,7 +6,7 @@ using Sources.BoundedContexts.Scenes.Controllers;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.NetworkCore;
-using Sources.Frameworks.GameServices.Curtains.Presentation.Interfaces;
+using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Interfaces;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
 using Sources.Frameworks.GameServices.InputServices.InputServices;

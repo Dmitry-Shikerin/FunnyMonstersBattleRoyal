@@ -9,7 +9,7 @@ using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
-using Sources.Frameworks.GameServices.Curtains.Presentation.Interfaces;
+using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Interfaces;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;

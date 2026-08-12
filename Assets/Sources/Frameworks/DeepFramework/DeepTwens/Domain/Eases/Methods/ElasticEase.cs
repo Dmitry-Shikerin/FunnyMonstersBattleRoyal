@@ -2,7 +2,7 @@
 using Sources.Frameworks.DeepFramework.DeepUtils.Constants;
 using UnityEngine;
 
-namespace Sources.Frameworks.DeepFramework.DeepTwens.Eases.Methods
+namespace Sources.Frameworks.DeepFramework.DeepTwens.Domain.Eases.Methods
 {
     public class ElasticEase : Ease
     {

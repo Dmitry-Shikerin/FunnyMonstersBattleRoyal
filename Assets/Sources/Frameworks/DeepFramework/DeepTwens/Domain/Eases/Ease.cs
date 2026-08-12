@@ -1,4 +1,4 @@
-﻿namespace Sources.Frameworks.DeepFramework.DeepTwens.Eases
+﻿namespace Sources.Frameworks.DeepFramework.DeepTwens.Domain.Eases
 {
     public enum Ease
     {
