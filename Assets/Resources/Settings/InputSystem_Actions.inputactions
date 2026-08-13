@@ -1011,6 +1011,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UiKeys",
+            "id": "4a425c46-423c-4e98-bd62-0023df101e6c",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "90f284a5-b891-441b-8265-d8b7d0fe654e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a9ea2884-9a3b-43ac-81b6-db8484cb7689",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

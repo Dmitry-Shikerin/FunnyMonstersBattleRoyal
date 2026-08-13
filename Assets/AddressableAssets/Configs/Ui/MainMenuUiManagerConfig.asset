@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14cad69719734bc68890056f8725eb6f, type: 3}
   m_Name: MainMenuUiManagerConfig
   m_EditorClassIdentifier: 
-  <Fsm>k__BackingField: {fileID: 11400000, guid: 81664f95631fa9f4ba9ba1b0a2f0a7af, type: 2}
   <Hud>k__BackingField: {fileID: 2251821043641021725, guid: d63dddcdcad28ed4192b5d6821041346, type: 3}
   <Views>k__BackingField:
   - {fileID: 4759960517668393713, guid: 43d3caa06e9a429498f8aafde9fac665, type: 3}
@@ -22,5 +21,6 @@ MonoBehaviour:
   - {fileID: 3912615525064174572, guid: f3acfb9854a87b24ca660d4fd0e011eb, type: 3}
   - {fileID: 6106904021046554734, guid: ade3b73a771ada94996ed0c946a7223f, type: 3}
   - {fileID: 4758470716256272213, guid: 4dc9659478202c64fb72237530f54f42, type: 3}
+  - {fileID: 7607918457955421699, guid: 9e63350d9c643b44dbb01c7cb8a98110, type: 3}
   <PopUps>k__BackingField:
   - {fileID: 9185629996254299348, guid: 3506f02e8715bc6428c5532efe473dc4, type: 3}

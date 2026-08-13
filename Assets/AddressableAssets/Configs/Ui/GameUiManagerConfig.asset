@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14cad69719734bc68890056f8725eb6f, type: 3}
   m_Name: GameUiManagerConfig
   m_EditorClassIdentifier: 
-  <Fsm>k__BackingField: {fileID: 11400000, guid: 936e024a17e10aa4eab41176056598fc, type: 2}
   <Hud>k__BackingField: {fileID: 2251821043641021725, guid: d63dddcdcad28ed4192b5d6821041346, type: 3}
   <Views>k__BackingField:
   - {fileID: 8829307301692101568, guid: e072139ace1a6e34a9b25deb054c4d14, type: 3}
@@ -27,4 +26,3 @@ MonoBehaviour:
   <PopUps>k__BackingField:
   - {fileID: 5042267462854384268, guid: 01e2274f037a11a429419d5055985112, type: 3}
   - {fileID: 3726132258431109859, guid: b4fad2361dec2d84694804de1efa4a58, type: 3}
-  - {fileID: 9037476817104555912, guid: 887dddf29b3c74448baf402c9155a654, type: 3}

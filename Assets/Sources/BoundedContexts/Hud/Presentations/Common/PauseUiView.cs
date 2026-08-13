@@ -1,11 +1,10 @@
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
-using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Views;
 using UnityEngine;
 
-namespace Sources.BoundedContexts.Hud.Presentations.Gameplay
+namespace Sources.BoundedContexts.Hud.Presentations.Common
 {
-    public class GameplayPauseUiView : UiView
+    public class PauseUiView : UiView
     {
         [field: SerializeField] public EntityLink DailyReward { get; set; }
     }

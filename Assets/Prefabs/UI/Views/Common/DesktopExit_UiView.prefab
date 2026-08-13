@@ -1183,11 +1183,11 @@ PrefabInstance:
       objectReference: {fileID: 6946101456284452282}
     - target: {fileID: 6848751744052546195, guid: 8f4d0f2f307a25e49a5731ad92162a87, type: 3}
       propertyPath: _buttonId
-      value: 0
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 6848751744052546195, guid: 8f4d0f2f307a25e49a5731ad92162a87, type: 3}
       propertyPath: _sendOnClick
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8104546980544131753, guid: 8f4d0f2f307a25e49a5731ad92162a87, type: 3}
       propertyPath: m_Pivot.x
@@ -1313,7 +1313,7 @@ PrefabInstance:
       objectReference: {fileID: 5590456070550211432}
     - target: {fileID: 6848751744052546195, guid: 8f4d0f2f307a25e49a5731ad92162a87, type: 3}
       propertyPath: _buttonId
-      value: 9
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 6848751744052546195, guid: 8f4d0f2f307a25e49a5731ad92162a87, type: 3}
       propertyPath: _sendOnClick

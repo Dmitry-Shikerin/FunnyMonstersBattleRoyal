@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14cad69719734bc68890056f8725eb6f, type: 3}
   m_Name: LobbyUiManagerConfig
   m_EditorClassIdentifier: 
-  <Fsm>k__BackingField: {fileID: 11400000, guid: 75b922dc8526fa84d9909740599944fb, type: 2}
   <Hud>k__BackingField: {fileID: 2251821043641021725, guid: d63dddcdcad28ed4192b5d6821041346, type: 3}
   <Views>k__BackingField:
-  - {fileID: 4759960517668393713, guid: 43d3caa06e9a429498f8aafde9fac665, type: 3}
   - {fileID: -5018906891483672405, guid: f1e374a4cf2988d4b835d0a927e936a8, type: 3}
+  - {fileID: 4758470716256272213, guid: 4dc9659478202c64fb72237530f54f42, type: 3}
+  - {fileID: -5708969707262197954, guid: 5ca2ac1d40837164f9e2bf86585b546f, type: 3}
+  - {fileID: 7607918457955421699, guid: 9e63350d9c643b44dbb01c7cb8a98110, type: 3}
+  - {fileID: 3098259461703886903, guid: 158756f554bc44e4390abb44b3456c25, type: 3}
   <PopUps>k__BackingField:
   - {fileID: 9185629996254299348, guid: 3506f02e8715bc6428c5532efe473dc4, type: 3}

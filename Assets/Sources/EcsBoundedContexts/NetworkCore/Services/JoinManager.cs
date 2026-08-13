@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Cysharp.Threading.Tasks;
 using Fusion;
 using Reflex.Attributes;
 using Sirenix.OdinInspector;
@@ -26,10 +25,15 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
         private bool _isInitialized;
         private SpawnPointEntitiesProvider _spawnPointEntitiesProvider;
 
+        [Inject]
+        private void Construct(CharacterFactory factory, IAssetCollector assetCollector)
+        {
+            _factory = factory;
+            _assetCollector = assetCollector;
+        }
+
         public override void Spawned()
         {
-            Debug.Log($"Spawn");
-            Debug.Log($"Runner {Runner != null}");
             InitRunner();
             _callbackReceiver.PlayerJoined += PlayerJoined;
             _callbackReceiver.PlayerLeft += PlayerLeft;
@@ -65,8 +69,7 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
                 //Todo добавить логику создания энтити на клиенте
                 return;
             }
-
-            Debug.Log($"Enque");
+            
             _joinedQueue.Enqueue(player);
         }
 
@@ -83,11 +86,8 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
 
         private void FreedomQueue()
         {
-            Debug.Log($"Try Spawn");
-            
             for (int i = _joinedQueue.Count - 1; i >= 0; i--)
             {
-                Debug.Log($"Spawn");
                 PlayerRef player = _joinedQueue.Dequeue();
                 NetworkObject playerObject = _factory.Create(_playerPrefab, player, _networkRunner);
                 Players.Add(player, playerObject);
@@ -107,13 +107,6 @@ namespace Sources.EcsBoundedContexts.NetworkCore.Services
         {
             _networkRunner = NetworkRunnerProvider.Runner ?? throw new NullReferenceException("Runner null");
             _callbackReceiver = NetworkRunnerProvider.NetworkCallbacksReceiver;
-        }
-
-        [Inject]
-        private void Construct(CharacterFactory factory, IAssetCollector assetCollector)
-        {
-            _factory = factory;
-            _assetCollector = assetCollector;
         }
     }
 }

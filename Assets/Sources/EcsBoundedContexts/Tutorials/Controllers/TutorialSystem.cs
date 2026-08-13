@@ -20,7 +20,6 @@ namespace Sources.EcsBoundedContexts.Tutorials.Controllers
     [Aspect(AspectName.Game)]
     public class TutorialSystem : IProtoInitSystem
     {
-        private readonly ICurtainView _curtainView;
         private readonly IUiViewService _uiViewService;
         private readonly IEntityRepository _entityRepository;
         private readonly IStorageService _storageService;
@@ -29,13 +28,11 @@ namespace Sources.EcsBoundedContexts.Tutorials.Controllers
         private ProtoEntity _tutorial;
 
         public TutorialSystem(
-            ICurtainView curtainView,
             IUiViewService uiViewService,
             IEntityRepository entityRepository,
             IStorageService storageService,
             IPauseService pauseService)
         {
-            _curtainView = curtainView;
             _uiViewService = uiViewService;
             _entityRepository = entityRepository ?? throw new ArgumentNullException(nameof(entityRepository));
             _storageService = storageService ?? throw new ArgumentNullException(nameof(storageService));

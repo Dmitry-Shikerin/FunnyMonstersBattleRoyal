@@ -7,7 +7,6 @@ namespace Sources.BoundedContexts.Hud.Presentations.Gameplay
 {
     public class GameplayUiView : UiView
     {
-        [field: Required] [field: SerializeField] public EntityLink Wallet { get; private set; }
         [field: Required] [field: SerializeField] public EntityLink PlayerName { get; private set; }
     }
 }

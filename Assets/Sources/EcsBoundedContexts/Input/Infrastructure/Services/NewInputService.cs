@@ -1,22 +1,24 @@
 ﻿using Fusion;
-using Sources.EcsBoundedContexts.Input.Domain.Data;
 using Sources.EcsBoundedContexts.Input.Domain.Data.Network;
-using Sources.EcsBoundedContexts.NetworkCore;
 using Sources.EcsBoundedContexts.NetworkCore.Services;
+using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Signals;
+using Sources.Frameworks.DeepFramework.DeepUtils.SignalBuses.StreamBuses.Interfaces;
 using Sources.Frameworks.GameServices.InputServices.InputServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Sources.Frameworks.GameServices.InputServices
+namespace Sources.EcsBoundedContexts.Input.Infrastructure.Services
 {
     public class NewInputService : IInputService
     {
+        private readonly ISignalBus _signalBus;
         private NetworkCallbacksReceiver _callbacksReceiver;
         private readonly InputSystem_Actions _inputActions;
         private bool _jumpPerformed;
 
-        public NewInputService()
+        public NewInputService(ISignalBus signalBus)
         {
+            _signalBus = signalBus;
             _inputActions = new InputSystem_Actions();
         }
 
@@ -28,6 +30,7 @@ namespace Sources.Frameworks.GameServices.InputServices
         public void Initialize()
         {
             _inputActions.Player.Jump.performed += JumpPerformed;
+            _inputActions.UiKeys.Pause.performed += EscapePerformed;
             _callbacksReceiver = NetworkRunnerProvider.NetworkCallbacksReceiver;
             _callbacksReceiver.OnPopulateInput += PopulateInput;
             _inputActions.Enable();
@@ -36,9 +39,13 @@ namespace Sources.Frameworks.GameServices.InputServices
         public void Destroy()
         {
             _inputActions.Player.Jump.performed -= JumpPerformed;
+            _inputActions.UiKeys.Pause.performed -= EscapePerformed;
             _callbacksReceiver.OnPopulateInput -= PopulateInput;
             _inputActions.Disable();
         }
+
+        private void EscapePerformed(InputAction.CallbackContext obj) =>
+            _signalBus.Handle(new KeyPressedSignal(KeyCode.Escape));
 
         private bool GetJumpPerformed()
         {

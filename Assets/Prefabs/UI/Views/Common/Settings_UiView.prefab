@@ -5875,7 +5875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6848751744052546195, guid: 8f4d0f2f307a25e49a5731ad92162a87, type: 3}
       propertyPath: _buttonId
-      value: 9
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 6848751744052546195, guid: 8f4d0f2f307a25e49a5731ad92162a87, type: 3}
       propertyPath: _sendOnClick
@@ -5963,7 +5963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8971589304009469756, guid: 8f4d0f2f307a25e49a5731ad92162a87, type: 3}
       propertyPath: m_Name
-      value: MainMenu_Button
+      value: Back_Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -6238,6 +6238,14 @@ PrefabInstance:
     - target: {fileID: 5125520359598868896, guid: 4593b5367d412004cb041a1afda3254f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -109.509995
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069223930525250952, guid: 4593b5367d412004cb041a1afda3254f, type: 3}
+      propertyPath: _buttonId
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624653452757864487, guid: 4593b5367d412004cb041a1afda3254f, type: 3}
+      propertyPath: m_Name
+      value: Back_Button
       objectReference: {fileID: 0}
     - target: {fileID: 8791911236936652572, guid: 4593b5367d412004cb041a1afda3254f, type: 3}
       propertyPath: m_Pivot.x
