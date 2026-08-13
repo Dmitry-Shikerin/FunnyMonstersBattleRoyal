@@ -2,11 +2,10 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
-using Sources.Frameworks.DeepFramework.DeepTwens.Presentation.Concrete;
+using Sources.Frameworks.DeepFramework.DeepTwens.Infrastructure.Data;
+using Sources.Frameworks.DeepFramework.DeepTwens.Infrastructure.Methods;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Interfaces;
 using UnityEngine;
-using Ease = Sources.Frameworks.DeepFramework.DeepTwens.Domain.Eases.Ease;
-using EaseManager = Sources.Frameworks.DeepFramework.DeepTwens.Domain.Eases.EaseManager;
 
 namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Implementation
 {
@@ -14,21 +13,12 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
     {
         [Required] [SerializeField] private CanvasGroup _canvasGroup;
         [Title("Fade")]
-        [Required] [SerializeField] private CanvasGroup _fadeCanvasGroup;
-        [SerializeField] private float _fadeDownDuration = 1f;
-        [SerializeField] private float _fadeUpDuration = 1f;
+        [SerializeField] private CanvasGroupFadeData _downCanvasGroupFadeData;
+        [SerializeField] private CanvasGroupFadeData _upCanvasGroupFadeData;
         [SerializeField] private float _fadeUpDelay = 1f;
-        [SerializeField] private Ease _fadeEase = Ease.Linear;
         [Title("Move")]
-        [Required] [SerializeField] private RectTransform _backgroundRectTransform;
-        [SerializeField] private float _moveDuration = 1.5f;
-        [SerializeField] private Ease _moveDownEase = Ease.Linear;
-        [SerializeField] private Ease _moveUpEase = Ease.Linear;
-        [Required] [SerializeField] private Vector3 _startPosition = new(0, 1080, 0);
-        [Required] [SerializeField] private Vector3 _centerPosition = Vector3.zero;
-        [Title("Sprites")]
-        [Required] [SerializeField] private CanvasGroup _rotateImageCanvasGroup;
-        [Required] [SerializeField] private SpriteSwapAnimation _spriteSwapAnimation;
+        [SerializeField] private RectTransformMoveData _downRectTransformMoveData;
+        [SerializeField] private RectTransformMoveData _upRectTransformMoveData;
         
         private CancellationTokenSource _cancellationTokenSource;
         
@@ -37,10 +27,11 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
         private void Awake()
         {
             Hide();
+            _cancellationTokenSource = new CancellationTokenSource();
         }
 
-        private void OnEnable() =>
-            _cancellationTokenSource = new CancellationTokenSource();
+        private void OnDestroy() =>
+            _cancellationTokenSource.Cancel();
 
         private void OnDisable() =>
             _cancellationTokenSource.Cancel();
@@ -60,67 +51,28 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
         public async UniTask ShowAsync()
         {
             //DeepSoundManager.Play(SoundDatabaseName.UiSounds, SoundName.ShowCurtain);
+            CancellationToken token = _cancellationTokenSource.Token;
             IsInProgress = true;
             Show();
-            _spriteSwapAnimation.Play();
             await UniTask.WhenAll(
-                Move(_centerPosition, _moveDuration, _moveDownEase), 
-                DownFade(_fadeCanvasGroup),
-                DownFade(_rotateImageCanvasGroup));
+                _downRectTransformMoveData.LocalMove(token),
+                _downCanvasGroupFadeData.Fade(token));
         }
 
         public async UniTask HideAsync()
         {
+            CancellationToken token = _cancellationTokenSource.Token;
             await UniTask.WhenAll(
-                Move(_startPosition, _moveDuration, _moveUpEase), 
-                UpFade(_fadeCanvasGroup),
-                UpFade(_rotateImageCanvasGroup));
+                _upRectTransformMoveData.LocalMove(token),
+                UpFade(_upCanvasGroupFadeData, token));
             Hide();
             IsInProgress = false;
         }
 
-        private async UniTask DownFade(CanvasGroup canvasGroup)
+        private async UniTask UpFade(CanvasGroupFadeData data, CancellationToken token)
         {
-            await Fade(canvasGroup, 1, _fadeDownDuration);
-        }
-
-        private async UniTask UpFade(CanvasGroup canvasGroup)
-        {
-            await UniTask.Delay(TimeSpan.FromSeconds(_fadeUpDelay));
-            await Fade(canvasGroup, 0, _fadeUpDuration);
-        }
-
-        private async UniTask Move(Vector3 target, float duration, Ease ease)
-        {
-            float animationTime = 0;
-            Vector3 startPos = _backgroundRectTransform.localPosition;
-            Vector3 endPos = target;
-            int animationTimeLength = 1;
-
-            while (animationTime < animationTimeLength)
-            {
-                animationTime += (Time.deltaTime / duration);
-                float delta = EaseManager.Evaluate(ease, animationTime);
-                _backgroundRectTransform.localPosition = Vector3.Lerp(startPos, endPos, delta);
-
-                await UniTask.Yield(PlayerLoopTiming.Initialization, _cancellationTokenSource.Token);
-            }
-        }
-
-        private async UniTask Fade(CanvasGroup canvasGroup, float target, float duration)
-        {
-            float animationTime = 0;
-            float startPos = canvasGroup.alpha;
-            int animationTimeLength = 1;
-
-            while (animationTime < animationTimeLength)
-            {
-                animationTime += (Time.deltaTime / duration);
-                float delta = EaseManager.Evaluate(_fadeEase, animationTime);
-                canvasGroup.alpha= Mathf.Lerp(startPos, target, delta);
-
-                await UniTask.Yield(PlayerLoopTiming.Initialization, _cancellationTokenSource.Token);
-            }
+            await UniTask.Delay(TimeSpan.FromSeconds(_fadeUpDelay), cancellationToken: token);
+            await data.Fade(token);
         }
     }
 }

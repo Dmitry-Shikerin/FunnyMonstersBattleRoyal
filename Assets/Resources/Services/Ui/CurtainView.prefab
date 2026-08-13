@@ -563,11 +563,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasGroup: {fileID: 7299746628101122697}
+  _downCanvasGroupFadeData:
+    CanvasGroup: {fileID: 232616622786230885}
+    Target: 1
+    Duration: 0.5
+    Ease: 1
+  _upCanvasGroupFadeData:
+    CanvasGroup: {fileID: 232616622786230885}
+    Target: 0
+    Duration: 1
+    Ease: 1
   _fadeCanvasGroup: {fileID: 232616622786230885}
   _fadeDownDuration: 0.5
   _fadeUpDuration: 1
   _fadeUpDelay: 1
   _fadeEase: 1
+  _downRectTransformMoveData:
+    Transform: {fileID: 4297038902081955059}
+    TargetPosition: {x: 0, y: 0, z: 0}
+    TargetTransformPosition: {fileID: 0}
+    Duration: 1.5
+    Ease: 30
+  _upRectTransformMoveData:
+    Transform: {fileID: 4297038902081955059}
+    TargetPosition: {x: 0, y: 1080, z: 0}
+    TargetTransformPosition: {fileID: 0}
+    Duration: 1.5
+    Ease: 29
   _backgroundRectTransform: {fileID: 4297038902081955059}
   _moveDuration: 1.5
   _moveDownEase: 30
