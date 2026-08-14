@@ -18,35 +18,60 @@ namespace Sources.BoundedContexts.Characters.Presentation.Skins.MounthandNoses
         [Networked]
         [OnChangedRender(nameof(OnChangeSkinIndex))]
         public int CurrentIndex { get; set; }
+        
         public MouthandNosesSkinName CurrentSkinName { get; private set; } = MouthandNosesSkinName.Mouth01;
         public PlayerRef PlayerRef { get; private set; }
 
-        public void Construct(MouthandNosesSkinChangerUiView view)
-        {
+        public void Construct(MouthandNosesSkinChangerUiView view) =>
             _view = view;
+
+        public void Init(PlayerRef playerRef) =>
+            PlayerRef = playerRef;
+
+        public void SetNextSkin()
+        {
+            if (Runner.IsClient)
+            {
+                SetNextSkin_Rpc();
+                return;
+            }
+            
+            IncreaseIndex();
         }
 
-        public void Init(PlayerRef playerRef)
+        public void SetPreviousSkin()
         {
-            PlayerRef = playerRef;
+            if (Runner.IsClient)
+            {
+                SetPreviousSkin_Rpc();
+                return;
+            }
+            
+            DecreaseIndex();
         }
 
         [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
-        public void SetNextSkin_Rpc()
+        private void SetNextSkin_Rpc() =>
+            IncreaseIndex();
+
+        [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
+        private void SetPreviousSkin_Rpc() =>
+            DecreaseIndex();
+
+        private void IncreaseIndex()
         {
             CurrentIndex++;
             
             if (CurrentIndex >= Enum.GetValues(typeof(MouthandNosesSkinName)).Length)
-                CurrentIndex = 1; // Зацикливаем
+                CurrentIndex = 1;
         }
 
-        [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
-        public void SetPreviousSkin_Rpc()
+        private void DecreaseIndex()
         {
             CurrentIndex--;
             
             if (CurrentIndex <= 0)
-                CurrentIndex = Enum.GetValues(typeof(MouthandNosesSkinName)).Length - 1;// Зацикливаем
+                CurrentIndex = Enum.GetValues(typeof(MouthandNosesSkinName)).Length - 1;
         }
 
         private void OnChangeSkinIndex()

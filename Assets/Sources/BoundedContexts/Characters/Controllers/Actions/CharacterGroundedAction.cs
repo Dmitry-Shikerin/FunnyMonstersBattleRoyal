@@ -13,7 +13,6 @@ namespace Sources.BoundedContexts.Characters.Controllers.Actions
     [Category(NcCategoriesConst.Characters)]
     public class CharacterGroundedAction : ActionTask
     {
-        private ViewComponentsLink _link;
         private CharacterConfig _config;
         private CharacterMovementViewComponent _characterMovement;
         private Transform _groundCheckTransform;
@@ -24,8 +23,8 @@ namespace Sources.BoundedContexts.Characters.Controllers.Actions
 
         protected override string OnInit()
         {
-            _link = blackboard.GetVariable<ViewComponentsLink>("_viewComponentsLink").value;
-            _characterMovement = _link.Get<CharacterMovementViewComponent>();
+            ViewComponentsLink link = blackboard.GetVariable<ViewComponentsLink>("_viewComponentsLink").value;
+            _characterMovement = link.Get<CharacterMovementViewComponent>();
             _groundCheckTransform = _characterMovement.GroundCheckTransform;
             return null;
         }

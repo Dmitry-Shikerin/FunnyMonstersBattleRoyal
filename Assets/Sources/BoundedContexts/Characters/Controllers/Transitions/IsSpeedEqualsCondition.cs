@@ -1,9 +1,8 @@
-﻿using Leopotam.EcsProto;
-using NodeCanvas.Framework;
+﻿using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using Sources.BoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
-using Sources.EcsBoundedContexts.Core;
-using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
+using Sources.Frameworks.ViewComponents.Presentation;
 
 namespace Sources.BoundedContexts.Characters.Controllers.Transitions
 {
@@ -12,13 +11,16 @@ namespace Sources.BoundedContexts.Characters.Controllers.Transitions
     {
         public float EqualValue;
         
-        private ProtoEntity _entity;
-        
-        [Construct]
-        private void Construct(ProtoEntity entity) =>
-            _entity = entity;
+        private CharacterMovementViewComponent _movement;
+
+        protected override string OnInit()
+        {
+            ViewComponentsLink link = blackboard.GetVariable<ViewComponentsLink>("_viewComponentsLink").value;
+            _movement = link.Get<CharacterMovementViewComponent>();
+            return null;
+        }
 
         protected override bool OnCheck() =>
-            EqualValue.Equals(_entity.GetSpeed().Value);
+            EqualValue.Equals(_movement.CharacterSpeed);
     }
 }

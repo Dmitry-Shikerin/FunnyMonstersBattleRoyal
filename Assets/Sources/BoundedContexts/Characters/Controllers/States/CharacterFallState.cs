@@ -1,13 +1,15 @@
 ﻿using DG.Tweening;
-using Leopotam.EcsProto;
+using Fusion;
+using NodeCanvas.Framework;
 using NodeCanvas.StateMachines;
 using ParadoxNotion.Design;
+using Reflex.Attributes;
+using Sources.BoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Animancers.Domain.Enums;
-using Sources.EcsBoundedContexts.Animancers.Extension;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
-using Sources.EcsBoundedContexts.Core;
-using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
+using Sources.Frameworks.GameServices.Prefabs.Interfaces;
+using Sources.Frameworks.ViewComponents.Presentation;
 using UnityEngine;
 
 namespace Sources.BoundedContexts.Characters.Controllers.States
@@ -15,47 +17,57 @@ namespace Sources.BoundedContexts.Characters.Controllers.States
     [Category(NcCategoriesConst.Characters)]
     public class CharacterFallState : FSMState
     {
-        private ProtoEntity _entity;
+        private CharacterMovementViewComponent _movement;
+        private AnimationViewComponent _animation;
+        private CharacterConfig _config;
+        private NetworkRunner _runner;
+        private InputReceiverViewComponent _inputReceiver;
 
-        [Construct]
-        private void Construct(ProtoEntity entity) =>
-            _entity = entity;
+        [Inject]
+        private void Construct(IAssetCollector assetCollector)
+        {
+            _config = assetCollector.Get<CharacterConfig>();
+        }
+        
+        protected override void OnInit()
+        {
+            ViewComponentsLink link = graphBlackboard.GetVariable<ViewComponentsLink>("_viewComponentsLink").value;
+            _movement = link.Get<CharacterMovementViewComponent>();
+            _animation = link.Get<AnimationViewComponent>();
+            _inputReceiver = link.Get<InputReceiverViewComponent>();
+            _runner = _movement.Runner;
+        }
         
         protected override void OnEnter()
         {
-            _entity.PlayAnimation(AnimationName.AirJump);
-            _entity.GetCharacterModule().Value.EcsNetworkAnimationView
-                .PlayAnimation_Rpc((int)AnimationName.AirJump);
-            CharacterConfig config = _entity.GetCharacterConfig().Value;
-            _entity.ReplaceTargetGravity(config.FallGravity);
-            _entity.AddAir();
-            DOVirtual.Float(
-                    _entity.GetGravity().Value,
-                    config.FallGravity,
-                    config.ChangeFallGravityDuration,
-                    value => _entity.ReplaceGravity(value))
-                .SetEase(config.ChangeFallGravityEase);
+            _animation.Play(AnimationName.AirJump);
+            _animation.Play_Rpc((int)AnimationName.AirJump);
+            
+            _movement.IsAir = true;
+            
+            DOVirtual
+                .Float(
+                    _movement.Gravity,
+                    _config.FallGravity,
+                    _config.ChangeFallGravityDuration,
+                    value => _movement.Gravity = value)
+                .SetEase(_config.ChangeFallGravityEase);
         }
         
         protected override void OnUpdate()
         {
-            CharacterController characterController = _entity.GetCharacterController().Value;
-            CharacterConfig config = _entity.GetCharacterConfig().Value;
-            ProtoEntity inputEntity = _entity.GetInputEntity().Value;
-            Vector3 direction = inputEntity.GetDirection().Value * config.Speed * Time.deltaTime;
-
+            Vector3 direction = _inputReceiver.MovementDirection * (_config.Speed * _runner.DeltaTime);
             //Gravity
-            direction.y = _entity.GetGravity().Value;
-            //Debug.Log($"Direction {direction}");
+            direction.y = _movement.Gravity;
 
-            //characterController.Move(direction);
-            _entity.GetTransform().Value.Translate(direction);
+            _movement.CharacterController.Move(direction);
         }
 
         protected override void OnExit()
         {
-            _entity.DelAir();
-            _entity.ReplaceSpeed(10);
+            _movement.IsAir = false;
+            //TODO обратить вниманиее
+            _movement.CharacterSpeed = 10;
         }
     }
 }

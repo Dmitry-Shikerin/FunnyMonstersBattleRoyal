@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Sources.BoundedContexts.Characters.Presentation
 {
-    public class NetworkInputReceiverViewComponent : NetworkBehaviour, IViewComponent
+    public class InputReceiverViewComponent : NetworkBehaviour, IViewComponent
     {
         [field: SerializeField] public Vector3 MovementDirection { get; private set; }
         [field: SerializeField] public Vector3 CameraForward { get; private set; }
@@ -25,11 +25,17 @@ namespace Sources.BoundedContexts.Characters.Presentation
 
         public override void FixedUpdateNetwork()
         {
+            if (Runner.IsClient)
+                return;
+            
             if (GetInput(out NetworkInputData inputData) == false)
                 return;
 
             Vector2 input = inputData.MovementInput;
-            MovementDirection = new Vector3(input.x, 0, input.y);
+            Vector3 cameraForward = inputData.CameraForward;
+            cameraForward.y = 0;
+            float angle = Vector3.SignedAngle(Vector3.forward, cameraForward, Vector3.up);
+            MovementDirection = Quaternion.Euler(0, angle, 0) * new Vector3(input.x, 0, input.y);
             CameraForward = inputData.CameraForward;
 
             if (inputData.InputButtons.WasPressed(_previousButtons, InputButtons.Jump))

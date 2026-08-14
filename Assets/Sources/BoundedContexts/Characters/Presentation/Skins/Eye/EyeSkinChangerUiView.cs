@@ -24,14 +24,20 @@ namespace Sources.BoundedContexts.Characters.Presentation.Skins.Eye
 
         private void OnEnable()
         {
-            _leftButton.AddOnClickListener(_view.SetPreviousSkin_Rpc);
-            _rightButton.AddOnClickListener(_view.SetNextSkin_Rpc);
+            if (_view == null)
+                return;
+            
+            _leftButton.AddOnClickListener(_view.SetPreviousSkin);
+            _rightButton.AddOnClickListener(_view.SetNextSkin);
         }
 
         protected void OnDisable()
         {
-            _leftButton.RemoveOnClickListener(_view.SetPreviousSkin_Rpc);
-            _rightButton.RemoveOnClickListener(_view.SetNextSkin_Rpc);
+            if (_view == null)
+                return;
+            
+            _leftButton.RemoveOnClickListener(_view.SetPreviousSkin);
+            _rightButton.RemoveOnClickListener(_view.SetNextSkin);
         }
 
         public void SetText(string text)

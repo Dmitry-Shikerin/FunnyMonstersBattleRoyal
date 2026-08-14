@@ -2,12 +2,12 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using Reflex.Attributes;
-using Sources.EcsBoundedContexts.Characters.Domain.Components;
+using Sources.BoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
-using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
+using Sources.Frameworks.ViewComponents.Presentation;
 using UnityEngine;
 
 namespace Sources.BoundedContexts.Characters.Controllers.Actions
@@ -17,6 +17,8 @@ namespace Sources.BoundedContexts.Characters.Controllers.Actions
     {
         private ProtoEntity _entity;
         private CharacterConfig _config;
+        private CharacterMovementViewComponent _movement;
+        private InputReceiverViewComponent _input;
 
         [Inject]
         private void Construct(IAssetCollector assetCollector)
@@ -24,27 +26,31 @@ namespace Sources.BoundedContexts.Characters.Controllers.Actions
             _config = assetCollector.Get<CharacterConfig>();
         }
         
-        [Construct]
-        private void Construct(ProtoEntity entity) =>
-            _entity = entity;
+        protected override string OnInit()
+        {
+            ViewComponentsLink link = blackboard.GetVariable<ViewComponentsLink>("_viewComponentsLink").value;
+            _movement = link.Get<CharacterMovementViewComponent>();
+            _input = link.Get<InputReceiverViewComponent>();
+            return null;
+        }
 
         protected override void OnUpdate()
         {
-            ref SpeedComponent speed = ref _entity.GetSpeed();
-            Vector3 input = _entity.GetInputEntity().Value.GetDirection().Value;
+            float speed = _movement.CharacterSpeed;
+            Vector3 input = _input.MovementDirection;
 
             if (input == Vector3.zero)
             {
-                if (speed.Value > 0)
+                if (speed > 0)
                 {
-                    speed.Value -= _config.SpeedChangeDelta;
+                    _movement.CharacterSpeed -= _config.SpeedChangeDelta;
                 }
             }
             else
             {
-                if (speed.Value < _config.Speed)
+                if (speed < _config.Speed)
                 {
-                    speed.Value += _config.SpeedChangeDelta;
+                    _movement.CharacterSpeed += _config.SpeedChangeDelta;
                 }
             }
         }

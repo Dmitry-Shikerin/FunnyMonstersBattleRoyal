@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b2d0e2a7a94314b79025e91f8b1714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animancer: {fileID: 0}
+  _animancer: {fileID: 621492899313384078}
 --- !u!1 &1059346502249462440
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,18 +133,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ded17aec624c3fa77d54470f76fe7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fsmOwner: {fileID: 5921213939749778996}
+  <FsmOwner>k__BackingField: {fileID: 5921213939749778996}
   <GroundCheckTransform>k__BackingField: {fileID: 72820465754033901}
   <CharacterController>k__BackingField: {fileID: 343228178934919456}
   _IsGrounded:
     RawValue: 0
   _GroundDistance: 0
   _CharacterDirection: {x: 0, y: 0, z: 0}
+  _JumpImpulseDirection: {x: 0, y: 0, z: 0}
   _CharacterSpeed: 0
   _IsJumping:
     RawValue: 0
   _JumpTimer: 0
   _Gravity: 0
+  _IsAir:
+    RawValue: 0
 --- !u!1 &2823363417258592189
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +333,11 @@ MonoBehaviour:
   - {fileID: 2908548108936724019}
   - {fileID: 94156729256396605}
   - {fileID: 4399644971435592406}
+  - {fileID: 1989245524330321526}
+  - {fileID: 1053789560664008240}
+  - {fileID: 1587810431711329498}
+  - {fileID: 152627541221835371}
+  - {fileID: 7186709331929317849}
 --- !u!1 &5974924903203573792
 GameObject:
   m_ObjectHideFlags: 0

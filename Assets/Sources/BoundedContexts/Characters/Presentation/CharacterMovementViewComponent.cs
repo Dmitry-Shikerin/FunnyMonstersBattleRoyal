@@ -11,7 +11,7 @@ namespace Sources.BoundedContexts.Characters.Presentation
 {
     public class CharacterMovementViewComponent : NetworkBehaviour, IViewComponent
     {
-        [Required] [SerializeField] private FSMOwner _fsmOwner;
+        [field: Required] [field: SerializeField] public FSMOwner FsmOwner { get; private set; }
         [field: Required] [field: SerializeField] public Transform GroundCheckTransform { get; private set; }
         [field: Required] [field: SerializeField] public CharacterController CharacterController { get; private set; }
 
@@ -20,7 +20,9 @@ namespace Sources.BoundedContexts.Characters.Presentation
         [Networked]
         public float GroundDistance { get; set; }
         [Networked]
-        public Vector3 CharacterDirection { get; set; }
+        public Vector3 CharacterDirection { get; set; }        
+        [Networked]
+        public Vector3 JumpImpulseDirection { get; set; }
         [Networked]
         public float CharacterSpeed { get; set; }
         [Networked]
@@ -28,7 +30,9 @@ namespace Sources.BoundedContexts.Characters.Presentation
         [Networked]
         public float JumpTimer { get; set; }
         [Networked]
-        public float Gravity { get; set; }
+        public float Gravity { get; set; }        
+        [Networked]
+        public NetworkBool IsAir { get; set; }
 
         private CharacterConfig _characterConfig;
         
@@ -47,8 +51,11 @@ namespace Sources.BoundedContexts.Characters.Presentation
         {
             if (Runner.IsClient)
                 return;
+
+            if (FsmOwner.isRunning == false)
+                return;
             
-            _fsmOwner.UpdateBehaviour();
+            FsmOwner.UpdateBehaviour();
         }
     }
 }

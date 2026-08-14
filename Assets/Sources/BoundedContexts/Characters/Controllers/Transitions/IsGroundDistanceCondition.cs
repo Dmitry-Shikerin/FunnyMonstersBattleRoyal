@@ -1,43 +1,36 @@
-﻿using Leopotam.EcsProto;
-using NodeCanvas.Framework;
+﻿using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using Reflex.Attributes;
+using Sources.BoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
-using Sources.EcsBoundedContexts.Core;
-using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
+using Sources.Frameworks.ViewComponents.Presentation;
 
 namespace Sources.BoundedContexts.Characters.Controllers.Transitions
 {
     [Category(NcCategoriesConst.Characters)]
     public class IsGroundDistanceCondition : ConditionTask
     {
-        private ProtoEntity _entity;
-        private IAssetCollector _assetCollector;
         private CharacterConfig _config;
-
-        protected override string OnInit()
-        {
-            _config = _assetCollector.Get<CharacterConfig>();
-            return null;
-        }
+        private CharacterMovementViewComponent _movement;
 
         [Inject]
         private void Construct(IAssetCollector assetCollector)
         {
-            _assetCollector = assetCollector;
+            _config = assetCollector.Get<CharacterConfig>();
         }
 
-        [Construct]
-        private void Construct(ProtoEntity entity)
+        protected override string OnInit()
         {
-            _entity = entity;
+            ViewComponentsLink link = blackboard.GetVariable<ViewComponentsLink>("_viewComponentsLink").value;
+            _movement = link.Get<CharacterMovementViewComponent>();
+            return null;
         }
 
         protected override bool OnCheck()
         {
-            return _entity.GetGroundDistance().Value <= _config.EndAirDistance;
+            return _movement.GroundDistance <= _config.EndAirDistance;
         }
     }
 }

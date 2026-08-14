@@ -1,26 +1,33 @@
-﻿using Leopotam.EcsProto;
-using NodeCanvas.Framework;
+﻿using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using Sources.BoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
-using Sources.EcsBoundedContexts.Core;
-using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
-using Sources.Frameworks.MyLeoEcsProto.Repositories;
+using Sources.Frameworks.ViewComponents.Presentation;
 
 namespace Sources.BoundedContexts.Characters.Controllers.Transitions
 {
     [Category(NcCategoriesConst.Characters)]
     public class IsJumpCondition : ConditionTask
     {
-        private IEntityRepository _repository;
-        private ProtoEntity _entity;
+        private InputReceiverViewComponent _input;
 
-        [Construct]
-        private void Construct(ProtoEntity entity)
+        protected override string OnInit()
         {
-            _entity = entity;
+            ViewComponentsLink link = blackboard.GetVariable<ViewComponentsLink>("_viewComponentsLink").value;
+            _input = link.Get<InputReceiverViewComponent>();
+            return null;
         }
+        
+        protected override void OnEnable() =>
+            _input.OnJump += OnJump;
+
+        protected override void OnDisable() =>
+            _input.OnJump -= OnJump;
+
+        private void OnJump() =>
+            YieldReturn(true);
 
         protected override bool OnCheck() =>
-            _entity.GetInputEntity().Value.HasJumpEvent();
+            false;
     }
 }

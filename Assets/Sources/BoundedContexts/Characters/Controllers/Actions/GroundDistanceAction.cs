@@ -15,7 +15,6 @@ namespace Sources.BoundedContexts.Characters.Controllers.Actions
     public class GroundDistanceAction : ActionTask
     {
         private ProtoEntity _entity;
-        private ViewComponentsLink _link;
         private CharacterMovementViewComponent _characterMovement;
         private Transform _groundCheckTransform;
         private CharacterConfig _config;
@@ -26,8 +25,8 @@ namespace Sources.BoundedContexts.Characters.Controllers.Actions
 
         protected override string OnInit()
         {
-            _link = blackboard.GetVariable<ViewComponentsLink>("_viewComponentsLink").value;
-            _characterMovement = _link.Get<CharacterMovementViewComponent>();
+            ViewComponentsLink link = blackboard.GetVariable<ViewComponentsLink>("_viewComponentsLink").value;
+            _characterMovement = link.Get<CharacterMovementViewComponent>();
             _groundCheckTransform = _characterMovement.GroundCheckTransform;
             return null;
         }

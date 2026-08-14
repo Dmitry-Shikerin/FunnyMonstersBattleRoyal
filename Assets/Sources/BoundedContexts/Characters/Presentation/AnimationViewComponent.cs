@@ -35,7 +35,7 @@ namespace Sources.BoundedContexts.Characters.Presentation
             Play((AnimationName)animationName);
         }
 
-        private AnimancerState Play(AnimationName animationName) =>
+        public AnimancerState Play(AnimationName animationName) =>
             _animancer.Play(_config.Animations[animationName]);
 
         public AnimancerState SetCallback(AnimancerState state, AnimationEventName eventName, Action callback)

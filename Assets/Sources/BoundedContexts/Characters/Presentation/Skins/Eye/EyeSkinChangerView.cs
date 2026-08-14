@@ -4,7 +4,6 @@ using System.Linq;
 using Fusion;
 using Sirenix.OdinInspector;
 using Sources.EcsBoundedContexts.Characters.Domain.Enums;
-using Sources.EcsBoundedContexts.Characters.Presentation.Skins;
 using Sources.Frameworks.ViewComponents.Presentation;
 using UnityEngine;
 
@@ -23,32 +22,56 @@ namespace Sources.BoundedContexts.Characters.Presentation.Skins.Eye
         private EyeSkinChangerUiView _view;
         public PlayerRef PlayerRef { get; private set; }
 
-        public void Construct(EyeSkinChangerUiView view)
-        {
+        public void Construct(EyeSkinChangerUiView view) =>
             _view = view;
-        }
 
-        public void Init(PlayerRef playerRef)
-        {
+        public void Init(PlayerRef playerRef) =>
             PlayerRef = playerRef;
-        }
 
-        [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
-        public void SetNextSkin_Rpc()
+        public void SetNextSkin()
         {
-            CurrentIndex++;
+            if (Runner.IsClient)
+            {
+                SetNextSkin_Rpc();
+                return;
+            }
             
-            if (CurrentIndex >= Enum.GetValues(typeof(GloveSkinName)).Length)
-                CurrentIndex = 1; // Зацикливаем
+            IncreaseIndex();
+        }
+
+        public void SetPreviousSkin()
+        {
+            if (Runner.IsClient)
+            {
+                SetPreviousSkin_Rpc();
+                return;
+            }
+            
+            DecreaseIndex();
         }
 
         [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
-        public void SetPreviousSkin_Rpc()
+        private void SetNextSkin_Rpc() =>
+            IncreaseIndex();
+
+        [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
+        private void SetPreviousSkin_Rpc() =>
+            DecreaseIndex();
+
+        private void DecreaseIndex()
         {
             CurrentIndex--;
             
             if (CurrentIndex <= 0)
-                CurrentIndex = Enum.GetValues(typeof(GloveSkinName)).Length - 1;// Зацикливаем
+                CurrentIndex = Enum.GetValues(typeof(GloveSkinName)).Length - 1;
+        }
+
+        private void IncreaseIndex()
+        {
+            CurrentIndex++;
+            
+            if (CurrentIndex >= Enum.GetValues(typeof(GloveSkinName)).Length)
+                CurrentIndex = 1;
         }
 
         private void OnChangeSkinIndex()

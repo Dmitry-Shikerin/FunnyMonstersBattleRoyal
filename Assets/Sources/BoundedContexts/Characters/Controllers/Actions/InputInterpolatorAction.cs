@@ -1,10 +1,9 @@
-﻿using Leopotam.EcsProto;
+﻿using Fusion;
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using Sources.BoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
-using Sources.EcsBoundedContexts.Core;
-using Sources.EcsBoundedContexts.Input.Domain;
-using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
+using Sources.Frameworks.ViewComponents.Presentation;
 using UnityEngine;
 
 namespace Sources.BoundedContexts.Characters.Controllers.Actions
@@ -12,24 +11,30 @@ namespace Sources.BoundedContexts.Characters.Controllers.Actions
     [Category(NcCategoriesConst.Characters)]
     public class InputInterpolatorAction : ActionTask
     {
-        private ProtoEntity _entity;
+        private CharacterMovementViewComponent _characterMovement;
+        private InputReceiverViewComponent _inputReceiver;
+        private NetworkRunner _runner;
 
-        [Construct]
-        private void Construct(ProtoEntity entity) =>
-            _entity = entity;
+        protected override string OnInit()
+        {
+            ViewComponentsLink link = blackboard.GetVariable<ViewComponentsLink>("_viewComponentsLink").value;
+            _characterMovement = link.Get<CharacterMovementViewComponent>();
+            _inputReceiver = link.Get<InputReceiverViewComponent>();
+            _runner = _characterMovement.Runner;
+            return null;
+        }
 
         protected override void OnUpdate()
         {
-            Vector3 inputDirection = _entity.GetInputEntity().Value.GetDirection().Value;
-            ref DirectionComponent characterDirection = ref _entity.GetDirection();
+            Vector3 inputDirection = _inputReceiver.MovementDirection;
             
-            if (inputDirection.Equals(Vector3.zero) && characterDirection.Value.Equals(Vector3.zero) == false)
+            if (inputDirection.Equals(Vector3.zero) && _characterMovement.CharacterDirection.Equals(Vector3.zero) == false)
             {
-                characterDirection.Value = Vector3.MoveTowards(characterDirection.Value, Vector3.zero, 1f * Time.deltaTime);
+                _characterMovement.CharacterDirection = Vector3.MoveTowards(_characterMovement.CharacterDirection, Vector3.zero, 1f * _runner.DeltaTime);
             }
             else
             {
-                characterDirection.Value = inputDirection;
+                _characterMovement.CharacterDirection = inputDirection;
             }
         }
     }

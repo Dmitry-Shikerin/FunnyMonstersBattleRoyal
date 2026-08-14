@@ -1,5 +1,7 @@
 ﻿using Fusion;
+using NodeCanvas.StateMachines;
 using Reflex.Core;
+using Sources.BoundedContexts.Characters.Presentation;
 using Sources.BoundedContexts.Characters.Presentation.Skins.Body;
 using Sources.BoundedContexts.Characters.Presentation.Skins.BodyPart;
 using Sources.BoundedContexts.Characters.Presentation.Skins.Eye;
@@ -12,6 +14,7 @@ using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Spawners.Presentation;
 using Sources.EcsBoundedContexts.Cameras.Domain;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
+using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
 using Sources.Frameworks.ViewComponents.Presentation;
@@ -64,6 +67,8 @@ namespace Sources.BoundedContexts.Characters.Infrastructure
                     ConstructSkinChangers(viewComponentsLink);
                 }
             }
+            
+            InitFsm(viewComponentsLink);
 
             return networkObject;
         }
@@ -71,6 +76,15 @@ namespace Sources.BoundedContexts.Characters.Infrastructure
         public void ClientCreate(NetworkObject playerValue, PlayerRef playerKey, NetworkRunner networkRunner)
         {
             throw new System.NotImplementedException();
+        }
+
+        private void InitFsm(ViewComponentsLink viewComponentsLink)
+        {
+            FSMOwner fsmOwner = viewComponentsLink.Get<CharacterMovementViewComponent>().FsmOwner;
+            fsmOwner.InjectOwner(_container);
+            FSM behaviour = fsmOwner.behaviour;
+            behaviour.Initialize(behaviour.agent, behaviour.blackboard, true, false);
+            fsmOwner.StartBehaviour();
         }
 
         private void ConstructSkinChangers(ViewComponentsLink link)

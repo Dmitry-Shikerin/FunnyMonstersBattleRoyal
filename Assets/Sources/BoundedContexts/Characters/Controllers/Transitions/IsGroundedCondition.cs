@@ -1,26 +1,24 @@
-﻿using Leopotam.EcsProto;
-using NodeCanvas.Framework;
+﻿using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using Sources.BoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
-using Sources.EcsBoundedContexts.Core;
-using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
-using Sources.Frameworks.MyLeoEcsProto.Repositories;
+using Sources.Frameworks.ViewComponents.Presentation;
 
 namespace Sources.BoundedContexts.Characters.Controllers.Transitions
 {
     [Category(NcCategoriesConst.Characters)]
     public class IsGroundedCondition : ConditionTask
     {
-        private IEntityRepository _repository;
-        private ProtoEntity _entity;
+        private CharacterMovementViewComponent _movement;
 
-        [Construct]
-        private void Construct(ProtoEntity entity)
+        protected override string OnInit()
         {
-            _entity = entity;
+            ViewComponentsLink link = blackboard.GetVariable<ViewComponentsLink>("_viewComponentsLink").value;
+            _movement = link.Get<CharacterMovementViewComponent>();
+            return null;
         }
 
         protected override bool OnCheck() =>
-            _entity.HasGrounded();
+            _movement.IsGrounded;
     }
 }

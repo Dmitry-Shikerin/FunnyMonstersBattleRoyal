@@ -4,10 +4,8 @@ using System.Linq;
 using Fusion;
 using Sirenix.OdinInspector;
 using Sources.EcsBoundedContexts.Characters.Domain.Enums;
-using Sources.EcsBoundedContexts.Characters.Presentation.Skins;
 using Sources.Frameworks.ViewComponents.Presentation;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Sources.BoundedContexts.Characters.Presentation.Skins.BodyPart
 {
@@ -24,32 +22,56 @@ namespace Sources.BoundedContexts.Characters.Presentation.Skins.BodyPart
         private BodyPartSkinChangerUiView _view;
         public PlayerRef PlayerRef { get; private set; }
 
-        public void Construct(BodyPartSkinChangerUiView view)
-        {
+        public void Construct(BodyPartSkinChangerUiView view) =>
             _view = view;
+
+        public void Init(PlayerRef playerRef) =>
+            PlayerRef = playerRef;
+
+        public void SetNextSkin()
+        {
+            if (Runner.IsClient)
+            {
+                SetNextSkin_Rpc();
+                return;
+            }
+            
+            IncreaseSkinIndex();
         }
 
-        public void Init(PlayerRef playerRef)
+        public void SetPreviousSkin()
         {
-            PlayerRef = playerRef;
+            if (Runner.IsClient)
+            {
+                SetPreviousSkin_Rpc();
+                return;
+            }
+            
+            DecreaseSkinIndex();
         }
 
         [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
-        public void SetNextSkin_Rpc()
+        private void SetNextSkin_Rpc() =>
+            IncreaseSkinIndex();
+
+        [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
+        private void SetPreviousSkin_Rpc() =>
+            DecreaseSkinIndex();
+
+        private void IncreaseSkinIndex()
         {
             CurrentIndex++;
             
             if (CurrentIndex >= Enum.GetValues(typeof(BodyPartSkinName)).Length)
-                CurrentIndex = 1; // Зацикливаем
+                CurrentIndex = 1;
         }
 
-        [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
-        public void SetPreviousSkin_Rpc()
+        private void DecreaseSkinIndex()
         {
             CurrentIndex--;
             
             if (CurrentIndex <= 0)
-                CurrentIndex = Enum.GetValues(typeof(BodyPartSkinName)).Length - 1;// Зацикливаем
+                CurrentIndex = Enum.GetValues(typeof(BodyPartSkinName)).Length - 1;
         }
 
         private void OnChangeSkinIndex()

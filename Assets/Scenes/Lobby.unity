@@ -1057,8 +1057,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 136673309}
-  - component: {fileID: 136673311}
   - component: {fileID: 136673310}
+  - component: {fileID: 136673311}
   m_Layer: 0
   m_Name: SpawnPoint_9
   m_TagString: Untagged
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  <SpawnPositionTransform>k__BackingField: {fileID: 1509879701}
   _IsBusy:
     RawValue: 0
 --- !u!1 &156451288
@@ -1158,8 +1158,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 172881773}
-  - component: {fileID: 172881775}
   - component: {fileID: 172881774}
+  - component: {fileID: 172881775}
   m_Layer: 0
   m_Name: SpawnPoint_10
   m_TagString: Untagged
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  <SpawnPositionTransform>k__BackingField: {fileID: 104088554}
   _IsBusy:
     RawValue: 0
 --- !u!1 &174913696
@@ -1912,20 +1912,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d958d7034b4cbfbc1089c634cb40af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MainCamera>k__BackingField: {fileID: 1977074201}
-  <CharacterSpawnPoint>k__BackingField: {fileID: 1249172778}
-  <CharacterSpawnPoints>k__BackingField:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  <SpawnPoints>k__BackingField: []
+  <MainCamera>k__BackingField: {fileID: 0}
+  <Camera>k__BackingField: {fileID: 1977074199}
+  <SpawnPoints>k__BackingField:
+  - {fileID: 533012439}
+  - {fileID: 477386797}
+  - {fileID: 265150016}
+  - {fileID: 1648471476}
+  - {fileID: 289558026}
+  - {fileID: 839136710}
+  - {fileID: 1469537997}
+  - {fileID: 817396002}
+  - {fileID: 136673311}
+  - {fileID: 172881775}
 --- !u!1 &265150013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,8 +1934,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 265150014}
-  - component: {fileID: 265150016}
   - component: {fileID: 265150015}
+  - component: {fileID: 265150016}
   m_Layer: 0
   m_Name: SpawnPoint_3
   m_TagString: Untagged
@@ -1993,7 +1992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  <SpawnPositionTransform>k__BackingField: {fileID: 55611665}
   _IsBusy:
     RawValue: 0
 --- !u!1 &270425930
@@ -2144,8 +2143,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 289558024}
-  - component: {fileID: 289558026}
   - component: {fileID: 289558025}
+  - component: {fileID: 289558026}
   m_Layer: 0
   m_Name: SpawnPoint_5
   m_TagString: Untagged
@@ -2202,7 +2201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  <SpawnPositionTransform>k__BackingField: {fileID: 57714785}
   _IsBusy:
     RawValue: 0
 --- !u!1 &290581887
@@ -3012,8 +3011,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477386795}
-  - component: {fileID: 477386797}
   - component: {fileID: 477386796}
+  - component: {fileID: 477386797}
   m_Layer: 0
   m_Name: SpawnPoint_2
   m_TagString: Untagged
@@ -3070,7 +3069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  <SpawnPositionTransform>k__BackingField: {fileID: 1304604059}
   _IsBusy:
     RawValue: 0
 --- !u!1 &480166368
@@ -3349,7 +3348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  <SpawnPositionTransform>k__BackingField: {fileID: 1266102251}
   _IsBusy:
     RawValue: 0
 --- !u!114 &533012440
@@ -4641,8 +4640,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 817396000}
-  - component: {fileID: 817396002}
   - component: {fileID: 817396001}
+  - component: {fileID: 817396002}
   m_Layer: 0
   m_Name: SpawnPoint_8
   m_TagString: Untagged
@@ -4699,7 +4698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  <SpawnPositionTransform>k__BackingField: {fileID: 1747941967}
   _IsBusy:
     RawValue: 0
 --- !u!1 &836624945
@@ -4819,8 +4818,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 839136708}
-  - component: {fileID: 839136710}
   - component: {fileID: 839136709}
+  - component: {fileID: 839136710}
   m_Layer: 0
   m_Name: SpawnPoint_6
   m_TagString: Untagged
@@ -4877,7 +4876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  <SpawnPositionTransform>k__BackingField: {fileID: 761032721}
   _IsBusy:
     RawValue: 0
 --- !u!1 &839440649
@@ -7784,8 +7783,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1469537995}
-  - component: {fileID: 1469537997}
   - component: {fileID: 1469537996}
+  - component: {fileID: 1469537997}
   m_Layer: 0
   m_Name: SpawnPoint_7
   m_TagString: Untagged
@@ -7842,7 +7841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  <SpawnPositionTransform>k__BackingField: {fileID: 156451289}
   _IsBusy:
     RawValue: 0
 --- !u!1 &1472217058
@@ -8584,8 +8583,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1648471474}
-  - component: {fileID: 1648471476}
   - component: {fileID: 1648471475}
+  - component: {fileID: 1648471476}
   m_Layer: 0
   m_Name: SpawnPoint_4
   m_TagString: Untagged
@@ -8642,7 +8641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  <SpawnPositionTransform>k__BackingField: {fileID: 270425931}
   _IsBusy:
     RawValue: 0
 --- !u!1 &1655207609
@@ -9725,6 +9724,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 467937493}
     m_Modifications:
+    - target: {fileID: 628927165576161198, guid: 020f4f851e7849341b3ef6919ab1539a, type: 3}
+      propertyPath: <Cameras>k__BackingField._keys.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 628927165576161198, guid: 020f4f851e7849341b3ef6919ab1539a, type: 3}
+      propertyPath: <Cameras>k__BackingField._values.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 628927165576161198, guid: 020f4f851e7849341b3ef6919ab1539a, type: 3}
+      propertyPath: '<Cameras>k__BackingField._keys.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 628927165576161198, guid: 020f4f851e7849341b3ef6919ab1539a, type: 3}
+      propertyPath: '<Cameras>k__BackingField._values.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6753446039905782699}
     - target: {fileID: 4348063922617107272, guid: 020f4f851e7849341b3ef6919ab1539a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27271366
@@ -9765,10 +9780,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6635932594456332555, guid: 020f4f851e7849341b3ef6919ab1539a, type: 3}
-      propertyPath: '<Cameras>k__BackingField._values.Array.data[0]'
-      value: 
-      objectReference: {fileID: 6753446039905782699}
     - target: {fileID: 7084708136107463306, guid: 020f4f851e7849341b3ef6919ab1539a, type: 3}
       propertyPath: m_Name
       value: Camera
@@ -9783,15 +9794,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4348063922617107272, guid: 020f4f851e7849341b3ef6919ab1539a, type: 3}
   m_PrefabInstance: {fileID: 1977074197}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1977074201 stripped
+--- !u!114 &1977074199 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2179767827631118191, guid: 020f4f851e7849341b3ef6919ab1539a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 628927165576161198, guid: 020f4f851e7849341b3ef6919ab1539a, type: 3}
   m_PrefabInstance: {fileID: 1977074197}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dd002843574e1ba35c4b84aa191c9d, type: 3}
+  m_Script: {fileID: 11500000, guid: 16671959b8a148cea79a565d2a3ff4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2015464971

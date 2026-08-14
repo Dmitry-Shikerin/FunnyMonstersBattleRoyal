@@ -1,17 +1,17 @@
 ﻿using System;
 using Animancer;
-using Leopotam.EcsProto;
+using Fusion;
+using NodeCanvas.Framework;
 using NodeCanvas.StateMachines;
 using ParadoxNotion.Design;
+using Reflex.Attributes;
+using Sources.BoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Animancers.Domain.Enums;
-using Sources.EcsBoundedContexts.Animancers.Extension;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
-using Sources.EcsBoundedContexts.Characters.Presentation.Network;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
-using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepUtils.Extensions;
-using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
-using Sources.Frameworks.MyLeoEcsProto.Repositories;
+using Sources.Frameworks.GameServices.Prefabs.Interfaces;
+using Sources.Frameworks.ViewComponents.Presentation;
 using UnityEngine;
 
 namespace Sources.BoundedContexts.Characters.Controllers.States
@@ -19,43 +19,47 @@ namespace Sources.BoundedContexts.Characters.Controllers.States
     [Category(NcCategoriesConst.Characters)]
     public class CharacterMoveState : FSMState
     {
-        private ProtoEntity _entity;
-        private IEntityRepository _entityRepository;
+        private CharacterMovementViewComponent _movement;
+        private CharacterConfig _config;
         private LinearMixerState _state;
+        private AnimationViewComponent _animation;
+        private NetworkRunner _runner;
 
-        [Construct]
-        private void Construct(ProtoEntity entity) =>
-            _entity = entity;
+        [Inject]
+        private void Construct(IAssetCollector assetCollector)
+        {
+            _config = assetCollector.Get<CharacterConfig>();
+        }
+        
+        protected override void OnInit()
+        {
+            ViewComponentsLink link = graphBlackboard.GetVariable<ViewComponentsLink>("_viewComponentsLink").value;
+            _movement = link.Get<CharacterMovementViewComponent>();
+            _animation = link.Get<AnimationViewComponent>();
+            _runner = _movement.Runner;
+        }
 
         protected override void OnEnter()
         {
-            CharacterConfig config = _entity.GetCharacterConfig().Value;
-            _entity.ReplaceGravity(config.IdleGravity);
-            AnimancerState state = _entity.PlayAnimation(AnimationName.Walk);
+            _movement.Gravity = _config.IdleGravity;
+            AnimancerState state = _animation.Play(AnimationName.Walk);
 
             if (state is not LinearMixerState linearMixerState)
                 throw new InvalidOperationException();
 
             _state = linearMixerState;
-            
-            EcsNetworkAnimationView ecsNetworkAnimationView = _entity.GetCharacterModule().Value.EcsNetworkAnimationView;
-            ecsNetworkAnimationView.PlayAnimation_Rpc((int)AnimationName.Walk);
+            _animation.Play_Rpc((int)AnimationName.Walk);
         }
 
         protected override void OnUpdate()
         {
-            CharacterConfig config = _entity.GetCharacterConfig().Value;
-            float currentSpeed = _entity.GetSpeed().Value;
-            //_state.Parameter = Normalize(currentSpeed, 0, config.Speed);
-            _state.Parameter = currentSpeed.Normalize(0, config.Speed);
-            
-            CharacterController characterController = _entity.GetCharacterController().Value;
-            float speed = _entity.GetSpeed().Value;
-            Vector3 direction = _entity.GetDirection().Value.normalized * speed * Time.deltaTime;
+            //TODO в RPC тоже нужно изменять скорость анимации
+            _state.Parameter = _movement.CharacterSpeed.Normalize(0, _config.Speed);
+            Vector3 direction = _movement.CharacterDirection.normalized * (_movement.CharacterSpeed * _runner.DeltaTime);
             //гравитация
-            direction.y = _entity.GetGravity().Value;
+            direction.y = _movement.Gravity;
             
-            characterController.Move(direction);
+            _movement.CharacterController.Move(direction);
         }
     }
 }

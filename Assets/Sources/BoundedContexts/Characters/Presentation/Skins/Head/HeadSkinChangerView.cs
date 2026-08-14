@@ -4,7 +4,6 @@ using System.Linq;
 using Fusion;
 using Sirenix.OdinInspector;
 using Sources.EcsBoundedContexts.Characters.Domain.Enums;
-using Sources.EcsBoundedContexts.Characters.Presentation.Skins;
 using Sources.Frameworks.ViewComponents.Presentation;
 using UnityEngine;
 
@@ -23,32 +22,56 @@ namespace Sources.BoundedContexts.Characters.Presentation.Skins.Head
         private HeadSkinChangerUiView _view;
         public PlayerRef PlayerRef { get; private set; }
 
-        public void Construct(HeadSkinChangerUiView view)
-        {
+        public void Construct(HeadSkinChangerUiView view) =>
             _view = view;
+
+        public void Init(PlayerRef playerRef) =>
+            PlayerRef = playerRef;
+
+        public void SetNextSkin()
+        {
+            if (Runner.IsClient)
+            {
+                SetNextSkin_Rpc();
+                return;
+            }
+            
+            IncreaseIndex();
         }
 
-        public void Init(PlayerRef playerRef)
+        public void SetPreviousSkin()
         {
-            PlayerRef = playerRef;
+            if (Runner.IsClient)
+            {
+                SetPreviousSkin_Rpc();
+                return;
+            }
+            
+            DecreaseIndex();
         }
 
         [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
-        public void SetNextSkin_Rpc()
+        private void SetNextSkin_Rpc() =>
+            IncreaseIndex();
+
+        [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
+        private void SetPreviousSkin_Rpc() =>
+            DecreaseIndex();
+
+        private void IncreaseIndex()
         {
             CurrentIndex++;
             
             if (CurrentIndex >= Enum.GetValues(typeof(HeadSkinName)).Length)
-                CurrentIndex = 1; // Зацикливаем
+                CurrentIndex = 1;
         }
 
-        [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
-        public void SetPreviousSkin_Rpc()
+        private void DecreaseIndex()
         {
             CurrentIndex--;
             
             if (CurrentIndex <= 0)
-                CurrentIndex = Enum.GetValues(typeof(HeadSkinName)).Length - 1;// Зацикливаем
+                CurrentIndex = Enum.GetValues(typeof(HeadSkinName)).Length - 1;
         }
 
         private void OnChangeSkinIndex()

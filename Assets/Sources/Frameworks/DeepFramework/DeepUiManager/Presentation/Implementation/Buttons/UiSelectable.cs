@@ -15,7 +15,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
             _onClickActions.Add(action);
         
         public void RemoveOnClickListener(Action action) =>
-            _onClickActions.Add(action);
+            _onClickActions.Remove(action);
 
         protected virtual void Click()
         {

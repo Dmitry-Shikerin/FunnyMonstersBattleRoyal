@@ -13,7 +13,7 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
     [EcsSystem(50)]
     [ComponentGroup(ComponentGroup.Characters)]
     [Aspect(AspectName.Game)]
-    public class InputSystem : IProtoInitSystem, IProtoRunSystem, IProtoDestroySystem
+    public class InputSystem : IProtoRunSystem
     {
         [DI] private readonly ProtoIt _it = new(
             It.Inc<
@@ -21,7 +21,6 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
                 DirectionComponent>());
 
         private readonly IPauseService _pauseService;
-        private ProtoEntity _entity;
 
         public InputSystem(IPauseService pauseService)
         {
@@ -30,11 +29,6 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
         }
 
         public InputData InputData { get; }
-
-        public void Init(IProtoSystems systems)
-        {
-            _entity = _it.First().Entity;
-        }
 
         public void Run()
         {
@@ -48,10 +42,6 @@ namespace Sources.EcsBoundedContexts.Input.Controllers
             {
                 UpdateMovement(entity);
             }
-        }
-
-        public void Destroy()
-        {
         }
 
         private void UpdateMovement(ProtoEntity entity)

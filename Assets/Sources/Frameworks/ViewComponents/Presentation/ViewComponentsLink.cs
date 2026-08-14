@@ -36,8 +36,8 @@ namespace Sources.Frameworks.ViewComponents.Presentation
                 if (component is not IViewComponent concrete)
                     throw new InvalidOperationException($"This component is not IViewComponent {component.name} in {gameObject.name}");
                 
-                concrete.Init(playerRef);
                 AttributeInjector.Inject(component, container);
+                concrete.Init(playerRef);
             }
         }
 

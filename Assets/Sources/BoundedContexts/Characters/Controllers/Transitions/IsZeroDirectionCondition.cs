@@ -1,9 +1,8 @@
-﻿using Leopotam.EcsProto;
-using NodeCanvas.Framework;
+﻿using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using Sources.BoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
-using Sources.EcsBoundedContexts.Core;
-using Sources.Frameworks.DeepFramework.DeepUtils.Reflections.Attributes;
+using Sources.Frameworks.ViewComponents.Presentation;
 using UnityEngine;
 
 namespace Sources.BoundedContexts.Characters.Controllers.Transitions
@@ -11,13 +10,16 @@ namespace Sources.BoundedContexts.Characters.Controllers.Transitions
     [Category(NcCategoriesConst.Characters)]
     public class IsZeroDirectionCondition : ConditionTask
     {
-        private ProtoEntity _entity;
-        
-        [Construct]
-        private void Construct(ProtoEntity entity) =>
-            _entity = entity;
+        private CharacterMovementViewComponent _movement;
+
+        protected override string OnInit()
+        {
+            ViewComponentsLink link = blackboard.GetVariable<ViewComponentsLink>("_viewComponentsLink").value;
+            _movement = link.Get<CharacterMovementViewComponent>();
+            return null;
+        }
 
         protected override bool OnCheck() =>
-            _entity.GetDirection().Value == Vector3.zero;
+            _movement.CharacterDirection == Vector3.zero;
     }
 }

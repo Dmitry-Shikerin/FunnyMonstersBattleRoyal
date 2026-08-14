@@ -22,52 +22,61 @@ namespace Sources.BoundedContexts.Characters.Presentation.Skins.Body
         private BodySkinChangerUiView _view;
         public PlayerRef PlayerRef { get; private set; }
 
-        public void Construct(BodySkinChangerUiView view)
-        {
+        public void Construct(BodySkinChangerUiView view) =>
             _view = view;
+
+        public void Init(PlayerRef playerRef) =>
+            PlayerRef = playerRef;
+
+        public void SetPreviousSkin()
+        {
+            if (Runner.IsClient)
+            {
+                SetPreviousSkin_Rpc();
+                return;
+            }
+            
+            DecreaseSkinIndex();
         }
 
-        public void Init(PlayerRef playerRef)
+        public void SetNextSkin()
         {
-            PlayerRef = playerRef;
+            if (Runner.IsClient)
+            {
+                SetNextSkin_Rpc();
+                return;
+            }
+            
+            IncreaseSkinIndex();
         }
 
         [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
-        public void SetNextSkin_Rpc()
+        private void SetNextSkin_Rpc() =>
+            IncreaseSkinIndex();
+
+        [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
+        private void SetPreviousSkin_Rpc() =>
+            DecreaseSkinIndex();
+
+        private void IncreaseSkinIndex()
         {
             CurrentIndex++;
             
             if (CurrentIndex >= Enum.GetValues(typeof(BodySkinName)).Length)
-                CurrentIndex = 1; // Зацикливаем
+                CurrentIndex = 1;
         }
 
-        [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority, InvokeLocal = false)]
-        public void SetPreviousSkin_Rpc()
+        private void DecreaseSkinIndex()
         {
             CurrentIndex--;
             
             if (CurrentIndex <= 0)
-                CurrentIndex = Enum.GetValues(typeof(BodySkinName)).Length - 1;// Зацикливаем
+                CurrentIndex = Enum.GetValues(typeof(BodySkinName)).Length - 1;
         }
-
-        // public void SetNextSkin()
-        // {
-        //     CurrentIndex++;
-        //     
-        //     if (CurrentIndex >= Enum.GetValues(typeof(BodySkinName)).Length)
-        //         CurrentIndex = 1; // Зацикливаем
-        // }
-        //
-        // public void SetPreviousSkin()
-        // {
-        //     CurrentIndex--;
-        //     
-        //     if (CurrentIndex <= 0)
-        //         CurrentIndex = Enum.GetValues(typeof(BodySkinName)).Length - 1; // Зацикливаем
-        // }
 
         private void OnChangeSkinIndex()
         {
+            Debug.Log($"On Change Skin");
             CurrentSkinName = (BodySkinName)CurrentIndex;
             SetBodySkin(CurrentSkinName);
 
