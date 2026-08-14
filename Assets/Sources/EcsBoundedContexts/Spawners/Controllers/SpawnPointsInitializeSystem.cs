@@ -7,9 +7,9 @@ using Sources.EcsBoundedContexts.Spawners.Infrastructure.Factories;
 
 namespace Sources.EcsBoundedContexts.Spawners.Controllers
 {
-    [EcsSystem(11)]
-    [ComponentGroup(ComponentGroup.Ability)]
-    [Aspect(AspectName.Game, AspectName.Lobby)]
+    // [EcsSystem(11)]
+    // [ComponentGroup(ComponentGroup.Ability)]
+    // [Aspect(AspectName.Game, AspectName.Lobby)]
     public class SpawnPointsInitializeSystem : IProtoInitSystem
     {
         private readonly RootGameObject _rootGameObject;
@@ -25,8 +25,8 @@ namespace Sources.EcsBoundedContexts.Spawners.Controllers
 
         public void Init(IProtoSystems systems)
         {
-            foreach (EntityLink link in _rootGameObject.CharacterSpawnPoints)
-                _spawnPointEntityFactory.Create(link);
+            // foreach (EntityLink link in _rootGameObject.CharacterSpawnPoints)
+            //     _spawnPointEntityFactory.Create(link);
         }
     }
 }

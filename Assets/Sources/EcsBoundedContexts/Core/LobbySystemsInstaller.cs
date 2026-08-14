@@ -1,10 +1,9 @@
 using Reflex.Core;
 using Reflex.Enums;
 using Sources.EcsBoundedContexts.Settings.Controllers.Data;
-using Sources.EcsBoundedContexts.Players.Controllers.Data;
 using Sources.EcsBoundedContexts.Spawners.Controllers;
 using Sources.EcsBoundedContexts.Settings.Controllers;
-using Sources.EcsBoundedContexts.Characters.Controllers.Systems;
+using Sources.EcsBoundedContexts.Players.Controllers.Data;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -32,14 +31,12 @@ namespace Sources.EcsBoundedContexts.Core
 
 			//Ability
 			containerBuilder.RegisterType(typeof(SettingsLoadSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(PlayerLoadSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(SpawnPointsInitializeSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(ChangedSettingsSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(SettingsSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(PlayerSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//Characters
-			containerBuilder.RegisterType(typeof(CharacterUpdateSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//Enemy
 

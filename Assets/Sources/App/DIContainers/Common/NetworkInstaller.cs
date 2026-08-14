@@ -2,7 +2,7 @@
 using Reflex.Core;
 using Reflex.Enums;
 using Sirenix.OdinInspector;
-using Sources.EcsBoundedContexts.NetworkCore.Services;
+using Sources.BoundedContexts.NetworkCore.Services;
 using UnityEngine;
 
 namespace Sources.App.DIContainers.Common

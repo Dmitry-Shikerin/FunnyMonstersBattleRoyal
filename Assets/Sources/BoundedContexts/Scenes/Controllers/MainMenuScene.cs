@@ -170,7 +170,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private void InitDeepUiBrain()
         {
             UiConfig hudConfig = _assetCollector.Get<UiConfig>();
-            Camera mainCamera = _mainMenuRootGameObjects.MainCamera;
+            UnityEngine.Camera mainCamera = _mainMenuRootGameObjects.MainCamera;
             DeepUiBrain.Instance.Initialize(hudConfig.MainMenuUiConfig, mainCamera, _container);
             FSMOwner fsmOwner = DeepUiBrain.Hud.MainMenuFsmOwner;
             FSM behaviour = fsmOwner.behaviour;

@@ -1,12 +1,5 @@
-﻿using System;
-using Reflex.Core;
+﻿using Reflex.Core;
 using Reflex.Enums;
-using Sources.EcsBoundedContexts.NetworkCore;
-using Sources.EcsBoundedContexts.NetworkCore.Services;
-using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Implementation;
-using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Interfaces;
-using Sources.Frameworks.GameServices.DeepWrappers.Curtains;
-using Sources.Frameworks.GameServices.Prefabs.Domain;
 using Sources.Frameworks.GameServices.SceneLoaderServices.Implementation;
 using Sources.Frameworks.GameServices.Scenes.Services.Implementation;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
@@ -14,7 +7,6 @@ using Sources.InfrastructureInterfaces.Services.SceneLoaderService;
 using UnityEngine;
 using CurtainService = Sources.Frameworks.GameServices.DeepWrappers.Curtains.CurtainService;
 using ICurtainService = Sources.Frameworks.GameServices.DeepWrappers.Curtains.ICurtainService;
-using Object = UnityEngine.Object;
 using Resolution = Reflex.Enums.Resolution;
 
 namespace Sources.App.DIContainers

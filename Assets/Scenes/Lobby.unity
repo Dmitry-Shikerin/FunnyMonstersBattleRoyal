@@ -1057,7 +1057,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 136673309}
-  - component: {fileID: 136673312}
   - component: {fileID: 136673311}
   - component: {fileID: 136673310}
   m_Layer: 0
@@ -1093,10 +1092,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 136673308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f758763a4c4231bc7d3033ee7b89b6, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPointTransform>k__BackingField: {fileID: 1509879701}
+  SortKey: 3012990834
+  SendPriority: 1
+  EnableInterpolation: 1
+  Flags: 262146
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 136673311}
+  ForceRemoteRenderTimeframe: 0
 --- !u!114 &136673311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1106,33 +1112,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 136673308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _worldName: 
-  _authoringType: 1
-  _destroyAfterAuthoring: 0
-  _authFromFactory: 1
-  Components: []
-  references:
-    version: 2
-    RefIds: []
---- !u!114 &136673312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136673308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dd002843574e1ba35c4b84aa191c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _modules:
-  - {fileID: 136673311}
-  - {fileID: 136673310}
-  <InjectBehaviours>k__BackingField: []
+  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  _IsBusy:
+    RawValue: 0
 --- !u!1 &156451288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,7 +1158,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 172881773}
-  - component: {fileID: 172881776}
   - component: {fileID: 172881775}
   - component: {fileID: 172881774}
   m_Layer: 0
@@ -1209,10 +1193,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 172881772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f758763a4c4231bc7d3033ee7b89b6, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPointTransform>k__BackingField: {fileID: 104088554}
+  SortKey: 3971166523
+  SendPriority: 1
+  EnableInterpolation: 1
+  Flags: 262146
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 172881775}
+  ForceRemoteRenderTimeframe: 0
 --- !u!114 &172881775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,33 +1213,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 172881772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _worldName: 
-  _authoringType: 1
-  _destroyAfterAuthoring: 0
-  _authFromFactory: 1
-  Components: []
-  references:
-    version: 2
-    RefIds: []
---- !u!114 &172881776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172881772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dd002843574e1ba35c4b84aa191c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _modules:
-  - {fileID: 172881775}
-  - {fileID: 172881774}
-  <InjectBehaviours>k__BackingField: []
+  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  _IsBusy:
+    RawValue: 0
 --- !u!1 &174913696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,16 +1915,17 @@ MonoBehaviour:
   <MainCamera>k__BackingField: {fileID: 1977074201}
   <CharacterSpawnPoint>k__BackingField: {fileID: 1249172778}
   <CharacterSpawnPoints>k__BackingField:
-  - {fileID: 533012441}
-  - {fileID: 477386798}
-  - {fileID: 265150017}
-  - {fileID: 1648471477}
-  - {fileID: 289558027}
-  - {fileID: 839136711}
-  - {fileID: 1469537998}
-  - {fileID: 817396003}
-  - {fileID: 136673312}
-  - {fileID: 172881776}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  <SpawnPoints>k__BackingField: []
 --- !u!1 &265150013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,7 +1935,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 265150014}
-  - component: {fileID: 265150017}
   - component: {fileID: 265150016}
   - component: {fileID: 265150015}
   m_Layer: 0
@@ -2000,10 +1970,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 265150013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f758763a4c4231bc7d3033ee7b89b6, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPointTransform>k__BackingField: {fileID: 55611665}
+  SortKey: 1408369910
+  SendPriority: 1
+  EnableInterpolation: 1
+  Flags: 262146
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 265150016}
+  ForceRemoteRenderTimeframe: 0
 --- !u!114 &265150016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2013,33 +1990,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 265150013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _worldName: 
-  _authoringType: 1
-  _destroyAfterAuthoring: 0
-  _authFromFactory: 1
-  Components: []
-  references:
-    version: 2
-    RefIds: []
---- !u!114 &265150017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265150013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dd002843574e1ba35c4b84aa191c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _modules:
-  - {fileID: 265150016}
-  - {fileID: 265150015}
-  <InjectBehaviours>k__BackingField: []
+  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  _IsBusy:
+    RawValue: 0
 --- !u!1 &270425930
 GameObject:
   m_ObjectHideFlags: 0
@@ -2188,7 +2144,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 289558024}
-  - component: {fileID: 289558027}
   - component: {fileID: 289558026}
   - component: {fileID: 289558025}
   m_Layer: 0
@@ -2224,10 +2179,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 289558023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f758763a4c4231bc7d3033ee7b89b6, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPointTransform>k__BackingField: {fileID: 57714785}
+  SortKey: 1834682121
+  SendPriority: 1
+  EnableInterpolation: 1
+  Flags: 262146
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 289558026}
+  ForceRemoteRenderTimeframe: 0
 --- !u!114 &289558026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2237,33 +2199,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 289558023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _worldName: 
-  _authoringType: 1
-  _destroyAfterAuthoring: 0
-  _authFromFactory: 1
-  Components: []
-  references:
-    version: 2
-    RefIds: []
---- !u!114 &289558027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289558023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dd002843574e1ba35c4b84aa191c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _modules:
-  - {fileID: 289558026}
-  - {fileID: 289558025}
-  <InjectBehaviours>k__BackingField: []
+  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  _IsBusy:
+    RawValue: 0
 --- !u!1 &290581887
 GameObject:
   m_ObjectHideFlags: 0
@@ -3071,7 +3012,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477386795}
-  - component: {fileID: 477386798}
   - component: {fileID: 477386797}
   - component: {fileID: 477386796}
   m_Layer: 0
@@ -3107,10 +3047,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 477386794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f758763a4c4231bc7d3033ee7b89b6, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPointTransform>k__BackingField: {fileID: 1304604059}
+  SortKey: 600910761
+  SendPriority: 1
+  EnableInterpolation: 1
+  Flags: 262146
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 477386797}
+  ForceRemoteRenderTimeframe: 0
 --- !u!114 &477386797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3120,33 +3067,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 477386794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _worldName: 
-  _authoringType: 1
-  _destroyAfterAuthoring: 0
-  _authFromFactory: 1
-  Components: []
-  references:
-    version: 2
-    RefIds: []
---- !u!114 &477386798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477386794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dd002843574e1ba35c4b84aa191c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _modules:
-  - {fileID: 477386797}
-  - {fileID: 477386796}
-  <InjectBehaviours>k__BackingField: []
+  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  _IsBusy:
+    RawValue: 0
 --- !u!1 &480166368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3385,7 +3311,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 533012438}
-  - component: {fileID: 533012441}
   - component: {fileID: 533012440}
   - component: {fileID: 533012439}
   m_Layer: 0
@@ -3421,10 +3346,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 533012437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f758763a4c4231bc7d3033ee7b89b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPointTransform>k__BackingField: {fileID: 1266102251}
+  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  _IsBusy:
+    RawValue: 0
 --- !u!114 &533012440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3434,33 +3361,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 533012437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _worldName: 
-  _authoringType: 1
-  _destroyAfterAuthoring: 0
-  _authFromFactory: 1
-  Components: []
-  references:
-    version: 2
-    RefIds: []
---- !u!114 &533012441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533012437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dd002843574e1ba35c4b84aa191c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _modules:
-  - {fileID: 533012440}
+  SortKey: 4071453654
+  SendPriority: 1
+  EnableInterpolation: 1
+  Flags: 262146
+  NestedObjects: []
+  NetworkedBehaviours:
   - {fileID: 533012439}
-  <InjectBehaviours>k__BackingField: []
+  ForceRemoteRenderTimeframe: 0
 --- !u!1 &534104476
 GameObject:
   m_ObjectHideFlags: 0
@@ -4730,7 +4641,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 817396000}
-  - component: {fileID: 817396003}
   - component: {fileID: 817396002}
   - component: {fileID: 817396001}
   m_Layer: 0
@@ -4766,10 +4676,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 817395999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f758763a4c4231bc7d3033ee7b89b6, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPointTransform>k__BackingField: {fileID: 1747941967}
+  SortKey: 2835047877
+  SendPriority: 1
+  EnableInterpolation: 1
+  Flags: 262146
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 817396002}
+  ForceRemoteRenderTimeframe: 0
 --- !u!114 &817396002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4779,33 +4696,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 817395999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _worldName: 
-  _authoringType: 1
-  _destroyAfterAuthoring: 0
-  _authFromFactory: 1
-  Components: []
-  references:
-    version: 2
-    RefIds: []
---- !u!114 &817396003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817395999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dd002843574e1ba35c4b84aa191c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _modules:
-  - {fileID: 817396002}
-  - {fileID: 817396001}
-  <InjectBehaviours>k__BackingField: []
+  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  _IsBusy:
+    RawValue: 0
 --- !u!1 &836624945
 GameObject:
   m_ObjectHideFlags: 0
@@ -4923,7 +4819,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 839136708}
-  - component: {fileID: 839136711}
   - component: {fileID: 839136710}
   - component: {fileID: 839136709}
   m_Layer: 0
@@ -4959,10 +4854,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 839136707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f758763a4c4231bc7d3033ee7b89b6, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPointTransform>k__BackingField: {fileID: 761032721}
+  SortKey: 1496946835
+  SendPriority: 1
+  EnableInterpolation: 1
+  Flags: 262146
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 839136710}
+  ForceRemoteRenderTimeframe: 0
 --- !u!114 &839136710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4972,33 +4874,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 839136707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _worldName: 
-  _authoringType: 1
-  _destroyAfterAuthoring: 0
-  _authFromFactory: 1
-  Components: []
-  references:
-    version: 2
-    RefIds: []
---- !u!114 &839136711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839136707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dd002843574e1ba35c4b84aa191c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _modules:
-  - {fileID: 839136710}
-  - {fileID: 839136709}
-  <InjectBehaviours>k__BackingField: []
+  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  _IsBusy:
+    RawValue: 0
 --- !u!1 &839440649
 GameObject:
   m_ObjectHideFlags: 0
@@ -7903,7 +7784,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1469537995}
-  - component: {fileID: 1469537998}
   - component: {fileID: 1469537997}
   - component: {fileID: 1469537996}
   m_Layer: 0
@@ -7939,10 +7819,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1469537994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f758763a4c4231bc7d3033ee7b89b6, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPointTransform>k__BackingField: {fileID: 156451289}
+  SortKey: 329606407
+  SendPriority: 1
+  EnableInterpolation: 1
+  Flags: 262146
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 1469537997}
+  ForceRemoteRenderTimeframe: 0
 --- !u!114 &1469537997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7952,33 +7839,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1469537994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _worldName: 
-  _authoringType: 1
-  _destroyAfterAuthoring: 0
-  _authFromFactory: 1
-  Components: []
-  references:
-    version: 2
-    RefIds: []
---- !u!114 &1469537998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469537994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dd002843574e1ba35c4b84aa191c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _modules:
-  - {fileID: 1469537997}
-  - {fileID: 1469537996}
-  <InjectBehaviours>k__BackingField: []
+  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  _IsBusy:
+    RawValue: 0
 --- !u!1 &1472217058
 GameObject:
   m_ObjectHideFlags: 0
@@ -8718,7 +8584,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1648471474}
-  - component: {fileID: 1648471477}
   - component: {fileID: 1648471476}
   - component: {fileID: 1648471475}
   m_Layer: 0
@@ -8754,10 +8619,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1648471473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f758763a4c4231bc7d3033ee7b89b6, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SpawnPointTransform>k__BackingField: {fileID: 270425931}
+  SortKey: 641470576
+  SendPriority: 1
+  EnableInterpolation: 1
+  Flags: 262146
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 1648471476}
+  ForceRemoteRenderTimeframe: 0
 --- !u!114 &1648471476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8767,33 +8639,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1648471473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 354476cb3ef7448193345b1ae2fb67a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _worldName: 
-  _authoringType: 1
-  _destroyAfterAuthoring: 0
-  _authFromFactory: 1
-  Components: []
-  references:
-    version: 2
-    RefIds: []
---- !u!114 &1648471477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648471473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dd002843574e1ba35c4b84aa191c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _modules:
-  - {fileID: 1648471476}
-  - {fileID: 1648471475}
-  <InjectBehaviours>k__BackingField: []
+  <SpawnPositionTransform>k__BackingField: {fileID: 0}
+  _IsBusy:
+    RawValue: 0
 --- !u!1 &1655207609
 GameObject:
   m_ObjectHideFlags: 0

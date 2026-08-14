@@ -1,12 +1,11 @@
 using Reflex.Core;
 using Reflex.Enums;
+using Sources.BoundedContexts.Characters.Controllers.Systems;
 using Sources.EcsBoundedContexts.AnimatorLod.Controllers;
 using Sources.EcsBoundedContexts.AdvertisingAfterWaves.Controllers;
 using Sources.EcsBoundedContexts.Tutorials.Controllers.Data;
 using Sources.EcsBoundedContexts.Settings.Controllers.Data;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers.Data;
-using Sources.EcsBoundedContexts.Players.Controllers.Data;
-using Sources.EcsBoundedContexts.Characters.Controllers.Systems;
 using Sources.EcsBoundedContexts.Spawners.Controllers;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Controllers.Data;
 using Sources.EcsBoundedContexts.Input.Controllers;
@@ -22,6 +21,7 @@ using Sources.EcsBoundedContexts.Movements.Rotation.Systems;
 using Sources.EcsBoundedContexts.Timers.Infrastructure;
 using Sources.EcsBoundedContexts.Tutorials.Controllers;
 using Sources.EcsBoundedContexts.GameObjects.Controllers;
+using Sources.EcsBoundedContexts.Players.Controllers.Data;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -68,7 +68,6 @@ namespace Sources.EcsBoundedContexts.Core
 			containerBuilder.RegisterType(typeof(TutorialLoadSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(SettingsLoadSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(PlayerWalletLoadSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(PlayerLoadSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(SpawnPointsInitializeSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(ChangedSettingsSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(PlayerWalletSystem), Lifetime.Singleton, Resolution.Lazy);
@@ -82,7 +81,6 @@ namespace Sources.EcsBoundedContexts.Core
 			containerBuilder.RegisterType(typeof(CharacterInitializeSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(InputInitializeSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(InputSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(CharacterUpdateSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//Enemy
 

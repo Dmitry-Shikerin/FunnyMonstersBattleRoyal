@@ -1,6 +1,6 @@
 ﻿using Fusion;
+using Sources.BoundedContexts.NetworkCore.Services;
 using Sources.EcsBoundedContexts.Input.Domain.Data.Network;
-using Sources.EcsBoundedContexts.NetworkCore.Services;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Signals;
 using Sources.Frameworks.DeepFramework.DeepUtils.SignalBuses.StreamBuses.Interfaces;
 using Sources.Frameworks.GameServices.InputServices.InputServices;

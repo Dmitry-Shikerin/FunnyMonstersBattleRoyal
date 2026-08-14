@@ -3,7 +3,7 @@ using Fusion.Menu;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using Reflex.Attributes;
 using Sirenix.OdinInspector;
-using Sources.EcsBoundedContexts.NetworkCore.Services;
+using Sources.BoundedContexts.NetworkCore.Services;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Buttons;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Views;
 using UnityEngine;

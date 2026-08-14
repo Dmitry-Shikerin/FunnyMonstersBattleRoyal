@@ -17,6 +17,7 @@ using Sources.EcsBoundedContexts.Settings.Domain.Data;
 using Sources.EcsBoundedContexts.Settings.Domain.Components.Volume;
 using Sources.EcsBoundedContexts.Settings.Presentation;
 using Sources.EcsBoundedContexts.Settings.Domain.Components.Parts;
+using Sources.EcsBoundedContexts.Settings.Domain.Enums;
 using Sources.EcsBoundedContexts.Settings.Domain.Components.Modules;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
@@ -60,7 +61,7 @@ using Sources.EcsBoundedContexts.Animators;
 using Sources.EcsBoundedContexts.AnimatorLod.Domain.Components;
 using Sources.EcsBoundedContexts.Animancers.Domain.Components;
 using Animancer;
-using Sources.EcsBoundedContexts.Settings.Domain.Enums;
+using Sources.BoundedContexts.Characters.Presentation.Skins;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -443,12 +444,12 @@ namespace Sources.EcsBoundedContexts.Core
 			resolutionComponent.RefreshRate = refreshRate;
 		}
 
-		public static ref ResolutionComponent AddResolution(this ProtoEntity entity, int width, int heigth, int refrashRate)
+		public static ref ResolutionComponent AddResolution(this ProtoEntity entity, int width, int height, int refreshRate)
 		{
 			ref ResolutionComponent resolutionComponent = ref s_GameAspect.Resolution.Add(entity);
 			resolutionComponent.Width = width;
-			resolutionComponent.Height = heigth;
-			resolutionComponent.RefreshRate = refrashRate;
+			resolutionComponent.Height = height;
+			resolutionComponent.RefreshRate = refreshRate;
 			return ref resolutionComponent;
 		}
 
@@ -2085,6 +2086,19 @@ namespace Sources.EcsBoundedContexts.Core
 		public static void DelInPool(this ProtoEntity entity)
 			=> s_GameAspect.InPool.Del(entity);
 
+		//NetworkMain
+		public static bool HasNetworkMain(this ProtoEntity entity) =>
+			s_GameAspect.NetworkMain.Has(entity);
+
+		public static ref NetworkMainComponent AddNetworkMain(this ProtoEntity entity)
+		{
+			ref NetworkMainComponent networkMainComponent = ref s_GameAspect.NetworkMain.Add(entity);
+			return ref networkMainComponent;
+		}
+
+		public static void DelNetworkMain(this ProtoEntity entity)
+			=> s_GameAspect.NetworkMain.Del(entity);
+
 		//RigidBody
 		public static bool HasRigidBody(this ProtoEntity entity) =>
 			s_GameAspect.RigidBody.Has(entity);
@@ -2237,6 +2251,29 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelCharacterConfig(this ProtoEntity entity)
 			=> s_GameAspect.CharacterConfig.Del(entity);
+
+		//CharacterEntity
+		public static bool HasCharacterEntity(this ProtoEntity entity) =>
+			s_GameAspect.CharacterEntity.Has(entity);
+
+		public static ref CharacterEntityComponent GetCharacterEntity(this ProtoEntity entity) =>
+			ref s_GameAspect.CharacterEntity.Get(entity);
+
+		public static void ReplaceCharacterEntity(this ProtoEntity entity, ProtoEntity value)
+		{
+			ref CharacterEntityComponent characterEntityComponent = ref s_GameAspect.CharacterEntity.Get(entity);
+			characterEntityComponent.Value = value;
+		}
+
+		public static ref CharacterEntityComponent AddCharacterEntity(this ProtoEntity entity, ProtoEntity value)
+		{
+			ref CharacterEntityComponent characterEntityComponent = ref s_GameAspect.CharacterEntity.Add(entity);
+			characterEntityComponent.Value = value;
+			return ref characterEntityComponent;
+		}
+
+		public static void DelCharacterEntity(this ProtoEntity entity)
+			=> s_GameAspect.CharacterEntity.Del(entity);
 
 		//CharacterModule
 		public static bool HasCharacterModule(this ProtoEntity entity) =>
@@ -2428,6 +2465,29 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelJumping(this ProtoEntity entity)
 			=> s_GameAspect.Jumping.Del(entity);
+
+		//PlayerEntity
+		public static bool HasPlayerEntity(this ProtoEntity entity) =>
+			s_GameAspect.PlayerEntity.Has(entity);
+
+		public static ref PlayerEntityComponent GetPlayerEntity(this ProtoEntity entity) =>
+			ref s_GameAspect.PlayerEntity.Get(entity);
+
+		public static void ReplacePlayerEntity(this ProtoEntity entity, ProtoEntity value)
+		{
+			ref PlayerEntityComponent playerEntityComponent = ref s_GameAspect.PlayerEntity.Get(entity);
+			playerEntityComponent.Value = value;
+		}
+
+		public static ref PlayerEntityComponent AddPlayerEntity(this ProtoEntity entity, ProtoEntity value)
+		{
+			ref PlayerEntityComponent playerEntityComponent = ref s_GameAspect.PlayerEntity.Add(entity);
+			playerEntityComponent.Value = value;
+			return ref playerEntityComponent;
+		}
+
+		public static void DelPlayerEntity(this ProtoEntity entity)
+			=> s_GameAspect.PlayerEntity.Del(entity);
 
 		//PlayerRef
 		public static bool HasPlayerRef(this ProtoEntity entity) =>

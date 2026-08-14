@@ -1,5 +1,6 @@
 ﻿using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
+using Sources.EcsBoundedContexts.Common.Domain.Components;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Core.Domain;
@@ -21,11 +22,13 @@ namespace Sources.EcsBoundedContexts.Players.Controllers.Data
         [DI] private readonly ProtoIt _saveIt = new(
             It.Inc<
                 PlayerTag,
-                SaveDataEvent>());
+                SaveDataEvent,
+                NetworkMainComponent>());
         [DI] private readonly ProtoIt _clearIt = new(
             It.Inc<
                 PlayerTag,
-                ClearDataEvent>());
+                ClearDataEvent,
+                NetworkMainComponent>());
 
         public PlayerSaveSystem(IDataService dataService)
         {
@@ -41,7 +44,7 @@ namespace Sources.EcsBoundedContexts.Players.Controllers.Data
                 PlayerSaveData data = new PlayerSaveData
                 {
                     Id = IdsConst.Player,
-                    Name = name,
+                    PlayerName = name,
                 };
                 _dataService.SaveData(data, IdsConst.Player);
             }

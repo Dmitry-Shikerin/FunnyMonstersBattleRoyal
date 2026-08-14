@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using Sirenix.OdinInspector;
+using Sources.BoundedContexts.Characters.Presentation.Skins.Body;
+using Sources.BoundedContexts.Characters.Presentation.Skins.BodyPart;
+using Sources.BoundedContexts.Characters.Presentation.Skins.Eye;
+using Sources.BoundedContexts.Characters.Presentation.Skins.Glove;
+using Sources.BoundedContexts.Characters.Presentation.Skins.Head;
+using Sources.BoundedContexts.Characters.Presentation.Skins.MounthandNoses;
+using Sources.BoundedContexts.Characters.Presentation.Skins.Tail;
 using Sources.EcsBoundedContexts.Characters.Domain.Enums;
 using UnityEngine;
 
@@ -14,7 +21,7 @@ namespace Sources.EcsBoundedContexts.Characters.Presentation.Skins
         [Required] [SerializeField] private List<BodyPartSkinView> _bodyPartSkinViews;
         [Required] [SerializeField] private List<BodySkinView> _bodySkinViews;
         [Required] [SerializeField] private List<GloveSkinView> _gloveSkinViews;
-        [Required] [SerializeField] private List<MouthandNosesView> _gloveMouthandNosesViews;
+        [Required] [SerializeField] private List<MouthandNosesSkinView> _gloveMouthandNosesViews;
         [Required] [SerializeField] private List<TailSkinView> _tailSkinViews;
 
         public void SetHeadSkin(HeadSkinName nextSkinName)
@@ -122,7 +129,7 @@ namespace Sources.EcsBoundedContexts.Characters.Presentation.Skins
             if (nextSkinName == MouthandNosesSkinName.Default)
                 throw new InvalidOperationException("Not correct skin name");
             
-            foreach (MouthandNosesView view in _gloveMouthandNosesViews)
+            foreach (MouthandNosesSkinView view in _gloveMouthandNosesViews)
             {
                 if (view.Name == MouthandNosesSkinName.Default)
                     throw new InvalidOperationException("Not correct skin name in BodyPartSkinView");

@@ -1,13 +1,13 @@
 ﻿using Reflex.Core;
 using Reflex.Enums;
 using Sirenix.OdinInspector;
+using Sources.BoundedContexts.Characters.Infrastructure;
+using Sources.BoundedContexts.NetworkCore.Services;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories;
 using Sources.EcsBoundedContexts.Characters.Infrastructure;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Input.Infrastructure.Services;
-using Sources.EcsBoundedContexts.NetworkCore.Services;
-using Sources.Frameworks.GameServices.InputServices;
 using Sources.Frameworks.GameServices.InputServices.InputServices;
 using Sources.Frameworks.GameServices.Prefabs.Implementation.Composites;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces.Composites;
@@ -31,6 +31,7 @@ namespace Sources.App.DIContainers.Lobby
             
             containerBuilder.RegisterType(typeof(NewInputService), new [] { typeof(IInputService) }, Lifetime.Singleton, Reflex.Enums.Resolution.Lazy);
             
+            containerBuilder.RegisterType(typeof(EcsCharacterFactory), Lifetime.Singleton, Reflex.Enums.Resolution.Lazy);
             containerBuilder.RegisterType(typeof(CharacterFactory), Lifetime.Singleton, Reflex.Enums.Resolution.Lazy);
             
             //ECS

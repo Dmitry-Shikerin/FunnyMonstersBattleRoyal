@@ -89,6 +89,7 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<InitializedComponent> Initialized = new ();
 		public readonly ProtoPool<InitializeEvent> InitializeEvent = new ();
 		public readonly ProtoPool<InPoolComponent> InPool = new ();
+		public readonly ProtoPool<NetworkMainComponent> NetworkMain = new ();
 		public readonly ProtoPool<RigidBodyComponent> RigidBody = new ();
 		public readonly ProtoPool<ScaleComponent> Scale = new ();
 		public readonly ProtoPool<SequenceComponent> Sequence = new ();
@@ -175,6 +176,7 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<AttackPowerComponent> AttackPower = new ();
 		public readonly ProtoPool<AirComponent> Air = new ();
 		public readonly ProtoPool<CharacterConfigComponent> CharacterConfig = new ();
+		public readonly ProtoPool<CharacterEntityComponent> CharacterEntity = new ();
 		public readonly ProtoPool<CharacterModuleComponent> CharacterModule = new ();
 		public readonly ProtoPool<CharacterSkinChangerModuleComponent> CharacterSkinChangerModule = new ();
 		public readonly ProtoPool<CharacterTag> Character = new ();
@@ -184,6 +186,7 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<InputEntityComponent> InputEntity = new ();
 		public readonly ProtoPool<JumpImpulseDirectionComponent> JumpImpulseDirection = new ();
 		public readonly ProtoPool<JumpingComponent> Jumping = new ();
+		public readonly ProtoPool<PlayerEntityComponent> PlayerEntity = new ();
 		public readonly ProtoPool<PlayerRefComponent> PlayerRef = new ();
 		public readonly ProtoPool<SpeedComponent> Speed = new ();
 		public readonly ProtoPool<TargetGravityComponent> TargetGravity = new ();
@@ -299,6 +302,7 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<InitializedComponent>)] = Initialized,
 				[typeof(ProtoPool<InitializeEvent>)] = InitializeEvent,
 				[typeof(ProtoPool<InPoolComponent>)] = InPool,
+				[typeof(ProtoPool<NetworkMainComponent>)] = NetworkMain,
 				[typeof(ProtoPool<RigidBodyComponent>)] = RigidBody,
 				[typeof(ProtoPool<ScaleComponent>)] = Scale,
 				[typeof(ProtoPool<SequenceComponent>)] = Sequence,
@@ -306,6 +310,7 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<TransformComponent>)] = Transform,
 				[typeof(ProtoPool<AirComponent>)] = Air,
 				[typeof(ProtoPool<CharacterConfigComponent>)] = CharacterConfig,
+				[typeof(ProtoPool<CharacterEntityComponent>)] = CharacterEntity,
 				[typeof(ProtoPool<CharacterModuleComponent>)] = CharacterModule,
 				[typeof(ProtoPool<CharacterSkinChangerModuleComponent>)] = CharacterSkinChangerModule,
 				[typeof(ProtoPool<CharacterTag>)] = Character,
@@ -315,6 +320,7 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<InputEntityComponent>)] = InputEntity,
 				[typeof(ProtoPool<JumpImpulseDirectionComponent>)] = JumpImpulseDirection,
 				[typeof(ProtoPool<JumpingComponent>)] = Jumping,
+				[typeof(ProtoPool<PlayerEntityComponent>)] = PlayerEntity,
 				[typeof(ProtoPool<PlayerRefComponent>)] = PlayerRef,
 				[typeof(ProtoPool<SpeedComponent>)] = Speed,
 				[typeof(ProtoPool<TargetGravityComponent>)] = TargetGravity,

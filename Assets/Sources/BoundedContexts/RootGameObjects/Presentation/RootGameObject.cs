@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using Sirenix.OdinInspector;
+using Sources.BoundedContexts.Camera.Presentation;
+using Sources.BoundedContexts.Spawners.Presentation;
 using UnityEngine;
 
 namespace Sources.BoundedContexts.RootGameObjects.Presentation
@@ -12,9 +15,27 @@ namespace Sources.BoundedContexts.RootGameObjects.Presentation
         
         [field: FoldoutGroup(CameraFolder)]
         [field: SerializeField] public EntityLink MainCamera { get; private set; }
+        [field: SerializeField] public CameraView Camera { get; private set; }
         
         [field: FoldoutGroup("Character")]
-        [field: SerializeField] public Transform CharacterSpawnPoint { get; private set; }
-        [field: SerializeField] public List<EntityLink> CharacterSpawnPoints { get; private set; }
+        //[field: SerializeField] public Transform CharacterSpawnPoint { get; private set; }
+        //[field: SerializeField] public List<EntityLink> CharacterSpawnPoints { get; private set; }
+        [field: SerializeField] public List<SpawnPointView> SpawnPoints { get; private set; }
+
+        public SpawnPointView GetAvailableSpawnPoint()
+        {
+            foreach (SpawnPointView spawnPoint in SpawnPoints)
+            {
+                if (spawnPoint == null)
+                    throw new NullReferenceException();
+
+                if (spawnPoint.IsBusy)
+                    continue;
+
+                return spawnPoint;
+            }
+
+            throw new InvalidOperationException();
+        }
     }
 }

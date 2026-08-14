@@ -18,7 +18,7 @@ namespace Sources.EcsBoundedContexts.Players.Controllers.Data
 {
     [EcsSystem(10)]
     [ComponentGroup(ComponentGroup.Ability)]
-    [Aspect(AspectName.MainMenu, AspectName.Game, AspectName.Lobby)]
+    [Aspect(AspectName.MainMenu)]
     public class PlayerLoadSystem : IProtoInitSystem
     {
         private readonly ISceneService _sceneService;
@@ -67,8 +67,8 @@ namespace Sources.EcsBoundedContexts.Players.Controllers.Data
             
             //Load
             PlayerSaveData playerSaveData = _dataService.LoadData<PlayerSaveData>(IdsConst.Player);
-            module.InitPlayerName(playerSaveData.Name);
-            player.ReplacePlayerName(playerSaveData.Name);
+            module.InitPlayerName(playerSaveData.PlayerName);
+            player.ReplacePlayerName(playerSaveData.PlayerName);
         }
 
         private void LoadMainMenu()
@@ -87,8 +87,8 @@ namespace Sources.EcsBoundedContexts.Players.Controllers.Data
             
             //Load
             PlayerSaveData playerSaveData = _dataService.LoadData<PlayerSaveData>(IdsConst.Player);
-            module.InitPlayerName(playerSaveData.Name);
-            player.ReplacePlayerName(playerSaveData.Name);
+            module.InitPlayerName(playerSaveData.PlayerName);
+            player.ReplacePlayerName(playerSaveData.PlayerName);
         }
     }
 }

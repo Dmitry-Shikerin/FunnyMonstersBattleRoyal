@@ -1,14 +1,13 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using Fusion;
+using Sources.BoundedContexts.NetworkCore.Services;
 using Sources.Frameworks.DeepFramework.DeepCores.Domain.Constants;
 using Sources.Frameworks.GameServices.Scenes.Domain.Implementation;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
-using Sources.EcsBoundedContexts.NetworkCore;
-using Sources.EcsBoundedContexts.NetworkCore.Services;
 
 namespace Sources.App.Core
 {

@@ -2,13 +2,13 @@
 using NodeCanvas.StateMachines;
 using Reflex.Core;
 using Reflex.Injectors;
+using Sources.BoundedContexts.NetworkCore.Services;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.EcsBoundedContexts.Animancers.Extension;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
-using Sources.EcsBoundedContexts.NetworkCore.Services;
 using Sources.EcsBoundedContexts.Spawners.Infrastructure.Services;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
@@ -91,7 +91,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 
         public async void Enter(object payload = null)
         {
-            _inputService.Initialize();
+            //_inputService.Initialize();
             _focusService.Initialize();
             await _compositeAssetService.LoadAsync(ResourcesPrefabPath.ResourcesAssetsConfig, AddressablesPrefabPath.AddressablesAssetConfig);
             ColliderExt.Construct(_entityRepository);
@@ -115,7 +115,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 
         public void Exit()
         {
-            _inputService.Destroy();
+            //_inputService.Destroy();
             //_soundService.Stop(SoundName.GameplayBackgroundMusic);
             _soundService.Destroy();
             _ecsGameStartUp.Destroy();
@@ -146,7 +146,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         {
             UiConfig hudConfig = _assetCollector.Get<UiConfig>();
             //что бы камера не была пустой
-            Camera mainCamera = Camera.main;
+            UnityEngine.Camera mainCamera = UnityEngine.Camera.main;
             //TODO возможно разделить на отдельную сцену
             UiManagerConfig managerConfig = _sceneService.CurrentSceneName == IdsConst.Gameplay
                 ? hudConfig.GameUiConfig

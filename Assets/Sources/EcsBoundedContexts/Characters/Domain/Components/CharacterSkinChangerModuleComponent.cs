@@ -1,4 +1,5 @@
-﻿using Sources.EcsBoundedContexts.Characters.Presentation.Skins;
+﻿using Sources.BoundedContexts.Characters.Presentation.Skins;
+using Sources.EcsBoundedContexts.Characters.Presentation.Skins;
 using Sources.EcsBoundedContexts.Core.Domain;
 
 namespace Sources.EcsBoundedContexts.Characters.Domain.Components

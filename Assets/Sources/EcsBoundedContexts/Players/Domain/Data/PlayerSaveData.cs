@@ -4,7 +4,7 @@ namespace Sources.EcsBoundedContexts.Players.Domain.Data
 {
     public struct PlayerSaveData : IEntitySaveData
     {
-        public string Name { get; set; }
+        public string PlayerName { get; set; }
         public string Id { get; set; }
     }
 }

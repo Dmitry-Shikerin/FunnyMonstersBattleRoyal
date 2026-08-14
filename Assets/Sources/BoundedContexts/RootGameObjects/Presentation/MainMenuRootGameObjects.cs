@@ -8,7 +8,7 @@ namespace Sources.BoundedContexts.RootGameObjects.Presentation
         private const string CameraFolder = "Camera";
         
         [field: FoldoutGroup(CameraFolder)]
-        [field: SerializeField] public Camera MainCamera { get; private set; }        
+        [field: SerializeField] public UnityEngine.Camera MainCamera { get; private set; }        
         [field: SerializeField] public GameObject BlackScreen { get; private set; }
     }
 }

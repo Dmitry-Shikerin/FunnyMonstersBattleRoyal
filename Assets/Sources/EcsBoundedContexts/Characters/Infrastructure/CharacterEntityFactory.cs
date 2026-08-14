@@ -1,6 +1,7 @@
 ﻿using Leopotam.EcsProto;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using Reflex.Core;
+using Sources.BoundedContexts.Characters.Presentation.Skins;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.Characters.Presentation;
 using Sources.EcsBoundedContexts.Characters.Presentation.Skins;
