@@ -68,22 +68,43 @@ namespace Sources.BoundedContexts.Characters.Infrastructure
                 }
             }
             
-            InitFsm(viewComponentsLink);
+            InitFsm(viewComponentsLink, runner);
 
             return networkObject;
         }
 
-        public void ClientCreate(NetworkObject playerValue, PlayerRef playerKey, NetworkRunner networkRunner)
+        public void ClientCreate(NetworkObject networkObject, PlayerRef playerRef, NetworkRunner runner)
         {
-            throw new System.NotImplementedException();
+            ViewComponentsLink viewComponentsLink = networkObject.GetComponent<ViewComponentsLink>();
+            viewComponentsLink.Init(playerRef, _container);
+            Debug.Log($"Client create");
+            
+            if (runner.LocalPlayer == playerRef)
+            {
+                //InitCamera
+                _rootGameObject.Camera.SetFollow(VirtualCameraType.ThirdPerson, networkObject.transform);
+                
+                //Init lobby ui
+                if (_sceneService.CurrentSceneName == IdsConst.Lobby)
+                {
+                    //Skin changers
+                    ConstructSkinChangers(viewComponentsLink);
+                }
+            }
+            
+            InitFsm(viewComponentsLink, runner);
         }
 
-        private void InitFsm(ViewComponentsLink viewComponentsLink)
+        private void InitFsm(ViewComponentsLink viewComponentsLink, NetworkRunner runner)
         {
             FSMOwner fsmOwner = viewComponentsLink.Get<CharacterMovementViewComponent>().FsmOwner;
             fsmOwner.InjectOwner(_container);
             FSM behaviour = fsmOwner.behaviour;
             behaviour.Initialize(behaviour.agent, behaviour.blackboard, true, false);
+
+            if (runner.IsClient)
+                return;
+            
             fsmOwner.StartBehaviour();
         }
 

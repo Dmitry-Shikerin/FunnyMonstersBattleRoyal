@@ -10,6 +10,7 @@ namespace Sources.BoundedContexts.Hud.Controllers.Gameplay
     public class GameplayUiState : UiViewStateBase
     {
         protected override bool IsHideAllViewsEntered { get; } = true;
+        protected override bool IsHideAllPopUpsEntered { get; } = true;
 
         protected override void AddEnterShowedViews(List<UiViewId> viewIds)
         {

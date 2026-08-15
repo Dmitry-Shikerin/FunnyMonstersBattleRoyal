@@ -21,7 +21,6 @@ namespace Sources.BoundedContexts.Characters.Controllers.States
     {
         private CharacterMovementViewComponent _movement;
         private CharacterConfig _config;
-        private LinearMixerState _state;
         private AnimationViewComponent _animation;
         private NetworkRunner _runner;
 
@@ -42,19 +41,12 @@ namespace Sources.BoundedContexts.Characters.Controllers.States
         protected override void OnEnter()
         {
             _movement.Gravity = _config.IdleGravity;
-            AnimancerState state = _animation.Play(AnimationName.Walk);
-
-            if (state is not LinearMixerState linearMixerState)
-                throw new InvalidOperationException();
-
-            _state = linearMixerState;
-            _animation.Play_Rpc((int)AnimationName.Walk);
+            _animation.PlayAnim(AnimationName.Walk);
         }
 
         protected override void OnUpdate()
         {
-            //TODO в RPC тоже нужно изменять скорость анимации
-            _state.Parameter = _movement.CharacterSpeed.Normalize(0, _config.Speed);
+            _animation.AnimationSpeed = _movement.CharacterSpeed.Normalize(0, _config.Speed);
             Vector3 direction = _movement.CharacterDirection.normalized * (_movement.CharacterSpeed * _runner.DeltaTime);
             //гравитация
             direction.y = _movement.Gravity;

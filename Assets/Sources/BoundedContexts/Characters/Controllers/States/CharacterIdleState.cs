@@ -33,8 +33,7 @@ namespace Sources.BoundedContexts.Characters.Controllers.States
 
         protected override void OnEnter()
         {
-            _animation.Play(AnimationName.Idle);
-            _animation.Play_Rpc((int)AnimationName.Idle);
+            _animation.PlayAnim(AnimationName.Idle);
             _movement.CharacterSpeed = 0;
             _movement.Gravity = _config.IdleGravity;
         }

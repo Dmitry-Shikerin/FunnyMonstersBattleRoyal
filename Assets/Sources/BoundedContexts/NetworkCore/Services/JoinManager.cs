@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Fusion;
 using Reflex.Attributes;
 using Sirenix.OdinInspector;
 using Sources.BoundedContexts.Characters.Infrastructure;
 using Sources.EcsBoundedContexts.Spawners.Infrastructure.Services;
-using Sources.Frameworks.GameServices.Prefabs.Interfaces;
 using UnityEngine;
 
 namespace Sources.BoundedContexts.NetworkCore.Services
@@ -20,21 +18,18 @@ namespace Sources.BoundedContexts.NetworkCore.Services
 
         private NetworkCallbacksReceiver _callbackReceiver;
         private static CharacterFactory _factory;
-        private IAssetCollector _assetCollector;
-        private NetworkRunner _networkRunner;
         private bool _isInitialized;
         private SpawnPointEntitiesProvider _spawnPointEntitiesProvider;
 
         [Inject]
-        private void Construct(CharacterFactory factory, IAssetCollector assetCollector)
+        private void Construct(CharacterFactory factory)
         {
             _factory = factory;
-            _assetCollector = assetCollector;
         }
 
         public override void Spawned()
         {
-            InitRunner();
+            _callbackReceiver = NetworkRunnerProvider.NetworkCallbacksReceiver;
             _callbackReceiver.PlayerJoined += PlayerJoined;
             _callbackReceiver.PlayerLeft += PlayerLeft;
         }
@@ -45,28 +40,61 @@ namespace Sources.BoundedContexts.NetworkCore.Services
             _callbackReceiver.PlayerLeft -= PlayerLeft;
         }
 
-        public override void FixedUpdateNetwork()
+        public override void FixedUpdateNetwork() =>
+            ServerFreedomQueue();
+
+        public void Update() =>
+            ClientFreedomQueue();
+
+        public void Initialize()
         {
-            if (_networkRunner.IsClient)
+            FillClientQueue();
+            _isInitialized = true;
+        }
+
+        private void ClientFreedomQueue()
+        {
+            if (_isInitialized == false)
+                return;
+            
+            if (Runner.IsClient == false)
+                return;
+            
+            for (int i = _joinedQueue.Count - 1; i >= 0; i--)
+            {
+                PlayerRef player = _joinedQueue.Dequeue();
+
+                if (Players.TryGet(player, out NetworkObject playerObject) == false)
+                    return;
+                
+                _factory.ClientCreate(playerObject, player, Runner);
+                Players.Add(player, playerObject);
+            }
+        }     
+        
+        private void ServerFreedomQueue()
+        {
+            if (Runner.IsClient)
                 return;
             
             if (_isInitialized == false)
                 return;
 
-            FreedomQueue();
+            for (int i = _joinedQueue.Count - 1; i >= 0; i--)
+            {
+                PlayerRef player = _joinedQueue.Dequeue();
+                NetworkObject playerObject = _factory.ServerCreate(_playerPrefab, player, Runner);
+                Players.Add(player, playerObject);
+            }
         }
-
-        public async void Initialize()
-        {
-            _isInitialized = true;
-            CreatePlayerEntities();
-        }
-
+        
         private void PlayerJoined(PlayerRef player)
         {
-            if (_networkRunner.IsClient)
+            if (Runner.IsClient)
             {
-                //Todo добавить логику создания энтити на клиенте
+                if (_isInitialized)
+                    _joinedQueue.Enqueue(player);
+                
                 return;
             }
             
@@ -75,38 +103,22 @@ namespace Sources.BoundedContexts.NetworkCore.Services
 
         private void PlayerLeft(PlayerRef player)
         {
-            if (_networkRunner.IsClient)
+            if (Runner.IsClient)
                 return;
 
             if (Players.Remove(player, out NetworkObject playerObject) == false)
                 return;
 
-            _networkRunner.Despawn(playerObject);
+            Runner.Despawn(playerObject);
         }
 
-        private void FreedomQueue()
-        {
-            for (int i = _joinedQueue.Count - 1; i >= 0; i--)
-            {
-                PlayerRef player = _joinedQueue.Dequeue();
-                NetworkObject playerObject = _factory.ServerCreate(_playerPrefab, player, _networkRunner);
-                Players.Add(player, playerObject);
-            }
-        }
-
-        private void CreatePlayerEntities()
+        private void FillClientQueue()
         {
             if (Runner.IsClient == false)
                 return;
 
             foreach (KeyValuePair<PlayerRef, NetworkObject> player in Players)
-                _factory.ClientCreate(player.Value, player.Key, _networkRunner);
-        }
-
-        private void InitRunner()
-        {
-            _networkRunner = NetworkRunnerProvider.Runner ?? throw new NullReferenceException("Runner null");
-            _callbackReceiver = NetworkRunnerProvider.NetworkCallbacksReceiver;
+                _joinedQueue.Enqueue(player.Key);
         }
     }
 }

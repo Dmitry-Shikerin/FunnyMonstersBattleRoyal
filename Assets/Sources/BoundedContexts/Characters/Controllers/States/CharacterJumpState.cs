@@ -40,17 +40,12 @@ namespace Sources.BoundedContexts.Characters.Controllers.States
         
         protected override void OnEnter()
         {
-            _animation.Play(AnimationName.StartJump);
-            _animation.Play_Rpc((int)AnimationName.StartJump);
+            _animation.PlayAnim(AnimationName.StartJump);
             _movement.IsJumping = true;
             _movement.JumpTimer = _config.ChangeJumpGravityDuration;
             _movement.JumpImpulseDirection = _input.MovementDirection;
             DOVirtual
-                .Float(
-                    _movement.Gravity,
-                    _config.JumpGravity,
-                    _config.ChangeJumpGravityDuration,
-                    value => _movement.Gravity = value)
+                .Float(_movement.Gravity, _config.JumpGravity, _config.ChangeJumpGravityDuration, value => _movement.Gravity = value)
                 .SetEase(_config.ChangeJumpGravityEase);
         }
 

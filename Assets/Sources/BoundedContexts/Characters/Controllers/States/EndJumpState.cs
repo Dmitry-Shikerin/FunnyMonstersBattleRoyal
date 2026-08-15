@@ -24,8 +24,7 @@ namespace Sources.BoundedContexts.Characters.Controllers.States
         
         protected override void OnEnter()
         {
-            _animation.Play(AnimationName.EndJump);
-            _animation.Play_Rpc((int)AnimationName.EndJump);
+            _animation.PlayAnim(AnimationName.EndJump);
             DOVirtual.DelayedCall(0.25f, Finish);
         }
 

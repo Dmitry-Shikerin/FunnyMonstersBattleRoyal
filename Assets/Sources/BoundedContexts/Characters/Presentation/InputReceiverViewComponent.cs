@@ -16,8 +16,7 @@ namespace Sources.BoundedContexts.Characters.Presentation
         public PlayerRef PlayerRef { get; private set; }
 
         public event Action OnJump;
-
-
+        
         public void Init(PlayerRef playerRef)
         {
             PlayerRef = playerRef;
@@ -25,9 +24,6 @@ namespace Sources.BoundedContexts.Characters.Presentation
 
         public override void FixedUpdateNetwork()
         {
-            if (Runner.IsClient)
-                return;
-            
             if (GetInput(out NetworkInputData inputData) == false)
                 return;
 

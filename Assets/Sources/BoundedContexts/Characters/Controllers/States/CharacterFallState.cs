@@ -40,15 +40,12 @@ namespace Sources.BoundedContexts.Characters.Controllers.States
         
         protected override void OnEnter()
         {
-            _animation.Play(AnimationName.AirJump);
-            _animation.Play_Rpc((int)AnimationName.AirJump);
+            _animation.PlayAnim(AnimationName.AirJump);
             
             _movement.IsAir = true;
             
             DOVirtual
-                .Float(
-                    _movement.Gravity,
-                    _config.FallGravity,
+                .Float(_movement.Gravity, _config.FallGravity,
                     _config.ChangeFallGravityDuration,
                     value => _movement.Gravity = value)
                 .SetEase(_config.ChangeFallGravityEase);
