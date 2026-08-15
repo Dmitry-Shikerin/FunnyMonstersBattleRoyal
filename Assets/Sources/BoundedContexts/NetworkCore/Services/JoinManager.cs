@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Fusion;
 using Reflex.Attributes;
 using Sirenix.OdinInspector;
@@ -11,20 +12,27 @@ namespace Sources.BoundedContexts.NetworkCore.Services
     public class JoinManager : NetworkBehaviour
     {
         [Required] [SerializeField] private NetworkPrefabRef _playerPrefab;
-        [Networked] 
+        [Networked]
         [Capacity(10)]
+        [OnChangedRender(nameof(ChangePlayers))]
         private NetworkDictionary<PlayerRef, NetworkObject> Players => default;
         private readonly Queue<PlayerRef> _joinedQueue = new();
+        private readonly List<NetworkObject> _playersObjects = new();
 
         private NetworkCallbacksReceiver _callbackReceiver;
         private static CharacterFactory _factory;
         private bool _isInitialized;
         private SpawnPointEntitiesProvider _spawnPointEntitiesProvider;
 
+        public IReadOnlyList<NetworkObject> PlayersObjects => _playersObjects;
+        
+        public event Action OnPlayersChanged;
+
         [Inject]
         private void Construct(CharacterFactory factory)
         {
             _factory = factory;
+            Debug.Log($"Construct");
         }
 
         public override void Spawned()
@@ -119,6 +127,16 @@ namespace Sources.BoundedContexts.NetworkCore.Services
 
             foreach (KeyValuePair<PlayerRef, NetworkObject> player in Players)
                 _joinedQueue.Enqueue(player.Key);
+        }
+
+        private void ChangePlayers()
+        {
+            _playersObjects.Clear();
+            
+            foreach (KeyValuePair<PlayerRef, NetworkObject> player in Players)
+                _playersObjects.Add(player.Value);
+            
+            OnPlayersChanged?.Invoke();
         }
     }
 }

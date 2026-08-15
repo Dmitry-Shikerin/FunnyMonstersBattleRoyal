@@ -40,10 +40,6 @@ namespace Sources.EcsBoundedContexts.Common.Domain.Constants
 
         public static IReadOnlyDictionary<string, EntityData> AllIds { get; } = new Dictionary<string, EntityData>()
         {
-            [DailyReward] = new (DailyReward, typeof(DailyRewardSaveData), false),
-            [PlayerWallet] = new (PlayerWallet, typeof(PlayerWalletSaveData), true),
-            [KillEnemyCounter] = new (KillEnemyCounter, typeof(KillEnemyCounterSaveData), true),
-            [Tutorial] = new (Tutorial, typeof(TutorialSaveData), false),
             [Player] = new (Player, typeof(PlayerSaveData), false),
             [Settings] = new (Settings, typeof(SettingsSaveData), false),
         };

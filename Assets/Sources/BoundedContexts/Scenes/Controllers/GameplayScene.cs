@@ -34,7 +34,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 {
     public class GameplayScene : IScene
     {
-        private JoinManager _joinManager;
+        private readonly JoinManager _joinManager;
         private readonly SpawnPointEntitiesProvider _spawnPointEntitiesProvider;
         private readonly ISceneService _sceneService;
         private readonly IInputService _inputService;
@@ -55,6 +55,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private bool _isLoaded;
 
         public GameplayScene(
+            JoinManager joinManager,
             ISceneService sceneService,
             IInputService inputService,
             UiReflexInjector uiReflexInjector,
@@ -71,6 +72,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             ICameraService cameraService,
             IUpdateService updateService)
         {
+            _joinManager = joinManager;
             _sceneService = sceneService;
             _inputService = inputService;
             _uiReflexInjector = uiReflexInjector;
@@ -107,10 +109,8 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _soundService.Initialize();
             _isLoaded = true;
             //_soundService.Play(SoundDatabaseName.Music, SoundName.GameplayBackgroundMusic);
-            //await _curtainView.HideAsync();
-            _joinManager = _container.Resolve<JoinManager>();
-            AttributeInjector.Inject(_joinManager, _container);
             _joinManager.Initialize();
+            //await _curtainView.HideAsync();
         }
 
         public void Exit()

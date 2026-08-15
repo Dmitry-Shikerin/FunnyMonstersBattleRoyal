@@ -78,23 +78,25 @@ namespace Sources.EcsBoundedContexts.Players.Infrastructure
 
         public ProtoEntity LoadAndCreate()
         {
-            EntityLink link = _sceneService.CurrentSceneName == IdsConst.Gameplay  ?
-                _uiViewService.Get<GameplayUiView>().PlayerName :
-                _uiViewService.Get<LobbyUiView>().PlayerNameLink;
-            GameplayPlayerNameUiModule module = link.GetModule<GameplayPlayerNameUiModule>();
-            
-            //PlayerWallet
-            ProtoEntity player = Create(link);
+            // EntityLink link = _sceneService.CurrentSceneName == IdsConst.Gameplay  ?
+            //     _uiViewService.Get<GameplayUiView>().PlayerName :
+            //     _uiViewService.Get<LobbyUiView>().PlayerNameLink;
+            // GameplayPlayerNameUiModule module = link.GetModule<GameplayPlayerNameUiModule>();
+            //
+            // //PlayerWallet
+            // ProtoEntity player = Create(link);
             
             if (_dataService.HasKey(IdsConst.Player) == false)
                 throw new InvalidOperationException("Player name not available");
             
             //Load
-            PlayerSaveData playerSaveData = _dataService.LoadData<PlayerSaveData>(IdsConst.Player);
-            module.InitPlayerName(playerSaveData.PlayerName);
-            player.ReplacePlayerName(playerSaveData.PlayerName);
+            // PlayerSaveData playerSaveData = _dataService.LoadData<PlayerSaveData>(IdsConst.Player);
+            // module.InitPlayerName(playerSaveData.PlayerName);
+            // player.ReplacePlayerName(playerSaveData.PlayerName);
+            //
+            // return player;
 
-            return player;
+            return default;
         }
     }
 }

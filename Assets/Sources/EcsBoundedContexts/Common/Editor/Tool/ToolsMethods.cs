@@ -24,7 +24,7 @@ namespace Sources.EcsBoundedContexts.Editor.Tool
         {
             foreach (string id in IdsConst.GetAll())
             {
-                //Debug.Log($"Deleted {id}");
+                Debug.Log($"Deleted {id}");
                 PlayerPrefs.DeleteKey(id);
             }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using Reflex.Core;
+using Sources.BoundedContexts.NetworkCore.Services;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Controllers;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
@@ -23,6 +24,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
 {
     public class GameplaySceneFactory : ISceneFactory
     {
+        private readonly JoinManager _joinManager;
         private readonly ISceneService _sceneService;
         private readonly IInputService _inputService;
         private readonly UiReflexInjector _uiReflexInjector;
@@ -40,6 +42,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         private readonly IUpdateService _updateService;
 
         public GameplaySceneFactory(
+            JoinManager joinManager,
             ISceneService sceneService,
             IInputService inputService,
             UiReflexInjector uiReflexInjector,
@@ -56,6 +59,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             ICameraService cameraService,
             IUpdateService updateService)
         {
+            _joinManager = joinManager;
             _sceneService = sceneService;
             _inputService = inputService;
             _uiReflexInjector = uiReflexInjector;
@@ -77,6 +81,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         public UniTask<IScene> Create(object payload)
         {
             IScene gameplayScene = new GameplayScene(
+                _joinManager,
                 _sceneService,
                 _inputService,
                 _uiReflexInjector,

@@ -16,9 +16,9 @@ using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
 
 namespace Sources.EcsBoundedContexts.Players.Controllers.Data
 {
-    [EcsSystem(10)]
-    [ComponentGroup(ComponentGroup.Ability)]
-    [Aspect(AspectName.MainMenu)]
+    // [EcsSystem(10)]
+    // [ComponentGroup(ComponentGroup.Ability)]
+    // [Aspect(AspectName.MainMenu)]
     public class PlayerLoadSystem : IProtoInitSystem
     {
         private readonly ISceneService _sceneService;
@@ -51,24 +51,24 @@ namespace Sources.EcsBoundedContexts.Players.Controllers.Data
 
         private void LoadGameplay()
         {
-            EntityLink link = _sceneService.CurrentSceneName == IdsConst.Gameplay  ?
-                _uiViewService.Get<GameplayUiView>().PlayerName :
-                _uiViewService.Get<LobbyUiView>().PlayerNameLink;
-            GameplayPlayerNameUiModule module = link.GetModule<GameplayPlayerNameUiModule>();
-            
-            //PlayerWallet
-            ProtoEntity player = _factory.Create(link);
-            
-            if (_dataService.HasKey(IdsConst.Player) == false)
-            {
-                module.GeneratePlayerName();
-                return;
-            }
-            
-            //Load
-            PlayerSaveData playerSaveData = _dataService.LoadData<PlayerSaveData>(IdsConst.Player);
-            module.InitPlayerName(playerSaveData.PlayerName);
-            player.ReplacePlayerName(playerSaveData.PlayerName);
+            // EntityLink link = _sceneService.CurrentSceneName == IdsConst.Gameplay  ?
+            //     _uiViewService.Get<GameplayUiView>().PlayerName :
+            //     _uiViewService.Get<LobbyUiView>().PlayerNameLink;
+            // GameplayPlayerNameUiModule module = link.GetModule<GameplayPlayerNameUiModule>();
+            //
+            // //PlayerWallet
+            // ProtoEntity player = _factory.Create(link);
+            //
+            // if (_dataService.HasKey(IdsConst.Player) == false)
+            // {
+            //     module.GeneratePlayerName();
+            //     return;
+            // }
+            //
+            // //Load
+            // PlayerSaveData playerSaveData = _dataService.LoadData<PlayerSaveData>(IdsConst.Player);
+            // module.InitPlayerName(playerSaveData.PlayerName);
+            // player.ReplacePlayerName(playerSaveData.PlayerName);
         }
 
         private void LoadMainMenu()

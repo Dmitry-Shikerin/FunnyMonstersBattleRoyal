@@ -9,7 +9,10 @@ using Sources.BoundedContexts.Characters.Presentation.Skins.Glove;
 using Sources.BoundedContexts.Characters.Presentation.Skins.Head;
 using Sources.BoundedContexts.Characters.Presentation.Skins.MounthandNoses;
 using Sources.BoundedContexts.Characters.Presentation.Skins.Tail;
+using Sources.BoundedContexts.Hud.Presentations.Gameplay;
 using Sources.BoundedContexts.Hud.Presentations.Lobby;
+using Sources.BoundedContexts.Players.Presentation;
+using Sources.BoundedContexts.Players.Presentation.Ui;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Spawners.Presentation;
 using Sources.EcsBoundedContexts.Cameras.Domain;
@@ -60,6 +63,11 @@ namespace Sources.BoundedContexts.Characters.Infrastructure
                 //InitCamera
                 _rootGameObject.Camera.SetFollow(VirtualCameraType.ThirdPerson, networkObject.transform);
                 
+                //InitPlayerName
+                PlayerViewComponent playerView = viewComponentsLink.Get<PlayerViewComponent>();
+                GameplayPlayerNameUiView playerNameUiView = _uiViewService.Get<GameplayUiView>().PlayerName;
+                playerView.Construct(playerNameUiView);
+                
                 //Init lobby ui
                 if (_sceneService.CurrentSceneName == IdsConst.Lobby)
                 {
@@ -77,12 +85,16 @@ namespace Sources.BoundedContexts.Characters.Infrastructure
         {
             ViewComponentsLink viewComponentsLink = networkObject.GetComponent<ViewComponentsLink>();
             viewComponentsLink.Init(playerRef, _container);
-            Debug.Log($"Client create");
             
             if (runner.LocalPlayer == playerRef)
             {
                 //InitCamera
                 _rootGameObject.Camera.SetFollow(VirtualCameraType.ThirdPerson, networkObject.transform);
+                
+                //InitPlayerName
+                PlayerViewComponent playerView = viewComponentsLink.Get<PlayerViewComponent>();
+                GameplayPlayerNameUiView playerNameUiView = _uiViewService.Get<GameplayUiView>().PlayerName;
+                playerView.Construct(playerNameUiView);
                 
                 //Init lobby ui
                 if (_sceneService.CurrentSceneName == IdsConst.Lobby)
