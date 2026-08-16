@@ -2,6 +2,7 @@
 using Reflex.Enums;
 using Sources.BoundedContexts.Hud.Infrastructure.Services;
 using Sources.BoundedContexts.Hud.Infrastructure.Services.Interfaces;
+using Sources.BoundedContexts.Settings.Infrastructure.Services.Interfaces;
 using Sources.EcsBoundedContexts.Settings.Infrastructure.Services;
 using Sources.EcsBoundedContexts.Settings.Infrastructure.Services.Interfaces;
 using UnityEngine;

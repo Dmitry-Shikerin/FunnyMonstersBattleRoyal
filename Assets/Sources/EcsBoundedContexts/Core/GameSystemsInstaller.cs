@@ -4,11 +4,9 @@ using Sources.BoundedContexts.Characters.Controllers.Systems;
 using Sources.EcsBoundedContexts.AnimatorLod.Controllers;
 using Sources.EcsBoundedContexts.AdvertisingAfterWaves.Controllers;
 using Sources.EcsBoundedContexts.Tutorials.Controllers.Data;
-using Sources.EcsBoundedContexts.Settings.Controllers.Data;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers.Data;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Controllers.Data;
 using Sources.EcsBoundedContexts.Input.Controllers;
-using Sources.EcsBoundedContexts.Settings.Controllers;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers;
 using Sources.EcsBoundedContexts.Cameras.Controllers;
 using Sources.EcsBoundedContexts.Movements.Move.Systems;
@@ -65,13 +63,10 @@ namespace Sources.EcsBoundedContexts.Core
 
 			//Ability
 			containerBuilder.RegisterType(typeof(TutorialLoadSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(SettingsLoadSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(PlayerWalletLoadSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(ChangedSettingsSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(PlayerWalletSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(TimerSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(TutorialSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(SettingsSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(PlayerWalletSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(PlayerSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 

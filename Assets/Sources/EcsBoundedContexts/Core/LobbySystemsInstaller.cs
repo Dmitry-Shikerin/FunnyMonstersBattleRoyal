@@ -1,7 +1,5 @@
 using Reflex.Core;
 using Reflex.Enums;
-using Sources.EcsBoundedContexts.Settings.Controllers.Data;
-using Sources.EcsBoundedContexts.Settings.Controllers;
 using Sources.EcsBoundedContexts.Players.Controllers.Data;
 
 namespace Sources.EcsBoundedContexts.Core
@@ -29,9 +27,6 @@ namespace Sources.EcsBoundedContexts.Core
 			//Chunks
 
 			//Ability
-			containerBuilder.RegisterType(typeof(SettingsLoadSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(ChangedSettingsSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(SettingsSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(PlayerSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//Characters

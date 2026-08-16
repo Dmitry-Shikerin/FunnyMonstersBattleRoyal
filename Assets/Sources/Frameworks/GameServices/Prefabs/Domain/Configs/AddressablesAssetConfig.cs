@@ -1,10 +1,10 @@
 using Sirenix.OdinInspector;
+using Sources.BoundedContexts.Settings.Domain.Data;
 using Sources.EcsBoundedContexts.AdvertisingAfterWaves.Domain;
 using Sources.EcsBoundedContexts.Animancers.Domain.Configs;
 using Sources.EcsBoundedContexts.AnimatorLod.Domain.Configs;
 using Sources.EcsBoundedContexts.Characters.Domain.Configs;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Configs;
-using Sources.EcsBoundedContexts.Settings.Domain.Data;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
 using UnityEngine;
 using UnityEngine.AddressableAssets;

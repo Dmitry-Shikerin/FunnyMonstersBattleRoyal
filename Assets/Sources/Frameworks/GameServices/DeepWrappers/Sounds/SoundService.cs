@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using Leopotam.EcsProto;
+using Sources.BoundedContexts.Hud.Presentations.Common;
+using Sources.BoundedContexts.Settings.Presentation;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
-using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.DeepFramework.DeepSound.Runtime.Domain.Enums;
 using Sources.Frameworks.DeepFramework.DeepSound.Runtime.Infrastructure;
 using Sources.Frameworks.DeepFramework.DeepSound.Runtime.Presentation;
+using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.Pauses;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 using Sources.Frameworks.YandexSdkFramework.Sdk.Services;
@@ -16,7 +18,7 @@ namespace Sources.Frameworks.GameServices.DeepWrappers.Sounds
     {
         private readonly ISdkService _sdkService;
         private readonly IPauseService _pauseService;
-        private readonly IEntityRepository _entityRepository;
+        private readonly IUiViewService _uiViewService;
         private readonly List<SoundDatabaseName> _soundDatabaseNames;
         private readonly List<SoundDatabaseName> _musicDatabaseNames;
 
@@ -24,10 +26,10 @@ namespace Sources.Frameworks.GameServices.DeepWrappers.Sounds
 
         public SoundService(
             IPauseService pauseService,
-            IEntityRepository entityRepository)
+            IUiViewService uiViewService)
         {
             _pauseService = pauseService;
-            _entityRepository = entityRepository;
+            _uiViewService = uiViewService;
             _soundDatabaseNames = new List<SoundDatabaseName>()
             {
                 SoundDatabaseName.Sounds,
@@ -122,26 +124,26 @@ namespace Sources.Frameworks.GameServices.DeepWrappers.Sounds
 
         private bool GetMute(SoundDatabaseName databaseName)
         {
-            ProtoEntity entity = _entityRepository.GetByName(IdsConst.Settings);
+            SettingsView settingsView = _uiViewService.Get<SettingsUiView>().SettingsView;
             
             return databaseName switch
             {
-                SoundDatabaseName.Music => entity.HasMutedMusicVolume(),
-                SoundDatabaseName.Sounds => entity.HasMutedSoundVolume(),
-                SoundDatabaseName.UiSounds => entity.HasMutedSoundVolume(),
+                SoundDatabaseName.Music => settingsView.Get<MusicVolumeViewComponent>().IsMute,
+                SoundDatabaseName.Sounds => settingsView.Get<SoundVolumeViewComponent>().IsMute,
+                SoundDatabaseName.UiSounds => settingsView.Get<SoundVolumeViewComponent>().IsMute,
                 _ => throw new ArgumentOutOfRangeException(nameof(databaseName), databaseName, null)
             };
         }
 
         private float GetVolume(SoundDatabaseName databaseName)
         {
-            ProtoEntity entity = _entityRepository.GetByName(IdsConst.Settings);
+            SettingsView settingsView = _uiViewService.Get<SettingsUiView>().SettingsView;
             
             return databaseName switch
             {
-                SoundDatabaseName.Music => entity.GetMusicVolume().Value,
-                SoundDatabaseName.Sounds => entity.GetSoundVolume().Value,
-                SoundDatabaseName.UiSounds => entity.GetSoundVolume().Value,
+                SoundDatabaseName.Music => settingsView.Get<MusicVolumeViewComponent>().Volume,
+                SoundDatabaseName.Sounds => settingsView.Get<SoundVolumeViewComponent>().Volume,
+                SoundDatabaseName.UiSounds => settingsView.Get<SoundVolumeViewComponent>().Volume,
                 _ => throw new ArgumentOutOfRangeException(nameof(databaseName), databaseName, null)
             };
         }

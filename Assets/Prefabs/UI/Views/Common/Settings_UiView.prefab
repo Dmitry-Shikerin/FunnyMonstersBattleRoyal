@@ -3344,11 +3344,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2081504091885880339}
+  - component: {fileID: 8093349710370620929}
   - component: {fileID: 4359091829010948662}
   - component: {fileID: 4615937570872729357}
-  - component: {fileID: 1263853500342526223}
-  - component: {fileID: 6330477372406031932}
-  - component: {fileID: 8093349710370620929}
   m_Layer: 5
   m_Name: SettingsMenu
   m_TagString: Untagged
@@ -3382,6 +3380,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -60}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &8093349710370620929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5012604357706868514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c747d9f1866453996fac2262876d269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _components:
+  - {fileID: 6156903870694145698}
+  - {fileID: 8969683914029467368}
+  - {fileID: 4284919302824358745}
+  - {fileID: 4098202046013602961}
+  - {fileID: 9019316346369105563}
+  - {fileID: 3765926047686642400}
+  - {fileID: 4933471333768012126}
+  _resetToDefaultButton: {fileID: 3816133675000009555}
+  _mainMenuButton: {fileID: 5977885943383320265}
+  <ApplyButton>k__BackingField: {fileID: 5462743281468471098}
 --- !u!225 &4359091829010948662
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3418,64 +3439,6 @@ MonoBehaviour:
   m_Spacing: {x: 70, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &1263853500342526223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5012604357706868514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dd002843574e1ba35c4b84aa191c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _modules:
-  - {fileID: 6330477372406031932}
-  - {fileID: 3765926047686642400}
-  - {fileID: 4933471333768012126}
-  - {fileID: 6156903870694145698}
-  - {fileID: 8969683914029467368}
-  - {fileID: 4098202046013602961}
-  - {fileID: 9019316346369105563}
-  - {fileID: 4284919302824358745}
-  - {fileID: 8093349710370620929}
-  <InjectBehaviours>k__BackingField: []
---- !u!114 &6330477372406031932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5012604357706868514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _worldName: 
-  _authoringType: 1
-  _destroyAfterAuthoring: 0
-  _authFromFactory: 1
-  Components: []
-  references:
-    version: 2
-    RefIds: []
---- !u!114 &8093349710370620929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5012604357706868514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c747d9f1866453996fac2262876d269, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _resetToDefaultButton: {fileID: 3816133675000009555}
-  _mainMenuButton: {fileID: 5977885943383320265}
-  <ApplyButton>k__BackingField: {fileID: 5462743281468471098}
 --- !u!1 &5730302133959322653
 GameObject:
   m_ObjectHideFlags: 0
@@ -4499,11 +4462,12 @@ MonoBehaviour:
   _isHideCanvas: 1
   _isCanvasGroupBlockRaycast: 1
   _canvasGroup: {fileID: 4123914716327533956}
-  <InjectedMonoBehaviours>k__BackingField: []
+  <InjectedMonoBehaviours>k__BackingField:
+  - {fileID: 8093349710370620929}
   _label: <size=18><b><color=#0000FF><i>Ui View</i></color></b></size>
   ShowId: 1
   _id: 8
-  <SettingsLink>k__BackingField: {fileID: 1263853500342526223}
+  <SettingsView>k__BackingField: {fileID: 8093349710370620929}
 --- !u!1 &7586001280255106865
 GameObject:
   m_ObjectHideFlags: 0
@@ -5409,7 +5373,7 @@ MonoBehaviour:
   _previousButton: {fileID: 836342188086386511}
   _nextButton: {fileID: 2034495188667668960}
   _dropdown: {fileID: 4923520135779288315}
-  _vSyncModule: {fileID: 4284919302824358745}
+  _vSyncViewComponent: {fileID: 4284919302824358745}
   _canvasGroup: {fileID: 5755697330479767785}
 --- !u!1 &8746962475553687483
 GameObject:

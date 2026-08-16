@@ -45,22 +45,11 @@ namespace Sources.BoundedContexts.ReadyCheckers
 
         private void OnPlayersChanged()
         {
-            Debug.Log($"OnPlayerChanged");
-            
             foreach (PlayerReadyUiView view in _views)
                 view.HideInfo();
 
             for (int i = 0; i < _joinManager.PlayersObjects.Count; i++)
             {
-                if (_joinManager == null)
-                    Debug.Log($"null");
-
-                if (_joinManager.PlayersObjects[i] == null)
-                    Debug.Log($"null");
-
-                if (_joinManager.PlayersObjects[i].GetComponent<ViewComponentsLink>() == null)
-                    Debug.Log($"Null");
-                
                 ViewComponentsLink link = _joinManager.PlayersObjects[i].GetComponent<ViewComponentsLink>();
                 PlayerReadyView playerReadyView = link.Get<PlayerReadyView>();
                 string playerName = link.Get<PlayerViewComponent>().Name.Value;

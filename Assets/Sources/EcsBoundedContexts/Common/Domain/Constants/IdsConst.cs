@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
+using Sources.BoundedContexts.Settings.Domain.Data;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Data;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Domain.Data;
 using Sources.EcsBoundedContexts.Players.Domain.Data;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Data;
-using Sources.EcsBoundedContexts.Settings.Domain.Data;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Data;
 using Sources.Frameworks.GameServices.Loads.Domain;
 

@@ -11,7 +11,6 @@ using Sources.EcsBoundedContexts.KillEnemyCounters.Infrastructure;
 using Sources.EcsBoundedContexts.Lights.Infrastructure;
 using Sources.EcsBoundedContexts.Players.Infrastructure;
 using Sources.EcsBoundedContexts.PlayerWallets.Infrastructure;
-using Sources.EcsBoundedContexts.Settings.Infrastructure.Factories;
 using Sources.EcsBoundedContexts.Tutorials.Infrastructure;
 using Sources.Frameworks.GameServices.EntityPools.Implementation;
 using Sources.Frameworks.MyLeoEcsProto.EventBuffers.Implementation;
@@ -75,9 +74,6 @@ namespace Sources.App.DIContainers.Common
             
             //Player
             containerBuilder.RegisterType(typeof(PlayerEntityFactory), Lifetime.Singleton, Resolution.Lazy);
-            
-            //Settings
-            containerBuilder.RegisterType(typeof(SettingsEntityFactory), Lifetime.Singleton, Resolution.Lazy);
         }
     }
 }

@@ -7,10 +7,6 @@ using Sources.Frameworks.GameServices.EntityPools.Domain.Components;
 using Sources.EcsBoundedContexts.Weapons.Domain;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Components;
 using Sources.EcsBoundedContexts.Timers.Domain;
-using Sources.EcsBoundedContexts.Settings.Domain.Components;
-using Sources.EcsBoundedContexts.Settings.Domain.Components.Volume;
-using Sources.EcsBoundedContexts.Settings.Domain.Components.Parts;
-using Sources.EcsBoundedContexts.Settings.Domain.Components.Modules;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
 using Sources.EcsBoundedContexts.Players.Domain.Components;
@@ -46,8 +42,6 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<ReturnToPoolActionComponent> ReturnToPoolAction = new ();
 		public readonly ProtoPool<GunOwnerModuleComponent> GunOwnerModule = new ();
 		public readonly ProtoPool<TimerComponent> Timer = new ();
-		public readonly ProtoPool<MusicVolumeModuleComponent> MusicVolumeModule = new ();
-		public readonly ProtoPool<MutedSoundVolumeComponent> MutedSoundVolume = new ();
 		public readonly ProtoPool<ClearableDataComponent> ClearableData = new ();
 		public readonly ProtoPool<ClearDataEvent> ClearDataEvent = new ();
 		public readonly ProtoPool<SavableDataComponent> SavableData = new ();
@@ -153,18 +147,6 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<AvailableComponent> Available = new ();
 
 		//Characters
-		public readonly ProtoPool<ChangedSettingsComponent> ChangedSettings = new ();
-		public readonly ProtoPool<SavedSettingsComponent> SavedSettings = new ();
-		public readonly ProtoPool<SettingsTag> Settings = new ();
-		public readonly ProtoPool<MusicVolumeComponent> MusicVolume = new ();
-		public readonly ProtoPool<MutedMusicVolumeComponent> MutedMusicVolume = new ();
-		public readonly ProtoPool<SoundVolumeComponent> SoundVolume = new ();
-		public readonly ProtoPool<FramerateComponent> Framerate = new ();
-		public readonly ProtoPool<FullScreenModeComponent> FullScreenMode = new ();
-		public readonly ProtoPool<GraphicsQualityComponent> GraphicsQuality = new ();
-		public readonly ProtoPool<ResolutionComponent> Resolution = new ();
-		public readonly ProtoPool<VSyncComponent> VSync = new ();
-		public readonly ProtoPool<SetterSettingsModuleComponent> SetterSettingsModule = new ();
 		public readonly ProtoPool<PlayerNameComponent> PlayerName = new ();
 		public readonly ProtoPool<PlayerTag> Player = new ();
 		public readonly ProtoPool<HealParticleComponent> HealParticle = new ();
@@ -205,20 +187,6 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<GunOwnerModuleComponent>)] = GunOwnerModule,
 				[typeof(ProtoPool<TutorialTag>)] = Tutorial,
 				[typeof(ProtoPool<TimerComponent>)] = Timer,
-				[typeof(ProtoPool<ChangedSettingsComponent>)] = ChangedSettings,
-				[typeof(ProtoPool<SavedSettingsComponent>)] = SavedSettings,
-				[typeof(ProtoPool<SettingsTag>)] = Settings,
-				[typeof(ProtoPool<MusicVolumeComponent>)] = MusicVolume,
-				[typeof(ProtoPool<MusicVolumeModuleComponent>)] = MusicVolumeModule,
-				[typeof(ProtoPool<MutedMusicVolumeComponent>)] = MutedMusicVolume,
-				[typeof(ProtoPool<MutedSoundVolumeComponent>)] = MutedSoundVolume,
-				[typeof(ProtoPool<SoundVolumeComponent>)] = SoundVolume,
-				[typeof(ProtoPool<FramerateComponent>)] = Framerate,
-				[typeof(ProtoPool<FullScreenModeComponent>)] = FullScreenMode,
-				[typeof(ProtoPool<GraphicsQualityComponent>)] = GraphicsQuality,
-				[typeof(ProtoPool<ResolutionComponent>)] = Resolution,
-				[typeof(ProtoPool<VSyncComponent>)] = VSync,
-				[typeof(ProtoPool<SetterSettingsModuleComponent>)] = SetterSettingsModule,
 				[typeof(ProtoPool<ClearableDataComponent>)] = ClearableData,
 				[typeof(ProtoPool<ClearDataEvent>)] = ClearDataEvent,
 				[typeof(ProtoPool<SavableDataComponent>)] = SavableData,

@@ -89,6 +89,9 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Controllers.Implementat
 
         private void ManageExitPopUp()
         {
+            if (DeepCoreManager.IsApplicationQuitting)
+                return;
+            
             UiPopUpViewManager manager = DeepUiBrain.PopUpViewManager;
             
             if (IsHideAllPopUpsExited)
