@@ -10,7 +10,6 @@ using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
-using Sources.EcsBoundedContexts.Spawners.Infrastructure.Services;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
 using Sources.Frameworks.GameServices.DeepWrappers.Curtains;
@@ -36,7 +35,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
     {
         private readonly IUiViewService _uiViewService;
         private readonly JoinManager _joinManager;
-        private readonly SpawnPointEntitiesProvider _spawnPointEntitiesProvider;
         private readonly ISceneService _sceneService;
         private readonly IInputService _inputService;
         private readonly UiReflexInjector _uiReflexInjector;

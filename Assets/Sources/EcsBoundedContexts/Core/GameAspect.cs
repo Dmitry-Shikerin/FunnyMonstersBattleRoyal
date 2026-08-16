@@ -7,7 +7,6 @@ using Sources.Frameworks.GameServices.EntityPools.Domain.Components;
 using Sources.EcsBoundedContexts.Weapons.Domain;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Components;
 using Sources.EcsBoundedContexts.Timers.Domain;
-using Sources.EcsBoundedContexts.Spawners.Domain;
 using Sources.EcsBoundedContexts.Settings.Domain.Components;
 using Sources.EcsBoundedContexts.Settings.Domain.Components.Volume;
 using Sources.EcsBoundedContexts.Settings.Domain.Components.Parts;
@@ -47,9 +46,6 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<ReturnToPoolActionComponent> ReturnToPoolAction = new ();
 		public readonly ProtoPool<GunOwnerModuleComponent> GunOwnerModule = new ();
 		public readonly ProtoPool<TimerComponent> Timer = new ();
-		public readonly ProtoPool<BusyComponent> Busy = new ();
-		public readonly ProtoPool<SpawnPointTag> SpawnPoint = new ();
-		public readonly ProtoPool<SpawnPointTransformComponent> SpawnPointTransform = new ();
 		public readonly ProtoPool<MusicVolumeModuleComponent> MusicVolumeModule = new ();
 		public readonly ProtoPool<MutedSoundVolumeComponent> MutedSoundVolume = new ();
 		public readonly ProtoPool<ClearableDataComponent> ClearableData = new ();
@@ -209,9 +205,6 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<GunOwnerModuleComponent>)] = GunOwnerModule,
 				[typeof(ProtoPool<TutorialTag>)] = Tutorial,
 				[typeof(ProtoPool<TimerComponent>)] = Timer,
-				[typeof(ProtoPool<BusyComponent>)] = Busy,
-				[typeof(ProtoPool<SpawnPointTag>)] = SpawnPoint,
-				[typeof(ProtoPool<SpawnPointTransformComponent>)] = SpawnPointTransform,
 				[typeof(ProtoPool<ChangedSettingsComponent>)] = ChangedSettings,
 				[typeof(ProtoPool<SavedSettingsComponent>)] = SavedSettings,
 				[typeof(ProtoPool<SettingsTag>)] = Settings,

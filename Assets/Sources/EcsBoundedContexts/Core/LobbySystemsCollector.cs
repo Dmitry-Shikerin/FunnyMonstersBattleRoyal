@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using Leopotam.EcsProto;
-using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Settings.Controllers.Data;
-using Sources.EcsBoundedContexts.Spawners.Controllers;
 using Sources.EcsBoundedContexts.Settings.Controllers;
 using Sources.EcsBoundedContexts.Players.Controllers.Data;
 
@@ -16,7 +14,6 @@ namespace Sources.EcsBoundedContexts.Core
 		public LobbySystemsCollector(
 			ProtoSystems protoSystems,
 			SettingsLoadSystem settingsLoadSystem, //Order: 10 //Ability
-			SpawnPointsInitializeSystem spawnPointsInitializeSystem, //Order: 11 //Ability
 			ChangedSettingsSystem changedSettingsSystem, //Order: 50 //Ability
 			SettingsSaveSystem settingsSaveSystem, //Order: 504 //Ability
 			PlayerSaveSystem playerSaveSystem //Order: 504 //Ability
@@ -26,7 +23,6 @@ namespace Sources.EcsBoundedContexts.Core
 			_systems = new IProtoSystem[]
 			{
 				settingsLoadSystem, //Ability
-				spawnPointsInitializeSystem, //Ability
 				changedSettingsSystem, //Ability
 				settingsSaveSystem, //Ability
 				playerSaveSystem, //Ability

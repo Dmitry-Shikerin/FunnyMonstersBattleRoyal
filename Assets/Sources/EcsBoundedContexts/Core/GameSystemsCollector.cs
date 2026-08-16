@@ -1,13 +1,11 @@
 using System.Collections.Generic;
 using Leopotam.EcsProto;
 using Sources.BoundedContexts.Characters.Controllers.Systems;
-using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.AnimatorLod.Controllers;
 using Sources.EcsBoundedContexts.AdvertisingAfterWaves.Controllers;
 using Sources.EcsBoundedContexts.Tutorials.Controllers.Data;
 using Sources.EcsBoundedContexts.Settings.Controllers.Data;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers.Data;
-using Sources.EcsBoundedContexts.Spawners.Controllers;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Controllers.Data;
 using Sources.EcsBoundedContexts.Input.Controllers;
 using Sources.EcsBoundedContexts.Settings.Controllers;
@@ -39,7 +37,6 @@ namespace Sources.EcsBoundedContexts.Core
 			SettingsLoadSystem settingsLoadSystem, //Order: 10 //Ability
 			PlayerWalletLoadSystem playerWalletLoadSystem, //Order: 10 //Ability
 			CharacterInitializeSystem characterInitializeSystem, //Order: 10 //Characters
-			SpawnPointsInitializeSystem spawnPointsInitializeSystem, //Order: 11 //Ability
 			KillEnemyCounterLoadSystem killEnemyCounterLoadSystem, //Order: 12 //Common
 			InputInitializeSystem inputInitializeSystem, //Order: 15 //Characters
 			ChangedSettingsSystem changedSettingsSystem, //Order: 50 //Ability
@@ -76,7 +73,6 @@ namespace Sources.EcsBoundedContexts.Core
 				settingsLoadSystem, //Ability
 				playerWalletLoadSystem, //Ability
 				characterInitializeSystem, //Characters
-				spawnPointsInitializeSystem, //Ability
 				killEnemyCounterLoadSystem, //Common
 				inputInitializeSystem, //Characters
 				changedSettingsSystem, //Ability

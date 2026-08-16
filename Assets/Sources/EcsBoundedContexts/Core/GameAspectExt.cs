@@ -1,17 +1,12 @@
 using System;
 using UnityEngine;
-using System.Collections.Generic;
 using Leopotam.EcsProto;
-using Leopotam.EcsProto.QoL;
 using Sources.Frameworks.MyLeoEcsProto.EventBuffers.Implementation;
 using Sources.Frameworks.GameServices.EntityPools.Domain.Components;
-using System;
 using Sources.EcsBoundedContexts.Weapons.Domain;
 using Sources.EcsBoundedContexts.Weapons.Presentation;
 using Sources.EcsBoundedContexts.Tutorials.Domain.Components;
 using Sources.EcsBoundedContexts.Timers.Domain;
-using Sources.EcsBoundedContexts.Spawners.Domain;
-using UnityEngine;
 using Sources.EcsBoundedContexts.Settings.Domain.Components;
 using Sources.EcsBoundedContexts.Settings.Domain.Data;
 using Sources.EcsBoundedContexts.Settings.Domain.Components.Volume;
@@ -35,7 +30,6 @@ using UnityEngine.Rendering;
 using Sources.EcsBoundedContexts.Lights.Domain.Enums;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Domain.Components;
 using Sources.EcsBoundedContexts.Input.Domain;
-using Leopotam.EcsProto;
 using Sources.EcsBoundedContexts.GraphOwners.Domain;
 using NodeCanvas.BehaviourTrees;
 using NodeCanvas.StateMachines;
@@ -61,7 +55,6 @@ using Sources.EcsBoundedContexts.Animators;
 using Sources.EcsBoundedContexts.AnimatorLod.Domain.Components;
 using Sources.EcsBoundedContexts.Animancers.Domain.Components;
 using Animancer;
-using Sources.BoundedContexts.Characters.Presentation.Skins;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -166,55 +159,6 @@ namespace Sources.EcsBoundedContexts.Core
 
 		public static void DelTimer(this ProtoEntity entity)
 			=> s_GameAspect.Timer.Del(entity);
-
-		//Busy
-		public static bool HasBusy(this ProtoEntity entity) =>
-			s_GameAspect.Busy.Has(entity);
-
-		public static ref BusyComponent AddBusy(this ProtoEntity entity)
-		{
-			ref BusyComponent busyComponent = ref s_GameAspect.Busy.Add(entity);
-			return ref busyComponent;
-		}
-
-		public static void DelBusy(this ProtoEntity entity)
-			=> s_GameAspect.Busy.Del(entity);
-
-		//SpawnPoint
-		public static bool HasSpawnPoint(this ProtoEntity entity) =>
-			s_GameAspect.SpawnPoint.Has(entity);
-
-		public static ref SpawnPointTag AddSpawnPoint(this ProtoEntity entity)
-		{
-			ref SpawnPointTag spawnPointTag = ref s_GameAspect.SpawnPoint.Add(entity);
-			return ref spawnPointTag;
-		}
-
-		public static void DelSpawnPoint(this ProtoEntity entity)
-			=> s_GameAspect.SpawnPoint.Del(entity);
-
-		//SpawnPointTransform
-		public static bool HasSpawnPointTransform(this ProtoEntity entity) =>
-			s_GameAspect.SpawnPointTransform.Has(entity);
-
-		public static ref SpawnPointTransformComponent GetSpawnPointTransform(this ProtoEntity entity) =>
-			ref s_GameAspect.SpawnPointTransform.Get(entity);
-
-		public static void ReplaceSpawnPointTransform(this ProtoEntity entity, Transform value)
-		{
-			ref SpawnPointTransformComponent spawnPointTransformComponent = ref s_GameAspect.SpawnPointTransform.Get(entity);
-			spawnPointTransformComponent.Value = value;
-		}
-
-		public static ref SpawnPointTransformComponent AddSpawnPointTransform(this ProtoEntity entity, Transform value)
-		{
-			ref SpawnPointTransformComponent spawnPointTransformComponent = ref s_GameAspect.SpawnPointTransform.Add(entity);
-			spawnPointTransformComponent.Value = value;
-			return ref spawnPointTransformComponent;
-		}
-
-		public static void DelSpawnPointTransform(this ProtoEntity entity)
-			=> s_GameAspect.SpawnPointTransform.Del(entity);
 
 		//ChangedSettings
 		public static bool HasChangedSettings(this ProtoEntity entity) =>

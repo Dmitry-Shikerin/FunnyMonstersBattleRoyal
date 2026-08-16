@@ -4,7 +4,6 @@ using Fusion;
 using Reflex.Attributes;
 using Sirenix.OdinInspector;
 using Sources.BoundedContexts.Characters.Infrastructure;
-using Sources.EcsBoundedContexts.Spawners.Infrastructure.Services;
 using UnityEngine;
 
 namespace Sources.BoundedContexts.NetworkCore.Services
@@ -12,17 +11,18 @@ namespace Sources.BoundedContexts.NetworkCore.Services
     public class JoinManager : NetworkBehaviour
     {
         [Required] [SerializeField] private NetworkPrefabRef _playerPrefab;
+        
         [Networked]
         [Capacity(10)]
         [OnChangedRender(nameof(ChangePlayers))]
         private NetworkDictionary<PlayerRef, NetworkObject> Players => default;
+        
         private readonly Queue<PlayerRef> _joinedQueue = new();
         private readonly List<NetworkObject> _playersObjects = new();
 
         private NetworkCallbacksReceiver _callbackReceiver;
         private static CharacterFactory _factory;
         private bool _isInitialized;
-        private SpawnPointEntitiesProvider _spawnPointEntitiesProvider;
 
         public IReadOnlyList<NetworkObject> PlayersObjects => GetPlayers();
         
@@ -142,7 +142,6 @@ namespace Sources.BoundedContexts.NetworkCore.Services
         private void ChangePlayers()
         {
             GetPlayers();
-            Debug.Log($"Change players, Count {Players.Count}");
             OnPlayersChanged?.Invoke();
         }
     }

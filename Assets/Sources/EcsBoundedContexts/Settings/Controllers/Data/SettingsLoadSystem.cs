@@ -7,13 +7,11 @@ using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Core.Domain;
 using Sources.EcsBoundedContexts.Core.Domain.Systems;
 using Sources.EcsBoundedContexts.Settings.Domain.Data;
-using Sources.EcsBoundedContexts.Settings.Infrastructure;
 using Sources.EcsBoundedContexts.Settings.Infrastructure.Factories;
 using Sources.EcsBoundedContexts.Settings.Presentation.Interfaces;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.Loads.Services.Interfaces.Data;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
-using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Settings.Controllers.Data
 {
