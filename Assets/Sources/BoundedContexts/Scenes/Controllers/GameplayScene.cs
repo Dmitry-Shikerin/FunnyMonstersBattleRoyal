@@ -2,6 +2,7 @@
 using NodeCanvas.StateMachines;
 using Reflex.Core;
 using Reflex.Injectors;
+using Sources.BoundedContexts.Hud.Presentations.Lobby;
 using Sources.BoundedContexts.NetworkCore.Services;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.EcsBoundedContexts.Animancers.Extension;
@@ -12,10 +13,10 @@ using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Spawners.Infrastructure.Services;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
-using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Interfaces;
 using Sources.Frameworks.GameServices.DeepWrappers.Curtains;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
+using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.InputServices.InputServices;
 using Sources.Frameworks.GameServices.Prefabs.Domain;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
@@ -28,12 +29,12 @@ using Sources.Frameworks.GameServices.UpdateServices.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 using Sources.Frameworks.YandexSdkFramework.Focuses.Interfaces;
 using Sources.Frameworks.YandexSdkFramework.Sdk.Services;
-using UnityEngine;
 
 namespace Sources.BoundedContexts.Scenes.Controllers
 {
     public class GameplayScene : IScene
     {
+        private readonly IUiViewService _uiViewService;
         private readonly JoinManager _joinManager;
         private readonly SpawnPointEntitiesProvider _spawnPointEntitiesProvider;
         private readonly ISceneService _sceneService;
@@ -55,6 +56,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private bool _isLoaded;
 
         public GameplayScene(
+            IUiViewService uiViewService,
             JoinManager joinManager,
             ISceneService sceneService,
             IInputService inputService,
@@ -72,6 +74,7 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             ICameraService cameraService,
             IUpdateService updateService)
         {
+            _uiViewService = uiViewService;
             _joinManager = joinManager;
             _sceneService = sceneService;
             _inputService = inputService;
@@ -110,6 +113,9 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _isLoaded = true;
             //_soundService.Play(SoundDatabaseName.Music, SoundName.GameplayBackgroundMusic);
             _joinManager.Initialize();
+
+            if (_sceneService.CurrentSceneName == IdsConst.Lobby)
+                _uiViewService.Get<LobbyUiView>().PlayersReadyInitializerUiView.Initialize();
             //await _curtainView.HideAsync();
         }
 

@@ -8,6 +8,8 @@ using Sources.BoundedContexts.Characters.Presentation.Skins.Glove;
 using Sources.BoundedContexts.Characters.Presentation.Skins.Head;
 using Sources.BoundedContexts.Characters.Presentation.Skins.MounthandNoses;
 using Sources.BoundedContexts.Characters.Presentation.Skins.Tail;
+using Sources.BoundedContexts.Players.Presentation;
+using Sources.BoundedContexts.ReadyCheckers;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Views;
 using UnityEngine;
 
@@ -16,7 +18,10 @@ namespace Sources.BoundedContexts.Hud.Presentations.Lobby
     public class LobbyUiView : UiView
     {
         [field: Required] [field: SerializeField] public EntityLink PlayerNameLink { get; private set; }
-        [field: Required] [field: SerializeField] public List<EntityLink> PlayersReadyUiLink { get; private set; }
+        
+        [field: Header("Ready Changers")]
+        [field: Required] [field: SerializeField] public PlayerReadyChangerUiView PlayerReadyChangerUiView { get; private set; }
+        [field: Required] [field: SerializeField] public PlayersReadyInitializerUiView PlayersReadyInitializerUiView { get; private set; }
         
         [field: Header("Skin Changers")]
         [field: Required] [field: SerializeField] public BodySkinChangerUiView BodySkinChangerUiView { get; private set; }

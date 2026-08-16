@@ -8,6 +8,7 @@ using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.Frameworks.GameServices.DeepWrappers.Curtains;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
+using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.InputServices.InputServices;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces.Composites;
@@ -24,6 +25,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
 {
     public class GameplaySceneFactory : ISceneFactory
     {
+        private readonly IUiViewService _uiViewService;
         private readonly JoinManager _joinManager;
         private readonly ISceneService _sceneService;
         private readonly IInputService _inputService;
@@ -42,6 +44,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         private readonly IUpdateService _updateService;
 
         public GameplaySceneFactory(
+            IUiViewService uiViewService,
             JoinManager joinManager,
             ISceneService sceneService,
             IInputService inputService,
@@ -59,6 +62,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             ICameraService cameraService,
             IUpdateService updateService)
         {
+            _uiViewService = uiViewService;
             _joinManager = joinManager;
             _sceneService = sceneService;
             _inputService = inputService;
@@ -81,6 +85,7 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         public UniTask<IScene> Create(object payload)
         {
             IScene gameplayScene = new GameplayScene(
+                _uiViewService,
                 _joinManager,
                 _sceneService,
                 _inputService,

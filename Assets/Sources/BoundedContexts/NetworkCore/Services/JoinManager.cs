@@ -24,7 +24,7 @@ namespace Sources.BoundedContexts.NetworkCore.Services
         private bool _isInitialized;
         private SpawnPointEntitiesProvider _spawnPointEntitiesProvider;
 
-        public IReadOnlyList<NetworkObject> PlayersObjects => _playersObjects;
+        public IReadOnlyList<NetworkObject> PlayersObjects => GetPlayers();
         
         public event Action OnPlayersChanged;
 
@@ -32,7 +32,6 @@ namespace Sources.BoundedContexts.NetworkCore.Services
         private void Construct(CharacterFactory factory)
         {
             _factory = factory;
-            Debug.Log($"Construct");
         }
 
         public override void Spawned()
@@ -60,6 +59,7 @@ namespace Sources.BoundedContexts.NetworkCore.Services
             _isInitialized = true;
         }
 
+        //На клиенте не работает FixedUpdate если он не его InputAuthority
         private void ClientFreedomQueue()
         {
             if (_isInitialized == false)
@@ -129,13 +129,20 @@ namespace Sources.BoundedContexts.NetworkCore.Services
                 _joinedQueue.Enqueue(player.Key);
         }
 
-        private void ChangePlayers()
+        private List<NetworkObject> GetPlayers()
         {
             _playersObjects.Clear();
             
             foreach (KeyValuePair<PlayerRef, NetworkObject> player in Players)
                 _playersObjects.Add(player.Value);
-            
+
+            return _playersObjects;
+        }
+        
+        private void ChangePlayers()
+        {
+            GetPlayers();
+            Debug.Log($"Change players, Count {Players.Count}");
             OnPlayersChanged?.Invoke();
         }
     }

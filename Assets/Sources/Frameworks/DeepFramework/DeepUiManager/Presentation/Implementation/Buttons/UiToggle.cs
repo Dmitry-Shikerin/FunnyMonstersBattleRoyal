@@ -77,15 +77,8 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
 
         public void ChangeState()
         {
-            if (State == EnableState.On)
-            {
-                State = EnableState.Off;
-            }
-            else
-            {
-                State = EnableState.On;
-            }
-            
+            EnableState nextState = State == EnableState.On ? EnableState.Off : EnableState.On;
+            State = nextState;
             StateChanged?.Invoke(State);
             Click();
         }

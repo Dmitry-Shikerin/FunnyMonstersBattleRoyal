@@ -71,6 +71,11 @@ namespace Sources.BoundedContexts.Characters.Infrastructure
                 //Init lobby ui
                 if (_sceneService.CurrentSceneName == IdsConst.Lobby)
                 {
+                    //ReadyChanger
+                    PlayerReadyView playerReadyView = viewComponentsLink.Get<PlayerReadyView>();
+                    PlayerReadyChangerUiView playerReadyChangerUiView = _uiViewService.Get<LobbyUiView>().PlayerReadyChangerUiView;
+                    playerReadyChangerUiView.Construct(playerReadyView);
+                    
                     //Skin changers
                     ConstructSkinChangers(viewComponentsLink);
                 }
@@ -99,6 +104,11 @@ namespace Sources.BoundedContexts.Characters.Infrastructure
                 //Init lobby ui
                 if (_sceneService.CurrentSceneName == IdsConst.Lobby)
                 {
+                    //ReadyChanger
+                    PlayerReadyView playerReadyView = viewComponentsLink.Get<PlayerReadyView>();
+                    PlayerReadyChangerUiView playerReadyChangerUiView = _uiViewService.Get<LobbyUiView>().PlayerReadyChangerUiView;
+                    playerReadyChangerUiView.Construct(playerReadyView);
+                    
                     //Skin changers
                     ConstructSkinChangers(viewComponentsLink);
                 }
