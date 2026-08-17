@@ -6,7 +6,6 @@ using Sources.BoundedContexts.Hud.Presentations.Lobby;
 using Sources.BoundedContexts.NetworkCore.Services;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.EcsBoundedContexts.Animancers.Extension;
-using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
@@ -48,7 +47,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private readonly IFocusService _focusService;
         private readonly ILocalizationService _localizationService;
         private readonly ICurtainService _curtainService;
-        private readonly ICameraService _cameraService;
         private readonly IUpdateService _updateService;
         private IEcsGameStartUp _ecsGameStartUp;
         private bool _isLoaded;
@@ -69,7 +67,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             IFocusService focusService,
             ILocalizationService localizationService,
             ICurtainService curtainService,
-            ICameraService cameraService,
             IUpdateService updateService)
         {
             _uiViewService = uiViewService;
@@ -88,7 +85,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _localizationService = localizationService ?? 
                                    throw new ArgumentNullException(nameof(localizationService));
             _curtainService = curtainService ?? throw new ArgumentNullException(nameof(curtainService));
-            _cameraService = cameraService ?? throw new ArgumentNullException(nameof(cameraService));
             _updateService = updateService ?? throw new ArgumentNullException(nameof(updateService));
         }
 

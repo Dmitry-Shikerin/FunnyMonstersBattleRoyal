@@ -6,7 +6,6 @@ using Sources.BoundedContexts.NetworkCore.Services;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories.Views;
-using Sources.EcsBoundedContexts.Characters.Infrastructure;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Input.Infrastructure.Services;
 using Sources.Frameworks.GameServices.InputServices.InputServices;
@@ -33,7 +32,6 @@ namespace Sources.App.DIContainers.Gameplay
             
             containerBuilder.RegisterType(typeof(NewInputService), new [] { typeof(IInputService) }, Lifetime.Singleton, Resolution.Lazy);
             
-            containerBuilder.RegisterType(typeof(EcsCharacterFactory), Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterType(typeof(CharacterFactory), Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterType(typeof(GameplaySceneViewFactory), Lifetime.Singleton, Resolution.Lazy);
             

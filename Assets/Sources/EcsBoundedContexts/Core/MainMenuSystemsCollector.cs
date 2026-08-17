@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Leopotam.EcsProto;
-using Sources.EcsBoundedContexts.Players.Controllers.Data;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -10,16 +9,12 @@ namespace Sources.EcsBoundedContexts.Core
 		private readonly IEnumerable<IProtoSystem> _systems;
 
 		public MainMenuSystemsCollector(
-			ProtoSystems protoSystems,
-			PlayerLoadSystem playerLoadSystem, //Order: 10 //Ability
-			PlayerSaveSystem playerSaveSystem //Order: 504 //Ability
+			ProtoSystems protoSystems
 		)
 		{
 			_protoSystems = protoSystems;
 			_systems = new IProtoSystem[]
 			{
-				playerLoadSystem, //Ability
-				playerSaveSystem, //Ability
 			};
 		}
 

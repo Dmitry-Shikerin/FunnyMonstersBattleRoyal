@@ -1,6 +1,5 @@
 using Reflex.Core;
 using Reflex.Enums;
-using Sources.BoundedContexts.Characters.Controllers.Systems;
 using Sources.EcsBoundedContexts.AnimatorLod.Controllers;
 using Sources.EcsBoundedContexts.AdvertisingAfterWaves.Controllers;
 using Sources.EcsBoundedContexts.Tutorials.Controllers.Data;
@@ -8,7 +7,6 @@ using Sources.EcsBoundedContexts.PlayerWallets.Controllers.Data;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Controllers.Data;
 using Sources.EcsBoundedContexts.Input.Controllers;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers;
-using Sources.EcsBoundedContexts.Cameras.Controllers;
 using Sources.EcsBoundedContexts.Movements.Move.Systems;
 using Sources.EcsBoundedContexts.Damage.Controllers;
 using Sources.EcsBoundedContexts.GameCompleted.Controllers;
@@ -18,7 +16,6 @@ using Sources.EcsBoundedContexts.Movements.Rotation.Systems;
 using Sources.EcsBoundedContexts.Timers.Infrastructure;
 using Sources.EcsBoundedContexts.Tutorials.Controllers;
 using Sources.EcsBoundedContexts.GameObjects.Controllers;
-using Sources.EcsBoundedContexts.Players.Controllers.Data;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -48,10 +45,6 @@ namespace Sources.EcsBoundedContexts.Core
 
 			//Tree
 
-			//Camera
-			containerBuilder.RegisterType(typeof(CameraRotationSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(MainCameraInitializeSystem), Lifetime.Singleton, Resolution.Lazy);
-
 			//AnimatorLod
 			containerBuilder.RegisterType(typeof(AnimatorLodSystem), Lifetime.Singleton, Resolution.Lazy);
 
@@ -68,10 +61,8 @@ namespace Sources.EcsBoundedContexts.Core
 			containerBuilder.RegisterType(typeof(TimerSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(TutorialSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(PlayerWalletSaveSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(PlayerSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//Characters
-			containerBuilder.RegisterType(typeof(CharacterInitializeSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(InputInitializeSystem), Lifetime.Singleton, Resolution.Lazy);
 			containerBuilder.RegisterType(typeof(InputSystem), Lifetime.Singleton, Resolution.Lazy);
 

@@ -9,7 +9,6 @@ using Sources.EcsBoundedContexts.Tutorials.Domain.Components;
 using Sources.EcsBoundedContexts.Timers.Domain;
 using Sources.EcsBoundedContexts.SaveLoads.Domain;
 using Sources.EcsBoundedContexts.PlayerWallets.Domain.Components;
-using Sources.EcsBoundedContexts.Players.Domain.Components;
 using Sources.EcsBoundedContexts.Particles.Domain;
 using Sources.EcsBoundedContexts.Movements.TargetPoint.Components;
 using Sources.EcsBoundedContexts.Movements.Rotation.Components;
@@ -24,8 +23,6 @@ using Sources.EcsBoundedContexts.ExplosionBodies.Domain;
 using Sources.EcsBoundedContexts.Damage.Domain;
 using Sources.EcsBoundedContexts.DailyRewards.Domain.Components;
 using Sources.EcsBoundedContexts.Common.Domain.Components;
-using Sources.EcsBoundedContexts.Characters.Domain.Components;
-using Sources.EcsBoundedContexts.Cameras.Domain;
 using Sources.EcsBoundedContexts.Animators;
 using Sources.EcsBoundedContexts.AnimatorLod.Domain.Components;
 using Sources.EcsBoundedContexts.Animancers.Domain.Components;
@@ -123,12 +120,6 @@ namespace Sources.EcsBoundedContexts.Core
 		//Tree
 		public readonly ProtoPool<TutorialTag> Tutorial = new ();
 
-		//Camera
-		public readonly ProtoPool<CameraComponent> Camera = new ();
-		public readonly ProtoPool<CinemachineCameraComponent> CinemachineCamera = new ();
-		public readonly ProtoPool<MainCameraModuleComponent> MainCameraModule = new ();
-		public readonly ProtoPool<MainCameraTag> MainCamera = new ();
-
 		//AnimatorLod
 		public readonly ProtoPool<AnimatorLodComponent> AnimatorLod = new ();
 
@@ -147,28 +138,9 @@ namespace Sources.EcsBoundedContexts.Core
 		public readonly ProtoPool<AvailableComponent> Available = new ();
 
 		//Characters
-		public readonly ProtoPool<PlayerNameComponent> PlayerName = new ();
-		public readonly ProtoPool<PlayerTag> Player = new ();
 		public readonly ProtoPool<HealParticleComponent> HealParticle = new ();
 		public readonly ProtoPool<ShootParticleComponent> ShootParticle = new ();
 		public readonly ProtoPool<AttackPowerComponent> AttackPower = new ();
-		public readonly ProtoPool<AirComponent> Air = new ();
-		public readonly ProtoPool<CharacterConfigComponent> CharacterConfig = new ();
-		public readonly ProtoPool<CharacterEntityComponent> CharacterEntity = new ();
-		public readonly ProtoPool<CharacterModuleComponent> CharacterModule = new ();
-		public readonly ProtoPool<CharacterSkinChangerModuleComponent> CharacterSkinChangerModule = new ();
-		public readonly ProtoPool<CharacterTag> Character = new ();
-		public readonly ProtoPool<GravityComponent> Gravity = new ();
-		public readonly ProtoPool<GroundDistanceComponent> GroundDistance = new ();
-		public readonly ProtoPool<GroundedComponent> Grounded = new ();
-		public readonly ProtoPool<InputEntityComponent> InputEntity = new ();
-		public readonly ProtoPool<JumpImpulseDirectionComponent> JumpImpulseDirection = new ();
-		public readonly ProtoPool<JumpingComponent> Jumping = new ();
-		public readonly ProtoPool<PlayerEntityComponent> PlayerEntity = new ();
-		public readonly ProtoPool<PlayerRefComponent> PlayerRef = new ();
-		public readonly ProtoPool<SpeedComponent> Speed = new ();
-		public readonly ProtoPool<TargetGravityComponent> TargetGravity = new ();
-		public readonly ProtoPool<VerticalVelocityComponent> VerticalVelocity = new ();
 
 		//Enemy
 
@@ -196,8 +168,6 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<IncreaseCoinsEvent>)] = IncreaseCoinsEvent,
 				[typeof(ProtoPool<PlayerWalletComponent>)] = PlayerWallet,
 				[typeof(ProtoPool<PlayerWalletModuleComponent>)] = PlayerWalletModule,
-				[typeof(ProtoPool<PlayerNameComponent>)] = PlayerName,
-				[typeof(ProtoPool<PlayerTag>)] = Player,
 				[typeof(ProtoPool<HealParticleComponent>)] = HealParticle,
 				[typeof(ProtoPool<ShootParticleComponent>)] = ShootParticle,
 				[typeof(ProtoPool<PointPathComponent>)] = PointPath,
@@ -269,27 +239,6 @@ namespace Sources.EcsBoundedContexts.Core
 				[typeof(ProtoPool<SequenceComponent>)] = Sequence,
 				[typeof(ProtoPool<StringIdComponent>)] = StringId,
 				[typeof(ProtoPool<TransformComponent>)] = Transform,
-				[typeof(ProtoPool<AirComponent>)] = Air,
-				[typeof(ProtoPool<CharacterConfigComponent>)] = CharacterConfig,
-				[typeof(ProtoPool<CharacterEntityComponent>)] = CharacterEntity,
-				[typeof(ProtoPool<CharacterModuleComponent>)] = CharacterModule,
-				[typeof(ProtoPool<CharacterSkinChangerModuleComponent>)] = CharacterSkinChangerModule,
-				[typeof(ProtoPool<CharacterTag>)] = Character,
-				[typeof(ProtoPool<GravityComponent>)] = Gravity,
-				[typeof(ProtoPool<GroundDistanceComponent>)] = GroundDistance,
-				[typeof(ProtoPool<GroundedComponent>)] = Grounded,
-				[typeof(ProtoPool<InputEntityComponent>)] = InputEntity,
-				[typeof(ProtoPool<JumpImpulseDirectionComponent>)] = JumpImpulseDirection,
-				[typeof(ProtoPool<JumpingComponent>)] = Jumping,
-				[typeof(ProtoPool<PlayerEntityComponent>)] = PlayerEntity,
-				[typeof(ProtoPool<PlayerRefComponent>)] = PlayerRef,
-				[typeof(ProtoPool<SpeedComponent>)] = Speed,
-				[typeof(ProtoPool<TargetGravityComponent>)] = TargetGravity,
-				[typeof(ProtoPool<VerticalVelocityComponent>)] = VerticalVelocity,
-				[typeof(ProtoPool<CameraComponent>)] = Camera,
-				[typeof(ProtoPool<CinemachineCameraComponent>)] = CinemachineCamera,
-				[typeof(ProtoPool<MainCameraModuleComponent>)] = MainCameraModule,
-				[typeof(ProtoPool<MainCameraTag>)] = MainCamera,
 				[typeof(ProtoPool<AnimatorComponent>)] = Animator,
 				[typeof(ProtoPool<AnimatorLodComponent>)] = AnimatorLod,
 				[typeof(ProtoPool<AnimancerEcsComponent>)] = AnimancerEcs,

@@ -4,7 +4,6 @@ using Leopotam.EcsProto.QoL;
 using Sources.EcsBoundedContexts.AnimatorLod.Domain.Components;
 using Sources.EcsBoundedContexts.AnimatorLod.Domain.Configs;
 using Sources.EcsBoundedContexts.Animators;
-using Sources.EcsBoundedContexts.Cameras.Domain;
 using Sources.EcsBoundedContexts.Common.Domain.Components;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Core.Domain;
@@ -15,9 +14,9 @@ using Random = UnityEngine.Random;
 
 namespace Sources.EcsBoundedContexts.AnimatorLod.Controllers
 {
-    [EcsSystem(3)]
-    [ComponentGroup(ComponentGroup.AnimatorLod)]
-    [Aspect(AspectName.Game)]
+    // [EcsSystem(3)]
+    // [ComponentGroup(ComponentGroup.AnimatorLod)]
+    // [Aspect(AspectName.Game)]
     public class AnimatorLodSystem : IProtoRunSystem, IProtoInitSystem
     {
         [DI] private readonly ProtoIt _it = new(
@@ -25,10 +24,10 @@ namespace Sources.EcsBoundedContexts.AnimatorLod.Controllers
                 AnimatorComponent,
                 AnimatorLodComponent,
                 TransformComponent>());
-        [DI] private readonly ProtoIt _cameraIt = new(
-            It.Inc<
-                MainCameraTag,
-                CameraComponent>());
+        // [DI] private readonly ProtoIt _cameraIt = new(
+        //     It.Inc<
+        //         MainCameraTag,
+        //         CameraComponent>());
         private readonly IAssetCollector _assetCollector;
 
         private List<AnimatorLodSettingsConfig> _lods;
@@ -42,7 +41,7 @@ namespace Sources.EcsBoundedContexts.AnimatorLod.Controllers
         public void Init(IProtoSystems systems)
         {
             _lods = _assetCollector.Get<AnimatorLodSettingsCollector>().Configs;
-            _cameraEntity = _cameraIt.First().Entity;
+            //_cameraEntity = _cameraIt.First().Entity;
             EnableAnimatorLOD();
         }
 

@@ -3,7 +3,6 @@ using Reflex.Enums;
 using Sirenix.OdinInspector;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Infrastructure.Factories;
-using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.EcsBoundedContexts.Core;
 using Sources.Frameworks.GameServices.Pauses;
 using Sources.Frameworks.GameServices.Pauses.Impl;
@@ -29,7 +28,6 @@ namespace Sources.App.DIContainers.MainMenu
             
             //Services
             containerBuilder.RegisterType(typeof(PauseService), new [] { typeof(IPauseService) }, Lifetime.Singleton, Resolution.Lazy);
-            containerBuilder.RegisterType(typeof(CameraService), new [] { typeof(ICameraService) }, Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterType(typeof(MainMenuAssetService), new [] { typeof(ICompositeAssetService) }, Lifetime.Singleton, Resolution.Lazy);
             
             //Systems

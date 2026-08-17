@@ -1,6 +1,5 @@
 ﻿using Reflex.Core;
 using Reflex.Enums;
-using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.Frameworks.GameServices.Linecasts.Implementation;
 using Sources.Frameworks.GameServices.Linecasts.Interfaces;
 using Sources.Frameworks.GameServices.Overlaps.Implementation;
@@ -22,9 +21,6 @@ namespace Sources.App.DIContainers.Gameplay
             containerBuilder.RegisterType(typeof(LinecastService), new [] { typeof(ILinecastService) }, Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterType(typeof(PauseService), new [] { typeof(IPauseService) }, Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterType(typeof(UpdateService), new [] { typeof(IUpdateService), typeof(IUpdateRegister) }, Lifetime.Singleton, Resolution.Lazy);
-            
-            //Camera
-            containerBuilder.RegisterType(typeof(CameraService), new [] { typeof(ICameraService) }, Lifetime.Singleton, Resolution.Lazy);
         }
     }
 }

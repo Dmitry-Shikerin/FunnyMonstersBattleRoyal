@@ -4,7 +4,6 @@ using Reflex.Core;
 using Sources.BoundedContexts.NetworkCore.Services;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Scenes.Controllers;
-using Sources.EcsBoundedContexts.Cameras.Infrastructure.Services;
 using Sources.Frameworks.GameServices.DeepWrappers.Curtains;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
@@ -40,7 +39,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         private readonly IFocusService _focusService;
         private readonly ILocalizationService _localizationService;
         private readonly ICurtainService _curtainService;
-        private readonly ICameraService _cameraService;
         private readonly IUpdateService _updateService;
 
         public GameplaySceneFactory(
@@ -59,7 +57,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             IFocusService focusService,
             ILocalizationService localizationService,
             ICurtainService curtainService,
-            ICameraService cameraService,
             IUpdateService updateService)
         {
             _uiViewService = uiViewService;
@@ -78,7 +75,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             _focusService = focusService ?? throw new ArgumentNullException(nameof(focusService));
             _localizationService = localizationService ?? throw new ArgumentNullException(nameof(localizationService));
             _curtainService = curtainService ?? throw new ArgumentNullException(nameof(curtainService));
-            _cameraService = cameraService ?? throw new ArgumentNullException(nameof(cameraService));
             _updateService = updateService ?? throw new ArgumentNullException(nameof(updateService));
         }
 
@@ -100,7 +96,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
                 _focusService,
                 _localizationService,
                 _curtainService,
-                _cameraService,
                 _updateService);
 
             return UniTask.FromResult(gameplayScene);

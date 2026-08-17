@@ -1,6 +1,4 @@
 using Reflex.Core;
-using Reflex.Enums;
-using Sources.EcsBoundedContexts.Players.Controllers.Data;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -25,10 +23,6 @@ namespace Sources.EcsBoundedContexts.Core
 			//Light
 
 			//Chunks
-
-			//Ability
-			containerBuilder.RegisterType(typeof(PlayerLoadSystem), Lifetime.Singleton, Resolution.Lazy);
-			containerBuilder.RegisterType(typeof(PlayerSaveSystem), Lifetime.Singleton, Resolution.Lazy);
 
 			//Characters
 

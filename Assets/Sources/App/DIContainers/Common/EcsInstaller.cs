@@ -1,15 +1,12 @@
 ﻿using Leopotam.EcsProto;
 using Reflex.Core;
 using Reflex.Enums;
-using Sources.EcsBoundedContexts.Cameras.Infrastructure;
-using Sources.EcsBoundedContexts.Characters.Infrastructure;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.DailyRewards.Infrastructure;
 using Sources.EcsBoundedContexts.ExplosionBodies.Infrastructure;
 using Sources.EcsBoundedContexts.Input.Infrastructure;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Infrastructure;
 using Sources.EcsBoundedContexts.Lights.Infrastructure;
-using Sources.EcsBoundedContexts.Players.Infrastructure;
 using Sources.EcsBoundedContexts.PlayerWallets.Infrastructure;
 using Sources.EcsBoundedContexts.Tutorials.Infrastructure;
 using Sources.Frameworks.GameServices.EntityPools.Implementation;
@@ -41,14 +38,8 @@ namespace Sources.App.DIContainers.Common
             //Pools
             containerBuilder.RegisterType(typeof(EntityPoolManager), new[] { typeof(IEntityPoolManager) }, Lifetime.Singleton, Resolution.Lazy);
             
-            //Characters
-            containerBuilder.RegisterType(typeof(CharacterEntityFactory), Lifetime.Singleton, Resolution.Lazy);
-            
             //Input
             containerBuilder.RegisterType(typeof(InputEntityFactory), Lifetime.Singleton, Resolution.Lazy);
-            
-            //Cameras
-            containerBuilder.RegisterType(typeof(MainCameraEntityFactory), Lifetime.Singleton, Resolution.Lazy);
             
             //Lights
             containerBuilder.RegisterType(typeof(LightEntityFactory), Lifetime.Singleton, Resolution.Lazy);
@@ -71,9 +62,6 @@ namespace Sources.App.DIContainers.Common
             //DailyRewards
             containerBuilder.RegisterType(typeof(DailyRewardEntityFactory), Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterType(typeof(DailyRewardService), Lifetime.Singleton, Resolution.Lazy);
-            
-            //Player
-            containerBuilder.RegisterType(typeof(PlayerEntityFactory), Lifetime.Singleton, Resolution.Lazy);
         }
     }
 }

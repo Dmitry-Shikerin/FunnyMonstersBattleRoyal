@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Leopotam.EcsProto;
-using Sources.BoundedContexts.Characters.Controllers.Systems;
 using Sources.EcsBoundedContexts.AnimatorLod.Controllers;
 using Sources.EcsBoundedContexts.AdvertisingAfterWaves.Controllers;
 using Sources.EcsBoundedContexts.Tutorials.Controllers.Data;
@@ -8,7 +7,6 @@ using Sources.EcsBoundedContexts.PlayerWallets.Controllers.Data;
 using Sources.EcsBoundedContexts.KillEnemyCounters.Controllers.Data;
 using Sources.EcsBoundedContexts.Input.Controllers;
 using Sources.EcsBoundedContexts.PlayerWallets.Controllers;
-using Sources.EcsBoundedContexts.Cameras.Controllers;
 using Sources.EcsBoundedContexts.Movements.Move.Systems;
 using Sources.EcsBoundedContexts.Damage.Controllers;
 using Sources.EcsBoundedContexts.GameCompleted.Controllers;
@@ -18,7 +16,6 @@ using Sources.EcsBoundedContexts.Movements.Rotation.Systems;
 using Sources.EcsBoundedContexts.Timers.Infrastructure;
 using Sources.EcsBoundedContexts.Tutorials.Controllers;
 using Sources.EcsBoundedContexts.GameObjects.Controllers;
-using Sources.EcsBoundedContexts.Players.Controllers.Data;
 
 namespace Sources.EcsBoundedContexts.Core
 {
@@ -33,13 +30,10 @@ namespace Sources.EcsBoundedContexts.Core
 			InterstitialAfterWaveSystem interstitialAfterWaveSystem, //Order: 6 //Common
 			TutorialLoadSystem tutorialLoadSystem, //Order: 9 //Ability
 			PlayerWalletLoadSystem playerWalletLoadSystem, //Order: 10 //Ability
-			CharacterInitializeSystem characterInitializeSystem, //Order: 10 //Characters
 			KillEnemyCounterLoadSystem killEnemyCounterLoadSystem, //Order: 12 //Common
 			InputInitializeSystem inputInitializeSystem, //Order: 15 //Characters
 			InputSystem inputSystem, //Order: 50 //Characters
 			PlayerWalletSystem playerWalletSystem, //Order: 51 //Ability
-			CameraRotationSystem cameraRotationSystem, //Order: 51 //Camera
-			MainCameraInitializeSystem mainCameraInitializeSystem, //Order: 51 //Camera
 			MoveAlongPathSystem moveAlongPathSystem, //Order: 58 //Light
 			CleanHealthSystem cleanHealthSystem, //Order: 60 //Player
 			DamageSystem damageSystem, //Order: 64 //Common
@@ -55,7 +49,6 @@ namespace Sources.EcsBoundedContexts.Core
 			ActiveGameObjectSystem activeGameObjectSystem, //Order: 84 //Common
 			TutorialSaveSystem tutorialSaveSystem, //Order: 503 //Tutorial
 			PlayerWalletSaveSystem playerWalletSaveSystem, //Order: 504 //Ability
-			PlayerSaveSystem playerSaveSystem, //Order: 504 //Ability
 			KillEnemyCounterSaveSystem killEnemyCounterSaveSystem //Order: 506 //Common
 		)
 		{
@@ -66,13 +59,10 @@ namespace Sources.EcsBoundedContexts.Core
 				interstitialAfterWaveSystem, //Common
 				tutorialLoadSystem, //Ability
 				playerWalletLoadSystem, //Ability
-				characterInitializeSystem, //Characters
 				killEnemyCounterLoadSystem, //Common
 				inputInitializeSystem, //Characters
 				inputSystem, //Characters
 				playerWalletSystem, //Ability
-				cameraRotationSystem, //Camera
-				mainCameraInitializeSystem, //Camera
 				moveAlongPathSystem, //Light
 				cleanHealthSystem, //Player
 				damageSystem, //Common
@@ -88,7 +78,6 @@ namespace Sources.EcsBoundedContexts.Core
 				activeGameObjectSystem, //Common
 				tutorialSaveSystem, //Tutorial
 				playerWalletSaveSystem, //Ability
-				playerSaveSystem, //Ability
 				killEnemyCounterSaveSystem, //Common
 			};
 		}
