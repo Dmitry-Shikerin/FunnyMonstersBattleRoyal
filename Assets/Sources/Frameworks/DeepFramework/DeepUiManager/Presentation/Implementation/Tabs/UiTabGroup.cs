@@ -46,7 +46,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
                 if (uiTab == tab)
                     continue;
                 
-                Debug.Log($"Hide tab");
                 uiTab.Hide();
             }
             

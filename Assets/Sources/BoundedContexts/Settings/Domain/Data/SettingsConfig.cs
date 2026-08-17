@@ -23,10 +23,17 @@ namespace Sources.BoundedContexts.Settings.Domain.Data
         [field: SerializeField] public FullScreenMode FullScreenMode { get; private set; } = FullScreenMode.ExclusiveFullScreen;
 
         [field: Header("Volume")]
+        [field: Range(0, 1)]
         [field: SerializeField] public float MusicVolume { get; private set; } = 0.75f;
         [field: SerializeField] public bool IsMutedMusic { get; private set; }
+        [field: Range(0, 1)]
         [field: SerializeField] public float SoundVolume { get; private set; } = 0.75f;
         [field: SerializeField] public bool IsMutedSound { get; private set; }
+
+        [field: Header("Volume")]
+        [field: Range(0, 2)]
+        [field: SerializeField] public float MouseSensitivity { get; private set; } = 0.5f;        
+        [field: SerializeField] public Vector2 MinMaxMouseSensitivity { get; private set; } = new (0, 2);
 
         private List<int> GetFrameRates()
         {

@@ -1,6 +1,7 @@
 ﻿using Fusion;
 using NodeCanvas.StateMachines;
 using Reflex.Core;
+using Sources.BoundedContexts.Camera.Presentation;
 using Sources.BoundedContexts.Characters.Presentation;
 using Sources.BoundedContexts.Characters.Presentation.Skins.Body;
 using Sources.BoundedContexts.Characters.Presentation.Skins.BodyPart;
@@ -15,7 +16,6 @@ using Sources.BoundedContexts.Players.Presentation;
 using Sources.BoundedContexts.Players.Presentation.Ui;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
 using Sources.BoundedContexts.Spawners.Presentation;
-using Sources.EcsBoundedContexts.Cameras.Domain;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
@@ -61,7 +61,9 @@ namespace Sources.BoundedContexts.Characters.Infrastructure
             if (runner.LocalPlayer == playerRef)
             {
                 //InitCamera
-                _rootGameObject.Camera.SetFollow(VirtualCameraType.ThirdPerson, networkObject.transform);
+                ThirdPersonCameraView thirdPersonCamera = _rootGameObject.MainCamera.ThirdPersonCamera;
+                thirdPersonCamera.SetFollow(networkObject.transform);
+                thirdPersonCamera.Construct(_uiViewService);
                 
                 //InitPlayerName
                 PlayerViewComponent playerView = viewComponentsLink.Get<PlayerViewComponent>();
@@ -94,7 +96,7 @@ namespace Sources.BoundedContexts.Characters.Infrastructure
             if (runner.LocalPlayer == playerRef)
             {
                 //InitCamera
-                _rootGameObject.Camera.SetFollow(VirtualCameraType.ThirdPerson, networkObject.transform);
+                _rootGameObject.MainCamera.ThirdPersonCamera.SetFollow(networkObject.transform);
                 
                 //InitPlayerName
                 PlayerViewComponent playerView = viewComponentsLink.Get<PlayerViewComponent>();

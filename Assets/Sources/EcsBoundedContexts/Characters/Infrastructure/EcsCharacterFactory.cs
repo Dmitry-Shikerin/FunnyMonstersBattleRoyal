@@ -3,16 +3,13 @@ using Leopotam.EcsProto;
 using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using Sources.BoundedContexts.Hud.Presentations.Lobby;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
-using Sources.EcsBoundedContexts.Cameras.Domain;
 using Sources.EcsBoundedContexts.Cameras.Infrastructure;
-using Sources.EcsBoundedContexts.Cameras.Presentation;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Core;
 using Sources.EcsBoundedContexts.Input.Infrastructure;
 using Sources.EcsBoundedContexts.Players.Infrastructure;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
-using UnityEngine;
 
 namespace Sources.EcsBoundedContexts.Characters.Infrastructure
 {
@@ -99,8 +96,8 @@ namespace Sources.EcsBoundedContexts.Characters.Infrastructure
             if (runner.LocalPlayer == playerRef)
             {
                 //Set camera follow transform
-                _rootGameObject.MainCamera.GetModule<MainCameraModule>().Cameras[VirtualCameraType.ThirdPerson].Follow =
-                    characterEntity.GetTransform().Value;
+                // _rootGameObject.MainCamera.GetModule<MainCameraModule>().Cameras[VirtualCameraType.ThirdPerson].Follow =
+                //     characterEntity.GetTransform().Value;
                 //_mainCameraEntityFactory.Create(_rootGameObject.MainCamera);
                 ProtoEntity playerEntity = _playerEntityFactory.LoadAndCreate();
                 playerEntity.AddCharacterEntity(characterEntity);
