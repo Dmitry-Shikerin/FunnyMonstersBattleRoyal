@@ -18,9 +18,11 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
         [SerializeField] private UiTab _firstTab;
         [SerializeField] private List<UiTab> _tabs;
 
+        private bool _isInitialized;
+
         public UiTab CurrentTab { get; private set; }
         
-        private void Awake()
+        private void Start()
         {
             _firstTab.Show();
             CurrentTab = _firstTab;
@@ -31,18 +33,21 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
             if (tab == null)
                 throw new ArgumentNullException(nameof(tab));
             
-            if (CurrentTab != null && tab == CurrentTab)
+            if (CurrentTab != null && tab == CurrentTab && _isInitialized)
                 return;
+
+            _isInitialized = true;
             
             if (_tabs.Contains(tab) == false)
                 throw new ArgumentException($"Tab {tab} is not in the group {_tabs}.");
 
-            foreach (UiTab toggle in _tabs)
+            foreach (UiTab uiTab in _tabs)
             {
-                if (toggle == tab)
+                if (uiTab == tab)
                     continue;
                 
-                toggle.Hide();
+                Debug.Log($"Hide tab");
+                uiTab.Hide();
             }
             
             CurrentTab = tab;

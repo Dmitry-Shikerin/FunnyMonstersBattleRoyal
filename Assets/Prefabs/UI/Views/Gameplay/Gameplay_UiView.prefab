@@ -248,9 +248,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273545dcb76048d7970c91277a836d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isHideGameObject: 1
-  _isHideCanvas: 0
-  _isCanvasGroupBlockRaycast: 0
+  _isHideGameObject: 0
+  _isHideCanvas: 1
+  _isCanvasGroupBlockRaycast: 1
   _canvasGroup: {fileID: 8360710338251304759}
   <InjectedMonoBehaviours>k__BackingField: []
   _label: <size=18><b><color=#0000FF><i>UiView</i></color></b></size>
