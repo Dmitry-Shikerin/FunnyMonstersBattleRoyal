@@ -16,5 +16,10 @@ namespace Sources.BoundedContexts.Hud.Controllers.Lobby
         {
             viewIds.Add(UiViewId.Lobby);
         }
+        
+        protected override void AddEnterUiActions(List<UiActionId> uiActionIds)
+        {
+            uiActionIds.Add(UiActionId.UnlockCursor);
+        }
     }
 }

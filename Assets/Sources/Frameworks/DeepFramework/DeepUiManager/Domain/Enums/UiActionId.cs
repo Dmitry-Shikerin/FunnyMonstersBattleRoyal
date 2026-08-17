@@ -17,5 +17,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums
       UnPause = 12,
       HideDailyRewardView = 13,
       GetDailyReward = 14,
+      LockCursor = 15,
+      UnlockCursor = 16,
    }
 }

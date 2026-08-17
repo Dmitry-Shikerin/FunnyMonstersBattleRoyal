@@ -14,6 +14,8 @@ namespace Sources.BoundedContexts.Camera.Presentation
         
         [Required] [SerializeField] private CinemachineCamera _camera;
         [Required] [SerializeField] private CinemachineInputAxisController _axisController;
+
+        private bool _isLocked;
         
         private MouseSensitivitySettingsViewComponent _sensitivitySettingsView;
 
@@ -44,6 +46,9 @@ namespace Sources.BoundedContexts.Camera.Presentation
 
         private void OnSensitivityChange(float value)
         {
+            if (_isLocked)
+                return;
+            
             foreach (InputAxisControllerBase<CinemachineInputAxisController.Reader>.Controller controller in _axisController.Controllers)
             {
                 if (controller.Name == HorizontalAxis)
@@ -56,5 +61,19 @@ namespace Sources.BoundedContexts.Camera.Presentation
 
         public void SetFollow(Transform followTransform) =>
             _camera.Follow = followTransform;
+
+        public void LockCameraRotation()
+        {
+            Debug.Log($"Lock");
+            OnSensitivityChange(0);
+            _isLocked = true;
+        }
+
+        public void UnlockCameraRotation()
+        {
+            Debug.Log($"Unlock");
+            _isLocked = false;
+            OnSensitivityChange(_sensitivitySettingsView.Sensitivity);
+        }
     }
 }

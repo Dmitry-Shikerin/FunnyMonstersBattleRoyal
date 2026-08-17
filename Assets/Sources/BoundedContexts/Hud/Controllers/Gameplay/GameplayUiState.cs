@@ -16,5 +16,10 @@ namespace Sources.BoundedContexts.Hud.Controllers.Gameplay
         {
             viewIds.Add(UiViewId.Gameplay);
         }
+        
+        protected override void AddEnterUiActions(List<UiActionId> uiActionIds)
+        {
+            uiActionIds.Add(UiActionId.LockCursor);
+        }
     }
 }

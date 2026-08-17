@@ -176,6 +176,8 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             actionHandler.AddAction<SaveVolumeUiAction>();
             actionHandler.AddAction<NewGameUiAction>();
             actionHandler.AddAction<GetDailyRewardUiAction>();
+            actionHandler.AddAction<LockCursorUiAction>();
+            actionHandler.AddAction<UnlockCursorUiAction>();
         }
     }
 }

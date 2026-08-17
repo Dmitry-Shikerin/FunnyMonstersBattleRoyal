@@ -1,11 +1,10 @@
 using System.Collections.Generic;
-using Leopotam.EcsProto.Unity.Plugins.LeoEcsProtoCs.Leopotam.EcsProto.Unity.Runtime;
 using Sources.EcsBoundedContexts.Gizmoses.Domain;
 using UnityEngine;
 
-namespace Sources.EcsBoundedContexts.Gizmoses.Presentation
+namespace Sources.BoundedContexts.Gizmoses.Presentation
 {
-    public class GizmosModule : EntityModule
+    public class GizmosView : MonoBehaviour
     {
         [SerializeField] private bool _isDraw = true;
         [SerializeField] private List<DrawerContainer> _drawers = new ();
