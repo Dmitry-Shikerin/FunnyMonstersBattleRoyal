@@ -185,6 +185,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Camera>k__BackingField: {fileID: 3274369998394586124}
   <Brain>k__BackingField: {fileID: 1394067349957079180}
-  <Cameras>k__BackingField:
-    _keys: 
-    _values: []
+  <ThirdPersonCamera>k__BackingField: {fileID: 0}
