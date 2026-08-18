@@ -1,5 +1,6 @@
 ﻿using Reflex.Core;
 using Reflex.Enums;
+using Sources.BoundedContexts.Cursors.Services;
 using Sources.Frameworks.GameServices.SceneLoaderServices.Implementation;
 using Sources.Frameworks.GameServices.Scenes.Services.Implementation;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
@@ -22,6 +23,8 @@ namespace Sources.App.DIContainers
 
             //Curtain
             containerBuilder.RegisterType(typeof(CurtainService), new []{typeof(ICurtainService)}, Lifetime.Singleton, Resolution.Lazy);
+            
+            containerBuilder.RegisterType(typeof(CursorService), new [] { typeof(ICursorService) }, Lifetime.Singleton, Resolution.Lazy);
         }
     }
 }

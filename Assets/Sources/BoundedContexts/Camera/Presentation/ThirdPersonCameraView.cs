@@ -64,14 +64,12 @@ namespace Sources.BoundedContexts.Camera.Presentation
 
         public void LockCameraRotation()
         {
-            Debug.Log($"Lock");
             OnSensitivityChange(0);
             _isLocked = true;
         }
 
         public void UnlockCameraRotation()
         {
-            Debug.Log($"Unlock");
             _isLocked = false;
             OnSensitivityChange(_sensitivitySettingsView.Sensitivity);
         }

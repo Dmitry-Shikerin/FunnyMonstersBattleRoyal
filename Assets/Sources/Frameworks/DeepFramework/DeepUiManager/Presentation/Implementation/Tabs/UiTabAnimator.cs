@@ -39,7 +39,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
             }
             else
             {
-                Debug.Log($"Play hide anim");
                 _enableSequence?.Kill();
                 _disableSequence = _disableTimeline.Restart();
             }

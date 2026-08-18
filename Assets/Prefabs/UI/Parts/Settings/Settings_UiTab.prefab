@@ -547,6 +547,7 @@ GameObject:
   - component: {fileID: 7811658509269458824}
   - component: {fileID: 1380861824519601743}
   - component: {fileID: 2756870814870541125}
+  - component: {fileID: 5536010570292850669}
   m_Layer: 5
   m_Name: Settings_UiTab
   m_TagString: Untagged
@@ -702,6 +703,26 @@ MonoBehaviour:
   _tab: {fileID: 1380861824519601743}
   _enableTimeline: {fileID: 7423702781084889639}
   _disableTimeline: {fileID: 4341014875091812511}
+--- !u!114 &5536010570292850669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720691124503692458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: 1
+  m_FlexibleHeight: 1
+  m_LayoutPriority: 1
 --- !u!1 &7347669711274599789
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,10 +891,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1952663434526218559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -36}
-  m_SizeDelta: {x: 360.86, y: 72}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.054992676, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1246601866444804011
 CanvasRenderer:
@@ -945,10 +966,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1952663434526218559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -36}
-  m_SizeDelta: {x: 360.86, y: 72}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.5700073, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &7320048829866085735
 CanvasRenderer:
