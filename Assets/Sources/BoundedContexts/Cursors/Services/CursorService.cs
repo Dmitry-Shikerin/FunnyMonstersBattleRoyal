@@ -19,6 +19,7 @@ namespace Sources.BoundedContexts.Cursors.Services
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            Debug.Log($"Opa");
         }
 
         public void UnlockCursor()
