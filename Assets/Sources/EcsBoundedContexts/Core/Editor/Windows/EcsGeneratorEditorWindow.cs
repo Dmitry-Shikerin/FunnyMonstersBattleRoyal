@@ -26,16 +26,6 @@ namespace Sources.EcsBoundedContexts.Core.Editor.Windows
             GetWindow<EcsGeneratorEditorWindow>().Show();
         }
 
-        protected override void OnGUI()
-        {
-            base.OnGUI();
-        }
-
-        protected override void DrawEditors()
-        {
-            base.DrawEditors();
-        }
-
         protected override void Initialize()
         {
             base.Initialize();
@@ -43,21 +33,6 @@ namespace Sources.EcsBoundedContexts.Core.Editor.Windows
 
             _defaultAspectName = generator.DefaultAspectName;
             _aspectPath = generator.AspectPath;
-        }
-
-        protected override void OnEnable()
-        {
-            base.OnEnable();
-        }
-
-        protected override void OnDisable()
-        {
-            base.OnDisable();
-        }
-
-        protected override void OnDestroy()
-        {
-            base.OnDestroy();
         }
 
         [Button]
