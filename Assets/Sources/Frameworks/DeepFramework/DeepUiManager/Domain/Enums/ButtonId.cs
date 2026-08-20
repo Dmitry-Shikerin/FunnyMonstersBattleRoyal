@@ -27,5 +27,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Enums
         ExitToDesktop = 22,
         Lobby = 23,
         Back = 24,
+        Disconnect = 25,
     }
 }
