@@ -20,5 +20,7 @@ MonoBehaviour:
   - {fileID: -5708969707262197954, guid: 5ca2ac1d40837164f9e2bf86585b546f, type: 3}
   - {fileID: 7607918457955421699, guid: 9e63350d9c643b44dbb01c7cb8a98110, type: 3}
   - {fileID: 3098259461703886903, guid: 158756f554bc44e4390abb44b3456c25, type: 3}
+  - {fileID: 1302814500057877734, guid: d16b6d569fb3b4f429fcdf2e486c53fc, type: 3}
+  - {fileID: 2474989807944404480, guid: 4593b5367d412004cb041a1afda3254f, type: 3}
   <PopUps>k__BackingField:
   - {fileID: 9185629996254299348, guid: 3506f02e8715bc6428c5532efe473dc4, type: 3}
