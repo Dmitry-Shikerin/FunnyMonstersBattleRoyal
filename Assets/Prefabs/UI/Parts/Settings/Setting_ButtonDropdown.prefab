@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 728190601743727422}
   - component: {fileID: 6469780536854427530}
   m_Layer: 5
-  m_Name: ButtonDropdown
+  m_Name: Setting_ButtonDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

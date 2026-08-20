@@ -1,9 +1,8 @@
 ﻿using Sources.BoundedContexts.Settings.Domain.Enums;
 using Sources.BoundedContexts.Settings.Infrastructure.Services.Interfaces;
-using Sources.EcsBoundedContexts.Settings.Infrastructure.Services.Interfaces;
 using UnityEngine;
 
-namespace Sources.EcsBoundedContexts.Settings.Infrastructure.Services
+namespace Sources.BoundedContexts.Settings.Infrastructure.Services
 {
     public class QualityService : IQualityService
     {

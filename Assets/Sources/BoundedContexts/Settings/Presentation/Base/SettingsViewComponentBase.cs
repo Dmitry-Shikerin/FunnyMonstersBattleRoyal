@@ -10,7 +10,12 @@ namespace Sources.BoundedContexts.Settings.Presentation.Base
         public void Initialize(SettingsView settingsView)
         {
             SettingsView = settingsView;
+            OnAfterInitialize();
             IsInitialized = true;
+        }
+
+        protected virtual void OnAfterInitialize()
+        {
         }
 
         public virtual void UpdateView()

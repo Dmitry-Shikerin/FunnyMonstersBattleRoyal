@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 8446404993354192142}
   - component: {fileID: 6388978075882182212}
   m_Layer: 5
-  m_Name: SettingsToggle
+  m_Name: Setting_Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,7 +623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.079, y: 0.14164817}
   m_AnchorMax: {x: 1, y: 0.85664827}
-  m_AnchoredPosition: {x: -0.1309967, y: 0.08520126}
+  m_AnchoredPosition: {x: -0.13098145, y: 0.08520508}
   m_SizeDelta: {x: 0.070007324, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &67565748914590551
@@ -678,6 +678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _label: <size=18><b><color=#C71585><i>Ui Toggle</i></color></b></size>
   _button: {fileID: 960957978670275312}
+  _startState: 1
 --- !u!114 &960957978670275312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,7 +739,6 @@ MonoBehaviour:
   _toggle: {fileID: 1240581263223369343}
   _enableTimeline: {fileID: 7185712363898117406}
   _disableTimeline: {fileID: 4556047659113065162}
-  _startState: 1
 --- !u!114 &8446404993354192142
 MonoBehaviour:
   m_ObjectHideFlags: 0
