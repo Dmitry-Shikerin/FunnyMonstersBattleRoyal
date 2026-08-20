@@ -40,14 +40,13 @@ namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
             // {
             //     //await _resourcesAssetLoader.LoadAsset(asset.FolderPath);
             // }
+            await UniTask.CompletedTask;
         }
 
         protected override async UniTask LoadByResourcesFoldersAsync()
         {
             await UniTask.WhenAll
             (
-                _resourcesAssetLoader.LoadAsset<PoolManagerCollector>(ResourcesPrefabPath.PoolManagerCollector)
-                //_resourcesAssetLoader.LoadAsset<CharacterModule>(ResourcesPrefabPath.Character)
             );
         }
         
@@ -57,7 +56,6 @@ namespace Sources.Frameworks.GameServices.Prefabs.Implementation.Composites
 
             //Configs
             await AddressablesLoad(config.CharacterConfig);
-            await AddressablesLoad(config.UiConfig);
             await AddressablesLoad(config.AnimationConfig);
             await AddressablesLoad(config.AdvertisingAfterWaveConfig);
             await AddressablesLoad(config.DailyRewardConfig);

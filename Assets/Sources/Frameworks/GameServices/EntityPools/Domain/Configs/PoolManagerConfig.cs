@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
-using Sources.Frameworks.DeepFramework.DeepLocalization.Domain.Extensions;
 using Sources.Frameworks.DeepFramework.DeepUtils.ConfigCollectors.Domain.ScriptableObjects;
 using Sources.Frameworks.DeepFramework.DeepUtils.Reflections;
 using Sources.Frameworks.MVPPassiveView.Presentations.Implementation.Views;

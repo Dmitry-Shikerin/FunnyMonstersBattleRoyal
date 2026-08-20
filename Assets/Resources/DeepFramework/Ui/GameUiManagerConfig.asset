@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GameUiManagerConfig
   m_EditorClassIdentifier: 
   <Hud>k__BackingField: {fileID: 2251821043641021725, guid: d63dddcdcad28ed4192b5d6821041346, type: 3}
+  <FsmOwner>k__BackingField: {fileID: 4390823779701869285, guid: feb9edffcf5b66e41baf2091fb42b24c, type: 3}
   <Views>k__BackingField:
   - {fileID: 8829307301692101568, guid: e072139ace1a6e34a9b25deb054c4d14, type: 3}
   - {fileID: 2734523891560333517, guid: 50eddc9baab09804c8f4f0ba5dfbeab7, type: 3}

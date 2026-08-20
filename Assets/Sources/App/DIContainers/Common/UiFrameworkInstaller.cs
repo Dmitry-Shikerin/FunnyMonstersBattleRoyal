@@ -6,7 +6,6 @@ using Sources.Frameworks.GameServices.DeepWrappers.SignalBuses;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
 using Sources.Frameworks.GameServices.DeepWrappers.Views;
 using Sources.Frameworks.GameServices.DeepWrappers.Views.Interfaces;
-using Sources.Frameworks.GameServices.UiReflexInjectors;
 using UnityEngine;
 using Resolution = Reflex.Enums.Resolution;
 
@@ -23,10 +22,7 @@ namespace Sources.App.DIContainers.Common
             
             //UI
             containerBuilder.RegisterType(typeof(UiPopUpService), new [] { typeof(IUiPopUpService) }, Lifetime.Singleton, Resolution.Lazy);
-            containerBuilder.RegisterType(typeof(UiViewService), new [] { typeof(IUiViewService) }, Lifetime.Singleton, Resolution.Lazy);            
-            
-            //Injector
-            containerBuilder.RegisterType(typeof(UiReflexInjector), Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterType(typeof(UiViewService), new [] { typeof(IUiViewService) }, Lifetime.Singleton, Resolution.Lazy);
             
             //SignalBus
             containerBuilder.RegisterType(typeof(SignalBus), new [] { typeof(ISignalBus) }, Lifetime.Singleton, Resolution.Lazy);

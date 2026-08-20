@@ -1,4 +1,10 @@
+using System;
+using Cysharp.Threading.Tasks;
+using NodeCanvas.BehaviourTrees;
+using NodeCanvas.Framework;
+using NodeCanvas.StateMachines;
 using Reflex.Core;
+using Reflex.Injectors;
 using Sources.Frameworks.DeepFramework.DeepCores.Core;
 using Sources.Frameworks.DeepFramework.DeepCores.Presentation;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
@@ -48,33 +54,58 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implemen
             _popUpViewManager = new UiPopUpViewManager();
             _buttonsManager = new ButtonsManager(_signalBus);
             _uiScaler = new UiScaler();
-            _curtainView = Instantiate(Resources.Load<CurtainView>("Services/Ui/CurtainView"), transform, true);
+            _curtainView = Instantiate(Resources.Load<CurtainView>(CurtainView.AssetPath), transform, true);
             InitCore();
         }
 
-        public void Initialize(UiManagerConfig config, Camera mainCamera, Container container)
+        public async UniTask  Initialize(string assetPath, Camera mainCamera, Container container)
         {
+            UiManagerConfig config = await Resources.LoadAsync<UiManagerConfig>(assetPath) as UiManagerConfig;
+
+            if (config == null)
+                throw new NullReferenceException("UiManagerConfig is null");
+            
             _hud = Instantiate(config.Hud);
-            Transform parentTransform = _hud.Canvas.transform;
+            Transform uiParentTransform = _hud.Canvas.transform;
 
             UniversalAdditionalCameraData cameraData = mainCamera.GetUniversalAdditionalCameraData();
             cameraData.cameraStack.Add(_hud.UiCamera);
             _actionHandler.Initialize(container);
 
             _uiScaler.Initialize(_hud.UiCamera);
-            
-            foreach (UiView view in config.Views)
-                Instantiate(view, parentTransform, false);
+
+            //Views
+            foreach (UiView viewPrefab in config.Views)
+            {
+                UiView view = Instantiate(viewPrefab, uiParentTransform, false);
+                
+                AttributeInjector.Inject(view, container);
+                
+                foreach (MonoBehaviour mono in view.InjectedMonoBehaviours)
+                    AttributeInjector.Inject(mono, container);
+            }
 
             _viewManager.Initialize();
-            
-            foreach (UiPopUpView popUpView in config.PopUps)
-                Instantiate(popUpView, parentTransform, false);
+
+            //PopUp
+            foreach (UiPopUpView popUpViewPrefab in config.PopUps)
+            {
+                UiPopUpView view = Instantiate(popUpViewPrefab, uiParentTransform, false);
+                
+                AttributeInjector.Inject(view, container);
+                
+                foreach (MonoBehaviour mono in view.InjectedMonoBehaviours)
+                    AttributeInjector.Inject(mono, container);
+            }
 
             _popUpViewManager.Initialize();
 
-            // _hud.FsmOwner.behaviour = config.Fsm;
-            // _hud.FsmOwner.StartBehaviour();
+            //FSM
+            FSMOwner fsmOwner = Instantiate(config.FsmOwner, _hud.transform, false);
+            FSM behaviour = fsmOwner.behaviour;
+            behaviour.Initialize(behaviour.agent, behaviour.blackboard, true, false);
+            InjectOwner(fsmOwner, container);
+            fsmOwner.StartBehaviour();
         }
 
         public void Destroy()
@@ -103,6 +134,22 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implemen
 
             _core = DeepCore.Instance;
             _core.AddChild(this);
+        }
+
+        private static void  InjectOwner<T>(GraphOwner<T> owner, Container container)
+            where T : Graph
+        {
+            foreach (FSMState state in owner.behaviour.GetAllNodesOfType<FSMState>())
+                AttributeInjector.Inject(state, container);
+            
+            foreach (Task task in owner.behaviour.GetAllTasksOfType<Task>())
+                AttributeInjector.Inject(task, container);
+            
+            foreach (BehaviourTree graph in owner.behaviour.GetAllNestedGraphs<BehaviourTree>(true))
+            {
+                foreach (Task task in graph.GetAllTasksOfType<Task>())
+                    AttributeInjector.Inject(task, container);
+            }
         }
     }
 }

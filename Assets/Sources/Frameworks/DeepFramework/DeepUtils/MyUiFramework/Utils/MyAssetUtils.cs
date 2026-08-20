@@ -51,36 +51,34 @@ namespace Sources.Frameworks.DeepFramework.DeepUtils.MyUiFramework.Utils
             if (obj != null)
                 return obj;
             
-            obj = CreateAsset<T>(resourcesPath, fileName, ".asset", saveAssetDatabase, refreshAssetDatabase);
+            obj = CreateAsset<T>(resourcesPath, fileName, saveAssetDatabase, refreshAssetDatabase);
 #endif
             return obj;
         }
 
-        public static T GetScriptableObject<T>(
-            string fileName, string resourcesPath)
+        public static T GetScriptableObject<T>(string relativePath, string fileName)
             where T : ScriptableObject
         {
-            if (string.IsNullOrEmpty(resourcesPath))
-                return null;
-            
-            if (string.IsNullOrEmpty(fileName))
-                return null;
+            if (string.IsNullOrEmpty(relativePath))
+                throw new ArgumentNullException(nameof(relativePath));
 
-            // T asset = AssetDatabase.LoadAssetAtPath<T>($"{resourcesPath}/{fileName}");
-            T asset = (T)Resources.Load($"{resourcesPath}/{fileName}", typeof(T));
+            if (string.IsNullOrEmpty(fileName))
+                throw new ArgumentNullException(nameof(fileName));
             
+            string path = CleanPath(relativePath);
 #if UNITY_EDITOR
-            if (asset == null)
-            {
-                asset = ScriptableObject.CreateInstance<T>();
-                AssetDatabase.CreateAsset(asset, resourcesPath + "/" + fileName + ".asset");
-            }
-            
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
+            // В Editor загружаем через AssetDatabase (можно создавать, если нет)
+            if (Application.isPlaying == false)
+                return CreateAsset<T>(path, fileName);
 #endif
-            
-            return asset;
+
+            // В Runtime или Play Mode загружаем из Resources (только чтение)
+            T runtimeAsset = Resources.Load<T>($"{path}{fileName}");
+    
+            if (runtimeAsset == null)
+                throw new ArgumentNullException($"Asset {fileName} not found in Resources at path {path}");
+    
+            return runtimeAsset;
         }
 
         public static T GetResource<T>(string resourcesPath, string fileName)
@@ -102,13 +100,20 @@ namespace Sources.Frameworks.DeepFramework.DeepUtils.MyUiFramework.Utils
 
         public static string CleanPath(string path)
         {
-            // ReSharper disable once SuspiciousTypeConversion.Global
-            if (!path[path.Length - 1].Equals(@"\"))
-                path += @"\";
-            
-            path = path.Replace(@"\\", @"\");
-            path = path.Replace(@"\", "/");
-            
+            if (string.IsNullOrEmpty(path))
+                return path;
+
+            // 1. Заменяем все обратные слеши на прямые
+            path = path.Replace('\\', '/');
+    
+            // 2. Убираем дублирующиеся слеши (например, "//" -> "/")
+            while (path.Contains("//"))
+                path = path.Replace("//", "/");
+    
+            // 3. Убеждаемся, что путь заканчивается на '/'
+            if (!path.EndsWith("/"))
+                path += "/";
+    
             return path;
         }
 
@@ -116,33 +121,50 @@ namespace Sources.Frameworks.DeepFramework.DeepUtils.MyUiFramework.Utils
         public static T CreateAsset<T>(
             string relativePath, 
             string fileName, 
-            string extension = ".asset", 
             bool saveAssetDatabase = true, 
-            bool refreshAssetDatabase = true)
+            bool refreshAssetDatabase = true) 
             where T : ScriptableObject
         {
-            if (string.IsNullOrEmpty(relativePath))
+            if (string.IsNullOrEmpty(relativePath) || string.IsNullOrEmpty(fileName))
+            {
+                Debug.LogError("Path or file name is empty");
                 return null;
-            
-            if (string.IsNullOrEmpty(fileName))
-                return null;
-            
-            relativePath = CleanPath(relativePath);
-            // ReSharper disable once SuspiciousTypeConversion.Global
-            // if (!relativePath[relativePath.Length - 1].Equals(@"\"))
-            //     relativePath += @"\";
-            
-            // relativePath = relativePath.Replace(@"\\", @"\");
+            }
+
+            // 1. Приводим путь к единому формату через CleanPath
+            string cleanPath = CleanPath(relativePath);
+    
+            // 2. Полный путь с расширением .asset
+            string fullPath = cleanPath + fileName + ".asset";
+
+            // 3. Проверяем, существует ли уже такой файл
+            T existingAsset = AssetDatabase.LoadAssetAtPath<T>(fullPath);
+            if (existingAsset != null)
+            {
+                Debug.LogWarning($"Asset already exists at path: {fullPath}");
+                return existingAsset;
+            }
+
+            // 4. Проверяем, существует ли папка. Если нет — создаём.
+            string directoryPath = cleanPath.TrimEnd('/');
+            if (!AssetDatabase.IsValidFolder(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+                AssetDatabase.Refresh(); // Важно обновить, чтобы Unity увидел новую папку
+            }
+
+            // 5. Создаём ассет
             T asset = ScriptableObject.CreateInstance<T>();
-            AssetDatabase.CreateAsset(asset, relativePath + fileName + extension);
+            AssetDatabase.CreateAsset(asset, fullPath);
             EditorUtility.SetDirty(asset);
-            
+
             if (saveAssetDatabase)
                 AssetDatabase.SaveAssets();
-            
+
             if (refreshAssetDatabase)
                 AssetDatabase.Refresh();
-            
+
+            Debug.Log($"Asset created successfully: {fullPath}");
             return asset;
         }
 

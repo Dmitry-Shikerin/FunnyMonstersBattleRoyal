@@ -1,8 +1,5 @@
 ﻿using Sirenix.OdinInspector;
-using Sources.Frameworks.DeepFramework.DeepUtils.Editor;
-using Sources.Frameworks.DeepFramework.DeepUtils.Editor.Services;
 using Sources.Frameworks.DeepFramework.DeepUtils.MyUiFramework.Utils;
-using UnityEditor;
 using UnityEngine;
 
 namespace Sources.Frameworks.DeepFramework.DeepSound.Runtime.Domain.Data
@@ -11,9 +8,8 @@ namespace Sources.Frameworks.DeepFramework.DeepSound.Runtime.Domain.Data
     {
         //Const
         private const string FileName = nameof(DeepSoundSettings);
-        private const string ResourcesPath = "Assets/Resources/Services/Soundy/Settings/";
-        private const string AssetPath = "Assets/Resources/Soundy/Settings/SoundySettings";
-        private const string Asset = "t:SoundySettings";
+        private const string ResourcesPath = "DeepFramework";
+        
         private const bool DefaultAutoKillIdleControllers = true;
         private const float DefaultControllerIdleKillDuration = 20f;
         private const float ControllerIdleKillDurationMin = 0f;
@@ -41,26 +37,8 @@ namespace Sources.Frameworks.DeepFramework.DeepSound.Runtime.Domain.Data
             {
                 if (s_instance != null)
                     return s_instance;
-#if UNITY_EDITOR
-                s_instance = AssetDatabase.LoadAssetAtPath<DeepSoundSettings>(
-                    "Services/DeepSound/DeepSoundSettings.asset");
-#endif          
 
-                if (s_instance != null)
-                    return s_instance;
-                
-                s_instance = Resources.Load<DeepSoundSettings>(
-                    "Services/DeepSound/DeepSoundSettings");
-                
-                if (s_instance != null)
-                    return s_instance;
-
-#if UNITY_EDITOR
-                s_instance = CreateInstance<DeepSoundSettings>();
-                AssetDatabase.CreateAsset(s_instance,
-                    ResourcesPath + FileName + ".asset");
-                AssetDatabase.SaveAssets();
-#endif
+                s_instance = MyAssetUtils.GetScriptableObject<DeepSoundSettings>(ResourcesPath, FileName);
                 
                 return s_instance;
             }
@@ -82,10 +60,9 @@ namespace Sources.Frameworks.DeepFramework.DeepSound.Runtime.Domain.Data
             }
         }
 
-        public static void UpdateDatabase()
+        private static void UpdateDatabase()
         {
-            Instance._database = MyAssetUtils.GetScriptableObject<DeepSoundDataBase>(
-                "_" + DeepSoundDataBase.FileName, "Assets/Resources/Soundy/DataBases");
+            Instance._database = MyAssetUtils.GetScriptableObject<DeepSoundDataBase>(DeepSoundDataBase.AssetPath, DeepSoundDataBase.FileName);
 #if UNITY_EDITOR
             if (Instance._database == null)
                 return;

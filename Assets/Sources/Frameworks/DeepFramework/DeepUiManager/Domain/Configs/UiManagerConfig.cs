@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using NodeCanvas.StateMachines;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Views;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs
     public class UiManagerConfig : ScriptableObject
     {
         [field: SerializeField] public Hud Hud { get; private set; }
+        [field: SerializeField] public FSMOwner FsmOwner { get; private set; }
         [field: SerializeField] public List<UiView> Views { get; private set; }
         [field: SerializeField] public List<UiPopUpView> PopUps { get; private set; }
     }

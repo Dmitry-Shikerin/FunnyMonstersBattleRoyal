@@ -4,9 +4,11 @@ namespace Sources.BoundedContexts.Cursors.Services
 {
     public class CursorService : ICursorService
     {
+        private const string TexturePath = "Cursors/Cursor";
+        
         public CursorService()
         {
-            Texture2D cursorTexture = Resources.Load<Texture2D>("Services/Cursors/Cursor");
+            Texture2D cursorTexture = Resources.Load<Texture2D>(TexturePath);
             Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
         }
 
@@ -19,7 +21,6 @@ namespace Sources.BoundedContexts.Cursors.Services
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            Debug.Log($"Opa");
         }
 
         public void UnlockCursor()

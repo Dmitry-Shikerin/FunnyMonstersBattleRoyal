@@ -14,7 +14,6 @@ using Sources.Frameworks.GameServices.Prefabs.Interfaces.Composites;
 using Sources.Frameworks.GameServices.Scenes.Controllers.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Infrastructure.Factories.Controllers.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
-using Sources.Frameworks.GameServices.UiReflexInjectors;
 using Sources.Frameworks.GameServices.UpdateServices.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 using Sources.Frameworks.YandexSdkFramework.Focuses.Interfaces;
@@ -28,7 +27,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         private readonly JoinManager _joinManager;
         private readonly ISceneService _sceneService;
         private readonly IInputService _inputService;
-        private readonly UiReflexInjector _uiReflexInjector;
         private readonly ISdkService _sdkService;
         private readonly IAssetCollector _assetCollector;
         private readonly IEntityRepository _entityRepository;
@@ -46,7 +44,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             JoinManager joinManager,
             ISceneService sceneService,
             IInputService inputService,
-            UiReflexInjector uiReflexInjector,
             ISdkService sdkService,
             IAssetCollector assetCollector,
             IEntityRepository entityRepository,
@@ -63,7 +60,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             _joinManager = joinManager;
             _sceneService = sceneService;
             _inputService = inputService;
-            _uiReflexInjector = uiReflexInjector;
             _sdkService = sdkService;
             _assetCollector = assetCollector;
             _entityRepository = entityRepository;
@@ -85,7 +81,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
                 _joinManager,
                 _sceneService,
                 _inputService,
-                _uiReflexInjector,
                 _sdkService,
                 _assetCollector,
                 _entityRepository,

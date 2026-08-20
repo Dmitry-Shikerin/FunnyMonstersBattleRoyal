@@ -13,7 +13,6 @@ using Sources.Frameworks.GameServices.Prefabs.Interfaces;
 using Sources.Frameworks.GameServices.Prefabs.Interfaces.Composites;
 using Sources.Frameworks.GameServices.Scenes.Controllers.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Infrastructure.Factories.Controllers.Interfaces;
-using Sources.Frameworks.GameServices.UiReflexInjectors;
 using Sources.Frameworks.YandexSdkFramework.Focuses.Interfaces;
 using Sources.Frameworks.YandexSdkFramework.Leaderboards.Services.Interfaces;
 using Sources.Frameworks.YandexSdkFramework.Sdk.Services;
@@ -22,7 +21,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
 {
     public class MainMenuSceneFactory : ISceneFactory
     {
-        private readonly UiReflexInjector _uiReflexInjector;
         private readonly IUiViewService _uiViewService;
         private readonly ISdkService _sdkService;
         private readonly IStorageService _storageService;
@@ -38,7 +36,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         private readonly ICurtainService _curtainService;
 
         public MainMenuSceneFactory(
-            UiReflexInjector uiReflexInjector,
             IUiViewService uiViewService,
             ISdkService sdkService,
             IStorageService storageService,
@@ -53,7 +50,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
             ILocalizationService localizationService,
             ICurtainService curtainService)
         {
-            _uiReflexInjector = uiReflexInjector;
             _uiViewService = uiViewService;
             _sdkService = sdkService;
             _storageService = storageService;
@@ -74,7 +70,6 @@ namespace Sources.BoundedContexts.Scenes.Infrastructure.Factories
         public UniTask<IScene> Create(object payload)
         {
             IScene mainMenuScene = new MainMenuScene(
-                _uiReflexInjector,
                 _uiViewService,
                 _sdkService,
                 _storageService,

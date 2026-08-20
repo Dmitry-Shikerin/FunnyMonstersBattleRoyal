@@ -14,6 +14,9 @@ namespace Sources.Frameworks.DeepFramework.DeepSound.Runtime.Domain.Data
     [CreateAssetMenu(fileName = nameof(DeepSoundDataBase), menuName = "Configs/DeepFramework/" + nameof(DeepSoundDataBase), order = 51)]
     public class DeepSoundDataBase : ScriptableObject
     {
+        public const string FileName = nameof(DeepSoundDataBase);
+        public const string AssetPath = "DeepFramework";
+
         //Const
         private const string RefreshDatabasePhrase = "Refresh Database";
         private const string RenameSoundDatabasePhrase = "Rename Sound Database";
@@ -26,8 +29,7 @@ namespace Sources.Frameworks.DeepFramework.DeepSound.Runtime.Domain.Data
         private const string DeleteDatabasePhrase = "Delete Database";
         private const string AreYouSureYouWantToDeleteDatabase = "Are you sure you want tto delete database";
         private const string OperationCannotBeUndone = "Operation Cannot Be Undone";
-        public const string FileName = "SoundyDatabase";
-        
+
         [TabGroup("Data")]
         [SerializeField] private SoundDataBaseDictionary _dataBases = new ();
         [TabGroup("Create")]

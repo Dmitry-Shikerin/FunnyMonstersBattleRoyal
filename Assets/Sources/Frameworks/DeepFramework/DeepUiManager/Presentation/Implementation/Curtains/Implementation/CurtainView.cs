@@ -11,6 +11,8 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
 {
     public class CurtainView : MonoBehaviour, ICurtainView
     {
+        public const string AssetPath = "DeepFramework/CurtainView";
+        
         [Required] [SerializeField] private CanvasGroup _canvasGroup;
         [Title("Fade")]
         [SerializeField] private CanvasGroupFadeData _downCanvasGroupFadeData;

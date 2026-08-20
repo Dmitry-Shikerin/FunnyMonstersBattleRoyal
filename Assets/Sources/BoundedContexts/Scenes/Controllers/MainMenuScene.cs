@@ -2,14 +2,12 @@
 using NodeCanvas.StateMachines;
 using Reflex.Core;
 using Reflex.Injectors;
-using Sources.BoundedContexts.Hud.Presentations.MainMenu;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
-using Sources.EcsBoundedContexts.Common.Domain.Constants;
 using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
+using Sources.Frameworks.DeepFramework.DeepCores.Domain.Constants;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
-using Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementation.Curtains.Interfaces;
 using Sources.Frameworks.GameServices.DeepWrappers.Curtains;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
 using Sources.Frameworks.GameServices.DeepWrappers.Sounds;
@@ -21,17 +19,14 @@ using Sources.Frameworks.GameServices.Prefabs.Interfaces.Composites;
 using Sources.Frameworks.GameServices.Scenes.Controllers.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Domain.Interfaces;
 using Sources.Frameworks.GameServices.UiActions;
-using Sources.Frameworks.GameServices.UiReflexInjectors;
 using Sources.Frameworks.YandexSdkFramework.Focuses.Interfaces;
 using Sources.Frameworks.YandexSdkFramework.Leaderboards.Services.Interfaces;
 using Sources.Frameworks.YandexSdkFramework.Sdk.Services;
-using UnityEngine;
 
 namespace Sources.BoundedContexts.Scenes.Controllers
 {
     public class MainMenuScene : IScene
     {
-        private readonly UiReflexInjector _uiReflexInjector;
         private readonly IUiViewService _uiViewService;
         private readonly ISdkService _sdkService;
         private readonly IStorageService _storageService;
@@ -47,7 +42,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private readonly ICurtainService _curtainService;
 
         public MainMenuScene(
-            UiReflexInjector uiReflexInjector,
             IUiViewService uiViewService,
             ISdkService sdkService,
             IStorageService storageService,
@@ -62,7 +56,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             ILocalizationService localizationService,
             ICurtainService curtainService)
         {
-            _uiReflexInjector = uiReflexInjector;
             _uiViewService = uiViewService;
             _sdkService = sdkService;
             _storageService = storageService;
@@ -85,7 +78,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _focusService.Initialize();
             InitUiActions();
             InitDeepUiBrain();
-            _uiReflexInjector.InjectUiViews();
             ActivateLoadGameButton();
             _localizationService.Translate();
             AttributeInjector.Inject(_ecsGameStartUp, _container);
@@ -169,14 +161,8 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 
         private void InitDeepUiBrain()
         {
-            UiConfig hudConfig = _assetCollector.Get<UiConfig>();
             UnityEngine.Camera mainCamera = _mainMenuRootGameObjects.MainCamera;
-            DeepUiBrain.Instance.Initialize(hudConfig.MainMenuUiConfig, mainCamera, _container);
-            FSMOwner fsmOwner = DeepUiBrain.Hud.MainMenuFsmOwner;
-            FSM behaviour = fsmOwner.behaviour;
-            behaviour.Initialize(behaviour.agent, behaviour.blackboard, true, false);
-            fsmOwner.InjectOwner(_container);
-            fsmOwner.StartBehaviour();
+            DeepUiBrain.Instance.Initialize(DeepConst.MainMenuConfigPath, mainCamera, _container);
         }
 
         private void InitUiActions()

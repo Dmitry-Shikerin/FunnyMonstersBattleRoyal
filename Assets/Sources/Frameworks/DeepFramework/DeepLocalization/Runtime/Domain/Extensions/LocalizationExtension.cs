@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Sources.Frameworks.DeepFramework.DeepLocalization.Domain.Data;
 using Sources.Frameworks.DeepFramework.DeepLocalization.Runtime.Domain.Constant;
 using Sources.Frameworks.DeepFramework.DeepLocalization.Runtime.Domain.Data;
 using UnityEditor;
 using UnityEngine;
 
-namespace Sources.Frameworks.DeepFramework.DeepLocalization.Domain.Extensions
+namespace Sources.Frameworks.DeepFramework.DeepLocalization.Runtime.Domain.Extensions
 {
     public static class LocalizationExtension
     {

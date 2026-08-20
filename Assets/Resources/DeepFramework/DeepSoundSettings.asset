@@ -16,4 +16,4 @@ MonoBehaviour:
   AutoKillIdleControllers: 1
   ControllerIdleKillDuration: 20
   IdleCheckInterval: 5
-  MinimumNumberOfControllers: 7
+  MinimumNumberOfControllers: 3

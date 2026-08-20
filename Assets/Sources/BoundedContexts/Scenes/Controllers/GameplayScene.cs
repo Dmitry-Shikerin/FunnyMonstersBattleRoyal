@@ -1,15 +1,12 @@
 ﻿using System;
-using NodeCanvas.StateMachines;
+using Cysharp.Threading.Tasks;
 using Reflex.Core;
-using Reflex.Injectors;
 using Sources.BoundedContexts.Hud.Presentations.Lobby;
 using Sources.BoundedContexts.NetworkCore.Services;
 using Sources.BoundedContexts.RootGameObjects.Presentation;
-using Sources.EcsBoundedContexts.Animancers.Extension;
 using Sources.EcsBoundedContexts.Common.Domain.Constants;
-using Sources.EcsBoundedContexts.Common.Extansions.Colliders;
 using Sources.EcsBoundedContexts.Core;
-using Sources.Frameworks.DeepFramework.DeepUiManager.Domain.Configs;
+using Sources.Frameworks.DeepFramework.DeepCores.Domain.Constants;
 using Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implementation;
 using Sources.Frameworks.GameServices.DeepWrappers.Curtains;
 using Sources.Frameworks.GameServices.DeepWrappers.Localizations;
@@ -22,7 +19,6 @@ using Sources.Frameworks.GameServices.Prefabs.Interfaces.Composites;
 using Sources.Frameworks.GameServices.Scenes.Controllers.Interfaces;
 using Sources.Frameworks.GameServices.Scenes.Services.Interfaces;
 using Sources.Frameworks.GameServices.UiActions;
-using Sources.Frameworks.GameServices.UiReflexInjectors;
 using Sources.Frameworks.GameServices.UpdateServices.Interfaces;
 using Sources.Frameworks.MyLeoEcsProto.Repositories;
 using Sources.Frameworks.YandexSdkFramework.Focuses.Interfaces;
@@ -36,7 +32,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         private readonly JoinManager _joinManager;
         private readonly ISceneService _sceneService;
         private readonly IInputService _inputService;
-        private readonly UiReflexInjector _uiReflexInjector;
         private readonly ISdkService _sdkService;
         private readonly IAssetCollector _assetCollector;
         private readonly IEntityRepository _entityRepository;
@@ -56,7 +51,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             JoinManager joinManager,
             ISceneService sceneService,
             IInputService inputService,
-            UiReflexInjector uiReflexInjector,
             ISdkService sdkService,
             IAssetCollector assetCollector,
             IEntityRepository entityRepository,
@@ -73,7 +67,6 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             _joinManager = joinManager;
             _sceneService = sceneService;
             _inputService = inputService;
-            _uiReflexInjector = uiReflexInjector;
             _sdkService = sdkService;
             _assetCollector = assetCollector;
             _entityRepository = entityRepository;
@@ -90,18 +83,11 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 
         public async void Enter(object payload = null)
         {
-            //_inputService.Initialize();
             _focusService.Initialize();
             await _compositeAssetService.LoadAsync(ResourcesPrefabPath.ResourcesAssetsConfig, AddressablesPrefabPath.AddressablesAssetConfig);
-            ColliderExt.Construct(_entityRepository);
-            AnimancerExtension.Construct(_assetCollector);
             InitUiActions();
-            InitDeepUiBrain();
-            _uiReflexInjector.InjectUiViews();
+            await InitDeepUiBrain();
             _localizationService.Translate();
-            _ecsGameStartUp = NetworkRunnerProvider.LeoGameStartUp;
-            AttributeInjector.Inject(_ecsGameStartUp, _container);
-            await _ecsGameStartUp.Initialize();
             _sdkService.Initialize();
             _soundService.Initialize();
             _isLoaded = true;
@@ -110,15 +96,13 @@ namespace Sources.BoundedContexts.Scenes.Controllers
 
             if (_sceneService.CurrentSceneName == IdsConst.Lobby)
                 _uiViewService.Get<LobbyUiView>().PlayersReadyInitializerUiView.Initialize();
-            //await _curtainView.HideAsync();
+            await _curtainService.HideAsync();
         }
 
         public void Exit()
         {
-            //_inputService.Destroy();
             //_soundService.Stop(SoundName.GameplayBackgroundMusic);
             _soundService.Destroy();
-            _ecsGameStartUp.Destroy();
             _sdkService.Destroy();
             _compositeAssetService.Release();
             _focusService.Destroy();
@@ -142,24 +126,15 @@ namespace Sources.BoundedContexts.Scenes.Controllers
         {
         }
 
-        private void InitDeepUiBrain()
+        private async UniTask InitDeepUiBrain()
         {
-            UiConfig hudConfig = _assetCollector.Get<UiConfig>();
-            //что бы камера не была пустой
             UnityEngine.Camera mainCamera = UnityEngine.Camera.main;
             //TODO возможно разделить на отдельную сцену
-            UiManagerConfig managerConfig = _sceneService.CurrentSceneName == IdsConst.Gameplay
-                ? hudConfig.GameUiConfig
-                : hudConfig.LobbyUiConfig;
+            string path  = _sceneService.CurrentSceneName == IdsConst.Gameplay
+                ? DeepConst.GameplayConfigPath
+                : DeepConst.LobbyConfigPath;
             //Camera mainCamera = _rootGameObject.MainCamera.GetModule<MainCameraModule>().Camera;
-            DeepUiBrain.Instance.Initialize(managerConfig, mainCamera, _container);
-            FSMOwner fsmOwner = _sceneService.CurrentSceneName == IdsConst.Gameplay ?
-                DeepUiBrain.Hud.GameplayFsmOwner :
-                DeepUiBrain.Hud.LobbyFsmOwner;
-            FSM behaviour = fsmOwner.behaviour;
-            behaviour.Initialize(behaviour.agent, behaviour.blackboard, true, false);
-            fsmOwner.InjectOwner(_container);
-            fsmOwner.StartBehaviour();
+            await DeepUiBrain.Instance.Initialize(path, mainCamera, _container);
         }
 
         private void InitUiActions()

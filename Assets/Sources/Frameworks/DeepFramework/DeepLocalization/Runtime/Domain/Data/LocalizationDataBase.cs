@@ -5,8 +5,8 @@ using Sirenix.OdinInspector;
 using Sources.Frameworks.DeepFramework.DeepLocalization.Domain.Data;
 using Sources.Frameworks.DeepFramework.DeepLocalization.Runtime.Domain.Constant;
 using Sources.Frameworks.DeepFramework.DeepLocalization.Runtime.Domain.Enums;
-using Sources.Frameworks.DeepFramework.DeepUtils;
 using Sources.Frameworks.DeepFramework.DeepUtils.Enums;
+using Sources.Frameworks.DeepFramework.DeepUtils.MyUiFramework.Utils;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,6 +15,9 @@ namespace Sources.Frameworks.DeepFramework.DeepLocalization.Runtime.Domain.Data
 {
     public class LocalizationDataBase : ScriptableObject
     {
+        private const string AssetPath = "DeepFramework";
+        private const string FileName = "LocalizationDataBase";
+
         private const string GetIdTabGroup = "GetId";
         private const string DatabaseTab = "DataBase";
         private const string CreatePhraseTab = "CreatePhrase";
@@ -32,19 +35,9 @@ namespace Sources.Frameworks.DeepFramework.DeepLocalization.Runtime.Domain.Data
             {
                 if (s_instance != null)
                     return s_instance;
-
-                s_instance = Resources.Load<LocalizationDataBase>(LocalizationConst.LocalizationDataBaseAssetPath);
-
-                if (s_instance != null)
-                    return s_instance;
-
-                s_instance = CreateInstance<LocalizationDataBase>();
-
-#if UNITY_EDITOR
-                AssetDatabase.CreateAsset(s_instance,
-                    "Assets/Resources/Services/Localizations/ " + LocalizationConst.LocalizationDatabaseAsset);
-#endif
-
+                
+                s_instance = MyAssetUtils.GetScriptableObject<LocalizationDataBase>(AssetPath, FileName);
+                
                 return s_instance;
             }
         }
