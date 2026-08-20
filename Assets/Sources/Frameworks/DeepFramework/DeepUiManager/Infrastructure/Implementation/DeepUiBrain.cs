@@ -85,8 +85,6 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implemen
                     AttributeInjector.Inject(mono, container);
             }
 
-            _viewManager.Initialize();
-
             //PopUp
             foreach (UiPopUpView popUpViewPrefab in config.PopUps)
             {
@@ -98,6 +96,8 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Infrastructure.Implemen
                     AttributeInjector.Inject(mono, container);
             }
 
+            //Initialize
+            _viewManager.Initialize();
             _popUpViewManager.Initialize();
 
             //FSM

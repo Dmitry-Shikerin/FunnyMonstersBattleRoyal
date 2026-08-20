@@ -7,6 +7,6 @@ namespace Sources.BoundedContexts.Hud.Presentations.Gameplay
 {
     public class GameplayUiView : UiView
     {
-        [field: Required] [field: SerializeField] public GameplayPlayerNameUiView PlayerName { get; private set; }
+        [field: Required] [field: SerializeField] public PlayerNameUiView PlayerName { get; private set; }
     }
 }

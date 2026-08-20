@@ -19,8 +19,8 @@ namespace Sources.BoundedContexts.NetworkCore.Services
         private readonly ISceneService _sceneService;
         private readonly IUiViewService _uiViewService;
         private readonly FusionMenuConfig _config;
-        private readonly MainMenuUiPopUp _popUp;
         private readonly ICurtainService _curtainService;
+        private readonly IUiPopUpService _popUpService;
         private string _region;
         private bool _connectingSafeCheck;
         private NetworkRunner _runner;
@@ -37,7 +37,7 @@ namespace Sources.BoundedContexts.NetworkCore.Services
             FusionMenuConfig config)
         {
             _curtainService = curtainService;
-            _popUp = popUpService.Get<MainMenuUiPopUp>();
+            _popUpService = popUpService;
             _sceneService = sceneService;
             _uiViewService = uiViewService;
             _config = config;
@@ -98,7 +98,7 @@ namespace Sources.BoundedContexts.NetworkCore.Services
             else if (result.FailReason != ConnectFailReason.ApplicationQuit)
             {
                 _curtainService.HideAsync();
-                _popUp.SetMassage("Connection Failed");
+                _popUpService.Get<MainMenuUiPopUp>().SetMassage("Connection Failed");
             }
         }
 

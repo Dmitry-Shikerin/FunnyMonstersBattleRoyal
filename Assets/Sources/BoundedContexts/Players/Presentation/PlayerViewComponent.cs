@@ -12,7 +12,7 @@ namespace Sources.BoundedContexts.Players.Presentation
     public class PlayerViewComponent : NetworkBehaviour, IViewComponent
     {
         private IDataService _dataService;
-        private GameplayPlayerNameUiView _playerNameUiView;
+        private PlayerNameUiView _playerNameUiView;
 
         [Networked]
         public NetworkString<_32> Name { get; set; }
@@ -23,10 +23,10 @@ namespace Sources.BoundedContexts.Players.Presentation
         private void Construct(IDataService dataService) =>
             _dataService = dataService;
 
-        public void Construct(GameplayPlayerNameUiView playerNameUiView)
+        public void Construct(PlayerNameUiView playerNameUiView)
         {
             _playerNameUiView = playerNameUiView;
-            _playerNameUiView.InitPlayerName(Name.Value);
+            _playerNameUiView.SetPlayerName(Name.Value);
         }
 
         public void Init(PlayerRef playerRef)

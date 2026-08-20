@@ -13,7 +13,7 @@ namespace Sources.BoundedContexts.Hud.Presentations.MainMenu
     public class MainMenuUiView : UiView
     {
         [Required] [SerializeField] private UiButton _quickGameButton;
-        [field: Required] [field: SerializeField] public GameplayPlayerNameUiView PlayerNameUiView { get; private set; }
+        [field: Required] [field: SerializeField] public PlayerNameUiView PlayerNameUiView { get; private set; }
         [field: Required] [field: SerializeField] public FusionMenuConnectArgs ConnectArgs { get; private set; }
 
         private NetworkStartGameService _startGameService;

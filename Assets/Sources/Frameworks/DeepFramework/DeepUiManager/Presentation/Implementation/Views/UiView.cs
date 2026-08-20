@@ -41,6 +41,8 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
 
         private void OnDestroy()
         {
+            OnBeforeDestroy();
+            
             if (ShowId == EnableState.Off)
                 return;
 
@@ -48,6 +50,10 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
                 return;
 
             _viewManager.Unregister(_id);
+        }
+
+        protected virtual void OnBeforeDestroy()
+        {
         }
     }
 }

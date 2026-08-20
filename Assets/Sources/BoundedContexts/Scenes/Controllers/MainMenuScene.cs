@@ -159,10 +159,10 @@ namespace Sources.BoundedContexts.Scenes.Controllers
             return UniTask.CompletedTask;
         }
 
-        private void InitDeepUiBrain()
+        private async UniTask InitDeepUiBrain()
         {
             UnityEngine.Camera mainCamera = _mainMenuRootGameObjects.MainCamera;
-            DeepUiBrain.Instance.Initialize(DeepConst.MainMenuConfigPath, mainCamera, _container);
+            await DeepUiBrain.Instance.Initialize(DeepConst.MainMenuConfigPath, mainCamera, _container);
         }
 
         private void InitUiActions()

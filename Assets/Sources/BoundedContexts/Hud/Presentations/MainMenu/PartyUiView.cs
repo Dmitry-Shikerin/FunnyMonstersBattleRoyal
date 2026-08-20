@@ -20,6 +20,8 @@ namespace Sources.BoundedContexts.Hud.Presentations.MainMenu
         private FusionMenuPartyCodeGenerator _codeGenerator;
         private MainMenuUiPopUp _popUp;
         private FusionMenuConnectArgs _args;
+        private IUiPopUpService _uiPopUpService;
+        private IUiViewService _uiViewService;
 
         [Inject]
         private void Construct(
@@ -30,11 +32,17 @@ namespace Sources.BoundedContexts.Hud.Presentations.MainMenu
         {
             _codeGenerator = config.CodeGenerator;
             _startGameService = startGameService;
-            _popUp = uiPopUpService.Get<MainMenuUiPopUp>();
-            _args = uiViewService.Get<MainMenuUiView>().ConnectArgs;
+            _uiPopUpService = uiPopUpService;
+            _uiViewService = uiViewService;
             SetDefaultText();
         }
-        
+
+        protected override void OnBeforeInitialize()
+        {
+            _popUp = _uiPopUpService.Get<MainMenuUiPopUp>();
+            _args = _uiViewService.Get<MainMenuUiView>().ConnectArgs;
+        }
+
         private void SetDefaultText()
         {
             _joinSessionCodeField.SetTextWithoutNotify("".PadLeft(_codeGenerator.Length, '-'));

@@ -1068,8 +1068,8 @@ MonoBehaviour:
   - {fileID: 894495540773878675}
   - {fileID: 1670320490507159907}
   - {fileID: 4338148540363977037}
-  _resetToDefaultButton: {fileID: 0}
-  _mainMenuButton: {fileID: 0}
+  _resetToDefaultButton: {fileID: 7602495636649938162}
+  _mainMenuButton: {fileID: 5462743281468471098}
   <ApplyButton>k__BackingField: {fileID: 5462743281468471098}
 --- !u!1 &5340868620608663513
 GameObject:
@@ -3120,6 +3120,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8104546980544131753, guid: 8f4d0f2f307a25e49a5731ad92162a87, type: 3}
   m_PrefabInstance: {fileID: 3930194335201281633}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7602495636649938162 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6848751744052546195, guid: 8f4d0f2f307a25e49a5731ad92162a87, type: 3}
+  m_PrefabInstance: {fileID: 3930194335201281633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651f36b0af854cf68014d49d354f87fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3993898680984151512
 PrefabInstance:
   m_ObjectHideFlags: 0

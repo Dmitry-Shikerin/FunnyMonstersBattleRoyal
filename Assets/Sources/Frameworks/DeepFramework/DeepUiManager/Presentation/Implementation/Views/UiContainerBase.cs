@@ -31,7 +31,12 @@ namespace Sources.Frameworks.DeepFramework.DeepUiManager.Presentation.Implementa
 
         public void Initialize()
         {
+            OnBeforeInitialize();
             _isInit = true;
+        }
+
+        protected virtual void OnBeforeInitialize()
+        {
         }
 
         public void Show()

@@ -67,7 +67,7 @@ namespace Sources.BoundedContexts.Characters.Infrastructure
                 
                 //InitPlayerName
                 PlayerViewComponent playerView = viewComponentsLink.Get<PlayerViewComponent>();
-                GameplayPlayerNameUiView playerNameUiView = _uiViewService.Get<GameplayUiView>().PlayerName;
+                PlayerNameUiView playerNameUiView = _uiViewService.Get<GameplayUiView>().PlayerName;
                 playerView.Construct(playerNameUiView);
                 
                 //Init lobby ui
@@ -100,7 +100,7 @@ namespace Sources.BoundedContexts.Characters.Infrastructure
                 
                 //InitPlayerName
                 PlayerViewComponent playerView = viewComponentsLink.Get<PlayerViewComponent>();
-                GameplayPlayerNameUiView playerNameUiView = _uiViewService.Get<GameplayUiView>().PlayerName;
+                PlayerNameUiView playerNameUiView = _uiViewService.Get<GameplayUiView>().PlayerName;
                 playerView.Construct(playerNameUiView);
                 
                 //Init lobby ui
